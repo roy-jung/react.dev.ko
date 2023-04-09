@@ -525,7 +525,7 @@ function Game() {
 ```
 
 This is a lot more efficient. Also, if you implement a way to view game history, now you will be able to set each state variable to a move from the past without triggering the Effect chain that adjusts every other value. If you need to reuse logic between several event handlers, you can [extract a function](#sharing-logic-between-event-handlers) and call it from those handlers.
-<Trans>훨씬 더 효율적입니다. 또한 게임 기록을 볼 수 있는 방법을 구현하면 이제 다른 모든 값을 조정하는 Effect 체인을 트리거하지 않고도 각 state 변수를 과거의 움직임으로 설정할 수 있습니다. 여러 이벤트 핸들러 간에 로직을 재사용해야 하는 경우 [함수를 추출](#sharing-logic-between-event-handlers)하여 해당 핸들러에서 함수를 호출할 수 있습니다.</Trans>
+<Trans>훨씬 더 효율적입니다. 또한 게임 기록을 볼 수 있는 방법을 구현하면 이제 다른 모든 값을 조정하는 Effect 체인을 촉발시키지 않고도 각 state 변수를 과거의 움직임으로 설정할 수 있습니다. 여러 이벤트 핸들러 간에 로직을 재사용해야 하는 경우 [함수를 추출](#sharing-logic-between-event-handlers)하여 해당 핸들러에서 함수를 호출할 수 있습니다.</Trans>
 
 Remember that inside event handlers, [state behaves like a snapshot.](/learn/state-as-a-snapshot) For example, even after you call `setRound(round + 1)`, the `round` variable will reflect the value at the time the user clicked the button. If you need to use the next value for calculations, define it manually like `const nextRound = round + 1`.
 <Trans>이벤트 핸들러 내부에서 [state는 스냅샷처럼 동작](/learn/state-as-a-snapshot)함을 기억하세요. 예를 들어 `setRound(round + 1)`를 호출한 후에도 `round` 변수는 사용자가 버튼을 클릭한 시점의 값을 반영합니다. 계산에 다음 값을 사용해야 하는 경우 `const nextRound = round + 1`과 같이 수동으로 정의하세요.</Trans>
@@ -1323,7 +1323,7 @@ input { margin-top: 10px; }
 </Sandpack>
 
 With this change, `getVisibleTodos()` will be called only if `todos` or `showActive` change. Typing into the input only changes the `text` state variable, so it does not trigger a call to `getVisibleTodos()`.
-<Trans>이 변경으로 `todos` 또는 `showActive`가 변경된 경우에만 `getVisibleTodos()`가 호출됩니다. 입력을 입력하면 `text` state 변수만 변경되므로 `getVisibleTodos()` 호출을 트리거하지 않습니다.</Trans>
+<Trans>이 변경으로 `todos` 또는 `showActive`가 변경된 경우에만 `getVisibleTodos()`가 호출됩니다. 입력을 입력하면 `text` state 변수만 변경되므로 `getVisibleTodos()` 호출을 촉발하지 않습니다.</Trans>
 
 There is also another solution which does not need `useMemo`. Since the `text` state variable can't possibly affect the list of todos, you can extract the `NewTodo` form into a separate component, and move the `text` state variable inside of it:
 <Trans>`useMemo`가 필요 없는 또 다른 해결책도 있습니다. `text` state 변수가 할 일 목록에 영향을 줄 수 없기 때문에 `NewTodo` form을 별도의 컴포넌트로 추출하고 그 안에 `text` state 변수를 옮길 수 있습니다:</Trans>
@@ -1753,7 +1753,7 @@ button {
 #### Submit a form without Effects<Trans>Effect 없이 양식 제출하기</Trans> {/*submit-a-form-without-effects*/}
 
 This `Form` component lets you send a message to a friend. When you submit the form, the `showForm` state variable is set to `false`. This triggers an Effect calling `sendMessage(message)`, which sends the message (you can see it in the console). After the message is sent, you see a "Thank you" dialog with an "Open chat" button that lets you get back to the form.
-<Trans>이 `Form` 컴포넌트를 사용하면 친구에게 메시지를 보낼 수 있습니다. 양식을 제출하면 `showForm` state 변수가 `false`로 설정됩니다. 그러면 메시지를 전송하는 `sendMessage(message)`라는 Effect가 트리거됩니다(콘솔에서 확인할 수 있음). 메시지가 전송되면 'Open Chat' 버튼이 있는 "Thank you" 대화 상자가 표시되어 양식으로 돌아갈 수 있습니다.</Trans>
+<Trans>이 `Form` 컴포넌트를 사용하면 친구에게 메시지를 보낼 수 있습니다. 양식을 제출하면 `showForm` state 변수가 `false`로 설정됩니다. 그러면 메시지를 전송하는 `sendMessage(message)`라는 Effect가 촉발됩니다(콘솔에서 확인할 수 있음). 메시지가 전송되면 'Open Chat' 버튼이 있는 "Thank you" 대화 상자가 표시되어 양식으로 돌아갈 수 있습니다.</Trans>
 
 Your app's users are sending way too many messages. To make chatting a little bit more difficult, you've decided to show the "Thank you" dialog *first* rather than the form. Change the `showForm` state variable to initialize to `false` instead of `true`. As soon as you make that change, the console will show that an empty message was sent. Something in this logic is wrong!
 <Trans>앱 사용자가 너무 많은 메시지를 보내고 있습니다. 채팅을 조금 더 어렵게 만들기 위해 양식 대신 "감사합니다" 대화 상자를 *먼저* 표시하기로 결정했습니다. `showForm` state 변수를 `true` 대신 `false`로 초기화하도록 변경해 보세요. 이렇게 변경하자마자 콘솔에 빈 메시지가 전송된 것으로 표시됩니다. 이 로직에서 뭔가 잘못되었습니다!</Trans>
