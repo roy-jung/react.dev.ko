@@ -1,10 +1,12 @@
 ---
 title: <Suspense>
+translators: [이승효]
 ---
 
 <Intro>
 
 `<Suspense>` lets you display a fallback until its children have finished loading.
+<Trans>`<Suspense>`를 사용하면 자식이 로딩을 완료할 때까지 fallback을 표시할 수 있습니다.</Trans>
 
 
 ```js
@@ -26,6 +28,10 @@ title: <Suspense>
 #### Props {/*props*/}
 * `children`: The actual UI you intend to render. If `children` suspends while rendering, the Suspense boundary will switch to rendering `fallback`.
 * `fallback`: An alternate UI to render in place of the actual UI if it has not finished loading. Any valid React node is accepted, though in practice, a fallback is a lightweight placeholder view, such as a loading spinner or skeleton. Suspense will automatically switch to `fallback` when `children` suspends, and back to `children` when the data is ready. If `fallback` suspends while rendering, it will activate the closest parent Suspense boundary.
+<TransBlock>
+* `children`: 렌더링하려는 실제 UI입니다. 렌더링하는 동안 `children`이 일시 중단되면 서스펜스 경계가 `fallback` 렌더링으로 전환됩니다.
+* `fallback`: 로딩이 완료되지 않은 경우에 실제 UI 대신 렌더링할 대체 UI입니다. 유효한 모든 React 노드를 사용할 수 있지만, 실제로는 로딩 스피너나 스켈레톤과 같은 가벼운 플레이스홀더 뷰가 fallback으로 사용됩니다. 서스펜스는 `children`이 일시 중단되면 자동으로 `fallback`으로 전환되고, 데이터가 준비되면 다시 `children`으로 전환됩니다. 렌더링 중에 `fallback`이 일시 중단되면 가장 가까운 상위 서스펜스 경계가 활성화됩니다.
+</TransBlock>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
@@ -33,14 +39,20 @@ title: <Suspense>
 - If Suspense was displaying content for the tree, but then it suspended again, the `fallback` will be shown again unless the update causing it was caused by [`startTransition`](/reference/react/startTransition) or [`useDeferredValue`](/reference/react/useDeferredValue).
 - If React needs to hide the already visible content because it suspended again, it will clean up [layout Effects](/reference/react/useLayoutEffect) in the content tree. When the content is ready to be shown again, React will fire the layout Effects again. This ensures that Effects measuring the DOM layout don't try to do this while the content is hidden.
 - React includes under-the-hood optimizations like *Streaming Server Rendering* and *Selective Hydration* that are integrated with Suspense. Read [an architectural overview](https://github.com/reactwg/react-18/discussions/37) and watch [a technical talk](https://www.youtube.com/watch?v=pj5N-Khihgc) to learn more.
+<TransBlock>
+- React는 처음 마운트하기 전에 일시 중단된 렌더링의 상태를 보존하지 않습니다. 컴포넌트가 로드되면 React는 일시 중단된 트리의 렌더링을 처음부터 다시 시도합니다.
+- 서스펜스가 트리에 대한 콘텐츠를 표시하고 있다가 다시 일시 중단된 경우, 그 원인이 된 업데이트가 [`startTransition`](/reference/react/startTransition)이나 [`useDeferredValue`](/reference/react/useDeferredValue)로 인한 것이 아니라면 `fallback`이 다시 표시됩니다.
+- React에는 Suspense와 통합된 **스트리밍 서버 렌더링** 및 **선택적 이벤트 보충**과 같은 내부 최적화가 포함되어 있습니다. [아키텍처 개요](https://github.com/reactwg/react-18/discussions/37)를 읽고 [기술 강연](https://www.youtube.com/watch?v=pj5N-Khihgc)을 시청하여 자세히 알아보세요.
+</TransBlock>
 
 ---
 
 ## Usage<Trans>사용법</Trans> {/*usage*/}
 
-### Displaying a fallback while content is loading {/*displaying-a-fallback-while-content-is-loading*/}
+### Displaying a fallback while content is loading <Trans>콘텐츠를 로딩하는 동안 대체 fallback 표시하기</Trans> {/*displaying-a-fallback-while-content-is-loading*/}
 
 You can wrap any part of your application with a Suspense boundary:
+<Trans>애플리케이션의 모든 부분을 서스펜스 경계로 감쌀 수 있습니다:</Trans>
 
 ```js [[1, 1, "<Loading />"], [2, 2, "<Albums />"]]
 <Suspense fallback={<Loading />}>
@@ -49,8 +61,12 @@ You can wrap any part of your application with a Suspense boundary:
 ```
 
 React will display your <CodeStep step={1}>loading fallback</CodeStep> until all the code and data needed by <CodeStep step={2}>the children</CodeStep> has been loaded.
+<Trans>React는 <CodeStep step={2}>자식</CodeStep>에게 필요한 모든 코드와 데이터가 로드될 때까지 <CodeStep step={1}>로딩 fallback</CodeStep>을 표시합니다.</Trans>
 
 In the example below, the `Albums` component *suspends* while fetching the list of albums. Until it's ready to render, React switches the closest Suspense boundary above to show the fallback--your `Loading` component. Then, when the data loads, React hides the `Loading` fallback and renders the `Albums` component with data.
+<Trans>
+아래 예시에서는 앨범 목록을 가져오는 동안 `Albums` 컴포넌트가 *일시 중단*됩니다. 렌더링할 준비가 될 때까지 React는 위의 가장 가까운 서스펜스 경계를 전환하여 fallback, 즉 `Loading` 컴포넌트를 표시합니다. 그런 다음 데이터가 로드되면 React는 `Loading` fallback을 숨기고 데이터와 함께 `Albums` 컴포넌트를 렌더링합니다.
+</Trans>
 
 <Sandpack>
 
