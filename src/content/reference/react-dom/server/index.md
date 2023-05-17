@@ -18,10 +18,10 @@ These methods are only available in the environments with [Node.js Streams:](htt
 <Trans>다음 메서드들은 [Node.js 스트림](https://nodejs.org/api/stream.html)이 있는 환경에서만 사용할 수 있습니다:</Trans>
 
 * [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream) renders a React tree to a pipeable [Node.js Stream.](https://nodejs.org/api/stream.html)
-<Trans>[`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)은 리액트 트리를 파이프 가능한 [Node.js Stream](https://nodejs.org/api/stream.html)으로 렌더링합니다.</Trans>
+<Trans>[`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)은 React 트리를 파이프 가능한 [Node.js Stream](https://nodejs.org/api/stream.html)으로 렌더링합니다.</Trans>
 
 * [`renderToStaticNodeStream`](/reference/react-dom/server/renderToStaticNodeStream) renders a non-interactive React tree to a [Node.js Readable Stream.](https://nodejs.org/api/stream.html#readable-streams)
-<Trans>[`renderToStaticNodeStream`](/reference/react-dom/server/renderToStaticNodeStream)은 인터렉티브하지 않은 리액트 트리를 [Node.js를 읽을 수 있는 스트림](https://nodejs.org/api/stream.html#readable-streams)으로 렌더링합니다.</Trans>
+<Trans>[`renderToStaticNodeStream`](/reference/react-dom/server/renderToStaticNodeStream)은 인터렉티브하지 않은 React 트리를 [Node.js를 읽을 수 있는 스트림](https://nodejs.org/api/stream.html#readable-streams)으로 렌더링합니다.</Trans>
 
 ---
 
@@ -31,7 +31,7 @@ These methods are only available in the environments with [Web Streams](https://
 <Trans>다음 메서드들은 브라우저, Deno 및 일부 최신 엣지 런타임을 포함하는 [웹 스트림](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)이 있는 환경에서만 사용할 수 있습니다:</Trans>
 
 * [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream) renders a React tree to a [Readable Web Stream.](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
-<Trans outdent>[`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)은 리액트 트리를 [읽기 가능한 웹 스트림](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)으로 렌더링합니다.</Trans>
+<Trans outdent>[`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)은 React 트리를 [읽기 가능한 웹 스트림](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)으로 렌더링합니다.</Trans>
 
 ---
 
@@ -41,10 +41,10 @@ These methods can be used in the environments that don't support streams:
 <Trans>다음 메서드들은 스트림을 지원하지 않는 환경에서 사용할 수 있습니다:</Trans>
 
 * [`renderToString`](/reference/react-dom/server/renderToString) renders a React tree to a string.
-<Trans>[`renderToString`](/reference/react-dom/server/renderToString)은 리액트 트리를 문자열로 렌더링합니다.</Trans>
+<Trans>[`renderToString`](/reference/react-dom/server/renderToString)은 React 트리를 문자열로 렌더링합니다.</Trans>
 
 * [`renderToStaticMarkup`](/reference/react-dom/server/renderToStaticMarkup) renders a non-interactive React tree to a string.
-<Trans>[`renderToStaticMarkup`](/reference/react-dom/server/renderToStaticMarkup)은 비대화형 리액트 트리를 문자열로 렌더링합니다.</Trans>
+<Trans>[`renderToStaticMarkup`](/reference/react-dom/server/renderToStaticMarkup)은 비대화형 React 트리를 문자열로 렌더링합니다.</Trans>
 
 They have limited functionality compared to the streaming APIs.
 <Trans>이들은 스트리밍 API에 비해 기능이 제한적입니다.</Trans>
@@ -61,4 +61,4 @@ These APIs will be removed in a future major version of React.
 </Deprecated>
 
 * [`renderToNodeStream`](/reference/react-dom/server/renderToNodeStream) renders a React tree to a [Node.js Readable stream.](https://nodejs.org/api/stream.html#readable-streams) (Deprecated.)
-<Trans outdent>[`renderToNodeStream`](/reference/react-dom/server/renderToNodeStream)은 리액트 트리를 [Node.js를 읽을 수 있는 스트림](https://nodejs.org/api/stream.html#readable-streams)으로 렌더링합니다. (지원 중단됨) </Trans>
+<Trans outdent>[`renderToNodeStream`](/reference/react-dom/server/renderToNodeStream)은 React 트리를 [Node.js를 읽을 수 있는 스트림](https://nodejs.org/api/stream.html#readable-streams)으로 렌더링합니다. (지원 중단됨) </Trans>
