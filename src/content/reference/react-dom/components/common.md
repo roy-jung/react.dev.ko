@@ -1325,7 +1325,7 @@ function Row({ isSelected, size }) {
 ### Manipulating a DOM node with a ref <Trans>ref로 DOM 노드 조작하기</Trans> {/*manipulating-a-dom-node-with-a-ref*/}
 
 Sometimes, you'll need to get the browser DOM node associated with a tag in JSX. For example, if you want to focus an `<input>` when a button is clicked, you need to call [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) on the browser `<input>` DOM node.
-<Trans>때로는 JSX에서 태그와 연결된 브라우저 DOM 노드를 가져와야 할 수도 있습니다. 예를 들어 버튼이 클릭될 때 `<input>`에 포커스를 맞추려면 브라우저 `<input>` DOM 노드에서 [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)를 호출해야 합니다.</Trans>
+<Trans>때로는 JSX에서 태그와 연결된 브라우저 DOM 노드를 가져와야 할 수도 있습니다. 예를 들어 버튼이 클릭될 때 `<input>`에 초점을 맞추려면 브라우저 `<input>` DOM 노드에서 [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)를 호출해야 합니다.</Trans>
 
 To obtain the browser DOM node for a tag, [declare a ref](/reference/react/useRef) and pass it as the `ref` attribute to that tag:
 <Trans>태그에 대한 브라우저 DOM 노드를 가져오려면 [ref 선언하기](/reference/react/useRef)를 통해 해당 태그에 `ref` 속성으로 전달합니다:</Trans>
@@ -1582,7 +1582,7 @@ input { margin-left: 10px; }
 ### Handling focus events <Trans>포커스 이벤트 처리하기</Trans> {/*handling-focus-events*/}
 
 In React, [focus events](#focusevent-handler) bubble. You can use the `currentTarget` and `relatedTarget` to differentiate if the focusing or blurring events originated from outside of the parent element. The example shows how to detect focusing a child, focusing the parent element, and how to detect focus entering or leaving the whole subtree.
-<Trans>React에는 [포커스 이벤트](#focusevent-handler) 버블이 있습니다. `currentTarget` 와 `relatedTarget`을 사용하여 포커싱 또는 블러링 이벤트가 부모 엘리먼트 외부에서 발생했는지 구분할 수 있습니다. 이 예는 자식 요소 포커싱, 부모 요소 포커싱, 전체 하위 트리에 들어오고 나가는 포커스를 감지하는 방법을 보여줍니다.</Trans>
+<Trans>React에는 [포커스 이벤트](#focusevent-handler) 버블이 있습니다. `currentTarget` 와 `relatedTarget`을 사용하여 포커스나 블러 이벤트가 부모 엘리먼트 외부에서 발생했는지 구분할 수 있습니다. 이 예는 자식 요소 포커싱, 부모 요소 포커싱, 전체 하위 트리에 들어오고 나가는 포커스를 감지하는 방법을 보여줍니다.</Trans>
 
 <Sandpack>
 
