@@ -40,7 +40,7 @@ The `react-dom` package provides two additional entry points:
 
 ---
 
-## Deprecated APIs <Trans>더 이상 사용되지 않는 API</Trans> {/*deprecated-apis*/}
+## Deprecated APIs <Trans>지원 중단된 API들</Trans> {/*deprecated-apis*/}
 
 <Deprecated>
 
