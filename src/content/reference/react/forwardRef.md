@@ -155,7 +155,7 @@ Keep in mind that exposing a ref to the DOM node inside your component makes it 
 #### Focusing a text input <Trans>텍스트 input에 초점 맞추기</Trans> {/*focusing-a-text-input*/}
 
 Clicking the button will focus the input. The `Form` component defines a ref and passes it to the `MyInput` component. The `MyInput` component forwards that ref to the browser `<input>`. This lets the `Form` component focus the `<input>`.
-<Trans>버튼을 클릭하면 input에 초점이 맞춰집니다. `Form` 컴포넌트는 ref를 정의하고 이를 `MyInput` 컴포넌트로 전달합니다. `MyInput` 컴포넌트는 해당 ref를 브라우저 `<input>`으로 전달합니다. 이렇게 하면 `Form` 컴포넌트가 `<input>`에 포커스를 맞출 수 있습니다.</Trans>
+<Trans>버튼을 클릭하면 input에 초점이 맞춰집니다. `Form` 컴포넌트는 ref를 정의하고 이를 `MyInput` 컴포넌트로 전달합니다. `MyInput` 컴포넌트는 해당 ref를 브라우저 `<input>`으로 전달합니다. 이렇게 하면 `Form` 컴포넌트가 `<input>`에 초점을 맞출 수 있습니다.</Trans>
 
 <Sandpack>
 

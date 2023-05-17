@@ -14,7 +14,7 @@ translators: [서민택, 정현수, 정재남]
 <Intro>
 
 React automatically updates the [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction) to match your render output, so your components won't often need to manipulate it. However, sometimes you might need access to the DOM elements managed by React--for example, to focus a node, scroll to it, or measure its size and position. There is no built-in way to do those things in React, so you will need a *ref* to the DOM node.
-<Trans>React는 렌더링 출력과 일치하도록 [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction)을 자동으로 업데이트하므로 컴포넌트가 자주 조작할 필요가 없습니다. 하지만 때로는 노드에 포커스를 맞추거나 스크롤하거나 크기와 위치를 측정하기 위해 React가 관리하는 DOM 요소에 접근해야 할 수도 있습니다. React에는 이러한 작업을 수행할 수 있는 빌트인된 방법이 없으므로 DOM 노드에 대한 *ref*가 필요합니다.</Trans>
+<Trans>React는 렌더링 출력과 일치하도록 [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction)을 자동으로 업데이트하므로 컴포넌트가 자주 조작할 필요가 없습니다. 하지만 때로는 노드에 초점을 맞추거나 스크롤하거나 크기와 위치를 측정하기 위해 React가 관리하는 DOM 요소에 접근해야 할 수도 있습니다. React에는 이러한 작업을 수행할 수 있는 빌트인된 방법이 없으므로 DOM 노드에 대한 *ref*가 필요합니다.</Trans>
 
 </Intro>
 
@@ -703,7 +703,7 @@ for (let i = 0; i < 20; i++) {
 ## Best practices for DOM manipulation with refs<Trans>ref를 이용한 DOM 조작 모범 사례</Trans> {/*best-practices-for-dom-manipulation-with-refs*/}
 
 Refs are an escape hatch. You should only use them when you have to "step outside React". Common examples of this include managing focus, scroll position, or calling browser APIs that React does not expose.
-<Trans>Ref는 탈출구입니다. "React 외부로 나가야" 할 때만 사용해야 합니다. 일반적인 예로는 포커스, 스크롤 위치를 관리하거나 React가 노출하지 않는 브라우저 API를 호출하는 것이 있습니다.</Trans>
+<Trans>Ref는 탈출구입니다. "React 외부로 나가야" 할 때만 사용해야 합니다. 일반적인 예로는 초점을 맞추거나, 스크롤 위치를 관리하거나 React가 노출하지 않는 브라우저 API를 호출하는 것이 있습니다.</Trans>
 
 If you stick to non-destructive actions like focusing and scrolling, you shouldn't encounter any problems. However, if you try to **modify** the DOM manually, you can risk conflicting with the changes React is making.
 <Trans>포커스나 스크롤 같은 비파괴적 동작을 고수한다면 문제가 발생하지 않을 것입니다. 그러나 DOM을 수동으로 **수정**하려고 하면 React가 수행하는 변경 사항과 충돌할 위험이 있습니다.</Trans>
@@ -914,7 +914,7 @@ button { display: block; margin-bottom: 10px; }
 <Solution>
 
 Add a ref to the input, and call `focus()` on the DOM node to focus it:
-<Trans>input에 ref를 추가하고 DOM 노드에서 `focus()`를 호출하여 포커스를 지정하세요:</Trans>
+<Trans>input에 ref를 추가하고 DOM 노드에서 `focus()`를 호출하여 초점을 맞추세요:</Trans>
 
 <Sandpack>
 
