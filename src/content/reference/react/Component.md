@@ -111,6 +111,7 @@ Reading `this.props` in class components is equivalent to [declaring props](/lea
 <Deprecated>
 
 This API will be removed in a future major version of React. [Use `createRef` instead.](/reference/react/createRef)
+<Trans>이 API는 향후 React의 주요 버전에서 제거될 예정입니다. </Trans>
 
 </Deprecated>
 
@@ -500,6 +501,7 @@ Reading an external data source and forcing class components to re-render in res
 <Deprecated>
 
 This API will be removed in a future major version of React. [Use `Context.Provider` instead.](/reference/react/createContext#provider)
+<Trans>이 API는 향후 React의 주요 버전에서 제거될 예정입니다.</Trans>
 
 </Deprecated>
 
@@ -886,6 +888,7 @@ There is no direct equivalent to `UNSAFE_componentWillUpdate` in function compon
 <Deprecated>
 
 This API will be removed in a future major version of React. [Use `static contextType` instead.](#static-contexttype)
+<Trans>이 API는 향후 React의 주요 버전에서 제거될 예정입니다.</Trans>
 
 </Deprecated>
 
@@ -898,6 +901,7 @@ Lets you specify which [legacy context](https://reactjs.org/docs/legacy-context.
 <Deprecated>
 
 This API will be removed in a future major version of React. [Use `static contextType` instead.](#static-contexttype)
+<Trans>이 API는 향후 React의 주요 버전에서 제거될 예정입니다.</Trans>
 
 </Deprecated>
 

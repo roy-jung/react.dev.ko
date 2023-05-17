@@ -1,7 +1,7 @@
 ---
 title: Removing Effect Dependencies
 translatedTitle: Effect 의존성 제거하기
-translators: [김아영, 최민정, 정재남]
+translators: [김아영, 최민정, 정재남, 이나령]
 ---
 
 <Intro>
@@ -390,7 +390,7 @@ Let's say that you wanted to run the Effect "only on mount". You've read that [e
 <Trans>"마운트할 때만" Effect를 실행하고 싶다고 가정해 봅시다. [빈(`[]`) 의존성](/learn/lifecycle-of-reactive-effects#what-an-effect-with-empty-dependencies-means)이 그렇게 한다는 것을 읽었으므로 린터를 무시하고 `[]` 의존성을 강제로 지정하기로 결정했습니다.</Trans>
 
 This counter was supposed to increment every second by the amount configurable with the two buttons. However, since you "lied" to React that this Effect doesn't depend on anything, React forever keeps using the `onTick` function from the initial render. [During that render,](/learn/state-as-a-snapshot#rendering-takes-a-snapshot-in-time) `count` was `0` and `increment` was `1`. This is why `onTick` from that render always calls `setCount(0 + 1)` every second, and you always see `1`. Bugs like this are harder to fix when they're spread across multiple components.
-<Trans>이 카운터는 두 개의 버튼으로 설정할 수 있는 양만큼 매초마다 증가해야 합니다. 하지만 이 Effect가 아무 것도 의존하지 않는다고 React에 "거짓말"을 했기 때문에, React는 초기 렌더링에서 계속 `onTick` 함수를 사용합니다. [이 렌더링에서](/learn/state-as-a-snapshot#rendering-takes-a-snapshot-in-time) 카운트는 `0`이었고 증가분은 `1`이었습니다. 그래서 이 렌더링의 `onTick`은 항상 매초마다 `setCount(0 + 1)`을 호출하고 항상 `1`이 표시됩니다. 이와 같은 버그는 여러 컴포넌트에 분산되어 있을 때 수정하기가 더 어렵습니다.</Trans>
+<Trans>이 카운터는 두 개의 버튼으로 설정할 수 있는 양만큼 매초마다 증가해야 합니다. 하지만 이 Effect가 아무 것도 의존하지 않는다고 React에 "거짓말"을 했기 때문에, React는 초기 렌더링에서 계속 `onTick` 함수를 사용합니다. [이 렌더링에서](/learn/state-as-a-snapshot#rendering-takes-a-snapshot-in-time) `count`는 `0`이었고 `increment`는 `1`이었습니다. 그래서 이 렌더링의 `onTick`은 항상 매초마다 `setCount(0 + 1)`를 호출하고 항상 `1`이 표시됩니다. 이와 같은 버그는 여러 컴포넌트에 분산되어 있을 때 수정하기가 더 어렵습니다.</Trans>
 
 There's always a better solution than ignoring the linter! To fix this code, you need to add `onTick` to the dependency list. (To ensure the interval is only setup once, [make `onTick` an Effect Event.](/learn/separating-events-from-effects#reading-latest-props-and-state-with-effect-events))
 <Trans>린터를 무시하는 것보다 더 좋은 해결책은 항상 있습니다! 이 코드를 수정하려면 의존성 목록에 `onTick`을 추가해야 합니다. (interval을 한 번만 설정하려면 [onTick을 Effect Event로 만드세요.](/learn/separating-events-from-effects#reading-latest-props-and-state-with-effect-events))</Trans>
@@ -735,7 +735,7 @@ function ChatRoom({ roomId }) {
 ```
 
 The problem is that every time `isMuted` changes (for example, when the user presses the "Muted" toggle), the Effect will re-synchronize, and reconnect to the chat. This is not the desired user experience! (In this example, even disabling the linter would not work--if you do that, `isMuted` would get "stuck" with its old value.)
-<Trans>문제는 (사용자가 'Muted' 토글을 누르는 등) `isMuted`가 변경될 때마다 Effect가 다시 동기화되고 채팅에 다시 연결된다는 점입니다. 이는 바람직한 사용자 경험이 아닙니다! (이 예에서는 린터를 비활성화해도 작동하지 않습니다. 그렇게 하면 `isMuted`가 이전 값으로 '고착'됩니다.)</Trans>
+<Trans>문제는 (사용자가 "Muted" 토글을 누르는 등) `isMuted`가 변경될 때마다 Effect가 다시 동기화되고 채팅에 다시 연결된다는 점입니다. 이는 바람직한 사용자 경험이 아닙니다! (이 예에서는 린터를 비활성화해도 작동하지 않습니다. 그렇게 하면 `isMuted`가 이전 값으로 '고착'됩니다.)</Trans>
 
 To solve this problem, you need to extract the logic that shouldn't be reactive out of the Effect. You don't want this Effect to "react" to the changes in `isMuted`. [Move this non-reactive piece of logic into an Effect Event:](/learn/separating-events-from-effects#declaring-an-effect-event)
 <Trans>이 문제를 해결하려면 Effect에서 반응해서는 안 되는 로직을 추출해야 합니다. 이 Effect가 `isMuted`의 변경에 "반응"하지 않기를 원합니다. [이 비반응 로직을 Effect Event로 옮기면 됩니다](/learn/separating-events-from-effects#declaring-an-effect-event):</Trans>
@@ -1340,7 +1340,7 @@ export default function Timer() {
 <Solution>
 
 You want to update the `count` state to be `count + 1` from inside the Effect. However, this makes your Effect depend on `count`, which changes with every tick, and that's why your interval gets re-created on every tick.
-<Trans>Effect 내부에서 'count' state를 'count + 1'로 업데이트하고 싶습니다. 그러나 이렇게 하면 Effect가 매 tick마다 변경되는 `count`에 의존하게되므로 매 tick마다 interval이 다시 만들어집니다.</Trans>
+<Trans>Effect 내부에서 `count` state를 `count + 1`로 업데이트하고 싶습니다. 그러나 이렇게 하면 Effect가 매 tick마다 변경되는 `count`에 의존하게되므로 매 tick마다 interval이 다시 만들어집니다.</Trans>
 
 To solve this, use the [updater function](/reference/react/useState#updating-state-based-on-the-previous-state) and write `setCount(c => c + 1)` instead of `setCount(count + 1)`:
 <Trans>이 문제를 해결하려면 [업데이터 함수](/reference/react/useState#updating-state-based-on-the-previous-state)를 사용하여 `setCount(count + 1)` 대신 `setCount(c => c + 1)`를 작성합니다:</Trans>
@@ -1379,7 +1379,7 @@ Instead of reading `count` inside the Effect, you pass a `c => c + 1` instructio
 #### Fix a retriggering animation<Trans>애니메이션을 다시 촉발하는 현상 고치기</Trans> {/*fix-a-retriggering-animation*/}
 
 In this example, when you press "Show", a welcome message fades in. The animation takes a second. When you press "Remove", the welcome message immediately disappears. The logic for the fade-in animation is implemented in the `animation.js` file as plain JavaScript [animation loop.](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) You don't need to change that logic. You can treat it as a third-party library. Your Effect creates an instance of `FadeInAnimation` for the DOM node, and then calls `start(duration)` or `stop()` to control the animation. The `duration` is controlled by a slider. Adjust the slider and see how the animation changes.
-<Trans>이 예에서는 'Show'를 누르면 환영 메시지가 페이드인 합니다. 애니메이션은 1초 정도 걸립니다. "Remove"를 누르면 환영 메시지가 즉시 사라집니다. 페이드인 애니메이션의 로직은 animation.js 파일에서 일반 JavaScript 애니메이션 루프로 구현됩니다. 이 로직을 변경할 필요는 없습니다. 서드파티 라이브러리로 처리하면 됩니다. Effect는 DOM 노드에 대한 FadeInAnimation 인스턴스를 생성한 다음 `start(duration)` 또는 `stop()`을 호출하여 애니메이션을 제어합니다. duration은 슬라이더로 제어합니다. 슬라이더를 조정하여 애니메이션이 어떻게 변하는지 확인하세요.</Trans>
+<Trans>이 예시에서는 “Show”를 누르면 환영 메시지가 페이드인 합니다. 애니메이션은 1초 정도 걸립니다.“Remove”를 누르면 환영 메시지가 즉시 사라집니다. 페이드인 애니메이션의 로직은 `animation.js` 파일에서 일반 JavaScript 애니메이션 루프로 구현됩니다. 이 로직을 변경할 필요는 없습니다. 서드파티 라이브러리로 처리하면 됩니다. Effect는 DOM 노드에 대한 `FadeInAnimation` 인스턴스를 생성한 다음 `start(duration)` 또는 `stop()`을 호출하여 애니메이션을 제어합니다. `duration`은 슬라이더로 제어합니다. 슬라이더를 조정하여 애니메이션이 어떻게 변하는지 확인하세요.</Trans>
 
 This code already works, but there is something you want to change. Currently, when you move the slider that controls the `duration` state variable, it retriggers the animation. Change the behavior so that the Effect does not "react" to the `duration` variable. When you press "Show", the Effect should use the current `duration` on the slider. However, moving the slider itself should not by itself retrigger the animation.
 <Trans>이 코드는 이미 작동하지만 변경하고 싶은 부분이 있습니다. 현재 `duration` state 변수를 제어하는 슬라이더를 움직이면 애니메이션이 다시 촉발됩니다. Effect가 `duration` 변수에 "반응"하지 않도록 동작을 변경하세요. "Show"를 누르면 Effect는 슬라이더의 현재 `duration을` 사용해야 합니다. 그러나 슬라이더를 움직이는 것만으로 애니메이션이 다시 촉발되어서는 안 됩니다.</Trans>
