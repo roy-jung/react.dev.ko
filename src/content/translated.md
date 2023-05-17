@@ -6,7 +6,7 @@ title: 번역 진행상황
 last updated @ 2023-05-17 18:00
 </Intro>
 
-## Reference - 진행중 (done: 45 / total: 59) {/*reference*/}
+## Reference - 진행중 (done: 48 / total: 59) {/*reference*/}
 
 |     | title                                                                |     | title                                                                                  |
 | :-: | :------------------------------------------------------------------- | :-: | :------------------------------------------------------------------------------------- |
@@ -20,12 +20,12 @@ last updated @ 2023-05-17 18:00
 |  ✅  | [5-7. useImperativeHandle](/reference/react/useImperativeHandle)     |  ▢  | [9-3. findDOMNode](/reference/react-dom/findDOMNode)                                   |
 |  ✅  | [5-8. useInsertionEffect](/reference/react/useInsertionEffect)       |  ✅  | [9-4. hydrate](/reference/react-dom/hydrate)                                           |
 |  ✅  | [5-9. useLayoutEffect](/reference/react/useLayoutEffect)             |  ✅  | [9-5. render](/reference/react-dom/render)                                             |
-|  ✅  | [5-10. useMemo](/reference/react/useMemo)                            |  ▢  | [9-6. unmountComponentAtNode](/reference/react-dom/unmountComponentAtNode)             |
+|  ✅  | [5-10. useMemo](/reference/react/useMemo)                            |  ✅  | [9-6. unmountComponentAtNode](/reference/react-dom/unmountComponentAtNode)             |
 |  ✅  | [5-11. useReducer](/reference/react/useReducer)                      |  ✅  | [10. Client APIs](/reference/react-dom/client)                                         |
 |  ✅  | [5-12. useRef](/reference/react/useRef)                              |  ✅  | [10-1. createRoot](/reference/react-dom/client/createRoot)                             |
 |  ✅  | [5-13. useState](/reference/react/useState)                          |  ✅  | [10-2. hydrateRoot](/reference/react-dom/client/hydrateRoot)                           |
 |  ✅  | [5-14. useSyncExternalStore](/reference/react/useSyncExternalStore)  |  ✅  | [11. Server APIs](/reference/react-dom/server)                                         |
-|  ✅  | [5-15. useTransition](/reference/react/useTransition)                |  ▢  | [11-1. renderToNodeStream](/reference/react-dom/server/renderToNodeStream)             |
+|  ✅  | [5-15. useTransition](/reference/react/useTransition)                |  ✅  | [11-1. renderToNodeStream](/reference/react-dom/server/renderToNodeStream)             |
 |  ✅  | [6. Components](/reference/react/components)                         |  ▢  | [11-2. renderToPipeableStream](/reference/react-dom/server/renderToPipeableStream)     |
 |  ✅  | [6-1. `<Fragment>` (`<>`)](/reference/react/Fragment)                |  ✅  | [11-3. renderToStaticMarkup](/reference/react-dom/server/renderToStaticMarkup)         |
 |  ✅  | [6-2. `<Profiler>`](/reference/react/Profiler)                       |  ▢  | [11-4. renderToStaticNodeStream](/reference/react-dom/server/renderToStaticNodeStream) |
@@ -34,7 +34,7 @@ last updated @ 2023-05-17 18:00
 |  ✅  | [7. APIs](/reference/react/apis)                                     |  ▢  | [12-1. Children](/reference/react/Children)                                            |
 |  ✅  | [7-1. createContext](/reference/react/createContext)                 |  ✅  | [12-2. cloneElement](/reference/react/cloneElement)                                    |
 |  ✅  | [7-2. forwardRef](/reference/react/forwardRef)                       |  ▢  | [12-3. Component](/reference/react/Component)                                          |
-|  ✅  | [7-3. lazy](/reference/react/lazy)                                   |  ▢  | [12-4. createElement](/reference/react/createElement)                                  |
+|  ✅  | [7-3. lazy](/reference/react/lazy)                                   |  ✅  | [12-4. createElement](/reference/react/createElement)                                  |
 |  ✅  | [7-4. memo](/reference/react/memo)                                   |  ▢  | [12-5. createFactory](/reference/react/createFactory)                                  |
 |  ✅  | [7-5. startTransition](/reference/react/startTransition)             |  ▢  | [12-6. createRef](/reference/react/createRef)                                          |
 |  ✅  | [8. Components](/reference/react-dom/components)                     |  ✅  | [12-7. isValidElement](/reference/react/isValidElement)                                |

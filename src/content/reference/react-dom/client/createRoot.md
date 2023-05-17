@@ -23,7 +23,7 @@ const root = createRoot(domNode, options?)
 ### `createRoot(domNode, options?)` {/*createroot*/}
 
 Call `createRoot` to create a React root for displaying content inside a browser DOM element.
-<Trans>`createRoot`를 호출하면 브라우저 DOM 앨리먼트 안에 콘텐츠를 표시할 수 있는 React 루트를 생성합니다.</Trans>
+<Trans>`createRoot`를 호출하면 브라우저 DOM 엘리먼트 안에 콘텐츠를 표시할 수 있는 React 루트를 생성합니다.</Trans>
 
 ```js
 import { createRoot } from 'react-dom/client';
@@ -94,7 +94,7 @@ React will display `<App />` in the `root`, and take over managing the DOM insid
 #### Parameters<Trans>매개변수</Trans> {/*root-render-parameters*/}
 
 * `reactNode`: A *React node* that you want to display. This will usually be a piece of JSX like `<App />`, but you can also pass a React element constructed with [`createElement()`](/reference/react/createElement), a string, a number, `null`, or `undefined`.
-<Trans outdent>`reactNode`: 표시하려는 *React 노드*. 일반적으로 `<App />`과 같은 JSX 조각이 되지만, [`createElement()`](/reference/react/createElement)로 작성한 React 앨리먼트, 문자열, 숫자, `null`, `undefined` 등을 전달할 수도 있습니다.</Trans>
+<Trans outdent>`reactNode`: 표시하려는 *React 노드*. 일반적으로 `<App />`과 같은 JSX 조각이 되지만, [`createElement()`](/reference/react/createElement)로 작성한 React 엘리먼트, 문자열, 숫자, `null`, `undefined` 등을 전달할 수도 있습니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*root-render-returns*/}
 

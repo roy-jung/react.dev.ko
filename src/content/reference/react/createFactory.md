@@ -5,7 +5,7 @@ title: createFactory
 <Deprecated>
 
 This API will be removed in a future major version of React. [See the alternatives.](#alternatives)
-
+<Trans>이 API는 향후 React의 주요 버전에서 제거될 예정입니다.</Trans>
 </Deprecated>
 
 <Intro>
