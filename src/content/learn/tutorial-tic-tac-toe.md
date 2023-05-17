@@ -350,7 +350,7 @@ Now let's have a look at the files in the starter code.
 #### `App.js` {/*appjs*/}
 
 The code in `App.js` creates a _component_. In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application. Let's look at the component line by line to see what's going on:
-<Trans>`App.js`의 코드는 _컴포넌트_ 를 생성합니다. React에서는 컴포넌트가 사용자 인터페이스의 일부를 표시하는 재사용 가능한 코드 조각입니다. 컴포넌트는 애플리케이션의 UI 앨리먼트를 렌더링, 관리, 업데이트하는 데 사용됩니다. 컴포넌트를 한 줄씩 살펴보면서 무슨 일이 일어나는지 살펴보겠습니다:</Trans>
+<Trans>`App.js`의 코드는 _컴포넌트_ 를 생성합니다. React에서는 컴포넌트가 사용자 인터페이스의 일부를 표시하는 재사용 가능한 코드 조각입니다. 컴포넌트는 애플리케이션의 UI 엘리먼트를 렌더링, 관리, 업데이트하는 데 사용됩니다. 컴포넌트를 한 줄씩 살펴보면서 무슨 일이 일어나는지 살펴보겠습니다:</Trans>
 
 ```js {1}
 export default function Square() {
@@ -368,7 +368,7 @@ export default function Square() {
 ```
 
 The second line returns a button. The `return` JavaScript keyword means whatever comes after is returned as a value to the caller of the function. `<button>` is a *JSX element*. A JSX element is a combination of JavaScript code and HTML tags that describes what you'd like to display. `className="square"` is a button property or *prop* that tells CSS how to style the button. `X` is the text displayed inside of the button and `</button>` closes the JSX element to indicate that any following content shouldn't be placed inside the button.
-<Trans>두 번째 줄은 버튼을 반환합니다. JavaScript의 `return` 키워드는 뒤에 오는 모든 것이 함수 호출자에게 값으로 반환됨을 의미합니다. `<button>`은 *JSX 앨리먼트*입니다. JSX 앨리먼트는 JavaScript 코드와 HTML 태그들의 조합으로, 표시할 내용을 설명합니다. `className="square"`는 버튼 *prop* 또는 프로퍼티로, CSS에 버튼의 스타일을 지정하는 방법을 알려줍니다. `X`는 버튼 내부에 표시되는 텍스트이며, `</button>`은 JSX 앨리먼트를 닫아 버튼 내부에 다음 콘텐츠를 배치해서는 안 됨을 나타냅니다.</Trans>
+<Trans>두 번째 줄은 버튼을 반환합니다. JavaScript의 `return` 키워드는 뒤에 오는 모든 것이 함수 호출자에게 값으로 반환됨을 의미합니다. `<button>`은 *JSX 엘리먼트*입니다. JSX 엘리먼트는 JavaScript 코드와 HTML 태그들의 조합으로, 표시할 내용을 설명합니다. `className="square"`는 버튼 *prop* 또는 프로퍼티로, CSS에 버튼의 스타일을 지정하는 방법을 알려줍니다. `X`는 버튼 내부에 표시되는 텍스트이며, `</button>`은 JSX 엘리먼트를 닫아 버튼 내부에 다음 콘텐츠를 배치해서는 안 됨을 나타냅니다.</Trans>
 
 #### `styles.css` {/*stylescss*/}
 
@@ -430,7 +430,7 @@ You'll get this error:
 </ConsoleBlock>
 
 React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use *fragments* (`<>` and `</>`) to wrap multiple adjacent JSX elements like this:
-<Trans>React 컴포넌트는 두 개의 버튼처럼 인접한 여러 개의 JSX 앨리먼트가 아닌 단일 JSX 앨리먼트를 반환해야 합니다. 이 문제를 해결하려면 *fragments*(`<>` 와 `</>`)를 사용하여 다음과 같이 여러 개의 인접한 JSX 앨리먼트를 감쌀 수 있습니다:</Trans>
+<Trans>React 컴포넌트는 두 개의 버튼처럼 인접한 여러 개의 JSX 엘리먼트가 아닌 단일 JSX 엘리먼트를 반환해야 합니다. 이 문제를 해결하려면 *fragments*(`<>` 와 `</>`)를 사용하여 다음과 같이 여러 개의 인접한 JSX 엘리먼트를 감쌀 수 있습니다:</Trans>
 
 ```js {3-6}
 export default function Square() {
