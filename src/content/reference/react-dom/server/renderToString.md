@@ -57,7 +57,7 @@ An HTML string.
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * `renderToString` has limited Suspense support. If a component suspends, `renderToString` immediately sends its fallback as HTML.
-<Trans>`renderToString`은 서스펜스를 제한적으로 지원합니다. 컴포넌트가 일시 중단되면 `renderToString`은 즉시 HTML로 폴백을 전송합니다.</Trans>
+<Trans>`renderToString`은 Suspense를 제한적으로 지원합니다. 컴포넌트가 일시 중단되면 `renderToString`은 즉시 HTML로 폴백을 전송합니다.</Trans>
 
 * `renderToString` works in the browser, but using it in the client code is [not recommended.](#removing-rendertostring-from-the-client-code)
 <Trans>`renderToString`은 브라우저에서도 작동은 하지만, 클라이언트 코드에서 사용하는 것은 [권장하지 않습니다.](#removing-rendertostring-from-the-client-code)</Trans>
@@ -150,10 +150,10 @@ The [`flushSync`](/reference/react-dom/flushSync) call is necessary so that the 
 
 ## Troubleshooting<Trans>문제 해결</Trans> {/*troubleshooting*/}
 
-### When a component suspends, the HTML always contains a fallback<Trans>컴포넌트에 서스펜스를 도입하면 HTML에 항상 폴백만 보입니다</Trans> {/*when-a-component-suspends-the-html-always-contains-a-fallback*/}
+### When a component suspends, the HTML always contains a fallback<Trans>컴포넌트에 Suspense를 도입하면 HTML에 항상 폴백만 보입니다</Trans> {/*when-a-component-suspends-the-html-always-contains-a-fallback*/}
 
 `renderToString` does not fully support Suspense.
-<Trans>`renderToString`은 서스펜스를 완전히 지원하지 않습니다.</Trans>
+<Trans>`renderToString`은 Suspense를 완전히 지원하지 않습니다.</Trans>
 
 If some component suspends (for example, because it's defined with [`lazy`](/reference/react/lazy) or fetches data), `renderToString` will not wait for its content to resolve. Instead, `renderToString` will find the closest [`<Suspense>`](/reference/react/Suspense) boundary above it and render its `fallback` prop in the HTML. The content will not appear until the client code loads.
 <Trans>일부 컴포넌트가 일시 중단되는 경우(예: [`lazy`](/reference/react/lazy)으로 정의되었거나 데이터를 가져오는 경우) `renderToString`은 해당 콘텐츠가 해결될 때까지 기다리지 않습니다. 대신 `renderToString`은 그 위에서 가장 가까운 [`<Suspense>`](/reference/react/Suspense) 바운더리를 찾아 HTML에서 `fallback` prop을 렌더링합니다. 콘텐츠는 클라이언트 코드가 로드될 때까지 표시되지 않습니다.</Trans>

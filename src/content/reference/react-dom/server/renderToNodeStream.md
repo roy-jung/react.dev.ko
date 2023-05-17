@@ -58,7 +58,7 @@ A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams)
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * This method will wait for all [Suspense boundaries](/reference/react/Suspense) to complete before returning any output.
-<Trans>이 메서드는 출력물을 반환하기 전에 모든 [서스펜스 경계](/reference/react/Suspense)가 완료될 때까지 기다립니다.</Trans>
+<Trans>이 메서드는 출력물을 반환하기 전에 모든 [Suspense 경계](/reference/react/Suspense)가 완료될 때까지 기다립니다.</Trans>
 
 * As of React 18, this method buffers all of its output, so it doesn't actually provide any streaming benefits. This is why it's recommended that you migrate to [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream) instead.
 <Trans>React 18부터는 이 메서드가 모든 출력을 버퍼링하므로, 실제로 스트리밍의 이점을 누릴 수 없습니다. 따라서 [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)으로 마이그레이션하는 것을 권장합니다.</Trans>

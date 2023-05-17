@@ -100,9 +100,6 @@
     "unist-util-visit": "^2.0.3",
     "webpack-bundle-analyzer": "^4.5.0"
   },
-  "engines": {
-    "node": ">=12.x"
-  },
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 10,

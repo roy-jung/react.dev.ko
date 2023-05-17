@@ -427,7 +427,7 @@ function Message({ initialColor }) {
 ## Avoid duplication in state<Trans>state 중복을 피하세요</Trans> {/*avoid-duplication-in-state*/}
 
 This menu list component lets you choose a single travel snack out of several:
-<Trans>이 메뉴 목록 구성 요소를 사용하면 여러 가지 여행용 간식 중 하나를 선택할 수 있습니다:</Trans>
+<Trans>이 메뉴 목록 컴포넌트를 사용하면 여러 가지 여행용 간식 중 하나를 선택할 수 있습니다:</Trans>
 
 <Sandpack>
 

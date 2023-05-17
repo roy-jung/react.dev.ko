@@ -1218,7 +1218,7 @@ body {
 
 
 To verify that your solution works, press "Show form" and verify that the input receives focus (becomes highlighted and the cursor is placed inside). Press "Hide form" and "Show form" again. Verify the input is highlighted again.
-<Trans>솔루션이 작동하는지 확인하려면 "Show form"을 누르고 입력이 포커스를 받는지를 확인하세요(강조 표시되고 커서가 내부에 위치함). "Hide form"를 누르고, 다시 "Show form"를 누르세요. 입력이 다시 강조 표시되는지 확인하세요.</Trans>
+<Trans>솔루션이 작동하는지 확인하려면 "Show form"을 누르고 입력이 초점을 받게 되는지 확인하세요(강조 표시되고 커서가 내부에 위치함). "Hide form"를 누르고, 다시 "Show form"를 누르세요. 입력이 다시 강조 표시되는지 확인하세요.</Trans>
 
 `MyInput` should only focus _on mount_ rather than after every render. To verify that the behavior is right, press "Show form" and then repeatedly press the "Make it uppercase" checkbox. Clicking the checkbox should _not_ focus the input above it.
 <Trans>`MyInput`은 모든 렌더링 이후가 아니라 _마운트에만_ 집중해야 합니다. 동작이 올바른지 확인하려면 "Show form"을 누른 다음 "Make it uppercase" 확인란을 반복해서 누릅니다. 확인란을 클릭해도 위의 input에 초점이 맞춰지지 _않아야_ 합니다.</Trans>
@@ -1409,7 +1409,7 @@ You can't declare an Effect conditionally, but your Effect can include condition
 <Solution>
 
 Put the conditional logic inside the Effect. You will need to specify `shouldFocus` as a dependency because you are using it inside the Effect. (This means that if some input's `shouldFocus` changes from `false` to `true`, it will focus after mount.)
-<Trans>Effect 안에 조건부 로직을 넣습니다. Effect 내부에서 `shouldFocus`를 사용하기 때문에 `shouldFocus`를 의존성으로 지정해야 합니다. (즉, 일부 입력의 `shouldFocus`가 `false`에서 `true`로 변경되면 마운트 후 포커스를 맞춥니다.)</Trans>
+<Trans>Effect 안에 조건부 로직을 넣습니다. Effect 내부에서 `shouldFocus`를 사용하기 때문에 `shouldFocus`를 의존성으로 지정해야 합니다. (즉, 일부 입력의 `shouldFocus`가 `false`에서 `true`로 변경되면 마운트 후 초점을 맞춥니다.)</Trans>
 
 <Sandpack>
 

@@ -530,7 +530,7 @@ As mentioned earlier, there is no way to get the rendered output of an inner com
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives<Trans>대안</Trans> {/*alternatives*/}
 
 <Note>
 
