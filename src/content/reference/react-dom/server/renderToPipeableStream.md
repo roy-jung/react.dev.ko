@@ -12,11 +12,6 @@ translators: [유은미]
   Stream](https://nodejs.org/api/stream.html)으로 렌더링합니다.
 </Trans>
 
-<Trans>
-  `renderToPipeableStream`은 React 트리를 파이프 가능한 [Node.js
-  Stream](https://nodejs.org/api/stream.html)으로 렌더링합니다.
-</Trans>
-
 ```js
 const { pipe, abort } = renderToPipeableStream(reactNode, options?)
 ```
@@ -37,28 +32,15 @@ This API is specific to Node.js. Environments with [Web Streams,](https://develo
   대신 사용해야 합니다.
 </Trans>
 
-<Trans>
-  이 API는 Node.js 전용입니다. [Web
-  Streams,](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)를
-  사용하는 환경과 최신 엣지 런타임에서는
-  [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)을
-  대신 사용해야 합니다.
-</Trans>
-
 </Note>
 
 ---
 
-## Reference<Trans>참조</Trans> {/_reference_/} {/*referencetrans참조trans-reference*/}
+## Reference<Trans>참조</Trans> {/_reference_/} {/_referencetrans참조trans-reference_/} {/*referencetrans참조trans-reference-referencetrans참조trans-reference*/}
 
-### `renderToPipeableStream(reactNode, options?)` {/_rendertopipeablestream_/} {/*rendertopipeablestreamreactnode-options-rendertopipeablestream*/}
+### `renderToPipeableStream(reactNode, options?)` {/_rendertopipeablestream_/} {/_rendertopipeablestreamreactnode-options-rendertopipeablestream_/} {/*rendertopipeablestreamreactnode-options-rendertopipeablestream-rendertopipeablestreamreactnode-options-rendertopipeablestream*/}
 
 Call `renderToPipeableStream` to render your React tree as HTML into a [Node.js Stream.](https://nodejs.org/api/stream.html#writable-streams)
-
-<Trans>
-  renderToPipeableStream를 호출하여 React 트리를 HTML로 Node.js 스트림으로
-  렌더링하세요.
-</Trans>
 
 <Trans>
   renderToPipeableStream를 호출하여 React 트리를 HTML로 Node.js 스트림으로
@@ -84,16 +66,11 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
   호출하여 서버에서 생성된 HTML을 대화형으로 만듭니다.
 </Trans>
 
-<Trans>
-  클라이언트에서 [`hydrateRoot`](/reference/react-dom/client/hydrateRoot)를
-  호출하여 서버에서 생성된 HTML을 대화형으로 만듭니다.
-</Trans>
-
 [See more examples below.](#usage)
 
 <Trans>[아래에서 더 많은 예시를 확인하세요.](#usage)</Trans>
 
-#### Parameters<Trans>매개변수</Trans> {/_parameters_/} {/*parameterstrans매개변수trans-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_parameters_/} {/_parameterstrans매개변수trans-parameters_/} {/*parameterstrans매개변수trans-parameters-parameterstrans매개변수trans-parameters*/}
 
 - `reactNode`: A React node you want to render to HTML. For example, a JSX element like `<App />`. It is expected to represent the entire document, so the `App` component should render the `<html>` tag.
 
@@ -111,8 +88,7 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
   - **optional** `onShellError`: A callback that fires if there was an error rendering the initial shell. It receives the error as an argument. No bytes were emitted from the stream yet, and neither `onShellReady` nor `onAllReady` will get called, so you can [output a fallback HTML shell.](#recovering-from-errors-inside-the-shell)
   - **optional** `progressiveChunkSize`: The number of bytes in a chunk. [Read more about the default heuristic.](https://github.com/facebook/react/blob/14c2be8dac2d5482fda8a0906a31d239df8551fc/packages/react-server/src/ReactFizzServer.js#L210-L225)
 
-    <TransBlock>
-
+<TransBlock>
   * `reactNode`:HTML로 렌더링하려는 React 노드입니다. 예를 들어, `<App />`과 같은 JSX 엘리먼트입니다. 전체 문서를 나타낼 것으로 예상되므로 App 컴포넌트는 `<html>` 태그를 렌더링해야 합니다.
   * **optional** `options`: 스트리밍 옵션이 있는 객체입니다.
   * **optional** `bootstrapScriptContent`: 지정하면 이 문자열이 인라인 `<script>` 태그에 배치됩니다.
@@ -126,57 +102,31 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
   * **optional** `onShellReady`: [초기 셸](#specifying-what-goes-into-the-shell)이 렌더링된 직후에 실행되는 콜백입니다. 여기에서 [상태 코드](#setting-the-status-code)와 `pipe`를 설정하여 스트리밍을 시작할 수 있습니다. React는 HTML 로딩 폴백을 콘텐츠로 대체하는 인라인 `<script>` 태그와 함께 셸 뒤에 [추가 콘텐츠를 스트리밍](#streaming-more-content-as-it-loads) 합니다.
   * **optional** `onShellError`: 초기 셸을 렌더링하는 데 오류가 발생하면 호출되는 콜백입니다. 오류를 인수로 받습니다. 스트림에서 아직 바이트가 전송되지 않았고, `onShellReady`나 `onAllReady`도 호출되지 않으므로[폴백 HTML 셸을 출력](#recovering-from-errors-inside-the-shell)할 수 있습니다.
   * **optional** `progressiveChunkSize`: 청크의 바이트 수입니다. [기본 휴리스틱에 대해 자세히 알아보세요.](https://github.com/facebook/react/blob/14c2be8dac2d5482fda8a0906a31d239df8551fc/packages/react-server/src/ReactFizzServer.js#L210-L225)
-    </TransBlock>
 
-#### Returns<Trans>반환값</Trans> {/_returns_/} {/*returnstrans반환값trans-returns*/}
+</TransBlock>
+
+#### Returns<Trans>반환값</Trans> {/_returns_/} {/_returnstrans반환값trans-returns_/} {/*returnstrans반환값trans-returns-returnstrans반환값trans-returns*/}
 
 `renderToPipeableStream` returns an object with two methods:
 
-  <TransBlock>
-    * `reactNode`:HTML로 렌더링하려는 React 노드입니다. 예를 들어, `<App />`과 같은 JSX 엘리먼트입니다. 전체 문서를 나타낼 것으로 예상되므로 App 컴포넌트는 `<html>` 태그를 렌더링해야 합니다.
-    * **optional** `options`:  스트리밍 옵션이 있는 객체입니다.
-    * **optional** `bootstrapScriptContent`: 지정하면 이 문자열이 인라인 `<script>` 태그에 배치됩니다.
-    * **optional** `bootstrapScripts`: 페이지에 표시할` <script>` 태그의 문자열 URL 배열입니다. 이를 사용하여 [`hydrateRoot`](/reference/react-dom/client/hydrateRoot)를 호출하는 `<script>`를 포함할 수 있습니다. 클라이언트에서 React를 전혀 실행하지 않으려면 생략하세요.
-    * **optional** `bootstrapModules`: `bootstrapScripts`와 비슷하지만, 대신 [`<script type="module">`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)을 출력합니다.
-    * **optional** `identifierPrefix`: React가 [`useId`.](/reference/react/useId)에 의해 생성된 ID에 사용하는 문자열 접두사입니다. 같은 페이지에서 여러 루트를 사용할 때 충돌을 피하는 데 유용합니다. [`hydrateRoot`.](/reference/react-dom/client/hydrateRoot#parameters)에 전달된 것과 동일한 접두사여야 합니다.
-    * **optional** `namespaceURI`: 스트림의 루트 [namespace URI](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS#important_namespace_uris)가 포함된 문자열입니다. 기본값은 일반 HTML입니다. SVG의 경우 `'http://www.w3.org/2000/svg'`, MathML의 경우 `'http://www.w3.org/1998/Math/MathML'`을 전달합니다.
-    * **optional** `nonce`: [`script-src` Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src) 콘텐츠 보안 정책에 대한 스크립트를 허용하는 [`nonce`](http://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#nonce) 문자열입니다.
-    * **optional** `onAllReady`: [shell](#specifying-what-goes-into-the-shell)과 모든 추가 [content](#streaming-more-content-as-it-loads)를 포함하여 모든 렌더링이 완료되면 실행되는 콜백입니다. 크롤러 및 정적 생성을 위해 `onShellReady` 대신 이 옵션을 사용할 수 있습니다. 여기서 스트리밍을 시작하면 프로그레시브 로딩이 발생하지 않습니다. 스트림에는 최종 HTML이 포함됩니다.
-    * **optional** `onError`: [복구 가능](#recovering-from-errors-outside-the-shell) 혹은 [불가능](#recovering-from-errors-inside-the-shell)여부에 관계없이 서버 오류가 발생할 때마다 실행되는 콜백입니다. 기본적으로 `console.error`만 호출합니다. 이 함수를 재정의하여 [로그 크래시 리포트](#logging-crashes-on-the-server)를 기록하는 경우, 여전히 `console.error`를 호출해야 합니다. 셸이 출력되기 전에 상태 코드를 [조정](#setting-the-status-code)하는 데 사용할 수도 있습니다.
-    * **optional** `onShellReady`: [초기 셸](#specifying-what-goes-into-the-shell)이 렌더링된 직후에 실행되는 콜백입니다. 여기에서 [상태 코드](#setting-the-status-code)와 `pipe`를 설정하여 스트리밍을 시작할 수 있습니다. React는 HTML 로딩 폴백을 콘텐츠로 대체하는 인라인 `<script>` 태그와 함께 셸 뒤에 [추가 콘텐츠를 스트리밍](#streaming-more-content-as-it-loads) 합니다.
-    * **optional** `onShellError`: 초기 셸을 렌더링하는 데 오류가 발생하면 호출되는 콜백입니다. 오류를 인수로 받습니다. 스트림에서 아직 바이트가 전송되지 않았고, `onShellReady`나 `onAllReady`도 호출되지 않으므로[폴백 HTML 셸을 출력](#recovering-from-errors-inside-the-shell)할 수 있습니다.
-    * **optional** `progressiveChunkSize`: 청크의 바이트 수입니다. [기본 휴리스틱에 대해 자세히 알아보세요.](https://github.com/facebook/react/blob/14c2be8dac2d5482fda8a0906a31d239df8551fc/packages/react-server/src/ReactFizzServer.js#L210-L225)
-  </TransBlock>
+- `pipe` outputs the HTML into the provided [Writable Node.js Stream.](https://nodejs.org/api/stream.html#writable-streams) Call `pipe` in `onShellReady` if you want to enable streaming, or in `onAllReady` for crawlers and static generation.
+- `abort` lets you [abort server rendering](#aborting-server-rendering) and render the rest on the client.
 
-  <TransBlock>
-`renderToPipeableStream`두 가지 메서드가 있는 객체를 반환합니다:
+<TransBlock>
+  `renderToPipeableStream`두 가지 메서드가 있는 객체를 반환합니다:
 
 - `pipe`는 제공된 [쓰기 가능한 Node.js 스트림](https://nodejs.org/api/stream.html#writable-streams)으로 HTML을 출력합니다. 스트리밍을 활성화하려면 `onShellReady`에서, 크롤러 및 정적 생성을 위해서는 `onAllReady`에서 `pipe`를 호출하세요.
 - `abort`를 사용하면 [서버 렌더링을 중단](#aborting-server-rendering)하고 나머지는 클라이언트에서 렌더링할 수 있습니다.
-
-* `pipe` outputs the HTML into the provided [Writable Node.js Stream.](https://nodejs.org/api/stream.html#writable-streams) Call `pipe` in `onShellReady` if you want to enable streaming, or in `onAllReady` for crawlers and static generation.
-* `abort` lets you [abort server rendering](#aborting-server-rendering) and render the rest on the client.
-
-    <TransBlock>
-`renderToPipeableStream`두 가지 메서드가 있는 객체를 반환합니다:
-
-* `pipe`는 제공된 [쓰기 가능한 Node.js 스트림](https://nodejs.org/api/stream.html#writable-streams)으로 HTML을 출력합니다. 스트리밍을 활성화하려면 `onShellReady`에서, 크롤러 및 정적 생성을 위해서는 `onAllReady`에서 `pipe`를 호출하세요.
-* `abort`를 사용하면 [서버 렌더링을 중단](#aborting-server-rendering)하고 나머지는 클라이언트에서 렌더링할 수 있습니다.
 
 </TransBlock>
 
 ---
 
-## Usage<Trans>사용법</Trans> {/_usage_/} {/*usagetrans사용법trans-usage*/}
+## Usage<Trans>사용법</Trans> {/_usage_/} {/_usagetrans사용법trans-usage_/} {/*usagetrans사용법trans-usage-usagetrans사용법trans-usage*/}
 
-### Rendering a React tree as HTML to a Node.js Stream<Trans>React 트리를 HTML로 Node.js 스트림에 렌더링하기</Trans> {/_rendering-a-react-tree-as-html-to-a-nodejs-stream_/} {/*rendering-a-react-tree-as-html-to-a-nodejs-streamtransreact-트리를-html로-nodejs-스트림에-렌더링하기trans-rendering-a-react-tree-as-html-to-a-nodejs-stream*/}
+### Rendering a React tree as HTML to a Node.js Stream<Trans>React 트리를 HTML로 Node.js 스트림에 렌더링하기</Trans> {/_rendering-a-react-tree-as-html-to-a-nodejs-stream_/} {/_rendering-a-react-tree-as-html-to-a-nodejs-streamtransreact-트리를-html로-nodejs-스트림에-렌더링하기trans-rendering-a-react-tree-as-html-to-a-nodejs-stream_/} {/*rendering-a-react-tree-as-html-to-a-nodejs-streamtransreact-트리를-html로-nodejs-스트림에-렌더링하기trans-rendering-a-react-tree-as-html-to-a-nodejs-stream-rendering-a-react-tree-as-html-to-a-nodejs-streamtransreact-트리를-html로-nodejs-스트림에-렌더링하기trans-rendering-a-react-tree-as-html-to-a-nodejs-stream*/}
 
 Call `renderToPipeableStream` to render your React tree as HTML into a [Node.js Stream:](https://nodejs.org/api/stream.html#writable-streams)
-
-<Trans>
-  `renderToPipeableStream`을 호출하여 React 트리를 HTML로 [Node.js
-  Stream](https://nodejs.org/api/stream.html#writable-streams)에 렌더링합니다:
-</Trans>
 
 <Trans>
   `renderToPipeableStream`을 호출하여 React 트리를 HTML로 [Node.js
@@ -202,11 +152,7 @@ Along with the <CodeStep step={1}>root component</CodeStep>, you need to provide
 
 <Trans><CodeStep step={1}>root component</CodeStep>와 함께 <CodeStep step={2}>bootstrap `<script>` paths</CodeStep> 경로 목록을 제공해야 합니다. 루트 컴포넌트는 <strong>루트 `<html>` 태그를 포함한 전체 문서를 반환해야 합니다.</strong></Trans>
 
-<Trans><CodeStep step={1}>root component</CodeStep>와 함께 <CodeStep step={2}>bootstrap `<script>` paths</CodeStep> 경로 목록을 제공해야 합니다. 루트 컴포넌트는 <strong>루트 `<html>` 태그를 포함한 전체 문서를 반환해야 합니다.</strong></Trans>
-
 For example, it might look like this:
-
-<Trans>예시는 아래와 같습니다: </Trans>
 
 <Trans>예시는 아래와 같습니다: </Trans>
 
@@ -230,9 +176,7 @@ export default function App() {
 
 React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) and your <CodeStep step={2}>bootstrap `<script>` tags</CodeStep> into the resulting HTML stream:
 
-<Trans>React는 HTML스트림에 [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) 과 React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) and your <CodeStep step={2}>bootstrap `<script>` tags</CodeStep>을 삽입합니다.</Trans>
-
-<Trans>React는 HTML스트림에 [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) 과 React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) and your <CodeStep step={2}>bootstrap `<script>` tags</CodeStep>을 삽입합니다.</Trans>
+<Trans>React는 HTML스트림에 [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) 과 React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) and your <CodeStep step={2}>bootstrap `<`script`>` tags</CodeStep>을 삽입합니다. </Trans>
 
 ```html [[2, 5, "/main.js"]]
 <!DOCTYPE html>
@@ -243,12 +187,6 @@ React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossar
 ```
 
 On the client, your bootstrap script should [hydrate the entire `document` with a call to `hydrateRoot`:](/reference/react-dom/client/hydrateRoot#hydrating-an-entire-document)
-
-<Trans>
-  클라이언트에서 부트스트랩 스크립트는 [`hydrateRoot`를 호출하여 전체 문서를
-  하이드레이트](/reference/react-dom/client/hydrateRoot#hydrating-an-entire-document)
-  해야 합니다:
-</Trans>
 
 <Trans>
   클라이언트에서 부트스트랩 스크립트는 [`hydrateRoot`를 호출하여 전체 문서를
@@ -270,25 +208,13 @@ This will attach event listeners to the server-generated HTML and make it intera
   만들어집니다.
 </Trans>
 
-<Trans>
-  이렇게 하면 서버에서 생성된 HTML에 이벤트 리스너가 첨부되어 대화형으로
-  만들어집니다.
-</Trans>
-
 <DeepDive>
 
-#### Reading CSS and JS asset paths from the build output <Trans>빌드 출력에서 CSS 및 JS asset 경로 읽기</Trans> {/_reading-css-and-js-asset-paths-from-the-build-output_/} {/*reading-css-and-js-asset-paths-from-the-build-output-trans빌드-출력에서-css-및-js-asset-경로-읽기trans-reading-css-and-js-asset-paths-from-the-build-output*/}
+#### Reading CSS and JS asset paths from the build output <Trans>빌드 출력에서 CSS 및 JS asset 경로 읽기</Trans> {/_reading-css-and-js-asset-paths-from-the-build-output_/} {/_reading-css-and-js-asset-paths-from-the-build-output-trans빌드-출력에서-css-및-js-asset-경로-읽기trans-reading-css-and-js-asset-paths-from-the-build-output_/} {/*reading-css-and-js-asset-paths-from-the-build-output-trans빌드-출력에서-css-및-js-asset-경로-읽기trans-reading-css-and-js-asset-paths-from-the-build-output-reading-css-and-js-asset-paths-from-the-build-output-trans빌드-출력에서-css-및-js-asset-경로-읽기trans-reading-css-and-js-asset-paths-from-the-build-output*/}
 
 The final asset URLs (like JavaScript and CSS files) are often hashed after the build. For example, instead of `styles.css` you might end up with `styles.123456.css`. Hashing static asset filenames guarantees that every distinct build of the same asset will have a different filename. This is useful because it lets you safely enable long-term caching for static assets: a file with a certain name would never change content.
 
 However, if you don't know the asset URLs until after the build, there's no way for you to put them in the source code. For example, hardcoding `"/styles.css"` into JSX like earlier wouldn't work. To keep them out of your source code, your root component can read the real filenames from a map passed as a prop:
-
-<TransBlock>
-최종 에셋 URL(예: JavaScript 및 CSS 파일)은 빌드 후에 해시 처리되는 경우가 많습니다. 예를 들어 `styles.css` 대신 `styles.123456.css`로 끝날 수 있습니다. 정적 에셋 파일명을 해시하면 동일한 에셋의 모든 개별 빌드에 다른 파일명이 지정됩니다. 이는 정적 자산에 대한 장기 캐싱을 안전하게 활성화할 수 있기 때문에 유용합니다. 특정 이름을 가진 파일은 콘텐츠를 변경하지 않습니다.
-
-하지만 빌드가 끝날 때까지 에셋 URL을 모르는 경우 소스 코드에 넣을 방법이 없습니다. 예를 들어, 앞서와 같이 JSX에 `"/styles.css"`를 하드코딩하면 작동하지 않습니다. 소스 코드에 포함되지 않도록 하려면 루트 컴포넌트가 소품으로 전달된 맵에서 실제 파일명을 읽을 수 있습니다:
-
-</TransBlock>
 
 <TransBlock>
 최종 에셋 URL(예: JavaScript 및 CSS 파일)은 빌드 후에 해시 처리되는 경우가 많습니다. 예를 들어 `styles.css` 대신 `styles.123456.css`로 끝날 수 있습니다. 정적 에셋 파일명을 해시하면 동일한 에셋의 모든 개별 빌드에 다른 파일명이 지정됩니다. 이는 정적 자산에 대한 장기 캐싱을 안전하게 활성화할 수 있기 때문에 유용합니다. 특정 이름을 가진 파일은 콘텐츠를 변경하지 않습니다.
@@ -313,11 +239,6 @@ export default function App({assetMap}) {
 ```
 
 On the server, render `<App assetMap={assetMap} />` and pass your `assetMap` with the asset URLs:
-
-<Trans>
-  서버에서 `<App assetMap={assetMap} />
-  `을 렌더링하고 에셋 URL과 함께 `assetMap`을 전달합니다:
-</Trans>
 
 <Trans>
   서버에서 `<App assetMap={assetMap} />
@@ -351,13 +272,6 @@ Since your server is now rendering `<App assetMap={assetMap} />`, you need to re
   수 있습니다:
 </Trans>
 
-<Trans>
-  이제 서버가 `<App assetMap={assetMap} />
-  `를 렌더링하고 있으므로 클라이언트에서도 `assetMap` 을 사용하여 렌더링해야 하이드레이션
-  오류를 방지할 수 있습니다. 다음과 같이 `assetMap`을 직렬화하여 클라이언트에 전달할
-  수 있습니다:
-</Trans>
-
 ```js {9-10}
 // You'd need to get this JSON from your build tooling.
 const assetMap = {
@@ -382,8 +296,6 @@ In the example above, the `bootstrapScriptContent` option adds an extra inline `
 
 <Trans>위의 예시에서 `bootstrapScriptContent` 옵션은 클라이언트에서 전역 `window.assetMap` 변수를 설정하는 추가 인라인 `<script>` 태그를 추가합니다. 이렇게 하면 클라이언트 코드가 동일한 `assetMap`을 읽을 수 있습니다:</Trans>
 
-<Trans>위의 예시에서 `bootstrapScriptContent` 옵션은 클라이언트에서 전역 `window.assetMap` 변수를 설정하는 추가 인라인 `<script>` 태그를 추가합니다. 이렇게 하면 클라이언트 코드가 동일한 `assetMap`을 읽을 수 있습니다:</Trans>
-
 ```js {4}
 import {hydrateRoot} from 'react-dom/client';
 import App from './App.js';
@@ -398,24 +310,13 @@ Both client and server render `App` with the same `assetMap` prop, so there are 
   하이드레이션 오류가 발생하지 않습니다.
 </Trans>
 
-<Trans>
-  클라이언트와 서버 모두 동일한 `AssetMap` 프로퍼티로 `App`을 렌더링하므로
-  하이드레이션 오류가 발생하지 않습니다.
-</Trans>
-
 </DeepDive>
 
 ---
 
-### Streaming more content as it loads<Trans>콘텐츠가 로드되는 동안 더 많은 콘텐츠 스트리밍하기</Trans> {/_streaming-more-content-as-it-loads_/} {/*streaming-more-content-as-it-loadstrans콘텐츠가-로드되는-동안-더-많은-콘텐츠-스트리밍하기trans-streaming-more-content-as-it-loads*/}
+### Streaming more content as it loads<Trans>콘텐츠가 로드되는 동안 더 많은 콘텐츠 스트리밍하기</Trans> {/_streaming-more-content-as-it-loads_/} {/_streaming-more-content-as-it-loadstrans콘텐츠가-로드되는-동안-더-많은-콘텐츠-스트리밍하기trans-streaming-more-content-as-it-loads_/} {/*streaming-more-content-as-it-loadstrans콘텐츠가-로드되는-동안-더-많은-콘텐츠-스트리밍하기trans-streaming-more-content-as-it-loads-streaming-more-content-as-it-loadstrans콘텐츠가-로드되는-동안-더-많은-콘텐츠-스트리밍하기trans-streaming-more-content-as-it-loads*/}
 
 Streaming allows the user to start seeing the content even before all the data has loaded on the server. For example, consider a profile page that shows a cover, a sidebar with friends and photos, and a list of posts:
-
-<Trans>
-  스트리밍을 사용하면 모든 데이터가 서버에 로드되기 전에도 사용자가 콘텐츠를 볼
-  수 있습니다. 예를 들어 표지와 친구 및 사진이 있는 사이드바, 게시물 목록이
-  표시되는 프로필 페이지를 생각해 보세요:
-</Trans>
 
 <Trans>
   스트리밍을 사용하면 모든 데이터가 서버에 로드되기 전에도 사용자가 콘텐츠를 볼
@@ -439,8 +340,6 @@ function ProfilePage() {
 ```
 
 Imagine that loading data for `<Posts />` takes some time. Ideally, you'd want to show the rest of the profile page content to the user without waiting for the posts. To do this, [wrap `Posts` in a `<Suspense>` boundary:](/reference/react/Suspense#displaying-a-fallback-while-content-is-loading)
-
-<Trans>`<Posts />`에 대한 데이터를 로드하는 데 시간이 좀 걸린다고 가정해 보겠습니다. 이상적으로는 게시물을 기다리지 않고 나머지 프로필 페이지 콘텐츠를 사용자에게 표시하고 싶을 것입니다. 이렇게 하려면 `<Posts />`를 [`<Suspense>`](/reference/react/Suspense#displaying-a-fallback-while-content-is-loading) 경계로 감싸면 됩니다:</Trans>
 
 <Trans>`<Posts />`에 대한 데이터를 로드하는 데 시간이 좀 걸린다고 가정해 보겠습니다. 이상적으로는 게시물을 기다리지 않고 나머지 프로필 페이지 콘텐츠를 사용자에게 표시하고 싶을 것입니다. 이렇게 하려면 `<Posts />`를 [`<Suspense>`](/reference/react/Suspense#displaying-a-fallback-while-content-is-loading) 경계로 감싸면 됩니다:</Trans>
 
@@ -533,25 +432,11 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 </TransBlock>
 
-<TransBlock>
-  **Suspense지원 데이터 소스만 Suspense 구성 요소를 활성화합니다:.** 아래와 같은 것들을 포함합니다:
-
-- [Relay](https://relay.dev/docs/guided-tour/rendering/loading-states/) 및 [Next.js](https://nextjs.org/docs/advanced-features/react-18)와 같은 Suspense 지원 프레임워크를 사용한 데이터 불러오기
-- [`lazy`](/reference/react/lazy)를 사용한 지연 로딩 컴포넌트 코드
-
-서스펜스는 Effect 또는 이벤트 핸들러 내부에서 데이터를 가져올 때를 **감지하지 않습니다**.
-
-위의 `Posts` 컴포넌트에서 데이터를 로드하는 정확한 방법은 프레임워크에 따라 다릅니다. 서스펜스 지원 프레임워크를 사용하는 경우 해당 데이터 불러오기 문서에서 자세한 내용을 확인할 수 있습니다.
-
-서스펜스 사용 프레임워크를 사용하지 않는 서스펜스 사용 데이터 가져오기는 아직 지원되지 않습니다. 서스펜스 지원 데이터 원본을 구현하기 위한 요구 사항은 불안정하고 문서화되어 있지 않습니다. 데이터 소스를 Suspense와 통합하기 위한 공식 API는 향후 React 버전에서 출시될 예정입니다.
-
-</TransBlock>
-
 </Note>
 
 ---
 
-### Specifying what goes into the shell <Trans>쉘에 들어갈 내용 지정하기</Trans> {/_specifying-what-goes-into-the-shell_/} {/*specifying-what-goes-into-the-shell-trans쉘에-들어갈-내용-지정하기trans-specifying-what-goes-into-the-shell*/}
+### Specifying what goes into the shell <Trans>쉘에 들어갈 내용 지정하기</Trans> {/_specifying-what-goes-into-the-shell_/} {/_specifying-what-goes-into-the-shell-trans쉘에-들어갈-내용-지정하기trans-specifying-what-goes-into-the-shell_/} {/*specifying-what-goes-into-the-shell-trans쉘에-들어갈-내용-지정하기trans-specifying-what-goes-into-the-shell-specifying-what-goes-into-the-shell-trans쉘에-들어갈-내용-지정하기trans-specifying-what-goes-into-the-shell*/}
 
 The part of your app outside of any `<Suspense>` boundaries is called _the shell:_
 
@@ -580,8 +465,6 @@ It determines the earliest loading state that the user may see:
 
 <Trans>사용자가 볼 수 있는 가장 빠른 로딩 상태를 결정합니다:</Trans>
 
-<Trans>사용자가 볼 수 있는 가장 빠른 로딩 상태를 결정합니다:</Trans>
-
 ```js {3-5,13
 <ProfileLayout>
   <ProfileCover />
@@ -592,13 +475,6 @@ It determines the earliest loading state that the user may see:
 If you wrap the whole app into a `<Suspense>` boundary at the root, the shell will only contain that spinner. However, that's not a pleasant user experience because seeing a big spinner on the screen can feel slower and more annoying than waiting a bit more and seeing the real layout. This is why usually you'll want to place the `<Suspense>` boundaries so that the shell feels _minimal but complete_--like a skeleton of the entire page layout.
 
 The `onShellReady` callback fires when the entire shell has been rendered. Usually, you'll start streaming then:
-
-<TransBlock>
-전체 앱을 루트의 `<Suspense>` 경계로 감싸면 셸에는 해당 스피너만 포함됩니다. 하지만 화면에 큰 스피너가 표시되면 조금 더 기다렸다가 실제 레이아웃을 보는 것보다 느리고 성가시게 느껴질 수 있으므로 사용자 경험이 좋지 않습니다. 그렇기 때문에 일반적으로 셸이 전체 페이지 레이아웃의 골격처럼 **최소한으로 느껴지지만 완전하게 느껴지도록** `<Suspense>` 경계를 배치하는 것이 좋습니다.
-
-전체 셸이 렌더링되면 `onShellReady` 콜백이 실행됩니다. 보통 이때 스트리밍을 시작합니다:
-
-</TransBlock>
 
 <TransBlock>
 전체 앱을 루트의 `<Suspense>` 경계로 감싸면 셸에는 해당 스피너만 포함됩니다. 하지만 화면에 큰 스피너가 표시되면 조금 더 기다렸다가 실제 레이아웃을 보는 것보다 느리고 성가시게 느껴질 수 있으므로 사용자 경험이 좋지 않습니다. 그렇기 때문에 일반적으로 셸이 전체 페이지 레이아웃의 골격처럼 **최소한으로 느껴지지만 완전하게 느껴지도록** `<Suspense>` 경계를 배치하는 것이 좋습니다.
@@ -621,18 +497,11 @@ By the time `onShellReady` fires, components in nested `<Suspense>` boundaries m
 
 <Trans>`onShellReady`가 실행될 때 중첩된 `<Suspense>` 경계에 있는 컴포넌트는 여전히 데이터를 로드하고 있을 수 있습니다.</Trans>
 
-<Trans>`onShellReady`가 실행될 때 중첩된 `<Suspense>` 경계에 있는 컴포넌트는 여전히 데이터를 로드하고 있을 수 있습니다.</Trans>
-
 ---
 
-### Logging crashes on the server <Trans>서버에서의 충동을 기록하기</Trans> {/_logging-crashes-on-the-server_/} {/*logging-crashes-on-the-server-trans서버에서의-충동을-기록하기trans-logging-crashes-on-the-server*/}
+### Logging crashes on the server <Trans>서버에서의 충동을 기록하기</Trans> {/_logging-crashes-on-the-server_/} {/_logging-crashes-on-the-server-trans서버에서의-충동을-기록하기trans-logging-crashes-on-the-server_/} {/*logging-crashes-on-the-server-trans서버에서의-충동을-기록하기trans-logging-crashes-on-the-server-logging-crashes-on-the-server-trans서버에서의-충동을-기록하기trans-logging-crashes-on-the-server*/}
 
 By default, all errors on the server are logged to console. You can override this behavior to log crash reports:
-
-<Trans>
-  기본적으로 서버의 모든 오류는 콘솔에 기록됩니다. 이 동작을 재정의하여 크래시
-  보고서를 기록할 수 있습니다:
-</Trans>
 
 <Trans>
   기본적으로 서버의 모든 오류는 콘솔에 기록됩니다. 이 동작을 재정의하여 크래시
@@ -660,22 +529,11 @@ If you provide a custom `onError` implementation, don't forget to also log error
   것도 잊지 마세요.
 </Trans>
 
-<Trans>
-  사용자 정의 `onError` 구현을 제공하는 경우 위와 같이 콘솔에 오류를 기록하는
-  것도 잊지 마세요.
-</Trans>
-
 ---
 
-### Recovering from errors inside the shell <Trans>쉘 내부에서 오류 복구</Trans> {/_recovering-from-errors-inside-the-shell_/} {/*recovering-from-errors-inside-the-shell-trans쉘-내부에서-오류-복구trans-recovering-from-errors-inside-the-shell*/}
+### Recovering from errors inside the shell <Trans>쉘 내부에서 오류 복구</Trans> {/_recovering-from-errors-inside-the-shell_/} {/_recovering-from-errors-inside-the-shell-trans쉘-내부에서-오류-복구trans-recovering-from-errors-inside-the-shell_/} {/*recovering-from-errors-inside-the-shell-trans쉘-내부에서-오류-복구trans-recovering-from-errors-inside-the-shell-recovering-from-errors-inside-the-shell-trans쉘-내부에서-오류-복구trans-recovering-from-errors-inside-the-shell*/}
 
 In this example, the shell contains `ProfileLayout`, `ProfileCover`, and `PostsGlimmer`:
-
-<Trans>
-  {' '}
-  이 예제에서 셸에는 `ProfileLayout`, `ProfileCover`, `PostsGlimmer`가 포함되어
-  있습니다:{' '}
-</Trans>
 
 <Trans>
   {' '}
@@ -697,12 +555,6 @@ function ProfilePage() {
 ```
 
 If an error occurs while rendering those components, React won't have any meaningful HTML to send to the client. Override `onShellError` to send a fallback HTML that doesn't rely on server rendering as the last resort:
-
-<Trans>
-  이러한 컴포넌트를 렌더링하는 동안 오류가 발생하면 React는 클라이언트에 보낼
-  의미 있는 HTML을 갖지 못합니다. 마지막 수단으로 서버 렌더링에 의존하지 않는
-  폴백 HTML을 보내려면 `onShellError`를 재정의하세요:
-</Trans>
 
 <Trans>
   이러한 컴포넌트를 렌더링하는 동안 오류가 발생하면 React는 클라이언트에 보낼
@@ -738,16 +590,9 @@ If there is an error while generating the shell, both `onError` and `onShellErro
   클라이언트에서만 앱을 렌더링하는 대체 셸을 포함할 수 있습니다.
 </Trans>
 
-<Trans>
-  셸을 생성하는 동안 오류가 발생하면 `onError`와 `onShellError`가 모두
-  실행됩니다. 오류 보고에는 `onError`를 사용하고, 대체 HTML 문서를 보내려면
-  `onShellError`를 사용하세요. 폴백 HTML이 오류 페이지일 필요는 없습니다. 대신
-  클라이언트에서만 앱을 렌더링하는 대체 셸을 포함할 수 있습니다.
-</Trans>
-
 ---
 
-### Recovering from errors outside the shell <Trans>쉘 외부에서 오류 복구하기</Trans> {/_recovering-from-errors-outside-the-shell_/} {/*recovering-from-errors-outside-the-shell-trans쉘-외부에서-오류-복구하기trans-recovering-from-errors-outside-the-shell*/}
+### Recovering from errors outside the shell <Trans>쉘 외부에서 오류 복구하기</Trans> {/_recovering-from-errors-outside-the-shell_/} {/_recovering-from-errors-outside-the-shell-trans쉘-외부에서-오류-복구하기trans-recovering-from-errors-outside-the-shell_/} {/*recovering-from-errors-outside-the-shell-trans쉘-외부에서-오류-복구하기trans-recovering-from-errors-outside-the-shell-recovering-from-errors-outside-the-shell-trans쉘-외부에서-오류-복구하기trans-recovering-from-errors-outside-the-shell*/}
 
 In this example, the `<Posts />` component is wrapped in `<Suspense>` so it is _not_ a part of the shell:
 
@@ -788,21 +633,9 @@ If retrying rendering `Posts` on the client succeeds, the loading fallback from 
 
 </TransBlock>
 
-<TransBlock>
-  `Posts` 컴포넌트 또는 그 내부 어딘가에서 오류가 발생하면 React는 [이를 복구하려고 시도합니다:](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content)
-    1. 가장 가까운 `<Suspense>` 경계(`PostsGlimmer`)에 대한 로딩 폴백을 HTML에 방출합니다.
-    2. 더 이상 서버에서 `Posts` 콘텐츠를 렌더링하는 시도를 "포기"합니다.
-    3. 자바스크립트 코드가 클라이언트에서 로드되면 React는 클라이언트에서 `Posts`렌더링을 다시 시도합니다.
-  
-  클라이언트에서 `Posts` 렌더링을 다시 시도해도 실패하면 React는 클라이언트에서 오류를 던집니다. 렌더링 중에 발생하는 모든 에러와 마찬가지로, [가장 가까운 상위 에러 경계](/reference/react/Component#static-getderivedstatefromerror)에 따라 사용자에게 에러를 표시하는 방법이 결정됩니다. 실제로는 오류를 복구할 수 없다는 것이 확실해질 때까지 사용자에게 로딩 표시기가 표시된다는 의미입니다.
-
-클라이언트에서 `Posts` 렌더링을 다시 시도하여 성공하면 서버의 로딩 폴백이 클라이언트 렌더링 출력으로 대체됩니다. 사용자는 서버 오류가 발생했다는 사실을 알 수 없습니다. 그러나 서버의 `onError` 콜백 및 클라이언트의 [`onRecoverableError`](/reference/react-dom/client/hydrateRoot#hydrateroot) 콜백이 실행되므로 오류에 대한 알림을 받을 수 있습니다.
-
-</TransBlock>
-
 ---
 
-### Setting the status code <Trans>상태코드설정</Trans> {/_setting-the-status-code_/} {/*setting-the-status-code-trans상태코드설정trans-setting-the-status-code*/}
+### Setting the status code <Trans>상태코드설정</Trans> {/_setting-the-status-code_/} {/_setting-the-status-code-trans상태코드설정trans-setting-the-status-code_/} {/*setting-the-status-code-trans상태코드설정trans-setting-the-status-code-setting-the-status-code-trans상태코드설정trans-setting-the-status-code*/}
 
 Streaming introduces a tradeoff. You want to start streaming the page as early as possible so that the user can see the content sooner. However, once you start streaming, you can no longer set the response status code.
 
@@ -879,18 +712,9 @@ This will only catch errors outside the shell that happened while generating the
 
 ---
 
-### Handling different errors in different ways <Trans>다양한 방식으로 오류 처리하기</Trans> {/_handling-different-errors-in-different-ways_/} {/*handling-different-errors-in-different-ways-trans다양한-방식으로-오류-처리하기trans-handling-different-errors-in-different-ways*/}
+### Handling different errors in different ways <Trans>다양한 방식으로 오류 처리하기</Trans> {/_handling-different-errors-in-different-ways_/} {/_handling-different-errors-in-different-ways-trans다양한-방식으로-오류-처리하기trans-handling-different-errors-in-different-ways_/} {/*handling-different-errors-in-different-ways-trans다양한-방식으로-오류-처리하기trans-handling-different-errors-in-different-ways-handling-different-errors-in-different-ways-trans다양한-방식으로-오류-처리하기trans-handling-different-errors-in-different-ways*/}
 
 You can [create your own `Error` subclasses](https://javascript.info/custom-errors) and use the [`instanceof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) operator to check which error is thrown. For example, you can define a custom `NotFoundError` and throw it from your component. Then your `onError`, `onShellReady`, and `onShellError` callbacks can do something different depending on the error type:
-
-<Trans>
-  [자신만의 `Error`서브클래스를 생성하고](https://javascript.info/custom-errors)
-  [`instanceof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)를
-  사용하여 어떤 오류가 발생했는지 확인할 수 있습니다. 예를 들어, 사용자 정의
-  `NotFoundError`를 정의하고 컴포넌트에서 이를 던질 수 있습니다. 그러면 오류
-  유형에 따라 `onError`, `onShellReady`, `onShellError` 콜백이 다른 작업을
-  수행할 수 있습니다:{' '}
-</Trans>
 
 <Trans>
   [자신만의 `Error`서브클래스를 생성하고](https://javascript.info/custom-errors)
@@ -945,29 +769,15 @@ Keep in mind that once you emit the shell and start streaming, you can't change 
   유의하세요.
 </Trans>
 
-<Trans>
-  셸을 내보내고 스트리밍을 시작하면 상태 코드를 변경할 수 없다는 점에
-  유의하세요.
-</Trans>
-
 ---
 
-### Waiting for all content to load for crawlers and static generation <Trans>크롤러 및 정적 생성을 위해 모든 콘텐츠가 로드될 때까지 기다리기 </Trans> {/_waiting-for-all-content-to-load-for-crawlers-and-static-generation_/} {/*waiting-for-all-content-to-load-for-crawlers-and-static-generation-trans크롤러-및-정적-생성을-위해-모든-콘텐츠가-로드될-때까지-기다리기-trans-waiting-for-all-content-to-load-for-crawlers-and-static-generation*/}
+### Waiting for all content to load for crawlers and static generation <Trans>크롤러 및 정적 생성을 위해 모든 콘텐츠가 로드될 때까지 기다리기 </Trans> {/_waiting-for-all-content-to-load-for-crawlers-and-static-generation_/} {/_waiting-for-all-content-to-load-for-crawlers-and-static-generation-trans크롤러-및-정적-생성을-위해-모든-콘텐츠가-로드될-때까지-기다리기-trans-waiting-for-all-content-to-load-for-crawlers-and-static-generation_/} {/*waiting-for-all-content-to-load-for-crawlers-and-static-generation-trans크롤러-및-정적-생성을-위해-모든-콘텐츠가-로드될-때까지-기다리기-trans-waiting-for-all-content-to-load-for-crawlers-and-static-generation-waiting-for-all-content-to-load-for-crawlers-and-static-generation-trans크롤러-및-정적-생성을-위해-모든-콘텐츠가-로드될-때까지-기다리기-trans-waiting-for-all-content-to-load-for-crawlers-and-static-generation*/}
 
 Streaming offers a better user experience because the user can see the content as it becomes available.
 
 However, when a crawler visits your page, or if you're generating the pages at the build time, you might want to let all of the content load first and then produce the final HTML output instead of revealing it progressively.
 
 You can wait for all the content to load using the `onAllReady` callback:
-
-<TransBlock>
-  스트리밍은 사용자가 콘텐츠를 사용할 수 있게 되는 즉시 볼 수 있기 때문에 더 나은 사용자 경험을 제공합니다.
-
-그러나 크롤러가 페이지를 방문하거나 빌드 시점에 페이지를 생성하는 경우 모든 콘텐츠가 먼저 로드되도록 한 다음 점진적으로 표시하는 대신 최종 HTML 출력을 생성하는 것이 좋을 수 있습니다.
-
-`onAllReady` 콜백을 사용하여 모든 콘텐츠가 로드될 때까지 기다릴 수 있습니다:
-
-</TransBlock>
 
 <TransBlock>
   스트리밍은 사용자가 콘텐츠를 사용할 수 있게 되는 즉시 볼 수 있기 때문에 더 나은 사용자 경험을 제공합니다.
@@ -1023,11 +833,9 @@ A regular visitor will get a stream of progressively loaded content. A crawler w
 
 ---
 
-### Aborting server rendering <Trans>서버렌더링 중단</Trans> {/_aborting-server-rendering_/} {/*aborting-server-rendering-trans서버렌더링-중단trans-aborting-server-rendering*/}
+### Aborting server rendering <Trans>서버렌더링 중단</Trans> {/_aborting-server-rendering_/} {/_aborting-server-rendering-trans서버렌더링-중단trans-aborting-server-rendering_/} {/*aborting-server-rendering-trans서버렌더링-중단trans-aborting-server-rendering-aborting-server-rendering-trans서버렌더링-중단trans-aborting-server-rendering*/}
 
 You can force the server rendering to "give up" after a timeout:
-
-<Trans>시간 초과 후 서버 렌더링을 "포기"하도록 강제할 수 있습니다:</Trans>
 
 <Trans>시간 초과 후 서버 렌더링을 "포기"하도록 강제할 수 있습니다:</Trans>
 
