@@ -130,20 +130,18 @@ export function HomeContent() {
           />
           <h1 className="text-center text-5xl font-display lg:text-6xl font-semibold leading-snug text-primary dark:text-primary-dark">
             React + ⍺
-            <br />
-            <p className="text-2xl">(비공식 한글 번역)</p>
           </h1>
           <p className="mt-5 text-3xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
             <Link href="https://www.youtube.com/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v">
               FE재남
             </Link>
-            의{' '}
+            <br />
             <Link href="https://github.com/roy-jung/react.dev.ko">
               [React 공식문서 스터디 그룹]
             </Link>
-            에서
+            의
             <br />
-            번역 진행중입니다.
+            비공식 한글 번역 사이트입니다.
           </p>
           <div className="mt-5 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
             <ButtonLink
@@ -1463,7 +1461,7 @@ function BrowserChrome({children, hasPulse, hasRefresh, domain, path}) {
     <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
       <div className="w-full h-14 rounded-t-2xl shadow-outer-border backdrop-filter overflow-hidden backdrop-blur-lg backdrop-saturate-200 bg-white bg-opacity-90 z-10 absolute top-0 px-3 gap-2 flex flex-row items-center">
         <div className="select-none h-8 relative bg-gray-30/20 text-sm text-tertiary text-center rounded-full w-full flex-row flex space-between items-center">
-          <div className="h-4 w-6" />
+          {hasRefresh && <div className="h-4 w-6" />}
           <div className="w-full leading-snug flex flex-row items-center justify-center">
             <svg
               className="text-tertiary mr-1 opacity-60"
@@ -1652,7 +1650,10 @@ function VideoList({videos, emptyHeading}) {
 function SearchInput({value, onChange}) {
   const id = useId();
   return (
-    <form className="mb-3 py-1" data-hover="SearchInput">
+    <form
+      className="mb-3 py-1"
+      data-hover="SearchInput"
+      onSubmit={(e) => e.preventDefault()}>
       <label htmlFor={id} className="sr-only">
         Search
       </label>
