@@ -29,7 +29,7 @@ last updated @ 2023-05-17 01:00
 |  ✅  | [6. Components](/reference/react/components)                         |  ▢  | [11-2. renderToPipeableStream](/reference/react-dom/server/renderToPipeableStream)     |
 |  ✅  | [6-1. `<Fragment>` (`<>`)](/reference/react/Fragment)                |  ✅  | [11-3. renderToStaticMarkup](/reference/react-dom/server/renderToStaticMarkup)         |
 |  ✅  | [6-2. `<Profiler>`](/reference/react/Profiler)                       |  ▢  | [11-4. renderToStaticNodeStream](/reference/react-dom/server/renderToStaticNodeStream) |
-|  ✅  | [6-3. `<StrictMode>`](/reference/react/StrictMode)                   |  ▢  | [11-5. renderToString](/reference/react-dom/server/renderToString)                     |
+|  ✅  | [6-3. `<StrictMode>`](/reference/react/StrictMode)                   |  ✅  | [11-5. renderToString](/reference/react-dom/server/renderToString)                     |
 |  ✅  | [6-4. `<Suspense>`](/reference/react/Suspense)                       |  ▢  | [12. Legacy APIs](/reference/react/legacy)                                             |
 |  ✅  | [7. APIs](/reference/react/apis)                                     |  ▢  | [12-1. Children](/reference/react/Children)                                            |
 |  ✅  | [7-1. createContext](/reference/react/createContext)                 |  ✅  | [12-2. cloneElement](/reference/react/cloneElement)                                    |
