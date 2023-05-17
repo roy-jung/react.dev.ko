@@ -23,11 +23,12 @@ These APIs are exported from the `react` package, but they are not recommended f
 
 ---
 
-## Deprecated APIs {/*deprecated-apis*/}
+## Deprecated APIs <Trans>지원 중단된 API들</Trans> {/*deprecated-apis*/}
 
 <Deprecated>
 
 These APIs will be removed in a future major version of React.
+<Trans>다음 API들은 향후 React의 메인 버전에서 삭제될 예정입니다.</Trans>
 
 </Deprecated>
 
