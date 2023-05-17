@@ -132,7 +132,7 @@ export default AutoselectingInput;
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives<Trans>대안</Trans> {/*alternatives*/}
 
 ### Reading component's own DOM node from a ref<Trans>ref에서 컴포넌트의 자체 DOM 노드 읽기</Trans> {/*reading-components-own-dom-node-from-a-ref*/}
 

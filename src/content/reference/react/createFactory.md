@@ -97,7 +97,7 @@ This is how `createFactory` was used as an alternative to JSX. However, `createF
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives<Trans>대안</Trans> {/*alternatives*/}
 
 ### Copying `createFactory` into your project {/*copying-createfactory-into-your-project*/}
 

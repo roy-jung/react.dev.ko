@@ -1404,7 +1404,7 @@ There is currently no way to write an error boundary as a function component. Ho
 
 ---
 
-## Alternatives {/*alternatives*/}
+## Alternatives<Trans>대안</Trans> {/*alternatives*/}
 
 ### Migrating a simple component from a class to a function {/*migrating-a-simple-component-from-a-class-to-a-function*/}
 
