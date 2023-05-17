@@ -735,7 +735,7 @@ function ChatRoom({ roomId }) {
 ```
 
 The problem is that every time `isMuted` changes (for example, when the user presses the "Muted" toggle), the Effect will re-synchronize, and reconnect to the chat. This is not the desired user experience! (In this example, even disabling the linter would not work--if you do that, `isMuted` would get "stuck" with its old value.)
-<Trans>문제는 (사용자가 `isMuted` 토글을 누르는 등) `isMuted`가 변경될 때마다 Effect가 다시 동기화되고 채팅에 다시 연결된다는 점입니다. 이는 바람직한 사용자 경험이 아닙니다! (이 예에서는 린터를 비활성화해도 작동하지 않습니다. 그렇게 하면 `isMuted`가 이전 값으로 '고착'됩니다.)</Trans>
+<Trans>문제는 (사용자가 "Mute" 토글을 누르는 등) `isMuted`가 변경될 때마다 Effect가 다시 동기화되고 채팅에 다시 연결된다는 점입니다. 이는 바람직한 사용자 경험이 아닙니다! (이 예에서는 린터를 비활성화해도 작동하지 않습니다. 그렇게 하면 `isMuted`가 이전 값으로 '고착'됩니다.)</Trans>
 
 To solve this problem, you need to extract the logic that shouldn't be reactive out of the Effect. You don't want this Effect to "react" to the changes in `isMuted`. [Move this non-reactive piece of logic into an Effect Event:](/learn/separating-events-from-effects#declaring-an-effect-event)
 <Trans>이 문제를 해결하려면 Effect에서 반응해서는 안 되는 로직을 추출해야 합니다. 이 Effect가 `isMuted`의 변경에 "반응"하지 않기를 원합니다. [이 비반응 로직을 Effect Event로 옮기면 됩니다](/learn/separating-events-from-effects#declaring-an-effect-event):</Trans>
@@ -1340,7 +1340,7 @@ export default function Timer() {
 <Solution>
 
 You want to update the `count` state to be `count + 1` from inside the Effect. However, this makes your Effect depend on `count`, which changes with every tick, and that's why your interval gets re-created on every tick.
-<Trans>Effect 내부에서 `count` 스테이트를 `count + 1`로 업데이트하고 싶습니다. 그러나 이렇게 하면 Effect가 매 tick마다 변경되는 `count`에 의존하게되므로 매 tick마다 interval이 다시 만들어집니다.</Trans>
+<Trans>Effect 내부에서 `count` state를 `count + 1`로 업데이트하고 싶습니다. 그러나 이렇게 하면 Effect가 매 tick마다 변경되는 `count`에 의존하게되므로 매 tick마다 interval이 다시 만들어집니다.</Trans>
 
 To solve this, use the [updater function](/reference/react/useState#updating-state-based-on-the-previous-state) and write `setCount(c => c + 1)` instead of `setCount(count + 1)`:
 <Trans>이 문제를 해결하려면 [업데이터 함수](/reference/react/useState#updating-state-based-on-the-previous-state)를 사용하여 `setCount(count + 1)` 대신 `setCount(c => c + 1)`를 작성합니다:</Trans>

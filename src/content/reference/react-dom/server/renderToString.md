@@ -13,7 +13,7 @@ translators: [이나령]
 <Intro>
 
 `renderToString` renders a React tree to an HTML string.
-<Trans>`renderToString`은 리액트 트리를 HTML 문자열로 렌더링합니다.</Trans>
+<Trans>`renderToString`은 React 트리를 HTML 문자열로 렌더링합니다.</Trans>
 
 ```js
 const html = renderToString(reactNode)
@@ -47,7 +47,7 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `reactNode`: A React node you want to render to HTML. For example, a JSX node like `<App />`.
-<Trans outdent>`reactNode`: HTML로 렌더링하려는 리액트 노드입니다. 예: `<App />`과 같은 JSX 노드</Trans>
+<Trans outdent>`reactNode`: HTML로 렌더링하려는 React 노드입니다. 예: `<App />`과 같은 JSX 노드</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
@@ -66,7 +66,7 @@ An HTML string.
 
 ## Usage<Trans>사용법</Trans> {/*usage*/}
 
-### Rendering a React tree as HTML to a string<Trans>리액트 트리를 HTML로 문자열로 렌더링하기</Trans> {/*rendering-a-react-tree-as-html-to-a-string*/}
+### Rendering a React tree as HTML to a string<Trans>React 트리를 HTML로 문자열로 렌더링하기</Trans> {/*rendering-a-react-tree-as-html-to-a-string*/}
 
 Call `renderToString` to render your app to an HTML string which you can send with your server response:
 <Trans>앱을 서버 응답과 함께 보낼 수 있는 HTML 문자열로 렌더링하도록 `renderToString`을 호출하세요:</Trans>
@@ -82,7 +82,7 @@ app.use('/', (request, response) => {
 ```
 
 This will produce the initial non-interactive HTML output of your React components. On the client, you will need to call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to *hydrate* that server-generated HTML and make it interactive.
-<Trans>이렇게 하면 리액트 컴포넌트의 초기 비대화형 HTML 출력물이 생성됩니다. 클라이언트에서는 서버에서 생성된 HTML을 *hydrate*하고 상호작용 가능하게 만들기 위해 [`hydrateRoot`](/reference/react-dom/client/hydrateRoot)를 호출해야 합니다.</Trans>
+<Trans>이렇게 하면 React 컴포넌트의 초기 비대화형 HTML 출력물이 생성됩니다. 클라이언트에서는 서버에서 생성된 HTML을 *hydrate*하고 상호작용 가능하게 만들기 위해 [`hydrateRoot`](/reference/react-dom/client/hydrateRoot)를 호출해야 합니다.</Trans>
 
 
 <Pitfall>
