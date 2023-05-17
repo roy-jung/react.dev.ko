@@ -21,9 +21,9 @@ All built-in browser components, such as [`<div>`](https://developer.mozilla.org
 
 ---
 
-## Reference<Trans>참조</Trans> {/_reference_/} {/*referencetrans참조trans-reference*/}
+## Reference<Trans>참조</Trans> {/_reference_/} {/_referencetrans참조trans-reference_/} {/*referencetrans참조trans-reference-referencetrans참조trans-reference*/}
 
-### Common components (e.g. `<div>`) <Trans>기본 컴포넌트 (예: `<div>`)</Trans> {/_common_/} {/*common-components-eg-div-trans기본-컴포넌트-예-divtrans-common*/}
+### Common components (e.g. `<div>`) <Trans>기본 컴포넌트 (예: `<div>`)</Trans> {/_common_/} {/_common-components-eg-div-trans기본-컴포넌트-예-divtrans-common_/} {/*common-components-eg-div-trans기본-컴포넌트-예-divtrans-common-common-components-eg-div-trans기본-컴포넌트-예-divtrans-common*/}
 
 ```js
 <div className="wrapper">Some content</div>
@@ -33,7 +33,7 @@ All built-in browser components, such as [`<div>`](https://developer.mozilla.org
 
 <Trans>[아래에서 더 많은 예시를 확인하세요.](#usage)</Trans>
 
-#### Props {/_common-props_/} {/*props-common-props*/}
+#### Props {/_common-props_/} {/_props-common-props_/} {/*props-common-props-props-common-props*/}
 
 These special React props are supported for all built-in components:
 
@@ -71,9 +71,9 @@ These special React props are supported for all built-in components:
   <Trans>
     `suppressContentEditableWarning`: 불리언. `true`이면, 일반적으로 함께
     작동하지 않는 (일반적으로 함께 작동하지 않는) `children`과 `contentEditable=
-    {true}`가 모두 있는 엘리먼트에 대해 React가 표시하는 경고를 억제합니다. 이
-    값을 사용하면 `contentEditable` 콘텐츠를 수동으로 관리하는 텍스트 입력
-    라이브러리를 빌드할 때 사용합니다.
+    {true}`가 모두 있는 엘리먼트에 대해 React가 표시하는 경고를 억제합니다. 이 값을
+    사용하면 `contentEditable` 콘텐츠를 수동으로 관리하는 텍스트 입력 라이브러리를
+    빌드할 때 사용합니다.
   </Trans>
 
 - `suppressHydrationWarning`: A boolean. If you use [server rendering,](/reference/react-dom/server) normally there is a warning when the server and the client render different content. In some rare cases (like timestamps), it is very hard or impossible to guarantee an exact match. If you set `suppressHydrationWarning` to `true`, React will not warn you about mismatches in the attributes and the content of that element. It only works one level deep, and is intended to be used as an escape hatch. Don't overuse it. [Read about suppressing hydration errors.](/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors)
@@ -1523,7 +1523,7 @@ These events fire for resources like [`<audio>`](https://developer.mozilla.org/e
     `onWaiting` 입니다.
   </Trans>
 
-#### Caveats<Trans>주의사항</Trans> {/_common-caveats_/} {/*caveatstrans주의사항trans-common-caveats*/}
+#### Caveats<Trans>주의사항</Trans> {/_common-caveats_/} {/_caveatstrans주의사항trans-common-caveats_/} {/*caveatstrans주의사항trans-common-caveats-caveatstrans주의사항trans-common-caveats*/}
 
 - You cannot pass both `children` and `dangerouslySetInnerHTML` at the same time.
 
@@ -1539,7 +1539,7 @@ These events fire for resources like [`<audio>`](https://developer.mozilla.org/e
 
 ---
 
-### `ref` callback function <Trans>`ref` 콜백 함수</Trans> {/_ref-callback_/} {/*ref-callback-function-transref-콜백-함수trans-ref-callback*/}
+### `ref` callback function <Trans>`ref` 콜백 함수</Trans> {/_ref-callback_/} {/_ref-callback-function-transref-콜백-함수trans-ref-callback_/} {/*ref-callback-function-transref-콜백-함수trans-ref-callback-ref-callback-function-transref-콜백-함수trans-ref-callback*/}
 
 Instead of a ref object (like the one returned by [`useRef`](/reference/react/useRef#manipulating-the-dom-with-a-ref)), you may pass a function to the `ref` attribute.
 
@@ -1571,7 +1571,7 @@ React will also call your `ref` callback whenever you pass a _different_ `ref` c
 
 - `node`: A DOM node or `null`. React will pass you the DOM node when the ref gets attached, and `null` when the ref gets detached. Unless you pass the same function reference for the `ref` callback on every render, the callback will get temporarily detached and re-attached during every re-render of the component.
 
-#### Returns {/_returns_/} {/*returns-returns*/}
+#### Returns {/_returns_/} {/_returns-returns_/} {/*returns-returns-returns-returns*/}
 
 Do not return anything from the `ref` callback.
 
@@ -1579,7 +1579,7 @@ Do not return anything from the `ref` callback.
 
 ---
 
-### React event object <Trans>React 이벤트 객체</Trans> {/_react-event-object_/} {/*react-event-object-transreact-이벤트-객체trans-react-event-object*/}
+### React event object <Trans>React 이벤트 객체</Trans> {/_react-event-object_/} {/_react-event-object-transreact-이벤트-객체trans-react-event-object_/} {/*react-event-object-transreact-이벤트-객체trans-react-event-object-react-event-object-transreact-이벤트-객체trans-react-event-object*/}
 
 Your event handlers will receive a _React event object._ It is also sometimes known as a "synthetic event".
 
@@ -1612,7 +1612,7 @@ Some React events do not map directly to the browser's native events. For exampl
   브라우저 이벤트가 필요한 경우 `e.nativeEvent`에서 읽어오세요.
 </Trans>
 
-#### Properties <Trans>프로퍼티</Trans> {/_react-event-object-properties_/} {/*properties-trans프로퍼티trans-react-event-object-properties*/}
+#### Properties <Trans>프로퍼티</Trans> {/_react-event-object-properties_/} {/_properties-trans프로퍼티trans-react-event-object-properties_/} {/*properties-trans프로퍼티trans-react-event-object-properties-properties-trans프로퍼티trans-react-event-object-properties*/}
 
 React event objects implement some of the standard [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) properties:
 
@@ -1688,7 +1688,7 @@ Additionally, React event objects provide these properties:
     브라우저 이벤트 객체입니다.
   </Trans>
 
-#### Methods <Trans>메소드</Trans> {/_react-event-object-methods_/} {/*methods-trans메소드trans-react-event-object-methods*/}
+#### Methods <Trans>메소드</Trans> {/_react-event-object-methods_/} {/_methods-trans메소드trans-react-event-object-methods_/} {/*methods-trans메소드trans-react-event-object-methods-methods-trans메소드trans-react-event-object-methods*/}
 
 React event objects implement some of the standard [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) methods:
 
@@ -1742,7 +1742,7 @@ Additionally, React event objects provide these methods:
     `persist`가 호출되었는지 여부를 반환합니다.
   </Trans>
 
-#### Caveats<Trans>주의사항</Trans> {/_react-event-object-caveats_/} {/*caveatstrans주의사항trans-react-event-object-caveats*/}
+#### Caveats<Trans>주의사항</Trans> {/_react-event-object-caveats_/} {/_caveatstrans주의사항trans-react-event-object-caveats_/} {/*caveatstrans주의사항trans-react-event-object-caveats-caveatstrans주의사항trans-react-event-object-caveats*/}
 
 - The values of `currentTarget`, `eventPhase`, `target`, and `type` reflect the values your React code expects. Under the hood, React attaches event handlers at the root, but this is not reflected in React event objects. For example, `e.currentTarget` may not be the same as the underlying `e.nativeEvent.currentTarget`. For polyfilled events, `e.type` (React event type) may differ from `e.nativeEvent.type` (underlying type).
   <Trans outdent>
@@ -1756,7 +1756,7 @@ Additionally, React event objects provide these methods:
 
 ---
 
-### `AnimationEvent` handler function <Trans>`AnimationEvent` 핸들러 함수</Trans> {/_animationevent-handler_/} {/*animationevent-handler-function-transanimationevent-핸들러-함수trans-animationevent-handler*/}
+### `AnimationEvent` handler function <Trans>`AnimationEvent` 핸들러 함수</Trans> {/_animationevent-handler_/} {/_animationevent-handler-function-transanimationevent-핸들러-함수trans-animationevent-handler_/} {/*animationevent-handler-function-transanimationevent-핸들러-함수trans-animationevent-handler-animationevent-handler-function-transanimationevent-핸들러-함수trans-animationevent-handler*/}
 
 An event handler type for the [CSS animation](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) events.
 
@@ -1774,7 +1774,7 @@ An event handler type for the [CSS animation](https://developer.mozilla.org/en-U
 />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_animationevent-handler-parameters_/} {/*parameterstrans매개변수trans-animationevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_animationevent-handler-parameters_/} {/_parameterstrans매개변수trans-animationevent-handler-parameters_/} {/*parameterstrans매개변수trans-animationevent-handler-parameters-parameterstrans매개변수trans-animationevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`AnimationEvent`](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent) properties:
 
@@ -1790,7 +1790,7 @@ An event handler type for the [CSS animation](https://developer.mozilla.org/en-U
 
 ---
 
-### `ClipboardEvent` handler function <Trans>`ClipboardEvent` 핸들러 함수</Trans> {/_clipboadevent-handler_/} {/*clipboardevent-handler-function-transclipboardevent-핸들러-함수trans-clipboadevent-handler*/}
+### `ClipboardEvent` handler function <Trans>`ClipboardEvent` 핸들러 함수</Trans> {/_clipboadevent-handler_/} {/_clipboardevent-handler-function-transclipboardevent-핸들러-함수trans-clipboadevent-handler_/} {/*clipboardevent-handler-function-transclipboardevent-핸들러-함수trans-clipboadevent-handler-clipboardevent-handler-function-transclipboardevent-핸들러-함수trans-clipboadevent-handler*/}
 
 An event handler type for the [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) events.
 
@@ -1807,7 +1807,7 @@ An event handler type for the [Clipboard API](https://developer.mozilla.org/en-U
 />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_clipboadevent-handler-parameters_/} {/*parameterstrans매개변수trans-clipboadevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_clipboadevent-handler-parameters_/} {/_parameterstrans매개변수trans-clipboadevent-handler-parameters_/} {/*parameterstrans매개변수trans-clipboadevent-handler-parameters-parameterstrans매개변수trans-clipboadevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`ClipboardEvent`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent) properties:
 
@@ -1821,7 +1821,7 @@ An event handler type for the [Clipboard API](https://developer.mozilla.org/en-U
 
 ---
 
-### `CompositionEvent` handler function <Trans>`CompositionEvent` 핸들러 함수</Trans> {/_compositionevent-handler_/} {/*compositionevent-handler-function-transcompositionevent-핸들러-함수trans-compositionevent-handler*/}
+### `CompositionEvent` handler function <Trans>`CompositionEvent` 핸들러 함수</Trans> {/_compositionevent-handler_/} {/_compositionevent-handler-function-transcompositionevent-핸들러-함수trans-compositionevent-handler_/} {/*compositionevent-handler-function-transcompositionevent-핸들러-함수trans-compositionevent-handler-compositionevent-handler-function-transcompositionevent-핸들러-함수trans-compositionevent-handler*/}
 
 An event handler type for the [input method editor (IME)](https://developer.mozilla.org/en-US/docs/Glossary/Input_method_editor) events.
 
@@ -1839,7 +1839,7 @@ An event handler type for the [input method editor (IME)](https://developer.mozi
 />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_compositionevent-handler-parameters_/} {/*parameterstrans매개변수trans-compositionevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_compositionevent-handler-parameters_/} {/_parameterstrans매개변수trans-compositionevent-handler-parameters_/} {/*parameterstrans매개변수trans-compositionevent-handler-parameters-parameterstrans매개변수trans-compositionevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`CompositionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent) properties:
 
@@ -1853,7 +1853,7 @@ An event handler type for the [input method editor (IME)](https://developer.mozi
 
 ---
 
-### `DragEvent` handler function <Trans>`DragEvent` 핸들러 함수</Trans> {/_dragevent-handler_/} {/*dragevent-handler-function-transdragevent-핸들러-함수trans-dragevent-handler*/}
+### `DragEvent` handler function <Trans>`DragEvent` 핸들러 함수</Trans> {/_dragevent-handler_/} {/_dragevent-handler-function-transdragevent-핸들러-함수trans-dragevent-handler_/} {/*dragevent-handler-function-transdragevent-핸들러-함수trans-dragevent-handler-dragevent-handler-function-transdragevent-핸들러-함수trans-dragevent-handler*/}
 
 An event handler type for the [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) events.
 
@@ -1887,7 +1887,7 @@ An event handler type for the [HTML Drag and Drop API](https://developer.mozilla
 </>
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_dragevent-handler-parameters_/} {/*parameterstrans매개변수trans-dragevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_dragevent-handler-parameters_/} {/_parameterstrans매개변수trans-dragevent-handler-parameters_/} {/*parameterstrans매개변수trans-dragevent-handler-parameters-parameterstrans매개변수trans-dragevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`DragEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent) properties:
 
@@ -1902,6 +1902,7 @@ An event handler type for the [HTML Drag and Drop API](https://developer.mozilla
   It also includes the inherited [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) properties:
 
   {' '}
+
   <Trans>
     상속된
     [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)
@@ -1928,6 +1929,7 @@ An event handler type for the [HTML Drag and Drop API](https://developer.mozilla
   It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
   {' '}
+
   <Trans>
     상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
     속성도 포함됩니다:
@@ -1938,7 +1940,7 @@ An event handler type for the [HTML Drag and Drop API](https://developer.mozilla
 
 ---
 
-### `FocusEvent` handler function <Trans>`FocusEvent` 핸들러 함수</Trans> {/_focusevent-handler_/} {/*focusevent-handler-function-transfocusevent-핸들러-함수trans-focusevent-handler*/}
+### `FocusEvent` handler function <Trans>`FocusEvent` 핸들러 함수</Trans> {/_focusevent-handler_/} {/_focusevent-handler-function-transfocusevent-핸들러-함수trans-focusevent-handler_/} {/*focusevent-handler-function-transfocusevent-핸들러-함수trans-focusevent-handler-focusevent-handler-function-transfocusevent-핸들러-함수trans-focusevent-handler*/}
 
 An event handler type for the focus events.
 
@@ -1955,7 +1957,7 @@ An event handler type for the focus events.
 
 <Trans>[예시를 확인하세요.](#handling-focus-events)</Trans>
 
-#### Parameters<Trans>매개변수</Trans> {/_focusevent-handler-parameters_/} {/*parameterstrans매개변수trans-focusevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_focusevent-handler-parameters_/} {/_parameterstrans매개변수trans-focusevent-handler-parameters_/} {/*parameterstrans매개변수trans-focusevent-handler-parameters-parameterstrans매개변수trans-focusevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`FocusEvent`](https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent) properties:
 
@@ -1970,6 +1972,7 @@ An event handler type for the focus events.
   It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
   {' '}
+
   <Trans>
     상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
     속성도 포함됩니다:
@@ -1980,13 +1983,13 @@ An event handler type for the focus events.
 
 ---
 
-### `Event` handler function <Trans>`Event` 핸들러 함수</Trans> {/_event-handler_/} {/*event-handler-function-transevent-핸들러-함수trans-event-handler*/}
+### `Event` handler function <Trans>`Event` 핸들러 함수</Trans> {/_event-handler_/} {/_event-handler-function-transevent-핸들러-함수trans-event-handler_/} {/*event-handler-function-transevent-핸들러-함수trans-event-handler-event-handler-function-transevent-핸들러-함수trans-event-handler*/}
 
 An event handler type for generic events.
 
 <Trans>일반 이벤트를 위한 이벤트 핸들러 유형입니다.</Trans>
 
-#### Parameters<Trans>매개변수</Trans> {/_event-handler-parameters_/} {/*parameterstrans매개변수trans-event-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_event-handler-parameters_/} {/_parameterstrans매개변수trans-event-handler-parameters_/} {/*parameterstrans매개변수trans-event-handler-parameters-parameterstrans매개변수trans-event-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with no additional properties.
   <Trans outdent>
@@ -1995,7 +1998,7 @@ An event handler type for generic events.
 
 ---
 
-### `InputEvent` handler function <Trans>`InputEvent` 핸들러 함수</Trans> {/_inputevent-handler_/} {/*inputevent-handler-function-transinputevent-핸들러-함수trans-inputevent-handler*/}
+### `InputEvent` handler function <Trans>`InputEvent` 핸들러 함수</Trans> {/_inputevent-handler_/} {/_inputevent-handler-function-transinputevent-핸들러-함수trans-inputevent-handler_/} {/*inputevent-handler-function-transinputevent-핸들러-함수trans-inputevent-handler-inputevent-handler-function-transinputevent-핸들러-함수trans-inputevent-handler*/}
 
 An event handler type for the `onBeforeInput` event.
 
@@ -2005,7 +2008,7 @@ An event handler type for the `onBeforeInput` event.
 <input onBeforeInput={(e) => console.log('onBeforeInput')} />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_inputevent-handler-parameters_/} {/*parameterstrans매개변수trans-inputevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_inputevent-handler-parameters_/} {/_parameterstrans매개변수trans-inputevent-handler-parameters_/} {/*parameterstrans매개변수trans-inputevent-handler-parameters-parameterstrans매개변수trans-inputevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent) properties:
 
@@ -2019,7 +2022,7 @@ An event handler type for the `onBeforeInput` event.
 
 ---
 
-### `KeyboardEvent` handler function <Trans>`KeyboardEvent` 핸들러 함수</Trans> {/_keyboardevent-handler_/} {/*keyboardevent-handler-function-transkeyboardevent-핸들러-함수trans-keyboardevent-handler*/}
+### `KeyboardEvent` handler function <Trans>`KeyboardEvent` 핸들러 함수</Trans> {/_keyboardevent-handler_/} {/_keyboardevent-handler-function-transkeyboardevent-핸들러-함수trans-keyboardevent-handler_/} {/*keyboardevent-handler-function-transkeyboardevent-핸들러-함수trans-keyboardevent-handler-keyboardevent-handler-function-transkeyboardevent-핸들러-함수trans-keyboardevent-handler*/}
 
 An event handler type for keyboard events.
 
@@ -2036,7 +2039,7 @@ An event handler type for keyboard events.
 
 <Trans>[예시를 확인하세요.](#handling-keyboard-events)</Trans>
 
-#### Parameters<Trans>매개변수</Trans> {/_keyboardevent-handler-parameters_/} {/*parameterstrans매개변수trans-keyboardevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_keyboardevent-handler-parameters_/} {/_parameterstrans매개변수trans-keyboardevent-handler-parameters_/} {/*parameterstrans매개변수trans-keyboardevent-handler-parameters-parameterstrans매개변수trans-keyboardevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`KeyboardEvent`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) properties:
 
@@ -2063,6 +2066,7 @@ An event handler type for keyboard events.
   It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
   {' '}
+
   <Trans>
     상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
     속성도 포함됩니다:
@@ -2073,7 +2077,7 @@ An event handler type for keyboard events.
 
 ---
 
-### `MouseEvent` handler function <Trans>`MouseEvent` 핸들러 함수</Trans> {/_mouseevent-handler_/} {/*mouseevent-handler-function-transmouseevent-핸들러-함수trans-mouseevent-handler*/}
+### `MouseEvent` handler function <Trans>`MouseEvent` 핸들러 함수</Trans> {/_mouseevent-handler_/} {/_mouseevent-handler-function-transmouseevent-핸들러-함수trans-mouseevent-handler_/} {/*mouseevent-handler-function-transmouseevent-핸들러-함수trans-mouseevent-handler-mouseevent-handler-function-transmouseevent-핸들러-함수trans-mouseevent-handler*/}
 
 An event handler type for mouse events.
 
@@ -2094,7 +2098,7 @@ An event handler type for mouse events.
 
 <Trans>[예시를 확인하세요.](#handling-mouse-events)</Trans>
 
-#### Parameters<Trans>매개변수</Trans> {/_mouseevent-handler-parameters_/} {/*parameterstrans매개변수trans-mouseevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_mouseevent-handler-parameters_/} {/_parameterstrans매개변수trans-mouseevent-handler-parameters_/} {/*parameterstrans매개변수trans-mouseevent-handler-parameters-parameterstrans매개변수trans-mouseevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) properties:
 
@@ -2124,6 +2128,7 @@ An event handler type for mouse events.
   It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
   {' '}
+
   <Trans>
     상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
     속성도 포함됩니다:
@@ -2134,7 +2139,7 @@ An event handler type for mouse events.
 
 ---
 
-### `PointerEvent` handler function <Trans>`PointerEvent` 핸들러 함수</Trans> {/_pointerevent-handler_/} {/*pointerevent-handler-function-transpointerevent-핸들러-함수trans-pointerevent-handler*/}
+### `PointerEvent` handler function <Trans>`PointerEvent` 핸들러 함수</Trans> {/_pointerevent-handler_/} {/_pointerevent-handler-function-transpointerevent-핸들러-함수trans-pointerevent-handler_/} {/*pointerevent-handler-function-transpointerevent-핸들러-함수trans-pointerevent-handler-pointerevent-handler-function-transpointerevent-핸들러-함수trans-pointerevent-handler*/}
 
 An event handler type for [pointer events.](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events)
 
@@ -2158,7 +2163,7 @@ An event handler type for [pointer events.](https://developer.mozilla.org/en-US/
 
 <Trans>[예시를 확인하세요.](#handling-pointer-events)</Trans>
 
-#### Parameters<Trans>매개변수</Trans> {/_pointerevent-handler-parameters_/} {/*parameterstrans매개변수trans-pointerevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_pointerevent-handler-parameters_/} {/_parameterstrans매개변수trans-pointerevent-handler-parameters_/} {/*parameterstrans매개변수trans-pointerevent-handler-parameters-parameterstrans매개변수trans-pointerevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`PointerEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent) properties:
 
@@ -2182,6 +2187,7 @@ An event handler type for [pointer events.](https://developer.mozilla.org/en-US/
   It also includes the inherited [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) properties:
 
   {' '}
+
   <Trans>
     상속된
     [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)
@@ -2208,6 +2214,7 @@ An event handler type for [pointer events.](https://developer.mozilla.org/en-US/
   It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
   {' '}
+
   <Trans>
     상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
     속성도 포함됩니다:
@@ -2218,7 +2225,7 @@ An event handler type for [pointer events.](https://developer.mozilla.org/en-US/
 
 ---
 
-### `TouchEvent` handler function <Trans>`TouchEvent` 핸들러 함수</Trans> {/_touchevent-handler_/} {/*touchevent-handler-function-transtouchevent-핸들러-함수trans-touchevent-handler*/}
+### `TouchEvent` handler function <Trans>`TouchEvent` 핸들러 함수</Trans> {/_touchevent-handler_/} {/_touchevent-handler-function-transtouchevent-핸들러-함수trans-touchevent-handler_/} {/*touchevent-handler-function-transtouchevent-핸들러-함수trans-touchevent-handler-touchevent-handler-function-transtouchevent-핸들러-함수trans-touchevent-handler*/}
 
 An event handler type for [touch events.](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
 
@@ -2236,7 +2243,7 @@ An event handler type for [touch events.](https://developer.mozilla.org/en-US/do
 />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_touchevent-handler-parameters_/} {/*parameterstrans매개변수trans-touchevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_touchevent-handler-parameters_/} {/_parameterstrans매개변수trans-touchevent-handler-parameters_/} {/*parameterstrans매개변수trans-touchevent-handler-parameters-parameterstrans매개변수trans-touchevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`TouchEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent) properties:
 
@@ -2258,6 +2265,7 @@ An event handler type for [touch events.](https://developer.mozilla.org/en-US/do
   It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
   {' '}
+
   <Trans>
     상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
     속성도 포함됩니다:
@@ -2268,7 +2276,7 @@ An event handler type for [touch events.](https://developer.mozilla.org/en-US/do
 
 ---
 
-### `TransitionEvent` handler function <Trans>`TransitionEvent` 핸들러 함수</Trans> {/_transitionevent-handler_/} {/*transitionevent-handler-function-transtransitionevent-핸들러-함수trans-transitionevent-handler*/}
+### `TransitionEvent` handler function <Trans>`TransitionEvent` 핸들러 함수</Trans> {/_transitionevent-handler_/} {/_transitionevent-handler-function-transtransitionevent-핸들러-함수trans-transitionevent-handler_/} {/*transitionevent-handler-function-transtransitionevent-핸들러-함수trans-transitionevent-handler-transitionevent-handler-function-transtransitionevent-핸들러-함수trans-transitionevent-handler*/}
 
 An event handler type for the CSS transition events.
 
@@ -2278,7 +2286,7 @@ An event handler type for the CSS transition events.
 <div onTransitionEnd={(e) => console.log('onTransitionEnd')} />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_transitionevent-handler-parameters_/} {/*parameterstrans매개변수trans-transitionevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_transitionevent-handler-parameters_/} {/_parameterstrans매개변수trans-transitionevent-handler-parameters_/} {/*parameterstrans매개변수trans-transitionevent-handler-parameters-parameterstrans매개변수trans-transitionevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`TransitionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent) properties:
 
@@ -2294,7 +2302,7 @@ An event handler type for the CSS transition events.
 
 ---
 
-### `UIEvent` handler function <Trans>`UIEvent` 핸들러 함수</Trans> {/_uievent-handler_/} {/*uievent-handler-function-transuievent-핸들러-함수trans-uievent-handler*/}
+### `UIEvent` handler function <Trans>`UIEvent` 핸들러 함수</Trans> {/_uievent-handler_/} {/_uievent-handler-function-transuievent-핸들러-함수trans-uievent-handler_/} {/*uievent-handler-function-transuievent-핸들러-함수trans-uievent-handler-uievent-handler-function-transuievent-핸들러-함수trans-uievent-handler*/}
 
 An event handler type for generic UI events.
 
@@ -2304,7 +2312,7 @@ An event handler type for generic UI events.
 <div onScroll={(e) => console.log('onScroll')} />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_uievent-handler-parameters_/} {/*parameterstrans매개변수trans-uievent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_uievent-handler-parameters_/} {/_parameterstrans매개변수trans-uievent-handler-parameters_/} {/*parameterstrans매개변수trans-uievent-handler-parameters-parameterstrans매개변수trans-uievent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
@@ -2319,7 +2327,7 @@ An event handler type for generic UI events.
 
 ---
 
-### `WheelEvent` handler function <Trans>`WheelEvent` 핸들러 함수</Trans> {/_wheelevent-handler_/} {/*wheelevent-handler-function-transwheelevent-핸들러-함수trans-wheelevent-handler*/}
+### `WheelEvent` handler function <Trans>`WheelEvent` 핸들러 함수</Trans> {/_wheelevent-handler_/} {/_wheelevent-handler-function-transwheelevent-핸들러-함수trans-wheelevent-handler_/} {/*wheelevent-handler-function-transwheelevent-핸들러-함수trans-wheelevent-handler-wheelevent-handler-function-transwheelevent-핸들러-함수trans-wheelevent-handler*/}
 
 An event handler type for the `onWheel` event.
 
@@ -2329,7 +2337,7 @@ An event handler type for the `onWheel` event.
 <div onScroll={(e) => console.log('onScroll')} />
 ```
 
-#### Parameters<Trans>매개변수</Trans> {/_wheelevent-handler-parameters_/} {/*parameterstrans매개변수trans-wheelevent-handler-parameters*/}
+#### Parameters<Trans>매개변수</Trans> {/_wheelevent-handler-parameters_/} {/_parameterstrans매개변수trans-wheelevent-handler-parameters_/} {/*parameterstrans매개변수trans-wheelevent-handler-parameters-parameterstrans매개변수trans-wheelevent-handler-parameters*/}
 
 - `e`: A [React event object](#react-event-object) with these extra [`WheelEvent`](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent) properties:
 
@@ -2347,6 +2355,7 @@ An event handler type for the `onWheel` event.
 It also includes the inherited [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) properties:
 
 {' '}
+
 <Trans>
   상속된
   [`MouseEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)
@@ -2373,6 +2382,7 @@ It also includes the inherited [`MouseEvent`](https://developer.mozilla.org/en-U
 It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) properties:
 
 {' '}
+
 <Trans>
   상속된 [`UIEvent`](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent)
   속성도 포함됩니다:
@@ -2383,9 +2393,9 @@ It also includes the inherited [`UIEvent`](https://developer.mozilla.org/en-US/d
 
 ---
 
-## Usage<Trans>사용법</Trans> {/_usage_/} {/*usagetrans사용법trans-usage*/}
+## Usage<Trans>사용법</Trans> {/_usage_/} {/_usagetrans사용법trans-usage_/} {/*usagetrans사용법trans-usage-usagetrans사용법trans-usage*/}
 
-### Applying CSS styles <Trans>CSS 스타일 적용하기</Trans> {/_applying-css-styles_/} {/*applying-css-styles-transcss-스타일-적용하기trans-applying-css-styles*/}
+### Applying CSS styles <Trans>CSS 스타일 적용하기</Trans> {/_applying-css-styles_/} {/_applying-css-styles-transcss-스타일-적용하기trans-applying-css-styles_/} {/*applying-css-styles-transcss-스타일-적용하기trans-applying-css-styles-applying-css-styles-transcss-스타일-적용하기trans-applying-css-styles*/}
 
 In React, you specify a CSS class with [`className`.](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) It works like the `class` attribute in HTML:
 
@@ -2482,7 +2492,7 @@ export default function Avatar({user}) {
 
 <DeepDive>
 
-#### How to apply multiple CSS classes conditionally? <Trans>여러 CSS 클래스를 조건부로 적용하는 방법은 무엇인가요?</Trans> {/_how-to-apply-multiple-css-classes-conditionally_/} {/*how-to-apply-multiple-css-classes-conditionally-trans여러-css-클래스를-조건부로-적용하는-방법은-무엇인가요trans-how-to-apply-multiple-css-classes-conditionally*/}
+#### How to apply multiple CSS classes conditionally? <Trans>여러 CSS 클래스를 조건부로 적용하는 방법은 무엇인가요?</Trans> {/_how-to-apply-multiple-css-classes-conditionally_/} {/_how-to-apply-multiple-css-classes-conditionally-trans여러-css-클래스를-조건부로-적용하는-방법은-무엇인가요trans-how-to-apply-multiple-css-classes-conditionally_/} {/*how-to-apply-multiple-css-classes-conditionally-trans여러-css-클래스를-조건부로-적용하는-방법은-무엇인가요trans-how-to-apply-multiple-css-classes-conditionally-how-to-apply-multiple-css-classes-conditionally-trans여러-css-클래스를-조건부로-적용하는-방법은-무엇인가요trans-how-to-apply-multiple-css-classes-conditionally*/}
 
 To apply CSS classes conditionally, you need to produce the `className` string yourself using JavaScript.
 
@@ -2541,7 +2551,7 @@ function Row({isSelected, size}) {
 
 ---
 
-### Manipulating a DOM node with a ref <Trans>ref로 DOM 노드 조작하기</Trans> {/_manipulating-a-dom-node-with-a-ref_/} {/*manipulating-a-dom-node-with-a-ref-transref로-dom-노드-조작하기trans-manipulating-a-dom-node-with-a-ref*/}
+### Manipulating a DOM node with a ref <Trans>ref로 DOM 노드 조작하기</Trans> {/_manipulating-a-dom-node-with-a-ref_/} {/_manipulating-a-dom-node-with-a-ref-transref로-dom-노드-조작하기trans-manipulating-a-dom-node-with-a-ref_/} {/*manipulating-a-dom-node-with-a-ref-transref로-dom-노드-조작하기trans-manipulating-a-dom-node-with-a-ref-manipulating-a-dom-node-with-a-ref-transref로-dom-노드-조작하기trans-manipulating-a-dom-node-with-a-ref*/}
 
 Sometimes, you'll need to get the browser DOM node associated with a tag in JSX. For example, if you want to focus an `<input>` when a button is clicked, you need to call [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) on the browser `<input>` DOM node.
 
@@ -2610,7 +2620,7 @@ For more advanced use cases, the `ref` attribute also accepts a [callback functi
 
 ---
 
-### Dangerously setting the inner HTML <Trans>내부 HTML을 위험하게 설정하는 경우</Trans> {/_dangerously-setting-the-inner-html_/} {/*dangerously-setting-the-inner-html-trans내부-html을-위험하게-설정하는-경우trans-dangerously-setting-the-inner-html*/}
+### Dangerously setting the inner HTML <Trans>내부 HTML을 위험하게 설정하는 경우</Trans> {/_dangerously-setting-the-inner-html_/} {/_dangerously-setting-the-inner-html-trans내부-html을-위험하게-설정하는-경우trans-dangerously-setting-the-inner-html_/} {/*dangerously-setting-the-inner-html-trans내부-html을-위험하게-설정하는-경우trans-dangerously-setting-the-inner-html-dangerously-setting-the-inner-html-trans내부-html을-위험하게-설정하는-경우trans-dangerously-setting-the-inner-html*/}
 
 You can pass a raw HTML string to an element like so:
 
@@ -2742,7 +2752,7 @@ The code embedded in the HTML will run. A hacker could use this security hole to
 
 ---
 
-### Handling mouse events <Trans>마우스 이벤트 처리하기</Trans> {/_handling-mouse-events_/} {/*handling-mouse-events-trans마우스-이벤트-처리하기trans-handling-mouse-events*/}
+### Handling mouse events <Trans>마우스 이벤트 처리하기</Trans> {/_handling-mouse-events_/} {/_handling-mouse-events-trans마우스-이벤트-처리하기trans-handling-mouse-events_/} {/*handling-mouse-events-trans마우스-이벤트-처리하기trans-handling-mouse-events-handling-mouse-events-trans마우스-이벤트-처리하기trans-handling-mouse-events*/}
 
 This example shows some common [mouse events](#mouseevent-handler) and when they fire.
 
@@ -2798,7 +2808,7 @@ input {
 
 ---
 
-### Handling pointer events <Trans>포인터 이벤트 처리하기</Trans> {/_handling-pointer-events_/} {/*handling-pointer-events-trans포인터-이벤트-처리하기trans-handling-pointer-events*/}
+### Handling pointer events <Trans>포인터 이벤트 처리하기</Trans> {/_handling-pointer-events_/} {/_handling-pointer-events-trans포인터-이벤트-처리하기trans-handling-pointer-events_/} {/*handling-pointer-events-trans포인터-이벤트-처리하기trans-handling-pointer-events-handling-pointer-events-trans포인터-이벤트-처리하기trans-handling-pointer-events*/}
 
 This example shows some common [pointer events](#pointerevent-handler) and when they fire.
 
@@ -2855,7 +2865,7 @@ input {
 
 ---
 
-### Handling focus events <Trans>포커스 이벤트 처리하기</Trans> {/_handling-focus-events_/} {/*handling-focus-events-trans포커스-이벤트-처리하기trans-handling-focus-events*/}
+### Handling focus events <Trans>포커스 이벤트 처리하기</Trans> {/_handling-focus-events_/} {/_handling-focus-events-trans포커스-이벤트-처리하기trans-handling-focus-events_/} {/*handling-focus-events-trans포커스-이벤트-처리하기trans-handling-focus-events-handling-focus-events-trans포커스-이벤트-처리하기trans-handling-focus-events*/}
 
 In React, [focus events](#focusevent-handler) bubble. You can use the `currentTarget` and `relatedTarget` to differentiate if the focusing or blurring events originated from outside of the parent element. The example shows how to detect focusing a child, focusing the parent element, and how to detect focus entering or leaving the whole subtree.
 
@@ -2925,7 +2935,7 @@ input {
 
 ---
 
-### Handling keyboard events <Trans>키보드 이벤트 처리하기</Trans> {/_handling-keyboard-events_/} {/*handling-keyboard-events-trans키보드-이벤트-처리하기trans-handling-keyboard-events*/}
+### Handling keyboard events <Trans>키보드 이벤트 처리하기</Trans> {/_handling-keyboard-events_/} {/_handling-keyboard-events-trans키보드-이벤트-처리하기trans-handling-keyboard-events_/} {/*handling-keyboard-events-trans키보드-이벤트-처리하기trans-handling-keyboard-events-handling-keyboard-events-trans키보드-이벤트-처리하기trans-handling-keyboard-events*/}
 
 This example shows some common [keyboard events](#keyboardevent-handler) and when they fire.
 
