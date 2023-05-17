@@ -1340,7 +1340,7 @@ export default function Timer() {
 <Solution>
 
 You want to update the `count` state to be `count + 1` from inside the Effect. However, this makes your Effect depend on `count`, which changes with every tick, and that's why your interval gets re-created on every tick.
-<Trans>Effect 내부에서 `count` 스테이트를 `count + 1`로 업데이트하고 싶습니다. 그러나 이렇게 하면 Effect가 매 tick마다 변경되는 `count`에 의존하게되므로 매 tick마다 interval이 다시 만들어집니다.</Trans>
+<Trans>Effect 내부에서 `count` state를 `count + 1`로 업데이트하고 싶습니다. 그러나 이렇게 하면 Effect가 매 tick마다 변경되는 `count`에 의존하게되므로 매 tick마다 interval이 다시 만들어집니다.</Trans>
 
 To solve this, use the [updater function](/reference/react/useState#updating-state-based-on-the-previous-state) and write `setCount(c => c + 1)` instead of `setCount(count + 1)`:
 <Trans>이 문제를 해결하려면 [업데이터 함수](/reference/react/useState#updating-state-based-on-the-previous-state)를 사용하여 `setCount(count + 1)` 대신 `setCount(c => c + 1)`를 작성합니다:</Trans>
