@@ -1,10 +1,12 @@
 ---
 title: renderToStaticNodeStream
+translators: [이승효]
 ---
 
 <Intro>
 
 `renderToStaticNodeStream` renders a non-interactive React tree to a [Node.js Readable Stream.](https://nodejs.org/api/stream.html#readable-streams)
+<Trans>`renderToStaticNodeStream`은 비대화형 React 트리를 [읽기 가능한 Node.js 스트림](https://nodejs.org/api/stream.html#readable-streams)으로 렌더링합니다.</Trans>
 
 ```js
 const stream = renderToStaticNodeStream(reactNode)
@@ -21,6 +23,7 @@ const stream = renderToStaticNodeStream(reactNode)
 ### `renderToStaticNodeStream(reactNode)` {/*rendertostaticnodestream*/}
 
 On the server, call `renderToStaticNodeStream` to get a [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams).
+<Trans>서버에서 `renderToStaticNodeStream`을 호출하여 [읽기 가능한 Node.js 스트림](https://nodejs.org/api/stream.html#readable-streams)을 가져옵니다.</Trans>
 
 ```js
 import { renderToStaticNodeStream } from 'react-dom/server';
@@ -33,32 +36,41 @@ stream.pipe(response);
 <Trans>[아래에서 더 많은 예시를 확인하세요.](#usage)</Trans>
 
 The stream will produce non-interactive HTML output of your React components.
+<Trans>스트림은 React 컴포넌트의 비대화형 HTML 출력을 생성합니다.</Trans>
 
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `reactNode`: A React node you want to render to HTML. For example, a JSX element like `<Page />`.
+<Trans outdent>`reactNode`: HTML로 렌더링하려는 React 노드. 예를 들어, `<App />`과 같은 JSX 엘리먼트입니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
 A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) that outputs an HTML string. The resulting HTML can't be hydrated on the client.
+<Trans>HTML 문자열을 출력하는 [읽기 가능한 Node.js 스트림](https://nodejs.org/api/stream.html#readable-streams)입니다. 결과 HTML은 클라이언트에서 hydrate 할 수 없습니다.</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * `renderToStaticNodeStream` output cannot be hydrated.
+<Trans>`renderToStaticNodeStream`의 출력은 hydrate 할 수 없습니다.</Trans>
 
 * This method will wait for all [Suspense boundaries](/reference/react/Suspense) to complete before returning any output.
+<Trans>이 메서드는 출력을 반환하기 전에 모든 [서스펜스 경계](/reference/react/Suspense)가 완료될 때까지 기다립니다.</Trans>
 
 * As of React 18, this method buffers all of its output, so it doesn't actually provide any streaming benefits.
+<Trans>React 18부터 이 메서드는 모든 출력을 버퍼링하므로 실제로 스트리밍 이점을 제공하지 않습니다.</Trans>
 
 * The returned stream is a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
+<Trans>반환된 스트림은 utf-8로 인코딩된 바이트 스트림입니다. 다른 인코딩 스트림이 필요한 경우, 텍스트 변환을 위한 변환 스트림을 제공하는 [iconv-lite](https://www.npmjs.com/package/iconv-lite)와 같은 프로젝트를 살펴보세요.</Trans>
 
 ---
 
 ## Usage<Trans>사용법</Trans> {/*usage*/}
 
-### Rendering a React tree as static HTML to a Node.js Readable Stream {/*rendering-a-react-tree-as-static-html-to-a-nodejs-readable-stream*/}
+### Rendering a React tree as static HTML to a Node.js Readable Stream<Trans>React 트리를 HTML로 읽기 가능한 Node.js 스트림에 렌더링하기 </Trans> {/*rendering-a-react-tree-as-static-html-to-a-nodejs-readable-stream*/}
 
 Call `renderToStaticNodeStream` to get a [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams) which you can pipe to your server response:
+<Trans>`renderToStaticNodeStream`을 호출하면 서버 응답으로 연결할 수 있는 [읽기 가능한 Node.js 스트림](https://nodejs.org/api/stream.html#readable-streams)을 가져옵니다:</Trans>
+
 
 ```js {5-6}
 import { renderToStaticNodeStream } from 'react-dom/server';
@@ -71,11 +83,14 @@ app.use('/', (request, response) => {
 ```
 
 The stream will produce the initial non-interactive HTML output of your React components.
+<Trans>스트림은 React 컴포넌트의 초기 비대화형 HTML 출력을 생성합니다.</Trans>
 
 <Pitfall>
 
 This method renders **non-interactive HTML that cannot be hydrated.** This is useful if you want to use React as a simple static page generator, or if you're rendering completely static content like emails.
+<Trans>이 메서드는 **hydrate 할 수 없는 비대화형 HTML**을 렌더링합니다. 이 메서드는 React를 간단한 정적 페이지 생성기로 사용하거나 이메일과 같이 완전히 정적인 콘텐츠를 렌더링할 때 유용합니다</Trans>
 
 Interactive apps should use [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream) on the server and [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) on the client.
+<Trans>인터랙티브 앱은 서버에서는 [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)을, 클라이언트에서는 [`hydrateRoot`](/reference/react-dom/client/hydrateRoot)를 사용해야 합니다.</Trans>
 
 </Pitfall>
