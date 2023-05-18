@@ -1316,7 +1316,7 @@ Press "Show form" and notice that the second field automatically gets focused. T
 <Trans>"Show form"을 누르고 자동으로 두 번째 필드에 초점이 맞춰지는 것을 확인하세요. 이는 두 `<MyInput />` 컴포넌트가 모두 자신의 필드에 초점을 맞추려고 하기 때문입니다. 한 행에 있는 두 개의 입력 필드에 대해 `focus()`를 호출하면 항상 마지막 항목이 "승리"합니다.</Trans>
 
 Let's say you want to focus the first field. The first `MyInput` component now receives a boolean `shouldFocus` prop set to `true`. Change the logic so that `focus()` is only called if the `shouldFocus` prop received by `MyInput` is `true`.
-<Trans>첫 번째 필드에 초점을 맞추고 싶다고 합시다. 첫 번째 `MyInput` 컴포넌트는 이제 `true`로 설정된 부울 `shouldFocus` prop을 받습니다. MyInput에서 받은 `shouldFocus` prop이 `true`인 경우에만 `focus()`가 호출되도록 논리를 변경해 보세요.</Trans>
+<Trans>첫 번째 필드에 초점을 맞추고 싶다고 합시다. 첫 번째 `MyInput` 컴포넌트는 이제 `true`로 설정된 불리언 `shouldFocus` prop을 받습니다. MyInput에서 받은 `shouldFocus` prop이 `true`인 경우에만 `focus()`가 호출되도록 논리를 변경해 보세요.</Trans>
 
 <Sandpack>
 

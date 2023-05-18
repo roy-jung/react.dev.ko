@@ -3,10 +3,10 @@ title: 번역 진행상황
 ---
 
 <Intro>
-last updated @ 2023-05-18 11:00
+last updated @ 2023-05-18 15:00
 </Intro>
 
-## Reference - 진행중 (done: 53 / total: 59) {/*reference*/}
+## Reference - 진행중 (done: 54 / total: 59) {/*reference*/}
 
 |     | title                                                                |     | title                                                                                  |
 | :-: | :------------------------------------------------------------------- | :-: | :------------------------------------------------------------------------------------- |
@@ -16,7 +16,7 @@ last updated @ 2023-05-18 11:00
 |  ✅  | [5-3. useDebugValue](/reference/react/useDebugValue)                 |  ✅  | [8-6. `<textarea>`](/reference/react-dom/components/textarea)                          |
 |  ✅  | [5-4. useDeferredValue](/reference/react/useDeferredValue)           |  ✅  | [9. APIs](/reference/react-dom)                                                        |
 |  ✅  | [5-5. useEffect](/reference/react/useEffect)                         |  ✅  | [9-1. createPortal](/reference/react-dom/createPortal)                                 |
-|  ✅  | [5-6. useId](/reference/react/useId)                                 |  ▢  | [9-2. flushSync](/reference/react-dom/flushSync)                                       |
+|  ✅  | [5-6. useId](/reference/react/useId)                                 |  ✅  | [9-2. flushSync](/reference/react-dom/flushSync)                                       |
 |  ✅  | [5-7. useImperativeHandle](/reference/react/useImperativeHandle)     |  ✅  | [9-3. findDOMNode](/reference/react-dom/findDOMNode)                                   |
 |  ✅  | [5-8. useInsertionEffect](/reference/react/useInsertionEffect)       |  ✅  | [9-4. hydrate](/reference/react-dom/hydrate)                                           |
 |  ✅  | [5-9. useLayoutEffect](/reference/react/useLayoutEffect)             |  ✅  | [9-5. render](/reference/react-dom/render)                                             |

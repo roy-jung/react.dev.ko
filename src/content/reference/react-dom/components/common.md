@@ -689,7 +689,7 @@ Additionally, React event objects provide these properties:
 * `nativeEvent`: A DOM [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). The original browser event object.
 <Trans outdent>`nativeEvent`: DOM [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). 원본 브라우저 이벤트 객체입니다.</Trans>
  
-#### Methods <Trans>메소드</Trans> {/*react-event-object-methods*/}
+#### Methods <Trans>메서드</Trans> {/*react-event-object-methods*/}
 
 React event objects implement some of the standard [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) methods:
 <Trans>React 이벤트 객체는 표준 [`Event`](https://developer.mozilla.org/ko/docs/Web/API/Event) 메서드 중 일부를 구현합니다:</Trans>
@@ -704,10 +704,10 @@ Additionally, React event objects provide these methods:
 <Trans>또한 React 이벤트 객체는 이러한 메서드를 제공합니다:</Trans>
 
 * `isDefaultPrevented()`: Returns a boolean value indicating whether `preventDefault` was called.
-<Trans>`isDefaultPrevented()`: `preventDefault`가 호출되었는지 여부를 나타내는 부울 값을 반환합니다.</Trans>
+<Trans>`isDefaultPrevented()`: `preventDefault`가 호출되었는지 여부를 나타내는 불리언 값을 반환합니다.</Trans>
 
 * `isPropagationStopped()`: Returns a boolean value indicating whether `stopPropagation` was called.
-<Trans>`isPropagationStopped()`: `stopPropagation`가 호출되었는지 여부를 나타내는 부울 값을 반환합니다.</Trans>
+<Trans>`isPropagationStopped()`: `stopPropagation`가 호출되었는지 여부를 나타내는 불리언 값을 반환합니다.</Trans>
 
 * `persist()`: Not used with React DOM. With React Native, call this to read event's properties after the event.
 <Trans>`persist()`: React DOM에서는 사용되지 않습니다. React Native에서는 이벤트 이후 이벤트의 프로퍼티를 읽으려면 이 함수를 호출합니다.</Trans>

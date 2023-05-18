@@ -1792,7 +1792,7 @@ label { display: block; margin-bottom: 10px; }
 </Sandpack>
 
 In this version, the `App` component passes a boolean prop instead of a function. Inside the Effect, you decide which function to use. Since both `createEncryptedConnection` and `createUnencryptedConnection` are declared outside the component, they aren't reactive, and don't need to be dependencies. You'll learn more about this in [Removing Effect Dependencies.](/learn/removing-effect-dependencies)
-<Trans>이 버전에서는 `App` 컴포넌트가 함수 대신 부울 prop을 전달합니다. Effect 내에서 어떤 함수를 사용할지 결정합니다. `createEncryptedConnection`과 `createUnencryptedConnection`은 모두 컴포넌트 외부에서 선언되므로 반응형이 아니므로 의존성이 될 필요가 없습니다. 이에 대한 자세한 내용은 [Effect 의존성 제거하기](/learn/removing-effect-dependencies)에서 확인할 수 있습니다.</Trans>
+<Trans>이 버전에서는 `App` 컴포넌트가 함수 대신 불리언 prop을 전달합니다. Effect 내에서 어떤 함수를 사용할지 결정합니다. `createEncryptedConnection`과 `createUnencryptedConnection`은 모두 컴포넌트 외부에서 선언되므로 반응형이 아니므로 의존성이 될 필요가 없습니다. 이에 대한 자세한 내용은 [Effect 의존성 제거하기](/learn/removing-effect-dependencies)에서 확인할 수 있습니다.</Trans>
 
 </Solution>
 
