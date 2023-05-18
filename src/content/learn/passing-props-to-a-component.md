@@ -91,7 +91,7 @@ You can give `Avatar` some props in two steps.
 ### Step 1: Pass props to the child component<Trans>자식 컴포넌트에 props 전달하기</Trans> {/*step-1-pass-props-to-the-child-component*/}
 
 First, pass some props to `Avatar`. For example, let's pass two props: `person` (an object), and `size` (a number):
-<Trans>먼저, `Avatar` 에 몇몇 props를 전달합니다. 예를 들어 `person` (객체)와 `size` (숫자)를 전달해 보겠습니다:</Trans>
+<Trans>먼저, `Avatar` 에 몇몇 props를 전달합니다. 예를 들어, `person` (객체)와 `size` (숫자)를 전달해 보겠습니다:</Trans>
 
 ```js
 export default function Profile() {
@@ -199,7 +199,7 @@ Props let you think about parent and child components independently. For example
 <Trans>props를 사용하면 부모 컴포넌트와 자식 컴포넌트를 독립적으로 생각할 수 있습니다. 예를 들어, `Avatar` 가 props들을 어떻게 사용하는지 생각할 필요없이  `Profile`의 `person` 또는 `size` props를 수정할 수 있습니다. 마찬가지로 `Profile`을 보지 않고도 `Avatar`가 props를 사용하는 방식을 바꿀 수 있습니다.</Trans>
 
 You can think of props like "knobs" that you can adjust. They serve the same role as arguments serve for functions—in fact, props _are_ the only argument to your component! React component functions accept a single argument, a `props` object:
-<Trans>props는 조절할 수 있는 "손잡이(볼륨 다이얼같은 느낌적 느낌)"라고 생각하면 됩니다. props는 함수의 인수와 동일한 역할을 합니다. 사실 props는 컴포넌트에 대한 유일한 인자입니다! React 컴포넌트 함수는 하나의 인자, 즉 `props` 객체를 받습니다:</Trans>
+<Trans>props는 조절할 수 있는 "손잡이(볼륨 다이얼같은 느낌적 느낌)"라고 생각하면 됩니다. props는 함수의 인수와 동일한 역할을 합니다. 사실 props는 컴포넌트에 대한 유일한 인자입니다! React 컴포넌트 함수는 하나의 인자, 즉,`props` 객체를 받습니다:</Trans>
 
 ```js
 function Avatar(props) {
@@ -457,7 +457,7 @@ This example illustrates that **a component may receive different props over tim
 <Trans>이 예시는 **컴포넌트가 시간에 따라 다른 props를 받을 수 있음을 보여줍니다.** Props는 항상 고정되어 있지 않습니다! 여기서 `time` prop은 매초마다 변경되고, `color` prop은 다른 색상을 선택하면 변경됩니다. Props는 컴포넌트의 데이터를 처음에만 반영하는 것이 아니라 모든 시점에 반영합니다.</Trans>
 
 However, props are [immutable](https://en.wikipedia.org/wiki/Immutable_object)—a term from computer science meaning "unchangeable". When a component needs to change its props (for example, in response to a user interaction or new data), it will have to "ask" its parent component to pass it _different props_—a new object! Its old props will then be cast aside, and eventually the JavaScript engine will reclaim the memory taken by them.
-<Trans>그러나 props는 [불변](https://en.wikipedia.org/wiki/Immutable_object)으로, 컴퓨터 과학에서 "변경할 수 없다"는 뜻의 용어입니다. 컴포넌트가 props를 변경해야 하는 경우(예: 사용자의 상호작용이나 새로운 데이터에 대한 응답으로), 부모 컴포넌트에 *다른 props*, 즉 새로운 객체를 전달하도록 "요청"해야 합니다! 그러면 이전의 props는 버려지고(참조를 끊는다), 결국 JavaScript 엔진은 기존 props가 차지했던 메모리를 회수(가비지 컬렉팅. GC)하게 됩니다.</Trans>
+<Trans>그러나 props는 [불변](https://en.wikipedia.org/wiki/Immutable_object)으로, 컴퓨터 과학에서 "변경할 수 없다"는 뜻의 용어입니다. 컴포넌트가 props를 변경해야 하는 경우(예: 사용자의 상호작용이나 새로운 데이터에 대한 응답으로), 부모 컴포넌트에 *다른 props*, 즉,새로운 객체를 전달하도록 "요청"해야 합니다! 그러면 이전의 props는 버려지고(참조를 끊는다), 결국 JavaScript 엔진은 기존 props가 차지했던 메모리를 회수(가비지 컬렉팅. GC)하게 됩니다.</Trans>
 
 **Don't try to "change props".** When you need to respond to the user input (like changing the selected color), you will need to "set state", which you can learn about in [State: A Component's Memory.](/learn/state-a-components-memory)
 <Trans>**“props 변경”을 시도하지 마세요.** 선택한 색을 변경하는 등 사용자 입력에 반응해야 하는 경우에는 [State: 컴포넌트의 메모리](/learn/state-a-components-memory)에서 배울 “set state”가 필요할 것입니다.</Trans>

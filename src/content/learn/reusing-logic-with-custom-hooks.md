@@ -258,7 +258,7 @@ You must follow these naming conventions:
 </TransBlock>
 
 This convention guarantees that you can always look at a component and know where its state, Effects, and other React features might "hide". For example, if you see a `getColor()` function call inside your component, you can be sure that it can't possibly contain React state inside because its name doesn't start with `use`. However, a function call like `useOnlineStatus()` will most likely contain calls to other Hooks inside!
-<Trans>이 규칙은 컴포넌트를 보고 state, Effect 및 기타 React 기능이 어디에 "숨어 있는지" 항상 알 수 있도록 보장합니다. 예를 들어 컴포넌트 내부에 `getColor()` 함수 호출이 있다면, 그 이름이 `use`로 시작하지 않기 때문에 내부에 React state를 포함할 수 없다는 것을 확신할 수 있습니다. 하지만 `useOnlineStatus()`와 같은 함수 호출은 내부에 다른 훅에 대한 호출을 포함할 가능성이 높습니다!</Trans>
+<Trans>이 규칙은 컴포넌트를 보고 state, Effect 및 기타 React 기능이 어디에 "숨어 있는지" 항상 알 수 있도록 보장합니다. 예를 들어, 컴포넌트 내부에 `getColor()` 함수 호출이 있다면, 그 이름이 `use`로 시작하지 않기 때문에 내부에 React state를 포함할 수 없다는 것을 확신할 수 있습니다. 하지만 `useOnlineStatus()`와 같은 함수 호출은 내부에 다른 훅에 대한 호출을 포함할 가능성이 높습니다!</Trans>
 
 <Note>
 
@@ -1844,7 +1844,7 @@ html, body { min-height: 300px; }
 </Sandpack>
 
 However, you didn't *have to* do that. As with regular functions, ultimately you decide where to draw the boundaries between different parts of your code. You could also take a very different approach. Instead of keeping the logic in the Effect, you could move most of the imperative logic inside a JavaScript [class:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-<Trans>하지만 꼭 그렇게 할 필요는 없습니다. 일반 함수와 마찬가지로 궁극적으로 코드의 여러 부분 사이의 경계를 어디에 그릴지는 사용자가 결정합니다. 예를 들어 매우 다른 접근 방식을 취할 수도 있습니다. Effect에 로직을 유지하는 대신 대부분의 명령형 로직을 JavaScript [클래스](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes) 내부로 옮길 수 있습니다:</Trans>
+<Trans>하지만 꼭 그렇게 할 필요는 없습니다. 일반 함수와 마찬가지로 궁극적으로 코드의 여러 부분 사이의 경계를 어디에 그릴지는 사용자가 결정합니다. 예를 들어, 매우 다른 접근 방식을 취할 수도 있습니다. Effect에 로직을 유지하는 대신 대부분의 명령형 로직을 JavaScript [클래스](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes) 내부로 옮길 수 있습니다:</Trans>
 
 <Sandpack>
 
@@ -1944,7 +1944,7 @@ html, body { min-height: 300px; }
 </Sandpack>
 
 Effects let you connect React to external systems. The more coordination between Effects is needed (for example, to chain multiple animations), the more it makes sense to extract that logic out of Effects and Hooks *completely* like in the sandbox above. Then, the code you extracted *becomes* the "external system". This lets your Effects stay simple because they only need to send messages to the system you've moved outside React.
-<Trans>Effects를 사용하면 React를 외부 시스템에 연결할 수 있습니다. 예를 들어 여러 애니메이션을 체인으로 연결하기 위해 Effect 간의 조정이 더 많이 필요할수록 위의 샌드박스에서처럼 Effect와 훅에서 해당 로직을 완전히 추출하는 것이 더 합리적입니다. 그러면 추출한 코드가 "외부 시스템"이 됩니다. 이렇게 하면 React 외부로 이동한 시스템으로 메시지를 보내기만 하면 되기 때문에 Effects를 단순하게 유지할 수 있습니다.</Trans>
+<Trans>Effects를 사용하면 React를 외부 시스템에 연결할 수 있습니다. 예를 들어, 여러 애니메이션을 체인으로 연결하기 위해 Effect 간의 조정이 더 많이 필요할수록 위의 샌드박스에서처럼 Effect와 훅에서 해당 로직을 완전히 추출하는 것이 더 합리적입니다. 그러면 추출한 코드가 "외부 시스템"이 됩니다. 이렇게 하면 React 외부로 이동한 시스템으로 메시지를 보내기만 하면 되기 때문에 Effects를 단순하게 유지할 수 있습니다.</Trans>
 
 The examples above assume that the fade-in logic needs to be written in JavaScript. However, this particular fade-in animation is both simpler and much more efficient to implement with a plain [CSS Animation:](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
 <Trans>위의 예시에서는 페이드인 로직이 JavaScript로 작성되어야 한다고 가정했습니다. 하지만 이 특정 페이드인 애니메이션은 일반 [CSS 애니메이션](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Animations/Using_CSS_animations)으로 구현하는 것이 더 간단하고 훨씬 더 효율적입니다:</Trans>
@@ -2490,7 +2490,7 @@ In this example, the `usePointerPosition()` Hook tracks the current pointer posi
 <Trans>이 예시에서는 `usePointerPosition()`훅이 현재 포인터 위치를 추적합니다. 미리보기 영역 위로 커서나 손가락을 움직이면 빨간색 점이 움직임을 따라가는 것을 확인하세요. 그 위치는 `pos1` 변수에 저장됩니다.</Trans>
 
 In fact, there are five (!) different red dots being rendered. You don't see them because currently they all appear at the same position. This is what you need to fix. What you want to implement instead is a "staggered" movement: each dot should "follow" the previous dot's path. For example, if you quickly move your cursor, the first dot should follow it immediately, the second dot should follow the first dot with a small delay, the third dot should follow the second dot, and so on.
-<Trans>실제로는 다섯 개(!)의 다른 빨간색 점이 렌더링되고 있습니다. 현재는 모두 같은 위치에 나타나기 때문에 보이지 않습니다. 이 부분을 수정해야 합니다. 대신 구현하려는 것은 "엇갈린" 움직임입니다. 각 점이 이전 점의 경로를 "따라야" 합니다. 예를 들어 커서를 빠르게 이동하면 첫 번째 점은 즉시 따라가고, 두 번째 점은 약간의 지연을 두고 첫 번째 점을 따라가고, 세 번째 점은 두 번째 점을 따라가는 등의 방식으로 커서를 이동해야 합니다.</Trans>
+<Trans>실제로는 다섯 개(!)의 다른 빨간색 점이 렌더링되고 있습니다. 현재는 모두 같은 위치에 나타나기 때문에 보이지 않습니다. 이 부분을 수정해야 합니다. 대신 구현하려는 것은 "엇갈린" 움직임입니다. 각 점이 이전 점의 경로를 "따라야" 합니다. 예를 들어, 커서를 빠르게 이동하면 첫 번째 점은 즉시 따라가고, 두 번째 점은 약간의 지연을 두고 첫 번째 점을 따라가고, 세 번째 점은 두 번째 점을 따라가는 등의 방식으로 커서를 이동해야 합니다.</Trans>
 
 You need to implement the `useDelayedValue` custom Hook. Its current implementation returns the `value` provided to it. Instead, you want to return the value back from `delay` milliseconds ago. You might need some state and an Effect to do this.
 <Trans>`useDelayedValue` 커스텀 훅을 구현해야 합니다. 현재 구현은 제공된 값을 반환합니다. 대신 밀리초 전 `delay`에서 값을 다시 반환하고 싶습니다. 이를 위해서는 state와 Effect가 필요할 수 있습니다.</Trans>

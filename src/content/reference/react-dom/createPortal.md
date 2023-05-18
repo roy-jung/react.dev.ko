@@ -269,7 +269,7 @@ Follow the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/
 ### Rendering React components into non-React server markup<Trans>React 컴포넌트를 비 React 서버 마크업으로 렌더링하기</Trans> {/*rendering-react-components-into-non-react-server-markup*/}
 
 Portals can be useful if your React root is only part of a static or server-rendered page that isn't built with React. For example, if your page is built with a server framework like Rails, you can create areas of interactivity within static areas such as sidebars. Compared with having [multiple separate React roots,](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) portals let you treat the app as a single React tree with shared state even though its parts render to different parts of the DOM.
-<Trans>포털은 React 루트가 React로 빌드되지 않은 정적 페이지 또는 서버 렌더링 페이지의 일부일 때 유용할 수 있습니다. 예를 들어 페이지가 Rails와 같은 서버 프레임워크로 빌드된 경우, 사이드바와 같은 정적 영역 내에 상호작용 가능한 영역을 만들 수 있습니다. [여러 개의 개별 React 루트](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react)를 사용하는 것과 비교하여, 포털을 사용하면 앱의 일부가 DOM의 다른 부분에 렌더링되더라도 앱을 공유 state를 가진 단일 React 트리로 처리할 수 있습니다.</Trans>
+<Trans>포털은 React 루트가 React로 빌드되지 않은 정적 페이지 또는 서버 렌더링 페이지의 일부일 때 유용할 수 있습니다. 예를 들어, 페이지가 Rails와 같은 서버 프레임워크로 빌드된 경우, 사이드바와 같은 정적 영역 내에 상호작용 가능한 영역을 만들 수 있습니다. [여러 개의 개별 React 루트](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react)를 사용하는 것과 비교하여, 포털을 사용하면 앱의 일부가 DOM의 다른 부분에 렌더링되더라도 앱을 공유 state를 가진 단일 React 트리로 처리할 수 있습니다.</Trans>
 
 <Sandpack>
 

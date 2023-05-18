@@ -1004,5 +1004,5 @@ Also, unlike with debouncing or throttling, deferred re-renders done by `useDefe
 <Trans>또한 디바운스나 쓰로틀과 달리 `useDeferredValue`에 의해 수행되는 지연된 리렌더링은 기본적으로 중단 가능합니다. 즉, React가 큰 목록을 다시 렌더링하는 도중에 사용자가 다른 키 입력을 하면 React는 해당 리렌더링을 중단하고 키 입력을 처리한 다음 백그라운드에서 다시 렌더링을 시작합니다. 반면 디바운스와 쓰로틀은 렌더링이 키 입력을 차단하는 순간을 연기할 뿐이므로 여전히 불안정한 경험을 만들어냅니다.</Trans>
 
 If the work you're optimizing doesn't happen during rendering, debouncing and throttling are still useful. For example, they can let you fire fewer network requests. You can also use these techniques together.
-<Trans>최적화하려는 작업이 렌더링 중에 발생하지 않는 경우에도 디바운스 및 쓰로틀은 여전히 유용합니다. 예를 들어 디바운스나 쓰로틀을 사용하면 네트워크 요청을 더 적게 실행할 수 있습니다. 이러한 기술을 함께 사용할 수도 있습니다.</Trans>
+<Trans>최적화하려는 작업이 렌더링 중에 발생하지 않는 경우에도 디바운스 및 쓰로틀은 여전히 유용합니다. 예를 들어, 디바운스나 쓰로틀을 사용하면 네트워크 요청을 더 적게 실행할 수 있습니다. 이러한 기술을 함께 사용할 수도 있습니다.</Trans>
 </DeepDive>

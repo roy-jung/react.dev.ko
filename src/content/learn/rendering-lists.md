@@ -45,7 +45,7 @@ Say that you have a list of content.
 ```
 
 The only difference among those list items is their contents, their data. You will often need to show several instances of the same component using different data when building interfaces: from lists of comments to galleries of profile images. In these situations, you can store that data in JavaScript objects and arrays and use methods like [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) and [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to render lists of components from them.
-<Trans>이러한 목록 항목의 유일한 차이점은 콘텐츠, 즉 데이터입니다. 댓글 목록에서 프로필 이미지 갤러리에 이르기까지 인터페이스를 구축할 때 서로 다른 데이터를 사용하여 동일한 컴포넌트의 여러 인스턴스를 표시해야 하는 경우가 종종 있습니다. 이러한 상황에서는 해당 데이터를 JavaScript 객체와 배열에 저장하고 [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 및 [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)와 같은 메서드를 사용하여 컴포넌트 목록을 렌더링할 수 있습니다.</Trans>
+<Trans>이러한 목록 항목의 유일한 차이점은 콘텐츠, 즉,데이터입니다. 댓글 목록에서 프로필 이미지 갤러리에 이르기까지 인터페이스를 구축할 때 서로 다른 데이터를 사용하여 동일한 컴포넌트의 여러 인스턴스를 표시해야 하는 경우가 종종 있습니다. 이러한 상황에서는 해당 데이터를 JavaScript 객체와 배열에 저장하고 [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 및 [`filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)와 같은 메서드를 사용하여 컴포넌트 목록을 렌더링할 수 있습니다.</Trans>
 
 Here’s a short example of how to generate a list of items from an array:
 <Trans>다음은 배열에서 항목 목록을 생성하는 방법에 대한 간단한 예시입니다: </Trans>

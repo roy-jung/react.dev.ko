@@ -44,7 +44,7 @@ import { useRef } from 'react';
 ```
 
 Inside your component, call the `useRef` Hook and pass the initial value that you want to reference as the only argument. For example, here is a ref to the value `0`:
-<Trans>컴포넌트 내부에서 `useRef` 훅을 호출하고 참조할 초기값을 인자로 전달하십시오. 예를 들어,값 `0`은 ref에 대한 초기값입니다:</Trans>
+<Trans>컴포넌트 내부에서 `useRef` 훅을 호출하고 참조할 초기값을 인자로 전달하십시오. 예를 들어, 값 `0`은 ref에 대한 초기값입니다:</Trans>
 
 ```js
 const ref = useRef(0);
@@ -99,7 +99,7 @@ Note that **the component doesn't re-render with every increment.** Like state, 
 ## Example: building a stopwatch<Trans>예제: 스톱워치 만들기</Trans> {/*example-building-a-stopwatch*/}
 
 You can combine refs and state in a single component. For example, let's make a stopwatch that the user can start or stop by pressing a button. In order to display how much time has passed since the user pressed "Start", you will need to keep track of when the Start button was pressed and what the current time is. **This information is used for rendering, so you'll keep it in state:**
-<Trans>ref와 state를 단일 컴포넌트로 결합할 수 있습니다. 예를 들어 사용자가 버튼을 눌러 시작하거나 중지할 수 있는 스톱워치를 만들어 봅시다. 사용자가 'Start'를 누른 후 얼마나 시간이 지났는지 표시하려면 시작 버튼을 누른 시점과 현재 시간을 추적해야 합니다. **이 정보는 렌더링에 사용되므로 state를 유지해야 합니다:**</Trans>
+<Trans>ref와 state를 단일 컴포넌트로 결합할 수 있습니다. 예를 들어, 사용자가 버튼을 눌러 시작하거나 중지할 수 있는 스톱워치를 만들어 봅시다. 사용자가 'Start'를 누른 후 얼마나 시간이 지났는지 표시하려면 시작 버튼을 누른 시점과 현재 시간을 추적해야 합니다. **이 정보는 렌더링에 사용되므로 state를 유지해야 합니다:**</Trans>
 
 ```js
 const [startTime, setStartTime] = useState(null);
@@ -302,7 +302,7 @@ React provides a built-in version of `useRef` because it is common enough in pra
 ## When to use refs<Trans>ref를 사용해야 하는 경우</Trans> {/*when-to-use-refs*/}
 
 Typically, you will use a ref when your component needs to "step outside" React and communicate with external APIs—often a browser API that won't impact the appearance of the component. Here are a few of these rare situations:
-<Trans>일반적으로 ref는 컴포넌트가 React로부터 "외부로 나가서" 외부 API, 즉 컴포넌트의 형상에 영향을 주지 않는 브라우저 API 등과 통신해야 할 때 사용합니다. 다음은 이러한 드문 상황 중 몇가지입니다:</Trans>
+<Trans>일반적으로 ref는 컴포넌트가 React로부터 "외부로 나가서" 외부 API, 즉,컴포넌트의 형상에 영향을 주지 않는 브라우저 API 등과 통신해야 할 때 사용합니다. 다음은 이러한 드문 상황 중 몇가지입니다:</Trans>
 
 - Storing [timeout IDs](https://developer.mozilla.org/docs/Web/API/setTimeout)
 - Storing and manipulating [DOM elements](https://developer.mozilla.org/docs/Web/API/Element), which we cover on [the next page](/learn/manipulating-the-dom-with-refs)
@@ -331,7 +331,7 @@ Following these principles will make your components more predictable:
 </TransBlock>
 
 Limitations of React state don't apply to refs. For example, state acts like a [snapshot for every render](/learn/state-as-a-snapshot) and [doesn't update synchronously.](/learn/queueing-a-series-of-state-updates) But when you mutate the current value of a ref, it changes immediately:
-<Trans>React state의 제한은 ref에는 적용되지 않습니다. 예를 들어 state는 [모든 렌더링에 대해 스냅샷](/learn/state-as-a-snapshot)처럼 작동하며 [동기적으로 업데이트](/learn/queueing-a-series-of-state-updates)되지 않습니다. 하지만 ref의 현재 값을 변이하면 즉시 변경됩니다:</Trans>
+<Trans>React state의 제한은 ref에는 적용되지 않습니다. 예를 들어, state는 [모든 렌더링에 대해 스냅샷](/learn/state-as-a-snapshot)처럼 작동하며 [동기적으로 업데이트](/learn/queueing-a-series-of-state-updates)되지 않습니다. 하지만 ref의 현재 값을 변이하면 즉시 변경됩니다:</Trans>
 
 ```js
 ref.current = 5;
@@ -347,7 +347,7 @@ You also don't need to worry about [avoiding mutation](/learn/updating-objects-i
 ## Refs and the DOM<Trans>Ref와 DOM</Trans> {/*refs-and-the-dom*/}
 
 You can point a ref to any value. However, the most common use case for a ref is to access a DOM element. For example, this is handy if you want to focus an input programmatically. When you pass a ref to a `ref` attribute in JSX, like `<div ref={myRef}>`, React will put the corresponding DOM element into `myRef.current`. You can read more about this in [Manipulating the DOM with Refs.](/learn/manipulating-the-dom-with-refs)
-<Trans>ref는 모든 값을 가리킬 수 있습니다. 그러나 ref의 가장 일반적인 사용 사례는 DOM 요소에 액세스하는 것입니다. 예를 들어 프로그래밍 방식으로 input에 focus를 맞추고자 할 때 유용합니다. `<div ref={myRef}>`와 같이 JSX의 `ref` 어트리뷰트에 ref를 전달하면 React는 해당 DOM 엘리먼트를 `myRef.current`에 넣습니다. 이에 대한 자세한 내용은 [ref로 DOM 조작하기](/learn/manipulating-the-dom-with-refs)에서 확인할 수 있습니다.</Trans>
+<Trans>ref는 모든 값을 가리킬 수 있습니다. 그러나 ref의 가장 일반적인 사용 사례는 DOM 요소에 액세스하는 것입니다. 예를 들어, 프로그래밍 방식으로 input에 focus를 맞추고자 할 때 유용합니다. `<div ref={myRef}>`와 같이 JSX의 `ref` 어트리뷰트에 ref를 전달하면 React는 해당 DOM 엘리먼트를 `myRef.current`에 넣습니다. 이에 대한 자세한 내용은 [ref로 DOM 조작하기](/learn/manipulating-the-dom-with-refs)에서 확인할 수 있습니다.</Trans>
 
 <Recap>
 

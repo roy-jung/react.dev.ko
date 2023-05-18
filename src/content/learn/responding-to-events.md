@@ -34,7 +34,7 @@ React lets you add *event handlers* to your JSX. Event handlers are your own fun
 ## Adding event handlers<Trans>이벤트 핸들러 추가하기</Trans> {/*adding-event-handlers*/}
 
 To add an event handler, you will first define a function and then [pass it as a prop](/learn/passing-props-to-a-component) to the appropriate JSX tag. For example, here is a button that doesn't do anything yet:
-<Trans>이벤트 핸들러를 추가하려면 먼저 함수를 정의한 다음 이를 적절한 JSX 태그에 [prop으로 전달](/learn/passing-props-to-a-component)합니다. 예를 들어 아직 아무 작업도 수행하지 않는 버튼이 있습니다:</Trans>
+<Trans>이벤트 핸들러를 추가하려면 먼저 함수를 정의한 다음 이를 적절한 JSX 태그에 [prop으로 전달](/learn/passing-props-to-a-component)합니다. 예를 들어, 아직 아무 작업도 수행하지 않는 버튼이 있습니다:</Trans>
 
 <Sandpack>
 
@@ -296,7 +296,7 @@ By convention, event handler props should start with `on`, followed by a capital
 <Trans>관례상 이벤트 핸들러 props은 `on`으로 시작하고 그 뒤에 대문자가 와야 합니다.</Trans>
 
 For example, the `Button` component's `onClick` prop could have been called `onSmash`:
-<Trans>예를 들어 `Button` 컴포넌트의 `onClick` prop은 `onSmash`로 호출할 수 있습니다:</Trans>
+<Trans>예를 들어, `Button` 컴포넌트의 `onClick` prop은 `onSmash`로 호출할 수 있습니다:</Trans>
 
 <Sandpack>
 

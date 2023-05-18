@@ -189,7 +189,7 @@ title="프론트엔드 개발자"
 github="reeseo3o"
 title="프론트엔드 개발자"
   name="안예지"
-  translated={[{"title":"Conditional Rendering","translatedTitle":"조건부 렌더링","url":"/learn/conditional-rendering"},{"title":"Describing the UI","translatedTitle":"UI 구성하기","url":"/learn/describing-the-ui"},{"title":"Extracting State Logic into a Reducer","translatedTitle":"State로직을 Reducer로 추출하기","url":"/learn/extracting-state-logic-into-a-reducer"},{"title":"State as a Snapshot","translatedTitle":"스냅샷으로서의 state","url":"/learn/state-as-a-snapshot"},{"title":"Updating Objects in State","translatedTitle":"객체 state 업데이트","url":"/learn/updating-objects-in-state"},{"title":"You Might Not Need an Effect","translatedTitle":"Effect가 필요하지 않을 수도 있습니다","url":"/learn/you-might-not-need-an-effect"},{"title":"<Profiler>","url":"/reference/react/Profiler"},{"title":"useDeferredValue","url":"/reference/react/useDeferredValue"},{"title":"createRoot","url":"/reference/react-dom/client/createRoot"},{"title":"Client React DOM APIs","url":"/reference/react-dom/client/index"}]}
+  translated={[{"title":"Conditional Rendering","translatedTitle":"조건부 렌더링","url":"/learn/conditional-rendering"},{"title":"Describing the UI","translatedTitle":"UI 구성하기","url":"/learn/describing-the-ui"},{"title":"Extracting State Logic into a Reducer","translatedTitle":"State로직을 Reducer로 추출하기","url":"/learn/extracting-state-logic-into-a-reducer"},{"title":"State as a Snapshot","translatedTitle":"스냅샷으로서의 state","url":"/learn/state-as-a-snapshot"},{"title":"Updating Objects in State","translatedTitle":"객체 state 업데이트","url":"/learn/updating-objects-in-state"},{"title":"You Might Not Need an Effect","translatedTitle":"Effect가 필요하지 않을 수도 있습니다","url":"/learn/you-might-not-need-an-effect"},{"title":"<Profiler>","url":"/reference/react/Profiler"},{"title":"createRef","url":"/reference/react/createRef"},{"title":"useDeferredValue","url":"/reference/react/useDeferredValue"},{"title":"createRoot","url":"/reference/react-dom/client/createRoot"},{"title":"Client React DOM APIs","url":"/reference/react-dom/client/index"}]}
 >
   개발을 하면서 재미와 성취감을 제대로 느끼고 있는 주니어입니다.<br/>이 흐름을 가지고 꾸준히 앞으로 나아가 보겠습니다.
 </TeamMember>
@@ -232,7 +232,7 @@ personal="ice-bear.tistory.com"
 github="sue6e2"
 title="프론트엔드 개발자"
   name="이지수"
-  translated={[{"title":"Synchronizing with Effects","translatedTitle":"Effect와 동기화하기","url":"/learn/synchronizing-with-effects"},{"title":"<Fragment> (<>...</>)","url":"/reference/react/Fragment"},{"title":"useDebugValue","url":"/reference/react/useDebugValue"}]}
+  translated={[{"title":"Synchronizing with Effects","translatedTitle":"Effect와 동기화하기","url":"/learn/synchronizing-with-effects"},{"title":"<Fragment> (<>...</>)","url":"/reference/react/Fragment"},{"title":"createRef","url":"/reference/react/createRef"},{"title":"useDebugValue","url":"/reference/react/useDebugValue"}]}
 >
   2년차 프론트엔드 개발자입니다.<br/>새로운 것을 배우며 성장하는 것의 즐거움을 알고 작은 성취들로 하루하루 살아갑니다.<br/>코드만 잘짜는 것이 아니라 다양한 사람들과 소통하는 개발자가 되고싶습니다.
 </TeamMember>
