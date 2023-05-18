@@ -149,7 +149,7 @@ React supports all built-in browser HTML components. This includes:
 <Note>
 
 Similar to the [DOM standard,](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) React uses a `camelCase` convention for prop names. For example, you'll write `tabIndex` instead of `tabindex`. You can convert existing HTML to JSX with an [online converter.](https://transform.tools/html-to-jsx)
-<Trans>[DOM 표준](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)과 유사하게 React는 prop의 이름에 `camelCase` 규칙을 사용합니다. 예를 들어,`tabindex` 대신 `tabIndex`를 작성합니다. [온라인 변환기](https://transform.tools/html-to-jsx)를 사용하여 기존 HTML을 JSX로 변환할 수 있습니다.</Trans>
+<Trans>[DOM 표준](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)과 유사하게 React는 prop의 이름에 `camelCase` 규칙을 사용합니다. 예를 들어, `tabindex` 대신 `tabIndex`를 작성합니다. [온라인 변환기](https://transform.tools/html-to-jsx)를 사용하여 기존 HTML을 JSX로 변환할 수 있습니다.</Trans>
 
 </Note>
 
@@ -262,7 +262,7 @@ React supports all built-in browser SVG components. This includes:
 <Note>
 
 Similar to the [DOM standard,](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) React uses a `camelCase` convention for prop names. For example, you'll write `tabIndex` instead of `tabindex`. You can convert existing SVG to JSX with an [online converter.](https://transform.tools/)
-<Trans>[DOM 표준](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)과 유사하게, React는 prop 이름에 `camelCase` 규칙을 사용합니다. 예를 들어,`tabindex` 대신 `tabIndex`를 작성합니다. [온라인 변환기](https://transform.tools/)를 사용하여 기존 SVG를 JSX로 변환할 수 있습니다.</Trans>
+<Trans>[DOM 표준](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)과 유사하게, React는 prop 이름에 `camelCase` 규칙을 사용합니다. 예를 들어, `tabindex` 대신 `tabIndex`를 작성합니다. [온라인 변환기](https://transform.tools/)를 사용하여 기존 SVG를 JSX로 변환할 수 있습니다.</Trans>
 
 Namespaced attributes also have to be written without the colon:
 <Trans>네임스페이스 속성은 콜론(:) 없이 작성해야 합니다:</Trans>

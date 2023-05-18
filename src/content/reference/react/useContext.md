@@ -1396,7 +1396,7 @@ There are a few common ways that this can happen:
 <Trans>컴포넌트를 `<SomeContext.Provider>`로 감싸는 것을 잊었거나 생각했던 것과 다른 트리 부분에 넣었을 수 있습니다. [React DevTools](/learn/react-developer-tools)를 사용하여 계층 구조가 올바른지 확인하세요.</Trans>
 
 3. You might be running into some build issue with your tooling that causes `SomeContext` as seen from the providing component and `SomeContext` as seen by the reading component to be two different objects. This can happen if you use symlinks, for example. You can verify this by assigning them to globals like `window.SomeContext1` and `window.SomeContext2` and then checking whether `window.SomeContext1 === window.SomeContext2` in the console. If they're not the same, fix that issue on the build tool level.
-<Trans>제공하는 컴포넌트에서 보는 `SomeContext` 와 읽는 컴포넌트에서 보는 `SomeContext`가 서로 다른 두 개의 객체가 되는 빌드 문제가 발생할 수 있습니다. 예를 들어,심볼릭 링크를 사용하는 경우 이런 문제가 발생할 수 있습니다. 이를 확인하려면 `window.SomeContext1` 및 `window.SomeContext2`와 같이 전역에 할당하고 콘솔에서 `window.SomeContext1 === window.SomeContext2`인지 확인하면 됩니다. 동일하지 않은 경우 빌드 도구 수준에서 해당 문제를 해결해야 합니다.</Trans>
+<Trans>제공하는 컴포넌트에서 보는 `SomeContext` 와 읽는 컴포넌트에서 보는 `SomeContext`가 서로 다른 두 개의 객체가 되는 빌드 문제가 발생할 수 있습니다. 예를 들어, 심볼릭 링크를 사용하는 경우 이런 문제가 발생할 수 있습니다. 이를 확인하려면 `window.SomeContext1` 및 `window.SomeContext2`와 같이 전역에 할당하고 콘솔에서 `window.SomeContext1 === window.SomeContext2`인지 확인하면 됩니다. 동일하지 않은 경우 빌드 도구 수준에서 해당 문제를 해결해야 합니다.</Trans>
 
 ### I am always getting `undefined` from my context although the default value is different<Trans>기본값이 다른데도 context에서 항상 `undefined`만 얻습니다</Trans> {/*i-am-always-getting-undefined-from-my-context-although-the-default-value-is-different*/}
 

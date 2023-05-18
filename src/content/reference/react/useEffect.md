@@ -1168,7 +1168,7 @@ function ChatRoom({ roomId }) {
 ```
 
 **To remove a dependency, you need to ["prove" to the linter *doesn't need* to be a dependency.](/learn/removing-effect-dependencies#removing-unnecessary-dependencies)** For example, you can move `serverUrl` out of your component to prove that it's not reactive and won't change on re-renders:
-<Trans>**의존성을 제거하려면, [의존성이어야 할 필요가 없음을 린터에게 "증명"해야 합니다.](/learn/removing-effect-dependencies#removing-unnecessary-dependencies)** 예를 들어,`serverUrl`을 컴포넌트 밖으로 이동시킴으로써 반응형이 아니며 리렌더링시에도 변경되지 않음을 증명할 수 있습니다:</Trans>
+<Trans>**의존성을 제거하려면, [의존성이어야 할 필요가 없음을 린터에게 "증명"해야 합니다.](/learn/removing-effect-dependencies#removing-unnecessary-dependencies)** 예를 들어, `serverUrl`을 컴포넌트 밖으로 이동시킴으로써 반응형이 아니며 리렌더링시에도 변경되지 않음을 증명할 수 있습니다:</Trans>
 
 ```js {1,8}
 const serverUrl = 'https://localhost:1234'; // Not a reactive value anymore
@@ -1572,7 +1572,7 @@ Now that you're passing `c => c + 1` instead of `count + 1`, [your Effect no lon
 ### Removing unnecessary object dependencies<Trans>불필요한 객체 의존성 제거하기</Trans> {/*removing-unnecessary-object-dependencies*/}
 
 If your Effect depends on an object or a function created during rendering, it might run too often. For example, this Effect re-connects after every render because the `options` object is [different for every render:](/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally)
-<Trans>Effect가 렌더링 중에 생성된 객체 또는 함수에 의존하는 경우 필요 이상으로 자주 실행될 수 있습니다. 예를 들어,`options` 객체는 [각 렌더링마다 다른 값이므로](/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally), 이 Effect는 매 렌더링시에 다시 연결하게 됩니다:</Trans>
+<Trans>Effect가 렌더링 중에 생성된 객체 또는 함수에 의존하는 경우 필요 이상으로 자주 실행될 수 있습니다. 예를 들어, `options` 객체는 [각 렌더링마다 다른 값이므로](/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally), 이 Effect는 매 렌더링시에 다시 연결하게 됩니다:</Trans>
 
 ```js {6-9,12,15}
 const serverUrl = 'https://localhost:1234';
@@ -1801,7 +1801,7 @@ By default, when you read a reactive value from an Effect, you have to add it as
 <Trans>기본적으로 Effect에서 반응형 값을 읽을 때엔 이를 의존성으로 추가해야 합니다. 이렇게 하면 Effect가 해당 값의 모든 변경에 "반응"하도록 할 수 있습니다. 대부분의 의존성에서 원하는 동작입니다.</Trans>
 
 **However, sometimes you'll want to read the *latest* props and state from an Effect without "reacting" to them.** For example, imagine you want to log the number of the items in the shopping cart for every page visit:
-<Trans>**그러나 때로는 Effect에 "반응"하지 않고도 Effect에서 *최신* props와 state를 읽고 싶을 때가 있습니다.** 예를 들어,페이지 방문 시마다 장바구니에 있는 품목의 수를 기록한다고 가정해 보겠습니다:</Trans>
+<Trans>**그러나 때로는 Effect에 "반응"하지 않고도 Effect에서 *최신* props와 state를 읽고 싶을 때가 있습니다.** 예를 들어, 페이지 방문 시마다 장바구니에 있는 품목의 수를 기록한다고 가정해 보겠습니다:</Trans>
 
 ```js {3}
 function Page({ url, shoppingCart }) {
@@ -1843,7 +1843,7 @@ If your app uses server rendering (either [directly](/reference/react-dom/server
 <Trans>서버 렌더링([직접](/reference/react-dom/server)이든 [프레임워크](/learn/start-a-new-react-project#production-grade-react-frameworks)를 통해서든)을 사용하는 앱의 경우, 컴포넌트는 두 가지 다른 환경에서 렌더링됩니다. 서버에서는 초기 HTML을 생성하기 위해 렌더링됩니다. 클라이언트에서 React는 렌더링 코드를 다시 실행하여 이벤트 핸들러를 해당 HTML에 첨부할 수 있도록 합니다. 그렇기 때문에 [hydration](/reference/react-dom/client/hydrateRoot#hydrating-server-rendered-html)이 작동하려면 클라이언트와 서버의 첫 렌더링 결과가 동일해야 합니다.</Trans>
 
 In rare cases, you might need to display different content on the client. For example, if your app reads some data from [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), it can't possibly do that on the server. Here is how you could implement this:
-<Trans>드물지만 클라이언트에 다른 콘텐츠를 표시해야 하는 경우가 있을 수 있습니다. 예를 들어,앱이 [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)에서 일부 데이터를 읽는 경우 서버에서는 이를 수행할 수 없습니다. 일반적으로 이를 구현하는 방법은 다음과 같습니다:</Trans>
+<Trans>드물지만 클라이언트에 다른 콘텐츠를 표시해야 하는 경우가 있을 수 있습니다. 예를 들어, 앱이 [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)에서 일부 데이터를 읽는 경우 서버에서는 이를 수행할 수 없습니다. 일반적으로 이를 구현하는 방법은 다음과 같습니다:</Trans>
 
 ```js
 function MyComponent() {

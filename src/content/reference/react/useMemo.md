@@ -117,7 +117,7 @@ In other words, `useMemo` caches a calculation result between re-renders until i
 <Trans>**언제 이것이 유용한지 예제를 통해 살펴 봅시다.**</Trans>
 
 By default, React will re-run the entire body of your component every time that it re-renders. For example, if this `TodoList` updates its state or receives new props from its parent, the `filterTodos` function will re-run:
-<Trans>기본적으로 React는 컴포넌트가 다시 렌더링될 때마다 컴포넌트 전체 본문을 다시 실행합니다. 예를 들어,이 `TodoList`가 state를 업데이트하거나 부모로부터 새로운 props를 받는 경우, `filterTodos` 함수가 다시 실행됩니다:</Trans>
+<Trans>기본적으로 React는 컴포넌트가 다시 렌더링될 때마다 컴포넌트 전체 본문을 다시 실행합니다. 예를 들어, 이 `TodoList`가 state를 업데이트하거나 부모로부터 새로운 props를 받는 경우, `filterTodos` 함수가 다시 실행됩니다:</Trans>
 
 ```js {2}
 function TodoList({ todos, tab, theme }) {
@@ -169,7 +169,7 @@ console.timeEnd('filter array');
 <Trans>`useMemo`는 첫 번째 렌더링을 더 빠르게 만들지는 않습니다. 업데이트 시 불필요한 작업을 건너뛰는 데에만 도움이 됩니다.</Trans>
 
 Keep in mind that your machine is probably faster than your users' so it's a good idea to test the performance with an artificial slowdown. For example, Chrome offers a [CPU Throttling](https://developer.chrome.com/blog/new-in-devtools-61/#throttling) option for this.
-<Trans>컴퓨터가 사용자 컴퓨터보다 빠를 수 있으므로 인위적으로 속도를 늦춰 성능을 테스트하는 것이 좋습니다. 예를 들어,Chrome은 이를 위한 [CPU 쓰로틀링](https://developer.chrome.com/blog/new-in-devtools-61/#throttling) 옵션을 제공합니다.</Trans>
+<Trans>컴퓨터가 사용자 컴퓨터보다 빠를 수 있으므로 인위적으로 속도를 늦춰 성능을 테스트하는 것이 좋습니다. 예를 들어, Chrome은 이를 위한 [CPU 쓰로틀링](https://developer.chrome.com/blog/new-in-devtools-61/#throttling) 옵션을 제공합니다.</Trans>
 
 Also note that measuring performance in development will not give you the most accurate results. (For example, when [Strict Mode](/reference/react/StrictMode) is on, you will see each component render twice rather than once.) To get the most accurate timings, build your app for production and test it on a device like your users have.
 <Trans>또한 개발 중에 성능을 측정하는 것은 반드시 정확한 결과를 제공하지는 않는다는 점에 유의하세요. (예를 들어, [Strict Mode](/reference/react/StrictMode)를 켜면 각 컴포넌트가 한 번이 아닌 두 번 렌더링되는 것을 볼 수 있습니다.) 가장 정확한 타이밍을 얻으려면 상용 앱을 빌드하고 사용자가 사용하는 것과 동일한 기기에서 테스트하세요.</Trans>
@@ -193,7 +193,7 @@ Optimizing with `useMemo`  is only valuable in a few cases:
 <TransBlock>
 - `useMemo`에 넣는 계산이 눈에 띄게 느리고 의존성이 거의 변하지 않는 경우.
 - [`memo`](/reference/react/memo)로 감싼 컴포넌트에 prop으로 전달하는 경우. 값이 변경되지 않은 경우 리렌더링을 건너뛰고 싶을 수 있습니다. 메모화하면 의존성이 동일하지 않은 경우에만 컴포넌트를 다시 렌더링할 수 있습니다.
-- 전달한 값은 나중에 어떤 훅의 의존성으로 사용될 것입니다. 예를 들어,또다른 `useMemo` 또는 `useEffect`에서 이 값에 의존하고 있을 수 있습니다.
+- 전달한 값은 나중에 어떤 훅의 의존성으로 사용될 것입니다. 예를 들어, 또다른 `useMemo` 또는 `useEffect`에서 이 값에 의존하고 있을 수 있습니다.
 </TransBlock>
 
 There is no benefit to wrapping a calculation in `useMemo` in other cases. There is no significant harm to doing that either, so some teams choose to not think about individual cases, and memoize as much as possible. The downside of this approach is that code becomes less readable. Also, not all memoization is effective: a single value that's "always new" is enough to break memoization for an entire component.
@@ -717,7 +717,7 @@ However, if React sees the same exact JSX as during the previous render, it won'
 <Trans>하지만 React는 이전 렌더링 때와 동일한 JSX를 발견하면 컴포넌트를 리렌더링하려고 시도하지 않습니다. JSX 노드는 [불변](https://en.wikipedia.org/wiki/Immutable_object)이기 때문입니다. JSX 노드 객체는 시간이 지나도 변경될 수 없으므로 React는 리렌더링을 건너뛰어도 안전하다는 것을 알고 있습니다. 다만 이것이 작동하려면 노드가 단순히 코드에서 동일하게 보이는 것이 아니라 **실제로 동일한 객체**여야 합니다. 이 예시에서 `useMemo`는 바로 이런 역할을 합니다.</Trans>
 
 Manually wrapping JSX nodes into `useMemo` is not convenient. For example, you can't do this conditionally. This is usually why you would wrap components with [`memo`](/reference/react/memo) instead of wrapping JSX nodes.
-<Trans>JSX 노드를 수동으로 `useMemo`로 감싸는 것은 편리하지 않습니다. 예를 들어,이 작업을 조건부로 수행할 수 없습니다. 일반적으로 JSX 노드를 `useMemo`로 감싸는 대신 [`memo`](/reference/react/memo)로 컴포넌트를 감싸는 이유입니다.</Trans>
+<Trans>JSX 노드를 수동으로 `useMemo`로 감싸는 것은 편리하지 않습니다. 예를 들어, 이 작업을 조건부로 수행할 수 없습니다. 일반적으로 JSX 노드를 `useMemo`로 감싸는 대신 [`memo`](/reference/react/memo)로 컴포넌트를 감싸는 이유입니다.</Trans>
 
 </DeepDive>
 
@@ -1288,7 +1288,7 @@ This **development-only** behavior helps you [keep components pure.](/learn/keep
 <Trans>이 **개발 환경 전용** 동작은 [컴포넌트를 순수하게 유지](/learn/keeping-components-pure)하는 데 도움이 됩니다. React는 호출 중 하나의 결과를 사용하고 다른 호출의 결과는 무시합니다. 컴포넌트와 계산 함수가 순수하다면 이 동작이 로직에 영향을 미치지 않습니다. 반면 의도치 않게 순수하지 않은 경우에는 실수를 알아차리는 데 도움이 됩니다.</Trans>
 
 For example, this impure calculation function mutates an array you received as a prop:
-<Trans>예를 들어,순수하지 않게 계산된 함수는 prop으로 받은 배열을 변이합니다:</Trans>
+<Trans>예를 들어, 순수하지 않게 계산된 함수는 prop으로 받은 배열을 변이합니다:</Trans>
 
 ```js {2-4}
   const visibleTodos = useMemo(() => {
@@ -1301,7 +1301,7 @@ For example, this impure calculation function mutates an array you received as a
 ```
 
 React calls your function twice, so you'd notice the todo is added twice. Your calculation shouldn't change any existing objects, but it's okay to change any *new* objects you created during the calculation. For example, if the `filterTodos` function always returns a *different* array, you can mutate *that* array instead:
-<Trans>React는 함수를 두 번 호출하므로 할 일이 두 번 추가되었음을 알 수 있습니다. 계산은 기존 객체를 변경해서는 안 되지만, 계산 중에 생성한 *새* 객체를 변경하는 것은 괜찮습니다. 예를 들어,`filterTodos` 함수가 항상 *다른* 배열을 반환하는 경우, 해당 배열을 변이할 수 있습니다:</Trans>
+<Trans>React는 함수를 두 번 호출하므로 할 일이 두 번 추가되었음을 알 수 있습니다. 계산은 기존 객체를 변경해서는 안 되지만, 계산 중에 생성한 *새* 객체를 변경하는 것은 괜찮습니다. 예를 들어, `filterTodos` 함수가 항상 *다른* 배열을 반환하는 경우, 해당 배열을 변이할 수 있습니다:</Trans>
 
 ```js {3-5}
   const visibleTodos = useMemo(() => {

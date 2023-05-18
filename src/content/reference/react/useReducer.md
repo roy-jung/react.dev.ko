@@ -1156,7 +1156,7 @@ This **development-only** behavior helps you [keep components pure.](/learn/keep
 <Trans>이 **개발 전용** 동작은 [컴포넌트를 순수하게 유지하는](/learn/keeping-components-pure) 데 도움이 됩니다. React는 두 호출 중 하나의 결과만 사용하고 다른 호출 결과는 무시합니다. 컴포넌트, 초기화 함수, reducer함수가 모두 순수하다면 로직에 영향을 미치지 않습니다. 의도치 않게 이 중 일부가 불순한 경우 해당 실수를 알아내어 수정하는 데 도움이 될 것입니다.</Trans>
 
 For example, this impure reducer function mutates an array in state:
-<Trans>예를 들어,다음의 불순한 reducer 함수는 state의 배열을 변이합니다:</Trans>
+<Trans>예를 들어, 다음의 불순한 reducer 함수는 state의 배열을 변이합니다:</Trans>
 
 ```js {4-6}
 function reducer(state, action) {

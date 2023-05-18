@@ -136,4 +136,4 @@ Your formatting function will receive the <CodeStep step={1}>debug value</CodeSt
 <Trans>포매팅 함수는 <CodeStep step={1}>디버그 값</CodeStep>을 매개변수로 받고 <CodeStep step={2}>변환된 값</CodeStep>을 반환해야 합니다. 컴포넌트가 검사할 때, React 개발자 도구가 이 함수를 호출하고 그 결과를 표시합니다.</Trans>
 
 This lets you avoid running potentially expensive formatting logic unless the component is actually inspected. For example, if `date` is a Date value, this avoids calling `toDateString()` on it for every render.
-<Trans>이렇게 하면 컴포넌트를 실제로 조사하지 않는 한 비용이 많이 들 수 있는 포매팅 로직을 실행하지 않아도 됩니다. 예를 들어,`date`가 날짜 값인 경우, 컴포넌트를 렌더링 할 때마다 `toDateString()`을 호출하지 않습니다.</Trans>
+<Trans>이렇게 하면 컴포넌트를 실제로 조사하지 않는 한 비용이 많이 들 수 있는 포매팅 로직을 실행하지 않아도 됩니다. 예를 들어, `date`가 날짜 값인 경우, 컴포넌트를 렌더링 할 때마다 `toDateString()`을 호출하지 않습니다.</Trans>

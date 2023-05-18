@@ -87,7 +87,7 @@ On the next renders, `useRef` will return the same object. You can change its `c
 <Trans>다음 렌더링에서 `useRef`는 동일한 객체를 반환합니다. 정보를 저장하고 나중에 읽을 수 있도록 `current` 속성을 변경할 수 있습니다. [state](/reference/react/useState)가 떠오를 수 있지만, 둘 사이에는 중요한 차이점이 있습니다.</Trans>
 
 **Changing a ref does not trigger a re-render.** This means refs are perfect for storing information that doesn't affect the visual output of your component. For example, if you need to store an [interval ID](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) and retrieve it later, you can put it in a ref. To update the value inside the ref, you need to manually change its <CodeStep step={2}>`current` property</CodeStep>:
-<Trans>**ref를 변경해도 리렌더링을 촉발하지 않습니다.** 즉,ref는 컴포넌트의 시각적 출력에 영향을 미치지 않는 정보를 저장하는 데 적합합니다. 예를 들어,[interval ID](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)를 저장했다가 나중에 불러와야 하는 경우 ref에 넣을 수 있습니다. ref 내부의 값을 업데이트하려면 <CodeStep step={2}>`current` 프로퍼티</CodeStep>를 수동으로 변경해야 합니다:</Trans>
+<Trans>**ref를 변경해도 리렌더링을 촉발하지 않습니다.** 즉,ref는 컴포넌트의 시각적 출력에 영향을 미치지 않는 정보를 저장하는 데 적합합니다. 예를 들어, [interval ID](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)를 저장했다가 나중에 불러와야 하는 경우 ref에 넣을 수 있습니다. ref 내부의 값을 업데이트하려면 <CodeStep step={2}>`current` 프로퍼티</CodeStep>를 수동으로 변경해야 합니다:</Trans>
 
 ```js [[2, 5, "intervalRef.current"]]
 function handleStartClick() {
@@ -499,7 +499,7 @@ button { display: block; margin-bottom: 20px; }
 #### Exposing a ref to your own component <Trans>컴포넌트에 ref 노출하기</Trans> {/*exposing-a-ref-to-your-own-component*/}
 
 Sometimes, you may want to let the parent component manipulate the DOM inside of your component. For example, maybe you're writing a `MyInput` component, but you want the parent to be able to focus the input (which the parent has no access to). You can use a combination of `useRef` to hold the input and [`forwardRef`](/reference/react/forwardRef) to expose it to the parent component. Read a [detailed walkthrough](/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes) here.
-<Trans>때로는 부모 컴포넌트가 컴포넌트 내부의 DOM을 조작할 수 있도록 하고 싶을 때가 있습니다. 예를 들어,`MyInput` 컴포넌트를 작성하는 중인데, 부모 컴포넌트가 (부모가 접근할 수 없는) `MyInput`의 input에 초점을 맞출 수 있게 하고 싶을 수 있습니다. `useRef`로 input을 붙잡고 [`forwardRef`](/reference/react/forwardRef)로 이를 부모 컴포넌트에 노출시킬 수 있습니다. [자세한 내용은 여기에서 확인하세요.](/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes)</Trans>
+<Trans>때로는 부모 컴포넌트가 컴포넌트 내부의 DOM을 조작할 수 있도록 하고 싶을 때가 있습니다. 예를 들어, `MyInput` 컴포넌트를 작성하는 중인데, 부모 컴포넌트가 (부모가 접근할 수 없는) `MyInput`의 input에 초점을 맞출 수 있게 하고 싶을 수 있습니다. `useRef`로 input을 붙잡고 [`forwardRef`](/reference/react/forwardRef)로 이를 부모 컴포넌트에 노출시킬 수 있습니다. [자세한 내용은 여기에서 확인하세요.](/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes)</Trans>
 
 <Sandpack>
 

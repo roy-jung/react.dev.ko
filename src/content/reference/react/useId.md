@@ -93,7 +93,7 @@ You can then pass the <CodeStep step={1}>generated ID</CodeStep> to different at
 <Trans>**유용한 경우를 알아보기 위해 예제를 살펴보겠습니다.**</Trans>
 
 [HTML accessibility attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) like [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) let you specify that two tags are related to each other. For example, you can specify that an element (like an input) is described by another element (like a paragraph).
-<Trans>[`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)와 같은 [HTML 접근성 속성](https://developer.mozilla.org/ko/docs/Web/Accessibility/ARIA) 은 두 태그가 서로 연관되어 있음을 알 수 있습니다. 예를 들어,한 요소(input 등)에 대한 설명을 다른 요소(문단 등)가 대신하도록 지정할 수 있습니다.</Trans>
+<Trans>[`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)와 같은 [HTML 접근성 속성](https://developer.mozilla.org/ko/docs/Web/Accessibility/ARIA) 은 두 태그가 서로 연관되어 있음을 알 수 있습니다. 예를 들어, 한 요소(input 등)에 대한 설명을 다른 요소(문단 등)가 대신하도록 지정할 수 있습니다.</Trans>
 
 In regular HTML, you would write it like this:
 <Trans>일반 HTML에서는 다음과 같이 작성합니다:</Trans>

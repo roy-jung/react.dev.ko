@@ -135,7 +135,7 @@ Next.js's App Router bundler fully implements the official [React Server Compone
 <Trans>Next.js의 앱 라우터 번들러는 공식 [React 서버 컴포넌트 사양](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md)을 완벽하게 구현합니다. 이를 통해 빌드 타임, 서버 전용, 인터랙티브 컴포넌트를 단일 React트리에서 혼합할 수 있습니다.</Trans>
 
 For example, you can write a server-only React component as an `async` function that reads from a database or from a file. Then you can pass data down from it to your interactive components:
-<Trans>예를 들어,서버전용 React 컴포넌트를 데이터베이스나 파일에서 읽는 `async` 함수로 작성할 수 있습니다. 그런 다음 데이터를 인터랙티브 컴포넌트로 전달할 수 있습니다.</Trans>
+<Trans>예를 들어, 서버전용 React 컴포넌트를 데이터베이스나 파일에서 읽는 `async` 함수로 작성할 수 있습니다. 그런 다음 데이터를 인터랙티브 컴포넌트로 전달할 수 있습니다.</Trans>
 
 ```js
 // This component runs *only* on the server (or during the build).

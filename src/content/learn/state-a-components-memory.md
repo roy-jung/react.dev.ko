@@ -587,7 +587,7 @@ button {
 </Sandpack>
 
 It is a good idea to have multiple state variables if their state is unrelated, like `index` and `showMore` in this example. But if you find that you often change two state variables together, it might be easier to combine them into one. For example, if you have a form with many fields, it's more convenient to have a single state variable that holds an object than state variable per field. Read [Choosing the State Structure](/learn/choosing-the-state-structure) for more tips.
-<Trans>이 예제에서 `index`와 `showMore`처럼 서로 연관이 없는 경우 여러 개의 state 변수를 갖는 것이 좋습니다. 그러나 두 개의 state 변수를 자주 함께 변경하는 경우에는 두 변수를 하나로 합치는 것이 더 좋을 수 있습니다. 예를 들어,필드가 많은 폼의 경우 필드별로 state 변수를 사용하는 것보다 객체를 값으로 하는 하나의 state 변수를 사용하는 것이 더 편리합니다. 자세한 팁은 [state 구조 선택](/learn/choosing-the-state-structure)에서 확인할 수 있습니다.</Trans>
+<Trans>이 예제에서 `index`와 `showMore`처럼 서로 연관이 없는 경우 여러 개의 state 변수를 갖는 것이 좋습니다. 그러나 두 개의 state 변수를 자주 함께 변경하는 경우에는 두 변수를 하나로 합치는 것이 더 좋을 수 있습니다. 예를 들어, 필드가 많은 폼의 경우 필드별로 state 변수를 사용하는 것보다 객체를 값으로 하는 하나의 state 변수를 사용하는 것이 더 편리합니다. 자세한 팁은 [state 구조 선택](/learn/choosing-the-state-structure)에서 확인할 수 있습니다.</Trans>
 
 <DeepDive>
 

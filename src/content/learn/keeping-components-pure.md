@@ -245,7 +245,7 @@ While functional programming relies heavily on purity, at some point, somewhere,
 <Trans>함수형 프로그래밍은 순수성에 크게 의존하지만, 언젠가는 어딘가에서 *무언가*는 바뀌어야 합니다. 이것이 바로 프로그래밍의 핵심입니다! 화면 업데이트, 애니메이션 시작, 데이터 변경과 같은 이러한 변경을 **사이드 이펙트**라고 하며, 렌더링 중에 일어나는 것이 아니라 *"부수적으로"* 일어나는 일입니다.</Trans>
 
 In React, **side effects usually belong inside [event handlers.](/learn/responding-to-events)** Event handlers are functions that React runs when you perform some action—for example, when you click a button. Even though event handlers are defined *inside* your component, they don't run *during* rendering! **So event handlers don't need to be pure.**
-<Trans>React에서 **사이드 이펙트는 보통 [이벤트 핸들러](/learn/responding-to-events)에 속합니다**. 이벤트 핸들러는 사용자가 어떤 동작을 수행할 때(예를 들어,버튼을 클릭할 때) React가 실행하는 함수입니다. 이벤트 핸들러가 컴포넌트 *내부에* 정의되어 있긴 하지만 렌더링 중에는 실행되지 않습니다! **따라서 이벤트 핸들러는 순수할 필요가 없습니다.**</Trans>
+<Trans>React에서 **사이드 이펙트는 보통 [이벤트 핸들러](/learn/responding-to-events)에 속합니다**. 이벤트 핸들러는 사용자가 어떤 동작을 수행할 때(예를 들어, 버튼을 클릭할 때) React가 실행하는 함수입니다. 이벤트 핸들러가 컴포넌트 *내부에* 정의되어 있긴 하지만 렌더링 중에는 실행되지 않습니다! **따라서 이벤트 핸들러는 순수할 필요가 없습니다.**</Trans>
 
 If you've exhausted all other options and can't find the right event handler for your side effect, you can still attach it to your returned JSX with a [`useEffect`](/reference/react/useEffect) call in your component. This tells React to execute it later, after rendering, when side effects are allowed. **However, this approach should be your last resort.**
 <Trans>다른 모든 옵션을 다 사용했는데도 사이드 이펙트에 적합한 이벤트 핸들러를 찾을 수 없다면, 컴포넌트에서 [`useEffect`](/reference/react/useEffect) 호출을 통해 반환된 JSX에 이벤트 핸들러를 첨부할 수 있습니다. 이렇게 하면 나중에 렌더링 후 사이드 이펙트가 허용될 때 React가 이를 실행하도록 지시합니다. **하지만 이 방법은 최후의 수단으로 사용해야 합니다.**</Trans>
@@ -948,11 +948,11 @@ li {
 </Sandpack>
 
 This keeps your mutation local and your rendering function pure. However, you still need to be careful: for example, if you tried to change any of the array's existing items, you'd have to clone those items too.
-<Trans>이렇게 하면 변이가 로컬로 유지되고 렌더링 함수가 순수해집니다. 하지만 여전히 주의해야 합니다. 예를 들어,배열의 기존 항목을 변경하려고 하면 해당 항목도 복제해야 합니다.</Trans>
+<Trans>이렇게 하면 변이가 로컬로 유지되고 렌더링 함수가 순수해집니다. 하지만 여전히 주의해야 합니다. 예를 들어, 배열의 기존 항목을 변경하려고 하면 해당 항목도 복제해야 합니다.</Trans>
 
 
 It is useful to remember which operations on arrays mutate them, and which don't. For example, `push`, `pop`, `reverse`, and `sort` will mutate the original array, but `slice`, `filter`, and `map` will create a new one.
-<Trans>배열에서 어떤 연산이 배열을 변경하고 어떤 연산이 변경되지 않는지 기억해두는 것이 유용합니다. 예를 들어,`push`, `pop`, `reverse`, `sort`는 원래 배열을 변경하지만 `slice`, `filter`, `map`은 새 배열을 만듭니다.</Trans>
+<Trans>배열에서 어떤 연산이 배열을 변경하고 어떤 연산이 변경되지 않는지 기억해두는 것이 유용합니다. 예를 들어, `push`, `pop`, `reverse`, `sort`는 원래 배열을 변경하지만 `slice`, `filter`, `map`은 새 배열을 만듭니다.</Trans>
 
 </Solution>
 

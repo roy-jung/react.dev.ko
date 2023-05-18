@@ -43,13 +43,13 @@ There are two common cases in which you don't need Effects:
 <Trans>Effect가 필요하지 않은 흔한 경우는 두 가지가 있습니다:</Trans>
 
 * **You don't need Effects to transform data for rendering.** For example, let's say you want to filter a list before displaying it. You might feel tempted to write an Effect that updates a state variable when the list changes. However, this is inefficient. When you update the state, React will first call your component functions to calculate what should be on the screen. Then React will ["commit"](/learn/render-and-commit) these changes to the DOM, updating the screen. Then React will run your Effects. If your Effect *also* immediately updates the state, this restarts the whole process from scratch! To avoid the unnecessary render passes, transform all the data at the top level of your components. That code will automatically re-run whenever your props or state change.
-<Trans>**렌더링을 위해 데이터를 변환하는 경우 Effect는 필요하지 않습니다.** 예를 들어,목록을 표시하기 전에 필터링하고 싶다고 가정해 봅시다. 목록이 변경될 때 state 변수를 업데이트하는 Effect를 작성하고 싶을 수 있습니다. 하지만 이는 비효율적입니다. 컴포넌트의 state를 업데이트할 때 React는 먼저 컴포넌트 함수를 호출해 화면에 표시될 내용을 계산합니다. 다음으로 이러한 변경 사항을 DOM에 ["commit"](/learn/render-and-commit)하여 화면을 업데이트하고, 그 후에 Effect를 실행합니다. 만약 Effect "역시" state를 즉시 업데이트한다면, 이로 인해 전체 프로세스가 처음부터 다시 시작될 것입니다! 불필요한 렌더링을 피하려면 모든 데이터 변환을 컴포넌트의 최상위 레벨에서 하세요. 그러면 props나 state가 변경될 때마다 해당 코드가 자동으로 다시 실행될 것입니다.</Trans>
+<Trans>**렌더링을 위해 데이터를 변환하는 경우 Effect는 필요하지 않습니다.** 예를 들어, 목록을 표시하기 전에 필터링하고 싶다고 가정해 봅시다. 목록이 변경될 때 state 변수를 업데이트하는 Effect를 작성하고 싶을 수 있습니다. 하지만 이는 비효율적입니다. 컴포넌트의 state를 업데이트할 때 React는 먼저 컴포넌트 함수를 호출해 화면에 표시될 내용을 계산합니다. 다음으로 이러한 변경 사항을 DOM에 ["commit"](/learn/render-and-commit)하여 화면을 업데이트하고, 그 후에 Effect를 실행합니다. 만약 Effect "역시" state를 즉시 업데이트한다면, 이로 인해 전체 프로세스가 처음부터 다시 시작될 것입니다! 불필요한 렌더링을 피하려면 모든 데이터 변환을 컴포넌트의 최상위 레벨에서 하세요. 그러면 props나 state가 변경될 때마다 해당 코드가 자동으로 다시 실행될 것입니다.</Trans>
 
 * **You don't need Effects to handle user events.** For example, let's say you want to send an `/api/buy` POST request and show a notification when the user buys a product. In the Buy button click event handler, you know exactly what happened. By the time an Effect runs, you don't know *what* the user did (for example, which button was clicked). This is why you'll usually handle user events in the corresponding event handlers.
-<Trans>**사용자 이벤트를 처리하는 데에 Effect는 필요하지 않습니다.** 예를 들어,사용자가 제품을 구매할 때 `/api/buy` POST 요청을 전송하고 알림을 표시하고 싶다고 합시다. 구매 버튼 클릭 이벤트 핸들러에서는 정확히 어떤 일이 일어났는지 알 수 있습니다. 반면 Effect는 사용자가 무엇을 했는지(예: 어떤 버튼을 클릭했는지)를 알 수 없습니다. 그렇기 때문에 일반적으로 사용자 이벤트를 해당 이벤트 핸들러에서 처리합니다.</Trans>
+<Trans>**사용자 이벤트를 처리하는 데에 Effect는 필요하지 않습니다.** 예를 들어, 사용자가 제품을 구매할 때 `/api/buy` POST 요청을 전송하고 알림을 표시하고 싶다고 합시다. 구매 버튼 클릭 이벤트 핸들러에서는 정확히 어떤 일이 일어났는지 알 수 있습니다. 반면 Effect는 사용자가 무엇을 했는지(예: 어떤 버튼을 클릭했는지)를 알 수 없습니다. 그렇기 때문에 일반적으로 사용자 이벤트를 해당 이벤트 핸들러에서 처리합니다.</Trans>
 
 You *do* need Effects to [synchronize](/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events) with external systems. For example, you can write an Effect that keeps a jQuery widget synchronized with the React state. You can also fetch data with Effects: for example, you can synchronize the search results with the current search query. Keep in mind that modern [frameworks](/learn/start-a-new-react-project#production-grade-react-frameworks) provide more efficient built-in data fetching mechanisms than writing Effects directly in your components.
-<Trans>한편 외부 시스템과 [동기화](/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events)하려면 Effect가 *필요*합니다. 예를 들어,jQuery 위젯을 React state와 동기화하는 Effect를 작성할 수 있습니다. 또한 검색 결과를 현재의 검색 쿼리와 동기화하기 위해 데이터 요청을 Effect로 처리할 수 있습니다. 최신 [프레임워크](/learn/start-a-new-react-project#building-with-a-full-featured-framework)는 컴포넌트에 직접 Effects를 작성하는 것보다 더 효율적인 빌트인 데이터 페칭 메커니즘을 제공한다는 점을 명심하세요.</Trans>
+<Trans>한편 외부 시스템과 [동기화](/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events)하려면 Effect가 *필요*합니다. 예를 들어, jQuery 위젯을 React state와 동기화하는 Effect를 작성할 수 있습니다. 또한 검색 결과를 현재의 검색 쿼리와 동기화하기 위해 데이터 요청을 Effect로 처리할 수 있습니다. 최신 [프레임워크](/learn/start-a-new-react-project#building-with-a-full-featured-framework)는 컴포넌트에 직접 Effects를 작성하는 것보다 더 효율적인 빌트인 데이터 페칭 메커니즘을 제공한다는 점을 명심하세요.</Trans>
 
 To help you gain the right intuition, let's look at some common concrete examples!
 <Trans>올바른 직관을 얻기 위해 몇 가지 일반적인 구체적인 예를 살펴봅시다!</Trans>
@@ -193,10 +193,10 @@ console.timeEnd('filter array');
 <Trans>`useMemo`는 *첫 번째* 렌더링을 더 빠르게 만들지는 않습니다. 업데이트 시 불필요한 작업을 건너뛰는 데에만 도움이 될 뿐입니다.</Trans>
 
 Keep in mind that your machine is probably faster than your users' so it's a good idea to test the performance with an artificial slowdown. For example, Chrome offers a [CPU Throttling](https://developer.chrome.com/blog/new-in-devtools-61/#throttling) option for this.
-<Trans>컴퓨터가 사용자보다 빠를 수 있으므로 인위적으로 속도 저하를 일으켜서 성능을 테스트하는 것도 좋은 생각입니다. 예를 들어,Chrome에서는 [CPU 스로틀링](https://developer.chrome.com/blog/new-in-devtools-61/#throttling) 옵션을 제공합니다.</Trans>
+<Trans>컴퓨터가 사용자보다 빠를 수 있으므로 인위적으로 속도 저하를 일으켜서 성능을 테스트하는 것도 좋은 생각입니다. 예를 들어, Chrome에서는 [CPU 스로틀링](https://developer.chrome.com/blog/new-in-devtools-61/#throttling) 옵션을 제공합니다.</Trans>
 
 Also note that measuring performance in development will not give you the most accurate results. (For example, when [Strict Mode](/reference/react/StrictMode) is on, you will see each component render twice rather than once.) To get the most accurate timings, build your app for production and test it on a device like your users have.
-<Trans>또한 개발 중에 성능을 측정하는 것은 정확한 결과를 제공하지는 않는다는 점에 유의하세요. (예를 들어,[Strict Mode](/reference/react/StrictMode)를 켜면, 각 컴포넌트가 한 번이 아닌 두 번씩 렌더링되는 것을 볼 수 있습니다.) 가장 정확한 타이밍을 얻으려면 상용 앱을 빌드하고 사용자가 사용하는 것과 동일한 기기에서 테스트하세요.</Trans>
+<Trans>또한 개발 중에 성능을 측정하는 것은 정확한 결과를 제공하지는 않는다는 점에 유의하세요. (예를 들어, [Strict Mode](/reference/react/StrictMode)를 켜면, 각 컴포넌트가 한 번이 아닌 두 번씩 렌더링되는 것을 볼 수 있습니다.) 가장 정확한 타이밍을 얻으려면 상용 앱을 빌드하고 사용자가 사용하는 것과 동일한 기기에서 테스트하세요.</Trans>
 
 </DeepDive>
 
@@ -219,7 +219,7 @@ export default function ProfilePage({ userId }) {
 ```
 
 This is inefficient because `ProfilePage` and its children will first render with the stale value, and then render again. It is also complicated because you'd need to do this in *every* component that has some state inside `ProfilePage`. For example, if the comment UI is nested, you'd want to clear out nested comment state too.
-<Trans>이것은 `ProfilePage`와 그 자식들이 먼저 오래된 값으로 렌더링한 다음 새로운 값으로 다시 렌더링하기 때문에 비효율적입니다. 또한 `ProfilePage` 내부에 어떤 state가 있는 *모든* 컴포넌트에서 이 작업을 수행해야 하므로 복잡합니다. 예를 들어,댓글 UI가 중첩되어 있는 경우 중첩된 하위 댓글 state들도 모두 지워야 할 것입니다.</Trans>
+<Trans>이것은 `ProfilePage`와 그 자식들이 먼저 오래된 값으로 렌더링한 다음 새로운 값으로 다시 렌더링하기 때문에 비효율적입니다. 또한 `ProfilePage` 내부에 어떤 state가 있는 *모든* 컴포넌트에서 이 작업을 수행해야 하므로 복잡합니다. 예를 들어, 댓글 UI가 중첩되어 있는 경우 중첩된 하위 댓글 state들도 모두 지워야 할 것입니다.</Trans>
 
 Instead, you can tell React that each user's profile is conceptually a _different_ profile by giving it an explicit key. Split your component in two and pass a `key` attribute from the outer component to the inner one:
 <Trans>그 대신 명시적인 키를 전달해 각 사용자의 프로필이 개념적으로 *다른* 프로필이라는 것을 React에 알릴 수 있습니다. 컴포넌트를 둘로 나누고 바깥쪽 컴포넌트에서 안쪽 컴포넌트로 `key` 속성을 전달하세요:</Trans>
@@ -299,7 +299,7 @@ When you update a component during rendering, React throws away the returned JSX
 <Trans>렌더링 도중 컴포넌트를 업데이트하면, React는 반환된 JSX를 버리고 즉시 렌더링을 다시 시도합니다. React는 계단식으로 전파되는 매우 느린 재시도를 피하기 위해, 렌더링 중에 *동일한* 컴포넌트의 state만 업데이트할 수 있도록 허용합니다. 렌더링 도중 다른 컴포넌트의 state를 업데이트하면 오류가 발생합니다. 동일 컴포넌트가 무한으로 리렌더링을 반복 시도하는 상황을 피하기 위해 `items !== prevItems`와 같은 조건이 필요한 것입니다. 이런 식으로 state를 조정할 수 있긴 하지만, 다른 side effect(DOM 변경이나 timeout 설정 등)은 이벤트 핸들러나 Effect에서만 처리함으로써 [컴포넌트의 순수성을 유지](/learn/keeping-components-pure)해야 합니다.</Trans>
 
 **Although this pattern is more efficient than an Effect, most components shouldn't need it either.** No matter how you do it, adjusting state based on props or other state makes your data flow more difficult to understand and debug. Always check whether you can [reset all state with a key](#resetting-all-state-when-a-prop-changes) or [calculate everything during rendering](#updating-state-based-on-props-or-state) instead. For example, instead of storing (and resetting) the selected *item*, you can store the selected *item ID:*
-<Trans>**이 패턴은 Effect보다 효율적이지만, 대부분의 컴포넌트에는 필요하지 않습니다.** 어떻게 하든 props나 다른 state들을 바탕으로 state를 조정하면 데이터 흐름을 이해하고 디버깅하기 어려워질 것입니다. 항상 [key로 모든 state를 재설정](#resetting-all-state-when-a-prop-changes)하거나 [렌더링 중에 모두 계산](#updating-state-based-on-props-or-state)할 수 있는지를 확인하세요. 예를 들어,선택한 *item*을 저장(및 재설정)하는 대신, 선택한 item의 *ID*를 저장할 수 있습니다:</Trans>
+<Trans>**이 패턴은 Effect보다 효율적이지만, 대부분의 컴포넌트에는 필요하지 않습니다.** 어떻게 하든 props나 다른 state들을 바탕으로 state를 조정하면 데이터 흐름을 이해하고 디버깅하기 어려워질 것입니다. 항상 [key로 모든 state를 재설정](#resetting-all-state-when-a-prop-changes)하거나 [렌더링 중에 모두 계산](#updating-state-based-on-props-or-state)할 수 있는지를 확인하세요. 예를 들어, 선택한 *item*을 저장(및 재설정)하는 대신, 선택한 item의 *ID*를 저장할 수 있습니다:</Trans>
 
 ```js {3-6}
 function List({ items }) {
@@ -342,7 +342,7 @@ function ProductPage({ product, addToCart }) {
 ```
 
 This Effect is unnecessary. It will also most likely cause bugs. For example, let's say that your app "remembers" the shopping cart between the page reloads. If you add a product to the cart once and refresh the page, the notification will appear again. It will keep appearing every time you refresh that product's page. This is because `product.isInCart` will already be `true` on the page load, so the Effect above will call `showNotification()`.
-<Trans>이 Effect는 불필요합니다. 또한 버그를 촉발할 가능성이 높습니다. 예를 들어,페이지가 새로고침 될 때마다 앱이 장바구니를 "기억"한다고 가정해 봅시다. 카트에 제품을 한 번 추가하고 페이지를 새로고침 하면 알림이 다시 표시됩니다. 또한 해당 제품 페이지를 새로고침할 때에도 여전히 알림이 계속 등장합니다. 이는 페이지를 불러올 때 `product.isInCart`가 이미 `true`이므로 위의 Effect가 `showNotification()`을 호출하기 때문입니다.</Trans>
+<Trans>이 Effect는 불필요합니다. 또한 버그를 촉발할 가능성이 높습니다. 예를 들어, 페이지가 새로고침 될 때마다 앱이 장바구니를 "기억"한다고 가정해 봅시다. 카트에 제품을 한 번 추가하고 페이지를 새로고침 하면 알림이 다시 표시됩니다. 또한 해당 제품 페이지를 새로고침할 때에도 여전히 알림이 계속 등장합니다. 이는 페이지를 불러올 때 `product.isInCart`가 이미 `true`이므로 위의 Effect가 `showNotification()`을 호출하기 때문입니다.</Trans>
 
 **When you're not sure whether some code should be in an Effect or in an event handler, ask yourself *why* this code needs to run. Use Effects only for code that should run *because* the component was displayed to the user.** In this example, the notification should appear because the user *pressed the button*, not because the page was displayed! Delete the Effect and put the shared logic into a function called from both event handlers:
 <Trans>**어떤 코드가 Effect에 있어야 하는지 이벤트 핸들러에 있어야 하는지 확실치 않은 경우, 이 코드가 실행되어야 하는 *이유*를 자문해 보세요. 컴포넌트가 사용자에게 표시되었기 *때문에* 실행되어야 하는 코드에만 Effect를 사용하세요.** 이 예제에서는 페이지가 표시되었기 때문이 아니라, 사용자가 버튼을 눌렀기 때문에 알림이 표시되어야 합니다! Effect를 삭제하고 공유 로직을 두 이벤트 핸들러에서 호출하는 함수에 넣으세요:</Trans>
@@ -535,10 +535,10 @@ This is a lot more efficient. Also, if you implement a way to view game history,
 <Trans>훨씬 더 효율적입니다. 또한 게임 기록을 볼 수 있는 방법을 구현하면 이제 다른 모든 값을 조정하는 Effect 체인을 촉발시키지 않고도 각 state 변수를 과거의 움직임으로 설정할 수 있습니다. 여러 이벤트 핸들러 간에 로직을 재사용해야 하는 경우 [함수를 추출](#sharing-logic-between-event-handlers)하여 해당 핸들러에서 함수를 호출할 수 있습니다.</Trans>
 
 Remember that inside event handlers, [state behaves like a snapshot.](/learn/state-as-a-snapshot) For example, even after you call `setRound(round + 1)`, the `round` variable will reflect the value at the time the user clicked the button. If you need to use the next value for calculations, define it manually like `const nextRound = round + 1`.
-<Trans>이벤트 핸들러 내부에서 [state는 스냅샷처럼 동작](/learn/state-as-a-snapshot)함을 기억하세요. 예를 들어,`setRound(round + 1)`를 호출한 후에도 `round` 변수는 사용자가 버튼을 클릭한 시점의 값을 반영합니다. 계산에 다음 값을 사용해야 하는 경우 `const nextRound = round + 1`과 같이 수동으로 정의하세요.</Trans>
+<Trans>이벤트 핸들러 내부에서 [state는 스냅샷처럼 동작](/learn/state-as-a-snapshot)함을 기억하세요. 예를 들어, `setRound(round + 1)`를 호출한 후에도 `round` 변수는 사용자가 버튼을 클릭한 시점의 값을 반영합니다. 계산에 다음 값을 사용해야 하는 경우 `const nextRound = round + 1`과 같이 수동으로 정의하세요.</Trans>
 
 In some cases, you *can't* calculate the next state directly in the event handler. For example, imagine a form with multiple dropdowns where the options of the next dropdown depend on the selected value of the previous dropdown. Then, a chain of Effects is appropriate because you are synchronizing with network.
-<Trans>이벤트 핸들러에서 직접 다음 state를 계산할 수 없는 경우도 있습니다. 예를 들어,이전 드롭다운의 선택 값에 따라 다음 드롭다운의 옵션이 달라지는 form을 상상해 봅시다. 이를 네트워크와 동기화해야 한다면 Effect 체인이 적절할 것입니다.</Trans>
+<Trans>이벤트 핸들러에서 직접 다음 state를 계산할 수 없는 경우도 있습니다. 예를 들어, 이전 드롭다운의 선택 값에 따라 다음 드롭다운의 옵션이 달라지는 form을 상상해 봅시다. 이를 네트워크와 동기화해야 한다면 Effect 체인이 적절할 것입니다.</Trans>
 
 ### Initializing the application<Trans>애플리케이션 초기화하기</Trans> {/*initializing-the-application*/}
 
@@ -847,7 +847,7 @@ It doesn't matter where `page` and `query` come from. While this component is vi
 <Trans>`page`와 `query`가 어디에서 오는지는 중요하지 않습니다. 이 컴포넌트가 표시되는 동안 현재의 `page` 및 `query`에 대한 네트워크의 데이터와 `results`의 [동기화](/learn/synchronizing-with-effects)가 유지되면 됩니다. 이것이 Effect인 이유입니다.</Trans>
 
 However, the code above has a bug. Imagine you type `"hello"` fast. Then the `query` will change from `"h"`, to `"he"`, `"hel"`, `"hell"`, and `"hello"`. This will kick off separate fetches, but there is no guarantee about which order the responses will arrive in. For example, the `"hell"` response may arrive *after* the `"hello"` response. Since it will call `setResults()` last, you will be displaying the wrong search results. This is called a ["race condition"](https://en.wikipedia.org/wiki/Race_condition): two different requests "raced" against each other and came in a different order than you expected.
-<Trans>다만 위 코드에는 버그가 있습니다. `"hello"`를 빠르게 입력한다고 합시다. 그러면 `query`가 `"h"`에서 `"he"`, `"hel"`, `"hell"`, `"hello"`로 변경됩니다. 이렇게 하면 각각 페칭을 수행하지만, 어떤 순서로 응답이 도착할지는 보장할 수 없습니다. 예를 들어,`"hell"` 응답은 `"hello"` 응답 *이후*에 도착할 수 있습니다. 이에 따라 마지막에 호출된 `setResults()`로부터 잘못된 검색 결과가 표시될 수 있습니다. 이를 ["경쟁 조건"](https://en.wikipedia.org/wiki/Race_condition)이라고 합니다. 서로 다른 두 요청이 서로 "경쟁"하여 예상과 다른 순서로 도착한 경우입니다.</Trans>
+<Trans>다만 위 코드에는 버그가 있습니다. `"hello"`를 빠르게 입력한다고 합시다. 그러면 `query`가 `"h"`에서 `"he"`, `"hel"`, `"hell"`, `"hello"`로 변경됩니다. 이렇게 하면 각각 페칭을 수행하지만, 어떤 순서로 응답이 도착할지는 보장할 수 없습니다. 예를 들어, `"hell"` 응답은 `"hello"` 응답 *이후*에 도착할 수 있습니다. 이에 따라 마지막에 호출된 `setResults()`로부터 잘못된 검색 결과가 표시될 수 있습니다. 이를 ["경쟁 조건"](https://en.wikipedia.org/wiki/Race_condition)이라고 합니다. 서로 다른 두 요청이 서로 "경쟁"하여 예상과 다른 순서로 도착한 경우입니다.</Trans>
 
 **To fix the race condition, you need to [add a cleanup function](/learn/synchronizing-with-effects#fetching-data) to ignore stale responses:**
 <Trans>**경쟁 조건을 수정하기 위해서는 오래된 응답을 무시하도록 [클린업 함수를 추가](/learn/synchronizing-with-effects#fetching-data)해야 합니다.**</Trans>

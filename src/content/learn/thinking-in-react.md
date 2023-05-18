@@ -243,7 +243,7 @@ To make the UI interactive, you need to let users change your underlying data mo
 <Trans>UI를 상호작용하게 만들려면 사용자가 기반이 되는 데이터 모델을 변경할 수 있도록 해야 합니다. 이를 위해 *state*를 사용합니다.</Trans>
 
 Think of state as the minimal set of changing data that your app needs to remember. The most important principle for structuring state is to keep it [DRY (Don't Repeat Yourself).](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Figure out the absolute minimal representation of the state your application needs and compute everything else on-demand. For example, if you're building a shopping list, you can store the items as an array in state. If you want to also display the number of items in the list, don't store the number of items as another state value--instead, read the length of your array.
-<Trans>state를 앱이 기억해야 하는 최소한의 변화하는 데이터 집합으로 생각하세요. state를 구조화할 때 가장 중요한 원칙은 [DRY(직접 반복하지 않기)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)를 유지하는 것입니다. 애플리케이션에 필요한 최소한의 state를 파악하고 그 외의 모든 것을 필요할 때 계산하세요. 예를 들어,쇼핑 목록을 작성하는 경우 항목을 state 배열로 저장할 수 있습니다. 목록에 있는 항목의 개수도 표시하려면 항목의 개수를 다른 state 값으로 저장하는 대신 배열의 길이를 읽으면 됩니다.</Trans>
+<Trans>state를 앱이 기억해야 하는 최소한의 변화하는 데이터 집합으로 생각하세요. state를 구조화할 때 가장 중요한 원칙은 [DRY(직접 반복하지 않기)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)를 유지하는 것입니다. 애플리케이션에 필요한 최소한의 state를 파악하고 그 외의 모든 것을 필요할 때 계산하세요. 예를 들어, 쇼핑 목록을 작성하는 경우 항목을 state 배열로 저장할 수 있습니다. 목록에 있는 항목의 개수도 표시하려면 항목의 개수를 다른 state 값으로 저장하는 대신 배열의 길이를 읽으면 됩니다.</Trans>
 
 Now think of all of the pieces of data in this example application:
 <Trans>이제 이 예제 애플리케이션의 모든 데이터 조각을 생각해 보세요:</Trans>
@@ -305,7 +305,7 @@ There are two types of "model" data in React: props and state. The two are very 
 * [**State** is like a component’s memory.](/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
 
 <TransBlock>
-- [Props는 함수가 전달받는 인자](/learn/passing-props-to-a-component)와 같습니다. 부모 컴포넌트가 자식 컴포넌트에 데이터를 넘겨서 자식의 외관을 커스터마이징할 수 있게 해줍니다. 예를 들어,`Form`은 `color` prop을 `Button`에 전달할 수 있습니다.
+- [Props는 함수가 전달받는 인자](/learn/passing-props-to-a-component)와 같습니다. 부모 컴포넌트가 자식 컴포넌트에 데이터를 넘겨서 자식의 외관을 커스터마이징할 수 있게 해줍니다. 예를 들어, `Form`은 `color` prop을 `Button`에 전달할 수 있습니다.
 - [**State**는 컴포넌트의 메모리와 같습니다.](/learn/state-a-components-memory) state는 컴포넌트가 일부 정보를 계속 추적하고 상호작용하여 변화할 수 있게 해줍니다. 예를 들어, `Button`은 `isHovered` state를 추적할 것입니다.
 </TransBlock>
 
@@ -538,7 +538,7 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 </ConsoleBlock>
 
 In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
-<Trans>위의 샌드박스에서 `ProductTable`과 `SearchBar`는 `filterText`와 `inStockOnly` prop을 읽어 테이블, 인풋 및 체크박스를 렌더링합니다. 예를 들어,다음은 `SearchBar`가 입력 값을 채우는 방식입니다:</Trans>
+<Trans>위의 샌드박스에서 `ProductTable`과 `SearchBar`는 `filterText`와 `inStockOnly` prop을 읽어 테이블, 인풋 및 체크박스를 렌더링합니다. 예를 들어, 다음은 `SearchBar`가 입력 값을 채우는 방식입니다:</Trans>
 
 ```js {1,6}
 function SearchBar({ filterText, inStockOnly }) {

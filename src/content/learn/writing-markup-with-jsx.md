@@ -235,10 +235,10 @@ This is how Hedy Lamarr's image and list items look closed:
 ### 3. camelCase <s>all</s> most of the things!<Trans><s>거의</s> 대부분이 캐멀 케이스입니다!</Trans> {/*3-camelcase-salls-most-of-the-things*/}
 
 JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects. In your own components, you will often want to read those attributes into variables. But JavaScript has limitations on variable names. For example, their names can't contain dashes or be reserved words like `class`.
-<Trans>JSX는 JavaScript로 바뀌고 JSX로 작성된 어트리뷰트는 JavaScript 객체의 키가 됩니다. 종종 컴포넌트 안에서 어트리뷰트를 변수로 읽고 싶은 경우가 있을 것입니다. 하지만 JavaScript에는 변수명에 제한이 있습니다. 예를 들어,변수명에는 대시를 포함하거나 `class`처럼 예약어를 사용할 수 없습니다.</Trans>
+<Trans>JSX는 JavaScript로 바뀌고 JSX로 작성된 어트리뷰트는 JavaScript 객체의 키가 됩니다. 종종 컴포넌트 안에서 어트리뷰트를 변수로 읽고 싶은 경우가 있을 것입니다. 하지만 JavaScript에는 변수명에 제한이 있습니다. 예를 들어, 변수명에는 대시를 포함하거나 `class`처럼 예약어를 사용할 수 없습니다.</Trans>
 
 This is why, in React, many HTML and SVG attributes are written in camelCase. For example, instead of `stroke-width` you use `strokeWidth`. Since `class` is a reserved word, in React you write `className` instead, named after the [corresponding DOM property](https://developer.mozilla.org/en-US/docs/Web/API/Element/className):
-<Trans>이것이 React에서 많은 HTML과 SVG 어트리뷰트가 캐멀 케이스로 작성되는 이유입니다. 예를 들어,`stroke-width` 대신 `strokeWidth`을 사용합니다. `class`는 예약어이므로, React에서는 대신 해당 [DOM 속성](https://developer.mozilla.org/en-US/docs/Web/API/Element/className)의 이름을 따서 `className`을 씁니다:</Trans>
+<Trans>이것이 React에서 많은 HTML과 SVG 어트리뷰트가 캐멀 케이스로 작성되는 이유입니다. 예를 들어, `stroke-width` 대신 `strokeWidth`을 사용합니다. `class`는 예약어이므로, React에서는 대신 해당 [DOM 속성](https://developer.mozilla.org/en-US/docs/Web/API/Element/className)의 이름을 따서 `className`을 씁니다:</Trans>
 
 ```js {4}
 <img 

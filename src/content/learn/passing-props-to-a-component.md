@@ -91,7 +91,7 @@ You can give `Avatar` some props in two steps.
 ### Step 1: Pass props to the child component<Trans>자식 컴포넌트에 props 전달하기</Trans> {/*step-1-pass-props-to-the-child-component*/}
 
 First, pass some props to `Avatar`. For example, let's pass two props: `person` (an object), and `size` (a number):
-<Trans>먼저, `Avatar` 에 몇몇 props를 전달합니다. 예를 들어,`person` (객체)와 `size` (숫자)를 전달해 보겠습니다:</Trans>
+<Trans>먼저, `Avatar` 에 몇몇 props를 전달합니다. 예를 들어, `person` (객체)와 `size` (숫자)를 전달해 보겠습니다:</Trans>
 
 ```js
 export default function Profile() {
