@@ -61,7 +61,7 @@ A [Node.js Readable Stream](https://nodejs.org/api/stream.html#readable-streams)
 <Trans>이 메서드는 출력물을 반환하기 전에 모든 [Suspense 경계](/reference/react/Suspense)가 완료될 때까지 기다립니다.</Trans>
 
 * As of React 18, this method buffers all of its output, so it doesn't actually provide any streaming benefits. This is why it's recommended that you migrate to [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream) instead.
-<Trans>React 18부터는 이 메서드가 모든 출력을 버퍼링하므로, 실제로 스트리밍의 이점을 누릴 수 없습니다. 따라서 [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)으로 마이그레이션하는 것을 권장합니다.</Trans>
+<Trans>React 18부터 이 메서드는 모든 출력을 버퍼링하므로, 실제로 스트리밍의 이점을 누릴 수 없습니다. 따라서 [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)으로 마이그레이션하는 것을 권장합니다.</Trans>
 
 * The returned stream is a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
 <Trans>반환된 스트림은 utf-8로 인코딩된 바이트 스트림입니다. 다른 인코딩 스트림이 필요한 경우, 텍스트 변환을 위한 변환 스트림을 제공하는 [iconv-lite](https://www.npmjs.com/package/iconv-lite)와 같은 프로젝트를 살펴보세요.</Trans>
