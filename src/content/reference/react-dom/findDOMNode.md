@@ -88,7 +88,7 @@ class AutoselectingInput extends Component {
 ```
 
 Here, the `input` variable will be set to the `<input>` DOM element. This lets you do something with it. For example, when clicking "Show example" below mounts the input, [`input.select()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select) selects all text in the input:
-<Trans>여기서 `input` 변수는 `<input>` DOM 요소로 설정됩니다. 이를 통해 무언가를 할 수 있습니다. 예를 들어, 아래의 "예제 표시"를 클릭하면 입력이 마운트되고, [`input.select()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select)는 입력의 모든 텍스트를 선택합니다:</Trans>
+<Trans>여기서 `input` 변수는 `<input>` DOM 요소로 설정됩니다. 이를 통해 무언가를 할 수 있습니다. 예를 들어, 아래의 "예제 표시"를 클릭하면 input이 마운트되고, [`input.select()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select)는 input의 모든 텍스트를 선택합니다:</Trans>
 
 <Sandpack>
 
@@ -324,7 +324,7 @@ export default function MyInput() {
 </Sandpack>
 
 Notice that calling `findDOMNode(this)` inside `AutoselectingInput` still gives you the DOM `<input>`--even though the JSX for this `<input>` is hidden inside the `MyInput` component. This seems convenient for the above example, but it leads to fragile code. Imagine that you wanted to edit `MyInput` later and add a wrapper `<div>` around it. This would break the code of `AutoselectingInput` (which expects to find an `<input>`).
-<Trans>이 `<input>`에 대한 JSX가 `MyInput` 컴포넌트 안에 숨겨져 있더라도, `AutoselectingInput` 내부에서 `findDOMNode(this)`를 호출하면 여전히 DOM `<input>`이 반환된다는 점에 유의하세요. 이것은 위의 예에서는 편리해 보이지만, 코드가 취약해질 수 있습니다. 나중에 `MyInput`을 편집한 뒤 이를 감싸는 `<div>`를 추가하고 싶다고 상상해 봅시다. 이렇게 하면 `AutoselectingInput`(`<input>` DOM 노드를 찾을 것으로 예상됨)의 코드가 중단됩니다.</Trans>
+<Trans>이 `<input>`에 대한 JSX가 `MyInput` 컴포넌트 안에 숨겨져 있더라도, `AutoselectingInput` 내부에서 `findDOMNode(this)`를 호출하면 여전히 DOM `<input>`이 반환된다는 점에 유의하세요. 이것은 위의 예제에서는 편리해 보이지만, 코드가 취약해질 수 있습니다. 나중에 `MyInput`을 편집한 뒤 이를 감싸는 `<div>`를 추가하고 싶다고 상상해 봅시다. 이렇게 하면 `AutoselectingInput`(`<input>` DOM 노드를 찾을 것으로 예상됨)의 코드가 중단됩니다.</Trans>
 
 To replace `findDOMNode` in this example, the two components need to coordinate:
 <Trans>이 예제에서 `findDOMNode`를 대체하려면 두 컴포넌트를 조정해야 합니다:</Trans>

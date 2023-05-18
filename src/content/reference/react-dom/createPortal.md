@@ -77,7 +77,7 @@ A portal only changes the physical placement of the DOM node. In every other way
 ### Rendering to a different part of the DOM<Trans>DOM의 다른 부분으로 렌더링하기</Trans> {/*rendering-to-a-different-part-of-the-dom*/}
 
 *Portals* let your components render some of their children into a different place in the DOM. This lets a part of your component "escape" from whatever containers it may be in. For example, a component can display a modal dialog or a tooltip that appears above and outside of the rest of the page.
-<Trans>*포털*을 사용하면 컴포넌트가 일부 자식을 DOM의 다른 위치로 렌더링할 수 있습니다. 이를 통해 컴포넌트의 일부가 어떤 컨테이너에 있든 그 컨테이너에서 "탈출"할 수 있습니다. 예를 들어, 컴포넌트는 모달 대화상자나 툴팁을 페이지의 나머지 부분 위에, 외부에 표시할 수 있습니다.</Trans>
+<Trans>*포털*을 사용하면 컴포넌트가 일부 자식을 DOM의 다른 위치로 렌더링할 수 있습니다. 이를 통해 컴포넌트의 일부가 어떤 컨테이너에 있든 그 컨테이너에서 "탈출"할 수 있습니다. 예를 들어, 컴포넌트는 모달이나 툴팁을 페이지의 나머지 부분 위에, 외부에 표시할 수 있습니다.</Trans>
 
 To create a portal, render the result of `createPortal` with <CodeStep step={1}>some JSX</CodeStep> and the <CodeStep step={2}>DOM node where it should go</CodeStep>:
 <Trans>포털을 생성하려면 `createPortal`의 결과를 <CodeStep step={1}>일부 JSX</CodeStep>와 함께 렌더링하고 포털이 있어야 할 <CodeStep step={2}>DOM 노드</CodeStep>를 지정합니다:</Trans>
@@ -145,7 +145,7 @@ A portal only changes the physical placement of the DOM node. In every other way
 
 ---
 
-### Rendering a modal dialog with a portal<Trans>포탈로 모달 렌더링하기</Trans> {/*rendering-a-modal-dialog-with-a-portal*/}
+### Rendering a modal dialog with a portal<Trans>포털로 모달 렌더링하기</Trans> {/*rendering-a-modal-dialog-with-a-portal*/}
 
 You can use a portal to create a modal dialog that floats above the rest of the page, even if the component that summons the dialog is inside a container with `overflow: hidden` or other styles that interfere with the dialog.
 <Trans>모달을 불러오는 컴포넌트가 `overflow: hidden` 또는 모달을 방해하는 다른 스타일이 있는 컨테이너 안에 있더라도, 포털을 사용하여 나머지 페이지 위에 떠 있는 모달을 만들 수 있습니다.</Trans>

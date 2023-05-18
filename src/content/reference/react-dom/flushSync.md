@@ -49,7 +49,7 @@ Most of the time, `flushSync` can be avoided. Use `flushSync` as last resort.
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `callback`: A function. React will immediately call this callback and flush any updates it contains synchronously. It may also flush any pending updates, or Effects, or updates inside of Effects. If an update suspends as a result of this `flushSync` call, the fallbacks may be re-shown.
-<Trans outdent>`callback` : 함수입니다. React는 즉시 이 콜백을 호출하고 여기에 포함된 모든 업데이트를 동기적으로 flush합니다. 또한 보류 중인 모든 업데이트, Effect 또는 Effect 내부의 업데이트를 flush할 수도 있습니다. 이 `flushSync` 호출의 결과로 업데이트가 일시 중단되면 폴백이 다시 표시될 수 있습니다.</Trans>
+<Trans outdent>`callback` : 함수. React는 즉시 이 콜백을 호출하고 여기에 포함된 모든 업데이트를 동기적으로 flush합니다. 또한 보류 중인 모든 업데이트, Effect 또는 Effect 내부의 업데이트를 flush할 수도 있습니다. 이 `flushSync` 호출의 결과로 업데이트가 일시 중단되면 폴백이 다시 표시될 수 있습니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
@@ -62,7 +62,7 @@ Most of the time, `flushSync` can be avoided. Use `flushSync` as last resort.
 <Trans>`flushSync`는 성능을 크게 저하시킬 수 있습니다. 아껴서 사용하세요.</Trans>
 
 * `flushSync` may force pending Suspense boundaries to show their `fallback` state.
-<Trans>`flushSync`는 보류 중인 Suspense 경계를 강제로 `fallback` 상태로 표시할 수 있습니다.</Trans>
+<Trans>`flushSync`는 보류 중인 Suspense 경계를 강제로 `fallback` state로 표시할 수 있습니다.</Trans>
 
 * `flushSync` may run pending effects and synchronously apply any updates they contain before returning.
 <Trans>`flushSync`는 보류 중인 Effect들을 실행하고, 반환하기 전에 포함된 모든 업데이트를 동기적으로 적용할 수 있습니다.</Trans>
@@ -77,7 +77,7 @@ Most of the time, `flushSync` can be avoided. Use `flushSync` as last resort.
 ### Flushing updates for third-party integrations<Trans>서드파티 통합을 위한 업데이트 flush하기</Trans> {/*flushing-updates-for-third-party-integrations*/}
 
 When integrating with third-party code such as browser APIs or UI libraries, it may be necessary to force React to flush updates. Use `flushSync` to force React to flush any <CodeStep step={1}>state updates</CodeStep> inside the callback synchronously:
-<Trans>브라우저 API나 UI 라이브러리와 같은 서드파티 코드와 통합할 때, React가 강제로 flush 업데이트를 해야 할 수도 있습니다. `flushSync`를 사용하면 React가 콜백 내부의 <CodeStep step={1}>모든 상태 업데이트</CodeStep>를 강제로 동기적으로 flush하도록 할 수 있습니다:</Trans>
+<Trans>브라우저 API나 UI 라이브러리와 같은 서드파티 코드와 통합할 때, React가 강제로 flush 업데이트를 해야 할 수도 있습니다. `flushSync`를 사용하면 React가 콜백 내부의 <CodeStep step={1}>모든 state 업데이트</CodeStep>를 강제로 동기적으로 flush하도록 할 수 있습니다:</Trans>
 
 ```js [[1, 2, "setSomething(123)"]]
 flushSync(() => {
@@ -99,7 +99,7 @@ Some browser APIs expect results inside of callbacks to be written to the DOM sy
 <Trans>일부 브라우저 API는 콜백이 끝날 때 콜백 내부의 결과가 DOM에 동기적으로 기록되어 브라우저가 렌더링된 DOM으로 무언가를 할 수 있기를 예상합니다. React는 대부분의 경우 이를 자동으로 처리합니다. 하지만 어떤 경우에는 동기식 업데이트를 강제해야 할 수도 있습니다.</Trans>
 
 For example, the browser `onbeforeprint` API allows you to change the page immediately before the print dialog opens. This is useful for applying custom print styles that allow the document to display better for printing. In the example below, you use `flushSync` inside of the `onbeforeprint` callback to immediately "flush" the React state to the DOM. Then, by the time the print dialog opens, `isPrinting` displays "yes":
-<Trans>예를 들어, `onbeforeprint` 브라우저 API를 사용하면 인쇄 대화 상자가 열리기 직전에 페이지를 변경할 수 있습니다. 이 기능은 문서를 인쇄할 때 더 보기 좋게 표시할 수 있는 사용자 지정 인쇄 스타일을 적용하는 데 유용합니다. 아래 예시에서는 `onbeforeprint`콜백 내부에서 `flushSync`를 사용하여 React 상태를 DOM에 즉시 "flush"합니다. 그런 다음 인쇄 대화 상자가 열릴 때 `isPrinting`이 "yes"를 표시합니다:</Trans>
+<Trans>예를 들어, `onbeforeprint` 브라우저 API를 사용하면 인쇄 대화 상자가 열리기 직전에 페이지를 변경할 수 있습니다. 이 기능은 문서를 인쇄할 때 더 보기 좋게 표시할 수 있는 사용자 지정 인쇄 스타일을 적용하는 데 유용합니다. 아래 예시에서는 `onbeforeprint`콜백 내부에서 `flushSync`를 사용하여 React state를 DOM에 즉시 "flush"합니다. 그런 다음 인쇄 대화 상자가 열릴 때 `isPrinting`이 "yes"를 표시합니다:</Trans>
 
 <Sandpack>
 
@@ -143,7 +143,7 @@ export default function PrintApp() {
 </Sandpack>
 
 Without `flushSync`, when the print dialog will display `isPrinting` as "no". This is because React batches the updates asynchronously and the print dialog is displayed before the state is updated.
-<Trans>`flushSync`를 사용하지 않으면 인쇄 대화 상자에 `isPrinting`이 "아니요"로 표시됩니다. 이는 React가 업데이트를 비동기적으로 일괄 처리하고 상태가 업데이트되기 전에 인쇄 대화 상자가 표시되기 때문입니다.</Trans>
+<Trans>`flushSync`를 사용하지 않으면 인쇄 대화 상자에 `isPrinting`이 "아니요"로 표시됩니다. 이는 React가 업데이트를 비동기적으로 일괄 처리하고 state가 업데이트되기 전에 인쇄 대화 상자가 표시되기 때문입니다.</Trans>
 
 <Pitfall>
 

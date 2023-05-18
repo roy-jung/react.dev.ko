@@ -7,7 +7,7 @@ translators: [안예지, 이승효]
 
 `createRoot` lets you create a root to display React components inside a browser DOM node.
 <Trans>`createRoot`로 브라우저 DOM 노드 안에 React 컴포넌트를 표시하는 루트를 생성할 수 있습니다.</Trans>
-`
+
 ```js
 const root = createRoot(domNode, options?)
 ```
@@ -227,7 +227,7 @@ function Counter() {
 <Trans>**앱이 온전히 React만으로 작성된 경우, 추가적으로 루트를 더 만들거나 [`root.render`](#root-render)를 다시 호출할 필요가 없습니다.**</Trans>
 
 From this point on, React will manage the DOM of your entire app. To add more components, [nest them inside the `App` component.](/learn/importing-and-exporting-components) When you need to update the UI, each of your components can do this by [using state.](/reference/react/useState) When you need to display extra content like a modal or a tooltip outside the DOM node, [render it with a portal.](/reference/react-dom/createPortal)
-<Trans>이 시점부터 React는 전체 앱의 DOM을 관리합니다. 컴포넌트를 더 추가하려면[ `App` 컴포넌트 안에 중첩](/learn/importing-and-exporting-components)시키세요. UI 업데이트는 각 컴포넌트의 [state를 통해](/reference/react/useState) 수행할 수 있습니다. 모달이나 툴팁과 같은 추가 콘텐츠를 DOM 노드 외부에 표시해야 하는 경우 [portal로 렌더링](/reference/react-dom/createPortal)하세요.</Trans>
+<Trans>이 시점부터 React는 전체 앱의 DOM을 관리합니다. 컴포넌트를 더 추가하려면[ `App` 컴포넌트 안에 중첩](/learn/importing-and-exporting-components)시키세요. UI 업데이트는 각 컴포넌트의 [state를 통해](/reference/react/useState) 수행할 수 있습니다. 모달이나 툴팁과 같은 추가 콘텐츠를 DOM 노드 외부에 표시해야 하는 경우 [포털로 렌더링](/reference/react-dom/createPortal)하세요.</Trans>
 
 <Note>
 
