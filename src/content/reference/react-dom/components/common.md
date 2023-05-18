@@ -652,7 +652,7 @@ It conforms to the same standard as the underlying DOM events, but fixes some br
 <Trans>기본 DOM 이벤트와 동일한 표준을 준수하지만 일부 브라우저 간의 불일치를 수정합니다.</Trans>
 
 Some React events do not map directly to the browser's native events. For example in `onMouseLeave`, `e.nativeEvent` will point to a `mouseout` event. The specific mapping is not part of the public API and may change in the future. If you need the underlying browser event for some reason, read it from `e.nativeEvent`.
-<Trans>일부 React 이벤트는 브라우저의 네이티브 이벤트에 직접 매핑되지 않습니다. 예를 들어 `onMouseLeave`에서 `e.nativeEvent`는 `mouseout` 이벤트를 가리킵니다. 특정 매핑은 공개 API의 일부가 아니며 향후 변경될 수 있습니다. 어떤 이유로 기본 브라우저 이벤트가 필요한 경우 `e.nativeEvent`에서 읽어오세요.</Trans>
+<Trans>일부 React 이벤트는 브라우저의 네이티브 이벤트에 직접 매핑되지 않습니다. 예를 들어, `onMouseLeave`에서 `e.nativeEvent`는 `mouseout` 이벤트를 가리킵니다. 특정 매핑은 공개 API의 일부가 아니며 향후 변경될 수 있습니다. 어떤 이유로 기본 브라우저 이벤트가 필요한 경우 `e.nativeEvent`에서 읽어오세요.</Trans>
 
 #### Properties <Trans>프로퍼티</Trans> {/*react-event-object-properties*/}
 
@@ -1325,7 +1325,7 @@ function Row({ isSelected, size }) {
 ### Manipulating a DOM node with a ref <Trans>ref로 DOM 노드 조작하기</Trans> {/*manipulating-a-dom-node-with-a-ref*/}
 
 Sometimes, you'll need to get the browser DOM node associated with a tag in JSX. For example, if you want to focus an `<input>` when a button is clicked, you need to call [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) on the browser `<input>` DOM node.
-<Trans>때로는 JSX에서 태그와 연결된 브라우저 DOM 노드를 가져와야 할 수도 있습니다. 예를 들어 버튼이 클릭될 때 `<input>`에 초점을 맞추려면 브라우저 `<input>` DOM 노드에서 [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)를 호출해야 합니다.</Trans>
+<Trans>때로는 JSX에서 태그와 연결된 브라우저 DOM 노드를 가져와야 할 수도 있습니다. 예를 들어, 버튼이 클릭될 때 `<input>`에 초점을 맞추려면 브라우저 `<input>` DOM 노드에서 [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus)를 호출해야 합니다.</Trans>
 
 To obtain the browser DOM node for a tag, [declare a ref](/reference/react/useRef) and pass it as the `ref` attribute to that tag:
 <Trans>태그에 대한 브라우저 DOM 노드를 가져오려면 [ref 선언하기](/reference/react/useRef)를 통해 해당 태그에 `ref` 속성으로 전달합니다:</Trans>

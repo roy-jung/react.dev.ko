@@ -211,7 +211,7 @@ Thanks to this, you're now connected to the same room that the user chose in the
 <Trans>덕분에 이제 사용자가 UI에서 선택한 방과 동일한 방에 연결됩니다. 재앙을 피했습니다!</Trans>
 
 Every time after your component re-renders with a different `roomId`, your Effect will re-synchronize. For example, let's say the user changes `roomId` from `"travel"` to `"music"`. React will again **stop synchronizing** your Effect by calling its cleanup function (disconnecting you from the `"travel"` room). Then it will **start synchronizing** again by running its body with the new `roomId` prop (connecting you to the `"music"` room).
-<Trans>컴포넌트가 다른 `roomId`로 다시 렌더링할 때마다 Effect가 다시 동기화됩니다. 예를 들어 사용자가 `roomId`를 `"travel"`에서 `"music"`으로 변경한다고 가정해 봅시다. React는 다시 클린업 함수를 호출하여 Effect **동기화를 중지**합니다(`"travel"` 방에서 연결을 끊습니다). 그런 다음 새 `roomId` prop으로 본문을 실행하여 다시 **동기화를 시작**합니다(`"music"` 방에 연결).</Trans>
+<Trans>컴포넌트가 다른 `roomId`로 다시 렌더링할 때마다 Effect가 다시 동기화됩니다. 예를 들어, 사용자가 `roomId`를 `"travel"`에서 `"music"`으로 변경한다고 가정해 봅시다. React는 다시 클린업 함수를 호출하여 Effect **동기화를 중지**합니다(`"travel"` 방에서 연결을 끊습니다). 그런 다음 새 `roomId` prop으로 본문을 실행하여 다시 **동기화를 시작**합니다(`"music"` 방에 연결).</Trans>
 
 Finally, when the user goes to a different screen, `ChatRoom` unmounts. Now there is no need to stay connected at all. React will **stop synchronizing** your Effect one last time and disconnect you from the `"music"` chat room.
 <Trans>마지막으로 사용자가 다른 화면으로 이동하면 `ChatRoom`이 마운트 해제됩니다. 이제 연결 상태를 유지할 필요가 전혀 없습니다. React는 마지막으로 Effect의 **동기화를 중지**하고 `"music"` 채팅방에서 연결을 끊습니다.</Trans>
@@ -372,7 +372,7 @@ The main reason your Effect will re-synchronize in practice is if some data it u
 <Trans>실제로 Effect가 다시 동기화되는 주된 이유는 Effect가 사용하는 일부 데이터가 변경된 경우입니다. 위의 샌드박스에서 선택한 채팅방을 변경해 보세요. `roomId`가 변경되면 Effect가 다시 동기화되는 것을 확인할 수 있습니다.</Trans>
 
 However, there are also more unusual cases in which re-synchronization is necessary. For example, try editing the `serverUrl` in the sandbox above while the chat is open. Notice how the Effect re-synchronizes in response to your edits to the code. In the future, React may add more features that rely on re-synchronization.
-<Trans>그러나 재동기화가 필요한 더 특이한 경우도 있습니다. 예를 들어 채팅이 열려 있는 상태에서 위의 샌드박스에서 `serverUrl`을 편집해 보세요. 코드 편집에 대한 응답으로 Effect가 어떻게 다시 동기화되는지 주목하세요. 앞으로 React는 재동기화에 의존하는 더 많은 기능을 추가할 수 있습니다.</Trans>
+<Trans>그러나 재동기화가 필요한 더 특이한 경우도 있습니다. 예를 들어, 채팅이 열려 있는 상태에서 위의 샌드박스에서 `serverUrl`을 편집해 보세요. 코드 편집에 대한 응답으로 Effect가 어떻게 다시 동기화되는지 주목하세요. 앞으로 React는 재동기화에 의존하는 더 많은 기능을 추가할 수 있습니다.</Trans>
 
 ### How React knows that it needs to re-synchronize the Effect<Trans>React가 Effect의 재동기화 필요성을 인식하는 방법</Trans> {/*how-react-knows-that-it-needs-to-re-synchronize-the-effect*/}
 
@@ -415,7 +415,7 @@ For example, if you passed `["general"]` during the initial render, and later yo
 ### Each Effect represents a separate synchronization process<Trans>각각의 Effect는 별도의 동기화 프로세스를 나타냅니다.</Trans> {/*each-effect-represents-a-separate-synchronization-process*/}
 
 Resist adding unrelated logic to your Effect only because this logic needs to run at the same time as an Effect you already wrote. For example, let's say you want to send an analytics event when the user visits the room. You already have an Effect that depends on `roomId`, so you might feel tempted to add the analytics call there:
-<Trans>이 로직은 이미 작성한 Effect와 동시에 실행되어야 하므로 관련 없는 로직을 Effect에 추가하지 마세요. 예를 들어 사용자가 방을 방문할 때 분석 이벤트를 전송하고 싶다고 가정해 봅시다. 이미 `roomId`에 의존하는 Effect가 있으므로 바로 그 Effect에서 분석 이벤트 호출을 추가하고 싶을 수 있습니다:</Trans>
+<Trans>이 로직은 이미 작성한 Effect와 동시에 실행되어야 하므로 관련 없는 로직을 Effect에 추가하지 마세요. 예를 들어, 사용자가 방을 방문할 때 분석 이벤트를 전송하고 싶다고 가정해 봅시다. 이미 `roomId`에 의존하는 Effect가 있으므로 바로 그 Effect에서 분석 이벤트 호출을 추가하고 싶을 수 있습니다:</Trans>
 
 ```js {3}
 function ChatRoom({ roomId }) {
@@ -722,7 +722,7 @@ As you'll learn below on this page, a linter will check for these issues automat
 ### React verifies that you specified every reactive value as a dependency<Trans>React는 모든 반응형 값을 의존성으로 지정했는지 검토합니다</Trans> {/*react-verifies-that-you-specified-every-reactive-value-as-a-dependency*/}
 
 If your linter is [configured for React,](/learn/editor-setup#linting) it will check that every reactive value used by your Effect's code is declared as its dependency. For example, this is a lint error because both `roomId` and `serverUrl` are reactive:
-<Trans>린터가 [React에 맞게 구성](/learn/editor-setup#linting)된 경우, Effect 코드에서 사용되는 모든 반응형 값이 해당 의존성으로 선언되었는지 확인합니다. 예를 들어 다음 코드는 `roomId` 나 `serverUrl`가 모두 반응형이므로 린트 오류입니다:</Trans>
+<Trans>린터가 [React에 맞게 구성](/learn/editor-setup#linting)된 경우, Effect 코드에서 사용되는 모든 반응형 값이 해당 의존성으로 선언되었는지 확인합니다. 예를 들어, 다음 코드는 `roomId` 나 `serverUrl`가 모두 반응형이므로 린트 오류입니다:</Trans>
 
 <Sandpack>
 
@@ -832,7 +832,7 @@ In the previous example, you've fixed the lint error by listing `roomId` and `se
 <Trans>이전 예제에서는 `roomId`와  `serverUrl` 를 의존성으로 나열하여 린트 오류를 수정했습니다.</Trans>
 
 **However, you could instead "prove" to the linter that these values aren't reactive values,** i.e. that they *can't* change as a result of a re-render. For example, if `serverUrl` and `roomId` don't depend on rendering and always have the same values, you can move them outside the component. Now they don't need to be dependencies:
-<Trans>**그러나 대신 이러한 값이 반응형 값이 아니라는 것, 즉 리렌더링의 결과로 변경될 수 없다는 것을 린터에 "증명"할 수 있습니다.** 예를 들어 `serverUrl`과 `roomId`가 렌더링에 의존하지 않고 항상 같은 값을 갖는다면 컴포넌트 외부로 옮길 수 있습니다. 이제 의존성이 될 필요가 없습니다:</Trans>
+<Trans>**그러나 대신 이러한 값이 반응형 값이 아니라는 것, 즉,리렌더링의 결과로 변경될 수 없다는 것을 린터에 "증명"할 수 있습니다.** 예를 들어, `serverUrl`과 `roomId`가 렌더링에 의존하지 않고 항상 같은 값을 갖는다면 컴포넌트 외부로 옮길 수 있습니다. 이제 의존성이 될 필요가 없습니다:</Trans>
 
 ```js {1,2,11}
 const serverUrl = 'https://localhost:1234'; // serverUrl is not reactive
@@ -1017,7 +1017,7 @@ button { margin-left: 10px; }
 <Solution>
 
 This Effect didn't have a dependency array at all, so it re-synchronized after every re-render. First, add a dependency array. Then, make sure that every reactive value used by the Effect is specified in the array. For example, `roomId` is reactive (because it's a prop), so it should be included in the array. This ensures that when the user selects a different room, the chat reconnects. On the other hand, `serverUrl` is defined outside the component. This is why it doesn't need to be in the array.
-<Trans>이 Effect에는 의존성 배열이 전혀 없었기 때문에 렌더링할 때마다 다시 동기화되었습니다. 먼저 의존성 배열을 추가합니다. 그런 다음 Effect에서 사용하는 모든 반응형 값이 배열에 지정되어 있는지 확인합니다. 예를 들어 `roomId`는 prop이기 때문에 반응형이므로 배열에 포함되어야 합니다. 이렇게 하면 사용자가 다른 방을 선택해도 채팅이 다시 연결됩니다. 반면에 `serverUrl`은 컴포넌트 외부에 정의되어 있습니다. 그렇기 때문에 배열에 포함될 필요가 없습니다.</Trans>
+<Trans>이 Effect에는 의존성 배열이 전혀 없었기 때문에 렌더링할 때마다 다시 동기화되었습니다. 먼저 의존성 배열을 추가합니다. 그런 다음 Effect에서 사용하는 모든 반응형 값이 배열에 지정되어 있는지 확인합니다. 예를 들어, `roomId`는 prop이기 때문에 반응형이므로 배열에 포함되어야 합니다. 이렇게 하면 사용자가 다른 방을 선택해도 채팅이 다시 연결됩니다. 반면에 `serverUrl`은 컴포넌트 외부에 정의되어 있습니다. 그렇기 때문에 배열에 포함될 필요가 없습니다.</Trans>
 
 <Sandpack>
 

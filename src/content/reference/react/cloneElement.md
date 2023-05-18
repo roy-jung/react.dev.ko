@@ -53,7 +53,7 @@ console.log(clonedElement); // <Row title="Cabbage">Goodbye</Row>
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `element`: The `element` argument must be a valid React element. For example, it could be a JSX node like `<Something />`, the result of calling [`createElement`](/reference/react/createElement), or the result of another `cloneElement` call.
-<Trans>`element`: `element` 인수는 유효한 React 엘리먼트여야 합니다. 예를 들어 `<Something />`과 같은 JSX 노드, [`createElement`](/reference/react/createElement)를 호출한 결과, 또는 다른 `cloneElement` 호출의 결과일 수 있습니다.</Trans>
+<Trans>`element`: `element` 인수는 유효한 React 엘리먼트여야 합니다. 예를 들어, `<Something />`과 같은 JSX 노드, [`createElement`](/reference/react/createElement)를 호출한 결과, 또는 다른 `cloneElement` 호출의 결과일 수 있습니다.</Trans>
 
 * `props`: The `props` argument must either be an object or `null`. If you pass `null`, the cloned element will retain all of the original `element.props`. Otherwise, for every prop in the `props` object, the returned element will "prefer" the value from `props` over the value from `element.props`. The rest of the props will be filled from the original `element.props`. If you pass `props.key` or `props.ref`, they will replace the original ones.
 <Trans>`props`: props 인수는 객체이거나 `null`이어야 합니다. `null`을 전달하면 복제된 엘리먼트는 원본 `element.props`를 모두 유지합니다. 반대로 `null`이 아닐 경우에는, 반환된 엘리먼트는 `props`객체의 모든 prop에 대해 `element.props`의 값보다 `props`의 값을 "우선"합니다. 나머지 prop들은 원본 `element.props`에서 채워집니다. `props.key` 또는 `props.ref`를 전달하면 원래 값을 대체합니다.</Trans>

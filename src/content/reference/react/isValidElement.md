@@ -53,7 +53,7 @@ console.log(isValidElement({ age: 42 })); // false
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * **Only [JSX tags](/learn/writing-markup-with-jsx) and objects returned by [`createElement`](/reference/react/createElement) are considered to be React elements.** For example, even though a number like `42` is a valid React *node* (and can be returned from a component), it is not a valid React element. Arrays and portals created with [`createPortal`](/reference/react-dom/createPortal) are also *not* considered to be React elements.
-<Trans>**[JSX 태그](https://react.dev/learn/writing-markup-with-jsx) 및 [`createElement`](https://react.dev/reference/react/createElement)로부터 반환된 객체만이 React 엘리먼트로 간주됩니다.** 예를 들어 `42`와 같은 숫자는 유효한 React 노드이지만(또한 컴포넌트로부터 반환될 수도 있지만) 유효한 React 엘리먼트는 아닙니다. [`createPortal`](https://react.dev/reference/react-dom/createPortal)로 생성된 배열과 포털 역시 React 엘리먼트로 간주되지 않습니다.</Trans>
+<Trans>**[JSX 태그](https://react.dev/learn/writing-markup-with-jsx) 및 [`createElement`](https://react.dev/reference/react/createElement)로부터 반환된 객체만이 React 엘리먼트로 간주됩니다.** 예를 들어, `42`와 같은 숫자는 유효한 React 노드이지만(또한 컴포넌트로부터 반환될 수도 있지만) 유효한 React 엘리먼트는 아닙니다. [`createPortal`](https://react.dev/reference/react-dom/createPortal)로 생성된 배열과 포털 역시 React 엘리먼트로 간주되지 않습니다.</Trans>
 
 ---
 
@@ -147,7 +147,7 @@ A React node can be:
 </TransBlock>
 
 **Note `isValidElement` checks whether the argument is a *React element,* not whether it's a React node.** For example, `42` is not a valid React element. However, it is a perfectly valid React node:
-<Trans>**`isValidElement`는 인수가 *React 엘리먼트*인지를 확인할 뿐, React 노드인지 여부를 확인하는 것은 아니라는 점에 주의하세요.** 예를 들어 `42`는 React 엘리먼트는 아니지만, 완전히 유효한 React 노드입니다:</Trans>
+<Trans>**`isValidElement`는 인수가 *React 엘리먼트*인지를 확인할 뿐, React 노드인지 여부를 확인하는 것은 아니라는 점에 주의하세요.** 예를 들어, `42`는 React 엘리먼트는 아니지만, 완전히 유효한 React 노드입니다:</Trans>
 
 ```js
 function MyComponent() {

@@ -102,11 +102,11 @@ Transitions let you keep the user interface updates responsive even on slow devi
 <Trans>트랜지션을 사용하면 느린 기기에서도 사용자 인터페이스 업데이트를 반응성 있게 유지할 수 있습니다.</Trans>
 
 With a transition, your UI stays responsive in the middle of a re-render. For example, if the user clicks a tab but then change their mind and click another tab, they can do that without waiting for the first re-render to finish.
-<Trans>트랜지션을 사용하면 재렌더링 도중에도 UI가 반응성을 유지합니다. 예를들어, 사용자가 탭을 클릭했다가 마음이 바뀌어 다른 탭을 클릭하면 첫 번째 리렌더링이 완료될 때까지 기다릴 필요 없이 다른 탭을 클릭할 수 있습니다.</Trans>
+<Trans>트랜지션을 사용하면 재렌더링 도중에도 UI가 반응성을 유지합니다. 예를 들어, 사용자가 탭을 클릭했다가 마음이 바뀌어 다른 탭을 클릭하면 첫 번째 리렌더링이 완료될 때까지 기다릴 필요 없이 다른 탭을 클릭할 수 있습니다.</Trans>
 
 <Note>
 `startTransition` is very similar to [`useTransition`](/reference/react/useTransition), except that it does not provide the `isPending` flag to track whether a transition is ongoing. You can call `startTransition` when `useTransition` is not available. For example, `startTransition` works outside components, such as from a data library.
-<Trans>`startTransition`은 트랜지션이 진행 중인지 여부를 추적하기 위한 `isPending` 플래그를 제공하지 않는다는 점을 제외하면 [`useTransition`](/reference/react/useTransition)과 매우 유사합니다. `useTransition`을 사용할 수 없을 때 `startTransition`을 호출할 수 있습니다. 예를들어, `startTransition`은 데이터 라이브러리와 같은 외부 컴포넌트에서 작동합니다.</Trans>
+<Trans>`startTransition`은 트랜지션이 진행 중인지 여부를 추적하기 위한 `isPending` 플래그를 제공하지 않는다는 점을 제외하면 [`useTransition`](/reference/react/useTransition)과 매우 유사합니다. `useTransition`을 사용할 수 없을 때 `startTransition`을 호출할 수 있습니다. 예를 들어, `startTransition`은 데이터 라이브러리와 같은 외부 컴포넌트에서 작동합니다.</Trans>
 
 [Learn about transitions and see examples on the `useTransition` page.](/reference/react/useTransition)
 <Trans>[`useTransition` 페이지에서 트랜지션에 대해 자세히 알아보고 예제를 확인하세요.](/reference/react/useTransition)</Trans>

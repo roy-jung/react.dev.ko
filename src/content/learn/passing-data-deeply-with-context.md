@@ -1,7 +1,7 @@
 ---
 title: Passing Data Deeply with Context
 translatedTitle: context로 데이터 깊숙이 전달하기
-translators: [이승효, 서민택, 이도원]
+translators: [이승효, 서민택, 이도원, 이나령]
 ---
 
 <iframe 

@@ -587,7 +587,7 @@ button {
 </Sandpack>
 
 It is a good idea to have multiple state variables if their state is unrelated, like `index` and `showMore` in this example. But if you find that you often change two state variables together, it might be easier to combine them into one. For example, if you have a form with many fields, it's more convenient to have a single state variable that holds an object than state variable per field. Read [Choosing the State Structure](/learn/choosing-the-state-structure) for more tips.
-<Trans>이 예제에서 `index`와 `showMore`처럼 서로 연관이 없는 경우 여러 개의 state 변수를 갖는 것이 좋습니다. 그러나 두 개의 state 변수를 자주 함께 변경하는 경우에는 두 변수를 하나로 합치는 것이 더 좋을 수 있습니다. 예를 들어 필드가 많은 폼의 경우 필드별로 state 변수를 사용하는 것보다 객체를 값으로 하는 하나의 state 변수를 사용하는 것이 더 편리합니다. 자세한 팁은 [state 구조 선택](/learn/choosing-the-state-structure)에서 확인할 수 있습니다.</Trans>
+<Trans>이 예제에서 `index`와 `showMore`처럼 서로 연관이 없는 경우 여러 개의 state 변수를 갖는 것이 좋습니다. 그러나 두 개의 state 변수를 자주 함께 변경하는 경우에는 두 변수를 하나로 합치는 것이 더 좋을 수 있습니다. 예를 들어, 필드가 많은 폼의 경우 필드별로 state 변수를 사용하는 것보다 객체를 값으로 하는 하나의 state 변수를 사용하는 것이 더 편리합니다. 자세한 팁은 [state 구조 선택](/learn/choosing-the-state-structure)에서 확인할 수 있습니다.</Trans>
 
 <DeepDive>
 
@@ -803,7 +803,7 @@ You don't have to understand it to use React, but you might find this a helpful 
 ## State is isolated and private<Trans>state는 격리되고 프라이빗합니다</Trans> {/*state-is-isolated-and-private*/}
 
 State is local to a component instance on the screen. In other words, **if you render the same component twice, each copy will have completely isolated state!** Changing one of them will not affect the other.
-<Trans>state는 화면의 컴포넌트 인스턴스에 지역적입니다. 즉 **동일한 컴포넌트를 두 군데에서 렌더링하면 각 사본은 완전히 격리된 state를 갖게 됩니다!** 이 중 하나를 변경해도 다른 컴포넌트에는 영향을 미치지 않습니다.</Trans>
+<Trans>state는 화면의 컴포넌트 인스턴스에 지역적입니다. 즉,**동일한 컴포넌트를 두 군데에서 렌더링하면 각 사본은 완전히 격리된 state를 갖게 됩니다!** 이 중 하나를 변경해도 다른 컴포넌트에는 영향을 미치지 않습니다.</Trans>
 
 In this example, the `Gallery` component from earlier is rendered twice with no changes to its logic. Try clicking the buttons inside each of the galleries. Notice that their state is independent:
 <Trans>이 예시에서는 앞의 `Gallery` 컴포넌트가 로직을 변경하지 않고 두 군데에서 렌더링되었습니다. 각 갤러리 내부의 버튼을 클릭해 보세요. 각각의 state가 독립적인 것을 확인할 수 있습니다:</Trans>

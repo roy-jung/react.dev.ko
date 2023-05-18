@@ -507,7 +507,7 @@ function handleChange(e) {
 ```
 
 If this doesn't fix the problem, it's possible that the text area gets removed and re-added from the DOM on every keystroke. This can happen if you're accidentally [resetting state](/learn/preserving-and-resetting-state) on every re-render. For example, this can happen if the text area or one of its parents always receives a different `key` attribute, or if you nest component definitions (which is not allowed in React and causes the "inner" component to remount on every render).
-<Trans>이렇게 해도 문제가 해결되지 않는다면, 키 입력 시마다 textarea이 DOM에서 제거되었다가 다시 추가되는 상황일 수 있습니다. 렌더링할 때마다 실수로 state를 재설정하는 경우 이런 문제가 발생할 수 있습니다. 예를 들어 textarea 또는 그 부모 중 하나가 항상 다른 `key` 속성을 받거나, 컴포넌트 정의를 중첩하는 경우(React에서는 허용되지 않으며, 렌더링할 때마다 "내부" 컴포넌트가 다시 마운트됩니다), 이런 일이 발생할 수 있습니다.</Trans>
+<Trans>이렇게 해도 문제가 해결되지 않는다면, 키 입력 시마다 textarea이 DOM에서 제거되었다가 다시 추가되는 상황일 수 있습니다. 렌더링할 때마다 실수로 state를 재설정하는 경우 이런 문제가 발생할 수 있습니다. 예를 들어, textarea 또는 그 부모 중 하나가 항상 다른 `key` 속성을 받거나, 컴포넌트 정의를 중첩하는 경우(React에서는 허용되지 않으며, 렌더링할 때마다 "내부" 컴포넌트가 다시 마운트됩니다), 이런 일이 발생할 수 있습니다.</Trans>
 
 
 ---
