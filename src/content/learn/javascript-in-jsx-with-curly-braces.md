@@ -296,7 +296,7 @@ Now you know almost everything about JSX:
 #### Fix the mistake<Trans>실수를 고쳐보세요</Trans> {/*fix-the-mistake*/}
 
 This code crashes with an error saying `Objects are not valid as a React child`:
-<Trans>이 코드는 `Objects are not valid as a React child | 객체가 React 자식으로 유효하지 않음` 이라는 오류와 함께 깨집니다:</Trans>
+<Trans>이 코드는 `객체는 React 자식으로 유효하지 않음` 이라는 오류와 함께 깨집니다:</Trans>
 <Sandpack>
 
 ```js

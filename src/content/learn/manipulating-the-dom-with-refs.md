@@ -242,7 +242,7 @@ In the above examples, there is a predefined number of refs. However, sometimes 
 ```
 
 This is because **Hooks must only be called at the top-level of your component.** You can't call `useRef` in a loop, in a condition, or inside a `map()` call.
-<Trans>이는 *훅은 컴포넌트의 최상위 레벨에서만 호출해야 하기 때문입니다.** 반복문 또는 `map()` 내부에서는 `useRef`를 호출할 수 없습니다.</Trans>
+<Trans>이는 **훅은 컴포넌트의 최상위 레벨에서만 호출해야 하기 때문입니다.** 반복문 또는 `map()` 내부에서는 `useRef`를 호출할 수 없습니다.</Trans>
 
 One possible way around this is to get a single ref to their parent element, and then use DOM manipulation methods like [`querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) to "find" the individual child nodes from it. However, this is brittle and can break if your DOM structure changes.
 <Trans>이 문제를 해결할 수 있는 한 가지 방법은 부모 엘리먼트에 대한 단일 ref를 가져온 다음 [`querySelectorAll`](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll)과 같은 DOM 조작 메서드를 사용하여 개별 하위 노드를 "찾는" 것입니다. 하지만 이 방법은 DOM 구조가 변경되면 깨질 수 있습니다.</Trans>

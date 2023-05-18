@@ -36,7 +36,7 @@ React is a JavaScript library for rendering user interfaces (UI). UI is built fr
 ## Your first component<Trans>첫 번째 컴포넌트</Trans> {/*your-first-component*/}
 
 React applications are built from isolated pieces of UI called *components*. A React component is a JavaScript function that you can sprinkle with markup. Components can be as small as a button, or as large as an entire page. Here is a `Gallery` component rendering three `Profile` components:
-<Trans>React 애플리케이션은 *컴포넌트*라고 불리는 분리된 UI 조각으로 구축됩니다. React 컴포넌트는 마크업으로 뿌릴 수 있는 JavaScript 함수입니다. 컴포넌트는 버튼처럼 작을 수도 있고 전체 페이지처럼 클 수도 있습니다. 다음은 세 개의 Profile 컴포넌트를 렌더링하는 `Gallery` 컴포넌트입니다:</Trans>
+<Trans>React 애플리케이션은 *컴포넌트*라고 불리는 분리된 UI 조각으로 구축됩니다. React 컴포넌트는 마크업으로 뿌릴 수 있는 JavaScript 함수입니다. 컴포넌트는 버튼처럼 작을 수도 있고 전체 페이지처럼 클 수도 있습니다. 다음은 세 개의 `Profile` 컴포넌트를 렌더링하는 `Gallery` 컴포넌트입니다:</Trans>
 <Sandpack>
 
 ```js

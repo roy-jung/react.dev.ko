@@ -94,7 +94,7 @@ Components often need to change what's on the screen as a result of an interacti
 <Trans>컴포넌트는 상호 작용의 결과로 화면의 내용을 변경해야 하는 경우가 많습니다. 양식에 입력하면 입력 필드가 업데이트되어야 하고, 이미지 캐러셀에서 '다음'을 클릭하면 표시되는 이미지가 변경되어야 하며, '구매'를 클릭하면 장바구니에 제품이 담겨야 합니다. 컴포넌트는 현재 입력값, 현재 이미지, 장바구니와 같은 것들을 "기억"해야 합니다. React에서는 이런 종류의 컴포넌트별 메모리를 *state*라고 부릅니다.</Trans>
 
 You can add state to a component with a [`useState`](/reference/react/useState) Hook. *Hooks* are special functions that let your components use React features (state is one of those features). The `useState` Hook lets you declare a state variable. It takes the initial state and returns a pair of values: the current state, and a state setter function that lets you update it.
-<Trans>컴포넌트에 state를 추가하려면 `[useState](/reference/react/useState)` 훅을 사용하면 됩니다. *훅*들은 컴포넌트가 React 기능을 사용할 수 있게 해주는 특수한 함수들입니다(state는 그 기능 중 하나입니다). `useState` 훅을 사용하면 state 변수를 선언할 수 있습니다. 초기 state를 받아 현재 state와 이를 업데이트할 수 있는 state 설정자 함수의 값 쌍을 반환합니다.</Trans>
+<Trans>컴포넌트에 state를 추가하려면 [`useState`](/reference/react/useState) 훅을 사용하면 됩니다. *훅*들은 컴포넌트가 React 기능을 사용할 수 있게 해주는 특수한 함수들입니다(state는 그 기능 중 하나입니다). `useState` 훅을 사용하면 state 변수를 선언할 수 있습니다. 초기 state를 받아 현재 state와 이를 업데이트할 수 있는 state 설정자 함수의 값 쌍을 반환합니다.</Trans>
 
 ```js
 const [index, setIndex] = useState(0);

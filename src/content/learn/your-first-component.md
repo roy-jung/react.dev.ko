@@ -48,7 +48,7 @@ On the Web, HTML lets us create rich structured documents with its built-in set 
 ```
 
 This markup represents this article `<article>`, its heading `<h1>`, and an (abbreviated) table of contents as an ordered list `<ol>`. Markup like this, combined with CSS for style, and JavaScript for interactivity, lies behind every sidebar, avatar, modal, dropdown—every piece of UI you see on the Web.
-<Trans>이 마크업은 `<article>`, 제목 `<h1>`, (축약된) 목차를 정렬된 목록 `<ol>`로 나타냅니다. 이와 같은 마크업은 스타일을 위한 CSS, 상호작용을 위한 JavaScript와 결합되어 웹에서 볼 수 있는 모든 사이드바, 아바타, 모달, 드롭다운 등 모든 UI의 기반이 됩니다.</Trans>
+<Trans>이 마크업은 아티클을 `<article>`로, 제목을 `<h1>`로, (축약된) 목차를 정렬된 목록 `<ol>`로 나타냅니다. 이와 같은 마크업은 스타일을 위한 CSS, 상호작용을 위한 JavaScript와 결합되어 웹에서 볼 수 있는 모든 사이드바, 아바타, 모달, 드롭다운 등 모든 UI의 기반이 됩니다.</Trans>
 
 React lets you combine your markup, CSS, and JavaScript into custom "components", **reusable UI elements for your app.** The table of contents code you saw above could be turned into a `<TableOfContents />` component you could render on every page. Under the hood, it still uses the same HTML tags like `<article>`, `<h1>`, etc.
 <Trans>React를 사용하면 마크업, CSS, JavaScript를 **앱의 재사용 가능한 UI 요소**인 사용자 정의 "컴포넌트"로 결합할 수 있습니다. 위에서 본 목차 코드는 모든 페이지에 렌더링할 수 있는 `<TableOfContents />` 컴포넌트로 전환될 수 있습니다. 내부적으로는 여전히 `<article>`, `<h1>` 등과 같은 동일한 HTML 태그를 사용합니다.</Trans>

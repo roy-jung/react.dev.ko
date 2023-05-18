@@ -433,7 +433,7 @@ There's some repetitive logic for each form field:
 </TransBlock>
 
 You can extract the repetitive logic into this `useFormInput` custom Hook:
-<Trans>반복 로직을 이 useFormInput 커스텀 훅으로 추출할 수 있습니다:</Trans>
+<Trans>반복 로직을 이 `useFormInput` 커스텀 훅으로 추출할 수 있습니다:</Trans>
 
 <Sandpack>
 
