@@ -6,14 +6,14 @@ translators: [이지수, 안예지, 고석영]
 <Pitfall>
 
 We recommend defining components as functions instead of classes. [See how to migrate.](#alternatives)
-<Trans>컴포넌트를 클래스 대신 함수로 정의하는 것이 좋습니다. [마이그레이션 방법을 확인하세요.](#alternatives)</Trans>
+<Trans>컴포넌트를 클래스 대신 함수로 정의하는 것을 추천합니다. [마이그레이션 방법을 확인하세요.](#alternatives)</Trans>
 
 </Pitfall>
 
 <Intro>
 
 `Component` is the base class for the React components defined as [JavaScript classes.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) Class components are still supported by React, but we don't recommend using them in new code.
-<Trans>`Component`는 [JavaScript classes](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)로 정의된 React 컴포넌트의 기본 클래스입니다. 클래스 컴포넌트는 여전히 React에서 지원되지만 새 코드에서는 사용하지 않는 것이 좋습니다.</Trans>
+<Trans>`Component`는 [JavaScript class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)로 정의된 React 컴포넌트의 기본 클래스입니다. 아직은 React에서 클래스 컴포넌트를 지원하고는 있지만, 새 코드에서는 사용하지 않는 것이 좋습니다.</Trans>
 
 ```js
 class Greeting extends Component {
@@ -34,7 +34,7 @@ class Greeting extends Component {
 ### `Component` {/*component*/}
 
 To define a React component as a class, extend the built-in `Component` class and define a [`render` method:](#render)
-<Trans>React 컴포넌트를 클래스로 정의하려면 빌트인 `Component` 클래스를 확장하고 [`render` 메서드](#render)를 정의합니다.</Trans>
+<Trans>React 컴포넌트를 클래스로 정의하려면 빌트인 `Component` 클래스를 확장하고 [`render` 메서드](#render)를 정의하세요.</Trans>
 
 ```js
 import { Component } from 'react';
@@ -47,7 +47,7 @@ class Greeting extends Component {
 ```
 
 Only the `render` method is required, other methods are optional.
-<Trans>해당 `render` 메서드만 필수이며, 그 외 방법들은 선택사항입니다.</Trans>
+<Trans>오직 `render` 메서드만 필수이며, 그밖의 메서드들은 선택사항입니다.</Trans>
 
 [See more examples below.](#usage)
 <Trans>[아래에서 더 많은 예시를 확인하세요.](#usage)</Trans>
@@ -57,7 +57,7 @@ Only the `render` method is required, other methods are optional.
 ### `context` {/*context*/}
 
 The [context](/learn/passing-data-deeply-with-context) of a class component is available as `this.context`. It is only available if you specify *which* context you want to receive using [`static contextType`](#static-contexttype) (modern) or [`static contextTypes`](#static-contexttypes) (deprecated).
-<Trans>클래스 컴포넌트의 [컨텍스트](/learn/passing-data-deeply-with-context)는 `this.context` 로 사용가능합니다. [`static contextType`](#static-contexttype)(최신) 또는 [`static contextTypes`](#static-contexttypes)(지원 중단)을 사용하여 수신하려는 컨텍스트를 지정하는 경우에만 사용할 수 있습니다 . </Trans>
+<Trans>클래스 컴포넌트의 [컨텍스트](/learn/passing-data-deeply-with-context)는 `this.context` 로 사용가능합니다. [`static contextType`](#static-contexttype)(최신) 또는 [`static contextTypes`](#static-contexttypes)(지원 중단)을 사용하여 *어떤* 컨테스트를 수신하고자 하는지를 지정하는 경우에만 사용할 수 있습니다 . </Trans>
 
 A class component can only read one context at a time.
 <Trans>클래스 컴포넌트는 한 번에 하나의 컨텍스트만 읽을 수 있습니다.</Trans>
@@ -135,7 +135,7 @@ Lets you access [legacy string refs](https://reactjs.org/docs/refs-and-the-dom.h
 ### `state` {/*state*/}
 
 The state of a class component is available as `this.state`. The `state` field must be an object. Do not mutate the state directly. If you wish to change the state, call `setState` with the new state.
-<Trans>클래스 컴포넌트의 state는 `this.state`로 사용할 수 있습니다. state 필드는 객체여야 합니다. `state`를 직접 변경하지 마세요. state를 변경하려면 새로 `setState`를 호출하세요.</Trans>
+<Trans>클래스 컴포넌트의 state는 `this.state`로 사용할 수 있습니다. state 필드는 객체여야 합니다. `state`를 직접 변경하지 마세요. state를 변경하려면 새로운 state로 `setState`를 호출하세요.</Trans>
 
 ```js {2-4,7-9,18}
 class Counter extends Component {
@@ -178,7 +178,7 @@ Defining `state` in class components is equivalent to calling [`useState`](/refe
 ### `constructor(props)` {/*constructor*/}
 
 The [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor) runs before your class component *mounts* (gets added to the screen). Typically, a constructor is only used for two purposes in React. It lets you declare state and [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) your class methods to the class instance:
-<Trans>[생성자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/constructor)는 클래스 컴포넌트가 마운트되기 전에 실행됩니다(화면에 추가됩니다). 일반적으로 생성자는 React에서 두 가지 용도로만 사용됩니다. state를 선언하고 클래스 메서드를 클래스 인스턴스에 [바인딩](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_objects/Function/bind)할 수 있습니다.</Trans>
+<Trans>[constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/constructor)는 클래스 컴포넌트가 마운트되기 전에 실행됩니다(화면에 추가됩니다). 일반적으로 constructor는 React에서 다음 두 가지 용도로만 사용합니다. state를 선언하고, 클래스 메서드를 클래스 인스턴스에 [바인딩](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_objects/Function/bind)할 수 있습니다:</Trans>
 
 ```js {2-6}
 class Counter extends Component {
@@ -194,7 +194,7 @@ class Counter extends Component {
 ```
 
 If you use modern JavaScript syntax, constructors are rarely needed. Instead, you can rewrite this code above using the [public class field syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) which is supported both by modern browsers and tools like [Babel:](https://babeljs.io/)
-<Trans>최신 자바스크립트 구문을 사용하는 경우 생성자가 거의 필요하지 않습니다. 대신 최신 브라우저와 [Babel](https://babeljs.io/)과 같은 도구에서 모두 지원되는 [공용 클래스 필드 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/Public_class_fields)을 사용하여 위의 코드를 다시 작성할 수 있습니다:</Trans>
+<Trans>최신 자바스크립트 구문을 사용하는 경우 constructor가 거의 필요하지 않습니다. 대신 최신 브라우저와 [Babel](https://babeljs.io/)과 같은 도구에서 모두 지원되는 [공용 클래스 필드 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/Public_class_fields)을 사용하여 위의 코드를 다시 작성할 수 있습니다:</Trans>
 
 ```js {2,4}
 class Counter extends Component {
@@ -206,39 +206,39 @@ class Counter extends Component {
 ```
 
 A constructor should not contain any side effects or subscriptions.
-<Trans>생성자에는 사이드 이펙트나 구독이 포함되어서는 안 됩니다.</Trans>
+<Trans>constructor에는 사이드 이펙트나 구독이 포함되어서는 안 됩니다.</Trans>
 
 #### Parameters<Trans>매개변수</Trans> {/*constructor-parameters*/}
 
-* `props`: The component's initial props.
-<Trans>`props` : 컴포넌트의 초기 props입니다.</Trans>
+* `props`: The component's initial props.  
+<Trans outdent>`props` : 컴포넌트의 초기 props입니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*constructor-returns*/}
 
 `constructor` should not return anything.
-<Trans>`생성자`는 아무 것도 반환하지 않아야 합니다.</Trans>
+<Trans>`constructor`는 아무 것도 반환하지 않아야 합니다.</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*constructor-caveats*/}
 
 * Do not run any side effects or subscriptions in the constructor. Instead, use [`componentDidMount`](#componentdidmount) for that.
-<Trans>생성자에서 사이드 이펙트나 구독을 실행하지 마세요. 대신 [`componentDidMount`](#componentdidmount) 를 사용하세요</Trans>
+<Trans>constructor에서 사이드 이펙트나 구독을 실행하지 마세요. 대신 [`componentDidMount`](#componentdidmount) 를 사용하세요</Trans>
 
 * Inside a constructor, you need to call `super(props)` before any other statement. If you don't do that, `this.props` will be `undefined` while the constructor runs, which can be confusing and cause bugs.
-<Trans>생성자 내부에서는 다른 문보다 먼저 `super(props)`를 호출해야 합니다. 그렇게 하지 않으면 생성자가 실행되는 동안 `this.props`가 `undefined` 가 되어 혼란스럽게 하고 버그를 야기할 수 있습니다.</Trans>
+<Trans>constructor 내부에서는 다른 구문보다 먼저 `super(props)`를 호출해야 합니다. 그렇게 하지 않으면 constructor가 실행되는 동안 `this.props`가 `undefined`가 되어 혼란스럽게 하고 버그를 야기할 수 있습니다.</Trans>
 
 * Constructor is the only place where you can assign [`this.state`](#state) directly. In all other methods, you need to use [`this.setState()`](#setstate) instead. Do not call `setState` in the constructor.
-<Trans>[`this.state`](#state)를 직접 할당할 수 있는 곳은 생성자뿐입니다. 다른 모든 메서드에서는 [`this.setState()`](#setstate)를 대신 사용해야 합니다. 생성자 내부에서 `setState`를 호출하지 마세요.</Trans>
+<Trans>[`this.state`](#state)를 직접 할당할 수 있는 곳은 constructor뿐입니다. 다른 모든 메서드에서는 [`this.setState()`](#setstate)를 대신 사용해야 합니다. constructor 내부에서 `setState`를 호출하지 마세요.</Trans>
 
 * When you use [server rendering,](/reference/react-dom/server) the constructor will run on the server too, followed by the [`render`](#render) method. However, lifecycle methods like `componentDidMount` or `componentWillUnmount` will not run on the server.
-<Trans>[서버 렌더링](/reference/react-dom/server)을 사용하는 경우 생성자도 서버에서 실행되고 [`render`](#render) 메서드가 이어서 실행됩니다. 그러나 `componentDidMount` 또는 `componentWillUnmount` 와 같은 생명주기 메서드는 서버에서 실행되지 않습니다.</Trans>
+<Trans>[서버 렌더링](/reference/react-dom/server)을 사용하는 경우 constructor도 서버에서 실행되고 [`render`](#render) 메서드가 이어서 실행됩니다. 그러나 `componentDidMount` 또는 `componentWillUnmount`와 같은 생명주기 메서드는 서버에서 실행되지 않습니다.</Trans>
 
 * When [Strict Mode](/reference/react/StrictMode) is on, React will call `constructor` twice in development and then throw away one of the instances. This helps you notice the accidental side effects that need to be moved out of the `constructor`.
-<Trans>[Strict Mode](/reference/react/StrictMode)가 켜져 있으면 React는 개발 과정에서 `생성자`를 두 번 호출한 다음 인스턴스 중 하나를 버립니다. 이렇게 하면 `생성자`에서 제거해야 하는 실수로 발생한 사이드 이펙트을 발견하는 데 도움이 됩니다.</Trans>
+<Trans>[Strict Mode](/reference/react/StrictMode)가 켜져 있으면 React는 개발 과정에서 `constructor`를 두 번 호출한 다음 인스턴스 중 하나를 버립니다. 이렇게 하면 `constructor`에서 실수로 발생한 사이드 이펙트을 발견하여 제거하는 데 도움이 됩니다.</Trans>
 
 <Note>
 
-There is no exact equivalent for `constructor` in function components. To declare state in a function component, call [`useState`.](/reference/react/useState) To avoid recalculating the initial state, [pass a function to `useState`.](/reference/react/useState#avoiding-recreating-the-initial-state)
-<Trans>함수 컴포넌트에서 `생성자`와 정확히 일치하는 것은 없습니다. 함수 컴포넌트에서 state를 선언하려면 [`useState`.](/reference/react/useState)를 호출하세요. 초기 state를 다시 계산하지 않으려면 [함수를 `useState`에 전달](/reference/react/useState#avoiding-recreating-the-initial-state)하세요.</Trans>
+There is no exact equivalent for `constructor` in function components. To declare state in a function component, call [`useState`](/reference/react/useState) To avoid recalculating the initial state, [pass a function to `useState`.](/reference/react/useState#avoiding-recreating-the-initial-state)
+<Trans>함수 컴포넌트에서 `constructor`와 정확히 일치하는 것은 없습니다. 함수 컴포넌트에서 state를 선언하려면 [`useState`.](/reference/react/useState)를 호출하세요. 초기 state를 다시 계산하지 않으려면 [함수를 `useState`에 전달](/reference/react/useState#avoiding-recreating-the-initial-state)하세요.</Trans>
 
 </Note>
 
@@ -258,7 +258,7 @@ Typically, it is used together with [`static getDerivedStateFromError`](#static-
 #### Parameters<Trans>매개변수</Trans> {/*componentdidcatch-parameters*/}
 
 * `error`: The error that was thrown. In practice, it will usually be an instance of [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) but this is not guaranteed because JavaScript allows to [`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw) any value, including strings or even `null`.
-<Trans>`error`: 발생한 에러입니다. 실제로는 일반적으로 [`Error`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)의 인스턴스가 되지만 자바스크립트에서는 문자열이나 `null`을 포함한 모든 값을 [`throw`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw) 할 수 있으므로, 보장되지는 않습니다.</Trans>
+<Trans>`error`: 발생한 에러입니다. 일반적으로 [`Error`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)의 인스턴스가 되지만, 자바스크립트에서는 문자열이나 `null`을 포함한 모든 값을 [`throw`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw) 할 수 있으므로, 실제로는 반드시 보장되지는 않습니다.</Trans>
 
 * `info`: An object containing additional information about the error. Its `componentStack` field contains a stack trace with the component that threw, as well as the names and source locations of all its parent components. In production, the component names will be minified. If you set up production error reporting, you can decode the component stack using sourcemaps the same way as you would do for regular JavaScript error stacks.
 <Trans>`info`: 오류에 대한 추가 정보가 포함된 객체입니다. `componentStack` 필드에는 에러를 발생시킨 컴포넌트의 스택 추적과 모든 상위 컴포넌트의 이름 및 소스 위치가 포함됩니다. 상용 환경에서는 컴포넌트 이름이 최소화됩니다. 상용 환경 오류 보고를 설정한 경우 일반 JavaScript 오류 스택과 동일한 방식으로 소스 맵을 사용하여 컴포넌트 스택을 디코딩할 수 있습니다.</Trans>
@@ -274,7 +274,7 @@ Typically, it is used together with [`static getDerivedStateFromError`](#static-
 <Trans>과거에는 UI를 업데이트하고 폴백 오류 메시지를 표시하기 위해 `componentDidCatch` 내부에서 `setState`를 호출하는 것이 일반적이었습니다. [`static getDerivedStateFromError`](#static-getderivedstatefromerror)를 정의하는 것을 권장하기에 이 방법은 지원 중단되었습니다.</Trans>
 
 * Production and development builds of React slightly differ in the way `componentDidCatch` handles errors. In development, the errors will bubble up to `window`, which means that any `window.onerror` or `window.addEventListener('error', callback)` will intercept the errors that have been caught by `componentDidCatch`. In production, instead, the errors will not bubble up, which means any ancestor error handler will only receive errors not explicitly caught by `componentDidCatch`.
-<Trans>React의 상용 환경과 개발 환경은 `componentDidCatch`가 에러를 처리하는 방식이 약간 다릅니다. 개발 환경에서는 에러가 `window`까지 버블링되므로, `window.onerror` 또는 `window.addEventListener('error', callback)`가 `componentDidCatch`가 포착한 에러를 가로채게 됩니다. 상용 환경에서는 대신 에러가 버블업되지 않으므로 모든 조상 에러 핸들러는 `componentDidCatch`가 명시적으로 포착하지 않은 에러만 수신합니다.</Trans>
+<Trans>React의 상용 환경과 개발 환경은 `componentDidCatch`가 에러를 처리하는 방식이 약간 다릅니다. 개발 환경에서는 에러가 `window`까지 버블링되므로, `window.onerror` 또는 `window.addEventListener('error', callback)`가 `componentDidCatch`가 포착한 에러를 가로채게 됩니다. 상용 환경에서는 대신 에러가 버블링되지 않으므로, 모든 조상 에러 핸들러는 `componentDidCatch`가 명시적으로 포착하지 않은 에러만 수신합니다.</Trans>
 
 <Note>
 
@@ -339,12 +339,12 @@ class ChatRoom extends Component {
 <Trans>[Strict Mode](/reference/react/StrictMode)가 켜져 있으면 React는 개발 환경에서 `componentDidMount`를 호출한 다음 즉시 [`componentWillUnmount`](#componentwillunmount)를 호출하고 `componentDidMount`를 다시 호출합니다. 이렇게 하면 `componentWillUnmount`를 구현하는 것을 잊어버렸거나 그 로직이 `componentDidMount`의 동작을 완전히 "미러링"하지 않는지 확인할 수 있습니다.</Trans>
 
 - Although you may call [`setState`](#setstate) immediately in `componentDidMount`, it's best to avoid that when you can. It will trigger an extra rendering, but it will happen before the browser updates the screen. This guarantees that even though the [`render`](#render) will be called twice in this case, the user won't see the intermediate state. Use this pattern with caution because it often causes performance issues. In most cases, you should be able to assign the initial state in the [`constructor`](#constructor) instead. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.
-<Trans>`componentDidMount`에서 [`setState`](#setstate)를 즉시 호출할 수도 있지만 가능하면 피하는 것이 가장 좋습니다. 추가 렌더링이 trigger되지만 브라우저가 화면을 업데이트하기 전에 발생합니다. 이렇게 하면 이 경우 [`render`](#render)가 두 번 호출되더라도 사용자에게 중간 state가 표시되지 않습니다. 이 패턴은 종종 성능 문제를 일으키므로 주의해서 사용하세요. 대부분의 경우 [생성자](#constructor)에서 초기 state를 대신 할당할 수 있어야 합니다. 그러나 모달이나 툴팁과 같이 크기나 위치에 따라 달라지는 것을 렌더링하기 전에 DOM 노드를 측정해야 하는 경우에는 필요할 수 있습니다.</Trans>
+<Trans>`componentDidMount`에서 [`setState`](#setstate)를 즉시 호출할 수도 있지만 가능하면 피하는 것이 가장 좋습니다. 브라우저가 화면을 업데이트하기 전에 추가 렌더링을 촉발하기 때문입니다. 이 경우 [`render`](#render)가 두 번 호출되더라도 사용자에게 중간 state가 표시되지 않습니다. 이 패턴은 종종 성능 문제를 일으키므로 주의해서 사용하세요. 대부분의 경우 [constructor](#constructor)에서 초기 state를 대신 할당할 수 있어야 합니다. 그러나 모달이나 툴팁과 같이, 크기나 위치에 따라 달라지는 것을 렌더링하기 전에 DOM 노드를 측정해야 하는 경우에는 필요할 수 있습니다.</Trans>
 
 <Note>
 
 For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` together in class components is equivalent to calling [`useEffect`](/reference/react/useEffect) in function components. In the rare cases where it's important for the code to run before browser paint, [`useLayoutEffect`](/reference/react/useLayoutEffect) is a closer match.
-<Trans>많은 사용 사례에서 컴포넌트 클래스 컴포넌트 내부에 `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`를 함께 정의하는 것은 함수 컴포넌트에서 [`useEffect`](/reference/react/useEffect)를 호출하는 것과 동일합니다. 드물지만 브라우저 그리기 전에 코드를 실행하는 것이 중요한 경우에는 [`useLayoutEffect`](/reference/react/useLayoutEffect)가 더 적합합니다.</Trans>
+<Trans>많은 사용 사례에서 클래스 컴포넌트 내부에 `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`를 함께 정의하는 것은 함수 컴포넌트에서 [`useEffect`](/reference/react/useEffect)를 호출하는 것과 동일합니다. 드물게 브라우저의 페인팅 전에 코드를 실행하는 것이 중요한 경우에는 [`useLayoutEffect`](/reference/react/useLayoutEffect)가 더 적합합니다.</Trans>
 
 [See how to migrate.](#migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function)
 <Trans>[마이그레이션 방법을 확인하세요.](#migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function)</Trans>
@@ -359,7 +359,7 @@ If you define the `componentDidUpdate` method, React will call it immediately af
 <Trans>`componentDidUpdate` 메서드를 정의하면 React는 컴포넌트가 업데이트된 props나 state로 다시 렌더링된 직후에 해당 메서드를 호출합니다.  이 메서드는 초기 렌더링에는 호출되지 않습니다.</Trans>
 
 You can use it to manipulate the DOM after an update. This is also a common place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed). Typically, you'd use it together with [`componentDidMount`](#componentdidmount) and [`componentWillUnmount`:](#componentwillunmount)
-<Trans>업데이트 후 DOM을 조작하는 데 사용할 수 있습니다. 또한 현재 props를 이전 props와 비교하는 네트워크 요청을 수행하는 일반적인 장소이기도 합니다(예: props가 변경되지 않은 경우 네트워크 요청이 필요하지 않을 수 있음). 일반적으로 [`componentDidMount`](#componentdidmount) 및 [`componentWillUnmount`:](#componentwillunmount)와 함께 사용합니다:</Trans>
+<Trans>업데이트 후 DOM을 조작하는 데 사용할 수 있습니다. 또한 현재 props를 이전 props와 비교하는 네트워크 요청을 수행하는 일반적인 장소이기도 합니다(예: props가 변경되지 않은 경우 네트워크 요청이 필요하지 않을 수 있음). 일반적으로 [`componentDidMount`](#componentdidmount) 및 [`componentWillUnmount`](#componentwillunmount)와 함께 사용합니다:</Trans>
 
 ```js {10-18}
 class ChatRoom extends Component {
@@ -422,7 +422,7 @@ class ChatRoom extends Component {
 <Note>
 
 For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` together in class components is equivalent to calling [`useEffect`](/reference/react/useEffect) in function components. In the rare cases where it's important for the code to run before browser paint, [`useLayoutEffect`](/reference/react/useLayoutEffect) is a closer match.
-<Trans>많은 사용 사례에서 컴포넌트 클래스 컴포넌트 내부에 `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`를 함께 정의하는 것은 함수 컴포넌트에서 [`useEffect`](/reference/react/useEffect)를 호출하는 것과 동일합니다. 드물지만 브라우저를 그리기 전에 코드를 실행하는 것이 중요한 경우에는 [`useLayoutEffect`](/reference/react/useLayoutEffect)가 더 적합합니다.</Trans>
+<Trans>많은 사용 사례에서 컴포넌트 클래스 컴포넌트 내부에 `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`를 함께 정의하는 것은 함수 컴포넌트에서 [`useEffect`](/reference/react/useEffect)를 호출하는 것과 동일합니다. 드물게 브라우저의 페인팅 전에 코드를 실행하는 것이 중요한 경우에는 [`useLayoutEffect`](/reference/react/useLayoutEffect)가 더 적합합니다.</Trans>
 
 [See how to migrate.](#migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function)
 <Trans>[마이그레이션 방법을 참조하세요.](#migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function)</Trans>
@@ -435,7 +435,7 @@ For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `com
 <Deprecated>
 
 This API has been renamed from `componentWillMount` to [`UNSAFE_componentWillMount`.](#unsafe_componentwillmount) The old name has been deprecated. In a future major version of React, only the new name will work.
-<Trans>이 API의 이름이 `componentWillMount`에서 [`UNSAFE_componentWillMount`.](#unsafe_componentwillmount)로 변경되었습니다. 이전 이름은 지원 중단 되었습니다. 향후 React의 주요 버전에서는 새로운 이름만 작동합니다.</Trans>
+<Trans>이 API의 이름은 `componentWillMount`에서 [`UNSAFE_componentWillMount`](#unsafe_componentwillmount)로 변경되었습니다. 이전 이름은 지원 중단 되었습니다. 향후 React의 주요 버전에서는 새로운 이름만 작동합니다.</Trans>
 
 Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) to automatically update your components.
 <Trans>자동으로 컴포넌트를 업데이트하려면 [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles)를 실행하세요.</Trans>
@@ -449,7 +449,7 @@ Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-co
 <Deprecated>
 
 This API has been renamed from `componentWillReceiveProps` to [`UNSAFE_componentWillReceiveProps`.](#unsafe_componentwillreceiveprops) The old name has been deprecated. In a future major version of React, only the new name will work.
-<Trans>이 API의 이름이 `componentWillReceiveProps`에서 [`UNSAFE_componentWillReceiveProps`.](#unsafe_componentwillreceiveprops)로 변경되었습니다. 이전 이름은 지원 중단 되었습니다. 향후 React의 주요 버전에서는 새로운 이름만 작동합니다.</Trans>
+<Trans>이 API의 이름은 `componentWillReceiveProps`에서 [`UNSAFE_componentWillReceiveProps`](#unsafe_componentwillreceiveprops)로 변경되었습니다. 이전 이름은 지원 중단 되었습니다. 향후 React의 주요 버전에서는 새로운 이름만 작동합니다.</Trans>
 
 Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) to automatically update your components.
 <Trans>자동으로 컴포넌트를 업데이트하려면 [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles)를 실행하세요.</Trans>
@@ -463,7 +463,7 @@ Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-co
 <Deprecated>
 
 This API has been renamed from `componentWillUpdate` to [`UNSAFE_componentWillUpdate`.](#unsafe_componentwillupdate) The old name has been deprecated. In a future major version of React, only the new name will work.
-<Trans>이 API의 이름이 `componentWillUpdate`에서 [`UNSAFE_componentWillUpdate`.](#unsafe_componentwillupdate)로 변경되었습니다. 이전 이름은 지원 중단 되었습니다. 향후 React의 주요 버전에서는 새로운 이름만 작동합니다.</Trans>
+<Trans>이 API의 이름은 `componentWillUpdate`에서 [`UNSAFE_componentWillUpdate`](#unsafe_componentwillupdate)로 변경되었습니다. 이전 이름은 지원 중단 되었습니다. 향후 React의 주요 버전에서는 새로운 이름만 작동합니다.</Trans>
 
 Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) to automatically update your components.
 <Trans>자동으로 컴포넌트를 업데이트하려면 [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles)를 실행하세요.</Trans>
@@ -475,7 +475,7 @@ Run the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-co
 ### `componentWillUnmount()` {/*componentwillunmount*/}
 
 If you define the `componentWillUnmount` method, React will call it before your component is removed *(unmounted)* from the screen. This is a common place to cancel data fetching or remove subscriptions.
-<Trans>`componentWillUnmount` 메서드를 정의하면 React는 컴포넌트가 화면에서 제거*(마운트 해제)*되기 전에 이 메서드를 호출합니다. 이는 데이터 불러오기를 취소하거나 구독을 제거하는 로직을 작성하는 일반적인 장소입니다.</Trans>
+<Trans>`componentWillUnmount` 메서드를 정의하면 React는 컴포넌트가 화면에서 제거(_마운트 해제_)되기 전에 이 메서드를 호출합니다. 이는 데이터 불러오기를 취소하거나 구독을 제거하는 로직을 작성하는 일반적인 장소입니다.</Trans>
 
 The logic inside `componentWillUnmount` should "mirror" the logic inside [`componentDidMount`.](#componentdidmount) For example, if `componentDidMount` sets up a subscription, `componentWillUnmount` should clean up that subscription. If the cleanup logic in your `componentWillUnmount` reads some props or state, you will usually also need to implement [`componentDidUpdate`](#componentdidupdate) to clean up resources (such as subscriptions) corresponding to the old props and state.
 <Trans>`componentWillUnmount` 내부의 로직은 [`componentDidMount`.](#componentdidmount) 내부의 로직을 "미러링"해야 합니다. 예를 들어 `componentDidMount`가 구독을 셋업 하면 `componentWillUnmount`는 해당 구독을 클린업 해야 합니다. `componentWillUnmount`의 클린업 로직이 일부 props나 state를 읽는 경우, 일반적으로 이전 props나 state에 해당하는 리소스(예: 구독)를 클린업 하기 위해 [`componentDidUpdate`](#componentdidupdate)도 구현해야 합니다.</Trans>
@@ -529,7 +529,7 @@ class ChatRoom extends Component {
 <Note>
 
 For many use cases, defining `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` together in class components is equivalent to calling [`useEffect`](/reference/react/useEffect) in function components. In the rare cases where it's important for the code to run before browser paint, [`useLayoutEffect`](/reference/react/useLayoutEffect) is a closer match.
-<Trans>많은 사용 사례에서 컴포넌트 클래스 컴포넌트 내부에 `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`를 함께 정의하는 것은 함수 컴포넌트에서 [`useEffect`](/reference/react/useEffect)를 호출하는 것과 동일합니다. 드물지만 브라우저 그리기 전에 코드를 실행하는 것이 중요한 경우에는 [`useLayoutEffect`](/reference/react/useLayoutEffect)가 더 적합합니다.</Trans>
+<Trans>많은 사용 사례에서 컴포넌트 클래스 컴포넌트 내부에 `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`를 함께 정의하는 것은 함수 컴포넌트에서 [`useEffect`](/reference/react/useEffect)를 호출하는 것과 동일합니다. 드물게 브라우저의 페인팅 전에 코드를 실행하는 것이 중요한 경우에는 [`useLayoutEffect`](/reference/react/useLayoutEffect)가 더 적합합니다.</Trans>
 
 [See how to migrate.](#migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function)
 <Trans>[마이그레이션 방법을 확인하세요.](#migrating-a-component-with-lifecycle-methods-from-a-class-to-a-function)</Trans>
@@ -688,7 +688,7 @@ React may call `render` at any moment, so you shouldn't assume that it runs at a
 <Trans>React는 언제든 `render`를 호출할 수 있으므로 특정 시간에 실행된다고 가정해서는 안 됩니다. 일반적으로 `render` 메서드는 [JSX](/learn/writing-markup-with-jsx)를 반환해야 하지만 문자열과 같은 몇 가지 [다른 반환 유형](#render-returns)이 지원됩니다. 반환된 JSX를 계산하기 위해 렌더 메서드는 [`this.props`](#props), [`this.state`](#state), [`this.context`](#context)를 읽을 수 있습니다.</Trans>
 
 You should write the `render` method as a pure function, meaning that it should return the same result if props, state, and context are the same. It also shouldn't contain side effects (like setting up subscriptions) or interact with the browser APIs. Side effects should happen either in event handlers or methods like [`componentDidMount`.](#componentdidmount)
-<Trans>`render` 메서드는 순수 함수로 작성해야 합니다. 즉, props, state 및 context가 동일한 경우 동일한 결과를 반환해야 합니다. 또한 구독 설정과 같은 사이드 이펙트를 포함하거나 브라우저 API와 상호 작용해서는 안 됩니다. 사이드 이펙트는 이벤트 핸들러나 [`componentDidMount`.](#componentdidmount)와 같은 메서드에서 발생해야 합니다.</Trans>
+<Trans>`render` 메서드는 순수 함수로 작성해야 합니다. 즉, props, state 및 context가 동일한 경우 동일한 결과를 반환해야 합니다. 또한 구독 설정과 같은 사이드 이펙트를 포함하거나 브라우저 API와 상호 작용해서는 안 됩니다. 사이드 이펙트는 이벤트 핸들러나 [`componentDidMount`](#componentdidmount)와 같은 메서드에서 발생해야 합니다.</Trans>
 
 #### Parameters<Trans>매개변수</Trans> {/*render-parameters*/}
 
@@ -722,7 +722,7 @@ You should write the `render` method as a pure function, meaning that it should 
 ### `setState(nextState, callback?)` {/*setstate*/}
 
 Call `setState` to update the state of your React component.
-<Trans>`setState`를 호출하여 React 컴포넌트의 state를 업데이트합니다.</Trans>
+<Trans>`setState`를 호출하면 React 컴포넌트의 state를 업데이트합니다.</Trans>
 
 ```js {8-10}
 class Form extends Component {
@@ -828,7 +828,7 @@ Calling `setState` in class components is similar to calling a [`set` function](
 ### `shouldComponentUpdate(nextProps, nextState, nextContext)` {/*shouldcomponentupdate*/}
 
 If you define `shouldComponentUpdate`, React will call it to determine whether a re-render can be skipped.
-<Trans>>shouldComponentUpdate`를 정의하면 React가 이를 호출하여 재렌더링을 건너뛸 수 있는지 여부를 결정합니다.</Trans>
+<Trans>`shouldComponentUpdate`를 정의하면 React가 이를 호출하여 재렌더링을 건너뛸 수 있는지 여부를 결정합니다.</Trans>
 
 If you are confident you want to write it by hand, you may compare `this.props` with `nextProps` and `this.state` with `nextState` and return `false` to tell React the update can be skipped.
 <Trans>직접 작성하는 것이 확실하다면, `this.props`를 `nextProps`와, `this.state`를 `nextState`와 비교하고 `false`를 반환하여 React에 업데이트를 건너뛸 수 있음을 알릴 수 있습니다.</Trans>
@@ -908,10 +908,10 @@ Optimizing class components with `shouldComponentUpdate` is similar to optimizin
 ### `UNSAFE_componentWillMount()` {/*unsafe_componentwillmount*/}
 
 If you define `UNSAFE_componentWillMount`, React will call it immediately after the [`constructor`.](#constructor) It only exists for historical reasons and should not be used in any new code. Instead, use one of the alternatives:
-<Trans>`UNSAFE_componentWillMount`를 정의하면 React는 [`생성자`](#constructor) 바로 뒤에 이를 호출합니다. 이 함수는 역사적인 이유로만 존재하며 새로운 코드에서 사용해서는 안 됩니다. 대신 다른 대안을 사용하세요:</Trans>
+<Trans>`UNSAFE_componentWillMount`를 정의하면 React는 [`constructor`](#constructor) 바로 뒤에 이를 호출합니다. 이 함수는 역사적인 이유로만 존재하며 새로운 코드에서 사용해서는 안 됩니다. 대신 다른 대안을 사용하세요:</Trans>
 
 - To initialize state, declare [`state`](#state) as a class field or set `this.state` inside the [`constructor`.](#constructor)
-<Trans outdent>`state`를 초기화하려면, [`state`](#state)를 클래스 필드로 선언하거나 [생성자](#constructor) 내부에서 `this.state`를 설정하세요.</Trans>
+<Trans outdent>`state`를 초기화하려면, [`state`](#state)를 클래스 필드로 선언하거나 [constructor](#constructor) 내부에서 `this.state`를 설정하세요.</Trans>
 - If you need to run a side effect or set up a subscription, move that logic to [`componentDidMount`](#componentdidmount) instead.
 <Trans outdent>사이드 이펙트를 실행하거나 구독을 설정해야 하는 경우 해당 로직을 [`componentDidMount`](#componentdidmount)로 옮기세요.</Trans>
 
@@ -937,7 +937,7 @@ If you define `UNSAFE_componentWillMount`, React will call it immediately after 
 <Trans>이름과는 달리, 앱에서 [`Suspense`](/reference/react/Suspense)와 같은 최신 React 기능을 사용하는 경우 `UNSAFE_componentWillMount`는 컴포넌트가 마운트된다는 것을 보장하지 않습니다. 렌더링 시도가 일시 중단되면(예를 들어 일부 자식 컴포넌트의 코드가 아직 로드되지 않았기 때문에) React는 진행 중인 트리를 버리고 다음 시도에서 컴포넌트를 처음부터 다시 구성하려고 시도합니다. 이것이 바로 이 메서드가 "안전하지 않은" 이유입니다. 마운팅에 의존하는 코드(예: 구독 추가)는 [`componentDidMount`](#componentdidmount)로 이동해야 합니다.</Trans>
 
 - `UNSAFE_componentWillMount` is the only lifecycle method that runs during [server rendering.](/reference/react-dom/server) For all practical purposes, it is identical to [`constructor`,](#constructor) so you should use the `constructor` for this type of logic instead.
-<Trans>`UNSAFE_componentWillMount`는 [서버 렌더링](/reference/react-dom/server) 중에 실행되는 유일한 생명주기 메서드입니다. 모든 실용적인 목적으로 볼 때 `생성자`와 동일하므로 이러한 유형의 로직에는 [`생성자`](#constructor)를 대신 사용해야 합니다.</Trans>
+<Trans>`UNSAFE_componentWillMount`는 [서버 렌더링](/reference/react-dom/server) 중에 실행되는 유일한 생명주기 메서드입니다. 모든 실용적인 목적으로 볼 때 `constructor`와 동일하므로 이러한 유형의 로직에는 [`constructor`](#constructor)를 대신 사용해야 합니다.</Trans>
 
 <Note>
 
@@ -1028,7 +1028,7 @@ If you define `UNSAFE_componentWillUpdate`, React will call it before rendering 
 #### Caveats<Trans>주의사항</Trans> {/*unsafe_componentwillupdate-caveats*/}
 
 - `UNSAFE_componentWillUpdate` will not get called if [`shouldComponentUpdate`](#shouldcomponentupdate) is defined and returns `false`.
-<Trans>[`shouldComponentUpdate`](#shouldcomponentupdate)`가 정의된 경우 `UNSAFE_componentWillUpdate`는 호출되지 않으며 `false`를 반환합니다.</Trans>
+<Trans>[`shouldComponentUpdate`](#shouldcomponentupdate)가 정의된 경우 `UNSAFE_componentWillUpdate`는 호출되지 않으며 `false`를 반환합니다.</Trans>
 
 - `UNSAFE_componentWillUpdate` will not get called if the component implements [`static getDerivedStateFromProps`](#static-getderivedstatefromprops) or [`getSnapshotBeforeUpdate`.](#getsnapshotbeforeupdate)
 <Trans>컴포넌트가 [`static getDerivedStateFromProps`](#static-getderivedstatefromprops) 또는 [`getSnapshotBeforeUpdate`.](#getsnapshotbeforeupdate)를 구현하는 경우 `UNSAFE_componentWillUpdate`가 호출되지 않습니다.</Trans>
@@ -1085,7 +1085,7 @@ Lets you specify which [legacy context](https://reactjs.org/docs/legacy-context.
 ### `static contextType` {/*static-contexttype*/}
 
 If you want to read [`this.context`](#context-instance-field) from your class component, you must specify which context it needs to read. The context you specify as the `static contextType` must be a value previously created by [`createContext`.](/reference/react/createContext)
-<Trans>클래스 컴포넌트에서 [`this.context`](#context-instance-field)를 읽으려면 읽어야 하는 컨텍스트를 지정해야 합니다. `static contextType`으로 지정하는 컨텍스트는 이전에 [`createContext`](/reference/react/createContext)`로 생성한 값이어야 합니다.</Trans>
+<Trans>클래스 컴포넌트에서 [`this.context`](#context-instance-field)를 읽으려면 읽어야 하는 컨텍스트를 지정해야 합니다. `static contextType`으로 지정하는 컨텍스트는 이전에 [`createContext`](/reference/react/createContext)로 생성한 값이어야 합니다.</Trans>
 
 
 ```js {2}
@@ -1286,6 +1286,7 @@ Deriving state leads to verbose code and makes your components difficult to thin
 
 - `props`: The next props that the component is about to render with.
 <Trans>`props`: 컴포넌트가 렌더링할 다음 props.</Trans>
+
 - `state`: The next state that the component is about to render with.
 <Trans>`state`: 컴포넌트가 렌더링할 다음 state.</Trans>
 
@@ -1436,7 +1437,7 @@ There are a few special methods you can define on your class.
 <Trans>클래스에서 정의할 수 있는 몇 가지 특별한 메서드가 있습니다. </Trans>
 
 If you define the [`componentDidMount`](#componentdidmount) method, React will call it when your component is added *(mounted)* to the screen. React will call [`componentDidUpdate`](#componentdidupdate) after your component re-renders due to changed props or state. React will call [`componentWillUnmount`](#componentwillunmount) after your component has been removed *(unmounted)* from the screen.
-<Trans>[`componentDidMount`](#componentdidmount) 메서드를 정의하면 컴포넌트가 화면에 추가*(마운트)*될 때 React가 이를 호출합니다. 컴포넌트가 props나 state 변경으로 인해 다시 렌더링되면 React는 [`componentDidUpdate`](#componentdidupdate)를 호출합니다. 컴포넌트가 화면에서 제거*(마운트 해제)*된 후 React는 [`componentWillUnmount`](#componentwillunmount)를 호출합니다. </Trans>
+<Trans>[`componentDidMount`](#componentdidmount) 메서드를 정의하면 컴포넌트가 화면에 추가(*마운트*)될 때 React가 이를 호출합니다. 컴포넌트가 props나 state 변경으로 인해 다시 렌더링되면 React는 [`componentDidUpdate`](#componentdidupdate)를 호출합니다. 컴포넌트가 화면에서 제거(*마운트 해제*)된 후 React는 [`componentWillUnmount`](#componentwillunmount)를 호출합니다. </Trans>
 
 If you implement `componentDidMount`, you usually need to implement all three lifecycles to avoid bugs. For example, if `componentDidMount` reads some state or props, you also have to implement `componentDidUpdate` to handle their changes, and `componentWillUnmount` to clean up whatever `componentDidMount` was doing.
 <Trans>`componentDidMount`를 구현하는 경우 일반적으로 버그를 피하기 위해 세 가지 생명주기를 모두 구현해야 합니다. 예를 들어, `componentDidMount`가 일부 state나 props를 읽었다면 해당 변경 사항을 처리하기 위해 `componentDidUpdate`도 구현해야 하고, `componentDidMount`가 수행하던 작업을 클린업 하기 위해 `componentWillUnmount`도 구현해야 합니다. </Trans>
@@ -1629,7 +1630,7 @@ You don't need to wrap every component into a separate error boundary. When you 
 <Note>
 
 There is currently no way to write an error boundary as a function component. However, you don't have to write the error boundary class yourself. For example, you can use [`react-error-boundary`](https://github.com/bvaughn/react-error-boundary) instead.
-<Trans>현재 에러 경계를 함수 컴포넌트로 작성할 수 있는 방법은 없습니다. 하지만 에러 경계 클래스를 직접 작성할 필요는 없습니다. 예를 들어, [`react-error-boundary`](https://github.com/bvaughn/react-error-boundary)`를 대신 사용할 수 있습니다.</Trans>
+<Trans>현재 에러 경계를 함수 컴포넌트로 작성할 수 있는 방법은 없습니다. 하지만 에러 경계 클래스를 직접 작성할 필요는 없습니다. 예를 들어, [`react-error-boundary`](https://github.com/bvaughn/react-error-boundary)를 대신 사용할 수 있습니다.</Trans>
 
 </Note>
 
@@ -1688,7 +1689,7 @@ function Greeting({ name }) {
 ```
 
 Here is a complete example:
-<Trans>완성 예제입니다:</Trans>
+<Trans>다음은 완성된 코드입니다:</Trans>
 
 <Sandpack>
 
@@ -1764,7 +1765,7 @@ button { display: block; margin-top: 10px; }
 </Sandpack>
 
 Start by declaring a function with the necessary [state variables:](/reference/react/useState#adding-state-to-a-component)
-<Trans>필요한 [state 변수](/reference/react/useState#adding-state-to-a-component)로 함수를 선언하여 시작하세요.</Trans>
+<Trans>필요한 [state 변수](/reference/react/useState#adding-state-to-a-component)로 함수를 선언하는 것부터 시작하세요:</Trans>
 
 ```js {4-5}
 import { useState } from 'react';
@@ -1794,7 +1795,7 @@ function Counter() {
 ```
 
 Finally, replace all references starting with `this` with the variables and functions you defined in your component. For example, replace `this.state.age` with `age`, and replace `this.handleNameChange` with `handleNameChange`.
-<Trans>마지막으로, `this`로 시작하는 모든 ref를 컴포넌트에서 정의한 변수 및 함수로 바꿉니다. 예를 들어, `this.state.age`를 `age`로 바꾸고, `this.handleNameChange`를 `handleNameChange`로 바꿉니다.</Trans>
+<Trans>마지막으로, `this`로 시작하는 모든 ref를 컴포넌트에서 정의한 변수 및 함수로 바꾸세요. 예를 들어, `this.state.age`를 `age`로 바꾸고, `this.handleNameChange`를 `handleNameChange`로 바꾸세요.</Trans>
 
 Here is a fully converted component:
 <Trans>다음은 완전히 변환된 컴포넌트입니다:</Trans>
@@ -2083,7 +2084,7 @@ If your component does not synchronize with any external systems, [you might not
 ### Migrating a component with context from a class to a function<Trans>컨텍스트가 있는 컴포넌트를 클래스에서 함수로 마이그레이션하기 </Trans> {/*migrating-a-component-with-context-from-a-class-to-a-function*/}
 
 In this example, the `Panel` and `Button` class components read [context](/learn/passing-data-deeply-with-context) from [`this.context`:](#context)
-<Trans>다음 예시에서 `Panel` 및 `Button` 클래스 컴포넌트는 [`this.context`](#context)에서 [컨텍스트](/learn/passing-data-deeply-with-context)를 읽습니다.</Trans>
+<Trans>다음 예시에서 `Panel` 및 `Button` 클래스 컴포넌트는 [`this.context`](#context)에서 [컨텍스트](/learn/passing-data-deeply-with-context)를 읽습니다:</Trans>
 
 <Sandpack>
 
