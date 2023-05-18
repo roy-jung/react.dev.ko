@@ -1535,7 +1535,7 @@ function Board() {
 ```
 
 Each time a player moves, `xIsNext` (a boolean) will be flipped to determine which player goes next and the game's state will be saved. You'll update the `Board`'s `handleClick` function to flip the value of `xIsNext`:
-<Trans>플레이어가 움직일 때마다, 다음 플레이어를 결정하기 위해 `xIsNext` (부울)의 값이 반전되고 게임의 state가 저장됩니다. `Board` 의 `handleClick` 함수를 업데이트하여 `xIsNext` 의 값을 반전시키세요:</Trans>
+<Trans>플레이어가 움직일 때마다, 다음 플레이어를 결정하기 위해 `xIsNext` (불리언)의 값이 반전되고 게임의 state가 저장됩니다. `Board` 의 `handleClick` 함수를 업데이트하여 `xIsNext` 의 값을 반전시키세요:</Trans>
 
 ```js {7,8,9,10,11,13}
 export default function Board() {

@@ -69,7 +69,8 @@ function Greeting({ name }) {
 <Trans>`key`: 전달한 `key`. 문자열로 형변환 됩니다. 없다면 `null` </Trans>
 
 Usually, you'll return the element from your component or make it a child of another element. Although you may read the element's properties, it's best to treat every element as opaque after it's created, and only render it.
-<Trans>일반적으로 엘리먼트를 컴포넌트에서 반환하거나 다른 엘리먼트의 자식으로 만들 것입니다. 엘리먼트의 프로퍼티를 읽을 수는 있지만, 이들이 생성된 후에는 직접 관여하지 않고 렌더링만 하는 것이 좋습니다.</Trans>
+<Trans>일반적으로 컴포넌트에서 엘리먼트를 반환하거나 다른 엘리먼트의 자식으로 만들 것입니다. 엘리먼트의 프로퍼티를 읽을 수는 있지만, 생성된 후에는 모든 엘리먼트를 불명확하게 처리하고, 렌더링만 하는 것이 가장 좋습니다.</Trans>
+
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 

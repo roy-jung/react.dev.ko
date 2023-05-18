@@ -2173,7 +2173,7 @@ Suspense-enabled routers are expected to wrap the navigation updates into transi
 ### Indicating that a transition is happening<Trans>트랜지션이 발생하고 있음을 나타내기</Trans> {/*indicating-that-a-transition-is-happening*/}
 
 In the above example, once you click the button, there is no visual indication that a navigation is in progress. To add an indicator, you can replace [`startTransition`](/reference/react/startTransition) with [`useTransition`](/reference/react/useTransition) which gives you a boolean `isPending` value. In the example below, it's used to change the website header styling while a transition is happening:
-<Trans>위의 예제에서는 버튼을 클릭해도 탐색이 진행 중이라는 시각적 표시가 없습니다. 표시기를 추가하려면 [`startTransition`](/reference/react/startTransition)을 `isPending` 이라는 부울 값을 제공하는 [`useTransition`](/reference/react/useTransition)으로 대체하면 됩니다. 아래 예제에서는 트랜지션이 진행되는 동안 웹사이트 헤더 스타일을 변경하는 데 사용됩니다:</Trans>
+<Trans>위의 예제에서는 버튼을 클릭해도 탐색이 진행 중이라는 시각적 표시가 없습니다. 표시기를 추가하려면 [`startTransition`](/reference/react/startTransition)을 `isPending` 이라는 불리언 값을 제공하는 [`useTransition`](/reference/react/useTransition)으로 대체하면 됩니다. 아래 예제에서는 트랜지션이 진행되는 동안 웹사이트 헤더 스타일을 변경하는 데 사용됩니다:</Trans>
 
 <Sandpack>
 
