@@ -1,7 +1,7 @@
 ---
 title: Escape Hatches
 translatedTitle: 탈출구
-translators: [정재남]
+translators: [정재남, 이나령]
 ---
 
 <Intro>
@@ -719,7 +719,7 @@ button { margin-left: 10px; }
 </Sandpack>
 
 You don't want the chat to re-connect every time you start typing a message in that chat. To fix this problem, move creation of the `options` object inside the Effect so that the Effect only depends on the `roomId` string:
-<Trans>해당 채팅에 메시지를 입력할 때마다 채팅이 다시 연결되는 것을 원치 않으실 것입니다. 이 문제를 해결하려면 Effect 내에서 `옵션` 객체를 생성하여 Effect가 `roomId` 문자열에만 의존하도록 하세요:</Trans>
+<Trans>해당 채팅에 메시지를 입력할 때마다 채팅이 다시 연결되는 것을 원치 않으실 것입니다. 이 문제를 해결하려면 Effect 내에서 `options` 객체를 생성하여 Effect가 `roomId` 문자열에만 의존하도록 하세요:</Trans>
 
 <Sandpack>
 

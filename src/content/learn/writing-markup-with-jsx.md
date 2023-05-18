@@ -1,7 +1,7 @@
 ---
 title: Writing Markup with JSX
 translatedTitle: JSX로 마크업 작성하기
-translators: [유한나라, 고석영, 서민택]
+translators: [유한나라, 고석영, 서민택, 이나령]
 ---
 
 <iframe 
@@ -232,7 +232,7 @@ This is how Hedy Lamarr's image and list items look closed:
 </>
 ```
 
-### 3. camelCase <s>all</s> most of the things!<Trans><s>거의</s> 대부분이 캐멀 케이스입니다!</Trans> {/*3-camelcase-salls-most-of-the-things*/}
+### 3. camelCase <s>all</s> most of the things!<Trans><s>거의</s> 대부분이 카멜 케이스입니다!</Trans> {/*3-camelcase-salls-most-of-the-things*/}
 
 JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects. In your own components, you will often want to read those attributes into variables. But JavaScript has limitations on variable names. For example, their names can't contain dashes or be reserved words like `class`.
 <Trans>JSX는 JavaScript로 바뀌고 JSX로 작성된 어트리뷰트는 JavaScript 객체의 키가 됩니다. 종종 컴포넌트 안에서 어트리뷰트를 변수로 읽고 싶은 경우가 있을 것입니다. 하지만 JavaScript에는 변수명에 제한이 있습니다. 예를 들어, 변수명에는 대시를 포함하거나 `class`처럼 예약어를 사용할 수 없습니다.</Trans>

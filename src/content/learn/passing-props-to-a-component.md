@@ -199,7 +199,7 @@ Props let you think about parent and child components independently. For example
 <Trans>props를 사용하면 부모 컴포넌트와 자식 컴포넌트를 독립적으로 생각할 수 있습니다. 예를 들어, `Avatar` 가 props들을 어떻게 사용하는지 생각할 필요없이  `Profile`의 `person` 또는 `size` props를 수정할 수 있습니다. 마찬가지로 `Profile`을 보지 않고도 `Avatar`가 props를 사용하는 방식을 바꿀 수 있습니다.</Trans>
 
 You can think of props like "knobs" that you can adjust. They serve the same role as arguments serve for functions—in fact, props _are_ the only argument to your component! React component functions accept a single argument, a `props` object:
-<Trans>props는 조절할 수 있는 "손잡이(볼륨 다이얼같은 느낌적 느낌)"라고 생각하면 됩니다. props는 함수의 인수와 동일한 역할을 합니다. 사실 props는 컴포넌트에 대한 유일한 인자입니다! React 컴포넌트 함수는 하나의 인자, 즉,`props` 객체를 받습니다:</Trans>
+<Trans>props는 조절할 수 있는 "손잡이(볼륨 다이얼같은 느낌)"라고 생각하면 됩니다. props는 함수의 인수와 동일한 역할을 합니다. 사실 props는 컴포넌트에 대한 유일한 인자입니다! React 컴포넌트 함수는 하나의 인자, 즉,`props` 객체를 받습니다:</Trans>
 
 ```js
 function Avatar(props) {
@@ -210,7 +210,7 @@ function Avatar(props) {
 ```
 
 Usually you don't need the whole `props` object itself, so you destructure it into individual props.
-<Trans>보통은 전체 props 자체를 필요로 하지는 않기에, 개별 props로 구조분해 합니다.</Trans>
+<Trans>보통은 전체 `props` 자체를 필요로 하지는 않기에, 개별 props로 구조분해 합니다.</Trans>
 
 <Pitfall>
 

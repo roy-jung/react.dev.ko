@@ -1,7 +1,7 @@
 ---
 title: Referencing Values with Refs
 translatedTitle: ref로 값 참조하기
-translators: [조성민, 정재남]
+translators: [조성민, 정재남, 이나령]
 ---
 
 <iframe 
@@ -281,7 +281,7 @@ This is why reading `ref.current` during render leads to unreliable code. If you
 #### How does useRef work inside?<Trans>ref는 내부에서 어떻게 작동하나요?</Trans> {/*how-does-use-ref-work-inside*/}
 
 Although both `useState` and `useRef` are provided by React, in principle `useRef` could be implemented _on top of_ `useState`. You can imagine that inside of React, `useRef` is implemented like this:
-<Trans>useState와 useRef는 모두 React에서 제공하지만, 원칙적으로 useRef는 useState 위에 구현될 수 있습니다. React 내부에서 useRef는 다음과 같이 구현된다고 상상할 수 있습니다:</Trans>
+<Trans>`useState`와 `useRef`는 모두 React에서 제공하지만, 원칙적으로 `useRef`는 `useState` 위에 구현될 수 있습니다. React 내부에서 `useRef`는 다음과 같이 구현된다고 상상할 수 있습니다:</Trans>
 
 ```js
 // Inside of React
