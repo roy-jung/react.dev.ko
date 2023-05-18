@@ -18,11 +18,10 @@ These APIs can be imported from your components. They are rarely used:
 <Trans>이러한 API들을 컴포넌트에서 가져올 수 있습니다. 거의 사용되지 않습니다:</Trans>
 
 * [`createPortal`](/reference/react-dom/createPortal) lets you render child components in a different part of the DOM tree.
+<Trans>[`createPortal`](/reference/react-dom/createPortal)을 사용하면 DOM 트리의 다른 부분에 자식 컴포넌트를 렌더링할 수 있습니다.</Trans>
+
 * [`flushSync`](/reference/react-dom/flushSync) lets you force React to flush a state update and update the DOM synchronously.
-<TransBlock>
-* [`createPortal`](/reference/react-dom/createPortal)을 사용하면 DOM 트리의 다른 부분에 자식 컴포넌트를 렌더링할 수 있습니다.
-* [`flushSync`](/reference/react-dom/flushSync)를 사용하면 React가 state 업데이트를 강제로 플러시(메모리등을 강제로 처리하여 비워냄)하고 DOM을 동기적으로 업데이트할 수 있습니다.
-</TransBlock>
+<Trans>[`flushSync`](/reference/react-dom/flushSync)를 사용하면 React가 state 업데이트를 강제로 플러시(메모리등을 강제로 처리하여 비워냄)하고 DOM을 동기적으로 업데이트할 수 있습니다.</Trans>
 
 ---
 
@@ -32,11 +31,10 @@ The `react-dom` package provides two additional entry points:
 <Trans>React DOM 패키지는 두 개의 추가 진입점을 제공합니다:</Trans>
 
 * [`react-dom/client`](/reference/react-dom/client) contains APIs to render React components on the client (in the browser).
+<Trans>[`react-dom/client`](/reference/react-dom/client) 에는 클라이언트(브라우저)에서 React 컴포넌트를 렌더링하기 위한 API가 포함되어 있습니다.</Trans>
+
 * [`react-dom/server`](/reference/react-dom/server) contains APIs to render React components on the server.
-<TransBlock>
-* [`react-dom/client`](/reference/react-dom/client) 에는 클라이언트(브라우저)에서 React 컴포넌트를 렌더링하기 위한 API가 포함되어 있습니다.
-* [`react-dom/server`](/reference/react-dom/server) 에는 서버에서 React 컴포넌트를 렌더링하기 위한 API가 포함되어 있습니다.
-</TransBlock>
+<Trans>[`react-dom/server`](/reference/react-dom/server) 에는 서버에서 React 컴포넌트를 렌더링하기 위한 API가 포함되어 있습니다.</Trans>
 
 ---
 
