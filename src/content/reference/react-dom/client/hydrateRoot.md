@@ -41,7 +41,7 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `domNode`: A [DOM element](https://developer.mozilla.org/en-US/docs/Web/API/Element) that was rendered as the root element on the server.
-<Trans>`domNode`: 서버에서 root element로 렌더링된 [DOM element.](https://developer.mozilla.org/en-US/docs/Web/API/Element)</Trans>
+<Trans>`domNode`: 서버에서 루트 엘리먼트로 렌더링된 [DOM element.](https://developer.mozilla.org/en-US/docs/Web/API/Element)</Trans>
 
 * `reactNode`: The "React node" used to render the existing HTML. This will usually be a piece of JSX like `<App />` which was rendered with a `ReactDOM Server` method such as `renderToPipeableStream(<App />)`.
 <Trans>`reactNode`: 앞서 존재하는 HTML에 렌더링하기 위한 "React 노드". 주로 `ReactDOM Server`의 `renderToPipeableStream(<App />)`처럼 메서드로 렌더링된 `<App />`같은 JSX 조각들입니다.</Trans>
@@ -66,7 +66,7 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 <Trans>`hydrateRoot()`는 서버에서 렌더링된 내용과 후에 렌더링된 내용이 동일할 것을 기대합니다. 동일하지 않은 부분들은 버그로 인식하고 직접 고쳐줘야 합니다.</Trans>
 
 * In development mode, React warns about mismatches during hydration. There are no guarantees that attribute differences will be patched up in case of mismatches. This is important for performance reasons because in most apps, mismatches are rare, and so validating all markup would be prohibitively expensive.
-<Trans>개발 환경에서는 React가 hydration 중에 동일하지 않은 부분에 대해 경고해 줍니다. 속성이 동일하지 않을 경우 해당 속성이 올바르게 적용될 것이라고 보장할 수 없습니다. 마크업이 동일하지 않는 경우는 드물고, 모든 markup을 검증하는 비용은 굉장히 비싸므로, 이 동작은 성능상 중요합니다.</Trans>
+<Trans>개발 환경에서는 React가 hydration 중에 동일하지 않은 부분에 대해 경고해 줍니다. 속성이 동일하지 않을 경우 해당 속성이 올바르게 적용될 것이라고 보장할 수 없습니다. 마크업이 동일하지 않는 경우는 드물고, 모든 마크업을 검증하는 비용은 굉장히 비싸므로, 이 동작은 성능상 중요합니다.</Trans>
 
 * You'll likely have only one `hydrateRoot` call in your app. If you use a framework, it might do this call for you.
 <Trans>`hydrateRoot`는 App에서 단 한 번만 호출하게 될 것입니다. 만약 프레임워크를 사용한다면 프레임워크가 대신 호출해줄 수도 있습니다.</Trans>
@@ -140,7 +140,7 @@ Calling `root.unmount` will unmount all the components in the root and "detach" 
 #### Caveats<Trans>주의사항</Trans> {/*root-unmount-caveats*/}
 
 * Calling `root.unmount` will unmount all the components in the tree and "detach" React from the root DOM node.
-<Trans>`root.unmount`를 호출하면 루트부터 그 안의 모든 컴포넌트가 언마운트되고 루트 DOM 노드node에서 React를 "떼어냅니다."</Trans>
+<Trans>`root.unmount`를 호출하면 루트부터 그 안의 모든 컴포넌트가 언마운트되고 루트 DOM 노드에서 React를 "떼어냅니다."</Trans>
 
 * Once you call `root.unmount` you cannot call `root.render` again on the root. Attempting to call `root.render` on an unmounted root will throw a "Cannot update an unmounted root" error.
 <Trans>`root.unmount`를 한번 호출한 이후엔 `root.render`를 루트에 다시 사용할 수 없습니다. 언마운트된 루트에 다시 `root.render`를 호출하려고 한다면 "마운트되지 않은 루트를 업데이트할 수 없습니다."라는 에러를 던지게 됩니다.</Trans>
@@ -232,7 +232,7 @@ The most common causes leading to hydration errors include:
 <TransBlock>
 * 루트 노드 안쪽에서 React로 작성된 HTML 주위에 새 줄(new line) 등의 추가적인 공백이 있는 경우.
 * `typeof window !== 'undefined'`과 같은 조건을 렌더링 로직에서 사용한 경우.
-* `[window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)`와 같은 브라우저 전용 API를 렌더링 로직에 사용한 경우.
+* [`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)와 같은 브라우저 전용 API를 렌더링 로직에 사용한 경우.
 * 서버와 클라이언트에서 서로 다른 데이터를 렌더링한 경우.
 </TransBlock>
 
@@ -246,7 +246,7 @@ React recovers from some hydration errors, but **you must fix them like other bu
 ### Hydrating an entire document<Trans>문서 전체를 hydrate하기</Trans> {/*hydrating-an-entire-document*/}
 
 Apps fully built with React can render the entire document as JSX, including the [`<html>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html) tag:
-<Trans>앱을 온전히 React만으로 작성한 경우 [`<html>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html)태그를 포함해 JSX로 된 전체 문서를 렌더링할 수 있습니다.</Trans>
+<Trans>앱을 온전히 React만으로 작성한 경우 [`<html>`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/html) 태그를 포함해 JSX로 된 전체 문서를 렌더링할 수 있습니다.</Trans>
 
 ```js {3,13}
 function App() {
@@ -267,7 +267,7 @@ function App() {
 ```
 
 To hydrate the entire document, pass the [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Window/document) global as the first argument to `hydrateRoot`:
-<Trans>전체 문서를 hydrate하기 위해선 글로벌 변수인 [`document`](https://developer.mozilla.org/en-US/docs/Web/API/Window/document)를 `hydrateRoot`의 첫번째 인자로 넘기세요:</Trans>
+<Trans>전체 문서를 hydrate하기 위해선 글로벌 변수인 [`document`](https://developer.mozilla.org/ko/docs/Web/API/Window/document)를 `hydrateRoot`의 첫번째 인자로 넘기세요:</Trans>
 
 ```js {4}
 import { hydrateRoot } from 'react-dom/client';

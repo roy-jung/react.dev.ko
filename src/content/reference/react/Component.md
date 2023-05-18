@@ -109,7 +109,7 @@ class Greeting extends Component {
 <Note>
 
 Reading `this.props` in class components is equivalent to [declaring props](/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component) in function components.
-<Trans>클래스 컴포넌트에서 `this.props`읽는 것은 함수형 컴포넌트에서 [props를 선언](/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component)하는 것과 같습니다.</Trans>
+<Trans>클래스 컴포넌트에서 `this.props`읽는 것은 함수 컴포넌트에서 [props를 선언](/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component)하는 것과 같습니다.</Trans>
 
 [See how to migrate.](#migrating-a-simple-component-from-a-class-to-a-function)
 <Trans>[마이그레이션 방법을 참조하십시오.](#migrating-a-simple-component-from-a-class-to-a-function)</Trans>
@@ -194,7 +194,7 @@ class Counter extends Component {
 ```
 
 If you use modern JavaScript syntax, constructors are rarely needed. Instead, you can rewrite this code above using the [public class field syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) which is supported both by modern browsers and tools like [Babel:](https://babeljs.io/)
-<Trans>최신 자바스크립트 구문을 사용하는 경우 constructor가 거의 필요하지 않습니다. 대신 최신 브라우저와 [Babel](https://babeljs.io/)과 같은 도구에서 모두 지원되는 [공용 클래스 필드 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/Public_class_fields)을 사용하여 위의 코드를 다시 작성할 수 있습니다:</Trans>
+<Trans>최신 JavaScript 구문을 사용하는 경우 constructor가 거의 필요하지 않습니다. 대신 최신 브라우저와 [Babel](https://babeljs.io/)과 같은 도구에서 모두 지원되는 [공용 클래스 필드 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/Public_class_fields)을 사용하여 위의 코드를 다시 작성할 수 있습니다:</Trans>
 
 ```js {2,4}
 class Counter extends Component {
@@ -567,7 +567,7 @@ Try to avoid all uses of `forceUpdate` and only read from `this.props` and `this
 <Note>
 
 Reading an external data source and forcing class components to re-render in response to its changes with `forceUpdate` has been superseded by [`useSyncExternalStore`](/reference/react/useSyncExternalStore) in function components.
-<Trans>외부 데이터 소스를 읽고 클래스 컴포넌트가 변경 사항에 대응하여 리렌더링하도록 강제하는 `forceUpdate`는 함수형 컴포넌트에서 [`useSyncExternalStore`](/reference/react/useSyncExternalStore)로 대체되었습니다.</Trans>
+<Trans>외부 데이터 소스를 읽고 클래스 컴포넌트가 변경 사항에 대응하여 리렌더링하도록 강제하는 `forceUpdate`는 함수 컴포넌트에서 [`useSyncExternalStore`](/reference/react/useSyncExternalStore)로 대체되었습니다.</Trans>
 
 </Note>
 
@@ -659,7 +659,7 @@ You should return a snapshot value of any type that you'd like, or `null`. The v
 <Note>
 
 At the moment, there is no equivalent to `getSnapshotBeforeUpdate` for function components. This use case is very uncommon, but if you have the need for it, for now you'll have to write a class component.
-<Trans>현재로서는 함수형 컴포넌트에 대한 `getSnapshotBeforeUpdate`와 동등한 함수가 없습니다. 이 사용 사례는 매우 드물지만, 이 기능이 필요한 경우 현재로서는 클래스 컴포넌트를 작성해야 합니다.</Trans>
+<Trans>현재로서는 함수 컴포넌트에 대한 `getSnapshotBeforeUpdate`와 동등한 함수가 없습니다. 이 사용 사례는 매우 드물지만, 이 기능이 필요한 경우 현재로서는 클래스 컴포넌트를 작성해야 합니다.</Trans>
 
 </Note>
 
@@ -942,7 +942,7 @@ If you define `UNSAFE_componentWillMount`, React will call it immediately after 
 <Note>
 
 Calling [`setState`](#setstate) inside `UNSAFE_componentWillMount` in a class component to initialize state is equivalent to passing that state as the initial state to [`useState`](/reference/react/useState) in a function component.
-<Trans>클래스 컴포넌트에서 `UNSAFE_componentWillMount` 내부에서 `setState`를 호출하여 state를 초기화하는 것은 함수형 컴포넌트에서 해당 state를 `useState`에 초기 state로 전달하는 것과 동일합니다.</Trans>
+<Trans>클래스 컴포넌트에서 `UNSAFE_componentWillMount` 내부에서 `setState`를 호출하여 state를 초기화하는 것은 함수 컴포넌트에서 해당 state를 `useState`에 초기 state로 전달하는 것과 동일합니다.</Trans>
 
 </Note>
 
@@ -1048,7 +1048,7 @@ If you define `UNSAFE_componentWillUpdate`, React will call it before rendering 
 <Note>
 
 There is no direct equivalent to `UNSAFE_componentWillUpdate` in function components.
-<Trans>함수형 컴포넌트에는 `UNSAFE_componentWillUpdate`와 직접적으로 대응하는 것이 없습니다.</Trans>
+<Trans>함수 컴포넌트에는 `UNSAFE_componentWillUpdate`와 직접적으로 대응하는 것이 없습니다.</Trans>
 
 </Note>
 
@@ -1225,7 +1225,7 @@ Typically, it is used together with [`componentDidCatch`](#componentDidCatch) wh
 <Note>
 
 There is no direct equivalent for `static getDerivedStateFromError` in function components yet. If you'd like to avoid creating class components, write a single `ErrorBoundary` component like above and use it throughout your app. Alternatively, use the [`react-error-boundary`](https://github.com/bvaughn/react-error-boundary) package which does that.
-<Trans>함수형 컴포넌트에서 `static getDerivedStateFromError`에 대한 직접적인 대응은 아직 없습니다. 클래스형 컴포넌트를 만들지 않으려면 위와 같이 하나의 `ErrorBoundary` 컴포넌트를 작성하고 앱 전체에서 사용하세요. 또는 이를 수행하는 [`react-error-boundary`](https://github.com/bvaughn/react-error-boundary) 패키지를 사용하세요.</Trans>
+<Trans>함수 컴포넌트에서 `static getDerivedStateFromError`에 대한 직접적인 대응은 아직 없습니다. 클래스 컴포넌트를 만들지 않으려면 위와 같이 하나의 `ErrorBoundary` 컴포넌트를 작성하고 앱 전체에서 사용하세요. 또는 이를 수행하는 [`react-error-boundary`](https://github.com/bvaughn/react-error-boundary) 패키지를 사용하세요.</Trans>
 
 </Note>
 
@@ -1306,7 +1306,7 @@ Deriving state leads to verbose code and makes your components difficult to thin
 <Note>
 
 Implementing `static getDerivedStateFromProps` in a class component is equivalent to [calling the `set` function from `useState` during rendering](/reference/react/useState#storing-information-from-previous-renders) in a function component.
-<Trans>클래스형 컴포넌트에서 `static getDerivedStateFromProps`를 구현하는 것은 함수형 컴포넌트에서 렌더링하는 동안 [`useState`에서 `set` 함수를 호출하는 것](/reference/react/useState#storing-information-from-previous-renders)과 동일합니다.</Trans>
+<Trans>클래스 컴포넌트에서 `static getDerivedStateFromProps`를 구현하는 것은 함수 컴포넌트에서 렌더링하는 동안 [`useState`에서 `set` 함수를 호출하는 것](/reference/react/useState#storing-information-from-previous-renders)과 동일합니다.</Trans>
 
 </Note>
 
@@ -1314,7 +1314,7 @@ Implementing `static getDerivedStateFromProps` in a class component is equivalen
 
 ## Usage<Trans>사용법</Trans> {/*usage*/}
 
-### Defining a class component<Trans>클래스형 컴포넌트 정의하기</Trans> {/*defining-a-class-component*/}
+### Defining a class component<Trans>클래스 컴포넌트 정의하기</Trans> {/*defining-a-class-component*/}
 
 To define a React component as a class, extend the built-in `Component` class and define a [`render` method:](#render)
 <Trans>React 컴포넌트를 클래스로 정의하려면 빌트인 `Component` 클래스를 확장하고 [`render` 메서드](#render)를 정의합니다:</Trans>
@@ -1333,7 +1333,7 @@ React will call your [`render`](#render) method whenever it needs to figure out 
 <Trans>React는 화면에 표시할 내용을 파악해야 할 때마다 [`render`](#render) 메서드를 호출합니다. 보통은 [JSX](/learn/writing-markup-with-jsx)를 반환합니다. `render` 메서드는 [순수 함수](https://en.wikipedia.org/wiki/Pure_function)여야 합니다. JSX만 계산해야 합니다. </Trans>
 
 Similarly to [function components,](/learn/your-first-component#defining-a-component) a class component can [receive information by props](/learn/your-first-component#defining-a-component) from its parent component. However, the syntax for reading props is different. For example, if the parent component renders `<Greeting name="Taylor" />`, then you can read the `name` prop from [`this.props`](#props), like `this.props.name`:
-<Trans>[함수형 컴포넌트](/learn/your-first-component#defining-a-component)와 마찬가지로 클래스 컴포넌트는 부모 컴포넌트 [props로부터 정보를 받을 수 있습니다.](/learn/your-first-component#defining-a-component) 하지만 props를 읽는 구문은 다릅니다. 예를 들어 부모 컴포넌트가 `<Greeting name="Taylor" />`를 렌더링하는 경우, `this.props.name`과 같이 [`this.props`](#props)에서 `name` prop을 읽을 수 있습니다:</Trans>
+<Trans>[함수 컴포넌트](/learn/your-first-component#defining-a-component)와 마찬가지로 클래스 컴포넌트는 부모 컴포넌트 [props로부터 정보를 받을 수 있습니다.](/learn/your-first-component#defining-a-component) 하지만 props를 읽는 구문은 다릅니다. 예를 들어 부모 컴포넌트가 `<Greeting name="Taylor" />`를 렌더링하는 경우, `this.props.name`과 같이 [`this.props`](#props)에서 `name` prop을 읽을 수 있습니다:</Trans>
 
 <Sandpack>
 
@@ -1371,7 +1371,7 @@ We recommend defining components as functions instead of classes. [See how to mi
 
 ---
 
-### Adding state to a class component<Trans>클래스형 컴포넌트에 state 추가하기</Trans> {/*adding-state-to-a-class-component*/}
+### Adding state to a class component<Trans>클래스 컴포넌트에 state 추가하기</Trans> {/*adding-state-to-a-class-component*/}
 
 To add [state](/learn/state-a-components-memory) to a class, assign an object to a property called [`state`](#state). To update state, call [`this.setState`](#setstate).
 <Trans>클래스에 state를 추가하려면 [`state`](#state)라는 프로퍼티에 객체를 할당합니다. state를 업데이트하려면 [`this.setState`](#setstate)를 호출합니다.</Trans>
@@ -1431,7 +1431,7 @@ We recommend defining components as functions instead of classes. [See how to mi
 
 ---
 
-### Adding lifecycle methods to a class component<Trans>클래스형 컴포넌트에 생명주기 메서드 추가하기</Trans> {/*adding-lifecycle-methods-to-a-class-component*/}
+### Adding lifecycle methods to a class component<Trans>클래스 컴포넌트에 생명주기 메서드 추가하기</Trans> {/*adding-lifecycle-methods-to-a-class-component*/}
 
 There are a few special methods you can define on your class.
 <Trans>클래스에서 정의할 수 있는 몇 가지 특별한 메서드가 있습니다. </Trans>

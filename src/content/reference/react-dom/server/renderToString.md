@@ -66,7 +66,7 @@ An HTML string.
 
 ## Usage<Trans>사용법</Trans> {/*usage*/}
 
-### Rendering a React tree as HTML to a string<Trans>React 트리를 HTML로 문자열로 렌더링하기</Trans> {/*rendering-a-react-tree-as-html-to-a-string*/}
+### Rendering a React tree as HTML to a string<Trans>React 트리를 HTML 문자열로 렌더링하기</Trans> {/*rendering-a-react-tree-as-html-to-a-string*/}
 
 Call `renderToString` to render your app to an HTML string which you can send with your server response:
 <Trans>앱을 서버 응답과 함께 보낼 수 있는 HTML 문자열로 렌더링하도록 `renderToString`을 호출하세요:</Trans>
@@ -75,6 +75,7 @@ Call `renderToString` to render your app to an HTML string which you can send wi
 import { renderToString } from 'react-dom/server';
 
 // The route handler syntax depends on your backend framework
+// 라우트 핸들러 구문은 백엔드 프레임워크에 따라 다릅니다.
 app.use('/', (request, response) => {
   const html = renderToString(<App />);
   response.send(html);
@@ -108,7 +109,7 @@ When possible, we recommend using these fully-featured alternatives:
 <Trans>Node.js를 사용하는 경우, [`renderToPipeableStream`](/reference/react-dom/server/renderToPipeableStream)을 사용하세요.</Trans>
 
 * If you use Deno or a modern edge runtime with [Web Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API), use [`renderToReadableStream`.](/reference/react-dom/server/renderToReadableStream)
-<Trans>Deno 또는 최신 엣지 런타임에서 [웹 스트림](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)을 사용하는 경우, [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)을 사용하세요.</Trans>
+<Trans>Deno 또는 최신 엣지 런타임에서 [웹 스트림](https://developer.mozilla.org/ko/docs/Web/API/Streams_API)을 사용하는 경우, [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)을 사용하세요.</Trans>
 
 You can continue using `renderToString` if your server environment does not support streams.
 <Trans>서버 환경이 스트림을 지원하지 않는 경우에는 `renderToString`을 계속 사용할 수 있습니다.</Trans>
