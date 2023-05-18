@@ -304,7 +304,7 @@ When you use `memo`, your component re-renders whenever any prop is not *shallow
 <Trans>`memo`를 사용할 때 어떤 prop든 이전의 prop과 *얕은 비교 결과 같지* 않을 때마다 컴포넌트가 다시 작동합니다. 즉, React는 [`Object.is`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 비교를 사용하여 컴포넌트의 모든 prop을 이전 값과 비교합니다. `Object.is (3, 3)`은 `true`이지만 `Object.is({}, {})`는 `false`입니다.</Trans>
 
 To get the most out of `memo`, minimize the times that the props change. For example, if the prop is an object, prevent the parent component from re-creating that object every time by using [`useMemo`:](/reference/react/useMemo)
-<Trans>`memo`를 최대한 활용하려면, props가 변경되는 시간을 최소화해야 합니다. 예를 들어 prop이 객체인 경우, [`useMemo`](/reference/react/useMemo)를 사용하여 부모 컴포넌트가 해당 객체를 매번 다시 만드는 것을 방지하세요:</Trans>
+<Trans>`memo`를 최대한 활용하려면, props가 변경되는 시간을 최소화해야 합니다. 예를 들어,prop이 객체인 경우, [`useMemo`](/reference/react/useMemo)를 사용하여 부모 컴포넌트가 해당 객체를 매번 다시 만드는 것을 방지하세요:</Trans>
 
 ```js {5-8}
 function Page() {
@@ -325,7 +325,7 @@ const Profile = memo(function Profile({ person }) {
 ```
 
 A better way to minimize props changes is to make sure the component accepts the minimum necessary information in its props. For example, it could accept individual values instead of a whole object:
-<Trans>props 변경을 최소화하는 더 나은 방법은 props가 해당 요소에 필요한 최소한의 정보만을 받고 있는지 확인하는 것입니다. 예를 들어 전체 객체 대신 개별 값을 사용할 수 있습니다:</Trans>
+<Trans>props 변경을 최소화하는 더 나은 방법은 props가 해당 요소에 필요한 최소한의 정보만을 받고 있는지 확인하는 것입니다. 예를 들어,전체 객체 대신 개별 값을 사용할 수 있습니다:</Trans>
 
 ```js {4,7}
 function Page() {
@@ -340,7 +340,7 @@ const Profile = memo(function Profile({ name, age }) {
 ```
 
 Even individual values can sometimes be projected to ones that change less frequently. For example, here a component accepts a boolean indicating the presence of a value rather than the value itself:
-<Trans>때론 개별 값에 대해서도 더욱 가끔 바뀌는 값으로 투영할 수 있습니다. 예를 들어 다음 컴포넌트는 값 자체가 아닌 값의 존재를 나타내는 불리언을 받습니다:</Trans>
+<Trans>때론 개별 값에 대해서도 더욱 가끔 바뀌는 값으로 투영할 수 있습니다. 예를 들어,다음 컴포넌트는 값 자체가 아닌 값의 존재를 나타내는 불리언을 받습니다:</Trans>
 
 ```js {3}
 function GroupsLanding({ person }) {

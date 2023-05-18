@@ -155,7 +155,7 @@ Without parentheses, any code on the lines after `return` [will be ignored](http
 ## Using a component<Trans>컴포넌트 사용하기</Trans> {/*using-a-component*/}
 
 Now that you've defined your `Profile` component, you can nest it inside other components. For example, you can export a `Gallery` component that uses multiple `Profile` components:
-<Trans>이제 `Profile` 컴포넌트를 정의했으므로 다른 컴포넌트 안에 중첩할 수 있습니다. 예를 들어 여러 `Profile` 컴포넌트를 사용하는 `Gallery` 컴포넌트를 내보낼 수 있습니다:</Trans>
+<Trans>이제 `Profile` 컴포넌트를 정의했으므로 다른 컴포넌트 안에 중첩할 수 있습니다. 예를 들어,여러 `Profile` 컴포넌트를 사용하는 `Gallery` 컴포넌트를 내보낼 수 있습니다:</Trans>
 
 <Sandpack>
 

@@ -269,7 +269,7 @@ React does not prescribe how you add CSS files. In the simplest case, you'll add
 ## Displaying data<Trans>데이터 표시하기</Trans> {/*displaying-data*/}
 
 JSX lets you put markup into JavaScript. Curly braces let you "escape back" into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display `user.name`:
-<Trans>JSX를 사용하면 JavaScript에 마크업을 넣을 수 있습니다. 중괄호를 사용하면 코드에서 일부 변수를 삽입하여 사용자에게 표시할 수 있도록 JavaScript로 "이스케이프"할 수 있습니다. 예를 들어 `user.name`이 표시됩니다:</Trans>
+<Trans>JSX를 사용하면 JavaScript에 마크업을 넣을 수 있습니다. 중괄호를 사용하면 코드에서 일부 변수를 삽입하여 사용자에게 표시할 수 있도록 JavaScript로 "이스케이프"할 수 있습니다. 예를 들어,`user.name`이 표시됩니다:</Trans>
 
 
 ```js {3}
@@ -281,7 +281,7 @@ return (
 ```
 
 You can also "escape into JavaScript" from JSX attributes, but you have to use curly braces *instead of* quotes. For example, `className="avatar"` passes the `"avatar"` string as the CSS class, but `src={user.imageUrl}` reads the JavaScript `user.imageUrl` variable value, and then passes that value as the `src` attribute:
-<Trans>JSX 속성에서 "JavaScript로 이스케이프"할 수도 있지만 따옴표 *대신* 중괄호를 사용해야 합니다. 예를 들어 `className="avatar"`는 `"avatar"` 문자열을 CSS 클래스로 전달하지만 `src={user.imageUrl}`는 JavaScript `user.imageUrl` 변수 값을 읽은 다음 해당 값을 `src` 어트리뷰트로 전달합니다:</Trans>
+<Trans>JSX 속성에서 "JavaScript로 이스케이프"할 수도 있지만 따옴표 *대신* 중괄호를 사용해야 합니다. 예를 들어,`className="avatar"`는 `"avatar"` 문자열을 CSS 클래스로 전달하지만 `src={user.imageUrl}`는 JavaScript `user.imageUrl` 변수 값을 읽은 다음 해당 값을 `src` 어트리뷰트로 전달합니다:</Trans>
 
 ```js {3,4}
 return (
@@ -447,7 +447,7 @@ You will rely on JavaScript features like [`for` loop](https://developer.mozilla
 <Trans>컴포넌트 목록을 렌더링하려면 [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) 및 [배열 `map()` 함수](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)와 같은 JavaScript 기능을 사용해야 합니다. </Trans>
 
 For example, let's say you have an array of products:
-<Trans>예를 들어 다음과 같은 상품 배열이 있다고 가정해 보겠습니다:</Trans>
+<Trans>예를 들어,다음과 같은 상품 배열이 있다고 가정해 보겠습니다:</Trans>
 
 ```js
 const products = [
@@ -536,7 +536,7 @@ Notice how `onClick={handleClick}` has no parentheses at the end! Do not _call_ 
 ## Updating the screen<Trans>화면 업데이트하기</Trans> {/*updating-the-screen*/}
 
 Often, you'll want your component to "remember" some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add *state* to your component.
-<Trans>컴포넌트가 특정 정보를 “기억”하여 표시하기를 원하는 경우가 종종 있습니다. 예를 들어 버튼이 클릭된 횟수를 카운트하고 싶을 수 있습니다. 이렇게 하려면 컴포넌트에 *state*를 추가하면 됩니다.</Trans>
+<Trans>컴포넌트가 특정 정보를 “기억”하여 표시하기를 원하는 경우가 종종 있습니다. 예를 들어,버튼이 클릭된 횟수를 카운트하고 싶을 수 있습니다. 이렇게 하려면 컴포넌트에 *state*를 추가하면 됩니다.</Trans>
 
 First, import [`useState`](/reference/react/useState) from React:
 <Trans>먼저 React에서 [`useState`](/reference/react/useState)를 가져옵니다:</Trans>

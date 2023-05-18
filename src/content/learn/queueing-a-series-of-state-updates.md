@@ -84,7 +84,7 @@ This lets you update multiple state variables--even from multiple components--wi
 <Trans>이렇게 하면 너무 많은 [리렌더링](/learn/render-and-commit#re-renders-when-state-updates)을 촉발하지 않고도 여러 컴포넌트에서 나온 다수의 state 변수를 업데이트할 수 있습니다. 하지만 이는 이벤트 핸들러와 그 안에 있는 코드가 완료될 때까지 UI가 업데이트되지 않는다는 의미이기도 합니다. 일괄처리(배칭, batching)라고도 하는 이 동작은 React 앱을 훨씬 빠르게 실행할 수 있게 해줍니다. 또한 일부 변수만 업데이트된 "반쯤 완성된" 혼란스러운 렌더링을 처리하지 않아도 됩니다.</Trans>
 
 **React does not batch across *multiple* intentional events like clicks**--each click is handled separately. Rest assured that React only does batching when it's generally safe to do. This ensures that, for example, if the first button click disables a form, the second click would not submit it again.
-<Trans>**React는 클릭과 같은 *여러* 의도적인 이벤트에 대해 일괄 처리하지 않으며,** 각 클릭은 개별적으로 처리됩니다. React는 일반적으로 안전한 경우에만 일괄 처리를 수행하니 안심하세요. 예를 들어 첫 번째 버튼 클릭으로 양식이 비활성화되면 두 번째 클릭으로 양식이 다시 제출되지 않도록 보장합니다.</Trans>
+<Trans>**React는 클릭과 같은 *여러* 의도적인 이벤트에 대해 일괄 처리하지 않으며,** 각 클릭은 개별적으로 처리됩니다. React는 일반적으로 안전한 경우에만 일괄 처리를 수행하니 안심하세요. 예를 들어,첫 번째 버튼 클릭으로 양식이 비활성화되면 두 번째 클릭으로 양식이 다시 제출되지 않도록 보장합니다.</Trans>
 
 ## Updating the same state multiple times before the next render<Trans>다음 렌더링 전에 동일한 state 변수를 여러 번 업데이트하기</Trans> {/*updating-the-same-state-multiple-times-before-the-next-render*/}
 

@@ -140,7 +140,7 @@ React tree
 <Trans>**이 카운터는 각 트리에서 고유한 위치에 렌더링되기 때문에 두 개의 개별 카운터입니다.** 일반적으로 React를 사용하기 위해 이러한 위치에 대해 생각할 필요는 없지만, 작동 방식을 이해하는 것이 유용할 수 있습니다.</Trans>
 
 In React, each component on the screen has fully isolated state. For example, if you render two `Counter` components side by side, each of them will get its own, independent, `score` and `hover` states.
-<Trans>React에서 화면의 각 컴포넌트는 완전히 분리된 state를 갖습니다. 예를 들어 두 개의 `Counter` 컴포넌트를 나란히 렌더링하면 각각 독립적인 `score` 및 `hover` state를 갖게 됩니다.</Trans>
+<Trans>React에서 화면의 각 컴포넌트는 완전히 분리된 state를 갖습니다. 예를 들어,두 개의 `Counter` 컴포넌트를 나란히 렌더링하면 각각 독립적인 `score` 및 `hover` state를 갖게 됩니다.</Trans>
 
 Try clicking both counters and notice they don't affect each other:
 <Trans>두 counter를 모두 클릭해 보면 서로 영향을 미치지 않는 것을 확인할 수 있습니다:</Trans>
@@ -1324,7 +1324,7 @@ In a real chat app, you'd probably want to recover the input state when the user
 <TransBlock>
 - 현재 채팅만 렌더링하는 것이 아니라 모든 채팅을 렌더링하되 다른 모든 채팅은 CSS로 숨길 수 있습니다. 채팅은 트리에서 제거되지 않으므로 로컬 state가 유지됩니다. 이 솔루션은 간단한 UI에 적합합니다. 하지만 숨겨진 트리가 크고 많은 DOM 노드를 포함하는 경우 속도가 매우 느려질 수 있습니다.
 - 부모 컴포넌트에서 각 수신자에 대한 보류 중인 메시지를 [state를 끌어올려서](/learn/sharing-state-between-components) 보관할 수 있습니다. 이렇게 하면 자식 컴포넌트가 제거되더라도 중요한 정보를 보관하는 것은 부모 컴포넌트이므로 문제가 되지 않습니다. 이것이 가장 일반적인 해결책입니다.
-- React state 외에 다른 소스를 사용할 수도 있습니다. 예를 들어 사용자가 실수로 페이지를 닫아도 메시지 초안이 유지되기를 원할 수 있습니다. 이를 구현하기 위해 `Chat` 컴포넌트가 [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)에서 읽어서 state를 초기화하고 초안도 저장하도록 할 수 있습니다.
+- React state 외에 다른 소스를 사용할 수도 있습니다. 예를 들어,사용자가 실수로 페이지를 닫아도 메시지 초안이 유지되기를 원할 수 있습니다. 이를 구현하기 위해 `Chat` 컴포넌트가 [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)에서 읽어서 state를 초기화하고 초안도 저장하도록 할 수 있습니다.
 </TransBlock>
 
 No matter which strategy you pick, a chat _with Alice_ is conceptually distinct from a chat _with Bob_, so it makes sense to give a `key` to the `<Chat>` tree based on the current recipient.

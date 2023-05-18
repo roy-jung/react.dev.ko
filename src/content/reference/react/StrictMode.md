@@ -167,7 +167,7 @@ Components breaking this rule behave unpredictably and cause bugs. To help you f
 </TransBlock>
 
 If a function is pure, running it twice does not change its behavior because a pure function produces the same result every time. However, if a function is impure (for example, it mutates the data it receives), running it twice tends to be noticeable (that's what makes it impure!) This helps you spot and fix the bug early.
-<Trans>순수 함수는 매번 동일한 결과를 생성하므로 함수를 두 번 실행해도 동작이 변경되지 않습니다. 그러나 함수가 순수하지 않은 경우 (예를 들어 수신하는 데이터를 변조하는 경우) 순수하지 않은 코드를 두 번 실행하면 눈에 띄는 경향이 있습니다 (그래서 순수하지 않는 것 입니다!) 이를 통해 버그를 조기에 발견하고 수정하는데 도움이 됩니다.</Trans>
+<Trans>순수 함수는 매번 동일한 결과를 생성하므로 함수를 두 번 실행해도 동작이 변경되지 않습니다. 그러나 함수가 순수하지 않은 경우 (예를 들어,수신하는 데이터를 변조하는 경우) 순수하지 않은 코드를 두 번 실행하면 눈에 띄는 경향이 있습니다 (그래서 순수하지 않는 것 입니다!) 이를 통해 버그를 조기에 발견하고 수정하는데 도움이 됩니다.</Trans>
 
 **Here is an example to illustrate how double rendering in Strict Mode helps you find bugs early.**
 <Trans>**다음은 Strict Mode에서 이중 렌더링이 버그를 조기에 발견하는 데 어떻게 도움이 되는지 설명하는 예시입니다.**</Trans>
@@ -253,7 +253,7 @@ There is a mistake in the code above. However, it is easy to miss because the in
 <Trans>위의 코드에는 실수가 있습니다. 그러나 초기 출력은 올바르게 나타나기 때문에 놓치기 쉽습니다.</Trans>
 
 This mistake will become more noticeable if the `StoryTray` component re-renders multiple times. For example, let's make the `StoryTray` re-render with a different background color whenever you hover over it: 
-<Trans>`StoryTray` 컴포넌트가 여러 번 다시 렌더링하는 경우 이 실수는 더욱 두드러집니다. 예를 들어 `StoryTray` 에 포인터를 가져다 놓을 때마다 다른 배경색으로 다시 렌더링되도록 해보겠습니다:</Trans>
+<Trans>`StoryTray` 컴포넌트가 여러 번 다시 렌더링하는 경우 이 실수는 더욱 두드러집니다. 예를 들어,`StoryTray` 에 포인터를 가져다 놓을 때마다 다른 배경색으로 다시 렌더링되도록 해보겠습니다:</Trans>
 
 <Sandpack>
 

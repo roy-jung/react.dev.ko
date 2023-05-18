@@ -186,7 +186,7 @@ In this way, spread can do the job of both `push()` by adding to the end of an a
 ### Removing from an array<Trans>배열에서 제거하기</Trans> {/*removing-from-an-array*/}
 
 The easiest way to remove an item from an array is to *filter it out*. In other words, you will produce a new array that will not contain that item. To do this, use the `filter` method, for example:
-<Trans>배열에서 항목을 제거하는 가장 쉬운 방법은 *필터링*하는 것입니다. 즉, 해당 항목을 포함하지 않는 새 배열을 생성합니다. 이렇게 하려면 예를 들어 `filter` 메서드를 사용할 수 있습니다:</Trans>
+<Trans>배열에서 항목을 제거하는 가장 쉬운 방법은 *필터링*하는 것입니다. 즉, 해당 항목을 포함하지 않는 새 배열을 생성합니다. 이렇게 하려면 예를 들어,`filter` 메서드를 사용할 수 있습니다:</Trans>
 
 <Sandpack>
 
@@ -439,7 +439,7 @@ button { margin-left: 5px; }
 ### Making other changes to an array<Trans>배열에 다른 변경 사항 적용하기 </Trans> {/*making-other-changes-to-an-array*/}
 
 There are some things you can't do with the spread syntax and non-mutating methods like `map()` and `filter()` alone. For example, you may want to reverse or sort an array. The JavaScript `reverse()` and `sort()` methods are mutating the original array, so you can't use them directly.
-<Trans>전개 구문과 `map()` 및 `filter()`와 같은 비변이 메서드만으로는 할 수 없는 일이 몇 가지 있습니다. 예를 들어 배열을 반전시키거나 정렬하고 싶을 수 있습니다. JavaScript `reverse()` 및 `sort()` 메서드는 원래 배열을 변이하므로 직접 사용할 수 없습니다.</Trans>
+<Trans>전개 구문과 `map()` 및 `filter()`와 같은 비변이 메서드만으로는 할 수 없는 일이 몇 가지 있습니다. 예를 들어,배열을 반전시키거나 정렬하고 싶을 수 있습니다. JavaScript `reverse()` 및 `sort()` 메서드는 원래 배열을 변이하므로 직접 사용할 수 없습니다.</Trans>
 
 **However, you can copy the array first, and then make changes to it.**
 <Trans>대신, **배열을 먼저 복사한 다음 변이하면 됩니다.**</Trans>
@@ -489,7 +489,7 @@ Here, you use the `[...list]` spread syntax to create a copy of the original arr
 <Trans>여기서는 `[...list]` 전개 구문을 사용하여 먼저 원본 배열의 복사본을 만듭니다. 이제 복사본이 생겼으므로 `nextList.reverse()` 또는 `nextList.sort()`와 같은 변이 메서드를 사용하거나 `nextList[0] = "something"`으로 개별 항목을 할당할 수도 있습니다.</Trans>
 
 However, **even if you copy an array, you can't mutate existing items _inside_ of it directly.** This is because copying is shallow--the new array will contain the same items as the original one. So if you modify an object inside the copied array, you are mutating the existing state. For example, code like this is a problem.
-<Trans>그러나 **배열을 복사하더라도 배열 내부의 기존 항목을 직접 변이할 수는 없습니다.** 이는 얕은 복사가 이루어져 새 배열에는 원래 배열과 동일한 항목이 포함되기 때문입니다. 따라서 복사된 배열 내부의 객체를 수정하면 기존 state를 변이하는 것입니다. 예를 들어 다음과 같은 코드가 문제가 됩니다.</Trans>
+<Trans>그러나 **배열을 복사하더라도 배열 내부의 기존 항목을 직접 변이할 수는 없습니다.** 이는 얕은 복사가 이루어져 새 배열에는 원래 배열과 동일한 항목이 포함되기 때문입니다. 따라서 복사된 배열 내부의 객체를 수정하면 기존 state를 변이하는 것입니다. 예를 들어,다음과 같은 코드가 문제가 됩니다.</Trans>
 
 ```js
 const nextList = [...list];

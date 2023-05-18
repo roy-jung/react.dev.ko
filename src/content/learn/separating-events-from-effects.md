@@ -1174,7 +1174,7 @@ Now, when `increment` changes, React will re-synchronize your Effect, which will
 #### Fix a freezing counter <Trans>정지된 카운터 수정</Trans> {/*fix-a-freezing-counter*/}
 
 This `Timer` component keeps a `count` state variable which increases every second. The value by which it's increasing is stored in the `increment` state variable, which you can control it with the plus and minus buttons. For example, try pressing the plus button nine times, and notice that the `count` now increases each second by ten rather than by one.
-<Trans>이 `Timer` 컴포넌트는 매초마다 증가하는 `count` state 변수를 유지합니다. 증가하는 값은 `increment` state 변수에 저장되며, 더하기 및 빼기 버튼으로 제어할 수 있습니다. 예를 들어 더하기 버튼을 아홉 번 누르면 이제 `count`가 매초마다 1이 아닌 10씩 증가하는 것을 확인할 수 있습니다.</Trans>
+<Trans>이 `Timer` 컴포넌트는 매초마다 증가하는 `count` state 변수를 유지합니다. 증가하는 값은 `increment` state 변수에 저장되며, 더하기 및 빼기 버튼으로 제어할 수 있습니다. 예를 들어,더하기 버튼을 아홉 번 누르면 이제 `count`가 매초마다 1이 아닌 10씩 증가하는 것을 확인할 수 있습니다.</Trans>
 
 There is a small issue with this user interface. You might notice that if you keep pressing the plus or minus buttons faster than once per second, the timer itself seems to pause. It only resumes after a second passes since the last time you've pressed either button. Find why this is happening, and fix the issue so that the timer ticks on *every* second without interruptions.
 <Trans>이 사용자 인터페이스에는 작은 문제가 있습니다. 더하기 또는 빼기 버튼을 초당 한 번보다 빠르게 계속 누르면 타이머 자체가 일시 중지되는 것처럼 보일 수 있습니다. 마지막으로 버튼을 누른 후 1초가 지나야만 타이머가 다시 시작됩니다. 이 문제가 발생하는 이유를 찾아서 타이머가 중단 없이 매초마다 실행되도록 문제를 해결하세요.</Trans>
@@ -1427,7 +1427,7 @@ button { margin: 10px; }
 <Solution>
 
 The problem with the above example is that it extracted an Effect Event called `onMount` without considering what the code should actually be doing. You should only extract Effect Events for a specific reason: when you want to make a part of your code non-reactive. However, the `setInterval` call *should* be reactive with respect to the `delay` state variable. If the `delay` changes, you want to set up the interval from scratch! To fix this code, pull all the reactive code back inside the Effect:
-<Trans>위 예제의 문제점은 코드가 실제로 수행해야 할 작업을 고려하지 않고 `onMount`라는 Effect Event를 추출했다는 것입니다. Effect Event는 특정 이유, 즉 코드의 일부를 비반응적으로 만들고자 할 때만 추출해야 합니다. 하지만 `setInterval` 호출은 `delay` state 변수에 대해 반응형이어야 합니다. `delay`가 변경되면 interval을 처음부터 다시 설정하고 싶을 것입니다! 이 코드를 수정하려면 모든 반응형 코드를 Effect 내부로 다시 가져와야 합니다:</Trans>
+<Trans>위 예제의 문제점은 코드가 실제로 수행해야 할 작업을 고려하지 않고 `onMount`라는 Effect Event를 추출했다는 것입니다. Effect Event는 특정 이유, 즉,코드의 일부를 비반응적으로 만들고자 할 때만 추출해야 합니다. 하지만 `setInterval` 호출은 `delay` state 변수에 대해 반응형이어야 합니다. `delay`가 변경되면 interval을 처음부터 다시 설정하고 싶을 것입니다! 이 코드를 수정하려면 모든 반응형 코드를 Effect 내부로 다시 가져와야 합니다:</Trans>
 
 <Sandpack>
 
@@ -1508,7 +1508,7 @@ button { margin: 10px; }
 </Sandpack>
 
 In general, you should be suspicious of functions like `onMount` that focus on the *timing* rather than the *purpose* of a piece of code. It may feel "more descriptive" at first but it obscures your intent. As a rule of thumb, Effect Events should correspond to something that happens from the *user's* perspective. For example, `onMessage`, `onTick`, `onVisit`, or `onConnected` are good Effect Event names. Code inside them would likely not need to be reactive. On the other hand, `onMount`, `onUpdate`, `onUnmount`, or `onAfterRender` are so generic that it's easy to accidentally put code that *should* be reactive into them. This is why you should name your Effect Events after *what the user thinks has happened,* not when some code happened to run.
-<Trans>일반적으로 코드의 '목적'이 아닌 '타이밍'에 초점을 맞추는 'onMount'와 같은 함수는 의심해봐야 합니다. 처음에는 "더 설명적"이라고 느껴질 수 있지만 의도를 모호하게 만들 수 있습니다. 경험상 Effect Event는 *사용자* 관점에서 일어나는 일과 일치해야 합니다. 예를 들어 `onMessage`, `onTick`, `onVisit`, `onConnected` 등이 좋은 Effect Event 이름입니다. 그 안에 있는 코드는 반응형일 필요가 없을 가능성이 높습니다. 반면에 `onMount`, `onUpdate`, `onUnmount`, `onAfterRender`는 너무 일반적이어서 반응형이어야 하는 코드를 실수로 넣기 쉽습니다. 그렇기 때문에 Effect Event의 이름을 코드가 실행된 시점이 아니라 *사용자가 생각하기에 어떤 일이 일어났다고 생각하는 시점*의 이름을 따서 지어야 합니다.</Trans>
+<Trans>일반적으로 코드의 '목적'이 아닌 '타이밍'에 초점을 맞추는 'onMount'와 같은 함수는 의심해봐야 합니다. 처음에는 "더 설명적"이라고 느껴질 수 있지만 의도를 모호하게 만들 수 있습니다. 경험상 Effect Event는 *사용자* 관점에서 일어나는 일과 일치해야 합니다. 예를 들어,`onMessage`, `onTick`, `onVisit`, `onConnected` 등이 좋은 Effect Event 이름입니다. 그 안에 있는 코드는 반응형일 필요가 없을 가능성이 높습니다. 반면에 `onMount`, `onUpdate`, `onUnmount`, `onAfterRender`는 너무 일반적이어서 반응형이어야 하는 코드를 실수로 넣기 쉽습니다. 그렇기 때문에 Effect Event의 이름을 코드가 실행된 시점이 아니라 *사용자가 생각하기에 어떤 일이 일어났다고 생각하는 시점*의 이름을 따서 지어야 합니다.</Trans>
 </Solution>
 
 #### Fix a delayed notification <Trans>delay된 알림 수정</Trans> {/*fix-a-delayed-notification*/}

@@ -545,7 +545,7 @@ When you use a controlled input, you set the state on every keystroke. If the co
 <Trans>제어 input을 사용할 때는 모든 키 입력에 state를 설정합니다. state가 포함된 컴포넌트가 큰 트리를 다시 렌더링하면 속도가 느려질 수 있습니다. 리렌더링 성능을 최적화할 수 있는 몇 가지 방법이 있습니다.</Trans>
 
 For example, suppose you start with a form that re-renders all page content on every keystroke:
-<Trans>예를 들어 모든 키 입력 시 모든 페이지 콘텐츠를 다시 렌더링하는 form으로 시작한다고 가정해 보겠습니다:</Trans>
+<Trans>예를 들어,모든 키 입력 시 모든 페이지 콘텐츠를 다시 렌더링하는 form으로 시작한다고 가정해 보겠습니다:</Trans>
 
 ```js {5-8}
 function App() {
@@ -735,7 +735,7 @@ function handleChange(e) {
 ```
 
 If this doesn't fix the problem, it's possible that the input gets removed and re-added from the DOM on every keystroke. This can happen if you're accidentally [resetting state](/learn/preserving-and-resetting-state) on every re-render, for example if the input or one of its parents always receives a different `key` attribute, or if you nest component function definitions (which is not supported and causes the "inner" component to always be considered a different tree).
-<Trans>이렇게 해도 문제가 해결되지 않는다면, 키 입력 시마다 input이 DOM에서 제거되었다가 다시 추가되는 상황일 수 있습니다. 렌더링할 때마다 실수로 [state를 재설정](/learn/preserving-and-resetting-state)하는 경우 이런 문제가 발생할 수 있습니다. 예를 들어 input 또는 그 부모 중 하나가 항상 다른 `key` 속성을 받거나, 컴포넌트 정의를 중첩하는 경우(React에서는 허용되지 않으며, 렌더링할 때마다 "내부" 컴포넌트가 다시 마운트됩니다), 이런 일이 발생할 수 있습니다.</Trans>
+<Trans>이렇게 해도 문제가 해결되지 않는다면, 키 입력 시마다 input이 DOM에서 제거되었다가 다시 추가되는 상황일 수 있습니다. 렌더링할 때마다 실수로 [state를 재설정](/learn/preserving-and-resetting-state)하는 경우 이런 문제가 발생할 수 있습니다. 예를 들어,input 또는 그 부모 중 하나가 항상 다른 `key` 속성을 받거나, 컴포넌트 정의를 중첩하는 경우(React에서는 허용되지 않으며, 렌더링할 때마다 "내부" 컴포넌트가 다시 마운트됩니다), 이런 일이 발생할 수 있습니다.</Trans>
 
 ---
 

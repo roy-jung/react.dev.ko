@@ -191,7 +191,7 @@ When possible, we recommend using built-in React state with [`useState`](/refere
 ### Subscribing to a browser API<Trans>브라우저 API 구독하기</Trans> {/*subscribing-to-a-browser-api*/}
 
 Another reason to add `useSyncExternalStore` is when you want to subscribe to some value exposed by the browser that changes over time. For example, suppose that you want your component to display whether the network connection is active. The browser exposes this information via a property called [`navigator.onLine`.](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine) This value can change without React's knowledge, so you should read it with `useSyncExternalStore`.
-<Trans>`useSyncExternalStore`를 추가하는 또 다른 이유는 브라우저상의 시간이 지남에 따라 변경되는 일부 값을 구독하려는 경우입니다. 예를 들어 컴포넌트에 네트워크 연결이 활성화되어 있는지 여부를 표시하고 싶다고 가정해 보겠습니다. 브라우저는 [`navigator.onLine`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)이라는 속성을 통해 이 정보를 노출합니다. 이 값은 시간이 지남에 따라 React가 알지 못하는 사이에 변경될 수 있으므로 `useSyncExternalStore`로 값을 읽어야 합니다.</Trans>
+<Trans>`useSyncExternalStore`를 추가하는 또 다른 이유는 브라우저상의 시간이 지남에 따라 변경되는 일부 값을 구독하려는 경우입니다. 예를 들어,컴포넌트에 네트워크 연결이 활성화되어 있는지 여부를 표시하고 싶다고 가정해 보겠습니다. 브라우저는 [`navigator.onLine`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine)이라는 속성을 통해 이 정보를 노출합니다. 이 값은 시간이 지남에 따라 React가 알지 못하는 사이에 변경될 수 있으므로 `useSyncExternalStore`로 값을 읽어야 합니다.</Trans>
 
 ```js
 import { useSyncExternalStore } from 'react';
@@ -212,7 +212,7 @@ function getSnapshot() {
 ```
 
 Next, you need to implement the `subscribe` function. For example, when `navigator.onLine` changes, the browser fires the [`online`](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event) and [`offline`](https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event) events on the `window` object. You need to subscribe the `callback` argument to the corresponding events, and then return a function that cleans up the subscriptions:
-<Trans>다음으로 `subscribe` 함수를 구현해야 합니다. 예를 들어 `navigator.onLine`이 변경되면 브라우저는 `window` 객체에서 [`online`](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event) 및 [`offline`](https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event) 이벤트를 실행합니다. `callback` 인수를 해당 이벤트에 구독한 다음 구독을 해제하는 함수를 반환해야 합니다:</Trans>
+<Trans>다음으로 `subscribe` 함수를 구현해야 합니다. 예를 들어,`navigator.onLine`이 변경되면 브라우저는 `window` 객체에서 [`online`](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event) 및 [`offline`](https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event) 이벤트를 실행합니다. `callback` 인수를 해당 이벤트에 구독한 다음 구독을 해제하는 함수를 반환해야 합니다:</Trans>
 
 ```js
 function subscribe(callback) {
@@ -389,7 +389,7 @@ The `getServerSnapshot` function is similar to `getSnapshot`, but it runs only i
 
 <TransBlock>
 - HTML을 생성할 때 서버에서 실행됩니다.
-- [hydration](/reference/react-dom/client/hydrateRoot)중, 즉 React가 서버 HTML을 가져와서 인터랙티브하게 만들 때 클라이언트에서 실행됩니다.
+- [hydration](/reference/react-dom/client/hydrateRoot)중, 즉,React가 서버 HTML을 가져와서 인터랙티브하게 만들 때 클라이언트에서 실행됩니다.
 </TransBlock>
 
 This lets you provide the initial snapshot value which will be used before the app becomes interactive. If there is no meaningful initial value for the server rendering, omit this argument to [force rendering on the client.](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content)
@@ -398,7 +398,7 @@ This lets you provide the initial snapshot value which will be used before the a
 <Note>
 
 Make sure that `getServerSnapshot` returns the same exact data on the initial client render as it returned on the server. For example, if `getServerSnapshot` returned some prepopulated store content on the server, you need to transfer this content to the client. One way to do this is to emit a `<script>` tag during server rendering that sets a global like `window.MY_STORE_DATA`, and read from that global on the client in `getServerSnapshot`. Your external store should provide instructions on how to do that.
-<Trans>`getServerSnapshot`이 초기 클라이언트 렌더링에서 서버에서 반환한 것과 정확히 동일한 데이터를 반환하는지 확인하세요. 예를 들어 `getServerSnapshot`이 서버에 미리 채워진 스토어 콘텐츠를 반환한 경우 이 콘텐츠를 클라이언트로 전송해야 합니다. 이를 수행하는 일반적인 방법 중 하나는 서버 렌더링 중에 `window.MY_STORE_DATA`와 같은 글로벌을 설정하는 `<script>` 태그를 생성한 다음, 클라이언트에서 `getServerSnapshot`로부터 해당 글로벌을 읽어오는 것입니다. 외부 스토어에서 이를 수행하는 방법에 대한 지침을 제공해야 합니다.</Trans>
+<Trans>`getServerSnapshot`이 초기 클라이언트 렌더링에서 서버에서 반환한 것과 정확히 동일한 데이터를 반환하는지 확인하세요. 예를 들어,`getServerSnapshot`이 서버에 미리 채워진 스토어 콘텐츠를 반환한 경우 이 콘텐츠를 클라이언트로 전송해야 합니다. 이를 수행하는 일반적인 방법 중 하나는 서버 렌더링 중에 `window.MY_STORE_DATA`와 같은 글로벌을 설정하는 `<script>` 태그를 생성한 다음, 클라이언트에서 `getServerSnapshot`로부터 해당 글로벌을 읽어오는 것입니다. 외부 스토어에서 이를 수행하는 방법에 대한 지침을 제공해야 합니다.</Trans>
 
 </Note>
 
@@ -436,7 +436,7 @@ function getSnapshot() {
 ```
 
 If your store data is mutable, your `getSnapshot` function should return an immutable snapshot of it. This means it *does* need to create new objects, but it shouldn't do this for every single call. Instead, it should store the last calculated snapshot, and return the same snapshot as the last time if the data in the store has not changed. How you determine whether mutable data has changed depends on your mutable store.
-<Trans>스토어 데이터가 변이 가능한 경우 `getSnapshot` 함수는 해당 데이터의 불변 스냅샷을 반환해야 합니다. 즉 새 객체를 생성*해야* 하지만, 이 작업을 매 호출시마다 수행해서는 안 됩니다. 대신 마지막으로 계산된 스냅샷을 저장하고, 저장소의 데이터가 변경되지 않은 경우 지난번과 동일한 스냅샷을 반환해야 합니다. 변이 가능한 데이터가 변이되었는지를 확인하는 방법은 저장소가 구현된 방식에 따라 다릅니다.</Trans>
+<Trans>스토어 데이터가 변이 가능한 경우 `getSnapshot` 함수는 해당 데이터의 불변 스냅샷을 반환해야 합니다. 즉,새 객체를 생성*해야* 하지만, 이 작업을 매 호출시마다 수행해서는 안 됩니다. 대신 마지막으로 계산된 스냅샷을 저장하고, 저장소의 데이터가 변경되지 않은 경우 지난번과 동일한 스냅샷을 반환해야 합니다. 변이 가능한 데이터가 변이되었는지를 확인하는 방법은 저장소가 구현된 방식에 따라 다릅니다.</Trans>
 
 ---
 

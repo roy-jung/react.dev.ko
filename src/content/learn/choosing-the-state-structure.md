@@ -192,7 +192,7 @@ function sendMessage(text) {
 </Sandpack>
 
 While this code works, it leaves the door open for "impossible" states. For example, if you forget to call `setIsSent` and `setIsSending` together, you may end up in a situation where both `isSending` and `isSent` are `true` at the same time. The more complex your component is, the harder it is to understand what happened.
-<Trans>이 코드는 작동하긴 하지만, "불가능한" state의 설정을 허용하고 있습니다. 예를 들어 `setIsSent`와 `setIsSending` 중 어느 하나만 호출하면, `isSending`과 `isSent`가 동시에 `true`가 되는 상황이 발생할 수 있습니다. 컴포넌트가 복잡할수록 무슨 일이 일어났는지 파악하기가 더 어려워집니다.</Trans>
+<Trans>이 코드는 작동하긴 하지만, "불가능한" state의 설정을 허용하고 있습니다. 예를 들어,`setIsSent`와 `setIsSending` 중 어느 하나만 호출하면, `isSending`과 `isSent`가 동시에 `true`가 되는 상황이 발생할 수 있습니다. 컴포넌트가 복잡할수록 무슨 일이 일어났는지 파악하기가 더 어려워집니다.</Trans>
 
 **Since `isSending` and `isSent` should never be `true` at the same time, it is better to replace them with one `status` state variable that may take one of *three* valid states:** `'typing'` (initial), `'sending'`, and `'sent'`:
 <Trans>**`isSending`과 `isSent`는 동시에 `true`가 되어서는 안되므로, 세 가지 유효한 state 중 하나를 취할 수 있는 `status` 라는 state변수 하나로 대체하는 것이 좋습니다:** `status`는 `typing`(초기), `sending`, `sent`가 될 수 있습니다:</Trans>
@@ -267,7 +267,7 @@ If you can calculate some information from the component's props or its existing
 <Trans>렌더링 중에 컴포넌트의 props나 기존 state 변수에서 일부 정보를 계산할 수 있는 경우 해당 정보를 컴포넌트의 state에 **넣지 않아야 합니다.**</Trans>
 
 For example, take this form. It works, but can you find any redundant state in it?
-<Trans>예를 들어 이 양식을 살펴보세요. 작동하긴 하지만, 불필요한 state가 있진 않나요?</Trans>
+<Trans>예를 들어,이 양식을 살펴보세요. 작동하긴 하지만, 불필요한 state가 있진 않나요?</Trans>
 
 <Sandpack>
 
@@ -2728,7 +2728,7 @@ label { width: 100%; padding: 5px; display: inline-block; }
 <Solution>
 
 Instead of a single `selectedId`, keep a `selectedIds` *array* in state. For example, if you select the first and the last letter, it would contain `[0, 2]`. When nothing is selected, it would be an empty `[]` array:
-<Trans>단일 `selectedId` 대신 `selectedIds` *배열*을 state로 유지합니다. 예를 들어 첫 번째 문자와 마지막 문자를 선택하면 `[0, 2]`가 포함됩니다. 아무것도 선택하지 않으면 빈 `[]` 배열이 됩니다:</Trans>
+<Trans>단일 `selectedId` 대신 `selectedIds` *배열*을 state로 유지합니다. 예를 들어,첫 번째 문자와 마지막 문자를 선택하면 `[0, 2]`가 포함됩니다. 아무것도 선택하지 않으면 빈 `[]` 배열이 됩니다:</Trans>
 
 <Sandpack>
 

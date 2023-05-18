@@ -156,7 +156,7 @@ Transitions let you keep the user interface updates responsive even on slow devi
 <Trans>트랜지션을 사용하면 느린 디바이스에서도 사용자 인터페이스 업데이트의 반응성을 유지할 수 있습니다.</Trans>
 
 With a transition, your UI stays responsive in the middle of a re-render. For example, if the user clicks a tab but then change their mind and click another tab, they can do that without waiting for the first re-render to finish.
-<Trans>트랜지션을 사용하면 리렌더링 도중에도 UI가 반응성을 유지합니다. 예를 들어 사용자가 탭을 클릭했다가 마음이 바뀌어 다른 탭을 클릭하면 첫 번째 리렌더링이 완료될 때까지 기다릴 필요 없이 다른 탭을 클릭할 수 있습니다.</Trans>
+<Trans>트랜지션을 사용하면 리렌더링 도중에도 UI가 반응성을 유지합니다. 예를 들어,사용자가 탭을 클릭했다가 마음이 바뀌어 다른 탭을 클릭하면 첫 번째 리렌더링이 완료될 때까지 기다릴 필요 없이 다른 탭을 클릭할 수 있습니다.</Trans>
 
 <Recipes titleText="The difference between useTransition and regular state updates" titleId="examples" translatedTitle="useTransition과 일반 state 업데이트의 차이점">
 
@@ -605,7 +605,7 @@ b { display: inline-block; margin-right: 10px; }
 ### Displaying a pending visual state during the transition<Trans>트랜지션 중에 '보류중' state 표시하기</Trans> {/*displaying-a-pending-visual-state-during-the-transition*/}
 
 You can use the `isPending` boolean value returned by `useTransition` to indicate to the user that a transition is in progress. For example, the tab button can have a special "pending" visual state:
-<Trans>`useTransition`이 반환하는 `isPending` boolean 값을 사용하여 트랜지션이 진행 중임을 사용자에게 표시할 수 있습니다. 예를 들어 탭 버튼은 특별한 'pending' state를 가질 수 있습니다:</Trans>
+<Trans>`useTransition`이 반환하는 `isPending` boolean 값을 사용하여 트랜지션이 진행 중임을 사용자에게 표시할 수 있습니다. 예를 들어,탭 버튼은 특별한 'pending' state를 가질 수 있습니다:</Trans>
 
 ```js {4-6}
 function TabButton({ children, isActive, onClick }) {

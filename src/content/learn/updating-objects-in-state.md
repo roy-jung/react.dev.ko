@@ -43,7 +43,7 @@ const [x, setX] = useState(0);
 ```
 
 So far you've been working with numbers, strings, and booleans. These kinds of JavaScript values are "immutable", meaning unchangeable or "read-only". You can trigger a re-render to _replace_ a value:
-<Trans>지금까지 숫자, 문자열, 불리언값으로 작업해 보았습니다. 이러한 종류의 JavaScript 값은 "불변", 즉 변이할 수 없거나 "읽기 전용"입니다. 다시 렌더링을 촉발하여 값을 바꿀 수 있습니다:</Trans>
+<Trans>지금까지 숫자, 문자열, 불리언값으로 작업해 보았습니다. 이러한 종류의 JavaScript 값은 "불변", 즉,변이할 수 없거나 "읽기 전용"입니다. 다시 렌더링을 촉발하여 값을 바꿀 수 있습니다:</Trans>
 
 ```js
 setX(5);
@@ -239,7 +239,7 @@ Mutation is only a problem when you change *existing* objects that are already i
 ## Copying objects with the spread syntax <Trans>전개 구문을 사용하여 객체 복사하기</Trans> {/*copying-objects-with-the-spread-syntax*/}
 
 In the previous example, the `position` object is always created fresh from the current cursor position. But often, you will want to include *existing* data as a part of the new object you're creating. For example, you may want to update *only one* field in a form, but keep the previous values for all other fields.
-<Trans>이전 예제에서 `position` 객체는 항상 현재 커서 위치에서 새로 만들어졌습니다. 그러나 종종 *기존* 데이터를 새로 만드는 객체의 일부로 포함시키고 싶을 때가 있습니다. 예를 들어 form에 있는 *하나의* 필드만 업데이트하고 다른 모든 필드는 이전 값을 유지하고 싶을 수 있습니다.</Trans>
+<Trans>이전 예제에서 `position` 객체는 항상 현재 커서 위치에서 새로 만들어졌습니다. 그러나 종종 *기존* 데이터를 새로 만드는 객체의 일부로 포함시키고 싶을 때가 있습니다. 예를 들어,form에 있는 *하나의* 필드만 업데이트하고 다른 모든 필드는 이전 값을 유지하고 싶을 수 있습니다.</Trans>
 
 These input fields don't work because the `onChange` handlers mutate the state:
 <Trans>이러한 입력 필드는 `onChange` 핸들러가 state를 변이하기 때문에 작동하지 않습니다:</Trans>
@@ -309,7 +309,7 @@ input { margin-left: 5px; margin-bottom: 5px; }
 </Sandpack>
 
 For example, this line mutates the state from a past render:
-<Trans>예를 들어 이 줄은 이전 렌더링시의 state를 변이합니다:</Trans>
+<Trans>예를 들어,이 줄은 이전 렌더링시의 state를 변이합니다:</Trans>
 
 ```js
 person.firstName = e.target.value;
@@ -686,7 +686,7 @@ let obj2 = {
 ```
 
 The `obj1` object is not "inside" `obj2`. For example, `obj3` could "point" at `obj1` too:
-<Trans>`obj1`은 `obj2`의 "내부"에 있지 않습니다. 예를 들어 `obj3`도 `obj1`을 "가리킬" 수 있습니다:</Trans>
+<Trans>`obj1`은 `obj2`의 "내부"에 있지 않습니다. 예를 들어,`obj3`도 `obj1`을 "가리킬" 수 있습니다:</Trans>
 
 ```js
 let obj1 = {

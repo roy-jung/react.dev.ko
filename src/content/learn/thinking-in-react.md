@@ -64,7 +64,7 @@ Depending on your background, you can think about splitting up a design into com
 </TransBlock>
 
 If your JSON is well-structured, you'll often find that it naturally maps to the component structure of your UI. That's because UI and data models often have the same information architecture--that is, the same shape. Separate your UI into components, where each component matches one piece of your data model.
-<Trans>JSON이 잘 구조화되어 있으면 UI의 컴포넌트 구조에 자연스럽게 매핑되는 것을 종종 발견할 수 있습니다. 이는 UI와 데이터 모델이 동일한 정보 아키텍처, 즉 동일한 형태를 가지고 있는 경우가 많기 때문입니다. UI를 컴포넌트로 분리하면 각 컴포넌트가 데이터 모델의 한 부분과 일치합니다.</Trans>
+<Trans>JSON이 잘 구조화되어 있으면 UI의 컴포넌트 구조에 자연스럽게 매핑되는 것을 종종 발견할 수 있습니다. 이는 UI와 데이터 모델이 동일한 정보 아키텍처, 즉,동일한 형태를 가지고 있는 경우가 많기 때문입니다. UI를 컴포넌트로 분리하면 각 컴포넌트가 데이터 모델의 한 부분과 일치합니다.</Trans>
 
 There are five components on this screen:
 <Trans>이 화면에는 5개의 컴포넌트가 있습니다:</Trans>
@@ -103,7 +103,7 @@ Now that you have your component hierarchy, it's time to implement your app. The
 <Trans>컴포넌트 계층 구조가 완성되었으니 이제 앱을 구현할 차례입니다. 가장 간단한 접근은 상호작용을 추가하지 않고 데이터 모델에서 UI를 렌더링하는 버전을 만드는 것입니다! 정적 버전을 먼저 만든 다음 상호작용을 별도로 추가하는 것이 더 쉬운 경우가 많습니다. 정적 버전을 만드는 데엔 타이핑이 많이 필요하지만 고민은 크게 필요하지 않은 반면, 상호작용을 추가할 때엔 타이핑보다 고민이 많이 필요합니다.</Trans>
 
 To build a static version of your app that renders your data model, you'll want to build [components](/learn/your-first-component) that reuse other components and pass data using [props.](/learn/passing-props-to-a-component) Props are a way of passing data from parent to child. (If you're familiar with the concept of [state](/learn/state-a-components-memory), don't use state at all to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.)
-<Trans>데이터 모델을 렌더링하는 앱의 정적 버전을 만들기 위해서는 다른 컴포넌트를 재사용하는 [components](/learn/your-first-component)를 만들고 [props](/learn/passing-props-to-a-component)를 사용하여 데이터를 전달해야 합니다. props는 부모에서 자식으로 데이터를 전달하는 방식입니다. ([state](/learn/state-a-components-memory)의 개념에 익숙하더라도 이 정적 버전을 빌드할 때에는 state를 아예 사용하지 마세요. state는 상호작용, 즉 시간이 지남에 따라 변하는 데이터에만 사용됩니다. 이 앱은 정적 버전이므로 필요하지 않습니다.)</Trans>
+<Trans>데이터 모델을 렌더링하는 앱의 정적 버전을 만들기 위해서는 다른 컴포넌트를 재사용하는 [components](/learn/your-first-component)를 만들고 [props](/learn/passing-props-to-a-component)를 사용하여 데이터를 전달해야 합니다. props는 부모에서 자식으로 데이터를 전달하는 방식입니다. ([state](/learn/state-a-components-memory)의 개념에 익숙하더라도 이 정적 버전을 빌드할 때에는 state를 아예 사용하지 마세요. state는 상호작용, 즉,시간이 지남에 따라 변하는 데이터에만 사용됩니다. 이 앱은 정적 버전이므로 필요하지 않습니다.)</Trans>
 
 You can either build "top down" by starting with building the components higher up in the hierarchy (like `FilterableProductTable`) or "bottom up" by working from components lower down (like `ProductRow`). In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
 <Trans>계층 구조에서 상위 컴포넌트부터 '하향식'(예: `FilterableProductTable`)으로 만들거나, 하위 컴포넌트부터 '상향식'(예: `ProductRow`)으로 만들 수 있습니다. 보통 간단한 예시에서는 하향식으로 진행하는 것이 더 쉽고, 대규모 프로젝트에서는 상향식으로 진행하는 것이 더 쉽습니다.</Trans>
@@ -243,7 +243,7 @@ To make the UI interactive, you need to let users change your underlying data mo
 <Trans>UI를 상호작용하게 만들려면 사용자가 기반이 되는 데이터 모델을 변경할 수 있도록 해야 합니다. 이를 위해 *state*를 사용합니다.</Trans>
 
 Think of state as the minimal set of changing data that your app needs to remember. The most important principle for structuring state is to keep it [DRY (Don't Repeat Yourself).](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Figure out the absolute minimal representation of the state your application needs and compute everything else on-demand. For example, if you're building a shopping list, you can store the items as an array in state. If you want to also display the number of items in the list, don't store the number of items as another state value--instead, read the length of your array.
-<Trans>state를 앱이 기억해야 하는 최소한의 변화하는 데이터 집합으로 생각하세요. state를 구조화할 때 가장 중요한 원칙은 [DRY(직접 반복하지 않기)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)를 유지하는 것입니다. 애플리케이션에 필요한 최소한의 state를 파악하고 그 외의 모든 것을 필요할 때 계산하세요. 예를 들어 쇼핑 목록을 작성하는 경우 항목을 state 배열로 저장할 수 있습니다. 목록에 있는 항목의 개수도 표시하려면 항목의 개수를 다른 state 값으로 저장하는 대신 배열의 길이를 읽으면 됩니다.</Trans>
+<Trans>state를 앱이 기억해야 하는 최소한의 변화하는 데이터 집합으로 생각하세요. state를 구조화할 때 가장 중요한 원칙은 [DRY(직접 반복하지 않기)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)를 유지하는 것입니다. 애플리케이션에 필요한 최소한의 state를 파악하고 그 외의 모든 것을 필요할 때 계산하세요. 예를 들어,쇼핑 목록을 작성하는 경우 항목을 state 배열로 저장할 수 있습니다. 목록에 있는 항목의 개수도 표시하려면 항목의 개수를 다른 state 값으로 저장하는 대신 배열의 길이를 읽으면 됩니다.</Trans>
 
 Now think of all of the pieces of data in this example application:
 <Trans>이제 이 예제 애플리케이션의 모든 데이터 조각을 생각해 보세요:</Trans>
@@ -305,7 +305,7 @@ There are two types of "model" data in React: props and state. The two are very 
 * [**State** is like a component’s memory.](/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
 
 <TransBlock>
-- [Props는 함수가 전달받는 인자](/learn/passing-props-to-a-component)와 같습니다. 부모 컴포넌트가 자식 컴포넌트에 데이터를 넘겨서 자식의 외관을 커스터마이징할 수 있게 해줍니다. 예를 들어 `Form`은 `color` prop을 `Button`에 전달할 수 있습니다.
+- [Props는 함수가 전달받는 인자](/learn/passing-props-to-a-component)와 같습니다. 부모 컴포넌트가 자식 컴포넌트에 데이터를 넘겨서 자식의 외관을 커스터마이징할 수 있게 해줍니다. 예를 들어,`Form`은 `color` prop을 `Button`에 전달할 수 있습니다.
 - [**State**는 컴포넌트의 메모리와 같습니다.](/learn/state-a-components-memory) state는 컴포넌트가 일부 정보를 계속 추적하고 상호작용하여 변화할 수 있게 해줍니다. 예를 들어, `Button`은 `isHovered` state를 추적할 것입니다.
 </TransBlock>
 
@@ -317,7 +317,7 @@ Props and state are different, but they work together. A parent component will o
 ## Step 4: Identify where your state should live<Trans>state가 어디에 있어야 할지 파악하기</Trans> {/*step-4-identify-where-your-state-should-live*/}
 
 After identifying your app’s minimal state data, you need to identify which component is responsible for changing this state, or *owns* the state. Remember: React uses one-way data flow, passing data down the component hierarchy from parent to child component. It may not be immediately clear which component should own what state. This can be challenging if you’re new to this concept, but you can figure it out by following these steps!
-<Trans>앱에서 최소한으로 필요한 state 데이터를 식별한 후에는, 이 state를 변경하는 데 책임이 있는 컴포넌트, 즉 state를 '소유'하는 컴포넌트를 식별해야 합니다. 기억하세요: React는 컴포넌트 계층 구조를 따라 부모 컴포넌트에서 자식 컴포넌트로, 아래로 내려가는 단방향 데이터 흐름을 따릅니다. 당장은 어떤 컴포넌트가 state를 가져야 하는지가 명확하지 않을 수도 있습니다. 이 개념을 처음 접하는 경우 어려울 수 있지만, 다음 과정을 따라가면 이해할 수 있을 거에요!</Trans>
+<Trans>앱에서 최소한으로 필요한 state 데이터를 식별한 후에는, 이 state를 변경하는 데 책임이 있는 컴포넌트, 즉,state를 '소유'하는 컴포넌트를 식별해야 합니다. 기억하세요: React는 컴포넌트 계층 구조를 따라 부모 컴포넌트에서 자식 컴포넌트로, 아래로 내려가는 단방향 데이터 흐름을 따릅니다. 당장은 어떤 컴포넌트가 state를 가져야 하는지가 명확하지 않을 수도 있습니다. 이 개념을 처음 접하는 경우 어려울 수 있지만, 다음 과정을 따라가면 이해할 수 있을 거에요!</Trans>
 
 For each piece of state in your application:
 <Trans>애플리케이션의 각 state에 대해:</Trans>
@@ -331,7 +331,7 @@ For each piece of state in your application:
  
 <TransBlock>
 1. 해당 state를 기반으로 렌더링하는 *모든* 컴포넌트를 찾으세요.
-2. 가장 가까운 공통 상위 컴포넌트, 즉 계층상 그 state의 영향을 받는 모든 컴포넌트들의 위에 있는 컴포넌트를 찾으세요.
+2. 가장 가까운 공통 상위 컴포넌트, 즉,계층상 그 state의 영향을 받는 모든 컴포넌트들의 위에 있는 컴포넌트를 찾으세요.
 3. state가 어디에 위치할지 결정합시다:
   1. 대개 공통 부모에 state를 그대로 둘 수 있습니다.
   2. 혹은 공통 부모보다 더 상위 컴포넌트에 state를 둘 수도 있습니다.
@@ -538,7 +538,7 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 </ConsoleBlock>
 
 In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
-<Trans>위의 샌드박스에서 `ProductTable`과 `SearchBar`는 `filterText`와 `inStockOnly` prop을 읽어 테이블, 인풋 및 체크박스를 렌더링합니다. 예를 들어 다음은 `SearchBar`가 입력 값을 채우는 방식입니다:</Trans>
+<Trans>위의 샌드박스에서 `ProductTable`과 `SearchBar`는 `filterText`와 `inStockOnly` prop을 읽어 테이블, 인풋 및 체크박스를 렌더링합니다. 예를 들어,다음은 `SearchBar`가 입력 값을 채우는 방식입니다:</Trans>
 
 ```js {1,6}
 function SearchBar({ filterText, inStockOnly }) {

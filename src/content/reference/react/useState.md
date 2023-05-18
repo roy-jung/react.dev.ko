@@ -481,7 +481,7 @@ h1 { display: block; margin: 10px; }
 ### Updating objects and arrays in state <Trans>객체 및 배열 state 업데이트</Trans> {/*updating-objects-and-arrays-in-state*/}
 
 You can put objects and arrays into state. In React, state is considered read-only, so **you should *replace* it rather than *mutate* your existing objects**. For example, if you have a `form` object in state, don't mutate it:
-<Trans>state에는 객체와 배열도 넣을 수 있습니다. React에서 state는 읽기 전용으로 간주되므로 **기존 객체를 *변이*하지 않고, *교체*를 해야 합니다**. 예를 들어 state에 `form` 객체가 있는 경우 변이하지 마세요:</Trans>
+<Trans>state에는 객체와 배열도 넣을 수 있습니다. React에서 state는 읽기 전용으로 간주되므로 **기존 객체를 *변이*하지 않고, *교체*를 해야 합니다**. 예를 들어,state에 `form` 객체가 있는 경우 변이하지 마세요:</Trans>
 
 ```js
 // 🚩 Don't mutate an object in state like this:
@@ -1153,7 +1153,7 @@ button { display: block; margin-bottom: 20px; }
 ### Storing information from previous renders <Trans>이전 렌더링에서 얻은 정보 저장하기</Trans> {/*storing-information-from-previous-renders*/}
 
 Usually, you will update state in event handlers. However, in rare cases you might want to adjust state in response to rendering -- for example, you might want to change a state variable when a prop changes.
-<Trans>보통은 이벤트 핸들러에서 state를 업데이트합니다. 하지만 드물게 렌더링에 대한 응답으로 state를 조정해야 하는 경우도 있습니다. 예를 들어 props가 변경될 때 state 변수를 변경하고 싶을 수 있습니다.</Trans>
+<Trans>보통은 이벤트 핸들러에서 state를 업데이트합니다. 하지만 드물게 렌더링에 대한 응답으로 state를 조정해야 하는 경우도 있습니다. 예를 들어,props가 변경될 때 state 변수를 변경하고 싶을 수 있습니다.</Trans>
 
 In most cases, you don't need this:
 <Trans>대부분의 경우 이 기능은 필요하지 않습니다:</Trans>
@@ -1359,7 +1359,7 @@ This **development-only** behavior helps you [keep components pure.](/learn/keep
 <Trans>이 **개발 환경 전용** 동작은 [컴포넌트를 순수하게 유지](/learn/keeping-components-pure)하는 데 도움이 됩니다. React는 호출 중 하나의 결과를 사용하고 다른 호출의 결과는 무시합니다. 컴포넌트, 초기화 함수, 업데이터 함수가 순수하다면 이 동작이 로직에 영향을 미치지 않습니다. 반면 의도치 않게 순수하지 않을 경우에는 실수를 알아차리는 데 도움이 됩니다.</Trans>
 
 For example, this impure updater function mutates an array in state:
-<Trans>예를 들어 순수하지 않은 업데이터 함수는 state의 배열을 다음과 같이 변이합니다:</Trans>
+<Trans>예를 들어,순수하지 않은 업데이터 함수는 state의 배열을 다음과 같이 변이합니다:</Trans>
 
 
 ```js {2-4}

@@ -213,7 +213,7 @@ After rendering (calling) your components, React will modify the DOM.
 </TransBlock>
 
 **React only changes the DOM nodes if there's a difference between renders.** For example, here is a component that re-renders with different props passed from its parent every second. Notice how you can add some text into the `<input>`, updating its `value`, but the text doesn't disappear when the component re-renders:
-<Trans>**React는 렌더링 간에 차이가 있는 경우에만 DOM 노드를 변경합니다.** 예를 들어 매초 부모로부터 전달된 다른 props로 다시 렌더링하는 컴포넌트가 있습니다. `<input>`에 텍스트를 입력하여 `value`를 업데이트 하지만 컴포넌트가 리렌더링될 때 텍스트가 사라지지 않습니다.</Trans>
+<Trans>**React는 렌더링 간에 차이가 있는 경우에만 DOM 노드를 변경합니다.** 예를 들어,매초 부모로부터 전달된 다른 props로 다시 렌더링하는 컴포넌트가 있습니다. `<input>`에 텍스트를 입력하여 `value`를 업데이트 하지만 컴포넌트가 리렌더링될 때 텍스트가 사라지지 않습니다.</Trans>
 
 <Sandpack>
 

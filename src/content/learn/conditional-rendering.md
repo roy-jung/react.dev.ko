@@ -128,7 +128,7 @@ Notice how you're creating branching logic with JavaScript's `if` and `return` s
 ### Conditionally returning nothing with `null`<Trans>`null`을 사용해 조건부로 아무것도 반환하지 않기</Trans> {/*conditionally-returning-nothing-with-null*/}
 
 In some situations, you won't want to render anything at all. For example, say you don't want to show packed items at all. A component must return something. In this case, you can return `null`:
-<Trans>어떤 상황에서는 아무것도 렌더링하고 싶지 않을 수도 있습니다. 예를 들어 포장된 아이템을 전혀 표시하고 싶지 않다고 가정해 보겠습니다. 컴포넌트는 무언가를 반환해야 합니다. 이 경우 `null`을 반환하면 됩니다:</Trans>
+<Trans>어떤 상황에서는 아무것도 렌더링하고 싶지 않을 수도 있습니다. 예를 들어,포장된 아이템을 전혀 표시하고 싶지 않다고 가정해 보겠습니다. 컴포넌트는 무언가를 반환해야 합니다. 이 경우 `null`을 반환하면 됩니다:</Trans>
 
 ```js
 if (isPacked) {
@@ -360,7 +360,7 @@ To test the condition, JavaScript converts the left side to a boolean automatica
 <Trans>조건을 테스트하기 위해, JavaScript는 왼쪽을 자동으로 불리언으로 변환합니다. 그러나 왼쪽이 `0`이면 전체 표현식이 해당 값(`0`)을 가져오고, React는 기꺼이 빈 값 대신 `0`을 렌더링합니다.</Trans>
 
 For example, a common mistake is to write code like `messageCount && <p>New messages</p>`. It's easy to assume that it renders nothing when `messageCount` is `0`, but it really renders the `0` itself!
-<Trans>예를 들어 흔히 하는 실수 중 하나는 `messageCount && <p>New messages</p>`와 같은 코드를 작성하는 것입니다. `messageCount`가 `0`일 때 아무것도 렌더링하지 않는다고 생각하기 쉽지만, 실제로는 `0` 자체를 렌더링합니다!</Trans>
+<Trans>예를 들어,흔히 하는 실수 중 하나는 `messageCount && <p>New messages</p>`와 같은 코드를 작성하는 것입니다. `messageCount`가 `0`일 때 아무것도 렌더링하지 않는다고 생각하기 쉽지만, 실제로는 `0` 자체를 렌더링합니다!</Trans>
 
 To fix it, make the left side a boolean: `messageCount > 0 && <p>New messages</p>`.
 <Trans>이 문제를 해결하려면 왼쪽을 불리언으로 만들면 됩니다: `messageCount > 0 && <p>New messages</p>`</Trans>

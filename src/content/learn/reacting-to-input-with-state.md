@@ -160,7 +160,7 @@ body { font-family: sans-serif; margin: 20px; padding: 0; }
 </Sandpack>
 
 Manipulating the UI imperatively works well enough for isolated examples, but it gets exponentially more difficult to manage in more complex systems. Imagine updating a page full of different forms like this one. Adding a new UI element or a new interaction would require carefully checking all existing code to make sure you haven't introduced a bug (for example, forgetting to show or hide something).
-<Trans>UI를 조작하는 것은 위와 같이 단순 고립된 예제에서는 충분히 잘 동작하지만, 더 복잡한 시스템에서는 관리하기가 기하급수적으로 어려워집니다. 다양한 form 양식으로 가득 찬 페이지를 업데이트 해야 한다고 생각해봅시다. 새로운 UI 요소나 새로운 인터랙션을 추가하려면 기존의 모든 코드를 주의 깊게 살펴 버그의 발생 여부(예를 들어 무언가를 표시하거나 숨기는 것을 잊는 등)를 확인해야 합니다.</Trans>
+<Trans>UI를 조작하는 것은 위와 같이 단순 고립된 예제에서는 충분히 잘 동작하지만, 더 복잡한 시스템에서는 관리하기가 기하급수적으로 어려워집니다. 다양한 form 양식으로 가득 찬 페이지를 업데이트 해야 한다고 생각해봅시다. 새로운 UI 요소나 새로운 인터랙션을 추가하려면 기존의 모든 코드를 주의 깊게 살펴 버그의 발생 여부(예를 들어,무언가를 표시하거나 숨기는 것을 잊는 등)를 확인해야 합니다.</Trans>
 
 React was built to solve this problem.
 <Trans>React는 이런 문제를 해결하기 위해 만들어졌습니다.</Trans>
@@ -212,7 +212,7 @@ First, you need to visualize all the different "states" of the UI the user might
 </TransBlock>
 
 Just like a designer, you'll want to "mock up" or create "mocks" for the different states before you add logic. For example, here is a mock for just the visual part of the form. This mock is controlled by a prop called `status` with a default value of `'empty'`:
-<Trans>디자이너와 마찬가지로 로직을 추가하기 전에 다양한 상태에 대한 “목업”을 만들고 싶을 것입니다. 예를 들어 다음은 form의 시각적 부분만을 위한 목업입니다. 이 목업은 기본값이 `'empty'`인 `status`라는 prop으로 제어됩니다:</Trans>
+<Trans>디자이너와 마찬가지로 로직을 추가하기 전에 다양한 상태에 대한 “목업”을 만들고 싶을 것입니다. 예를 들어,다음은 form의 시각적 부분만을 위한 목업입니다. 이 목업은 기본값이 `'empty'`인 `status`라는 prop으로 제어됩니다:</Trans>
 
 <Sandpack>
 
@@ -424,7 +424,7 @@ Next you'll need to represent the visual states of your component in memory with
 <Trans>다음으로 메모리에서 컴포넌트의 시각적 상태를 [`useState`](/reference/react/useState)로 표현해야합니다. 이 과정은 단순함이 핵심입니다. 각 상태 조각은 “움직이는 조각”이며, **가능한 적은 수의 “움직이는 조각”을 원합니다.** 복잡할수록 버그가 더 많이 발생합니다!</Trans>
 
 Start with the state that *absolutely must* be there. For example, you'll need to store the `answer` for the input, and the `error` (if it exists) to store the last error:
-<Trans>*반드시* 필요한 state부터 시작하세요. 예를 들어 입력에 대한 `answer`를 저장하고, 가장 마지막에 발생한 `error`(존재한다면)도 저장해야 합니다.</Trans>
+<Trans>*반드시* 필요한 state부터 시작하세요. 예를 들어,입력에 대한 `answer`를 저장하고, 가장 마지막에 발생한 `error`(존재한다면)도 저장해야 합니다.</Trans>
 
 ```js
 const [answer, setAnswer] = useState('');
@@ -451,7 +451,7 @@ Your first idea likely won't be the best, but that's ok--refactoring state is a 
 ### Step 4: Remove any non-essential state variables<Trans>비필수적인 state 변수 제거하기</Trans> {/*step-4-remove-any-non-essential-state-variables*/}
 
 You want to avoid duplication in the state content so you're only tracking what is essential. Spending a little time on refactoring your state structure will make your components easier to understand, reduce duplication, and avoid unintended meanings. Your goal is to **prevent the cases where the state in memory doesn't represent any valid UI that you'd want a user to see.** (For example, you never want to show an error message and disable the input at the same time, or the user won't be able to correct the error!)
-<Trans>state 콘텐츠의 중복을 피해 필수적인 것만 추적하고 싶을 것입니다. state 구조를 리팩토링하는 데 약간의 시간을 투자하면 컴포넌트를 더 쉽게 이해하고, 중복을 줄이며, 의도하지 않은 경우를 피할 수 있습니다. 목표는 **state가 사용자에게 보여주기를 원하는 유효한 UI를 나타내지 않는 경우를 방지**하는 것입니다. (예를 들어 오류 메세지를 표시하면서 동시에 입력을 비활성화하면 사용자는 오류를 수정할 수 없게 됩니다!)</Trans>
+<Trans>state 콘텐츠의 중복을 피해 필수적인 것만 추적하고 싶을 것입니다. state 구조를 리팩토링하는 데 약간의 시간을 투자하면 컴포넌트를 더 쉽게 이해하고, 중복을 줄이며, 의도하지 않은 경우를 피할 수 있습니다. 목표는 **state가 사용자에게 보여주기를 원하는 유효한 UI를 나타내지 않는 경우를 방지**하는 것입니다. (예를 들어,오류 메세지를 표시하면서 동시에 입력을 비활성화하면 사용자는 오류를 수정할 수 없게 됩니다!)</Trans>
 
 Here are some questions you can ask about your state variables:
 <Trans>다음은 state 변수에 대해 물어볼 수 있는 몇가지 질문입니다:</Trans>
@@ -461,7 +461,7 @@ Here are some questions you can ask about your state variables:
 * **Can you get the same information from the inverse of another state variable?** `isError` is not needed because you can check `error !== null` instead.
 
 <TransBlock>
-* **state가 모순을 야기하나요?** 예를 들어 `isTyping` 과 `isSubmitting`은 동시에 `true`일 수 없습니다. 이러한 모순은 일반적으로 state가 충분히 제약되지 않았음을 의미합니다. 두 boolean의 조합은 네 가지가 가능하지만 유효한 state는 세 가지뿐입니다. “불가능한” state를 제거하려면 세 가지 값을 하나의 status로 결합하면 됩니다: `'typing'`, `'submitting'`, `'success'`.
+* **state가 모순을 야기하나요?** 예를 들어,`isTyping` 과 `isSubmitting`은 동시에 `true`일 수 없습니다. 이러한 모순은 일반적으로 state가 충분히 제약되지 않았음을 의미합니다. 두 boolean의 조합은 네 가지가 가능하지만 유효한 state는 세 가지뿐입니다. “불가능한” state를 제거하려면 세 가지 값을 하나의 status로 결합하면 됩니다: `'typing'`, `'submitting'`, `'success'`.
 * **다른 state 변수에 이미 같은 정보가 있나요?** `isEmpty`와 `isTyping`은 동시에 `true`가 될 수 없습니다. 이를 각 state 변수로 분리하면 동기화되지 않아 버그가 발생할 위험이 있습니다. 다행히 `isEmpty`를 제거하고 대신 `answer.length === 0`으로 확인할 수 있습니다.
 * **다른 state 변수를 뒤집으면 동일한 정보를 얻을 수 있나요?** `isError`는 `error !== null`을 대신 확인할 수 있기 때문에 필요하지 않습니다.
 </TransBlock>
@@ -483,7 +483,7 @@ You know they are essential, because you can't remove any of them without breaki
 #### Eliminating “impossible” states with a reducer<Trans>reducer로 “불가능한” state 제거하기</Trans> {/*eliminating-impossible-states-with-a-reducer*/}
 
 These three variables are a good enough representation of this form's state. However, there are still some intermediate states that don't fully make sense. For example, a non-null `error` doesn't make sense when `status` is `'success'`. To model the state more precisely, you can [extract it into a reducer.](/learn/extracting-state-logic-into-a-reducer) Reducers let you unify multiple state variables into a single object and consolidate all the related logic!
-<Trans>이 세 state 변수는 이 form의 상태를 충분히 잘 표현합니다. 그러나 여전히 완전히 설명되지 않는 중간 상태가 몇 가지 있습니다. 예를 들어 null이 아닌 `error는` `status`가 `'success'`일 때는 의미가 없습니다. state를 조금 더 정확하게 모델링하려면 [reducer로 분리](/learn/extracting-state-logic-into-a-reducer)하면 됩니다. reducer를 사용하면 여러 state 변수를 하나의 객체로 통합하고 관련된 모든 로직도 합칠 수 있습니다!</Trans>
+<Trans>이 세 state 변수는 이 form의 상태를 충분히 잘 표현합니다. 그러나 여전히 완전히 설명되지 않는 중간 상태가 몇 가지 있습니다. 예를 들어,null이 아닌 `error는` `status`가 `'success'`일 때는 의미가 없습니다. state를 조금 더 정확하게 모델링하려면 [reducer로 분리](/learn/extracting-state-logic-into-a-reducer)하면 됩니다. reducer를 사용하면 여러 state 변수를 하나의 객체로 통합하고 관련된 모든 로직도 합칠 수 있습니다!</Trans>
 
 </DeepDive>
 

@@ -289,7 +289,7 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 ### Revealing content together at once<Trans>콘텐츠를 한 번에 드러내기</Trans> {/*revealing-content-together-at-once*/}
 
 By default, the whole tree inside Suspense is treated as a single unit. For example, even if *only one* of these components suspends waiting for some data, *all* of them together will be replaced by the loading indicator:
-<Trans>기본적으로 Suspense 내부의 전체 트리는 단일 단위로 취급됩니다. 예를 들어 다음 컴포넌트 중 *하나만* 데이터 대기를 위해 일시 중단하더라도 *모든* 컴포넌트가 함께 로딩 표시기로 대체됩니다:</Trans>
+<Trans>기본적으로 Suspense 내부의 전체 트리는 단일 단위로 취급됩니다. 예를 들어,다음 컴포넌트 중 *하나만* 데이터 대기를 위해 일시 중단하더라도 *모든* 컴포넌트가 함께 로딩 표시기로 대체됩니다:</Trans>
 
 ```js {2-5}
 <Suspense fallback={<Loading />}>
@@ -587,7 +587,7 @@ async function getAlbums() {
 </Sandpack>
 
 Components that load data don't have to be direct children of the Suspense boundary. For example, you can move `Biography` and `Albums` into a new `Details` component. This doesn't change the behavior. `Biography` and `Albums` share the same closest parent Suspense boundary, so their reveal is coordinated together.
-<Trans>데이터를 로드하는 컴포넌트가 Suspense 경계의 직접적인 자식일 필요는 없습니다. 예를 들어 `Biography`와 `Albums`를 새 `Details` 컴포넌트로 이동할 수도 있습니다. 이렇게 해도 동작은 달라지지 않습니다. `Biography`와 `Albums`는 가장 가까운 상위 Suspense 경계를 공유하므로 표시 여부가 함께 조정됩니다.</Trans>
+<Trans>데이터를 로드하는 컴포넌트가 Suspense 경계의 직접적인 자식일 필요는 없습니다. 예를 들어,`Biography`와 `Albums`를 새 `Details` 컴포넌트로 이동할 수도 있습니다. 이렇게 해도 동작은 달라지지 않습니다. `Biography`와 `Albums`는 가장 가까운 상위 Suspense 경계를 공유하므로 표시 여부가 함께 조정됩니다.</Trans>
 
 ```js {2,8-11}
 <Suspense fallback={<Loading />}>
@@ -611,7 +611,7 @@ function Details({ artistId }) {
 ### Revealing nested content as it loads<Trans>중첩된 콘텐츠가 로드될 때 표시하기</Trans> {/*revealing-nested-content-as-it-loads*/}
 
 When a component suspends, the closest parent Suspense component shows the fallback. This lets you nest multiple Suspense components to create a loading sequence. Each Suspense boundary's fallback will be filled in as the next level of content becomes available. For example, you can give the album list its own fallback:
-<Trans>컴포넌트가 일시 중단되면 가장 가까운 상위 Suspense 컴포넌트가 폴백을 표시합니다. 이를 통해 여러 Suspense 컴포넌트를 중첩하여 로딩 시퀀스를 만들 수 있습니다. 각 Suspense 경계의 폴백은 다음 레벨의 콘텐츠를 사용할 수 있게 되면 채워집니다. 예를 들어 앨범 목록에 자체 폴백을 지정할 수 있습니다:</Trans>
+<Trans>컴포넌트가 일시 중단되면 가장 가까운 상위 Suspense 컴포넌트가 폴백을 표시합니다. 이를 통해 여러 Suspense 컴포넌트를 중첩하여 로딩 시퀀스를 만들 수 있습니다. 각 Suspense 경계의 폴백은 다음 레벨의 콘텐츠를 사용할 수 있게 되면 채워집니다. 예를 들어,앨범 목록에 자체 폴백을 지정할 수 있습니다:</Trans>
 
 ```js {3,7}
 <Suspense fallback={<BigSpinner />}>
@@ -2159,7 +2159,7 @@ main {
 </Sandpack>
 
 A transition doesn't wait for *all* content to load. It only waits long enough to avoid hiding already revealed content. For example, the website `Layout` was already revealed, so it would be bad to hide it behind a loading spinner. However, the nested `Suspense` boundary around `Albums` is new, so the transition doesn't wait for it.
-<Trans>트랜지션은 *모든* 콘텐츠가 로드될 때까지 기다리지 않습니다. 오직 이미 표시된 콘텐츠가 숨겨지지 않을 만큼만 기다립니다. 예를 들어 웹사이트 `Layout`이 이미 표시된 경우 이를 다시 로딩 스피너 뒤로 숨기는 것은 좋지 않을 것입니다. 그러나 `Albums` 주위의 중첩된 `Suspense` 경계는 새로운 것이므로, 트랜지션은 이를 기다리지 않습니다.</Trans>
+<Trans>트랜지션은 *모든* 콘텐츠가 로드될 때까지 기다리지 않습니다. 오직 이미 표시된 콘텐츠가 숨겨지지 않을 만큼만 기다립니다. 예를 들어,웹사이트 `Layout`이 이미 표시된 경우 이를 다시 로딩 스피너 뒤로 숨기는 것은 좋지 않을 것입니다. 그러나 `Albums` 주위의 중첩된 `Suspense` 경계는 새로운 것이므로, 트랜지션은 이를 기다리지 않습니다.</Trans>
 
 <Note>
 
@@ -2562,7 +2562,7 @@ Imagine you're navigating within a user's profile page, and something suspends. 
 <Trans>어떤 사용자의 프로필 페이지를 둘러보던 중에 무언가가 일시 중단되었다고 가정해 봅시다. 해당 업데이트가 트랜지션으로 감싸져 있으면 이미 표시된 콘텐츠에 대한 폴백이 촉발되지 않을 것입니다. 이는 예상되는 동작입니다.</Trans>
 
 However, now imagine you're navigating between two different user profiles. In that case, it makes sense to show the fallback. For example, one user's timeline is *different content* from another user's timeline. By specifying a `key`, you ensure that React treats different users' profiles as different components, and resets the Suspense boundaries during navigation. Suspense-integrated routers should do this automatically.
-<Trans>이번에는 두 개의 서로 다른 사용자 프로필 사이를 탐색하고 있다고 가정해 봅시다. 이 경우에는 폴백을 표시하는 것이 좋을 것입니다. 예를 들어 한 사용자의 타임라인은 다른 사용자의 타임라인과 *다른 콘텐츠*입니다. `Key`를 지정하면 React가 서로 다른 사용자의 프로필을 서로 다른 컴포넌트로 취급하고 탐색 중에 Suspense 경계를 재설정하도록 할 수 있습니다. Suspense 통합 라우터는 이 작업을 자동으로 수행해야 합니다.</Trans>
+<Trans>이번에는 두 개의 서로 다른 사용자 프로필 사이를 탐색하고 있다고 가정해 봅시다. 이 경우에는 폴백을 표시하는 것이 좋을 것입니다. 예를 들어,한 사용자의 타임라인은 다른 사용자의 타임라인과 *다른 콘텐츠*입니다. `Key`를 지정하면 React가 서로 다른 사용자의 프로필을 서로 다른 컴포넌트로 취급하고 탐색 중에 Suspense 경계를 재설정하도록 할 수 있습니다. Suspense 통합 라우터는 이 작업을 자동으로 수행해야 합니다.</Trans>
 
 ---
 

@@ -68,7 +68,7 @@ Most of the time, `flushSync` can be avoided. Use `flushSync` as last resort.
 <Trans>`flushSync`는 보류 중인 Effect들을 실행하고, 반환하기 전에 포함된 모든 업데이트를 동기적으로 적용할 수 있습니다.</Trans>
 
 * `flushSync` may flush updates outside the callback when necessary to flush the updates inside the callback. For example, if there are pending updates from a click, React may flush those before flushing the updates inside the callback.
-<Trans>`flushSync`는 콜백 내부의 업데이트를 flush하기 위해, 필요한 경우 콜백 외부의 업데이트를 flush할 수도 있습니다. 예를 들어 클릭으로 인해 보류 중인 업데이트가 있는 경우, React는 콜백 내부의 업데이트를 flush하기 전에 해당 업데이트를 먼저 flush할 수 있습니다.</Trans>
+<Trans>`flushSync`는 콜백 내부의 업데이트를 flush하기 위해, 필요한 경우 콜백 외부의 업데이트를 flush할 수도 있습니다. 예를 들어,클릭으로 인해 보류 중인 업데이트가 있는 경우, React는 콜백 내부의 업데이트를 flush하기 전에 해당 업데이트를 먼저 flush할 수 있습니다.</Trans>
 
 ---
 

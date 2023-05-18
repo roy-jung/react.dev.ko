@@ -127,7 +127,7 @@ An app fully built with React will usually not have any calls to `root.unmount`.
 <Trans>온전히 React만으로 작성된 앱에는 일반적으로 `root.unmount`에 대한 호출이 없습니다.</Trans>
 
 This is mostly useful if your React root's DOM node (or any of its ancestors) may get removed from the DOM by some other code. For example, imagine a jQuery tab panel that removes inactive tabs from the DOM. If a tab gets removed, everything inside it (including the React roots inside) would get removed from the DOM as well. In that case, you need to tell React to "stop" managing the removed root's content by calling `root.unmount`. Otherwise, the components inside the removed root won't know to clean up and free up global resources like subscriptions.
-<Trans>이 함수는 React 루트의 DOM 노드(또는 그 조상 노드)가 다른 코드에 의해 DOM에서 제거될 수 있는 경우에 주로 유용합니다. 예를 들어 DOM에서 비활성 탭을 제거하는 jQuery 탭 패널을 상상해 보세요. 탭이 제거되면 그 안에 있는 모든 것(내부의 React 루트를 포함)도 DOM에서 제거됩니다. 이 경우 `root.unmount`를 호출하여 제거된 루트의 콘텐츠 관리를 "중지"하도록 React에 지시해야 합니다. 그렇지 않으면 제거된 루트 내부의 컴포넌트는 구독과 같은 글로벌 리소스를 정리 및 확보하지 않은 채로 머물게 됩니다.</Trans>
+<Trans>이 함수는 React 루트의 DOM 노드(또는 그 조상 노드)가 다른 코드에 의해 DOM에서 제거될 수 있는 경우에 주로 유용합니다. 예를 들어,DOM에서 비활성 탭을 제거하는 jQuery 탭 패널을 상상해 보세요. 탭이 제거되면 그 안에 있는 모든 것(내부의 React 루트를 포함)도 DOM에서 제거됩니다. 이 경우 `root.unmount`를 호출하여 제거된 루트의 콘텐츠 관리를 "중지"하도록 React에 지시해야 합니다. 그렇지 않으면 제거된 루트 내부의 컴포넌트는 구독과 같은 글로벌 리소스를 정리 및 확보하지 않은 채로 머물게 됩니다.</Trans>
 
 Calling `root.unmount` will unmount all the components in the root and "detach" React from the root DOM node, including removing any event handlers or state in the tree. 
 <Trans>`root.unmount`를 호출하면 루트에 있는 모든 컴포넌트가 unmount되고, 트리상의 이벤트 핸들러나 state가 제거되며, 루트 DOM 노드에서 React가 "분리"됩니다</Trans>
@@ -428,7 +428,7 @@ root.render(<App />);
 ```
 
 For example, if `domNode` is `null`, it means that [`getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) returned `null`. This will happen if there is no node in the document with the given ID at the time of your call. There may be a few reasons for it:
-<Trans>예를 들어 `domNode`가 `null`이면 [`getElementById`](https://developer.mozilla.org/ko/docs/Web/API/Document/getElementById) 가 `null`을 반환했음을 의미합니다. 이는 호출 시점에 문서에 지정된 ID를 가진 노드가 없는 경우에 발생합니다. 몇 가지 이유가 있을 수 있습니다.</Trans>
+<Trans>예를 들어,`domNode`가 `null`이면 [`getElementById`](https://developer.mozilla.org/ko/docs/Web/API/Document/getElementById) 가 `null`을 반환했음을 의미합니다. 이는 호출 시점에 문서에 지정된 ID를 가진 노드가 없는 경우에 발생합니다. 몇 가지 이유가 있을 수 있습니다.</Trans>
 
 1. The ID you're looking for might differ from the ID you used in the HTML file. Check for typos!
 <Trans outdent>찾고자 하는 ID가 HTML 파일에서 사용한 ID와 다를 수 있습니다. 오타가 있는지 확인하세요!</Trans>

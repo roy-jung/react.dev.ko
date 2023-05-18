@@ -37,7 +37,7 @@ Components with many state updates spread across many event handlers can get ove
 ## Consolidate state logic with a reducer<Trans>reducer로 state 로직 통합하기</Trans> {/*consolidate-state-logic-with-a-reducer*/}
 
 As your components grow in complexity, it can get harder to see at a glance all the different ways in which a component's state gets updated. For example, the `TaskApp` component below holds an array of `tasks` in state and uses three different event handlers to add, remove, and edit tasks:
-<Trans>컴포넌트가 복잡해지면 컴포넌트의 state가 업데이트되는 다양한 경우를 한눈에 파악하기 어려워질 수 있습니다. 예를 들어 아래의 `TaskApp` 컴포넌트는 state에 `tasks` 배열을 보유하고 있으며, 세 가지의 이벤트 핸들러를 사용하여 task를 추가, 제거 및 수정합니다:</Trans>
+<Trans>컴포넌트가 복잡해지면 컴포넌트의 state가 업데이트되는 다양한 경우를 한눈에 파악하기 어려워질 수 있습니다. 예를 들어,아래의 `TaskApp` 컴포넌트는 state에 `tasks` 배열을 보유하고 있으며, 세 가지의 이벤트 핸들러를 사용하여 task를 추가, 제거 및 수정합니다:</Trans>
 
 <Sandpack>
 
@@ -970,7 +970,7 @@ Keep these two tips in mind when writing reducers:
 <Trans>**reducer는 반드시 순수해야 합니다.** [state 설정 함수](/learn/queueing-a-series-of-state-updates)와 비슷하게, reducer는 렌더링 중에 실행됩니다! (action은 다음 렌더링까지 대기합니다.) 즉, reducer는 [반드시 순수](/learn/keeping-components-pure)해야 합니다. 즉, 입력 값이 같다면 결과 값도 항상 같아야 합니다. 요청을 보내거나 timeout을 스케쥴링하거나 사이드 이펙트(컴포넌트 외부에 영향을 미치는 작업)을 수행해서는 안 됩니다. reducer는 [객체](/learn/updating-objects-in-state) 및 [배열](/learn/updating-arrays-in-state)을 변이 없이 업데이트해야 합니다.</Trans>
 
 - **Each action describes a single user interaction, even if that leads to multiple changes in the data.** For example, if a user presses "Reset" on a form with five fields managed by a reducer, it makes more sense to dispatch one `reset_form` action rather than five separate `set_field` actions. If you log every action in a reducer, that log should be clear enough for you to reconstruct what interactions or responses happened in what order. This helps with debugging!
-<Trans>**각 action은 여러 데이터가 변경되더라도, 하나의 사용자 상호작용을 설명해야 합니다.** 예를 들어 사용자가 reducer가 관리하는 5개의 필드가 있는 양식에서 '재설정'을 누른 경우, 5개의 개별 `set_field action`보다는 하나의 `reset_form action`을 전송하는 것이 더 합리적입니다. 모든 action을 reducer에 기록하면 어떤 상호작용이나 응답이 어떤 순서로 일어났는지 재구성할 수 있을 만큼 로그가 명확해야 합니다. 이는 디버깅에 도움이 됩니다!</Trans>
+<Trans>**각 action은 여러 데이터가 변경되더라도, 하나의 사용자 상호작용을 설명해야 합니다.** 예를 들어,사용자가 reducer가 관리하는 5개의 필드가 있는 양식에서 '재설정'을 누른 경우, 5개의 개별 `set_field action`보다는 하나의 `reset_form action`을 전송하는 것이 더 합리적입니다. 모든 action을 reducer에 기록하면 어떤 상호작용이나 응답이 어떤 순서로 일어났는지 재구성할 수 있을 만큼 로그가 명확해야 합니다. 이는 디버깅에 도움이 됩니다!</Trans>
 
 ## Writing concise reducers with Immer<Trans>Immer를 사용하여 간결한 reducer 작성하기</Trans> {/*writing-concise-reducers-with-immer*/}
 

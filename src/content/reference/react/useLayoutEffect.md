@@ -86,7 +86,7 @@ Most components don't need to know their position and size on the screen to deci
 <Trans>대부분의 컴포넌트는 무엇을 렌더링할지 결정하기 위해 화면에서의 위치와 크기를 알 필요가 없습니다. 일부 JSX만 반환하기 때문입니다. 그런 다음 브라우저는 해당 컴포넌트의 *레이아웃*(위치 및 크기)을 계산하고 화면을 다시 그립니다.</Trans>
 
 Sometimes, that's not enough. Imagine a tooltip that appears next to some element on hover. If there's enough space, the tooltip should appear above the element, but if it doesn't fit, it should appear below. In order to render the tooltip at the right final position, you need to know its height (i.e. whether it fits at the top).
-<Trans>때론 그것만으로는 충분하지 않을 수 있습니다. 마우스오버 시 요소 옆에 툴팁을 표시하는 것을 상상해 보세요. 공간이 충분하면 툴팁이 요소 위에 표시되어야 하지만, 공간이 충분하지 않으면 아래에 표시되어야 합니다. 툴팁을 올바른 최종 위치에 렌더링하려면 툴팁의 높이(즉 상단에 표시하기에 충분한지 여부)를 알아야 합니다.</Trans>
+<Trans>때론 그것만으로는 충분하지 않을 수 있습니다. 마우스오버 시 요소 옆에 툴팁을 표시하는 것을 상상해 보세요. 공간이 충분하면 툴팁이 요소 위에 표시되어야 하지만, 공간이 충분하지 않으면 아래에 표시되어야 합니다. 툴팁을 올바른 최종 위치에 렌더링하려면 툴팁의 높이(즉,상단에 표시하기에 충분한지 여부)를 알아야 합니다.</Trans>
 
 To do this, you need to render in two passes:
 <Trans>이렇게 하려면 두 번의 패스로 렌더링해야 합니다:</Trans>

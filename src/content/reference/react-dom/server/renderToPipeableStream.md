@@ -53,7 +53,7 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 - `reactNode`: A React node you want to render to HTML. For example, a JSX element like `<App />`. It is expected to represent the entire document, so the `App` component should render the `<html>` tag.
-<Trans>`reactNode`: HTML로 렌더링하려는 React 노드. 예를 들어 `<App />`과 같은 JSX 엘리먼트입니다. 전체 문서를 나타낼 것이므로, `App` 컴포넌트는 `<html>` 태그를 렌더링해야 합니다.</Trans>
+<Trans>`reactNode`: HTML로 렌더링하려는 React 노드. 예를 들어,`<App />`과 같은 JSX 엘리먼트입니다. 전체 문서를 나타낼 것이므로, `App` 컴포넌트는 `<html>` 태그를 렌더링해야 합니다.</Trans>
 
 - **optional** `options`: An object with streaming options.
 <Trans outdent>**선택적** `options`: 스트리밍 옵션이 있는 객체.</Trans>
@@ -130,7 +130,7 @@ Along with the <CodeStep step={1}>root component</CodeStep>, you need to provide
 <Trans><CodeStep step={1}>root component</CodeStep>와 함께 <CodeStep step={2}>bootstrap `<script>` paths</CodeStep> 경로 목록을 제공해야 합니다. 루트 컴포넌트는 <strong>루트 `<html>` 태그를 포함한 전체 문서를 반환해야 합니다.</strong></Trans>
 
 For example, it might look like this:
-<Trans>예를 들어 아래와 같을 것입니다: </Trans>
+<Trans>예를 들어,아래와 같을 것입니다: </Trans>
 
 ```js [[1, 1, "App"]]
 export default function App() {
@@ -179,7 +179,7 @@ This will attach event listeners to the server-generated HTML and make it intera
 #### Reading CSS and JS asset paths from the build output <Trans>빌드 출력에서 CSS 및 JS asset 경로 읽기</Trans> {/*reading-css-and-js-asset-paths-from-the-build-output*/}
 
 The final asset URLs (like JavaScript and CSS files) are often hashed after the build. For example, instead of `styles.css` you might end up with `styles.123456.css`. Hashing static asset filenames guarantees that every distinct build of the same asset will have a different filename. This is useful because it lets you safely enable long-term caching for static assets: a file with a certain name would never change content.
-<Trans>최종 에셋 URL(예: JavaScript 및 CSS 파일)은 빌드 후에 해시 처리되는 경우가 많습니다. 예를 들어 `styles.css` 대신 `styles.123456.css`로 끝날 수 있습니다. 정적 에셋 파일명을 해시하면 동일한 에셋의 모든 개별 빌드에 다른 파일명이 지정됩니다. 이는 정적 자산에 대한 장기 캐싱을 안전하게 활성화할 수 있기 때문에 유용합니다. 특정 이름을 가진 파일은 콘텐츠를 변경하지 않습니다.</Trans>
+<Trans>최종 에셋 URL(예: JavaScript 및 CSS 파일)은 빌드 후에 해시 처리되는 경우가 많습니다. 예를 들어,`styles.css` 대신 `styles.123456.css`로 끝날 수 있습니다. 정적 에셋 파일명을 해시하면 동일한 에셋의 모든 개별 빌드에 다른 파일명이 지정됩니다. 이는 정적 자산에 대한 장기 캐싱을 안전하게 활성화할 수 있기 때문에 유용합니다. 특정 이름을 가진 파일은 콘텐츠를 변경하지 않습니다.</Trans>
 
 However, if you don't know the asset URLs until after the build, there's no way for you to put them in the source code. For example, hardcoding `"/styles.css"` into JSX like earlier wouldn't work. To keep them out of your source code, your root component can read the real filenames from a map passed as a prop:
 <Trans>하지만 빌드가 끝날 때까지 에셋 URL을 모르는 경우 소스 코드에 넣을 방법이 없습니다. 예를 들어, 앞서와 같이 JSX에 `"/styles.css"`를 하드코딩하면 작동하지 않을 것입니다. 소스 코드에 포함되지 않으면서 빌드 시점에 에셋을 로드하기 위해, 루트 컴포넌트가 prop으로 전달된 맵에서 실제 파일명을 읽는 방식을 생각해 봅시다:</Trans>
@@ -263,7 +263,7 @@ Both client and server render `App` with the same `assetMap` prop, so there are 
 ### Streaming more content as it loads<Trans>콘텐츠가 로드되는 동안 더 많은 콘텐츠 스트리밍하기</Trans> {/*streaming-more-content-as-it-loads*/}
 
 Streaming allows the user to start seeing the content even before all the data has loaded on the server. For example, consider a profile page that shows a cover, a sidebar with friends and photos, and a list of posts:
-<Trans>스트리밍을 사용하면 모든 데이터가 서버에 로드되기 전에도 콘텐츠를 보기 시작할 수 있습니다. 예를 들어 표지와 친구 및 사진이 있는 사이드바나, 게시물 목록이 표시되는 프로필 페이지를 생각해 보세요:</Trans>
+<Trans>스트리밍을 사용하면 모든 데이터가 서버에 로드되기 전에도 콘텐츠를 보기 시작할 수 있습니다. 예를 들어,표지와 친구 및 사진이 있는 사이드바나, 게시물 목록이 표시되는 프로필 페이지를 생각해 보세요:</Trans>
 
 ```js
 function ProfilePage() {

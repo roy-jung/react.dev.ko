@@ -7,7 +7,7 @@ translators: [정재남]
 <Intro>
 
 Some of your components may need to control and synchronize with systems outside of React. For example, you might need to focus an input using the browser API, play and pause a video player implemented without React, or connect and listen to messages from a remote server. In this chapter, you'll learn the escape hatches that let you "step outside" React and connect to external systems. Most of your application logic and data flow should not rely on these features.
-<Trans>컴포넌트 중 일부는 React 외부의 시스템을 제어하고 동기화해야 할 수 있습니다. 예를 들어 브라우저 API를 사용해 input에 초점을 맞추거나, React 없이 구현된 비디오 플레이어를 재생 및 일시정지하거나, 원격 서버에 연결해서 메시지를 수신해야 할 수 있습니다. 이 장에서는 React의 "외부"로 나가서 외부 시스템에 연결할 수 있는 탈출구를 배우게 됩니다. 대부분의 애플리케이션 로직과 데이터 흐름은 이러한 기능에 의존해서는 안 됩니다.</Trans>
+<Trans>컴포넌트 중 일부는 React 외부의 시스템을 제어하고 동기화해야 할 수 있습니다. 예를 들어,브라우저 API를 사용해 input에 초점을 맞추거나, React 없이 구현된 비디오 플레이어를 재생 및 일시정지하거나, 원격 서버에 연결해서 메시지를 수신해야 할 수 있습니다. 이 장에서는 React의 "외부"로 나가서 외부 시스템에 연결할 수 있는 탈출구를 배우게 됩니다. 대부분의 애플리케이션 로직과 데이터 흐름은 이러한 기능에 의존해서는 안 됩니다.</Trans>
 
 </Intro>
 
@@ -84,7 +84,7 @@ Read [**Referencing Values with Refs**](/learn/referencing-values-with-refs) to 
 ## Manipulating the DOM with Refs<Trans>ref로 DOM 조작하기</Trans> {/*manipulating-the-dom-with-refs*/}
 
 React automatically updates the DOM to match your render output, so your components won't often need to manipulate it. However, sometimes you might need access to the DOM elements managed by React—for example, to focus a node, scroll to it, or measure its size and position. There is no built-in way to do those things in React, so you will need a ref to the DOM node. For example, clicking the button will focus the input using a ref:
-<Trans>React는 렌더링 출력과 일치하도록 DOM을 자동으로 업데이트하므로 컴포넌트에서 자주 조작할 필요가 없습니다. 하지만 때로는 노드에 초점을 맞추거나 스크롤하거나 크기와 위치를 측정하기 위해 React가 관리하는 DOM 요소에 접근해야 할 수도 있습니다. React에는 이러한 작업을 수행할 수 있는 빌트인된 방법이 없으므로 DOM 노드에 대한 ref(참조)가 필요합니다. 예를 들어 버튼을 클릭하면 ref를 사용해 input에 초점을 맞춥니다:</Trans>
+<Trans>React는 렌더링 출력과 일치하도록 DOM을 자동으로 업데이트하므로 컴포넌트에서 자주 조작할 필요가 없습니다. 하지만 때로는 노드에 초점을 맞추거나 스크롤하거나 크기와 위치를 측정하기 위해 React가 관리하는 DOM 요소에 접근해야 할 수도 있습니다. React에는 이러한 작업을 수행할 수 있는 빌트인된 방법이 없으므로 DOM 노드에 대한 ref(참조)가 필요합니다. 예를 들어,버튼을 클릭하면 ref를 사용해 input에 초점을 맞춥니다:</Trans>
 
 <Sandpack>
 
@@ -121,7 +121,7 @@ Read [**Manipulating the DOM with Refs**](/learn/manipulating-the-dom-with-refs)
 ## Synchronizing with Effects<Trans>Effect와 동기화하기</Trans> {/*synchronizing-with-effects*/}
 
 Some components need to synchronize with external systems. For example, you might want to control a non-React component based on the React state, set up a server connection, or send an analytics log when a component appears on the screen. Unlike event handlers, which let you handle particular events, *Effects* let you run some code after rendering. Use them to synchronize your component with a system outside of React.
-<Trans>일부 컴포넌트는 외부 시스템과 동기화해야 합니다. 예를 들어 React state에 따라 비 React 컴포넌트를 제어하거나, 서버 연결을 설정하거나, 컴포넌트가 화면에 표시될 때 분석 로그를 보내야 할 수 있습니다. 특정 이벤트를 처리할 수 있는 이벤트 핸들러와 달리 *Effect*를 사용하면 렌더링 후 일부 코드를 실행할 수 있습니다. 이를 사용해 컴포넌트를 React 외부 시스템과 동기화할 수 있습니다.</Trans>
+<Trans>일부 컴포넌트는 외부 시스템과 동기화해야 합니다. 예를 들어,React state에 따라 비 React 컴포넌트를 제어하거나, 서버 연결을 설정하거나, 컴포넌트가 화면에 표시될 때 분석 로그를 보내야 할 수 있습니다. 특정 이벤트를 처리할 수 있는 이벤트 핸들러와 달리 *Effect*를 사용하면 렌더링 후 일부 코드를 실행할 수 있습니다. 이를 사용해 컴포넌트를 React 외부 시스템과 동기화할 수 있습니다.</Trans>
 
 Press Play/Pause a few times and see how the video player stays synchronized to the `isPlaying` prop value:
 <Trans>재생/일시정지를 몇 번 누르고 비디오 플레이어가 `isPlaying` prop 값에 어떻게 동기화되는지 확인해 보세요:</Trans>

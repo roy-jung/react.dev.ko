@@ -57,7 +57,7 @@ Sometimes this isn't enough. Consider a `ChatRoom` component that must connect t
 <Note>
 
 Here and later in this text, capitalized "Effect" refers to the React-specific definition above, i.e. a side effect caused by rendering. To refer to the broader programming concept, we'll say "side effect".
-<Trans>이 글에서 대문자로 시작하는 “Effect”는 위의 React에 한정된 정의, 즉 렌더링으로 인해 발생하는 사이드 이펙트를 나타냅니다. 더 넓은 프로그래밍 개념을 언급할 때는 "사이드 이펙트"라고 하겠습니다.</Trans>
+<Trans>이 글에서 대문자로 시작하는 “Effect”는 위의 React에 한정된 정의, 즉,렌더링으로 인해 발생하는 사이드 이펙트를 나타냅니다. 더 넓은 프로그래밍 개념을 언급할 때는 "사이드 이펙트"라고 하겠습니다.</Trans>
 
 </Note>
 
@@ -74,9 +74,9 @@ To write an Effect, follow these three steps:
 1. **Declare an Effect.** By default, your Effect will run after every render.
   <Trans>**Effect를 선언합니다.** 기본적으로 Effect는 모든 렌더링 후에 실행됩니다.</Trans>
 2. **Specify the Effect dependencies.** Most Effects should only re-run *when needed* rather than after every render. For example, a fade-in animation should only trigger when a component appears. Connecting and disconnecting to a chat room should only happen when the component appears and disappears, or when the chat room changes. You will learn how to control this by specifying *dependencies.*
-  <Trans>**Effect의 의존성을 명시합니다.** 대부분의 Effect는 렌더링 할 때마다가 아니라 *필요할 때만* 다시 실행해야 합니다. 예를 들어 페이드 인 애니메이션은 컴포넌트가 나타날 때만 발동되어야 합니다. 대화방 연결 및 해제는 컴포넌트가 나타났다가 사라지거나 대화방이 변경될 때만 발생해야합니다. *의존성*을 지정하여 이를 제어하는 방법은 이 글 아래에서 다룹니다.</Trans>
+  <Trans>**Effect의 의존성을 명시합니다.** 대부분의 Effect는 렌더링 할 때마다가 아니라 *필요할 때만* 다시 실행해야 합니다. 예를 들어,페이드 인 애니메이션은 컴포넌트가 나타날 때만 발동되어야 합니다. 대화방 연결 및 해제는 컴포넌트가 나타났다가 사라지거나 대화방이 변경될 때만 발생해야합니다. *의존성*을 지정하여 이를 제어하는 방법은 이 글 아래에서 다룹니다.</Trans>
 3. **Add cleanup if needed.** Some Effects need to specify how to stop, undo, or clean up whatever they were doing. For example, "connect" needs "disconnect", "subscribe" needs "unsubscribe", and "fetch" needs either "cancel" or "ignore". You will learn how to do this by returning a *cleanup function*.
-  <Trans>**필요한 경우 클린업을 추가합니다.** 일부 Effect는 수행중이던 작업을 중지, 취소 또는 정리하는 방법을 명시해야합니다. 예를 들어 “connect”에는 “disconnect”가 필요하고 “subscribe”에는 “unsubscribe”가 필요하며 “fetch”에는 “cancel”또는 “ignore”가 필요합니다. *클린업 함수*를 반환하여 이를 수행하는 방법은 이 글 아래에서 다룹니다.</Trans>
+  <Trans>**필요한 경우 클린업을 추가합니다.** 일부 Effect는 수행중이던 작업을 중지, 취소 또는 정리하는 방법을 명시해야합니다. 예를 들어,“connect”에는 “disconnect”가 필요하고 “subscribe”에는 “unsubscribe”가 필요하며 “fetch”에는 “cancel”또는 “ignore”가 필요합니다. *클린업 함수*를 반환하여 이를 수행하는 방법은 이 글 아래에서 다룹니다.</Trans>
 
 Let's look at each of these steps in detail.
 <Trans>각 단계를 자세히 살펴보겠습니다.</Trans>
@@ -284,7 +284,7 @@ By default, Effects run after *every* render. Often, this is **not what you want
 
 <TransBlock>
 - 때로는 속도가 느릴 수 있습니다. 외부 시스템과의 동기화가 항상 즉각적인 것은 아니므로 꼭 필요한 경우가 아니라면 동기화를 건너뛰는 것이 좋습니다. 예를 들어, 키 입력 시마다 채팅 서버에 다시 연결하고 싶지 않을 수 있습니다.
-- 때로는 잘못된 경우가 있습니다. 예를 들어 키 입력 시마다 컴포넌트 페이드인 애니메이션을 발동시키고 싶지 않을 수 있습니다. 애니메이션은 컴포넌트가 처음 나타날 때 한 번만 재생되어야 합니다.
+- 때로는 잘못된 경우가 있습니다. 예를 들어,키 입력 시마다 컴포넌트 페이드인 애니메이션을 발동시키고 싶지 않을 수 있습니다. 애니메이션은 컴포넌트가 처음 나타날 때 한 번만 재생되어야 합니다.
 </TransBlock>
 
 To demonstrate the issue, here is the previous example with a few `console.log` calls and a text input that updates the parent component's state. Notice how typing causes the Effect to re-run:
@@ -527,7 +527,7 @@ The [`set` functions](/reference/react/useState#setstate) returned by `useState`
 <Trans>`useState`가 반환하는 [`설정자` 함수](/reference/react/useState#setstate)도 안정된 정체성을 가지므로 의존성에서 생략되는 경우가 많습니다. linter를 통해 오류 없이 의존성을 생략할 수 있다면 그렇게 해도 안전합니다.</Trans>
 
 Omitting always-stable dependencies only works when the linter can "see" that the object is stable. For example, if `ref` was passed from a parent component, you would have to specify it in the dependency array. However, this is good because you can't know whether the parent component always passes the same ref, or passes one of several refs conditionally. So your Effect _would_ depend on which ref is passed.
-<Trans>언제나 안정적인 의존성을 배제하는 것은 linter가 객체가 안정적이라는 것을 "확인할" 수 있을 때에만 잘 동작합니다. 예를 들어 부모 컴포넌트에서 `ref`가 전달된 경우 의존성 배열에 이를 지정해야 합니다. 부모 컴포넌트가 항상 동일한 ref를 전달하는지, 아니면 여러 ref 중 하나를 조건부로 전달하는지 알 수 없기 때문에 이 방법이 좋습니다. 이 경우 Effect는 어떤 ref가 전달되는지에 따라 달라지게 됩니다.</Trans>
+<Trans>언제나 안정적인 의존성을 배제하는 것은 linter가 객체가 안정적이라는 것을 "확인할" 수 있을 때에만 잘 동작합니다. 예를 들어,부모 컴포넌트에서 `ref`가 전달된 경우 의존성 배열에 이를 지정해야 합니다. 부모 컴포넌트가 항상 동일한 ref를 전달하는지, 아니면 여러 ref 중 하나를 조건부로 전달하는지 알 수 없기 때문에 이 방법이 좋습니다. 이 경우 Effect는 어떤 ref가 전달되는지에 따라 달라지게 됩니다.</Trans>
 
 </DeepDive>
 
@@ -557,7 +557,7 @@ useEffect(() => {
 ```
 
 **The code inside the Effect does not use any props or state, so your dependency array is `[]` (empty). This tells React to only run this code when the component "mounts", i.e. appears on the screen for the first time.**
-<Trans>**Effect 내부의 코드는 props나 state를 사용하지 않으므로 의존성 배열은 `[]`(비어 있음)입니다. 이는 컴포넌트가 "마운트"될 때, 즉 화면에 처음 나타날 때만 이 코드를 실행하도록 React에 지시합니다.**</Trans>
+<Trans>**Effect 내부의 코드는 props나 state를 사용하지 않으므로 의존성 배열은 `[]`(비어 있음)입니다. 이는 컴포넌트가 "마운트"될 때, 즉,화면에 처음 나타날 때만 이 코드를 실행하도록 React에 지시합니다.**</Trans>
 
 Let's try running this code:
 <Trans>다음 코드를 실행해보세요: </Trans>
@@ -688,7 +688,7 @@ Most of the Effects you'll write will fit into one of the common patterns below.
 ### Controlling non-React widgets<Trans>React가 아닌 위젯 제어하기</Trans> {/*controlling-non-react-widgets*/}
 
 Sometimes you need to add UI widgets that aren't written to React. For example, let's say you're adding a map component to your page. It has a `setZoomLevel()` method, and you'd like to keep the zoom level in sync with a `zoomLevel` state variable in your React code. Your Effect would look similar to this:
-<Trans>때론 React로 작성하지 않은 UI 위젯을 추가해야 하는 경우가 있습니다. 예를 들어 페이지에 지도 컴포넌트를 추가한다고 가정해 보겠습니다. 여기에는 `setZoomLevel()` 메서드가 있으며, 확대/축소 수준을 React 코드의 `zoomLevel` state 변수와 동기화하고 싶습니다. Effect는 다음과 비슷할 것입니다:</Trans>
+<Trans>때론 React로 작성하지 않은 UI 위젯을 추가해야 하는 경우가 있습니다. 예를 들어,페이지에 지도 컴포넌트를 추가한다고 가정해 보겠습니다. 여기에는 `setZoomLevel()` 메서드가 있으며, 확대/축소 수준을 React 코드의 `zoomLevel` state 변수와 동기화하고 싶습니다. Effect는 다음과 비슷할 것입니다:</Trans>
 
 
 ```js
@@ -702,7 +702,7 @@ Note that there is no cleanup needed in this case. In development, React will ca
 <Trans>이 경우 클린업이 필요하지 않습니다. 개발 환경에서 React는 Effect를 두 번 호출하지만 동일한 값으로 `setZoomLevel`을 두 번 호출해도 아무 작업도 수행하지 않기 때문에 문제가 되지 않습니다. 약간 느릴 수는 있지만 상용 환경에서는 불필요하게 다시 마운트되지 않으므로 문제가 되지 않습니다.</Trans>
 
 Some APIs may not allow you to call them twice in a row. For example, the [`showModal`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) method of the built-in [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) element throws if you call it twice. Implement the cleanup function and make it close the dialog:
-<Trans>일부 API는 연속으로 두 번 호출하는 것을 허용하지 않을 수 있습니다. 예를 들어 브라우저의 빌트인 요소인 [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)의 [`showModal`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) 메서드는 두 번 호출하면 에러를 던집니다. 클린업 함수를 구현하고 대화 상자를 닫도록 합시다:</Trans>
+<Trans>일부 API는 연속으로 두 번 호출하는 것을 허용하지 않을 수 있습니다. 예를 들어,브라우저의 빌트인 요소인 [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)의 [`showModal`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) 메서드는 두 번 호출하면 에러를 던집니다. 클린업 함수를 구현하고 대화 상자를 닫도록 합시다:</Trans>
 
 ```js {4}
 useEffect(() => {
@@ -793,7 +793,7 @@ function TodoList() {
 ```
 
 This will not only improve the development experience, but also make your application feel faster. For example, the user pressing the Back button won't have to wait for some data to load again because it will be cached. You can either build such a cache yourself or use one of the many alternatives to manual fetching in Effects.
-<Trans>이렇게 하면 개발 경험이 향상될 뿐만 아니라 애플리케이션이 더 빠르게 느껴집니다. 예를 들어 Back 버튼을 누르는 사용자는 일부 데이터가 캐시되기 때문에 다시 로드될 때까지 기다릴 필요가 없습니다. 이러한 캐시는 직접 구축할 수도 있고, Effect에서 수동으로 페칭하는 기능을 대체하는 많은 대안 중 하나를 사용할 수도 있습니다.</Trans>
+<Trans>이렇게 하면 개발 경험이 향상될 뿐만 아니라 애플리케이션이 더 빠르게 느껴집니다. 예를 들어,Back 버튼을 누르는 사용자는 일부 데이터가 캐시되기 때문에 다시 로드될 때까지 기다릴 필요가 없습니다. 이러한 캐시는 직접 구축할 수도 있고, Effect에서 수동으로 페칭하는 기능을 대체하는 많은 대안 중 하나를 사용할 수도 있습니다.</Trans>
 
 <DeepDive>
 
@@ -803,11 +803,11 @@ Writing `fetch` calls inside Effects is a [popular way to fetch data](https://ww
 <Trans>Effect 내에 `fetch` 호출을 작성하는 것은 특히 클라이언트 측에서만 작성된 앱에서 [데이터를 페치하는 인기 있는 방법입니다.](https://www.robinwieruch.de/react-hooks-fetch-data/) 그러나 이것은 매우 수동적인 접근 방식이며 상당한 단점이 있습니다.</Trans>
 
 - **Effects don't run on the server.** This means that the initial server-rendered HTML will only include a loading state with no data. The client computer will have to download all JavaScript and render your app only to discover that now it needs to load the data. This is not very efficient.
-<Trans>**Effects는 서버에서 실행되지 않습니다.** 즉 초기 서버에서 렌더링되는 HTML에는 데이터가 없는 로딩 state만 포함됩니다. 클라이언트 컴퓨터는 모든 JavaScript를 다운로드하고 앱을 렌더링하고 나서야 비로소 데이터를 로드해야 한다는 사실을 발견해 냅니다. 이것은 그다지 효율적이지 않습니다.</Trans>
+<Trans>**Effects는 서버에서 실행되지 않습니다.** 즉,초기 서버에서 렌더링되는 HTML에는 데이터가 없는 로딩 state만 포함됩니다. 클라이언트 컴퓨터는 모든 JavaScript를 다운로드하고 앱을 렌더링하고 나서야 비로소 데이터를 로드해야 한다는 사실을 발견해 냅니다. 이것은 그다지 효율적이지 않습니다.</Trans>
 - **Fetching directly in Effects makes it easy to create "network waterfalls".** You render the parent component, it fetches some data, renders the child components, and then they start fetching their data. If the network is not very fast, this is significantly slower than fetching all data in parallel.
 <Trans>**Effect에서 직접 페치하면 "네트워크 워터폴"이 만들어지기 쉽습니다.** 상위 컴포넌트를 렌더링하면, 상위 컴포넌트가 일부 데이터를 페치하고, 하위 컴포넌트를 렌더링한 다음, 다시 하위 컴포넌트의 데이터를 페치하기 시작합니다. 네트워크가 매우 빠르지 않다면, 모든 데이터를 병렬로 페치하는 것보다 훨씬 느립니다.</Trans>
 - **Fetching directly in Effects usually means you don't preload or cache data.** For example, if the component unmounts and then mounts again, it would have to fetch the data again.
-<Trans>**Effect에서 직접 페치하는 것은 일반적으로 데이터를 미리 로드하거나 캐시하지 않음을 의미합니다.** 예를 들어 컴포넌트가 마운트 해제되었다가 다시 마운트되면, 데이터를 다시 페치할 것입니다.</Trans>
+<Trans>**Effect에서 직접 페치하는 것은 일반적으로 데이터를 미리 로드하거나 캐시하지 않음을 의미합니다.** 예를 들어,컴포넌트가 마운트 해제되었다가 다시 마운트되면, 데이터를 다시 페치할 것입니다.</Trans>
 - **It's not very ergonomic.** There's quite a bit of boilerplate code involved when writing `fetch` calls in a way that doesn't suffer from bugs like [race conditions.](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)
 <Trans>이것은 전혀 인체공학적이지 않습니다. [조건 경합](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)과 같은 버그가 발생하지 않는 방식으로 `fetch`를 작성하기 위해서는 꽤 많은 상용구 코드가 필요합니다.</Trans>
 
@@ -867,7 +867,7 @@ This guarantees that such logic only runs once after the browser loads the page.
 ### Not an Effect: Buying a product<Trans>Effect가 아님: 제품 구매하기</Trans> {/*not-an-effect-buying-a-product*/}
 
 Sometimes, even if you write a cleanup function, there's no way to prevent user-visible consequences of running the Effect twice. For example, maybe your Effect sends a POST request like buying a product:
-<Trans>클린업 함수를 작성하더라도 Effect를 두 번 실행함으로써 체감상 결과가 달라지는 것을 막을 방법이 없는 경우도 있습니다. 예를 들어 Effect가 제품 구매와 같은 POST 요청을 보낸다고 합시다.</Trans>
+<Trans>클린업 함수를 작성하더라도 Effect를 두 번 실행함으로써 체감상 결과가 달라지는 것을 막을 방법이 없는 경우도 있습니다. 예를 들어,Effect가 제품 구매와 같은 POST 요청을 보낸다고 합시다.</Trans>
 
 ```js {2-4}
 useEffect(() => {
@@ -967,7 +967,7 @@ Finally, edit the component above and comment out the cleanup function so that t
 <Trans>마지막으로 위의 컴포넌트를 편집하고 타임아웃이 취소되지 않도록 클린업 함수를 주석 처리 해봅시다. `abcde`를 빠르게 입력해 보세요. 3초 후에 어떤 일이 일어날까요? 타임아웃 내의 `console.log(text)`가 *최신* `text`를 인쇄하고 5개의 `abcde` 로그를 생성할까요? 여러분의 직감을 확인해 보세요!</Trans>
 
 Three seconds later, you should see a sequence of logs (`a`, `ab`, `abc`, `abcd`, and `abcde`) rather than five `abcde` logs. **Each Effect "captures" the `text` value from its corresponding render.**  It doesn't matter that the `text` state changed: an Effect from the render with `text = 'ab'` will always see `'ab'`. In other words, Effects from each render are isolated from each other. If you're curious how this works, you can read about [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures).
-<Trans>3초 후, 5개의 `abcde`가 아닌 일련의 (`a`, `ab`, `abc`, `abcd`, `abcde`)가 표시되어야 합니다. **각 Effect는 해당 렌더링에서 `text` 값을 "캡처"합니다.** `text` state가 변경되더라도, `text = 'ab'`인 렌더링의 Effect는 항상 `'ab'`를 표시합니다. 즉 각 렌더링의 Effect는 서로 분리되어 있습니다. 이것이 어떻게 작동하는지 궁금하다면 [클로저](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)를 읽어 보세요.</Trans>
+<Trans>3초 후, 5개의 `abcde`가 아닌 일련의 (`a`, `ab`, `abc`, `abcd`, `abcde`)가 표시되어야 합니다. **각 Effect는 해당 렌더링에서 `text` 값을 "캡처"합니다.** `text` state가 변경되더라도, `text = 'ab'`인 렌더링의 Effect는 항상 `'ab'`를 표시합니다. 즉,각 렌더링의 Effect는 서로 분리되어 있습니다. 이것이 어떻게 작동하는지 궁금하다면 [클로저](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)를 읽어 보세요.</Trans>
 
 <DeepDive>
 
@@ -1124,7 +1124,7 @@ When [Strict Mode](/reference/react/StrictMode) is on, React remounts every comp
 - 기본적으로 Effect는 모든 렌더링 후에 실행됩니다(초기 렌더링 포함).
 - React는 모든 의존성이 마지막 렌더링 시점과 동일한 값을 갖는 경우 Effect를 건너뜁니다.
 - 의존성을 "선택"할 수는 없습니다. 그들은 Effect 내부의 코드에 의해 결정됩니다.
-- 빈 의존성 배열(`[]`)은 컴포넌트 "마운팅", 즉 화면에 추가되는 시점에 대응합니다.
+- 빈 의존성 배열(`[]`)은 컴포넌트 "마운팅", 즉,화면에 추가되는 시점에 대응합니다.
 - Strict 모드에서 React는 컴포넌트를 두 번 마운트하여(개발 중인 경우에만!) Effect를 스트레스 테스트합니다.
 - 다시 마운트를 수행함으로 인해 Effect가 깨지는 경우, 클린업 함수를 구현해야 합니다.
 - React는 다음 Effect가 실행되기 전 및 마운트 해제 시점에 클린업 함수를 호출합니다.
