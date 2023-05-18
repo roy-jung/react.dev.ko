@@ -44,7 +44,7 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 <Trans>`domNode`: 서버에서 root element로 렌더링된 [DOM element](https://developer.mozilla.org/en-US/docs/Web/API/Element)</Trans>
 
 * `reactNode`: The "React node" used to render the existing HTML. This will usually be a piece of JSX like `<App />` which was rendered with a `ReactDOM Server` method such as `renderToPipeableStream(<App />)`.
-<Trans>`reactNode`: 앞서 존재하는 HTML에 렌더링하기 위한 "React 노드" 입니다. 주로 `ReactDOM Server`의 `renderToPipeableStream(<App />)`처럼 메소드로 렌더링된 `<App />`같은 JSX 조각들입니다.</Trans>
+<Trans>`reactNode`: 앞서 존재하는 HTML에 렌더링하기 위한 "React 노드" 입니다. 주로 `ReactDOM Server`의 `renderToPipeableStream(<App />)`처럼 메서드로 렌더링된 `<App />`같은 JSX 조각들입니다.</Trans>
 
 * **optional** `options`: An object with options for this React root.
 <Trans outdent>**선택적** `options`: React 루트에 옵션을 주기 위한 객체입니다.</Trans>
@@ -58,7 +58,7 @@ React will attach to the HTML that exists inside the `domNode`, and take over ma
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
 `hydrateRoot` returns an object with two methods: [`render`](#root-render) and [`unmount`.](#root-unmount)
-<Trans>`hydrateRoot`는 두 메소드가 포함된 객체를 반환합니다: [`render`](#root-render)와 [`unmount`.](#root-unmount)</Trans>
+<Trans>`hydrateRoot`는 두 메서드가 포함된 객체를 반환합니다: [`render`](#root-render)와 [`unmount`.](#root-unmount)</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 

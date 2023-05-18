@@ -1,7 +1,7 @@
 ---
 title: Describing the UI
 translatedTitle: UI 구성하기
-translators: [박문하, 안예지, 정재남]
+translators: [박문하, 안예지, 정재남, 이나령]
 ---
 
 <Intro>

@@ -1,7 +1,7 @@
 ---
 title: JavaScript in JSX with Curly Braces
 translatedTitle: JSX에서 JavaScript 사용하기
-translators: [강민혜, 유한나라, 정재남]
+translators: [강민혜, 유한나라, 정재남, 이나령]
 ---
 
 <iframe 

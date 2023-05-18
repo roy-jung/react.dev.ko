@@ -43,7 +43,7 @@ function Greeting({ name }) {
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `type`: The `type` argument must be a valid React component type. For example, it could be a tag name string (such as `'div'` or `'span'`), or a React component (a function, a class, or a special component like [`Fragment`](/reference/react/Fragment)).
-<Trans>`type`: `type` 인수는 유효한 React 컴포넌트 타입이어야 합니다. 예를 들어 태그 이름 문자열 (예: `'div'` 또는 `'span'`) 또는 React 컴포넌트(함수, 클래스 또는 [`Fragment`](/reference/react/Fragment)와 같은 특수 컴포넌트)가 될 수 있습니다.</Trans>
+<Trans>`type`: `type` 인수는 유효한 React 컴포넌트 타입이어야 합니다. 예를 들어, 태그 이름 문자열 (예: `'div'` 또는 `'span'`) 또는 React 컴포넌트(함수, 클래스 또는 [`Fragment`](/reference/react/Fragment)와 같은 특수 컴포넌트)가 될 수 있습니다.</Trans>
 
 * `props`: The `props` argument must either be an object or `null`. If you pass `null`, it will be treated the same as an empty object. React will create an element with props matching the `props` you have passed. Note that `ref` and `key` from your `props` object are special and will *not* be available as `element.props.ref` and `element.props.key` on the returned `element`. They will be available as `element.ref` and `element.key`.
 <Trans>`props`: `props` 인자는 객체이거나 `null` 이어야 합니다. `null`을 전달하면 빈 객체와 동일하게 취급됩니다. React는 전달한 `props`와 일치하는 props를 가진 엘리먼트를 생성합니다. 참고로 `props` 객체의 `ref`와 `key`는 특수하게, 반환된 `element`에서 `element.props.ref`와 `element.props.key`로 사용할 수 없다는 점에 유의하세요. 이들은 `element.ref` 및 `element.key`로 사용할 수 있습니다.</Trans>
@@ -69,7 +69,8 @@ function Greeting({ name }) {
 <Trans>`key`: 전달한 `key`. 문자열로 형변환 됩니다. 없다면 `null` </Trans>
 
 Usually, you'll return the element from your component or make it a child of another element. Although you may read the element's properties, it's best to treat every element as opaque after it's created, and only render it.
-<Trans>일반적으로 엘리먼트를 컴포넌트에서 반환하거나 다른 엘리먼트의 자식으로 만들 것입니다. 엘리먼트의 프로퍼티를 읽을 수는 있지만, 이들이 생성된 후에는 직접 관여하지 않고 렌더링만 하는 것이 좋습니다.</Trans>
+<Trans>일반적으로 컴포넌트에서 엘리먼트를 반환하거나 다른 엘리먼트의 자식으로 만들 것입니다. 엘리먼트의 프로퍼티를 읽을 수는 있지만, 생성된 후에는 모든 엘리먼트를 불명확하게 처리하고, 렌더링만 하는 것이 가장 좋습니다.</Trans>
+
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 

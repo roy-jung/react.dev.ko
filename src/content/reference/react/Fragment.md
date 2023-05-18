@@ -39,7 +39,7 @@ Wrap elements in `<Fragment>` to group them together in situations where you nee
 <Trans>Fragment에 key를 전달하려는 경우 `<>…</>`구문을 사용할 수 없습니다. `'react'` 에서 `Fragment`를 명시적으로 불러오고 `<Fragment key={yourKey}>...</Fragment>`를 렌더링해야합니다.</Trans>
 
 - React does not [reset state](/learn/preserving-and-resetting-state) when you go from rendering `<><Child /></>` to `[<Child />]` or back, or when you go from rendering `<><Child /></>` to `<Child />` and back. This only works a single level deep: for example, going from `<><><Child /></></>` to `<Child />` resets the state. See the precise semantics [here.](https://gist.github.com/clemmy/b3ef00f9507909429d8aa0d3ee4f986b)
-<Trans>React는 `<><Child /></>`와 `[<Child />]` 사이, 혹은 `<><Child /></>`와 `<Child />` 사이를 번갈아 렌더링할 때 [state를 재설정](/learn/preserving-and-resetting-state)하지 않습니다. 이는 한 단계 깊이에서만 작동합니다. 예를 들어 `<><><Child /></></>`에서 `[<Child />]`로 변경할 경우에는 state를 재설정합니다. [여기](https://gist.github.com/clemmy/b3ef00f9507909429d8aa0d3ee4f986b)에서 정확한 의미를 확인하세요.</Trans>
+<Trans>React는 `<><Child /></>`와 `[<Child />]` 사이, 혹은 `<><Child /></>`와 `<Child />` 사이를 번갈아 렌더링할 때 [state를 재설정](/learn/preserving-and-resetting-state)하지 않습니다. 이는 한 단계 깊이에서만 작동합니다. 예를 들어, `<><><Child /></></>`에서 `[<Child />]`로 변경할 경우에는 state를 재설정합니다. [여기](https://gist.github.com/clemmy/b3ef00f9507909429d8aa0d3ee4f986b)에서 정확한 의미를 확인하세요.</Trans>
 
 
 ---
@@ -49,7 +49,7 @@ Wrap elements in `<Fragment>` to group them together in situations where you nee
 ### Returning multiple elements <Trans>여러 엘리먼트 반환하기</Trans> {/*returning-multiple-elements*/}
 
 Use `Fragment`, or the equivalent `<>...</>` syntax, to group multiple elements together. You can use it to put multiple elements in any place where a single element can go. For example, a component can only return one element, but by using a Fragment you can group multiple elements together and then return them as a group:
-<Trans>`Fragment` 또는 이와 동등한 구문인 `<>…</>`를 사용하여 여러 엘리먼트를 그룹화 합니다. 단일 엘리먼트가 들어갈 수 있는 모든 위치에 여러 엘리먼트를 배치하고자 할 때 사용할 수 있습니다. 예를 들어 컴포넌트는 오직 하나의 엘리먼트를 반환할 수 있지만, Fragment를 사용하면 여러 엘리먼트를 그룹화하여 단일 그룹을 반환할 수 있습니다.</Trans>
+<Trans>`Fragment` 또는 이와 동등한 구문인 `<>…</>`를 사용하여 여러 엘리먼트를 그룹화 합니다. 단일 엘리먼트가 들어갈 수 있는 모든 위치에 여러 엘리먼트를 배치하고자 할 때 사용할 수 있습니다. 예를 들어, 컴포넌트는 오직 하나의 엘리먼트를 반환할 수 있지만, Fragment를 사용하면 여러 엘리먼트를 그룹화하여 단일 그룹을 반환할 수 있습니다.</Trans>
 
 ```js {3,6}
 function Post() {

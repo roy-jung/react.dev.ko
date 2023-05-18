@@ -817,7 +817,7 @@ If you click on a square now, you should see a log saying `"clicked!"` in the _C
 <Note>
 
 If you are following this tutorial using your local development environment, you need to open your browser's Console. For example, if you use the Chrome browser, you can view the Console with the keyboard shortcut **Shift + Ctrl + J** (on Windows/Linux) or **Option + ⌘ + J** (on macOS).
-<Trans>만약 로컬 개발 환경을 사용하여 이 자습서를 진행한다면, 브라우저의 콘솔을 열어야 합니다. 예를 들어 Chrome 브라우저를 사용하는 경우, 키보드 단축키 **Shift + Ctrl + J** (Windows/Linux 환경) 또는 **Option + ⌘ + J** (macOS 환경)를 사용하여 콘솔을 볼 수 있습니다.</Trans>
+<Trans>만약 로컬 개발 환경을 사용하여 이 자습서를 진행한다면, 브라우저의 콘솔을 열어야 합니다. 예를 들어, Chrome 브라우저를 사용하는 경우, 키보드 단축키 **Shift + Ctrl + J** (Windows/Linux 환경) 또는 **Option + ⌘ + J** (macOS 환경)를 사용하여 콘솔을 볼 수 있습니다.</Trans>
 
 </Note>
 
@@ -1481,7 +1481,7 @@ In the end the user sees that the upper left square has changed from empty to ha
 <Note>
 
 The DOM `<button>` element's `onClick` attribute has a special meaning to React because it is a built-in component. For custom components like Square, the naming is up to you. You could give any name to the `Square`'s `onSquareClick` prop or `Board`'s `handleClick` function, and the code would work the same. In React, it's conventional to use `onSomething` names for props which represent events and `handleSomething` for the function definitions which handle those events.
-<Trans> DOM `<button>` 엘리먼트의 `onClick` 어트리뷰트는 빌트인 컴포넌트이기 때문에 React에서 특별한 의미를 갖습니다. 사용자 정의 컴포넌트, 예를 들어 사각형과 같은 경우, 이름은 사용자가 원하는 대로 지을 수 있습니다. `Square`의 `onSquareClick` prop나 `Board`의 `handleClick` 함수에 어떠한 이름을 붙여도 코드는 동일하게 작동합니다. React에서는 이벤트를 나타내는 prop에는 `on[Event]` 이름을 사용하고 이벤트를 처리하는 함수 정의에는 `handle[Event]`를 사용하는 것이 관례입니다.</Trans>
+<Trans> DOM `<button>` 엘리먼트의 `onClick` 어트리뷰트는 빌트인 컴포넌트이기 때문에 React에서 특별한 의미를 갖습니다. 사용자 정의 컴포넌트, 예를 들어, 사각형과 같은 경우, 이름은 사용자가 원하는 대로 지을 수 있습니다. `Square`의 `onSquareClick` prop나 `Board`의 `handleClick` 함수에 어떠한 이름을 붙여도 코드는 동일하게 작동합니다. React에서는 이벤트를 나타내는 prop에는 `on[Event]` 이름을 사용하고 이벤트를 처리하는 함수 정의에는 `handle[Event]`를 사용하는 것이 관례입니다.</Trans>
 
 </Note>
 
@@ -1535,7 +1535,7 @@ function Board() {
 ```
 
 Each time a player moves, `xIsNext` (a boolean) will be flipped to determine which player goes next and the game's state will be saved. You'll update the `Board`'s `handleClick` function to flip the value of `xIsNext`:
-<Trans>플레이어가 움직일 때마다, 다음 플레이어를 결정하기 위해 `xIsNext` (부울)의 값이 반전되고 게임의 state가 저장됩니다. `Board` 의 `handleClick` 함수를 업데이트하여 `xIsNext` 의 값을 반전시키세요:</Trans>
+<Trans>플레이어가 움직일 때마다, 다음 플레이어를 결정하기 위해 `xIsNext` (불리언)의 값이 반전되고 게임의 state가 저장됩니다. `Board` 의 `handleClick` 함수를 업데이트하여 `xIsNext` 의 값을 반전시키세요:</Trans>
 
 ```js {7,8,9,10,11,13}
 export default function Board() {
@@ -2007,7 +2007,7 @@ export default function Game() {
 ```
 
 Let's make the `Board` component fully controlled by the props it receives. Change the `Board` component to take three props: `xIsNext`, `squares`, and a new `onPlay` function that `Board` can call with the updated squares array when a player makes a move. Next, remove the first two lines of the `Board` function that call `useState`:
-<Trans>`Board` 컴포넌트가 props에 의해 완전히 제어되도록 만들어 봅시다. `Board` 컴포넌트를 변경해 세 개의 props, 즉 `xIsNext`, `squares`, 그리고 플레이어가 움직일 때마다 업데이트된 squares 배열로 `Board`가 호출할 수 있는 새로운 `onPlay` 함수가 추가되도록 합니다. 다음으로, `Board` 함수에서 `useState`를 호출하는 처음 두 줄을 제거합니다:</Trans>
+<Trans>`Board` 컴포넌트가 props에 의해 완전히 제어되도록 만들어 봅시다. `Board` 컴포넌트를 변경해 세 개의 props, 즉,`xIsNext`, `squares`, 그리고 플레이어가 움직일 때마다 업데이트된 squares 배열로 `Board`가 호출할 수 있는 새로운 `onPlay` 함수가 추가되도록 합니다. 다음으로, `Board` 함수에서 `useState`를 호출하는 처음 두 줄을 제거합니다:</Trans>
 
 ```js {1}
 function Board({ xIsNext, squares, onPlay }) {

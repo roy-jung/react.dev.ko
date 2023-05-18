@@ -309,7 +309,7 @@ The last part is important. **If you want to change the dependencies, change the
 <Trans>마지막 부분이 중요합니다. 의존성을 변경하려면 먼저 주변 코드를 변경하세요. 의존성 목록은 [Effect의 코드에서 사용하는 모든 반응형 값의 목록](/learn/lifecycle-of-reactive-effects#react-verifies-that-you-specified-every-reactive-value-as-a-dependency)이라고 생각하면 됩니다. 이 목록에 무엇을 넣을지는 사용자가 선택하지 않습니다. 이 목록은 코드를 설명합니다. 의존성 목록을 변경하려면 코드를 변경하세요.</Trans>
 
 This might feel like solving an equation. You might start with a goal (for example, to remove a dependency), and you need to "find" the code matching that goal. Not everyone finds solving equations fun, and the same thing could be said about writing Effects! Luckily, there is a list of common recipes that you can try below.
-<Trans>이것은 방정식을 푸는 것처럼 느껴질 수 있습니다. 예를 들어 의존성 제거와 같은 목표를 설정하고 그 목표에 맞는 코드를 "찾아야" 합니다. 모든 사람이 방정식을 푸는 것을 재미있어하는 것은 아니며, Effect를 작성할 때도 마찬가지입니다! 다행히도 아래에 시도해 볼 수 있는 일반적인 레시피 목록이 있습니다.</Trans>
+<Trans>이것은 방정식을 푸는 것처럼 느껴질 수 있습니다. 예를 들어, 의존성 제거와 같은 목표를 설정하고 그 목표에 맞는 코드를 "찾아야" 합니다. 모든 사람이 방정식을 푸는 것을 재미있어하는 것은 아니며, Effect를 작성할 때도 마찬가지입니다! 다행히도 아래에 시도해 볼 수 있는 일반적인 레시피 목록이 있습니다.</Trans>
 
 <Pitfall>
 
@@ -852,7 +852,7 @@ You want your logic to be reactive with regards to `roomId`, so you read `roomId
 ### Does some reactive value change unintentionally?<Trans>일부 반응형 값이 의도치 않게 변경되나요?</Trans> {/*does-some-reactive-value-change-unintentionally*/}
 
 Sometimes, you *do* want your Effect to "react" to a certain value, but that value changes more often than you'd like--and might not reflect any actual change from the user's perspective. For example, let's say that you create an `options` object in the body of your component, and then read that object from inside of your Effect:
-<Trans>Effect가 특정 값에 '반응'하기를 원하지만, 그 값이 원하는 것보다 더 자주 변경되어 사용자의 관점에서 실제 변경 사항을 반영하지 못할 수도 있습니다. 예를 들어 컴포넌트 본문에 `options` 객체를 생성한 다음 Effect 내부에서 해당 객체를 읽는다고 가정해 보겠습니다:</Trans>
+<Trans>Effect가 특정 값에 '반응'하기를 원하지만, 그 값이 원하는 것보다 더 자주 변경되어 사용자의 관점에서 실제 변경 사항을 반영하지 못할 수도 있습니다. 예를 들어, 컴포넌트 본문에 `options` 객체를 생성한 다음 Effect 내부에서 해당 객체를 읽는다고 가정해 보겠습니다:</Trans>
 
 ```js {3-6,9}
 function ChatRoom({ roomId }) {
@@ -882,7 +882,7 @@ This object is declared in the component body, so it's a [reactive value.](/lear
 ```
 
 It is important to declare it as a dependency! This ensures, for example, that if the `roomId` changes, your Effect will re-connect to the chat with the new `options`. However, there is also a problem with the code above. To see it, try typing into the input in the sandbox below, and watch what happens in the console:
-<Trans>의존성으로 선언하는 것이 중요합니다! 이렇게 하면 예를 들어 `roomId`가 변경되면 Effect가 새 `options`으로 채팅에 다시 연결됩니다. 하지만 위 코드에도 문제가 있습니다. 이를 확인하려면 아래 샌드박스의 input에 타이핑하고 콘솔에서 어떤 일이 발생하는지 살펴보세요:</Trans>
+<Trans>의존성으로 선언하는 것이 중요합니다! 이렇게 하면 예를 들어, `roomId`가 변경되면 Effect가 새 `options`으로 채팅에 다시 연결됩니다. 하지만 위 코드에도 문제가 있습니다. 이를 확인하려면 아래 샌드박스의 input에 타이핑하고 콘솔에서 어떤 일이 발생하는지 살펴보세요:</Trans>
 
 <Sandpack>
 
@@ -1234,7 +1234,7 @@ The logic gets a little repetitive (you read some values from an object outside 
 #### Calculate primitive values from functions<Trans>함수에서 원시값 계산</Trans> {/*calculate-primitive-values-from-functions*/}
 
 The same approach can work for functions. For example, suppose the parent component passes a function:
-<Trans>함수에 대해서도 동일한 접근 방식을 사용할 수 있습니다. 예를 들어 부모 컴포넌트가 함수를 전달한다고 가정해 보겠습니다:</Trans>
+<Trans>함수에 대해서도 동일한 접근 방식을 사용할 수 있습니다. 예를 들어, 부모 컴포넌트가 함수를 전달한다고 가정해 보겠습니다:</Trans>
 
 ```js {3-8}
 <ChatRoom
@@ -1954,7 +1954,7 @@ In this example, the chat re-connects every time you try to change the theme. Fi
 <Trans>이 예에서는 theme를 변경하려고 할 때마다 채팅이 다시 연결됩니다. 이 문제를 수정하세요. 수정 후 theme를 변경해도 채팅이 다시 연결되지 않지만, encryption설정을 토글하거나 채팅방을 변경하면 다시 연결됩니다.</Trans>
 
 Don't change any code in `chat.js`. Other than that, you can change any code as long as it results in the same behavior. For example, you may find it helpful to change which props are being passed down.
-<Trans>`chat.js`의 코드를 변경하지 마세요. 그 외에는 동일한 동작을 초래하는 한 어떤 코드든 변경할 수 있습니다. 예를 들어 어떤 props이 전달되는지를 확인하고 변경하는 것이 도움이 될 수 있습니다.</Trans>
+<Trans>`chat.js`의 코드를 변경하지 마세요. 그 외에는 동일한 동작을 초래하는 한 어떤 코드든 변경할 수 있습니다. 예를 들어, 어떤 props이 전달되는지를 확인하고 변경하는 것이 도움이 될 수 있습니다.</Trans>
 
 <Hint>
 

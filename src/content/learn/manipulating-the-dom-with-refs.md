@@ -1,7 +1,7 @@
 ---
 title: Manipulating the DOM with Refs
 translatedTitle: ref로 DOM 조작하기
-translators: [서민택, 정현수, 정재남]
+translators: [서민택, 정현수, 정재남, 이나령]
 ---
 
 <iframe 
@@ -760,7 +760,7 @@ After you've manually removed the DOM element, trying to use `setState` to show 
 <Trans>**React가 관리하는 DOM 노드를 변경하지 마세요.** React가 관리하는 요소를 수정하거나, 자식을 추가하거나 제거하면, 위와 같이 일관성 없는 시각적 결과나 충돌이 발생할 수 있습니다.</Trans>
 
 However, this doesn't mean that you can't do it at all. It requires caution. **You can safely modify parts of the DOM that React has _no reason_ to update.** For example, if some `<div>` is always empty in the JSX, React won't have a reason to touch its children list. Therefore, it is safe to manually add or remove elements there.
-<Trans>그렇다고 전혀 할 수 없다는 건 아니고, 주의가 필요하다는 의미입니다. **React가 업데이트할 _이유가 없는_ DOM의 일부는 안전하게 수정할 수 있습니다.** 예를 들어 JSX에서 일부 `<div>`가 항상 비어 있는 경우, React는 그 자식 목록을 건드릴 이유가 없습니다. 따라서 수동으로 요소를 추가하거나 제거하더라도 안전합니다.</Trans>
+<Trans>그렇다고 전혀 할 수 없다는 건 아니고, 주의가 필요하다는 의미입니다. **React가 업데이트할 _이유가 없는_ DOM의 일부는 안전하게 수정할 수 있습니다.** 예를 들어, JSX에서 일부 `<div>`가 항상 비어 있는 경우, React는 그 자식 목록을 건드릴 이유가 없습니다. 따라서 수동으로 요소를 추가하거나 제거하더라도 안전합니다.</Trans>
 
 <Recap>
 
@@ -1068,7 +1068,7 @@ You can declare a `selectedRef`, and then pass it conditionally only to the curr
 ```
 
 When `index === i`, meaning that the image is the selected one, the `<li>` will receive the `selectedRef`. React will make sure that `selectedRef.current` always points at the correct DOM node.
-<Trans>`index === i`일 때, 즉 선택된 이미지일 때, `<li>`는 `selectedRef`를 받습니다. React는 `selectedRef.current`가 항상 올바른 DOM 노드를 가리키도록 할 것입니다.</Trans>
+<Trans>`index === i`일 때, 즉,선택된 이미지일 때, `<li>`는 `selectedRef`를 받습니다. React는 `selectedRef.current`가 항상 올바른 DOM 노드를 가리키도록 할 것입니다.</Trans>
 
 Note that the `flushSync` call is necessary to force React to update the DOM before the scroll. Otherwise, `selectedRef.current` would always point at the previously selected item.
 <Trans>`flushSync` 호출은 스크롤 전에 React가 DOM을 업데이트하도록 강제하는 데에 필요하다는 점에 유의하세요. 그렇지 않으면 `selectedRef.current`가 항상 이전에 선택된 항목을 가리키게 될 것입니다.</Trans>
