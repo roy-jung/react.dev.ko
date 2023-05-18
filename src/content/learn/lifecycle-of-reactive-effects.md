@@ -4,6 +4,14 @@ translatedTitle: 반응형 Effect의 생명주기
 translators: [유은미, 이도원, 정재남, 강승훈]
 ---
 
+
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=34"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 Effects have a different lifecycle from components. Components may mount, update, or unmount. An Effect can only do two things: to start synchronizing something, and later to stop synchronizing it. This cycle can happen multiple times if your Effect depends on props and state that change over time. React provides a linter rule to check that you've specified your Effect's dependencies correctly. This keeps your Effect synchronized to the latest props and state.
