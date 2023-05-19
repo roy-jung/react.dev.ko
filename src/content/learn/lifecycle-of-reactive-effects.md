@@ -7,7 +7,7 @@ translators: [유은미, 이도원, 정재남, 강승훈]
 
 <iframe 
   style={{aspectRatio: 1.7778, width: '100%'}} 
-  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=34"
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=33"
   title="YouTube video player" 
   frameBorder="0" 
 />

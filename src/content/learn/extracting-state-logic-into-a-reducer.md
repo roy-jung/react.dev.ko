@@ -6,7 +6,7 @@ translators: [이승효, 고석영, 안예지, 원주혜]
 
 <iframe 
   style={{aspectRatio: 1.7778, width: '100%'}} 
-  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=27"
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=26"
   title="YouTube video player" 
   frameBorder="0" 
 />
