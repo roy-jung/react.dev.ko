@@ -1,6 +1,6 @@
 ---
 title: React DOM APIs
-translators: [이나령]
+translators: [이나령, 고석영]
 ---
 
 <Intro>
@@ -57,5 +57,5 @@ These APIs will be removed in a future major version of React.
 <Trans>[`render`](/reference/react-dom/render)는 트리를 DOM에 마운트합니다. [`createRoot`](/reference/react-dom/client/createRoot)로 대체되어 지원 중단되었습니다.</Trans>
 
 * [`unmountComponentAtNode`](/reference/react-dom/unmountComponentAtNode) unmounts a tree from the DOM. Deprecated in favor of [`root.unmount()`.](/reference/react-dom/client/createRoot#root-unmount)
-<Trans>* [`unmountComponentAtNode`](/reference/react-dom/unmountComponentAtNode) 는 DOM에서 트리를 언마운트합니다. [`root.unmount()`](/reference/react-dom/client/createRoot#root-unmount)로 대체되어 지원 중단되었습니다.</Trans>
+<Trans>[`unmountComponentAtNode`](/reference/react-dom/unmountComponentAtNode) 는 DOM에서 트리를 언마운트합니다. [`root.unmount()`](/reference/react-dom/client/createRoot#root-unmount)로 대체되어 지원 중단되었습니다.</Trans>
 

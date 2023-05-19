@@ -6,7 +6,7 @@ translators: [고석영, 유은미]
 <Intro>
 
 `renderToPipeableStream` renders a React tree to a pipeable [Node.js Stream.](https://nodejs.org/api/stream.html)
-<Trans>`renderToPipeableStream`은 React 트리를 파이프 가능한 [Node.js Stream](https://nodejs.org/api/stream.html)으로 렌더링합니다.</Trans>
+<Trans>`renderToPipeableStream`은 React 트리를 파이프 가능한 [Node.js 스트림](https://nodejs.org/api/stream.html)으로 렌더링합니다.</Trans>
 
 ```js
 const { pipe, abort } = renderToPipeableStream(reactNode, options?)
@@ -19,7 +19,7 @@ const { pipe, abort } = renderToPipeableStream(reactNode, options?)
 <Note>
 
 This API is specific to Node.js. Environments with [Web Streams,](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) like Deno and modern edge runtimes, should use [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream) instead.
-<Trans>이 API는 Node.js 전용입니다. Deno와 같은 [Web Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)를 사용하는 환경 및 최신 엣지 런타임에서는 대신 [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)을 사용해야 합니다.</Trans>
+<Trans>이 API는 Node.js 전용입니다. Deno와 같은 [웹 스트림](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)을 사용하는 환경 및 최신 엣지 런타임에서는 대신 [`renderToReadableStream`](/reference/react-dom/server/renderToReadableStream)을 사용해야 합니다.</Trans>
 
 </Note>
 
@@ -80,7 +80,7 @@ On the client, call [`hydrateRoot`](/reference/react-dom/client/hydrateRoot) to 
   <Trans>**선택적** `onAllReady`: [shell](#specifying-what-goes-into-the-shell)과 모든 추가적인 [content](#streaming-more-content-as-it-loads)를 포함한 렌더링이 전부 완료되면 실행되는 콜백. [크롤러 및 정적 생성을 위해](#waiting-for-all-content-to-load-for-crawlers-and-static-generation) `onShellReady` 대신 이 옵션을 사용할 수 있습니다. 여기서 스트리밍을 시작하면 점진적 로딩이 발생하지 않습니다. 스트림에는 최종 HTML이 포함됩니다.</Trans>
 
   - **optional** `onError`: A callback that fires whenever there is a server error, whether [recoverable](#recovering-from-errors-outside-the-shell) or [not.](#recovering-from-errors-inside-the-shell) By default, this only calls `console.error`. If you override it to [log crash reports,](#logging-crashes-on-the-server) make sure that you still call `console.error`. You can also use it to [adjust the status code](#setting-the-status-code) before the shell is emitted.
-  <Trans>**선택적** `onError`: [복구 가능](#recovering-from-errors-outside-the-shell) 혹은 [불가능](#recovering-from-errors-inside-the-shell)여부에 관계 없이 서버 오류가 발생할 때마다 실행되는 콜백. 기본적으로 `console.error`만 호출합니다. 이 함수를 재정의하여 [로그 충돌 보고서](#logging-crashes-on-the-server)를 기록하도록 한 경우에도 여전히 `console.error`를 호출해야 합니다. 셸이 출력되기 전에 [상태 코드를 조정](#setting-the-status-code)하는 데 사용할 수도 있습니다.</Trans>
+  <Trans>**선택적** `onError`: [복구 가능](#recovering-from-errors-outside-the-shell) 혹은 [불가능](#recovering-from-errors-inside-the-shell) 여부에 관계 없이 서버 오류가 발생할 때마다 실행되는 콜백. 기본적으로 `console.error`만 호출합니다. 이 함수를 재정의하여 [로그 충돌 보고서](#logging-crashes-on-the-server)를 기록하도록 한 경우에도 여전히 `console.error`를 호출해야 합니다. 셸이 출력되기 전에 [상태 코드를 조정](#setting-the-status-code)하는 데 사용할 수도 있습니다.</Trans>
 
   - **optional** `onShellReady`: A callback that fires right after the [initial shell](#specifying-what-goes-into-the-shell) has been rendered. You can [set the status code](#setting-the-status-code) and call `pipe` here to start streaming. React will [stream the additional content](#streaming-more-content-as-it-loads) after the shell along with the inline `<script>` tags that place that replace the HTML loading fallbacks with the content.
   <Trans>**선택적** `onShellReady`: [초기 셸](#specifying-what-goes-into-the-shell)이 렌더링된 직후에 실행되는 콜백. 여기에서 [상태 코드를 설정](#setting-the-status-code)하고 `pipe`를 호출하면 스트리밍이 시작됩니다. React는 HTML 로딩 폴백을 콘텐츠로 대체하는 인라인 `<script>` 태그와 함께 셸 뒤에 [추가 컨텐츠를 스트리밍](#streaming-more-content-as-it-loads)합니다.</Trans>
@@ -358,7 +358,7 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 ---
 
-### Specifying what goes into the shell <Trans>쉘에 들어갈 내용 지정하기</Trans> {/*specifying-what-goes-into-the-shell*/}
+### Specifying what goes into the shell <Trans>셸에 들어갈 내용 지정하기</Trans> {/*specifying-what-goes-into-the-shell*/}
 
 The part of your app outside of any `<Suspense>` boundaries is called _the shell:_
 <Trans>앱의 `<Suspense>` 경계 밖에 있는 부분을 *셸*이라고 합니다:</Trans>
@@ -413,7 +413,7 @@ By the time `onShellReady` fires, components in nested `<Suspense>` boundaries m
 
 ---
 
-### Logging crashes on the server <Trans>서버에서의 충동을 기록하기</Trans> {/*logging-crashes-on-the-server*/}
+### Logging crashes on the server <Trans>서버에서의 충돌을 기록하기</Trans> {/*logging-crashes-on-the-server*/}
 
 By default, all errors on the server are logged to console. You can override this behavior to log crash reports:
 <Trans>기본적으로 서버의 모든 오류는 콘솔에 기록됩니다. 이 동작을 재정의하여 충돌 보고서를 기록할 수 있습니다:</Trans>
@@ -437,7 +437,7 @@ If you provide a custom `onError` implementation, don't forget to also log error
 
 ---
 
-### Recovering from errors inside the shell <Trans>쉘 내부에서 오류 복구</Trans> {/*recovering-from-errors-inside-the-shell*/}
+### Recovering from errors inside the shell <Trans>셸 내부에서 오류 복구</Trans> {/*recovering-from-errors-inside-the-shell*/}
 
 In this example, the shell contains `ProfileLayout`, `ProfileCover`, and `PostsGlimmer`:
 <Trans>다음 예제에서 셸에는 `ProfileLayout`, `ProfileCover`, `PostsGlimmer`가 포함되어 있습니다:</Trans>
@@ -482,7 +482,7 @@ If there is an error while generating the shell, both `onError` and `onShellErro
 
 ---
 
-### Recovering from errors outside the shell <Trans>쉘 외부에서 오류 복구하기</Trans> {/*recovering-from-errors-outside-the-shell*/}
+### Recovering from errors outside the shell <Trans>셸 외부에서 오류 복구하기</Trans> {/*recovering-from-errors-outside-the-shell*/}
 
 In this example, the `<Posts />` component is wrapped in `<Suspense>` so it is _not_ a part of the shell:
 <Trans>다음 예제에서 `<Posts />` 컴포넌트는 `<Suspense>`로 래핑되어 있으므로 셸의 일부가 *아닙니다*:</Trans>
@@ -521,7 +521,7 @@ If retrying rendering `Posts` on the client succeeds, the loading fallback from 
 
 ---
 
-### Setting the status code <Trans>상태코드설정</Trans> {/*setting-the-status-code*/}
+### Setting the status code <Trans>상태 코드 설정하기</Trans> {/*setting-the-status-code*/}
 
 Streaming introduces a tradeoff. You want to start streaming the page as early as possible so that the user can see the content sooner. However, once you start streaming, you can no longer set the response status code.
 <Trans>스트리밍에는 장단점이 있습니다. 사용자가 콘텐츠를 더 빨리 볼 수 있도록 가능한 한 빨리 페이지 스트리밍을 시작하고 싶을 수 있습니다. 하지만 스트리밍을 시작하면 더 이상 응답 상태 코드를 설정할 수 없습니다.</Trans>

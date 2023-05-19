@@ -1,6 +1,6 @@
 ---
 title: Children
-translators: [이나령, 정재남]
+translators: [이나령, 정재남, 고석영]
 ---
 
 <Pitfall>
@@ -64,7 +64,7 @@ The number of nodes inside these `children`.
 #### Caveats<Trans>주의사항</Trans> {/*children-count-caveats*/}
 
 - Empty nodes (`null`, `undefined`, and Booleans), strings, numbers, and [React elements](/reference/react/createElement) count as individual nodes. Arrays don't count as individual nodes, but their children do. **The traversal does not go deeper than React elements:** they don't get rendered, and their children aren't traversed. [Fragments](/reference/react/Fragment) don't get traversed.
-<Trans outdent>빈 노드(`null`, `undefined`, 불리언), 문자열, 숫자, [React 엘리먼트](/reference/react/createElement)는 각각 개별 노드로 계산합니다. 배열 자체는 개별 노드로 계산하지 않지만, 배열의 각 요소들은 개별 노드로 계산합니다. **탐색은 React 엘리먼트보다 더 깊게 들어가지 않습니다:** 렌더링되지 않으면 그 자식도 탐색되지 않습니다. [프래그먼트](/reference/react/Fragment)는 탐색되지 않습니다.</Trans>
+<Trans outdent>빈 노드(`null`, `undefined`, 불리언), 문자열, 숫자, [React 엘리먼트](/reference/react/createElement)는 각각 개별 노드로 계산합니다. 배열 자체는 개별 노드로 계산하지 않지만, 배열의 각 요소들은 개별 노드로 계산합니다. **탐색은 React 엘리먼트보다 더 깊게 들어가지 않습니다:** 렌더링되지 않으면 그 자식도 탐색되지 않습니다. [Fragment](/reference/react/Fragment)는 탐색되지 않습니다.</Trans>
 
 ---
 
@@ -108,7 +108,7 @@ function SeparatorList({ children }) {
 #### Caveats<Trans>주의사항</Trans> {/*children-foreach-caveats*/}
 
 - Empty nodes (`null`, `undefined`, and Booleans), strings, numbers, and [React elements](/reference/react/createElement) count as individual nodes. Arrays don't count as individual nodes, but their children do. **The traversal does not go deeper than React elements:** they don't get rendered, and their children aren't traversed. [Fragments](/reference/react/Fragment) don't get traversed.
-<Trans outdent>빈 노드(`null`, `undefined`, 불리언), 문자열, 숫자, [React 엘리먼트](/reference/react/createElement)는 각각 개별 노드로 계산합니다. 배열은 개별 노드로 계산하지 않지만, 배열의 각 요소들은 개별 노드로 계산합니다. **탐색은 React 엘리먼트보다 더 깊게 들어가지 않습니다:** 렌더링되지 않으면 그 자식도 탐색되지 않습니다. [프래그먼트](/reference/react/Fragment)는 탐색되지 않습니다.</Trans>
+<Trans outdent>빈 노드(`null`, `undefined`, 불리언), 문자열, 숫자, [React 엘리먼트](/reference/react/createElement)는 각각 개별 노드로 계산합니다. 배열은 개별 노드로 계산하지 않지만, 배열의 각 요소들은 개별 노드로 계산합니다. **탐색은 React 엘리먼트보다 더 깊게 들어가지 않습니다:** 렌더링되지 않으면 그 자식도 탐색되지 않습니다. [Fragment](/reference/react/Fragment)는 탐색되지 않습니다.</Trans>
 
 ---
 
@@ -157,7 +157,7 @@ Otherwise, returns a flat array consisting of the nodes you've returned from the
 #### Caveats<Trans>주의사항</Trans> {/*children-map-caveats*/}
 
 - Empty nodes (`null`, `undefined`, and Booleans), strings, numbers, and [React elements](/reference/react/createElement) count as individual nodes. Arrays don't count as individual nodes, but their children do. **The traversal does not go deeper than React elements:** they don't get rendered, and their children aren't traversed. [Fragments](/reference/react/Fragment) don't get traversed.
-<Trans>빈 노드(`null`, `undefined`, 불리언), 문자열, 숫자, [React 엘리먼트](/reference/react/createElement)는 각각 개별 노드로 계산합니다. 배열은 개별 노드로 계산하지 않지만, 배열의 각 요소들은 개별 노드로 계산합니다. **탐색은 React 엘리먼트보다 더 깊게 들어가지 않습니다:** 렌더링되지 않으면 그 자식도 탐색되지 않습니다. [프래그먼트](/reference/react/Fragment)는 탐색되지 않습니다.</Trans>
+<Trans>빈 노드(`null`, `undefined`, 불리언), 문자열, 숫자, [React 엘리먼트](/reference/react/createElement)는 각각 개별 노드로 계산합니다. 배열은 개별 노드로 계산하지 않지만, 배열의 각 요소들은 개별 노드로 계산합니다. **탐색은 React 엘리먼트보다 더 깊게 들어가지 않습니다:** 렌더링되지 않으면 그 자식도 탐색되지 않습니다. [Fragment](/reference/react/Fragment)는 탐색되지 않습니다.</Trans>
 
 - If you return an element or an array of elements with keys from `fn`, **the returned elements' keys will be automatically combined with the key of the corresponding original item from `children`.** When you return multiple elements from `fn` in an array, their keys only need to be unique locally amongst each other.
 <Trans>`fn`에서 키가 있는 엘리먼트 또는 엘리먼트 배열을 반환하면, **반환된 엘리먼트의 키는 `children` 엘리먼트의 해당 원본 항목의 키와 자동으로 결합됩니다**. 배열의 `fn`에서 여러 요소를 반환하는 경우, 해당 요소의 키는 서로 간에만 고유하면 됩니다.</Trans>

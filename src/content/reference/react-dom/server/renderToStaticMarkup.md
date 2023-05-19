@@ -71,6 +71,7 @@ Call `renderToStaticMarkup` to render your app to an HTML string which you can s
 import { renderToStaticMarkup } from 'react-dom/server';
 
 // The route handler syntax depends on your backend framework
+// 라우트 핸들러 구문은 백엔드 프레임워크에 따라 다릅니다.
 app.use('/', (request, response) => {
   const html = renderToStaticMarkup(<Page />);
   response.send(html);
