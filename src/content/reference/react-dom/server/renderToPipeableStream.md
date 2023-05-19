@@ -1,6 +1,6 @@
 ---
 title: renderToPipeableStream
-translators: [고석영, 유은미]
+translators: [고석영, 유은미, 정재남]
 ---
 
 <Intro>
@@ -151,7 +151,7 @@ export default function App() {
 ```
 
 React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) and your <CodeStep step={2}>bootstrap `<script>` tags</CodeStep> into the resulting HTML stream:
-<Trans>React는 HTML스트림에 [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)과 <CodeStep step={2}>부트스트랩 `<`script`>` 태그들</CodeStep>을 주입합니다:</Trans>
+<Trans>React는 HTML 스트림에 [doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)과 <CodeStep step={2}>부트스트랩 `<`script`>` 태그들</CodeStep>을 주입합니다:</Trans>
 
 ```html [[2, 5, "/main.js"]]
 <!DOCTYPE html>
@@ -162,7 +162,7 @@ React will inject the [doctype](https://developer.mozilla.org/en-US/docs/Glossar
 ```
 
 On the client, your bootstrap script should [hydrate the entire `document` with a call to `hydrateRoot`:](/reference/react-dom/client/hydrateRoot#hydrating-an-entire-document)
-<Trans>클라이언트에서 부트스트랩 스크립트는 [`hydrateRoot`를 호출하여 전체 문서를 hydrate](/reference/react-dom/client/hydrateRoot#hydrating-an-entire-document)해야 합니다:</Trans>
+<Trans>클라이언트에서 부트스트랩 스크립트는 [`hydrateRoot`를 호출하여 전체 `document`를 hydrate](/reference/react-dom/client/hydrateRoot#hydrating-an-entire-document)해야 합니다:</Trans>
 
 ```js [[1, 4, "<App />"]]
 import {hydrateRoot} from 'react-dom/client';
@@ -358,7 +358,7 @@ Suspense-enabled data fetching without the use of an opinionated framework is no
 
 ---
 
-### Specifying what goes into the shell <Trans>셸에 들어갈 내용 지정하기</Trans> {/*specifying-what-goes-into-the-shell*/}
+### Specifying what goes into the shell<Trans>셸에 들어갈 내용 지정하기</Trans> {/*specifying-what-goes-into-the-shell*/}
 
 The part of your app outside of any `<Suspense>` boundaries is called _the shell:_
 <Trans>앱의 `<Suspense>` 경계 밖에 있는 부분을 *셸*이라고 합니다:</Trans>
@@ -437,7 +437,7 @@ If you provide a custom `onError` implementation, don't forget to also log error
 
 ---
 
-### Recovering from errors inside the shell <Trans>셸 내부에서 오류 복구</Trans> {/*recovering-from-errors-inside-the-shell*/}
+### Recovering from errors inside the shell <Trans>셸 내부에서 오류 복구하기</Trans> {/*recovering-from-errors-inside-the-shell*/}
 
 In this example, the shell contains `ProfileLayout`, `ProfileCover`, and `PostsGlimmer`:
 <Trans>다음 예제에서 셸에는 `ProfileLayout`, `ProfileCover`, `PostsGlimmer`가 포함되어 있습니다:</Trans>
@@ -550,7 +550,7 @@ const {pipe} = renderToPipeableStream(<App />, {
 ```
 
 If a component _outside_ the shell (i.e. inside a `<Suspense>` boundary) throws an error, React will not stop rendering. This means that the `onError` callback will fire, but you will still get `onShellReady` instead of `onShellError`. This is because React will try to recover from that error on the client, [as described above.](#recovering-from-errors-outside-the-shell)
-<Trans>셸 외부에 있는 컴포넌트(예: `<Suspense>` 경계 안에 있는 컴포넌트)가 에러를 던져도 React는 렌더링을 멈추지 않습니다. 즉, `onError` 콜백이 실행됨에도 불구하고 여전히 `onShellError` 대신 `onShellReady`가 반환됩니다. 이는 위에서 설명한 것처럼 React가 클라이언트에서 해당 오류를 복구하려고 시도하기 때문입니다.</Trans>
+<Trans>셸 외부에 있는 컴포넌트(예: `<Suspense>` 경계 안에 있는 컴포넌트)가 에러를 던져도 React는 렌더링을 멈추지 않습니다. 즉, `onError` 콜백이 실행됨에도 불구하고 여전히 `onShellError` 대신 `onShellReady`가 반환됩니다. 이는 [위에서 설명한 것처럼](#recovering-from-errors-outside-the-shell) React가 클라이언트에서 해당 오류를 복구하려고 시도하기 때문입니다.</Trans>
 
 However, if you'd like, you can use the fact that something has errored to set the status code:
 <Trans>하지만 원한다면 오류가 발생했다는 사실로부터 상태 코드를 설정할 수도 있습니다:</Trans>
@@ -675,11 +675,11 @@ const { pipe } = renderToPipeableStream(<App />, {
 ```
 
 A regular visitor will get a stream of progressively loaded content. A crawler will receive the final HTML output after all the data loads. However, this also means that the crawler will have to wait for _all_ data, some of which might be slow to load or error. Depending on your app, you could choose to send the shell to the crawlers too.
-<Trans>일반 방문자는 점진적으로 로드되는 콘텐츠 스트림을 받게 됩니다. 크롤러는 모든 데이터가 로드된 후 최종 HTML 출력을 받게 됩니다. 그러나 이는 크롤러가 모든 데이터를 기다려야 한다는 것을 의미하며, 그 중 일부는 로드 속도가 느리거나 오류가 발생할 수도 있습니다. 앱에 따라서는 크롤러에도 셸을 보내도록 선택할 수 있습니다.</Trans>
+<Trans>일반 방문자는 점진적으로 로드되는 콘텐츠 스트림을 받게 됩니다. 크롤러는 모든 데이터가 로드된 후 최종 HTML 출력을 받게 됩니다. 그러나 이는 크롤러가 *모든* 데이터를 기다려야 한다는 것을 의미하며, 그 중 일부는 로드 속도가 느리거나 오류가 발생할 수도 있습니다. 앱에 따라서는 크롤러에도 셸을 보내도록 선택할 수 있습니다.</Trans>
 
 ---
 
-### Aborting server rendering <Trans>서버렌더링 중단</Trans> {/*aborting-server-rendering*/}
+### Aborting server rendering <Trans>서버렌더링 중단하기</Trans> {/*aborting-server-rendering*/}
 You can force the server rendering to "give up" after a timeout:
 <Trans>시간 초과 후 서버 렌더링을 "포기"하도록 강제할 수 있습니다:</Trans>
 
