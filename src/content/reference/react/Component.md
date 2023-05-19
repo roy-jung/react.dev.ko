@@ -258,7 +258,7 @@ Typically, it is used together with [`static getDerivedStateFromError`](#static-
 #### Parameters<Trans>매개변수</Trans> {/*componentdidcatch-parameters*/}
 
 * `error`: The error that was thrown. In practice, it will usually be an instance of [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) but this is not guaranteed because JavaScript allows to [`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw) any value, including strings or even `null`.
-<Trans>`error`: 발생한 에러입니다. 일반적으로 [`Error`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)의 인스턴스가 되지만, 자바스크립트에서는 문자열이나 `null`을 포함한 모든 값을 [`throw`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw) 할 수 있으므로, 실제로는 반드시 보장되지는 않습니다.</Trans>
+<Trans>`error`: 발생한 에러입니다. 일반적으로 [`Error`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)의 인스턴스가 되지만, JavaScript에서는 문자열이나 `null`을 포함한 모든 값을 [`throw`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw) 할 수 있으므로, 실제로는 반드시 보장되지는 않습니다.</Trans>
 
 * `info`: An object containing additional information about the error. Its `componentStack` field contains a stack trace with the component that threw, as well as the names and source locations of all its parent components. In production, the component names will be minified. If you set up production error reporting, you can decode the component stack using sourcemaps the same way as you would do for regular JavaScript error stacks.
 <Trans>`info`: 오류에 대한 추가 정보가 포함된 객체입니다. `componentStack` 필드에는 에러를 발생시킨 컴포넌트의 스택 추적과 모든 상위 컴포넌트의 이름 및 소스 위치가 포함됩니다. 상용 환경에서는 컴포넌트 이름이 최소화됩니다. 상용 환경 오류 보고를 설정한 경우 일반 JavaScript 오류 스택과 동일한 방식으로 소스 맵을 사용하여 컴포넌트 스택을 디코딩할 수 있습니다.</Trans>
@@ -1210,7 +1210,7 @@ Typically, it is used together with [`componentDidCatch`](#componentDidCatch) wh
 #### Parameters<Trans>매개변수</Trans> {/*static-getderivedstatefromerror-parameters*/}
 
 * `error`: The error that was thrown. In practice, it will usually be an instance of [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) but this is not guaranteed because JavaScript allows to [`throw`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw) any value, including strings or even `null`.
-<Trans outdent>`error`: 발생한 에러입니다. 일반적으로 [`Error`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)의 인스턴스가 되지만 자바스크립트에서는 문자열이나 `null`을 포함한 모든 값을 [`throw`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw)할 수 있으므로 보장되지는 않습니다.</Trans>
+<Trans outdent>`error`: 발생한 에러입니다. 일반적으로 [`Error`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)의 인스턴스가 되지만 JavaScript에서는 문자열이나 `null`을 포함한 모든 값을 [`throw`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw)할 수 있으므로 보장되지는 않습니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*static-getderivedstatefromerror-returns*/}
 

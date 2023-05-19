@@ -227,6 +227,6 @@ This way the initial render pass will render the same content as the server, avo
 <Pitfall>
 
 This approach makes hydration slower because your components have to render twice. Be mindful of the user experience on slow connections. The JavaScript code may load significantly later than the initial HTML render, so rendering a different UI immediately after hydration may feel jarring to the user.
-<Trans>이 접근 방식은 컴포넌트가 두 번 렌더링해야 하므로 hydration 속도가 느려집니다. 느린 연결 상태에서의 사용자 경험에 유의하세요. 자바스크립트 코드는 초기 HTML 렌더링보다 상당히 늦게 로드될 수 있으므로 hydration 직후에 다른 UI를 렌더링하면 사용자에게 어색하게 느껴질 수 있습니다.</Trans>
+<Trans>이 접근 방식은 컴포넌트가 두 번 렌더링해야 하므로 hydration 속도가 느려집니다. 느린 연결 상태에서의 사용자 경험에 유의하세요. JavaScript 코드는 초기 HTML 렌더링보다 상당히 늦게 로드될 수 있으므로 hydration 직후에 다른 UI를 렌더링하면 사용자에게 어색하게 느껴질 수 있습니다.</Trans>
 
 </Pitfall>

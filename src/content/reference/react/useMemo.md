@@ -1333,7 +1333,7 @@ This code doesn't work:
 ```
 
 In JavaScript, `() => {` starts the arrow function body, so the `{` brace is not a part of your object. This is why it doesn't return an object, and leads to mistakes. You could fix it by adding parentheses like `({` and `})`:
-<Trans>자바스크립트에서 `() => {`는 화살표 함수 본문을 시작하므로 `{` 중괄호는 객체의 일부가 아닙니다. 이 때문에 객체를 반환하지 않고 실수가 발생합니다. `({`와 `})`로 괄호를 추가하면 이 문제를 해결할 수 있습니다:</Trans>
+<Trans>JavaScript에서 `() => {`는 화살표 함수 본문을 시작하므로 `{` 중괄호는 객체의 일부가 아닙니다. 이 때문에 객체를 반환하지 않고 실수가 발생합니다. `({`와 `})`로 괄호를 추가하면 이 문제를 해결할 수 있습니다:</Trans>
 
 ```js {1-3,6}
   // This works, but is easy for someone to break again

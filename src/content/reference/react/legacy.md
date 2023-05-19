@@ -22,7 +22,7 @@ These APIs are exported from the `react` package, but they are not recommended f
 <Trans>[`cloneElement`](/reference/react/cloneElement)를 사용하면 다른 엘리먼트를 시작점으로 사용하여 React 엘리먼트를 생성할 수 있습니다. [대안을 확인하세요.](/reference/react/cloneElement#alternatives)</Trans>
 
 * [`Component`](/reference/react/Component) lets you define a React component as a JavaScript class. [See alternatives.](/reference/react/Component#alternatives)
-<Trans>[`Component`](/reference/react/Component)를 사용하면 React 컴포넌트를 자바스크립트 클래스로 정의할 수 있습니다. [대안을 확인하세요.](/reference/react/Component#alternatives)</Trans>
+<Trans>[`Component`](/reference/react/Component)를 사용하면 React 컴포넌트를 JavaScript 클래스로 정의할 수 있습니다. [대안을 확인하세요.](/reference/react/Component#alternatives)</Trans>
 
 * [`createElement`](/reference/react/createElement) lets you create a React element. Typically, you'll use JSX instead.
 <Trans>[`createElement`](/reference/react/createElement)를 사용하면 React 엘리먼트를 생성할 수 있습니다. 일반적으로 JSX를 대신 사용합니다.</Trans>

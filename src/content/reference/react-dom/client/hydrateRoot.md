@@ -220,7 +220,7 @@ The React tree you pass to `hydrateRoot` needs to produce **the same output** as
 <Trans>`hydrateRoot`에 전달한 React 트리는 서버에서 만들었던 React 트리 결과물과 **동일**해야 합니다.</Trans>
 
 This is important for the user experience. The user will spend some time looking at the server-generated HTML before your JavaScript code loads. Server rendering creates an illusion that the app loads faster by showing the HTML snapshot of its output. Suddenly showing different content breaks that illusion. This is why the server render output must match the initial render output on the client.
-<Trans>이는 사용자 경험을 위해서 중요합니다. 유저는 서버에서 만들어진 HTML을 자바스크립트 코드가 로드될 때까지 둘러보게 됩니다. 서버 렌더링은 HTML 스냅샷을 보여줌으로써 앱의 로딩이 더 빠르게 느껴지도록 합니다. 갑자기 다른 컨텐츠를 보여주게 되면 이러한 환상이 깨져버릴 것입니다. 따라서 서버에서 렌더링한 결과물과 클라이언트에서 최초로 렌더링한 결과물이 같아야 하는 것입니다.</Trans>
+<Trans>이는 사용자 경험을 위해서 중요합니다. 유저는 서버에서 만들어진 HTML을 JavaScript 코드가 로드될 때까지 둘러보게 됩니다. 서버 렌더링은 HTML 스냅샷을 보여줌으로써 앱의 로딩이 더 빠르게 느껴지도록 합니다. 갑자기 다른 컨텐츠를 보여주게 되면 이러한 환상이 깨져버릴 것입니다. 따라서 서버에서 렌더링한 결과물과 클라이언트에서 최초로 렌더링한 결과물이 같아야 하는 것입니다.</Trans>
 
 The most common causes leading to hydration errors include:
 <Trans>다음은 hydration 에러가 발생하는 대표적인 사례들입니다:</Trans>
@@ -371,7 +371,7 @@ This way the initial render pass will render the same content as the server, avo
 <Pitfall>
 
 This approach makes hydration slower because your components have to render twice. Be mindful of the user experience on slow connections. The JavaScript code may load significantly later than the initial HTML render, so rendering a different UI immediately after hydration may also feel jarring to the user.
-<Trans>이 방법은 두 번 렌더링해야 하므로 상대적으로 hydration이 느려집니다. 통신 상태가 느릴 경우의 사용자 경험을 유의하세요. 초기 HTML이 렌더링되고 한참 이후에야 자바스크립트 코드를 불러오게 될 수 있고, 이 경우 hydration 이후 즉시 다른 UI를 렌더링하게 되면 사용자로서는 UI가 삐걱거리는 것처럼 인식될 수도 있습니다.</Trans>
+<Trans>이 방법은 두 번 렌더링해야 하므로 상대적으로 hydration이 느려집니다. 통신 상태가 느릴 경우의 사용자 경험을 유의하세요. 초기 HTML이 렌더링되고 한참 이후에야 JavaScript 코드를 불러오게 될 수 있고, 이 경우 hydration 이후 즉시 다른 UI를 렌더링하게 되면 사용자로서는 UI가 삐걱거리는 것처럼 인식될 수도 있습니다.</Trans>
 
 </Pitfall>
 

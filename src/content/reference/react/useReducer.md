@@ -1136,7 +1136,7 @@ return <button onClick={(e) => handleClick(e)}>Click me</button>
 ```
 
 If you can't find the cause of this error, click on the arrow next to the error in the console and look through the JavaScript stack to find the specific `dispatch` function call responsible for the error.
-<Trans>이 오류의 원인을 찾을 수 없는 경우, 콘솔에서 오류 옆에 있는 화살표를 클릭하여 자바스크립트 스택을 살펴보고, 오류의 원인이 되는 특정 `dispatch` 함수 호출을 찾아보세요.</Trans>
+<Trans>이 오류의 원인을 찾을 수 없는 경우, 콘솔에서 오류 옆에 있는 화살표를 클릭하여 JavaScript 스택을 살펴보고, 오류의 원인이 되는 특정 `dispatch` 함수 호출을 찾아보세요.</Trans>
 
 ---
 

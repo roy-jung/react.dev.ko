@@ -944,7 +944,7 @@ button { margin: 5px; }
 </Sandpack>
 
 In this example, a cleanup function is not needed because the `MapWidget` class manages only the DOM node that was passed to it. After the `Map` React component is removed from the tree, both the DOM node and the `MapWidget` class instance will be automatically garbage-collected by the browser JavaScript engine.
-<Trans>이 예제에서는 `MapWidget` 클래스가 자신에게 전달된 DOM 노드만 관리하기 때문에 클린업 함수가 필요하지 않습니다. `Map` React 컴포넌트가 트리에서 제거된 후, DOM 노드와 `MapWidget` 클래스 인스턴스는 브라우저 자바스크립트 엔진에 의해 자동으로 가비지컬렉팅 됩니다.</Trans>
+<Trans>이 예제에서는 `MapWidget` 클래스가 자신에게 전달된 DOM 노드만 관리하기 때문에 클린업 함수가 필요하지 않습니다. `Map` React 컴포넌트가 트리에서 제거된 후, DOM 노드와 `MapWidget` 클래스 인스턴스는 브라우저 JavaScript 엔진에 의해 자동으로 가비지컬렉팅 됩니다.</Trans>
 
 ---
 

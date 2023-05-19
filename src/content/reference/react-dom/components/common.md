@@ -1232,7 +1232,7 @@ Sometimes, the style values depend on data. Use the `style` attribute to pass so
 
 
 In the above example, `style={{}}` is not a special syntax, but a regular `{}` object inside the `style={ }` [JSX curly braces.](/learn/javascript-in-jsx-with-curly-braces) We recommend only using the `style` attribute when your styles depend on JavaScript variables.
-<Trans>위 예시에서 `style={{}}`은 특별한 구문이 아니라 `style={ }` [JSX 중괄호](/learn/javascript-in-jsx-with-curly-braces) 안에 있는 일반 `{}` 객체입니다. 스타일이 자바스크립트 변수에 의존하는 경우에만 `style` 속성을 사용하는 것이 좋습니다.</Trans>
+<Trans>위 예시에서 `style={{}}`은 특별한 구문이 아니라 `style={ }` [JSX 중괄호](/learn/javascript-in-jsx-with-curly-braces) 안에 있는 일반 `{}` 객체입니다. 스타일이 JavaScript 변수에 의존하는 경우에만 `style` 속성을 사용하는 것이 좋습니다.</Trans>
 
 <Sandpack>
 

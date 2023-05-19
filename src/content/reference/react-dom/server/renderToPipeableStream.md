@@ -511,7 +511,7 @@ If an error happens in the `Posts` component or somewhere inside it, React will 
 <Trans outdent>더 이상 서버에서 `Posts` 콘텐츠를 렌더링하려는 시도를 "포기"합니다.</Trans>
 
 3. When the JavaScript code loads on the client, React will _retry_ rendering `Posts` on the client.
-<Trans outdent>자바스크립트 코드가 클라이언트에서 로드되면, React는 클라이언트에서 `Posts`렌더링을 *다시 시도*합니다.</Trans>
+<Trans outdent>JavaScript 코드가 클라이언트에서 로드되면, React는 클라이언트에서 `Posts`렌더링을 *다시 시도*합니다.</Trans>
 
 If retrying rendering `Posts` on the client _also_ fails, React will throw the error on the client. As with all the errors thrown during rendering, the [closest parent error boundary](/reference/react/Component#static-getderivedstatefromerror) determines how to present the error to the user. In practice, this means that the user will see a loading indicator until it is certain that the error is not recoverable.
 <Trans>클라이언트에서 `Posts` 렌더링을 다시 시도해도 실패하면, React는 클라이언트에서 오류를 던집니다. 렌더링 중에 발생하는 모든 에러와 마찬가지로, [가장 가까운 상위 에러 경계](/reference/react/Component#static-getderivedstatefromerror)에 따라 사용자에게 에러를 표시하는 방법이 결정됩니다. 보다 실질적으로는, 오류를 복구할 수 없다는 것이 확실해질 때까지 로딩 표시기가 표시됩니다.</Trans>

@@ -541,7 +541,7 @@ As mentioned earlier, there is no way to get the rendered output of an inner com
 ### Converting children to an array<Trans>children을 배열로 변환하기</Trans> {/*converting-children-to-an-array*/}
 
 Call `Children.toArray(children)` to turn the `children` data structure into a regular JavaScript array. This lets you manipulate the array with built-in array methods like [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), or [`reverse`.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) 
-<Trans>`Children.toArray(children)`를 호출하면 `children` 데이터 구조를 일반 자바스크립트 배열로 변환합니다. 이렇게 하면 [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), [`reverse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)와 같은 빌트인 배열 메서드를 사용하여 조작할 수 있습니다. </Trans>
+<Trans>`Children.toArray(children)`를 호출하면 `children` 데이터 구조를 일반 JavaScript 배열로 변환합니다. 이렇게 하면 [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), [`reverse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)와 같은 빌트인 배열 메서드를 사용하여 조작할 수 있습니다. </Trans>
 
 <Sandpack>
 
@@ -787,7 +787,7 @@ export function RowList({ rows }) {
 </Sandpack>
 
 Since `rows` is a regular JavaScript array, the `RowList` component can use built-in array methods like [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) on it.
-<Trans>`row`는 일반 자바스크립트 배열이므로 `RowList` 컴포넌트는 [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)과 같은 빌트인 배열 메서드를 사용할 수 있습니다.</Trans>
+<Trans>`row`는 일반 JavaScript 배열이므로 `RowList` 컴포넌트는 [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)과 같은 빌트인 배열 메서드를 사용할 수 있습니다.</Trans>
 
 This pattern is especially useful when you want to be able to pass more information as structured data together with children. In the below example, the `TabSwitcher` component receives an array of objects as the `tabs` prop:
 <Trans>이 패턴은 자식과 함께 더 많은 정보를 구조화된 데이터로 전달하고 싶을 때 특히 유용합니다. 아래 예시에서 `TabSwitcher` 컴포넌트는 객체 배열을 `tabs` prop으로 받습니다:</Trans>
