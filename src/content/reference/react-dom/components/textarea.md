@@ -42,7 +42,7 @@ You can [make a text area controlled](#controlling-a-text-area-with-a-state-vari
 <Trans>`value` prop을 전달함으로써 [이를 제어 컴포넌트가 되게 할 수 있습니다](#controlling-a-text-area-with-a-state-variable):</Trans>
 
 * `value`: A string. Controls the text inside the text area.  
-<Trans outdent>`value`: 문자열 값. textarea 내부의 텍스트를 제어합니다.</Trans>
+<Trans outdent>`value`: 문자열. textarea 내부의 텍스트를 제어합니다.</Trans>
 
 When you pass `value`, you must also pass an `onChange` handler that updates the passed value.
 <Trans>`value`를 전달할 때는 전달된 value를 업데이트 하는 `onChange` 핸들러도 함께 전달해야 합니다. </Trans>
@@ -51,7 +51,7 @@ If your `<textarea>` is uncontrolled, you may pass the `defaultValue` prop inste
 <Trans>`<textarea>`가 비제어 컴포넌트인 경우에는, 대신 `defaultValue`를 전달할 수 있습니다:</Trans>
 
 * `defaultValue`: A string. Specifies [the initial value](#providing-an-initial-value-for-a-text-area) for a text area.
-<Trans outdent>`defaultValue`: 문자열 값. textarea의 [초기값](#providing-an-initial-value-for-a-text-area)을 지정합니다.</Trans>
+<Trans outdent>`defaultValue`: 문자열. textarea의 [초기값](#providing-an-initial-value-for-a-text-area)을 지정합니다.</Trans>
 
 These `<textarea>` props are relevant both for uncontrolled and controlled text areas:
 <Trans>다음 `<textarea>` prop들은 비제어 및 제어 컴포넌트 모두에 영향을 미칩니다:</Trans>
@@ -69,7 +69,7 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 <Trans>[`cols`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-cols): 숫자. 표준 문자 너비를 기준으로 기본 칸 수를 지정합니다. 기본 값은 `20`입니다.</Trans>
 
 * [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-disabled): A boolean. If `true`, the input will not be interactive and will appear dimmed.
-<Trans>[`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-disabled): 불리언. `true`일 경우, 입력이 비활성화되고 회색으로 표시됩니다.</Trans>
+<Trans>[`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-disabled): 불리언. `true`일 경우, 입력이 비활성화되고 흐릿하게 표시됩니다.</Trans>
 
 * [`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-form): A string. Specifies the `id` of the `<form>` this input belongs to. If omitted, it's the closest parent form.
 <Trans>[`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-form): 문자열. 이 textarea가 속한 `<form>`의 `id`를 지정합니다. 생략하면 가장 가까운 상위 form이 됩니다.</Trans>
@@ -84,13 +84,13 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 <Trans>[`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name): 문자열. [폼 제출시](#reading-the-textarea-value-when-submitting-a-form) 해당 textarea의 이름을 지정합니다.</Trans>
 
 * `onChange`: An [`Event` handler](/reference/react-dom/components/common#event-handler) function. Required for [controlled text areas.](#controlling-a-text-area-with-a-state-variable) Fires immediately when the input's value is changed by the user (for example, it fires on every keystroke). Behaves like the browser [`input` event.](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
-<Trans>`onChange`:  [이벤트 핸들러](reference/react-dom/components/common#event-handler). [제어 컴포넌트](#controlling-a-text-area-with-a-state-variable)로 사용할 때 필요합니다. 사용자에 의해 입력 값이 변경되는 즉시 실행됩니다. (예: 각 키 입력시 실행됨). 브라우저의 [`input` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)와 동일하게 동작합니다.</Trans>
+<Trans>`onChange`: [이벤트 핸들러](reference/react-dom/components/common#event-handler). [제어 컴포넌트](#controlling-a-text-area-with-a-state-variable)로 사용할 때 필요합니다. 사용자에 의해 입력 값이 변경되는 즉시 실행됩니다. (예: 각 키 입력시 실행됨). 브라우저의 [`input` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)처럼 동작합니다.</Trans>
 
 * `onChangeCapture`: A version of `onChange` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
 <Trans>`onChangeCapture`: [캡쳐 단계](learn/responding-to-events#capture-phase-events)에 실행되는 버전의 `onChange`입니다.</Trans>
 
 * [`onInput`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event): An [`Event` handler](/reference/react-dom/components/common#event-handler) function. function. Fires immediately when the value is changed by the user. For historical reasons, in React it is idiomatic to use `onChange` instead which works similarly.
-<Trans>[`onInput`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event): [이벤트 핸들러](reference/react-dom/components/common#event-handler). 사용자에 의해 값이 변결될 때마다 즉시 실행됩니다. 역사적인 이유로, React에서는 일반적으로 비슷하게 작동하는 `onChange`를 대신 사용합니다.</Trans>
+<Trans>[`onInput`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event): [이벤트 핸들러](reference/react-dom/components/common#event-handler). 사용자에 의해 값이 변결될 때마다 실행됩니다. 역사적인 이유로 React에서는 일반적으로 비슷하게 작동하는 `onChange`를 대신 사용합니다.</Trans>
 
 * `onInputCapture`: A version of `onInput` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
 <Trans>`onInputCapture`: [캡쳐 단계](learn/responding-to-events#capture-phase-events)에 실행되는 버전의 `onInput`입니다.</Trans>
@@ -125,18 +125,19 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 - Passing children like `<textarea>something</textarea>` is not allowed. [Use `defaultValue` for initial content.](#providing-an-initial-value-for-a-text-area)
-- If a text area receives a string `value` prop, it will be [treated as controlled.](#controlling-a-text-area-with-a-state-variable)
-- A text area can't be both controlled and uncontrolled at the same time.
-- A text area cannot switch between being controlled or uncontrolled over its lifetime.
-- Every controlled text area needs an `onChange` event handler that synchronously updates its backing value.
+<Trans>`<textarea>something</textarea>`처럼 자식 요소를 전달하는 것은 허용되지 않습니다. [초기값은 `defaultValue`를 사용하세요.](#providing-an-initial-value-for-a-text-area)</Trans>
 
-<TransBlock>
-- `<textarea>something</textarea>`처럼 자식 요소를 전달하는 것은 허용되지 않습니다. [초기값은 `defaultValue`를 사용하세요.](#providing-an-initial-value-for-a-text-area)
-- 문자열 `value` prop을 제공하면 [제어 컴포넌트로 취급됩니다.](#controlling-a-text-area-with-a-state-variable)
-- textarea는 제어 컴포넌트이면서 동시에 비제어 컴포넌트일 수는 없습니다.
-- textarea는 생명주기 동안 제어 컴포넌트와 비제어 컴포넌트 사이를 전환할 수 없습니다.
-- 제어컴포넌트는 값을 동기적으로 업데이트 하는 `onChange` 이벤트 핸들러가 필요합니다.
-</TransBlock>
+- If a text area receives a string `value` prop, it will be [treated as controlled.](#controlling-a-text-area-with-a-state-variable)
+<Trans>문자열 `value` prop을 제공하면 [제어 컴포넌트로 취급됩니다.](#controlling-a-text-area-with-a-state-variable)</Trans>
+
+- A text area can't be both controlled and uncontrolled at the same time.
+<Trans>제어 컴포넌트이면서 동시에 비제어 컴포넌트일 수는 없습니다.</Trans>
+
+- A text area cannot switch between being controlled or uncontrolled over its lifetime.
+<Trans>생명주기 동안 제어 컴포넌트와 비제어 컴포넌트 사이를 전환할 수 없습니다.</Trans>
+
+- Every controlled text area needs an `onChange` event handler that synchronously updates its backing value.
+<Trans>제어컴포넌트는 값을 동기적으로 업데이트 하는 `onChange` 이벤트 핸들러가 필요합니다.</Trans>
 
 ---
 
@@ -178,7 +179,7 @@ Typically, you will place every `<textarea>` inside a [`<label>`](https://develo
 <Trans>흔히 `<textarea>`를 `<label>` 태그 안에 위치시킵니다. 이렇게 하면 해당 label이 textarea와 연결되어 있음을 의미하게 됩니다. 사용자가 label을 클릭하면 브라우저가 textarea에 초점을 맞춥니다. 스크린 리더는 사용자가 textarea에 초점을 맞추면 label 캡션을 읽어주므로, 접근성을 위해서도 이렇게 하는 것이 필수적입니다.</Trans>
 
 If you can't nest `<textarea>` into a `<label>`, associate them by passing the same ID to `<textarea id>` and [`<label htmlFor>`.](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor) To avoid conflicts between instances of one component, generate such an ID with [`useId`.](/reference/react/useId)
-<Trans>`<textarea>`를 `<label>`에 중첩시킬 수 없는 경우에는, `<textarea id>`와 [`<label htmlFor>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor)에 동일한 ID를 전달하여 연결하세요. 한 컴포넌트에서 여러 인스턴스간의 충돌을 피하기 위해서는 다음과 같이 [`useId`](reference/react/useId)로 ID를 생성하세요.</Trans>
+<Trans>`<textarea>`를 `<label>`에 넣을 수 없는 경우에는, `<textarea id>`와 [`<label htmlFor>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor)에 동일한 ID를 전달하여 연결하세요. 한 컴포넌트에서 여러 인스턴스간의 충돌을 피하기 위해서는 다음과 같이 [`useId`](reference/react/useId)로 ID를 생성하세요.</Trans>
 
 
 <Sandpack>
@@ -256,7 +257,7 @@ Unlike in HTML, passing initial text like `<textarea>Some content</textarea>` is
 ### Reading the text area value when submitting a form<Trans>form 제출시 textarea 값 읽기</Trans> {/*reading-the-text-area-value-when-submitting-a-form*/}
 
 Add a [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) around your textarea with a [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) inside. It will call your `<form onSubmit>` event handler. By default, the browser will send the form data to the current URL and refresh the page. You can override that behavior by calling `e.preventDefault()`. Read the form data with [`new FormData(e.target)`](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
-<Trans>textarea 주위에 [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)을 추가하고, form 안에 [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)를 넣으세요. 그러면 `<form onSubmit>` 이벤트 핸들러가 호출됩니다. 기본적으로 브라우저는 form 데이터를 현재 URL로 전송하고 페이지를 새로고침 합니다. `e.preventDefault()`를 호출하여 이 동작을 재 정의할 수 있습니다. form 데이터를 읽으려면 [`new FormData(e.target)`](https://developer.mozilla.org/en-US/docs/Web/API/FormData)를 사용하세요.</Trans>
+<Trans>textarea를 [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)으로 감싸고, form 안에 [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)을 넣으세요. 그러면 `<form onSubmit>` 이벤트 핸들러가 호출됩니다. 기본적으로 브라우저는 form 데이터를 현재 URL로 전송하고 페이지를 새로고침 합니다. `e.preventDefault()`를 호출하여 이 동작을 재정의할 수 있습니다. form 데이터를 읽으려면 [`new FormData(e.target)`](https://developer.mozilla.org/en-US/docs/Web/API/FormData)를 사용하세요.</Trans>
 
 <Sandpack>
 
@@ -317,7 +318,7 @@ Give a `name` to your `<textarea>`, for example `<textarea name="postContent" />
 <Pitfall>
 
 By default, *any* `<button>` inside a `<form>` will submit it. This can be surprising! If you have your own custom `Button` React component, consider returning [`<button type="button">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button) instead of `<button>`. Then, to be explicit, use `<button type="submit">` for buttons that *are* supposed to submit the form.
-<Trans>기본적으로 `<form>` 안의 어떠한 `<button>`이든 클릭시 제출될 것입니다. 이러한 동작이 당황스러울 수 있습니다! 사용자정의 `Button` React 컴포넌트를 사용하고 있다면 `<button>` 대신 [`<button type="button">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button)로 작성하는 것을 고려하세요. 다음 form 제출 버튼에는 [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button)`을 명확하게 표시하세요.</Trans>
+<Trans>기본적으로 `<form>` 안의 어떠한 `<button>`이든 브라우저는 이를 제출 요청으로 인식합니다. 이러한 동작이 당황스러울 수 있습니다! 사용자정의 `Button` React 컴포넌트를 사용하고 있다면 `<button>` 대신 [`<button type="button">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button)로 작성하는 것을 고려하세요. 다음 form 제출 버튼에는 [`<button type="submit">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button)`을 명확하게 표시하세요.</Trans>
 
 </Pitfall>
 
@@ -326,10 +327,10 @@ By default, *any* `<button>` inside a `<form>` will submit it. This can be surpr
 ### Controlling a text area with a state variable <Trans>state 변수를 사용하여 textarea 제어하기</Trans> {/*controlling-a-text-area-with-a-state-variable*/}
 
 A text area like `<textarea />` is *uncontrolled.* Even if you [pass an initial value](#providing-an-initial-value-for-a-text-area) like `<textarea defaultValue="Initial text" />`, your JSX only specifies the initial value, not the value right now.
-<Trans>`<textarea />`는 기본적으로 비제어 컴포넌트입니다. `<textarea defaultValue="Initial text" />`와 같이 [초기값을 전달](#providing-an-initial-value-for-a-text-area)하더라도, JSX는 초기값만을 지정할 뿐, 현재값은 지정하지 않습니다.</Trans>
+<Trans>`<textarea />`는 기본적으로 *비제어 컴포넌트*입니다. `<textarea defaultValue="Initial text" />`와 같이 [초기값을 전달](#providing-an-initial-value-for-a-text-area)하더라도, JSX는 초기값만을 지정할 뿐, 현재값은 지정하지 않습니다.</Trans>
 
 **To render a _controlled_ text area, pass the `value` prop to it.** React will force the text area to always have the `value` you passed. Typically, you will control a text area by declaring a [state variable:](/reference/react/useState)
-<Trans>**_제어_ 컴포넌트로 렌더링하기 위해서는 `value` prop을 전달하세요.** React는 textarea가 항상 전달한 `value`를 사용하도록 강제합니다. 일반적으로 [state 변수](reference/react/useState)로 textarea를 제어합니다.</Trans>
+<Trans>**_제어_ 컴포넌트로 렌더링하기 위해서는 `value` prop을 전달하세요.** React는 textarea가 항상 전달한 `value`를 갖도록 강제합니다. 일반적으로 [state 변수](reference/react/useState)로 textarea를 제어합니다.</Trans>
 
 ```js {2-3,7-10}
 function NewPost() {
@@ -348,7 +349,7 @@ function NewPost() {
 ```
 
 This is useful if you want to re-render some part of the UI in response to every keystroke.
-<Trans>다음은 모든 키 입력에 응답하여 UI의 일부를 다시 렌더링 하려는 경우에 유용합니다.</Trans>
+<Trans>이는 모든 키 입력에 응답하여 UI의 일부를 다시 렌더링하려는 경우에 유용합니다.</Trans>
 
 <Sandpack>
 

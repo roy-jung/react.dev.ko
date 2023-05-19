@@ -1,6 +1,6 @@
 ---
 title: createContext
-translators: [류재준, 이나령]
+translators: [류재준, 이나령, 이지수]
 ---
 
 <Intro>
