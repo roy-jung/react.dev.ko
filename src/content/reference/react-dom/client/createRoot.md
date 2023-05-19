@@ -1,6 +1,6 @@
 ---
 title: createRoot
-translators: [안예지, 이승효]
+translators: [안예지, 이승효, 고석영]
 ---
 
 <Intro>

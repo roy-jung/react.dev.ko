@@ -1,6 +1,6 @@
 ---
 title: flushSync
-translators: [류재준]
+translators: [류재준, 고석영]
 ---
 
 <Pitfall>

@@ -1,6 +1,6 @@
 ---
 title: Children
-translators: [이나령, 정재남]
+translators: [이나령, 정재남, 고석영]
 ---
 
 <Pitfall>

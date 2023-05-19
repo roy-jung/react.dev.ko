@@ -1,6 +1,6 @@
 ---
 title: React DOM APIs
-translators: [이나령]
+translators: [이나령, 고석영]
 ---
 
 <Intro>

@@ -1,6 +1,6 @@
 ---
 title: renderToStaticNodeStream
-translators: [이승효]
+translators: [이승효, 고석영]
 ---
 
 <Intro>
