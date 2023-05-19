@@ -36,11 +36,10 @@ Wrap a component tree in a `<Profiler>` to measure its rendering performance.
 #### Props {/*props*/}
 
 * `id`: A string identifying the part of the UI you are measuring.
+<Trans>`id`: 측정 중인 UI 부분을 식별하는 문자열입니다.</Trans>
+
 * `onRender`: An [`onRender` callback](#onrender-callback) that React calls every time components within the profiled tree update. It receives information about what was rendered and how much time it took.
-<TransBlock>
-  - `id`: 측정 중인 UI 부분을 식별하는 문자열입니다.
-  - `onRender`: 프로파일링된 트리 내의 컴포넌트가 업데이트될 때마다 React가 호출하는 [`onRender` 콜백](#onrender-callback)입니다. 이 콜백은 렌더링된 내용과 소요된 시간에 대한 정보를 받습니다.
-</TransBlock>
+<Trans>`onRender`: 프로파일링된 트리 내의 컴포넌트가 업데이트될 때마다 React가 호출하는 [`onRender` 콜백](#onrender-callback)입니다. 이 콜백은 렌더링된 내용과 소요된 시간에 대한 정보를 받습니다.</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 

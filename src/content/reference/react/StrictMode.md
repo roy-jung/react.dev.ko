@@ -48,13 +48,13 @@ Strict Mode enables the following development-only behaviors:
 <Trans>Strict Mode 는 다음과 같은 개발 전용 동작을 활성화합니다:</Trans>
 
 - Your components will [re-render an extra time](#fixing-bugs-found-by-double-rendering-in-development) to find bugs caused by impure rendering.
+<Trans>불완전한 렌더링으로 인한 버그를 찾기 위해 [한 번 더 렌더링합니다.](#fixing-bugs-found-by-double-rendering-in-development)</Trans>
+
 - Your components will [re-run Effects an extra time](#fixing-bugs-found-by-re-running-effects-in-development) to find bugs caused by missing Effect cleanup.
+<Trans>Effect 클린업이 누락되어 발생한 버그를 찾기위해 [Effect를 한 번 더 실행합니다.](#fixing-bugs-found-by-re-running-effects-in-development)</Trans>
+
 - Your components will [be checked for usage of deprecated APIs.](#fixing-deprecation-warnings-enabled-by-strict-mode)
-<TransBlock>
-- 불완전한 렌더링으로 인한 버그를 찾기 위해 [한 번 더 렌더링합니다.](#fixing-bugs-found-by-double-rendering-in-development)
-- Effect 클린업이 누락되어 발생한 버그를 찾기위해 [Effect를 한 번 더 실행합니다.](#fixing-bugs-found-by-re-running-effects-in-development)
-- [지원 중단된 API의 사용 여부를 확인합니다.](#fixing-deprecation-warnings-enabled-by-strict-mode)
-</TransBlock>
+<Trans>[지원 중단된 API의 사용 여부를 확인합니다.](#fixing-deprecation-warnings-enabled-by-strict-mode)</Trans>
 
 #### Props {/*props*/}
 
@@ -64,9 +64,7 @@ Strict Mode enables the following development-only behaviors:
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * There is no way to opt out of Strict Mode inside a tree wrapped in `<StrictMode>`. This gives you confidence that all components inside `<StrictMode>` are checked. If two teams working on a product disagree whether they find the checks valuable, they need to either reach consensus or move `<StrictMode>` down in the tree.
-<TransBlock>
-- `<StrictMode>`로 감싼 트리 내부에서 Strict 모드를 해제할 수 있는 방법은 없습니다. 이로써 `<StrictMode>` 내의 모든 컴포넌트가 검사된다는 확신을 가질 수 있습니다. 하나의 제품을 작업하는 두 팀이 검사의 가치에 대해 의견이 다를 경우, 합의를 하거나, `<StrictMode>`를 트리에서 아래로 이동해야 할 것입니다.
-</TransBlock>
+<Trans outdent>`<StrictMode>`로 감싼 트리 내부에서 Strict 모드를 해제할 수 있는 방법은 없습니다. 이로써 `<StrictMode>` 내의 모든 컴포넌트가 검사된다는 확신을 가질 수 있습니다. 하나의 제품을 작업하는 두 팀이 검사의 가치에 대해 의견이 다를 경우, 합의를 하거나, `<StrictMode>`를 트리에서 아래로 이동해야 할 것입니다.</Trans>
 
 ---
 
@@ -105,13 +103,13 @@ Strict Mode enables the following checks in development:
 <Trans>Strict Mode는 개발 환경에서 다음과 같은 점검을 합니다:</Trans>
 
 - Your components will [re-render an extra time](#fixing-bugs-found-by-double-rendering-in-development) to find bugs caused by impure rendering.
+<Trans>불완전한 렌더링으로 인한 버그를 찾기 위해 [한번 더 렌더링합니다.](#fixing-bugs-found-by-double-rendering-in-development) </Trans>
+
 - Your components will [re-run Effects an extra time](#fixing-bugs-found-by-re-running-effects-in-development) to find bugs caused by missing Effect cleanup.
+<Trans>Effect 클린업이 누락되어 발생한 버그를 찾기위해 [Effect를 한번 더 실행합니다.](#fixing-bugs-found-by-re-running-effects-in-development)</Trans>
+
 - Your components will [be checked for usage of deprecated APIs.](#fixing-deprecation-warnings-enabled-by-strict-mode)
-<TransBlock>
-- 불완전한 렌더링으로 인한 버그를 찾기 위해 [한번 더 렌더링합니다.](#fixing-bugs-found-by-double-rendering-in-development) 
-- Effect 클린업이 누락되어 발생한 버그를 찾기위해 [Effect를 한번 더 실행합니다.](#fixing-bugs-found-by-re-running-effects-in-development)
-- [지원 중단된 API의 사용 여부를 확인합니다.](#fixing-deprecation-warnings-enabled-by-strict-mode)
-</TransBlock>
+<Trans>[지원 중단된 API의 사용 여부를 확인합니다.](#fixing-deprecation-warnings-enabled-by-strict-mode)</Trans>
 
 **All of these checks are development-only and do not impact the production build.**
 <Trans>**이러한 모든 검사는 개발 환경 전용이며 상용 빌드에는 영향을 미치지 않습니다.**</Trans>
@@ -158,13 +156,13 @@ Components breaking this rule behave unpredictably and cause bugs. To help you f
 <Trans>이 규칙을 위반하는 컴포넌트는 예측할 수 없는 동작을 하고 버그를 유발합니다. Strict Mode는 **개발 환경에서** 실수로 작성한 불순한 코드를 찾을 수 있도록 다음의 일부 함수(순수 함수만)를 **두 번** 호출합니다:</Trans>
 
 - Your component function body (only top-level logic, so this doesn't include code inside event handlers)
+<Trans>컴포넌트 함수 본문(최상위의 로직만 있으므로 이벤트 핸들러 내부의 코드는 포함되지 않습니다.)</Trans>
+
 - Functions that you pass to [`useState`](/reference/react/useState), [`set` functions](/reference/react/useState#setstate), [`useMemo`](/reference/react/useMemo), or [`useReducer`](/reference/react/useReducer)
+<Trans>[`useState`](/reference/react/useState), [`set` 함수](/reference/react/useState#setstate), [`useMemo`](/reference/react/useMemo), [`useReducer`](/reference/react/useReducer)에 전달한 함수</Trans>
+
 - Some class component methods like [`constructor`](/reference/react/Component#constructor), [`render`](/reference/react/Component#render), [`shouldComponentUpdate`](/reference/react/Component#shouldcomponentupdate) ([see the whole list](https://reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects))
-<TransBlock>
-- 컴포넌트 함수 본문(최상위의 로직만 있으므로 이벤트 핸들러 내부의 코드는 포함되지 않습니다.)
-- [`useState`](/reference/react/useState), [`set` 함수](/reference/react/useState#setstate), [`useMemo`](/reference/react/useMemo), [`useReducer`](/reference/react/useReducer)에 전달한 함수
-- [`constructor`](/reference/react/Component#constructor), [`render`](/reference/react/Component#render), [`shouldComponentUpdate`](/reference/react/Component#shouldcomponentupdate)와 같은 일부 클래스 컴포넌트 메서드 ([전체 목록 보기](https://ko.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects))
-</TransBlock>
+<Trans>[`constructor`](/reference/react/Component#constructor), [`render`](/reference/react/Component#render), [`shouldComponentUpdate`](/reference/react/Component#shouldcomponentupdate)와 같은 일부 클래스 컴포넌트 메서드 ([전체 목록 보기](https://ko.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects))</Trans>
 
 If a function is pure, running it twice does not change its behavior because a pure function produces the same result every time. However, if a function is impure (for example, it mutates the data it receives), running it twice tends to be noticeable (that's what makes it impure!) This helps you spot and fix the bug early.
 <Trans>순수 함수는 매번 동일한 결과를 생성하므로 함수를 두 번 실행해도 동작이 변경되지 않습니다. 그러나 함수가 순수하지 않은 경우 (예를 들어, 수신하는 데이터를 변조하는 경우) 순수하지 않은 코드를 두 번 실행하면 눈에 띄는 경향이 있습니다 (그래서 순수하지 않는 것 입니다!) 이를 통해 버그를 조기에 발견하고 수정하는데 도움이 됩니다.</Trans>
@@ -886,16 +884,17 @@ React warns if some component anywhere inside a `<StrictMode>` tree uses one of 
 <Trans>React는 `<StrictMode>` 트리 내의 컴포넌트가 더 이상 지원되지 않는 API중 하나를 사용하는 경우 경고를 표시합니다:</Trans>
 
 * [`findDOMNode`](/reference/react-dom/findDOMNode). [See alternatives.](https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
-* `UNSAFE_` class lifecycle methods like [`UNSAFE_componentWillMount`](/reference/react/Component#unsafe_componentwillmount). [See alternatives.](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles) 
-* Legacy context ([`childContextTypes`](/reference/react/Component#static-childcontexttypes), [`contextTypes`](/reference/react/Component#static-contexttypes), and [`getChildContext`](/reference/react/Component#getchildcontext)). [See alternatives.](/reference/react/createContext)
-* Legacy string refs ([`this.refs`](/reference/react/Component#refs)). [See alternatives.](https://reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
+<Trans>[`findDOMNode`](/reference/react-dom/findDOMNode). [대안을 살펴보세요.](https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)</Trans>
 
-<TransBlock>
-- [`findDOMNode`](/reference/react-dom/findDOMNode). [대안을 살펴보세요.](https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
-- [`UNSAFE_componentWillMount`](/reference/react/Component#unsafe_componentwillmount)와 같은 `UNSAFE_` 클래스 라이프 사이클 메서드들. [대안을 살펴보세요.](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles) 
-- 예전 컨텍스트 API들 ([`childContextTypes`](/reference/react/Component#static-childcontexttypes), [`contextTypes`](/reference/react/Component#static-contexttypes), [`getChildContext`](/reference/react/Component#getchildcontext)) [대안을 살펴보세요.](/reference/react/createContext)
-- 예전 문자열 ref([this.refs](/reference/react/Component#refs)). [대안을 살펴보세요.](https://ko.reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
-</TransBlock>
+* `UNSAFE_` class lifecycle methods like [`UNSAFE_componentWillMount`](/reference/react/Component#unsafe_componentwillmount). [See alternatives.](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles) 
+<Trans>[`UNSAFE_componentWillMount`](/reference/react/Component#unsafe_componentwillmount)와 같은 `UNSAFE_` 클래스 라이프 사이클 메서드들. [대안을 살펴보세요.](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles) </Trans>
+
+
+* Legacy context ([`childContextTypes`](/reference/react/Component#static-childcontexttypes), [`contextTypes`](/reference/react/Component#static-contexttypes), and [`getChildContext`](/reference/react/Component#getchildcontext)). [See alternatives.](/reference/react/createContext)
+<Trans>예전 컨텍스트 API들 ([`childContextTypes`](/reference/react/Component#static-childcontexttypes), [`contextTypes`](/reference/react/Component#static-contexttypes), [`getChildContext`](/reference/react/Component#getchildcontext)) [대안을 살펴보세요.](/reference/react/createContext)</Trans>
+
+* Legacy string refs ([`this.refs`](/reference/react/Component#refs)). [See alternatives.](https://reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
+<Trans>예전 문자열 ref([this.refs](/reference/react/Component#refs)). [대안을 살펴보세요.](https://ko.reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)</Trans>
 
 These APIs are primarily used in older [class components](/reference/react/Component) so they rarely appear in modern apps.
 <Trans>이러한 API는 주로 오래된 [클래스 컴포넌트](/reference/react/Component)에서 사용되므로 최신 앱에는 거의 나타나지 않습니다.</Trans>

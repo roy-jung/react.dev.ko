@@ -97,12 +97,10 @@ You need to pass two things to `useMemo`:
 <Trans>`useMemo`에는 두 가지를 전달해야 합니다:</Trans>
 
 1. A <CodeStep step={1}>calculation function</CodeStep> that takes no arguments, like `() =>`, and returns what you wanted to calculate.
-2. A <CodeStep step={2}>list of dependencies</CodeStep> including every value within your component that's used inside your calculation.
+<Trans outdent>인자(argument)를 받지 않고(`() =>`), 원하는 값을 계산하여 반환하는 <CodeStep step={1}>계산 함수</CodeStep>.</Trans>
 
-<TransBlock>
-1. 인자(argument)를 받지 않고(`() =>`), 원하는 값을 계산하여 반환하는 <CodeStep step={1}>계산 함수</CodeStep>.
-2. 컴포넌트 내에서 계산에 사용되는 모든 값을 포함하는 <CodeStep step={2}>의존성 목록</CodeStep>.
-</TransBlock>
+2. A <CodeStep step={2}>list of dependencies</CodeStep> including every value within your component that's used inside your calculation.
+<Trans outdent>컴포넌트 내에서 계산에 사용되는 모든 값을 포함하는 <CodeStep step={2}>의존성 목록</CodeStep>.</Trans>
 
 On the initial render, the <CodeStep step={3}>value</CodeStep> you'll get from `useMemo` will be the result of calling your <CodeStep step={1}>calculation</CodeStep>.
 <Trans>초기 렌더링 시에는, `useMemo`를 통해 얻는 <CodeStep step={3}>값</CodeStep>은 <CodeStep step={1}>계산 함수</CodeStep>를 호출한 결과값입니다.</Trans>
@@ -187,14 +185,13 @@ Optimizing with `useMemo`  is only valuable in a few cases:
 <Trans>`useMemo`를 통한 최적화는 몇 가지 경우에만 유용합니다:</Trans>
 
 - The calculation you're putting in `useMemo` is noticeably slow, and its dependencies rarely change.
-- You pass it as a prop to a component wrapped in [`memo`.](/reference/react/memo) You want to skip re-rendering if the value hasn't changed. Memoization lets your component re-render only when dependencies aren't the same.
-- The value you're passing is later used as a dependency of some Hook. For example, maybe another `useMemo` calculation value depends on it. Or maybe you are depending on this value from [`useEffect.`](/reference/react/useEffect)
+<Trans>`useMemo`에 넣는 계산이 눈에 띄게 느리고 의존성이 거의 변하지 않는 경우.</Trans>
 
-<TransBlock>
-- `useMemo`에 넣는 계산이 눈에 띄게 느리고 의존성이 거의 변하지 않는 경우.
-- [`memo`](/reference/react/memo)로 감싼 컴포넌트에 prop으로 전달하는 경우. 값이 변경되지 않은 경우 리렌더링을 건너뛰고 싶을 수 있습니다. 메모화하면 의존성이 동일하지 않은 경우에만 컴포넌트를 다시 렌더링할 수 있습니다.
-- 전달한 값은 나중에 어떤 훅의 의존성으로 사용될 것입니다. 예를 들어, 또다른 `useMemo` 또는 `useEffect`에서 이 값에 의존하고 있을 수 있습니다.
-</TransBlock>
+- You pass it as a prop to a component wrapped in [`memo`.](/reference/react/memo) You want to skip re-rendering if the value hasn't changed. Memoization lets your component re-render only when dependencies aren't the same.
+<Trans>[`memo`](/reference/react/memo)로 감싼 컴포넌트에 prop으로 전달하는 경우. 값이 변경되지 않은 경우 리렌더링을 건너뛰고 싶을 수 있습니다. 메모화하면 의존성이 동일하지 않은 경우에만 컴포넌트를 다시 렌더링할 수 있습니다.</Trans>
+
+- The value you're passing is later used as a dependency of some Hook. For example, maybe another `useMemo` calculation value depends on it. Or maybe you are depending on this value from [`useEffect.`](/reference/react/useEffect)
+<Trans>전달한 값은 나중에 어떤 훅의 의존성으로 사용될 것입니다. 예를 들어, 또다른 `useMemo` 또는 `useEffect`에서 이 값에 의존하고 있을 수 있습니다.</Trans>
 
 There is no benefit to wrapping a calculation in `useMemo` in other cases. There is no significant harm to doing that either, so some teams choose to not think about individual cases, and memoize as much as possible. The downside of this approach is that code becomes less readable. Also, not all memoization is effective: a single value that's "always new" is enough to break memoization for an entire component.
 <Trans>그밖의 경우에는 계산을 `useMemo`로 감싸는 것에 이득이 없습니다. 그렇다고 해서 크게 해가 되는 것도 아니기 때문에 일부 팀에서는 개별 사례에 대해 생각하지 않고 가능한 한 많이 메모하는 방식을 선택하기도 합니다. 이 접근 방식의 단점은 코드 가독성이 떨어진다는 것입니다. 또한 모든 메모화가 효과적인 것은 아닙니다. "항상 새로운" 단일 값만으로도 전체 컴포넌트에 대한 메모화가 깨질 수 있습니다.</Trans>

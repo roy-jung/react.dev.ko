@@ -44,12 +44,10 @@ Additionally, `<progress>` supports these props:
 <Trans>또한 `<progress>`는 다음 props를 지원합니다:</Trans>
 
 * [`max`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-max): A number. Specifies the maximum `value`. Defaults to `1`.
-* [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-value): A number between `0` and `max`, or `null` for intermedinate progress. Specifies how much was done.
+<Trans>[`max`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-max): 숫자. 최대값을 지정합니다. 기본값은 `1`입니다.</Trans>
 
-<TransBlock>
-* [`max`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-max): 숫자. 최대값을 지정합니다. 기본값은 `1`입니다.
-* [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-value): `0`에서 `max` 사이의 숫자이거나 중간 진행률의 경우 `null`입니다. 수행한 작업의 양을 지정합니다.
-</TransBlock>
+* [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-value): A number between `0` and `max`, or `null` for intermedinate progress. Specifies how much was done.
+<Trans>[`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress#attr-value): `0`에서 `max` 사이의 숫자이거나 중간 진행률의 경우 `null`입니다. 수행한 작업의 양을 지정합니다.</Trans>
 
 
 ---

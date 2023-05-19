@@ -54,7 +54,7 @@ function Tooltip() {
 <Trans>`setup`: Effect의 로직이 포함된 함수입니다. 셋업 함수는 선택적으로 *클린업* 함수를 반환할 수 있습니다. 컴포넌트가 DOM에 추가되기 전에 React는 셋업 함수를 실행합니다. 변경된 의존성으로 다시 렌더링할 때마다 React는 (클린업 함수를 정의한 경우) 먼저 이전 값으로 클린업 함수를 실행한 다음, 새 값으로 셋업 함수를 실행합니다. 컴포넌트가 DOM에서 제거되기 전에 React는 셋업 함수를 한 번 더 실행합니다.</Trans>
  
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `setup` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison. If you omit this argument, your Effect will re-run after every re-render of the component.
-<Trans>**optional** `dependencies`:  `setup` 코드 내에서 참조된 모든 반응형 값의 목록입니다. 반응형 값에는 props, state, 컴포넌트 본문 내부에서 직접 선언된 모든 변수와 함수가 포함됩니다. 린터가 [React용으로 설정된 경우](/learn/editor-setup#linting), 모든 반응형 값이 의존성으로 올바르게 지정되었는지 확인합니다. 의존성 목록은 일정한 수의 항목을 가져야 하며 `[dep1, dep2, dep3]`와 같이 인라인으로 작성해야 합니다. React는 [`Object.is`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 비교를 사용하여 각 의존성을 이전 값과 비교합니다. 이 인수를 생략하면 컴포넌트를 다시 렌더링할 때마다 Effect가 다시 실행됩니다.</Trans>
+<Trans>**선택적** `dependencies`:  `setup` 코드 내에서 참조된 모든 반응형 값의 목록입니다. 반응형 값에는 props, state, 컴포넌트 본문 내부에서 직접 선언된 모든 변수와 함수가 포함됩니다. 린터가 [React용으로 설정된 경우](/learn/editor-setup#linting), 모든 반응형 값이 의존성으로 올바르게 지정되었는지 확인합니다. 의존성 목록은 일정한 수의 항목을 가져야 하며 `[dep1, dep2, dep3]`와 같이 인라인으로 작성해야 합니다. React는 [`Object.is`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 비교를 사용하여 각 의존성을 이전 값과 비교합니다. 이 인수를 생략하면 컴포넌트를 다시 렌더링할 때마다 Effect가 다시 실행됩니다.</Trans>
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
 `useLayoutEffect` returns `undefined`.
@@ -92,13 +92,13 @@ To do this, you need to render in two passes:
 <Trans>이렇게 하려면 두 번의 패스로 렌더링해야 합니다:</Trans>
 
 1. Render the tooltip anywhere (even with a wrong position).
+<Trans outdent>툴팁을 원하는 위치에 렌더링합니다(위치가 잘못된 경우에도).</Trans>
+
 2. Measure its height and decide where to place the tooltip.
+<Trans outdent>높이를 측정하고 툴팁을 배치할 위치를 결정합니다.</Trans>
+
 3. Render the tooltip *again* in the correct place.
-<TransBlock>
-  1. 툴팁을 원하는 위치에 렌더링합니다(위치가 잘못된 경우에도).
-  2. 높이를 측정하고 툴팁을 배치할 위치를 결정합니다.
-  3. 올바른 위치에 툴팁을 *다시* 렌더링합니다.
-</TransBlock>
+<Trans outdent>올바른 위치에 툴팁을 *다시* 렌더링합니다.</Trans>
 
 **All of this needs to happen before the browser repaints the screen.** You don't want the user to see the tooltip moving. Call `useLayoutEffect` to perform the layout measurements before the browser repaints the screen:
 <Trans>**이 모든 작업은 브라우저가 화면을 다시 그리기 전에 이루어져야 합니다.** 사용자가 툴팁이 움직이는 것을 보지 않기를 원합니다. 브라우저가 화면을 다시 그리기 전에 `useLayoutEffect`를 호출하여 레이아웃 측정을 수행합니다:</Trans>
@@ -124,17 +124,19 @@ Here's how this works step by step:
 <Trans>단계별 작동 방식은 다음과 같습니다:</Trans>
 
 1. `Tooltip` renders with the initial `tooltipHeight = 0`  (so the tooltip may be wrongly positioned).
+<Trans outdent>`Tooltip`은 초기 `tooltipHeight = 0`으로 렌더링됩니다(따라서 툴팁의 위치가 잘못 지정될 수 있음).</Trans>
+
 2. React places it in the DOM and runs the code in `useLayoutEffect`.
+<Trans outdent>React는 이를 DOM에 배치하고 `useLayoutEffect`에서 코드를 실행합니다.</Trans>
+
 3. Your `useLayoutEffect` [measures the height](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) of the tooltip content and triggers an immediate re-render.
+<Trans outdent>`useLayoutEffect`는 툴팁 콘텐츠의 [높이를 측정하고](https://developer.mozilla.org/ko/docs/Web/API/Element/getBoundingClientRect) 즉시 다시 렌더링을 촉발합니다.</Trans>
+
 4. `Tooltip` renders again with the real `tooltipHeight` (so the tooltip is correctly positioned).
+<Trans outdent>`Tooltip`이 실제 `tooltipHeight`로 다시 렌더링됩니다(따라서 툴팁이 올바르게 배치됩니다).</Trans>
+
 5. React updates it in the DOM, and the browser finally displays the tooltip.
-<TransBlock>
-  1. `Tooltip`은 초기 `tooltipHeight = 0`으로 렌더링됩니다(따라서 툴팁의 위치가 잘못 지정될 수 있음).
-  2. React는 이를 DOM에 배치하고 `useLayoutEffect`에서 코드를 실행합니다.
-  3. `useLayoutEffect`는 툴팁 콘텐츠의 [높이를 측정하고](https://developer.mozilla.org/ko/docs/Web/API/Element/getBoundingClientRect) 즉시 다시 렌더링을 촉발합니다.
-  4. `Tooltip`이 실제 `tooltipHeight`로 다시 렌더링됩니다(따라서 툴팁이 올바르게 배치됩니다).
-  5. React가 DOM에서 이를 업데이트하면 브라우저에 툴팁이 최종적으로 표시됩니다.
-</TransBlock>
+<Trans outdent>React가 DOM에서 이를 업데이트하면 브라우저에 툴팁이 최종적으로 표시됩니다.</Trans>
 
 Hover over the buttons below and see how the tooltip adjusts its position depending on whether it fits:
 <Trans>아래 버튼 위로 마우스를 가져가면 툴팁이 맞는지 여부에 따라 툴팁의 위치가 어떻게 조정되는지 확인할 수 있습니다:</Trans>
@@ -754,13 +756,13 @@ The purpose of `useLayoutEffect` is to let your component [use layout informatio
 <Trans>`useLayoutEffect`의 목적은 컴포넌트가 [렌더링에 레이아웃 정보를 사용하도록 하는 것](#measuring-layout-before-the-browser-repaints-the-screen)입니다:</Trans>
 
 1. Render the initial content.
+<Trans outdent>초기 콘텐츠를 렌더링합니다.</Trans>
+
 2. Measure the layout *before the browser repaints the screen.*
+<Trans outdent>*브라우저가 화면을 다시 칠하기 전에* 레이아웃을 측정합니다.</Trans>
+
 3. Render the final content using the layout information you've read.
-<TransBlock>
-  1. 초기 콘텐츠를 렌더링합니다.
-  2. *브라우저가 화면을 다시 칠하기 전에* 레이아웃을 측정합니다.
-  3. 읽은 레이아웃 정보를 사용하여 최종 콘텐츠를 렌더링합니다.
-</TransBlock>
+<Trans outdent>읽은 레이아웃 정보를 사용하여 최종 콘텐츠를 렌더링합니다.</Trans>
 
 When you or your framework uses [server rendering](/reference/react-dom/server), your React app renders to HTML on the server for the initial render. This lets you show the initial HTML before the JavaScript code loads.
 <Trans>사용자 또는 프레임워크가 [서버 렌더링](reference/react-dom/server)을 사용하는 경우, React 앱은 초기 렌더링을 위해 서버의 HTML로 렌더링됩니다. 이를 통해 JavaScript 코드가 로드되기 전에 초기 HTML을 표시할 수 있습니다.</Trans>

@@ -27,14 +27,13 @@ Here's how we recommend to set it up:
 <Trans>설정 방법은 다음과 같습니다:</Trans>
 
 1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+<Trans outdent>[React 기반 프레임워크](/learn/start-a-new-react-project) 중 하나를 사용하여 **앱의 React 부분을 빌드**합니다.</Trans>
 
-<TransBlock>
-  1. [React 기반 프레임워크](/learn/start-a-new-react-project) 중 하나를 사용하여 **앱의 React 부분을 빌드**합니다.
-  2. 프레임워크의 설정에서 `/some-app`을 **기본 경로**로 지정합니다(방법은 다음과 같습니다: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-  3. 서버 또는 프록시를 **구성**하여 `/some-app/` 아래의 모든 요청이 React 앱에서 처리되도록 합니다.
-</TransBlock>
+2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+<Trans outdent>프레임워크의 설정에서 `/some-app`을 **기본 경로**로 지정합니다(방법은 다음과 같습니다: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).</Trans>
+
+3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+<Trans outdent>서버 또는 프록시를 **구성**하여 `/some-app/` 아래의 모든 요청이 React 앱에서 처리되도록 합니다.</Trans>
 
 This ensures the React part of your app can [benefit from the best practices](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) baked into those frameworks.
 <Trans>이렇게 하면 앱의 React 부분이 해당 프레임워크에 구현된 [모범 사례의 이점](/learn/start-a-new-react-project#can-i-use-react-without-a-framework)을 누릴 수 있습니다.</Trans>
@@ -51,12 +50,10 @@ You can do this in two steps:
 <Trans>이 작업은 두 단계로 수행할 수 있습니다:</Trans>
 
 1. **Set up a JavaScript environment** that lets you use the [JSX syntax](/learn/writing-markup-with-jsx), split your code into modules with the [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) syntax, and use packages (for example, React) from the [npm](https://www.npmjs.com/) package registry.
-2. **Render your React components** where you want to see them on the page.
+<Trans outdent>**[JSX 구문](/learn/writing-markup-with-jsx)을 사용할 수 있는 JavaScript 환경**을 설정하고, [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) 구문을 사용하여 코드를 모듈로 분할한 다음, [npm](https://www.npmjs.com/) 패키지 레지스트리에서 패키지(예: React)를 사용하세요.</Trans>
 
-<TransBlock>
-1. **[JSX 구문](/learn/writing-markup-with-jsx)을 사용할 수 있는 JavaScript 환경**을 설정하고, [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) 구문을 사용하여 코드를 모듈로 분할한 다음, [npm](https://www.npmjs.com/) 패키지 레지스트리에서 패키지(예: React)를 사용하세요.
-2. 페이지에서 보고 싶은 위치에 React 컴포넌트를 **렌더링**합니다.
-</TransBlock>
+2. **Render your React components** where you want to see them on the page.
+<Trans outdent>페이지에서 보고 싶은 위치에 React 컴포넌트를 **렌더링**합니다.</Trans>
 
 The exact approach depends on your existing page setup, so let's walk through some details.
 <Trans>정확한 접근 방식은 기존 페이지 설정에 따라 다르므로 몇 가지 세부 사항을 살펴봅시다.</Trans>

@@ -41,12 +41,10 @@ function useOnlineStatus() {
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `value`: The value you want to display in React DevTools. It can have any type.
-* **optional** `format`: A formatting function. When the component is inspected, React DevTools will call the formatting function with the `value` as the argument, and then display the returned formatted value (which may have any type). If you don't specify the formatting function, the original `value` itself will be displayed.
+<Trans>`value`: React 개발자 도구에서 표시하려는 값입니다. 모든 유형을 가질 수 있습니다.</Trans>
 
-<TransBlock>
-- `value`: React 개발자 도구에서 표시하려는 값입니다. 모든 유형을 가질 수 있습니다.
-- **선택적** `format`: 포매팅 함수. 컴포넌트가 검사할 때, React 개발자 도구는 인수로 포매팅 함수를 호출한 다음 반환된 포매팅된 값(모든 유형을 가질 수 있음)을 표시합니다. 포매팅 함수를 지정하지 않으면, 원본 `value` 자체가 표시됩니다.
-</TransBlock>
+* **optional** `format`: A formatting function. When the component is inspected, React DevTools will call the formatting function with the `value` as the argument, and then display the returned formatted value (which may have any type). If you don't specify the formatting function, the original `value` itself will be displayed.
+<Trans>**선택적** `format`: 포매팅 함수. 컴포넌트가 검사할 때, React 개발자 도구는 인수로 포매팅 함수를 호출한 다음 반환된 포매팅된 값(모든 유형을 가질 수 있음)을 표시합니다. 포매팅 함수를 지정하지 않으면, 원본 `value` 자체가 표시됩니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 

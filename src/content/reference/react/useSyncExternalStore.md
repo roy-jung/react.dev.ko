@@ -39,12 +39,10 @@ It returns the snapshot of the data in the store. You need to pass two functions
 <Trans>스토어에 있는 데이터의 스냅샷을 반환합니다. 두 개의 함수를 인수로 전달해야 합니다:</Trans>
 
 1. The `subscribe` function should subscribe to the store and return a function that unsubscribes.
-2. The `getSnapshot` function should read a snapshot of the data from the store.
+<Trans outdent>`subscribe` 함수는 스토어를 구독해야 하고, 구독 취소 함수를 반환해야 합니다.</Trans>
 
-<TransBlock>
-1. `subscribe` 함수는 스토어를 구독해야 하고, 구독 취소 함수를 반환해야 합니다.
-2. `getSnapshot` 함수는 스토어에서 데이터의 스냅샷을 읽어야 합니다.
-</TransBlock>
+2. The `getSnapshot` function should read a snapshot of the data from the store.
+<Trans outdent>`getSnapshot` 함수는 스토어에서 데이터의 스냅샷을 읽어야 합니다.</Trans>
 
 [See more examples below.](#usage)
 <Trans>[아래에서 더 많은 예시를 확인하세요.](#usage)</Trans>
@@ -83,12 +81,10 @@ Most of your React components will only read data from their [props,](/learn/pas
 <Trans>대부분의 React 컴포넌트는 [props](/learn/passing-props-to-a-component), [state](/reference/react/useState), [context](/reference/react/useContext)에서만 데이터를 읽습니다. 하지만 때로는 컴포넌트가 시간이 지남에 따라 변경되는 React 외부의 저장소에서 데이터를 읽어야 하는 경우도 있습니다. 여기에는 다음이 포함됩니다:</Trans>
 
 * Third-party state management libraries that hold state outside of React.
-* Browser APIs that expose a mutable value and events to subscribe to its changes.
-<TransBlock>
+<Trans>React 외부에 state를 보관하는 서드파티 상태 관리 라이브러리.</Trans>
 
-* React 외부에 state를 보관하는 서드파티 상태 관리 라이브러리.
-* 변이 가능한 값을 노출하는 브라우저 API와 그 변이 사항을 구독하는 이벤트.
-</TransBlock>
+* Browser APIs that expose a mutable value and events to subscribe to its changes.
+<Trans>변이 가능한 값을 노출하는 브라우저 API와 그 변이 사항을 구독하는 이벤트.</Trans>
 
 Call `useSyncExternalStore` at the top level of your component to read a value from an external data store.
 <Trans>외부 데이터 저장소에서 값을 읽으려면 컴포넌트의 최상위 레벨에서 `useSyncExternalStore`를 호출하세요.</Trans>
@@ -107,13 +103,10 @@ It returns the <CodeStep step={3}>snapshot</CodeStep> of the data in the store. 
 <Trans>스토어에 있는 데이터의 <CodeStep step={3}>snapshot</CodeStep>을 반환합니다. 두 개의 함수를 인수로 전달해야 합니다:</Trans>
 
 1. The <CodeStep step={1}>`subscribe` function</CodeStep> should subscribe to the store and return a function that unsubscribes.
+<Trans outdent><CodeStep step={1}>`subscribe` 함수</CodeStep>는 스토어를 구독해야 하고, 구독 취소 함수를 반환해야 합니다.</Trans>
+
 2. The <CodeStep step={2}>`getSnapshot` function</CodeStep> should read a snapshot of the data from the store.
-
-<TransBlock>
-
-1. <CodeStep step={1}>`subscribe` 함수</CodeStep>는 스토어를 구독해야 하고, 구독 취소 함수를 반환해야 합니다.
-2. <CodeStep step={2}>`getSnapshot` 함수</CodeStep>는 스토어에서 데이터의 스냅샷을 읽어야 합니다.
-</TransBlock>
+<Trans outdent><CodeStep step={2}>`getSnapshot` 함수</CodeStep>는 스토어에서 데이터의 스냅샷을 읽어야 합니다.</Trans>
 
 React will use these functions to keep your component subscribed to the store and re-render it on changes.
 <Trans>React는 이 함수를 사용해 컴포넌트가 스토어를 구독한 상태로 유지하고 변경 사항이 있을 때 다시 렌더링합니다.</Trans>
@@ -350,12 +343,10 @@ If your React app uses [server rendering,](/reference/react-dom/server) your Rea
 <Trans>React 앱이 [서버 렌더링](/reference/react-dom/server)을 사용하는 경우, React 컴포넌트는 브라우저 환경 외부에서도 실행되어 초기 HTML을 생성합니다. 이로 인해 외부 스토어에 연결할 때 몇 가지 문제가 발생합니다:</Trans>
 
 - If you're connecting to a browser-only API, it won't work because it does not exist on the server.
-- If you're connecting to a third-party data store, you'll need its data to match between the server and client.
-<TransBlock> 
+<Trans>브라우저 전용 API에 연결하는 경우 서버에 해당 API가 존재하지 않으므로 작동하지 않습니다.</Trans>
 
-- 브라우저 전용 API에 연결하는 경우 서버에 해당 API가 존재하지 않으므로 작동하지 않습니다.
-- 타사 데이터 저장소에 연결하는 경우 서버와 클라이언트 간에 일치하는 데이터가 필요합니다.
-</TransBlock>
+- If you're connecting to a third-party data store, you'll need its data to match between the server and client.
+<Trans>타사 데이터 저장소에 연결하는 경우 서버와 클라이언트 간에 일치하는 데이터가 필요합니다.</Trans>
 
 To solve these issues, pass a `getServerSnapshot` function as the third argument to `useSyncExternalStore`:
 <Trans>이러한 문제를 해결하려면 `getServerSnapshot` 함수를 `useSyncExternalStore`의 세 번째 인수로 전달하세요:</Trans>
@@ -385,12 +376,10 @@ The `getServerSnapshot` function is similar to `getSnapshot`, but it runs only i
 <Trans>`getServerSnapshot` 함수는 `getSnapshot`과 유사하지만 오직 두 가지 상황에서만 실행됩니다:</Trans>
 
 - It runs on the server when generating the HTML.
-- It runs on the client during [hydration](/reference/react-dom/client/hydrateRoot), i.e. when React takes the server HTML and makes it interactive.
+<Trans>HTML을 생성할 때 서버에서 실행됩니다.</Trans>
 
-<TransBlock>
-- HTML을 생성할 때 서버에서 실행됩니다.
-- [hydration](/reference/react-dom/client/hydrateRoot)중, 즉,React가 서버 HTML을 가져와서 인터랙티브하게 만들 때 클라이언트에서 실행됩니다.
-</TransBlock>
+- It runs on the client during [hydration](/reference/react-dom/client/hydrateRoot), i.e. when React takes the server HTML and makes it interactive.
+<Trans>[hydration](/reference/react-dom/client/hydrateRoot)중, 즉,React가 서버 HTML을 가져와서 인터랙티브하게 만들 때 클라이언트에서 실행됩니다.</Trans>
 
 This lets you provide the initial snapshot value which will be used before the app becomes interactive. If there is no meaningful initial value for the server rendering, omit this argument to [force rendering on the client.](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content)
 <Trans>이를 통해 앱이 상호작용하기 전에 사용될 초기 스냅샷 값을 제공할 수 있습니다. 서버 렌더링에 의미 있는 초기값이 없다면 [컴포넌트가 클라이언트에서만 렌더링되도록 강제 설정](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content)할 수 있습니다.</Trans>

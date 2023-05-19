@@ -116,31 +116,31 @@ You need to pass two arguments to `useEffect`:
 <Trans>`useEffect`에는 두 개의 인자를 전달해야 합니다:</Trans>
 
 1. A *setup function* with <CodeStep step={1}>setup code</CodeStep> that connects to that system.
-   - It should return a *cleanup function* with <CodeStep step={2}>cleanup code</CodeStep> that disconnects from that system.
-2. A <CodeStep step={3}>list of dependencies</CodeStep> including every value from your component used inside of those functions.
+<Trans outdent>해당 시스템에 연결하는 <CodeStep step={1}>셋업 코드</CodeStep>가 포함된 *셋업 함수*.</Trans>
 
-<TransBlock>
-1. 해당 시스템에 연결하는 <CodeStep step={1}>셋업 코드</CodeStep>가 포함된 *셋업 함수*.
-    * 해당 시스템과의 연결을 끊는 <CodeStep step={2}>클린업 코드</CodeStep>가 포함된 *클린업 함수*를 반환해야 합니다.
-2. 해당 함수 내부에서 사용되는 컴포넌트의 모든 값을 포함한 <CodeStep step={3}>의존성 목록</CodeStep>.
-</TransBlock>
+   - It should return a *cleanup function* with <CodeStep step={2}>cleanup code</CodeStep> that disconnects from that system.
+    <Trans outdent>해당 시스템과의 연결을 끊는 <CodeStep step={2}>클린업 코드</CodeStep>가 포함된 *클린업 함수*를 반환해야 합니다.</Trans>
+
+2. A <CodeStep step={3}>list of dependencies</CodeStep> including every value from your component used inside of those functions.
+<Trans outdent>해당 함수 내부에서 사용되는 컴포넌트의 모든 값을 포함한 <CodeStep step={3}>의존성 목록</CodeStep>.</Trans>
 
 **React calls your setup and cleanup functions whenever it's necessary, which may happen multiple times:**
 <Trans>**React는 필요할 때마다 셋업 및 클린업 함수를 호출하는데, 이는 여러 번 발생할 수 있습니다.**</Trans>
 
 1. Your <CodeStep step={1}>setup code</CodeStep> runs when your component is added to the page *(mounts)*.
-2. After every re-render of your component where the <CodeStep step={3}>dependencies</CodeStep> have changed:
-   - First, your <CodeStep step={2}>cleanup code</CodeStep> runs with the old props and state.
-   - Then, your <CodeStep step={1}>setup code</CodeStep> runs with the new props and state.
-3. Your <CodeStep step={2}>cleanup code</CodeStep> runs one final time after your component is removed from the page *(unmounts).*
+<Trans outdent>컴포넌트가 페이지에 추가될 때 *(마운트)* 마다 <CodeStep step={1}>셋업 코드</CodeStep>를 실행합니다.</Trans>
 
-<TransBlock>
-1. 컴포넌트가 페이지에 추가될 때 *(마운트)* 마다 <CodeStep step={1}>셋업 코드</CodeStep>를 실행합니다.
-2. <CodeStep step={3}>의존성</CodeStep>이 변경된 컴포넌트를 다시 렌더링할 때마다:
-    * 먼저 이전 props와 state로 <CodeStep step={2}>클린업 코드</CodeStep>를 실행합니다.
-    * 그런 다음 새 props와 state로 <CodeStep step={1}>셋업 코드</CodeStep>를 실행합니다.
-3. 컴포넌트가 페이지에서 제거되면 *(마운트 해제)* 마지막으로 한 번 <CodeStep step={2}>클린업 코드</CodeStep>를 실행합니다.
-</TransBlock>
+2. After every re-render of your component where the <CodeStep step={3}>dependencies</CodeStep> have changed:
+<Trans outdent><CodeStep step={3}>의존성</CodeStep>이 변경된 컴포넌트를 다시 렌더링할 때마다:</Trans>
+
+   - First, your <CodeStep step={2}>cleanup code</CodeStep> runs with the old props and state.
+    <Trans>먼저 이전 props와 state로 <CodeStep step={2}>클린업 코드</CodeStep>를 실행합니다.</Trans>
+
+   - Then, your <CodeStep step={1}>setup code</CodeStep> runs with the new props and state.
+    <Trans>그런 다음 새 props와 state로 <CodeStep step={1}>셋업 코드</CodeStep>를 실행합니다.</Trans>
+
+3. Your <CodeStep step={2}>cleanup code</CodeStep> runs one final time after your component is removed from the page *(unmounts).*
+<Trans outdent>컴포넌트가 페이지에서 제거되면 *(마운트 해제)* 마지막으로 한 번 <CodeStep step={2}>클린업 코드</CodeStep>를 실행합니다.</Trans>
 
 **Let's illustrate this sequence for the example above.**
 <Trans>**위의 예에서 이 시퀀스를 설명해 보겠습니다.**</Trans>
@@ -159,14 +159,13 @@ An Effect lets you [keep your component synchronized](/learn/synchronizing-with-
 <Trans>Effect를 사용하면 컴포넌트를 외부 시스템(예: 채팅 서비스)과 [동기화를 유지](/learn/synchronizing-with-effects)할 수 있습니다. 여기서 *외부 시스템*이란 React로 제어되지 않는 코드 조각을 의미합니다:</Trans>
 
 * A timer managed with <CodeStep step={1}>[`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)</CodeStep> and <CodeStep step={2}>[`clearInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval)</CodeStep>.
-* An event subscription using <CodeStep step={1}>[`window.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)</CodeStep> and <CodeStep step={2}>[`window.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)</CodeStep>.
-* A third-party animation library with an API like <CodeStep step={1}>`animation.start()`</CodeStep> and <CodeStep step={2}>`animation.reset()`</CodeStep>.
+<Trans><CodeStep step={1}>[`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)</CodeStep> 및 <CodeStep step={2}>[`clearInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval)</CodeStep>로 관리되는 타이머.</Trans>
 
-<TransBlock>
-* <CodeStep step={1}>[`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)</CodeStep> 및 <CodeStep step={2}>[`clearInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval)</CodeStep>로 관리되는 타이머.
-* <CodeStep step={1}>[`window.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)</CodeStep> 및 <CodeStep step={2}>[`window.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)</CodeStep>를 사용하는 이벤트 구독.
-* <CodeStep step={1}>`animation.start()`</CodeStep> 및 <CodeStep step={2}>`animation.reset()`</CodeStep>과 같은 API가 있는 타사 애니메이션 라이브러리.
-</TransBlock>
+* An event subscription using <CodeStep step={1}>[`window.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)</CodeStep> and <CodeStep step={2}>[`window.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)</CodeStep>.
+<Trans><CodeStep step={1}>[`window.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)</CodeStep> 및 <CodeStep step={2}>[`window.removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)</CodeStep>를 사용하는 이벤트 구독.</Trans>
+
+* A third-party animation library with an API like <CodeStep step={1}>`animation.start()`</CodeStep> and <CodeStep step={2}>`animation.reset()`</CodeStep>.
+<Trans><CodeStep step={1}>`animation.start()`</CodeStep> 및 <CodeStep step={2}>`animation.reset()`</CodeStep>과 같은 API가 있는 타사 애니메이션 라이브러리.</Trans>
 
 **If you're not connecting to any external system, [you probably don't need an Effect.](/learn/you-might-not-need-an-effect)**
 **외부 시스템에 연결하지 않는다면 [Effect가 필요하지 않을 수도 있습니다](/learn/you-might-not-need-an-effect).**
@@ -1922,16 +1921,16 @@ When you find the dependency that is different on every re-render, you can usual
 <Trans>다시 렌더링할 때마다 다른 의존성을 발견하면 일반적으로 다음 방법 중 하나로 해결할 수 있습니다:</Trans>
 
 - [Updating state based on previous state from an Effect](#updating-state-based-on-previous-state-from-an-effect)
-- [Removing unnecessary object dependencies](#removing-unnecessary-object-dependencies)
-- [Removing unnecessary function dependencies](#removing-unnecessary-function-dependencies)
-- [Reading the latest props and state from an Effect](#reading-the-latest-props-and-state-from-an-effect)
+<Trans>[Effect의 이전 state를 기반으로 state 업데이트하기](#updating-state-based-on-previous-state-from-an-effect)</Trans>
 
-<TransBlock>
-* [Effect의 이전 state를 기반으로 state 업데이트하기](#updating-state-based-on-previous-state-from-an-effect)
-* [불필요한 객체 의존성 제거하기](#removing-unnecessary-object-dependencies)
-* [불필요한 함수 의존성 제거하기](#removing-unnecessary-function-dependencies)
-* [Effect에서 최신 props 및 state 읽기](#reading-the-latest-props-and-state-from-an-effect)
-</TransBlock>
+- [Removing unnecessary object dependencies](#removing-unnecessary-object-dependencies)
+<Trans>[불필요한 객체 의존성 제거하기](#removing-unnecessary-object-dependencies)</Trans>
+
+- [Removing unnecessary function dependencies](#removing-unnecessary-function-dependencies)
+<Trans>[불필요한 함수 의존성 제거하기](#removing-unnecessary-function-dependencies)</Trans>
+
+- [Reading the latest props and state from an Effect](#reading-the-latest-props-and-state-from-an-effect)
+<Trans>[Effect에서 최신 props 및 state 읽기](#reading-the-latest-props-and-state-from-an-effect)</Trans>
 
 As a last resort (if these methods didn't help), wrap its creation with [`useMemo`](/reference/react/useMemo#memoizing-a-dependency-of-another-hook) or [`useCallback`](/reference/react/useCallback#preventing-an-effect-from-firing-too-often) (for functions).
 <Trans>위 방법들로도 해결되지 않는 경우, 최후의 수단으로 [`useMemo`](/reference/react/useMemo#memoizing-a-dependency-of-another-hook) 혹은 함수의 경우 [`useCallback`](/reference/react/useCallback#preventing-an-effect-from-firing-too-often)으로 감싸세요.</Trans>
@@ -1944,12 +1943,10 @@ If your Effect runs in an infinite cycle, these two things must be true:
 <Trans>Effect가 무한히 재실행되는 경우는 다음 두 가지가 모두 참임을 의미합니다:</Trans>
 
 - Your Effect is updating some state.
-- That state leads to a re-render, which causes the Effect's dependencies to change.
+<Trans>Effect가 일부 state를 업데이트하고 있습니다.</Trans>
 
-<TransBlock>
-* Effect가 일부 state를 업데이트하고 있습니다.
-* 이 state는 리렌더링을 일으키며, 이로부터 Effect의 의존성이 변경됩니다.
-</TransBlock>
+- That state leads to a re-render, which causes the Effect's dependencies to change.
+<Trans>이 state는 리렌더링을 일으키며, 이로부터 Effect의 의존성이 변경됩니다.</Trans>
 
 Before you start fixing the problem, ask yourself whether your Effect is connecting to some external system (like DOM, network, a third-party widget, and so on). Why does your Effect need to set state? Does it synchronize with that external system? Or are you trying to manage your application's data flow with it?
 <Trans>문제 해결을 시작하기 전에 Effect가 외부 시스템(예: DOM, 네트워크, 타사 위젯 등)에 연결되어 있는지 확인해 보세요. Effect에 state를 설정해야 하는 이유는 무엇인가요? 특정 state를 외부 시스템과 동기화하나요? 아니면 애플리케이션의 데이터 흐름을 관리하려고 하나요?</Trans>

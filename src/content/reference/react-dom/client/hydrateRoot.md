@@ -94,7 +94,7 @@ React will update `<App />` in the hydrated `root`.
 #### Parameters<Trans>매개변수</Trans> {/*root-render-parameters*/}
 
 * `reactNode`: A "React node" that you want to update. This will usually be a piece of JSX like `<App />`, but you can also pass a React element constructed with [`createElement()`](/reference/react/createElement), a string, a number, `null`, or `undefined`.
-<Trans>`reactNode`: 갱신하고 싶은 "React 노드". 주로 `<App />`과 같은 JSX를 매개변수로 넘기지만, [`createElement()`](/reference/react/createElement)로 만든 React 엘리먼트나 문자열, 숫자, `null`, `undefined` 등을 넘겨도 됩니다.</Trans>
+<Trans outdent>`reactNode`: 갱신하고 싶은 "React 노드". 주로 `<App />`과 같은 JSX를 매개변수로 넘기지만, [`createElement()`](/reference/react/createElement)로 만든 React 엘리먼트나 문자열, 숫자, `null`, `undefined` 등을 넘겨도 됩니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*root-render-returns*/}
 
@@ -226,15 +226,16 @@ The most common causes leading to hydration errors include:
 <Trans>다음은 hydration 에러가 발생하는 대표적인 사례들입니다:</Trans>
 
 * Extra whitespace (like newlines) around the React-generated HTML inside the root node.
+<Trans>루트 노드 안쪽에서 React로 작성된 HTML 주위에 새 줄(new line) 등의 추가적인 공백이 있는 경우.</Trans>
+
 * Using checks like `typeof window !== 'undefined'` in your rendering logic.
+<Trans>`typeof window !== 'undefined'`과 같은 조건을 렌더링 로직에서 사용한 경우.</Trans>
+
 * Using browser-only APIs like [`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) in your rendering logic.
+<Trans>[`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)와 같은 브라우저 전용 API를 렌더링 로직에 사용한 경우.</Trans>
+
 * Rendering different data on the server and the client.
-<TransBlock>
-* 루트 노드 안쪽에서 React로 작성된 HTML 주위에 새 줄(new line) 등의 추가적인 공백이 있는 경우.
-* `typeof window !== 'undefined'`과 같은 조건을 렌더링 로직에서 사용한 경우.
-* [`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)와 같은 브라우저 전용 API를 렌더링 로직에 사용한 경우.
-* 서버와 클라이언트에서 서로 다른 데이터를 렌더링한 경우.
-</TransBlock>
+<Trans>서버와 클라이언트에서 서로 다른 데이터를 렌더링한 경우.</Trans>
 
 React recovers from some hydration errors, but **you must fix them like other bugs.** In the best case, they'll lead to a slowdown; in the worst case, event handlers can get attached to the wrong elements.
 <Trans>React는 몇몇 hydration 에러는 복구하긴 하지만, **다른 버그들과 마찬가지로 반드시 고쳐줘야 합니다.** 운이 좋으면 그저 느려지기만 할 뿐이겠지만, 최악의 경우 이벤트 핸들러가 다른 엉뚱한 엘리먼트에 붙게 될 수도 있습니다.</Trans>

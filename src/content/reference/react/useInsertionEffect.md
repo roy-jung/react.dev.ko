@@ -48,7 +48,6 @@ function useCSS(rule) {
 
 [See more examples below.](#usage)
 <Trans>[아래에서 더 많은 예시를 확인하세요.](#usage)</Trans>
-<Trans>[더 많은 예시는 여기에서 확인하세요.](#usage)</Trans>
 
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
@@ -56,7 +55,7 @@ function useCSS(rule) {
 <Trans>`setup`: Effect의 로직이 포함된 함수입니다. 셋업 함수는 *클린업* 함수를 선택적으로 반환할 수도 있습니다. 컴포넌트가 DOM에 추가되기 전에 React는 셋업 함수를 실행합니다. 변경된 의존성으로 다시 렌더링할 때마다 React는 먼저 이전 값으로 셋업 함수를 실행한 다음(제공한 경우) 새 값으로 셋업 함수를 실행합니다. 컴포넌트가 DOM에서 제거되기 전에 React는 클린업 함수를 한 번 더 실행합니다.</Trans>
  
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `setup` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison algorithm. If you don't specify the dependencies at all, your Effect will re-run after every re-render of the component.
-<Trans>**optional** `dependencies`: `setup` 코드 내에서 참조된 모든 반응형 값의 목록입니다. 반응형 값에는 props, state, 컴포넌트 본문 내부에서 직접 선언된 모든 변수와 함수가 포함됩니다. linter가 [React용으로 구성](/learn/editor-setup#linting)된 경우, 모든 반응형 값이 의존성으로 올바르게 지정되었는지 확인합니다. 의존성 목록은 일정한 수의 항목을 가져야 하며 [`dep1, dep2, dep3`]와 같이 인라인으로 작성해야 합니다. React는 [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 비교 알고리즘을 사용하여 각 의존성을 이전 값과 비교합니다. 의존성을 전혀 지정하지 않으면 컴포넌트를 다시 렌더링할 때마다 Effect가 다시 실행됩니다.</Trans>
+<Trans>**선택적** `dependencies`: `setup` 코드 내에서 참조된 모든 반응형 값의 목록입니다. 반응형 값에는 props, state, 컴포넌트 본문 내부에서 직접 선언된 모든 변수와 함수가 포함됩니다. linter가 [React용으로 구성](/learn/editor-setup#linting)된 경우, 모든 반응형 값이 의존성으로 올바르게 지정되었는지 확인합니다. 의존성 목록은 일정한 수의 항목을 가져야 하며 [`dep1, dep2, dep3`]와 같이 인라인으로 작성해야 합니다. React는 [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 비교 알고리즘을 사용하여 각 의존성을 이전 값과 비교합니다. 의존성을 전혀 지정하지 않으면 컴포넌트를 다시 렌더링할 때마다 Effect가 다시 실행됩니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
@@ -66,14 +65,13 @@ function useCSS(rule) {
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * Effects only run on the client. They don't run during server rendering.
-* You can't update state from inside `useInsertionEffect`.
-* By the time `useInsertionEffect` runs, refs are not attached yet, and DOM is not yet updated.
+<Trans>Effect는 클라이언트에서만 실행됩니다. 서버 렌더링 중에는 실행되지 않습니다.</Trans>
 
-<TransBlock>
-- Effect는 클라이언트에서만 실행됩니다. 서버 렌더링 중에는 실행되지 않습니다.
-- `useInsertionEffect` 내부에서는 state를 업데이트할 수 없습니다.
-- `useInsertionEffect`가 실행될 때까지는 refs가 아직 첨부되지 않았고, DOM이 아직 업데이트되지 않았습니다.
-</TransBlock>
+* You can't update state from inside `useInsertionEffect`.
+<Trans>`useInsertionEffect` 내부에서는 state를 업데이트할 수 없습니다.</Trans>
+
+* By the time `useInsertionEffect` runs, refs are not attached yet, and DOM is not yet updated.
+<Trans>`useInsertionEffect`가 실행될 때까지는 refs가 아직 첨부되지 않았고, DOM이 아직 업데이트되지 않았습니다.</Trans>
 
 ---
 
@@ -98,24 +96,22 @@ Some teams prefer to author styles directly in JavaScript code instead of writin
 <Trans>일부 팀은 CSS 파일을 작성하는 대신 JavsScript 코드에서 직접 스타일을 작성하는 것을 선호합니다. 이 경우 일반적으로 CSS-in-JS 라이브러리 또는 도구를 사용해야 합니다. CSS-in-JS에는 세 가지 일반적인 접근 방식이 있습니다:</Trans>
 
 1. Static extraction to CSS files with a compiler
-2. Inline styles, e.g. `<div style={{ opacity: 1 }}>`
-3. Runtime injection of `<style>` tags
+<Trans outdent>컴파일러를 사용하여 CSS 파일로 정적 추출</Trans>
 
-<TransBlock>
-1. 컴파일러를 사용하여 CSS 파일로 정적 추출
-2. 인라인 스타일, 예: `<div style={{ opacity: 1 }}>`
-3. 런타임에 `<style>` 태그 삽입
-</TransBlock>
+2. Inline styles, e.g. `<div style={{ opacity: 1 }}>`
+<Trans outdent>인라인 스타일. 예: `<div style={{ opacity: 1 }}>`</Trans>
+
+3. Runtime injection of `<style>` tags
+<Trans outdent>런타임에 `<style>` 태그 삽입</Trans>
 
 If you use CSS-in-JS, we recommend a combination of the first two approaches (CSS files for static styles, inline styles for dynamic styles). **We don't recommend runtime `<style>` tag injection for two reasons:**
 <Trans>CSS-in-JS를 사용하는 경우 처음 두 가지 접근 방식(정적 스타일의 경우 CSS 파일, 동적 스타일의 경우 인라인 스타일)을 조합하여 사용하는 것이 좋습니다. **런타임 환경에서 `<style>` 태그 주입은 다음 두 가지 이유로 권장하지 않습니다.**</Trans>
 
 1. Runtime injection forces the browser to recalculate the styles a lot more often.
+<Trans outdent>런타임 주입은 브라우저에서 스타일을 훨씬 더 자주 다시 계산하도록 합니다.</Trans>
+
 2. Runtime injection can be very slow if it happens at the wrong time in the React lifecycle.
-<TransBlock>
-  1. 런타임 주입은 브라우저에서 스타일을 훨씬 더 자주 다시 계산하도록 합니다.
-  2. 런타임 주입이 React 라이프사이클에서 잘못된 시점에 발생하면 속도가 매우 느려질 수 있습니다.
-</TransBlock>
+<Trans outdent>런타임 주입이 React 라이프사이클에서 잘못된 시점에 발생하면 속도가 매우 느려질 수 있습니다.</Trans>
 
 The first problem is not solvable, but `useInsertionEffect` helps you solve the second problem.
 <Trans>첫 번째 문제는 해결할 수 없지만 `useInsertionEffect`를 사용하면 두 번째 문제를 해결할 수 있습니다.</Trans>

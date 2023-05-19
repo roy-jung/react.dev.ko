@@ -67,17 +67,16 @@ console.log(clonedElement); // <Row title="Cabbage">Goodbye</Row>
 <Trans>`cloneElement`는 몇 가지 속성을 가진 React 엘리먼트 객체를 반환합니다:</Trans>
 
 * `type`: Same as `element.type`.
+<Trans>`type`: `element.type`과 동일합니다.</Trans>
+
 * `props`: The result of shallowly merging `element.props` with the overriding `props` you have passed.
+<Trans>`props`: 재정의되어 전달된 `props`와 `element.props`를 얕게 병합한 결과입니다.</Trans>
+
 * `ref`: The original `element.ref`, unless it was overridden by `props.ref`.
+<Trans>`ref`: `props.ref`로 재정의되지 않은 경우 원본 `element.ref`.</Trans>
+
 * `key`: The original `element.key`, unless it was overridden by `props.key`.
-
-<TransBlock>
-* `type`: `element.type`과 동일합니다.
-* `props`: 재정의되어 전달된 `props`와 `element.props`를 얕게 병합한 결과입니다.
-* `ref`: `props.ref`로 재정의되지 않은 경우 원본 `element.ref`
-* `key`: `props.key`로 재정의되지 않은 경우 원본 `element.key`
-
-</TransBlock>
+<Trans>`key`: `props.key`로 재정의되지 않은 경우 원본 `element.key`.</Trans>
 
 Usually, you'll return the element from your component or make it a child of another element. Although you may read the element's properties, it's best to treat every element as opaque after it's created, and only render it.
 <Trans>일반적으로 컴포넌트에서 엘리먼트를 반환하거나 다른 엘리먼트의 자식으로 만듭니다. 엘리먼트의 프로퍼티를 읽을 수는 있지만, 생성된 후에는 모든 엘리먼트를 불명확하게 처리하고 렌더링만 하는 것이 가장 좋습니다.</Trans>

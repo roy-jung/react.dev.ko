@@ -93,12 +93,10 @@ You need to pass two things to `useCallback`:
 <Trans>`useCallback`을 사용하려면 두 가지를 전달해야 합니다:</Trans>
 
 1. A function definition that you want to cache between re-renders.
-2. A <CodeStep step={2}>list of dependencies</CodeStep> including every value within your component that's used inside your function.
+<Trans outdent>리렌더링 사이에 캐시할 함수</Trans>
 
-<TransBlock>
-1. 리렌더링 사이에 캐시할 함수
-2. 함수 내에서 사용되는 컴포넌트 내부의 모든 값을 포함하는 <CodeStep step={2}>의존성 배열</CodeStep>
-</TransBlock>
+2. A <CodeStep step={2}>list of dependencies</CodeStep> including every value within your component that's used inside your function.
+<Trans outdent>함수 내에서 사용되는 컴포넌트 내부의 모든 값을 포함하는 <CodeStep step={2}>의존성 배열</CodeStep></Trans>
 
 On the initial render, the <CodeStep step={3}>returned function</CodeStep> you'll get from `useCallback` will be the function you passed.
 <Trans>초기 렌더링 시에는 `useCallback`에서 <CodeStep step={3}>반환되는 함수</CodeStep>는 처음에 전달했던 함수입니다.</Trans>
@@ -267,11 +265,10 @@ Caching a function with `useCallback`  is only valuable in a few cases:
 <Trans>`useCallback`으로 함수를 캐싱하는 것은 몇 가지 경우에만 유용합니다:</Trans>
 
 - You pass it as a prop to a component wrapped in [`memo`.](/reference/react/memo) You want to skip re-rendering if the value hasn't changed. Memoization lets your component re-render only if dependencies changed.
+<Trans>[`memo`](/reference/react/memo)로 감싼 컴포넌트에 prop으로 전달합니다. 값이 변경되지 않았다면 렌더링을 건너뛰고 싶을 것입니다. 메모화를 사용하면 의존성이 변경된 경우에만 컴포넌트를 리렌더링할 수 있습니다.</Trans>
+
 - The function you're passing is later used as a dependency of some Hook. For example, another function wrapped in `useCallback` depends on it, or you depend on this function from [`useEffect.`](/reference/react/useEffect)
-<TransBlock>
-- [`memo`](/reference/react/memo)로 감싼 컴포넌트에 prop으로 전달합니다. 값이 변경되지 않았다면 렌더링을 건너뛰고 싶을 것입니다. 메모화를 사용하면 의존성이 변경된 경우에만 컴포넌트를 리렌더링할 수 있습니다.
-- 전달한 함수는 나중에 일부 훅의 의존성으로 사용됩니다. 예를 들어, `useCallback`으로 감싼 다른 함수가 이 함수에 의존하거나, `useEffect`에서 이 함수에 의존할 수 있습니다.
-</TransBlock>
+<Trans>전달한 함수는 나중에 일부 훅의 의존성으로 사용됩니다. 예를 들어, `useCallback`으로 감싼 다른 함수가 이 함수에 의존하거나, `useEffect`에서 이 함수에 의존할 수 있습니다.</Trans>
 
 There is no benefit to wrapping a function in `useCallback` in other cases. There is no significant harm to doing that either, so some teams choose to not think about individual cases, and memoize as much as possible. The downside is that code becomes less readable. Also, not all memoization is effective: a single value that's "always new" is enough to break memoization for an entire component.
 <Trans>다른 경우에는 함수를 `useCallback`으로 감싸는 것이 이득이 없습니다. 그렇게 한다고 해서 크게 해가 되는 것도 아니기 때문에 일부 팀에서는 개별 사례에 대해 생각하지 않고 가능한 한 많이 메모하는 방식을 선택하기도 합니다. 단점은 코드 가독성이 떨어진다는 것입니다. 또한 모든 메모화가 효과적인 것은 아닙니다. "항상 새로운" 단일 값만으로도 전체 컴포넌트에 대한 메모화가 깨질 수 있습니다.</Trans>
@@ -283,19 +280,19 @@ Note that `useCallback` does not prevent *creating* the function. You're always 
 <Trans>사실, 다음 몇 가지 원칙을 따르면 많은 메모화를 불필요하게 만들 수 있습니다:</Trans>
 
 1. When a component visually wraps other components, let it [accept JSX as children.](/learn/passing-props-to-a-component#passing-jsx-as-children) Then, if the wrapper component updates its own state, React knows that its children don't need to re-render.
-<Trans>컴포넌트가 다른 컴포넌트를 시각적으로 감쌀 때 [JSX를 자식으로 받아들이도록 하세요.](/learn/passing-props-to-a-component#passing-jsx-as-children) 그러면 래퍼 컴포넌트가 자신의 state를 업데이트 하더라도 React는 자식 컴포넌트가 리렌더링할 필요가 없다는 것을 알 수 있습니다.</Trans>
+<Trans outdent>컴포넌트가 다른 컴포넌트를 시각적으로 감쌀 때 [JSX를 자식으로 받아들이도록 하세요.](/learn/passing-props-to-a-component#passing-jsx-as-children) 그러면 래퍼 컴포넌트가 자신의 state를 업데이트 하더라도 React는 자식 컴포넌트가 리렌더링할 필요가 없다는 것을 알 수 있습니다.</Trans>
 
 2. Prefer local state and don't [lift state up](/learn/sharing-state-between-components) any further than necessary. Don't keep transient state like forms and whether an item is hovered at the top of your tree or in a global state library.
-<Trans>로컬 state를 선호하고 필요 이상으로 [state를 끌어올리지](/learn/sharing-state-between-components) 마세요. 트리 상단 또는 전역 상태 라이브러리에 폼(form)이나 아이템(item)의 호버(hover) 상태와 같은 일시적인 state를 유지하지 마세요.</Trans>
+<Trans outdent>로컬 state를 선호하고 필요 이상으로 [state를 끌어올리지](/learn/sharing-state-between-components) 마세요. 트리 상단 또는 전역 상태 라이브러리에 폼(form)이나 아이템(item)의 호버(hover) 상태와 같은 일시적인 state를 유지하지 마세요.</Trans>
 
 3. Keep your [rendering logic pure.](/learn/keeping-components-pure) If re-rendering a component causes a problem or produces some noticeable visual artifact, it's a bug in your component! Fix the bug instead of adding memoization.
-<Trans>[렌더링 로직을 순수하게](/learn/keeping-components-pure) 유지하세요. 만약 컴포넌트를 리렌더링했을 때 문제가 발생하거나 눈에 띄는 시각적 아티팩트가 생성된다면 컴포넌트에 버그가 있는 것입니다! 메모화를 추가하는 대신 버그를 수정하세요.</Trans>
+<Trans outdent>[렌더링 로직을 순수하게](/learn/keeping-components-pure) 유지하세요. 만약 컴포넌트를 리렌더링했을 때 문제가 발생하거나 눈에 띄는 시각적 아티팩트가 생성된다면 컴포넌트에 버그가 있는 것입니다! 메모화를 추가하는 대신 버그를 수정하세요.</Trans>
 
 4. Avoid [unnecessary Effects that update state.](/learn/you-might-not-need-an-effect) Most performance problems in React apps are caused by chains of updates originating from Effects that cause your components to render over and over.
-<Trans>[state를 업데이트하는 불필요한 Effect](/learn/you-might-not-need-an-effect)를 피하세요. React 앱에서 대부분의 성능 문제는 컴포넌트를 반복적으로 렌더링하게 하는 Effect의 업데이트 체인으로 인해 발생합니다.</Trans>
+<Trans outdent>[state를 업데이트하는 불필요한 Effect](/learn/you-might-not-need-an-effect)를 피하세요. React 앱에서 대부분의 성능 문제는 컴포넌트를 반복적으로 렌더링하게 하는 Effect의 업데이트 체인으로 인해 발생합니다.</Trans>
 
 5. Try to [remove unnecessary dependencies from your Effects.](/learn/removing-effect-dependencies) For example, instead of memoization, it's often simpler to move some object or a function inside an Effect or outside the component.
-<Trans>Effect에서 불필요한 의존성을 제거하세요. 예를 들어, 메모화 대신 일부 겍체나 함수를 Effect 내부나 컴포넌트 외부로 이동하는 것이 더 간단할 때가 많습니다.</Trans>
+<Trans outdent>Effect에서 불필요한 의존성을 제거하세요. 예를 들어, 메모화 대신 일부 겍체나 함수를 Effect 내부나 컴포넌트 외부로 이동하는 것이 더 간단할 때가 많습니다.</Trans>
 
 If a specific interaction still feels laggy, [use the React Developer Tools profiler](https://legacy.reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html) to see which components benefit the most from memoization, and add memoization where needed. These principles make your components easier to debug and understand, so it's good to follow them in any case. In long term, we're researching [doing memoization automatically](https://www.youtube.com/watch?v=lGEMwh32soc) to solve this once and for all.
 <Trans>특정 인터랙션이 여전히 느리게 느껴진다면 [React 개발자 도구 프로파일러를 사용](/blog/2018/09/10/introducing-the-react-profiler.html)해 어떤 컴포넌트가 메모화의 이점을 가장 많이 누리는지 확인하고, 필요한 경우 메모화를 추가하세요. 이러한 원칙은 컴포넌트를 더 쉽게 디버깅하고 이해할 수 있게 해주므로 어떤 경우든 이 원칙을 따르는 것이 좋습니다. 장기적으로는 이 문제를 완전히 해결하기 위해 [메모화를 자동으로 수행](https://www.youtube.com/watch?v=lGEMwh32soc)하는 방법을 연구하고 있습니다.</Trans>

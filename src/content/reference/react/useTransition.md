@@ -48,12 +48,10 @@ function TabContainer() {
 <Trans>`useTransition`은 정확히 두 개의 항목이 있는 배열을 반환합니다:</Trans>
 
 1. The `isPending` flag that tells you whether there is a pending transition.
-2. The [`startTransition` function](#starttransition) that lets you mark a state update as a transition.
+<Trans outdent>보류 중인 트랜지션이 있는지 여부를 알려주는 `isPending` 플래그</Trans>
 
-<TransBlock>
-1. 보류 중인 트랜지션이 있는지 여부를 알려주는 `isPending` 플래그
-2. state 업데이트를 트랜지션으로 표시할 수 있는 [`startTransition` 함수](#starttransition)
-</TransBlock>
+2. The [`startTransition` function](#starttransition) that lets you mark a state update as a transition.
+<Trans outdent>state 업데이트를 트랜지션으로 표시할 수 있는 [`startTransition` 함수](#starttransition)</Trans>
 
 ---
 
@@ -79,7 +77,7 @@ function TabContainer() {
 #### Parameters<Trans>매개변수</Trans> {/*starttransition-parameters*/}
 
 * `scope`: A function that updates some state by calling one or more [`set` functions.](/reference/react/useState#setstate) React immediately calls `scope` with no parameters and marks all state updates scheduled synchronously during the `scope` function call as transitions. They will be [non-blocking](#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](#preventing-unwanted-loading-indicators)
-<Trans>`scope`: 하나 이상의 [`set` 함수를 호출하여 일부 state를 업데이트하는 함수.](/reference/react/useState#setstate) React는 매개변수 없이 `scope`를 즉시 호출하고 `scope` 함수 호출 중에 동기적으로 예약된 모든 state 업데이트를 트랜지션으로 표시합니다. 이는 [논블로킹](#marking-a-state-update-as-non-blocking-transition)이고, [원치 않는 로딩을 표시하지 않을 것입니다.](#preventing-unwanted-loading-indicators)</Trans>
+<Trans outdent>`scope`: 하나 이상의 [`set` 함수를 호출하여 일부 state를 업데이트하는 함수.](/reference/react/useState#setstate) React는 매개변수 없이 `scope`를 즉시 호출하고 `scope` 함수 호출 중에 동기적으로 예약된 모든 state 업데이트를 트랜지션으로 표시합니다. 이는 [논블로킹](#marking-a-state-update-as-non-blocking-transition)이고, [원치 않는 로딩을 표시하지 않을 것입니다.](#preventing-unwanted-loading-indicators)</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*starttransition-returns*/}
 
@@ -128,12 +126,10 @@ function TabContainer() {
 <Trans>`useTransition`은 정확히 두 개의 항목이 있는 배열을 반환합니다:</Trans>
 
 1. The <CodeStep step={1}>`isPending` flag</CodeStep> that tells you whether there is a pending transition.
-2. The <CodeStep step={2}>`startTransition` function</CodeStep> that lets you mark a state update as a transition.
+<Trans outdent>보류 중인 트랜지션 이 있는지 여부를 알려주는 <CodeStep step={1}>`isPending` 플래그</CodeStep>를 선택합니다.</Trans>
 
-<TransBlock>
-1. 보류 중인 트랜지션 이 있는지 여부를 알려주는 <CodeStep step={1}>`isPending` 플래그</CodeStep>를 선택합니다.
-2. state 업데이트를 트랜지션으로 표시할 수 있는 <CodeStep step={2}>`startTransition` 함수</CodeStep>입니다.
-</TransBlock>
+2. The <CodeStep step={2}>`startTransition` function</CodeStep> that lets you mark a state update as a transition.
+<Trans outdent>state 업데이트를 트랜지션으로 표시할 수 있는 <CodeStep step={2}>`startTransition` 함수</CodeStep>입니다.</Trans>
 
 You can then mark a state update as a transition like this:
 <Trans>그런 다음, 다음과 같이 state 업데이트를 트랜지션으로 표시할 수 있습니다:</Trans>
@@ -1170,12 +1166,10 @@ This is recommended for two reasons:
 <Trans>두 가지 이유로 이 방법을 권장합니다:</Trans>
 
 - [Transitions are interruptible,](#marking-a-state-update-as-a-non-blocking-transition) which lets the user click away without waiting for the re-render to complete.
-- [Transitions prevent unwanted loading indicators,](#preventing-unwanted-loading-indicators) which lets the user avoid jarring jumps on navigation.
+<Trans>[트랜지션은 중단 가능](#marking-a-state-update-as-a-non-blocking-transition)하므로, 사용자는 다시 렌더링이 완료될 때까지 기다리지 않고 바로 클릭할 수 있습니다.</Trans>
 
-<TransBlock>
-- [트랜지션은 중단 가능](#marking-a-state-update-as-a-non-blocking-transition)하므로, 사용자는 다시 렌더링이 완료될 때까지 기다리지 않고 바로 클릭할 수 있습니다.
-- [트랜지션은 원치 않는 로딩 표시를 방지](#preventing-unwanted-loading-indicators)하여, 사용자가 네비게이션 시 갑작스럽게 이동 하는 것을 방지할 수 있습니다.
-</TransBlock>
+- [Transitions prevent unwanted loading indicators,](#preventing-unwanted-loading-indicators) which lets the user avoid jarring jumps on navigation.
+<Trans>[트랜지션은 원치 않는 로딩 표시를 방지](#preventing-unwanted-loading-indicators)하여, 사용자가 네비게이션 시 갑작스럽게 이동 하는 것을 방지할 수 있습니다.</Trans>
 
 Here is a tiny simplified router example using transitions for navigations.
 <Trans>다음은 네비게이션을 위해 트랜지션을 사용하는 아주 간단한 라우터 예제입니다.</Trans>
@@ -1585,12 +1579,10 @@ This is because transitions are non-blocking, but updating an input in response 
 <Trans>이는 트랜지션은 논블로킹이지만 변경 이벤트에 대한 응답으로 input을 업데이트하는 것은 동기적으로 이루어져야 하기 때문입니다. input에 대한 응답으로 트랜지션을 실행하려면 두 가지 옵션이 있습니다:</Trans>
 
 1. You can declare two separate state variables: one for the input state (which always updates synchronously), and one that you will update in a transition. This lets you control the input using the synchronous state, and pass the transition state variable (which will "lag behind" the input) to the rest of your rendering logic.
-2. Alternatively, you can have one state variable, and add [`useDeferredValue`](/reference/react/useDeferredValue) which will "lag behind" the real value. It will trigger non-blocking re-renders to "catch up" with the new value automatically.
+<Trans outdent>input의 (항상 동기적으로 업데이트되는) state와 트랜지션 실행시 업데이트할 state 변수를 각각 선언할 수 있습니다. 이를 통해 동기 state를 사용하여 input을 제어하고, (input보다 "지연"되는) 트랜지션 state 변수를 나머지 렌더링 로직에 전달할 수 있습니다.</Trans>
 
-<TransBlock>
-1. input의 (항상 동기적으로 업데이트되는) state와 트랜지션 실행시 업데이트할 state 변수를 각각 선언할 수 있습니다. 이를 통해 동기 state를 사용하여 input을 제어하고, (input보다 "지연"되는) 트랜지션 state 변수를 나머지 렌더링 로직에 전달할 수 있습니다.
-2. 또는 하나의 state 변수를 가지고, 실제 값보다 "지연"되는 [`useDeferredValue`](/reference/react/useDeferredValue)를 추가할 수 있습니다. 그러면 새로운 값을 자동으로 "따라잡기" 위해 논블로킹 리렌더를 촉발합니다.
-</TransBlock>
+2. Alternatively, you can have one state variable, and add [`useDeferredValue`](/reference/react/useDeferredValue) which will "lag behind" the real value. It will trigger non-blocking re-renders to "catch up" with the new value automatically.
+<Trans outdent>또는 하나의 state 변수를 가지고, 실제 값보다 "지연"되는 [`useDeferredValue`](/reference/react/useDeferredValue)를 추가할 수 있습니다. 그러면 새로운 값을 자동으로 "따라잡기" 위해 논블로킹 리렌더를 촉발합니다.</Trans>
 
 ---
 

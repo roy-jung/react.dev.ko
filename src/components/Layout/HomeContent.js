@@ -122,7 +122,7 @@ export function HomeContent() {
   return (
     <>
       <div className="pl-0">
-        <div className="mx-5 mt-12 lg:mt-24 mb-20 lg:mb-32 flex flex-col justify-center">
+        <div className="mx-5 mt-12 lg:mt-24 mb-20 flex flex-col justify-center">
           <Logo
             className={cn(
               'mt-4 mb-3 text-link dark:text-link-dark w-24 lg:w-28 self-center text-sm mr-0 flex origin-center transition-all ease-in-out'
@@ -131,19 +131,24 @@ export function HomeContent() {
           <h1 className="text-center text-5xl font-display lg:text-6xl font-semibold leading-snug text-primary dark:text-primary-dark">
             React + ⍺
           </h1>
-          <p className="mt-5 text-3xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
+          <div className="mt-5 text-3xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
             <Link href="https://www.youtube.com/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v">
               FE재남
             </Link>
+            과
             <br />
             <Link href="https://github.com/roy-jung/react.dev.ko">
               [React 공식문서 스터디 그룹]
             </Link>
             의
             <br />
-            비공식 한글 번역 사이트입니다.
-          </p>
-          <div className="mt-5 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
+            비공식 한글 번역 사이트
+            <br />
+            <sub className="text-md">
+              2023. 5. 19. 100% 번역 완료 (Learn, Reference)
+            </sub>
+          </div>
+          <div className="mt-5 mb-10 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
             <ButtonLink
               href={'/community/translators'}
               type="secondary"
@@ -152,16 +157,15 @@ export function HomeContent() {
               label="translators">
               번역한 사람들
             </ButtonLink>
-            <ButtonLink
+            {/* <ButtonLink
               href={'/translated'}
               type="primary"
               size="lg"
               className="w-full sm:w-auto justify-center"
               label="progress">
               번역 진행상황
-            </ButtonLink>
+            </ButtonLink> */}
           </div>
-          <br />
           <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
             The library for web and native user interfaces
             <br />

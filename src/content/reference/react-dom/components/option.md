@@ -47,18 +47,18 @@ Additionally, `<option>` supports these props:
 <Trans>또한, `<option>`은 다음과 같은 props들을 지원합니다:</Trans>
 
 * [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#disabled): A boolean. If `true`, the option will not be selectable and will appear dimmed.
+<Trans>[`disabled`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/option#disabled): boolean값. `true` 인 경우 옵션을 선택할 수 없으며 흐리게 보입니다.</Trans>
+
 * [`label`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#label): A string. Specifies the meaning of the option. If not specified, the text inside the option is used.
+<Trans>[`label`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/option#label): string값. 옵션의 의미를 지정합니다. 지정하지 않으면 옵션 내부의 텍스트가 사용됩니다.</Trans>
+
 * [`value`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#value): The value to be used [when submitting the parent `<select>` in a form](/reference/react-dom/components/select#reading-the-select-box-value-when-submitting-a-form) if this option is selected.
-<TransBlock>
-* [`disabled`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/option#disabled): boolean값. `true` 인 경우 옵션을 선택할 수 없으며 흐리게 보입니다.
-* [`label`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/option#label): string값. 옵션의 의미를 지정합니다. 지정하지 않으면 옵션 내부의 텍스트가 사용됩니다.
-* [`value`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/option#value): [폼에서 부모 요소인 `<select>`를 제출할 때](/reference/react-dom/components/select#reading-the-select-box-value-when-submitting-a-form), 이 옵션이 선택된 경우에 사용됩니다.
-</TransBlock>
+<Trans>[`value`](https://developer.mozilla.org/ko/docs/Web/HTML/Element/option#value): [폼에서 부모 요소인 `<select>`를 제출할 때](/reference/react-dom/components/select#reading-the-select-box-value-when-submitting-a-form), 이 옵션이 선택된 경우에 사용됩니다.</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * React does not support the `selected` attribute on `<option>`. Instead, pass this option's `value` to the parent [`<select defaultValue>`](/reference/react-dom/components/select#providing-an-initially-selected-option) for an uncontrolled select box, or [`<select value>`](/reference/react-dom/components/select#controlling-a-select-box-with-a-state-variable) for a controlled select.
-<Trans>React는 `<option>`에서 `selected` 속성을 지원하지 않습니다. 대신 비제어 셀렉트 박스의 경우에는 [`<select defaultValue>`](/reference/react-dom/components/select#providing-an-initially-selected-option)로, 제어 셀렉트 박스의 경우에는 [`<select value>`](/reference/react-dom/components/select#controlling-a-select-box-with-a-state-variable)로, 이 옵션의 `value`를 부모에 전달하세요.</Trans>
+<Trans outdent>React는 `<option>`에서 `selected` 속성을 지원하지 않습니다. 대신 비제어 셀렉트 박스의 경우에는 [`<select defaultValue>`](/reference/react-dom/components/select#providing-an-initially-selected-option)로, 제어 셀렉트 박스의 경우에는 [`<select value>`](/reference/react-dom/components/select#controlling-a-select-box-with-a-state-variable)로, 이 옵션의 `value`를 부모에 전달하세요.</Trans>
 
 ---
 

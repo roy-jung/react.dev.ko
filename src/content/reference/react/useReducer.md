@@ -43,14 +43,13 @@ function MyComponent() {
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `reducer`: The reducer function that specifies how the state gets updated. It must be pure, should take the state and action as arguments, and should return the next state. State and action can be of any types. 
-* `initialArg`: The value from which the initial state is calculated. It can be a value of any type. How the initial state is calculated from it depends on the next `init` argument.
-* **optional** `init`: The initializer function that should return the initial state. If it's not specified, the initial state is set to `initialArg`. Otherwise, the initial state is set to the result of calling `init(initialArg)`.
+<Trans>`reducer`: state가 업데이트되는 방식을 지정하는 reducer 함수입니다. 순수 함수여야 하며, state와 액션을 인자로 받아야 하고, 다음 state를 반환해야 합니다. state와 액션은 어떤 유형이든 가능합니다.</Trans>
 
-<TransBlock>
-- `reducer`: state가 업데이트되는 방식을 지정하는 reducer 함수입니다. 순수 함수여야 하며, state와 액션을 인자로 받아야 하고, 다음 state를 반환해야 합니다. state와 액션은 어떤 유형이든 가능합니다.
-- `initialArg`: 초기 state가 계산되는 값입니다. 모든 유형의 값일 수 있습니다. 이 값에서 초기 state를 계산하는 방법은 다음 `init` 인자에 따라 달라집니다.
-- **선택적** `init`: 초기 state 계산 방법을 지정하는 초기화 함수입니다. 이것을 지정하지 않으면 초기 state는 `initialArg`로 설정됩니다. 그렇지 않으면 초기 state는 `init(initialArg)`를 호출한 결과로 설정됩니다.
-</TransBlock>
+* `initialArg`: The value from which the initial state is calculated. It can be a value of any type. How the initial state is calculated from it depends on the next `init` argument.
+<Trans>`initialArg`: 초기 state가 계산되는 값입니다. 모든 유형의 값일 수 있습니다. 이 값에서 초기 state를 계산하는 방법은 다음 `init` 인자에 따라 달라집니다.</Trans>
+
+* **optional** `init`: The initializer function that should return the initial state. If it's not specified, the initial state is set to `initialArg`. Otherwise, the initial state is set to the result of calling `init(initialArg)`.
+<Trans>**선택적** `init`: 초기 state 계산 방법을 지정하는 초기화 함수입니다. 이것을 지정하지 않으면 초기 state는 `initialArg`로 설정됩니다. 그렇지 않으면 초기 state는 `init(initialArg)`를 호출한 결과로 설정됩니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
@@ -58,22 +57,18 @@ function MyComponent() {
 <Trans>`useReducer` 는 정확히 두 개의 값을 가진 배열을 반환합니다:</Trans>
 
 1. The current state. During the first render, it's set to `init(initialArg)` or `initialArg` (if there's no `init`).
-2. The [`dispatch` function](#dispatch) that lets you update the state to a different value and trigger a re-render.
+<Trans outdent>1. 현재 state. 첫 번째 렌더링 중에는 `init(initialArg)` 또는 (`init`이 없는 경우) `initialArg`로 설정됩니다.</Trans>
 
-<TransBlock>
-  1. 현재 state. 첫 번째 렌더링 중에는 `init(initialArg)` 또는 (`init`이 없는 경우) `initialArg`로 설정됩니다.
-  2. state를 다른 값으로 업데이트하고 리렌더링을 촉발할 수 있는 [`dispatch` function](#dispatch).
-</TransBlock>
+2. The [`dispatch` function](#dispatch) that lets you update the state to a different value and trigger a re-render.
+<Trans outdent>2. state를 다른 값으로 업데이트하고 리렌더링을 촉발할 수 있는 [`dispatch` function](#dispatch).</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * `useReducer` is a Hook, so you can only call it **at the top level of your component** or your own Hooks. You can't call it inside loops or conditions. If you need that, extract a new component and move the state into it.
-* In Strict Mode, React will **call your reducer and initializer twice** in order to [help you find accidental impurities.](#my-reducer-or-initializer-function-runs-twice) This is development-only behavior and does not affect production. If your reducer and initializer are pure (as they should be), this should not affect your logic. The result from one of the calls is ignored.
+<Trans>`useReducer` 는 훅이므로 **컴포넌트의 최상위 레벨** 또는 자체 훅에서만 호출할 수 있습니다. 반복문이나 조건문 내부에서는 호출할 수 없습니다. 필요하다면 새 컴포넌트를 추출하고 state를 그 안으로 옮기세요.</Trans>
 
-<TransBlock>
-- `useReducer` 는 훅이므로 **컴포넌트의 최상위 레벨** 또는 자체 훅에서만 호출할 수 있습니다. 반복문이나 조건문 내부에서는 호출할 수 없습니다. 필요하다면 새 컴포넌트를 추출하고 state를 그 안으로 옮기세요.
-- Strict Mode에서 React는 [의도치 않은 불순물을 찾기 위해](#my-reducer-or-initializer-function-runs-twice) **reducer와 초기화 함수를 두 번 호출**합니다. 이는 개발 전용 동작이며 상용 환경에서는 영향을 미치지 않습니다. reducer와 초기화 함수가 순수하다면(그래야 합니다) 컴포넌트의 로직에 영향을 미치지 않습니다. 호출 중 하나의 결과는 무시됩니다.
-</TransBlock>
+* In Strict Mode, React will **call your reducer and initializer twice** in order to [help you find accidental impurities.](#my-reducer-or-initializer-function-runs-twice) This is development-only behavior and does not affect production. If your reducer and initializer are pure (as they should be), this should not affect your logic. The result from one of the calls is ignored.
+<Trans>Strict Mode에서 React는 [의도치 않은 불순물을 찾기 위해](#my-reducer-or-initializer-function-runs-twice) **reducer와 초기화 함수를 두 번 호출**합니다. 이는 개발 전용 동작이며 상용 환경에서는 영향을 미치지 않습니다. reducer와 초기화 함수가 순수하다면(그래야 합니다) 컴포넌트의 로직에 영향을 미치지 않습니다. 호출 중 하나의 결과는 무시됩니다.</Trans>
 
 ---
 
@@ -96,7 +91,7 @@ React will set the next state to the result of calling the `reducer` function yo
 #### Parameters<Trans>매개변수</Trans> {/*dispatch-parameters*/}
 
 * `action`: The action performed by the user. It can be a value of any type. By convention, an action is usually an object with a `type` property identifying it and, optionally, other properties with additional information.
-<Trans>`action`: 사용자가 수행한 작업입니다. 어떤 데이터 유형이든 올 수 있습니다. 관용적으로 액션은 보통 이를 식별하는 type 속성이 있는 객체이며, 선택적으로 추가 정보가 있는 다른 속성을 포함할 수 있습니다.</Trans>
+<Trans outdent>`action`: 사용자가 수행한 작업입니다. 어떤 데이터 유형이든 올 수 있습니다. 관용적으로 액션은 보통 이를 식별하는 type 속성이 있는 객체이며, 선택적으로 추가 정보가 있는 다른 속성을 포함할 수 있습니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*dispatch-returns*/}
 
@@ -140,12 +135,10 @@ function MyComponent() {
 <Trans>`useReducer` 는 정확히 두 개의 항목이 있는 배열을 반환합니다:</Trans>
 
 1. The <CodeStep step={1}>current state</CodeStep> of this state variable, initially set to the <CodeStep step={3}>initial state</CodeStep> you provided.
-2. The <CodeStep step={2}>`dispatch` function</CodeStep> that lets you change it in response to interaction.
+<Trans outdent>이 state 변수의 <CodeStep step={1}>현재 state</CodeStep>. 처음에 제공한 <CodeStep step={3}>초기 state</CodeStep>로 설정됨.</Trans>
 
-<TransBlock>
-1. 이 state 변수의 <CodeStep step={1}>현재 state</CodeStep>. 처음에 제공한 <CodeStep step={3}>초기 state</CodeStep>로 설정됨.
-2. 상호작용에 반응하여 이를 변경할 수 있는 <CodeStep step={2}>`dispatch`</CodeStep> 함수.
-</TransBlock>
+2. The <CodeStep step={2}>`dispatch` function</CodeStep> that lets you change it in response to interaction.
+<Trans outdent>상호작용에 반응하여 이를 변경할 수 있는 <CodeStep step={2}>`dispatch`</CodeStep> 함수.</Trans>
 
 To update what's on the screen, call <CodeStep step={2}>`dispatch`</CodeStep> with an object representing what the user did, called an *action*:
 <Trans>화면에 표시되는 내용을 업데이트하려면 사용자가 수행한 작업을 나타내는 객체, 즉,*액션*을 사용하여 <CodeStep step={2}>`dispatch`</CodeStep>를 호출합니다:</Trans>

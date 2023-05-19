@@ -161,11 +161,10 @@ If you render a tag with a dash, like `<my-element>`, React will assume you want
 <Trans>`<my-element>` 처럼 대시(-)가 있는 태그를 렌더링하면 React는 [사용자정의 HTML 엘리먼트](https://developer.mozilla.org/ko/docs/Web/API/Web_components/Using_custom_elements)를 렌더링한다고 가정합니다. React에서 사용자정의 엘리먼트를 렌더링하는 것은 빌트인 브라우저 태그를 렌더링하는 것과는 다르게 작동합니다:</Trans>
 
 - All custom element props are serialized to strings and are always set using attributes.
+<Trans>모든 사용자정의 엘리먼트의 props는 문자열로 직렬화되며, 항상 속성(attribute)을 통해 설정할 수 있습니다.</Trans>
+
 - Custom elements accept `class` rather than `className`, and `for` rather than `htmlFor`.
-<TransBlock>
-- 모든 사용자정의 엘리먼트의 props는 문자열로 직렬화되며, 항상 속성(attribute)을 통해 설정할 수 있습니다.
-- 사용자정의 엘리먼트는 `className` 대신 `class`를, `htmlFor` 대신 `for`를 받습니다.
-</TransBlock>
+<Trans>사용자정의 엘리먼트는 `className` 대신 `class`를, `htmlFor` 대신 `for`를 받습니다.</Trans>
 
 If you render a built-in browser HTML element with an [`is`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is) attribute, it will also be treated as a custom element.
 <Trans>브라우저 빌트인 HTML 엘리먼트를 [`is`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is) 속성을 사용하여 렌더링하는 경우에도 커스텀 요소로 취급됩니다.</Trans>
@@ -269,24 +268,34 @@ Namespaced attributes also have to be written without the colon:
 
 * `xlink:actuate` becomes `xlinkActuate`.
 <Trans>`xlink:actuate`는 `xlinkActuate`가 됩니다.</Trans>
+
 * `xlink:arcrole` becomes `xlinkArcrole`.
 <Trans>`xlink:arcrole`는 `xlinkArcrole`가 됩니다.</Trans>
+
 * `xlink:href` becomes `xlinkHref`.
 <Trans>`xlink:href`는 `xlinkHref`가 됩니다.</Trans>
+
 * `xlink:role` becomes `xlinkRole`.
 <Trans>`xlink:role`는 `xlinkRole`가 됩니다.</Trans>
+
 * `xlink:show` becomes `xlinkShow`.
 <Trans>`xlink:show`는 `xlinkShow`가 됩니다.</Trans>
+
 * `xlink:title` becomes `xlinkTitle`.
 <Trans>`xlink:title`는 `xlinkTitle`가 됩니다.</Trans>
+
 * `xlink:type` becomes `xlinkType`.
 <Trans>`xlink:type`는 `xlinkType`가 됩니다.</Trans>
+
 * `xml:base` becomes `xmlBase`.
 <Trans>`xml:base`는 `xmlBase`가 됩니다.</Trans>
+
 * `xml:lang` becomes `xmlLang`.
 <Trans>`xml:lang`는 `xmlLang`가 됩니다.</Trans>
+
 * `xml:space` becomes `xmlSpace`.
 <Trans>`xml:space`는 `xmlSpace`가 됩니다.</Trans>
+
 * `xmlns:xlink` becomes `xmlnsXlink`.
 <Trans>`xmlns:xlink`는 `xmlnsXlink`가 됩니다.</Trans>
 

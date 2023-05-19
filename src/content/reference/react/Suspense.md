@@ -631,16 +631,16 @@ The sequence will be:
 <Trans>순서는 다음과 같습니다:</Trans>
 
 1. If `Biography` hasn't loaded yet, `BigSpinner` is shown in place of the entire content area.
-2. Once `Biography` finishes loading, `BigSpinner` is replaced by the content.
-3. If `Albums` hasn't loaded yet, `AlbumsGlimmer` is shown in place of `Albums` and its parent `Panel`.
-4. Finally, once `Albums` finishes loading, it replaces `AlbumsGlimmer`.
+<Trans outdent>`Biography`가 아직 로드되지 않은 경우 전체 콘텐츠 영역 대신 `BigSpinner`가 표시됩니다.</Trans>
 
-<TransBlock>
-1. `Biography`가 아직 로드되지 않은 경우 전체 콘텐츠 영역 대신 `BigSpinner`가 표시됩니다.
-2. `Biography`로드가 완료되면 `BigSpinner`가 콘텐츠로 대체됩니다.
-3. `Albums`가 아직 로드되지 않은 경우 `Albums` 및 그 부모 `Panel` 대신 `AlbumsGlimmer`가 표시됩니다.
-4. 마지막으로 `Albums` 로딩이 완료되면 `Albums`가 `AlbumsGlimmer`를 대체합니다.
-</TransBlock>
+2. Once `Biography` finishes loading, `BigSpinner` is replaced by the content.
+<Trans outdent>`Biography`로드가 완료되면 `BigSpinner`가 콘텐츠로 대체됩니다.</Trans>
+
+3. If `Albums` hasn't loaded yet, `AlbumsGlimmer` is shown in place of `Albums` and its parent `Panel`.
+<Trans outdent>`Albums`가 아직 로드되지 않은 경우 `Albums` 및 그 부모 `Panel` 대신 `AlbumsGlimmer`가 표시됩니다.</Trans>
+
+4. Finally, once `Albums` finishes loading, it replaces `AlbumsGlimmer`.
+<Trans outdent>마지막으로 `Albums` 로딩이 완료되면 `Albums`가 `AlbumsGlimmer`를 대체합니다.</Trans>
 
 <Sandpack>
 

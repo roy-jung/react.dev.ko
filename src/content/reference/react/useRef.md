@@ -112,13 +112,13 @@ By using a ref, you ensure that:
 <Trans>ref를 사용하면 다음을 보장합니다:</Trans>
 
 - You can **store information** between re-renders (unlike regular variables, which reset on every render).
+<Trans>(렌더링할 때마다 재설정되는 일반 변수와 달리) 리렌더링 사이에 **정보를 저장**할 수 있습니다.</Trans>
+
 - Changing it **does not trigger a re-render** (unlike state variables, which trigger a re-render).
+<Trans>(리렌더링을 촉발하는 state 변수와 달리) 변경해도 **리렌더링을 촉발하지 않습니다.**</Trans>
+
 - The **information is local** to each copy of your component (unlike the variables outside, which are shared).
-<TransBlock>
-  - (렌더링할 때마다 재설정되는 일반 변수와 달리) 리렌더링 사이에 **정보를 저장**할 수 있습니다.
-  - (리렌더링을 촉발하는 state 변수와 달리) 변경해도 **리렌더링을 촉발하지 않습니다.**
-  - (정보가 공유되는 외부 변수와 달리) 각각의 컴포넌트에 **로컬로 저장됩니다.**
-</TransBlock>
+<Trans>(정보가 공유되는 외부 변수와 달리) 각각의 컴포넌트에 **로컬로 저장됩니다.**</Trans>
 
 Changing a ref does not trigger a re-render, so refs are not appropriate for storing information you want to display on the screen. Use state for that instead. Read more about [choosing between `useRef` and `useState`.](/learn/referencing-values-with-refs#differences-between-refs-and-state)
 <Trans>ref를 변경해도 다시 렌더링되지 않으므로 화면에 표시되는 정보를 저장하는 데는 ref가 적합하지 않습니다. 대신 state를 사용하세요. 더 자세한 내용은 [`useRef`와 `useState` 중 선택하기](/learn/referencing-values-with-refs#differences-between-refs-and-state)에서 확인하세요.</Trans>
@@ -221,11 +221,10 @@ React expects that the body of your component [behaves like a pure function](/le
 <Trans>React는 컴포넌트의 본문이 [순수 함수처럼 동작하기](/learn/keeping-components-pure)를 기대합니다:</Trans>
 
 - If the inputs ([props](/learn/passing-props-to-a-component), [state](/learn/state-a-components-memory), and [context](/learn/passing-data-deeply-with-context)) are the same, it should return exactly the same JSX.
+<Trans>입력값들([props](/learn/passing-props-to-a-component), [state](/learn/state-a-components-memory), [context](/learn/passing-data-deeply-with-context))이 동일하면 완전히 동일한 JSX를 반환해야 합니다.</Trans>
+
 - Calling it in a different order or with different arguments should not affect the results of other calls.
-<TransBlock>
-  - 입력값들([props](/learn/passing-props-to-a-component), [state](/learn/state-a-components-memory), [context](/learn/passing-data-deeply-with-context))이 동일하면 완전히 동일한 JSX를 반환해야 합니다.
-  - 다른 순서나 다른 인수를 사용하여 호출해도 다른 호출의 결과에 영향을 미치지 않아야 합니다. <CodeStep step={2}>(?)</CodeStep>
-</TransBlock>
+<Trans>다른 순서나 다른 인수를 사용하여 호출해도 다른 호출의 결과에 영향을 미치지 않아야 합니다. <CodeStep step={2}>(?)</CodeStep></Trans>
 
 Reading or writing a ref **during rendering** breaks these expectations.
 <Trans>**렌더링 중에** ref를 읽거나 쓰면 이러한 기대가 깨집니다.</Trans>

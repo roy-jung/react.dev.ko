@@ -45,9 +45,9 @@ The convention is to name state variables like `[something, setSomething]` using
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `initialState`: The value you want the state to be initially. It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render.
-<Trans>`initialState`: 초기에 state를 설정할 값입니다. 값은 모든 데이터 타입이 허용되지만, 함수에 대해서는 특별한 동작이 있습니다. 이 인자는 초기 렌더링 이후에는 무시됩니다.</Trans>
+<Trans outdent>`initialState`: 초기에 state를 설정할 값입니다. 값은 모든 데이터 타입이 허용되지만, 함수에 대해서는 특별한 동작이 있습니다. 이 인자는 초기 렌더링 이후에는 무시됩니다.</Trans>
   * If you pass a function as `initialState`, it will be treated as an _initializer function_. It should be pure, should take no arguments, and should return a value of any type. React will call your initializer function when initializing the component, and store its return value as the initial state. [See an example below.](#avoiding-recreating-the-initial-state)
-<Trans>함수를 `initialState`로 전달하면 이를 *초기화 함수*로 취급합니다. 이 함수는 순수해야 하고 인자를 받지 않아야 하며 반드시 어떤 값을 반환해야 합니다. React는 컴포넌트를 초기화할 때 초기화 함수를 호출하고, 그 반환값을 초기 state로 저장합니다. [아래 예시를 참고하세요.](#avoiding-recreating-the-initial-state)</Trans>
+<Trans outdent>함수를 `initialState`로 전달하면 이를 *초기화 함수*로 취급합니다. 이 함수는 순수해야 하고 인자를 받지 않아야 하며 반드시 어떤 값을 반환해야 합니다. React는 컴포넌트를 초기화할 때 초기화 함수를 호출하고, 그 반환값을 초기 state로 저장합니다. [아래 예시를 참고하세요.](#avoiding-recreating-the-initial-state)</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
@@ -55,15 +55,16 @@ The convention is to name state variables like `[something, setSomething]` using
 <Trans>`useState`는 정확히 두 개의 값을 가진 배열을 반환합니다:</Trans>
 
 1. The current state. During the first render, it will match the `initialState` you have passed.
+<Trans outdent>현재 state입니다. 첫 번째 렌더링 중에는 전달한 `initialState`와 일치합니다.</Trans>
+
 2. The [`set` function](#setstate) that lets you update the state to a different value and trigger a re-render.
-<TransBlock>
-1. 현재 state입니다. 첫 번째 렌더링 중에는 전달한 `initialState`와 일치합니다.
-2. state를 다른 값으로 업데이트하고 리렌더링을 촉발할 수 있는 [`set`(설정자) 함수](#setstate)입니다.
-</TransBlock>
+<Trans outdent>state를 다른 값으로 업데이트하고 리렌더링을 촉발할 수 있는 [`set`(설정자) 함수](#setstate)입니다.</Trans>
+
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * `useState` is a Hook, so you can only call it **at the top level of your component** or your own Hooks. You can't call it inside loops or conditions. If you need that, extract a new component and move the state into it.
 <Trans>`useState`는 훅이므로 **컴포넌트의 최상위 레벨이나** 직접 만든 훅에서만 호출할 수 있습니다. 반복문이나 조건문 안에서는 호출할 수 없습니다. 필요한 경우 새 컴포넌트를 추출하고 state를 그 안으로 옮기세요.</Trans>
+
 * In Strict Mode, React will **call your initializer function twice** in order to [help you find accidental impurities.](#my-initializer-or-updater-function-runs-twice) This is development-only behavior and does not affect production. If your initializer function is pure (as it should be), this should not affect the behavior. The result from one of the calls will be ignored.
 <Trans>Strict Mode에서 React는 [의도치 않은 불순물을 찾기 위해](#my-initializer-or-updater-function-runs-twice) **초기화 함수를 두 번 호출합니다.** 이는 개발 환경 전용 동작이며 상용 환경에는 영향을 미치지 않습니다. 초기화 함수가 순수하다면(그래야 합니다) 동작에 영향을 미치지 않습니다. 호출 중 하나의 결과는 무시됩니다.</Trans>
 
@@ -86,9 +87,10 @@ function handleClick() {
 #### Parameters<Trans>매개변수</Trans> {/*setstate-parameters*/}
 
 * `nextState`: The value that you want the state to be. It can be a value of any type, but there is a special behavior for functions.
-<Trans>`nextState`: state가 될 값입니다. 값은 모든 데이터 타입이 허용되지만, 함수에 대해서는 특별한 동작이 있습니다.</Trans>
+<Trans outdent>`nextState`: state가 될 값입니다. 값은 모든 데이터 타입이 허용되지만, 함수에 대해서는 특별한 동작이 있습니다.</Trans>
+
   * If you pass a function as `nextState`, it will be treated as an _updater function_. It must be pure, should take the pending state as its only argument, and should return the next state. React will put your updater function in a queue and re-render your component. During the next render, React will calculate the next state by applying all of the queued updaters to the previous state. [See an example below.](#updating-state-based-on-the-previous-state)
-  <Trans>함수를 `nextState`로 전달하면 업데이터 함수로 취급됩니다. 이 함수는 순수해야 하고, 대기 중인 state를 유일한 인수로 사용해야 하며, 다음 state를 반환해야 합니다. React는 업데이터 함수를 대기열에 넣고 컴포넌트를 리렌더링 합니다. 다음 렌더링 중에 React는 대기열에 있는 모든 업데이터를 이전 state에 적용하여 다음 state를 계산합니다. [아래 예제를 참조하세요.](#updating-state-based-on-the-previous-state)</Trans>
+  <Trans outdent>함수를 `nextState`로 전달하면 업데이터 함수로 취급됩니다. 이 함수는 순수해야 하고, 대기 중인 state를 유일한 인수로 사용해야 하며, 다음 state를 반환해야 합니다. React는 업데이터 함수를 대기열에 넣고 컴포넌트를 리렌더링 합니다. 다음 렌더링 중에 React는 대기열에 있는 모든 업데이터를 이전 state에 적용하여 다음 state를 계산합니다. [아래 예제를 참조하세요.](#updating-state-based-on-the-previous-state)</Trans>
 
 
 #### Returns<Trans>반환값</Trans> {/*setstate-returns*/}
@@ -140,11 +142,10 @@ The convention is to name state variables like `[something, setSomething]` using
 <Trans>`useState`는 정확히 두 개의 항목이 있는 배열을 반환합니다.</Trans>
 
 1. The <CodeStep step={1}>current state</CodeStep> of this state variable, initially set to the <CodeStep step={3}>initial state</CodeStep> you provided.
+<Trans outdent>이 state 변수의 <CodeStep step={1}>현재 state</CodeStep>로, 처음에 제공한 <CodeStep step={3}>초기 state</CodeStep>로 설정됩니다.</Trans>
+
 2. The <CodeStep step={2}>`set` function</CodeStep> that lets you change it to any other value in response to interaction.
-<TransBlock>
-  1. 이 state 변수의 <CodeStep step={1}>현재 state</CodeStep>로, 처음에 제공한 <CodeStep step={3}>초기 state</CodeStep>로 설정됩니다.
-  2. 상호작용에 반응하여 다른 값으로 변경할 수 있는 <CodeStep step={2}>`set` 함수</CodeStep>입니다.
-</TransBlock>
+<Trans outdent>상호작용에 반응하여 다른 값으로 변경할 수 있는 <CodeStep step={2}>`set` 함수</CodeStep>입니다.</Trans>
 
 To update what’s on the screen, call the `set` function with some next state:
 <Trans>화면의 내용을 업데이트하려면 다음 state로 `set` 함수를 호출합니다:</Trans>
@@ -353,13 +354,13 @@ React puts your updater functions in a [queue.](/learn/queueing-a-series-of-stat
 <Trans>React는 업데이터 함수를 [큐](/learn/queueing-a-series-of-state-updates)에 넣습니다. 그러면 다음 렌더링 중에 동일한 순서로 호출합니다:</Trans>
 
 1. `a => a + 1` will receive `42` as the pending state and return `43` as the next state.
-1. `a => a + 1` will receive `43` as the pending state and return `44` as the next state.
-1. `a => a + 1` will receive `44` as the pending state and return `45` as the next state.
-<TransBlock>
-  1. `a => a + 1`은 대기 중인 state로 `42`를 받고 다음 state로 `43`을 반환합니다. 
-  2. `a => a + 1`은 대기 중인 state로 `43`을 받고 다음 state로 `44`를 반환합니다.
-  3. `a => a + 1`은 대기 중인 state로 `44`를 받고 다음 state로 `45`를 반환합니다.
-</TransBlock>
+<Trans outdent>`a => a + 1`은 대기 중인 state로 `42`를 받고 다음 state로 `43`을 반환합니다.</Trans>
+
+2. `a => a + 1` will receive `43` as the pending state and return `44` as the next state.
+<Trans outdent>`a => a + 1`은 대기 중인 state로 `43`을 받고 다음 state로 `44`를 반환합니다.</Trans>
+
+3. `a => a + 1` will receive `44` as the pending state and return `45` as the next state.
+<Trans outdent>`a => a + 1`은 대기 중인 state로 `44`를 받고 다음 state로 `45`를 반환합니다.</Trans>
 
 There are no other queued updates, so React will store `45` as the current state in the end.
 <Trans>대기 중인 다른 업데이트가 없으므로, React는 결국 `45`를 현재 state로 저장합니다.</Trans>

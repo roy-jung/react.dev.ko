@@ -987,12 +987,10 @@ There are two common optimization techniques you might have used before in this 
 <Trans>이 시나리오에서 이전에 사용했을 수 있는 두 가지 일반적인 최적화 기법이 있습니다:</Trans>
 
 - *Debouncing* means you'd wait for the user to stop typing (e.g. for a second) before updating the list.
-- *Throttling* means you'd update the list every once in a while (e.g. at most once a second).
+<Trans>*디바운스*는 사용자가 타이핑을 멈출 때까지(예: 1초 동안) 기다렸다가 목록을 업데이트하는 것을 의미합니다.</Trans>
 
-<TransBlock>
-- *디바운스*는 사용자가 타이핑을 멈출 때까지(예: 1초 동안) 기다렸다가 목록을 업데이트하는 것을 의미합니다.
-- *쓰로틀*은 가끔씩(예: 최대 1초에 한 번) 목록을 업데이트하는 것을 의미합니다.
-</TransBlock>
+- *Throttling* means you'd update the list every once in a while (e.g. at most once a second).
+<Trans>*쓰로틀*은 가끔씩(예: 최대 1초에 한 번) 목록을 업데이트하는 것을 의미합니다.</Trans>
 
 While these techniques are helpful in some cases, `useDeferredValue` is better suited to optimizing rendering because it is deeply integrated with React itself and adapts to the user's device.
 <Trans>이 기법들은 경우에 따라 유용하지만, `useDeferredValue`는 React 자체와 깊게 통합되어 있고 사용자의 기기에 맞게 조정되기 때문에 렌더링을 최적화하는 데 더 적합합니다.</Trans>
