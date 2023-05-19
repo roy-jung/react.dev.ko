@@ -1,6 +1,6 @@
 ---
 title: useEffect
-translators: [손한종]
+translators: [강민혜, 손한종]
 ---
 
 <Intro>

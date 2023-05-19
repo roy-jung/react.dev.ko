@@ -1,6 +1,6 @@
 ---
 title: startTransition
-translators: [김아영]
+translators: [김아영, 이나령]
 ---
 
 <Intro>

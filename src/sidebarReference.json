@@ -279,8 +279,8 @@
           "path": "/reference/react/Component"
         },
         {
-          "title": "createFactory",
-          "path": "/reference/react/createFactory"
+          "title": "createElement",
+          "path": "/reference/react/createElement"
         },
         {
           "title": "createRef",
@@ -298,8 +298,8 @@
           "sectionHeader": "deprecated"
         },
         {
-          "title": "createElement",
-          "path": "/reference/react/createElement"
+          "title": "createFactory",
+          "path": "/reference/react/createFactory"
         }
       ]
     }

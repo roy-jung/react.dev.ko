@@ -3,16 +3,16 @@ title: 번역 진행상황
 ---
 
 <Intro>
-last updated @ 2023-05-18 17:00
+last updated @ 2023-05-19 12:00
 </Intro>
 
-## Reference - 진행중 (done: 57 / total: 59) {/*reference*/}
+## Reference - 진행중 (done: 58 / total: 59) {/*reference*/}
 
 |     | title                                                                |     | title                                                                                  |
 | :-: | :------------------------------------------------------------------- | :-: | :------------------------------------------------------------------------------------- |
 |  ✅  | [5. Hooks](/reference/react)                                         |  ✅  | [8-3. `<option>`](/reference/react-dom/components/option)                              |
 |  ✅  | [5-1. useCallback](/reference/react/useCallback)                     |  ✅  | [8-4. `<progress>`](/reference/react-dom/components/progress)                          |
-|  ✅  | [5-2. useContext](/reference/react/useContext)                       |  ▢  | [8-5. `<select>`](/reference/react-dom/components/select)                              |
+|  ✅  | [5-2. useContext](/reference/react/useContext)                       |  ✅  | [8-5. `<select>`](/reference/react-dom/components/select)                              |
 |  ✅  | [5-3. useDebugValue](/reference/react/useDebugValue)                 |  ✅  | [8-6. `<textarea>`](/reference/react-dom/components/textarea)                          |
 |  ✅  | [5-4. useDeferredValue](/reference/react/useDeferredValue)           |  ✅  | [9. APIs](/reference/react-dom)                                                        |
 |  ✅  | [5-5. useEffect](/reference/react/useEffect)                         |  ✅  | [9-1. createPortal](/reference/react-dom/createPortal)                                 |

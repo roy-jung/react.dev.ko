@@ -15,7 +15,7 @@ The `react-dom` package contains methods that are only supported for the web app
 ## APIs {/*apis*/}
 
 These APIs can be imported from your components. They are rarely used:
-<Trans>이러한 API들을 컴포넌트에서 가져올 수 있습니다. 거의 사용되지 않습니다:</Trans>
+<Trans>컴포넌트에서 다음 API들을 사용할 수 있습니다. 자주 사용되지는 않습니다:</Trans>
 
 * [`createPortal`](/reference/react-dom/createPortal) lets you render child components in a different part of the DOM tree.
 <Trans>[`createPortal`](/reference/react-dom/createPortal)을 사용하면 DOM 트리의 다른 부분에 자식 컴포넌트를 렌더링할 수 있습니다.</Trans>
