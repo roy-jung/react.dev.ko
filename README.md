@@ -1,5 +1,10 @@
 # react-ko.dev | React 비공식 한글번역 사이트
 
+<p>
+   <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Froy-jung%2Freact.dev.ko&count_bg=%2361DAFB&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits"/></a>
+   <a href="https://github.com/reactjs/react.dev/blob/main/LICENSE-DOCS.md"><img src="https://img.shields.io/github/license/roy-jung/react.dev.ko" alt="CC-BY-4.0" /></a>
+</p>
+
 [react.dev](https://react.dev/)를 fork하여 작성한 리파지토리입니다.  
 스터디그룹에서 한글 번역을 진행하고 있고,  
 유튜브 [FE재남](https://www.youtube.com/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v)에 스터디 영상을 공개하고 있습니다.
