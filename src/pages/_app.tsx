@@ -3,6 +3,7 @@
  */
 
 import {AppProps} from 'next/app';
+import Script from 'next/script';
 
 import '@docsearch/css';
 import '../styles/algolia.css';
@@ -45,5 +46,26 @@ export default function MyApp({Component, pageProps}: AppProps) {
     initiated = true;
   }
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-Q6QK93W310"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'G-Q6QK93W310');
+          `,
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  );
 }
