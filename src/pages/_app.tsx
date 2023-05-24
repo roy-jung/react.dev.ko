@@ -48,6 +48,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
 
   return (
     <>
+      <Component {...pageProps} />
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-Q6QK93W310"
@@ -65,7 +66,6 @@ export default function MyApp({Component, pageProps}: AppProps) {
           `,
         }}
       />
-      <Component {...pageProps} />
     </>
   );
 }
