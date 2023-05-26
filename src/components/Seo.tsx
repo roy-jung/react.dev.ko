@@ -17,23 +17,11 @@ export interface SeoProps {
   searchOrder?: number;
 }
 
-const deployedTranslations = [
-  'en',
-  'zh-hans',
-  'ko',
-  'es',
-  // We'll add more languages when they have enough content.
-  // Please DO NOT edit this list without a discussion in the reactjs/react.dev repo.
-  // It must be the same between all translations.
-];
+const deployedTranslations = ['en', 'ko'];
 
-let shouldPreventIndexing = false;
-if (
-  siteConfig.languageCode !== 'en' &&
-  !deployedTranslations.includes(siteConfig.languageCode)
-) {
-  shouldPreventIndexing = true;
-}
+const shouldPreventIndexing = !deployedTranslations.includes(
+  siteConfig.languageCode
+);
 
 function getDomain(languageCode: string): string {
   const subdomain = languageCode === 'en' ? '' : languageCode + '.';
