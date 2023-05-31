@@ -15,13 +15,11 @@ const results = [
   `---
 title: Translation Contributors
 translatedTitle: 번역한 사람들
-showToc: false
-showSurvey: false
 ---
 <Intro>
 </Intro>
 
-<br/>
+---
 `,
 ];
 
@@ -39,11 +37,11 @@ const removeQuote = (str) => {
 paths
   .flatMap((pathname) =>
     fs
-      .readdirSync(path.resolve(__dirname, `../../${pathname}`))
+      .readdirSync(path.resolve(__dirname, `../${pathname}`))
       .filter((f) => f.endsWith('.md'))
       .map((filename) => {
         const file = fs.readFileSync(
-          path.resolve(__dirname, `../../${pathname}`, `./${filename}`),
+          path.resolve(__dirname, `../${pathname}`, `./${filename}`),
           'utf8'
         );
         return {
@@ -85,7 +83,7 @@ if (process.argv[process.argv.length - 1] === '--shuffle') {
   );
 }
 
-data.forEach(({description, name, ...props}) => {
+data.forEach(({description, name, id, ...props}) => {
   const prop = [];
   Object.entries(props).map(([key, val]) => {
     if (val) prop.push(`${key}="${val}"`);
@@ -95,6 +93,7 @@ data.forEach(({description, name, ...props}) => {
 <TeamMember 
   ${prop.join('\n')}
   name="${name}"
+  id="${id}"
   translated={${JSON.stringify(translated)}}
 >
   ${description}

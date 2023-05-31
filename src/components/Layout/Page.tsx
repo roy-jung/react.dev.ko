@@ -35,7 +35,12 @@ interface PageProps {
     showToc?: boolean;
     showSurvey?: boolean;
   };
-  section: 'learn' | 'reference' | 'community' | 'blog' | 'home' | 'unknown';
+  section:
+    | 'learn'
+    | 'reference'
+    | 'translators' /* | 'community' | 'blog' */
+    | 'home'
+    | 'unknown';
 }
 
 export function Page({children, toc, routeTree, meta, section}: PageProps) {
@@ -64,7 +69,7 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
       <div className="pl-0">
         <div
           className={cn(
-            section === 'blog' && 'mx-auto px-0 lg:px-4 max-w-5xl'
+            section === 'translators' && 'mx-auto px-0 lg:px-4 max-w-5xl'
           )}>
           <PageHeading
             title={title}
@@ -79,7 +84,7 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
           <div
             className={cn(
               'max-w-7xl mx-auto',
-              section === 'blog' && 'lg:flex lg:flex-col lg:items-center'
+              section === 'translators' && 'lg:flex lg:flex-col lg:items-center'
             )}>
             <TocContext.Provider value={toc}>{children}</TocContext.Provider>
           </div>
@@ -98,20 +103,24 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
   let hasColumns = true;
   let showSidebar = true;
   let showToc = meta.showToc ?? true;
-  let showSurvey = meta.showSurvey ?? true;
+  // let showSurvey = meta.showSurvey ?? true;
   if (isHomePage || isBlogIndex) {
     hasColumns = false;
     showSidebar = false;
     showToc = false;
-    showSurvey = false;
-  } else if (section === 'blog') {
+    // showSurvey = false;
+  } else if (section === 'translators') {
     showToc = false;
     hasColumns = false;
     showSidebar = false;
-  }
+  } /*  else if (section === 'blog') {
+    showToc = false;
+    hasColumns = false;
+    showSidebar = false;
+  } */
 
   let searchOrder;
-  if (section === 'learn' || (section === 'blog' && !isBlogIndex)) {
+  if (section === 'learn' /*  || (section === 'blog' && !isBlogIndex) */) {
     searchOrder = order;
   }
 

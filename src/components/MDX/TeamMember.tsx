@@ -13,6 +13,7 @@ import Link from './Link';
 
 interface TeamMemberProps {
   name: string;
+  id: string;
   title: string;
   permalink: string;
   children: React.ReactNode;
@@ -26,8 +27,8 @@ interface TeamMemberProps {
 // TODO: good alt text for images/links
 export function TeamMember({
   name,
+  id,
   title,
-  permalink,
   children,
   photo,
   github,
@@ -54,7 +55,7 @@ export function TeamMember({
           <Image src={photo} layout="fill" objectFit="cover" alt={name} />
         </div>
         <div className="pl-0 sm:pl-6 basis-3/5 items-start">
-          <H3 className="mb-1 sm:my-0" id={permalink || name}>
+          <H3 className="mb-1 sm:my-0" id={id}>
             {name}
           </H3>
           {title && <div>{title}</div>}
