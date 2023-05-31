@@ -131,7 +131,7 @@ export function HomeContent() {
           <h1 className="text-center text-5xl font-display lg:text-6xl font-semibold leading-snug text-primary dark:text-primary-dark">
             React + ⍺
           </h1>
-          <div className="mt-5 text-3xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
+          <div className="mt-5 mb-10 text-3xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
             <Link href="https://www.youtube.com/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v">
               FE재남
             </Link>
@@ -144,11 +144,9 @@ export function HomeContent() {
             <br />
             비공식 한글 번역 사이트
             <br />
-            <sub className="text-md">
-              2023. 5. 19. 100% 번역 완료 (Learn, Reference)
-            </sub>
+            <sub className="text-md">2023. 5. 19. 100% 번역 완료</sub>
           </div>
-          <div className="mt-5 mb-10 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
+          {/* <div className="mt-5 mb-10 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
             <ButtonLink
               href={'/community/translators'}
               type="secondary"
@@ -157,15 +155,15 @@ export function HomeContent() {
               label="translators">
               번역한 사람들
             </ButtonLink>
-            {/* <ButtonLink
+            <ButtonLink
               href={'/translated'}
               type="primary"
               size="lg"
               className="w-full sm:w-auto justify-center"
               label="progress">
               번역 진행상황
-            </ButtonLink> */}
-          </div>
+            </ButtonLink>
+          </div> */}
           <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
             The library for web and native user interfaces
             <br />

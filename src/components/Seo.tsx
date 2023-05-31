@@ -58,7 +58,7 @@ export const Seo = withRouter(
           href={canonicalUrl.replace(siteDomain, getDomain('en'))}
           hrefLang="x-default"
         />
-        {shouldPreventIndexing && <meta name="robots" content="noindex" />}
+        {/* {shouldPreventIndexing && <meta name="robots" content="noindex" />} */}
         {deployedTranslations.map((languageCode) => (
           <link
             key={'alt-' + languageCode}

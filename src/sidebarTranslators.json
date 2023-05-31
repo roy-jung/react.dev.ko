@@ -1,0 +1,15 @@
+{
+  "title": "Translators",
+  "path": "/translators",
+  "routes": [
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "번역한 사람들"
+    },
+    {
+      "title": "Translators",
+      "path": "/translators",
+      "skipBreadcrumb": true
+    }
+  ]
+}

@@ -131,7 +131,12 @@ export default function TopNav({
 }: {
   routeTree: RouteItem;
   breadcrumbs: RouteItem[];
-  section: 'learn' | 'reference' | 'community' | 'blog' | 'home' | 'unknown';
+  section:
+    | 'learn'
+    | 'reference'
+    | 'translators'
+    | /* 'community' | 'blog' | */ 'home'
+    | 'unknown';
 }) {
   const setTheme = useSetTheme();
 
@@ -282,12 +287,14 @@ export default function TopNav({
                   url="/reference/react">
                   Reference
                 </NavItem>
-                <NavItem isActive={section === 'community'} url="/community">
-                  Community
+                <NavItem
+                  isActive={section === 'translators'}
+                  url="/translators">
+                  Translators
                 </NavItem>
-                <NavItem isActive={section === 'blog'} url="/blog">
+                {/* <NavItem isActive={section === 'blog'} url="/blog">
                   Blog
-                </NavItem>
+                </NavItem> */}
               </div>
               <div className="flex w-full md:hidden"></div>
               <div className="flex items-center -space-x-2.5 xs:space-x-0 ">
@@ -358,13 +365,13 @@ export default function TopNav({
                       Reference
                     </NavItem>
                     <NavItem
-                      isActive={section === 'community'}
-                      url="/community">
-                      Community
+                      isActive={section === 'translators'}
+                      url="/translators">
+                      Translators
                     </NavItem>
-                    <NavItem isActive={section === 'blog'} url="/blog">
+                    {/* <NavItem isActive={section === 'blog'} url="/blog">
                       Blog
-                    </NavItem>
+                    </NavItem> */}
                   </div>
                   <div
                     role="separator"
