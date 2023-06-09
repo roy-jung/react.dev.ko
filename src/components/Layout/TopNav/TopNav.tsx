@@ -278,19 +278,19 @@ export default function TopNav({
               </button>
             </div>
             <div className="text-base justify-center items-center gap-1.5 flex 3xl:flex-1 flex-row 3xl:justify-end">
-              <div className="mx-2.5 gap-1.5 hidden lg:flex">
+              <div className="mx-2.5 gap-1.5 hidden lg:flex whitespace-nowrap">
                 <NavItem isActive={section === 'learn'} url="/learn">
-                  Learn
+                  학습하기
                 </NavItem>
                 <NavItem
                   isActive={section === 'reference'}
                   url="/reference/react">
-                  Reference
+                  레퍼런스
                 </NavItem>
                 <NavItem
                   isActive={section === 'translators'}
                   url="/translators">
-                  Translators
+                  멤버
                 </NavItem>
                 {/* <NavItem isActive={section === 'blog'} url="/blog">
                   Blog
@@ -355,19 +355,19 @@ export default function TopNav({
                 className="w-full lg:h-auto grow pr-0 lg:pr-5 pt-4 lg:py-6 md:pt-4 lg:pt-4 scrolling-touch scrolling-gpu">
                 {/* No fallback UI so need to be careful not to suspend directly inside. */}
                 <Suspense fallback={null}>
-                  <div className="pl-3 xs:pl-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-secondary dark:text-secondary-dark">
+                  <div className="pl-3 xs:pl-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-secondary dark:text-secondary-dark whitespace-nowrap">
                     <NavItem isActive={section === 'learn'} url="/learn">
-                      Learn
+                      학습하기
                     </NavItem>
                     <NavItem
                       isActive={section === 'reference'}
                       url="/reference/react">
-                      Reference
+                      레퍼런스
                     </NavItem>
                     <NavItem
                       isActive={section === 'translators'}
                       url="/translators">
-                      Translators
+                      멤버
                     </NavItem>
                     {/* <NavItem isActive={section === 'blog'} url="/blog">
                       Blog

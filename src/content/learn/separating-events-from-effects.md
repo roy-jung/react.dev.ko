@@ -4,6 +4,13 @@ translatedTitle: 이벤트와 Effect 분리하기
 translators: [유은미, 전시윤, 김아영, 정재남]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=34"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 Event handlers only re-run when you perform the same interaction again. Unlike event handlers, Effects re-synchronize if some value they read, like a prop or a state variable, is different from what it was during the last render. Sometimes, you also want a mix of both behaviors: an Effect that re-runs in response to some values but not others. This page will teach you how to do that.

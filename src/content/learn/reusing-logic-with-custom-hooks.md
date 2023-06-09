@@ -4,6 +4,13 @@ translatedTitle: 커스텀 훅으로 로직 재사용하기
 translators: [고석영, 유은미, 정재남, 이나령]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=36"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 React comes with several built-in Hooks like `useState`, `useContext`, and `useEffect`. Sometimes, you'll wish that there was a Hook for some more specific purpose: for example, to fetch data, to keep track of whether the user is online, or to connect to a chat room. You might not find these Hooks in React, but you can create your own Hooks for your application's needs.
