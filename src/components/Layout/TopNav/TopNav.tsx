@@ -15,7 +15,6 @@ import cn from 'classnames';
 import NextLink from 'next/link';
 import {useRouter} from 'next/router';
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
-
 import {IconClose} from 'components/Icon/IconClose';
 import {IconHamburger} from 'components/Icon/IconHamburger';
 import {IconSearch} from 'components/Icon/IconSearch';
@@ -24,14 +23,7 @@ import {Logo} from '../../Logo';
 import {Feedback} from '../Feedback';
 import {SidebarRouteTree} from '../Sidebar/SidebarRouteTree';
 import type {RouteItem} from '../getRouteMeta';
-import {SidebarLink} from '../Sidebar';
-
-declare global {
-  interface Window {
-    __theme: string;
-    __setPreferredTheme: (theme: string) => void;
-  }
-}
+import {useSetTheme} from 'jotai/theme';
 
 const darkIcon = (
   <svg
@@ -141,8 +133,15 @@ export default function TopNav({
 }: {
   routeTree: RouteItem;
   breadcrumbs: RouteItem[];
-  section: 'learn' | 'reference' | 'community' | 'blog' | 'home' | 'unknown';
+  section:
+    | 'learn'
+    | 'reference'
+    | 'translators'
+    | /* 'community' | 'blog' | */ 'home'
+    | 'unknown';
 }) {
+  const setTheme = useSetTheme();
+
   const [isOpen, setIsOpen] = useState(false);
   const scrollParentRef = useRef<HTMLDivElement>(null);
   const {asPath} = useRouter();
@@ -280,21 +279,23 @@ export default function TopNav({
               </button>
             </div>
             <div className="text-base justify-center items-center gap-1.5 flex 3xl:flex-1 flex-row 3xl:justify-end">
-              <div className="mx-2.5 gap-1.5 hidden lg:flex">
+              <div className="mx-2.5 gap-1.5 hidden lg:flex whitespace-nowrap">
                 <NavItem isActive={section === 'learn'} url="/learn">
-                  Learn
+                  학습하기
                 </NavItem>
                 <NavItem
                   isActive={section === 'reference'}
                   url="/reference/react">
-                  Reference
+                  레퍼런스
                 </NavItem>
-                <NavItem isActive={section === 'community'} url="/community">
-                  Community
+                <NavItem
+                  isActive={section === 'translators'}
+                  url="/translators">
+                  멤버
                 </NavItem>
-                <NavItem isActive={section === 'blog'} url="/blog">
+                {/* <NavItem isActive={section === 'blog'} url="/blog">
                   Blog
-                </NavItem>
+                </NavItem> */}
               </div>
               <div className="flex w-full md:hidden"></div>
               <div className="flex items-center -space-x-2.5 xs:space-x-0 ">
@@ -311,9 +312,7 @@ export default function TopNav({
                   <button
                     type="button"
                     aria-label="Use Dark Mode"
-                    onClick={() => {
-                      window.__setPreferredTheme('dark');
-                    }}
+                    onClick={() => setTheme('dark')}
                     className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
                     {darkIcon}
                   </button>
@@ -322,16 +321,14 @@ export default function TopNav({
                   <button
                     type="button"
                     aria-label="Use Light Mode"
-                    onClick={() => {
-                      window.__setPreferredTheme('light');
-                    }}
+                    onClick={() => setTheme('light')}
                     className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
                     {lightIcon}
                   </button>
                 </div>
                 <div className="flex">
                   <Link
-                    href="https://github.com/facebook/react/releases"
+                    href="https://github.com/roy-jung/react.dev.ko"
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="Open on GitHub"
@@ -359,23 +356,23 @@ export default function TopNav({
                 className="w-full lg:h-auto grow pr-0 lg:pr-5 pt-4 lg:py-6 md:pt-4 lg:pt-4 scrolling-touch scrolling-gpu">
                 {/* No fallback UI so need to be careful not to suspend directly inside. */}
                 <Suspense fallback={null}>
-                  <div className="pl-3 xs:pl-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-secondary dark:text-secondary-dark">
+                  <div className="pl-3 xs:pl-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-secondary dark:text-secondary-dark whitespace-nowrap">
                     <NavItem isActive={section === 'learn'} url="/learn">
-                      Learn
+                      학습하기
                     </NavItem>
                     <NavItem
                       isActive={section === 'reference'}
                       url="/reference/react">
-                      Reference
+                      레퍼런스
                     </NavItem>
                     <NavItem
-                      isActive={section === 'community'}
-                      url="/community">
-                      Community
+                      isActive={section === 'translators'}
+                      url="/translators">
+                      멤버
                     </NavItem>
-                    <NavItem isActive={section === 'blog'} url="/blog">
+                    {/* <NavItem isActive={section === 'blog'} url="/blog">
                       Blog
-                    </NavItem>
+                    </NavItem> */}
                   </div>
                   <div
                     role="separator"

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
-
+import Giscus from '@giscus/react';
 import {Suspense} from 'react';
 import * as React from 'react';
 import {useRouter} from 'next/router';
@@ -11,8 +11,6 @@ import {Toc} from './Toc';
 import SocialBanner from '../SocialBanner';
 import {DocsPageFooter} from 'components/DocsFooter';
 import {Seo} from 'components/Seo';
-import ButtonLink from 'components/ButtonLink';
-import {IconNavArrow} from 'components/Icon/IconNavArrow';
 import PageHeading from 'components/PageHeading';
 import {getRouteMeta} from './getRouteMeta';
 import {TocContext} from '../MDX/TocContext';
@@ -21,6 +19,7 @@ import type {RouteItem} from 'components/Layout/getRouteMeta';
 import {HomeContent} from './HomeContent';
 import {TopNav} from './TopNav';
 import cn from 'classnames';
+import {useTheme} from 'jotai/theme';
 
 import(/* webpackPrefetch: true */ '../MDX/CodeBlock/CodeBlock');
 
@@ -28,21 +27,39 @@ interface PageProps {
   children: React.ReactNode;
   toc: Array<TocItem>;
   routeTree: RouteItem;
-  meta: {title?: string; description?: string};
-  section: 'learn' | 'reference' | 'community' | 'blog' | 'home' | 'unknown';
+  meta: {
+    title?: string;
+    description?: string;
+    translatedTitle?: string;
+    translators?: string[];
+    showToc?: boolean;
+    showSurvey?: boolean;
+  };
+  section:
+    | 'learn'
+    | 'reference'
+    | 'translators' /* | 'community' | 'blog' */
+    | 'home'
+    | 'unknown';
 }
 
 export function Page({children, toc, routeTree, meta, section}: PageProps) {
   const {asPath} = useRouter();
+  const theme = useTheme();
+
   const cleanedPath = asPath.split(/[\?\#]/)[0];
   const {route, nextRoute, prevRoute, breadcrumbs, order} = getRouteMeta(
     cleanedPath,
     routeTree
   );
   const title = meta.title || route?.title || '';
+  const translatedTitle = meta.translatedTitle || undefined;
+  const translators = meta.translators || undefined;
   const description = meta.description || route?.description || '';
   const isHomePage = cleanedPath === '/';
   const isBlogIndex = cleanedPath === '/blog';
+  const isMainArticle =
+    cleanedPath.startsWith('/learn') || cleanedPath.startsWith('/reference');
 
   let content;
   if (isHomePage) {
@@ -52,10 +69,12 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
       <div className="pl-0">
         <div
           className={cn(
-            section === 'blog' && 'mx-auto px-0 lg:px-4 max-w-5xl'
+            section === 'translators' && 'mx-auto px-0 lg:px-4 max-w-5xl'
           )}>
           <PageHeading
             title={title}
+            translatedTitle={translatedTitle}
+            translators={translators}
             description={description}
             tags={route?.tags}
             breadcrumbs={breadcrumbs}
@@ -65,7 +84,7 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
           <div
             className={cn(
               'max-w-7xl mx-auto',
-              section === 'blog' && 'lg:flex lg:flex-col lg:items-center'
+              section === 'translators' && 'lg:flex lg:flex-col lg:items-center'
             )}>
             <TocContext.Provider value={toc}>{children}</TocContext.Provider>
           </div>
@@ -83,28 +102,32 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
 
   let hasColumns = true;
   let showSidebar = true;
-  let showToc = true;
-  let showSurvey = true;
+  let showToc = meta.showToc ?? true;
+  // let showSurvey = meta.showSurvey ?? true;
   if (isHomePage || isBlogIndex) {
     hasColumns = false;
     showSidebar = false;
     showToc = false;
-    showSurvey = false;
-  } else if (section === 'blog') {
+    // showSurvey = false;
+  } else if (section === 'translators') {
     showToc = false;
     hasColumns = false;
     showSidebar = false;
-  }
+  } /*  else if (section === 'blog') {
+    showToc = false;
+    hasColumns = false;
+    showSidebar = false;
+  } */
 
   let searchOrder;
-  if (section === 'learn' || (section === 'blog' && !isBlogIndex)) {
+  if (section === 'learn' /*  || (section === 'blog' && !isBlogIndex) */) {
     searchOrder = order;
   }
 
   return (
     <>
       <Seo
-        title={title}
+        title={translatedTitle || title}
         isHomePage={isHomePage}
         image={`/images/og-` + section + '.png'}
         searchOrder={searchOrder}
@@ -138,7 +161,27 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
               className="break-words font-normal text-primary dark:text-primary-dark"
               key={asPath}>
               {content}
+
+              {isMainArticle && (
+                <div className="mx-auto w-full px-5 sm:px-12 md:px-12 pt-10">
+                  <Giscus
+                    repo="roy-jung/react.dev.ko"
+                    repoId="R_kgDOJP6DbQ"
+                    category="Announcements"
+                    categoryId="DIC_kwDOJP6Dbc4CWGHq"
+                    mapping="pathname"
+                    strict="1"
+                    reactionsEnabled="1"
+                    emitMetadata="0"
+                    inputPosition="top"
+                    theme={theme}
+                    lang="ko"
+                    loading="lazy"
+                  />
+                </div>
+              )}
             </article>
+
             <div
               className={cn(
                 'self-stretch w-full',
@@ -146,33 +189,31 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
               )}>
               {!isHomePage && (
                 <div className="mx-auto w-full px-5 sm:px-12 md:px-12 pt-10 md:pt-12 lg:pt-10">
-                  {
-                    <hr className="max-w-7xl mx-auto border-border dark:border-border-dark" />
-                  }
-                  {showSurvey && (
-                    <>
-                      <div className="flex flex-col items-center m-4 p-4">
-                        <p className="font-bold text-primary dark:text-primary-dark text-lg mb-4">
-                          How do you like these docs?
-                        </p>
-                        <div>
-                          <ButtonLink
-                            href="https://www.surveymonkey.co.uk/r/PYRPF3X"
-                            className="mt-1"
-                            type="primary"
-                            size="md"
-                            target="_blank">
-                            Take our survey!
-                            <IconNavArrow
-                              displayDirection="right"
-                              className="inline ml-1"
-                            />
-                          </ButtonLink>
+                  <hr className="max-w-7xl mx-auto border-border dark:border-border-dark" />
+                  {/* showSurvey && (
+                      <>
+                        <div className="flex flex-col items-center m-4 p-4">
+                          <p className="font-bold text-primary dark:text-primary-dark text-lg mb-4">
+                            How do you like these docs?
+                          </p>
+                          <div>
+                            <ButtonLink
+                              href="https://www.surveymonkey.co.uk/r/PYRPF3X"
+                              className="mt-1"
+                              type="primary"
+                              size="md"
+                              target="_blank">
+                              Take our survey!
+                              <IconNavArrow
+                                displayDirection="right"
+                                className="inline ml-1"
+                              />
+                            </ButtonLink>
+                          </div>
                         </div>
-                      </div>
-                      <hr className="max-w-7xl mx-auto border-border dark:border-border-dark" />
-                    </>
-                  )}
+                        <hr className="max-w-7xl mx-auto border-border dark:border-border-dark" />
+                      </>
+                    ) */}
                 </div>
               )}
               <div
