@@ -3,6 +3,13 @@ title: useImperativeHandle
 translators: [강승훈, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=41"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `useImperativeHandle` is a React Hook that lets you customize the handle exposed as a [ref.](/learn/manipulating-the-dom-with-refs)

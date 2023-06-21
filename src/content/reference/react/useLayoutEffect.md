@@ -3,6 +3,13 @@ title: useLayoutEffect
 translators: [최다인, 고석영, 이나령]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=43"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Pitfall>
 
 `useLayoutEffect` can hurt performance. Prefer [`useEffect`](/reference/react/useEffect) when possible.
