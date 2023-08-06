@@ -3,6 +3,14 @@ title: createContext
 translators: [류재준, 이나령, 이지수]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=56"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
+
 <Intro>
 
 `createContext` lets you create a [context](https://react.dev/learn/passing-data-deeply-with-context) that components can provide or read.

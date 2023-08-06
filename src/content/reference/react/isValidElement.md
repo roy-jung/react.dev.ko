@@ -3,6 +3,13 @@ title: isValidElement
 translators: [서민택]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=475"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `isValidElement` checks whether a value is a React element.<Trans>`isValidElement`는 값이 React 엘리먼트인지 확인합니다.</Trans>

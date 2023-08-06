@@ -3,6 +3,13 @@ title: "<select>"
 translators: [원주혜, 이나령, 정재남]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=65"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 The [built-in browser `<select>` component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) lets you render a select box with options.

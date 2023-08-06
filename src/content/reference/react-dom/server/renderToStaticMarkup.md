@@ -3,6 +3,13 @@ title: renderToStaticMarkup
 translators: [조성민, 이승효]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=71&start=305"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `renderToStaticMarkup` renders a non-interactive React tree to an HTML string.

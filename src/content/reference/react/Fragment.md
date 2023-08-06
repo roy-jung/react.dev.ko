@@ -3,6 +3,14 @@ title: <Fragment> (<>...</>)
 translators: [이지수, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=52"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
+
 <Intro>
 
 `<Fragment>`, often used via `<>...</>` syntax, lets you group elements without a wrapper node.

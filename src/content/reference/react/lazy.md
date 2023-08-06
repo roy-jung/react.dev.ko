@@ -3,6 +3,13 @@ title: lazy
 translators: [박문하, 이승효]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=58"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `lazy` lets you defer loading component's code until it is rendered for the first time.
