@@ -1127,7 +1127,7 @@ This list of downsides is not specific to React. It applies to fetching data on 
 <Trans>**[framework](/learn/start-a-new-react-project#production-grade-react-frameworks)를 사용하는 경우, 프레임워크 빌트인 데이터 페칭 메커니즘을 사용하세요.** 최신 React 프레임워크는 효율적이고 위의 함정이 발생하지 않는 통합 데이터 페칭 메커니즘을 갖추고 있습니다.</Trans>
 
 - **Otherwise, consider using or building a client-side cache.** Popular open source solutions include [React Query](https://react-query.tanstack.com/), [useSWR](https://swr.vercel.app/), and [React Router 6.4+.](https://beta.reactrouter.com/en/main/start/overview) You can build your own solution too, in which case you would use Effects under the hood but also add logic for deduplicating requests, caching responses, and avoiding network waterfalls (by preloading data or hoisting data requirements to routes).
-<Trans>**그게 아니라면 clinet-side 캐시를 사용하거나 구축하는 것을 고려하세요.** 인기있는 오픈 소스 솔루션으로는 [React Query](https://react-query.tanstack.com/), [useSWR](https://swr.vercel.app/), [React Router 6.4+](https://beta.reactrouter.com/en/main/start/overview) 등이 있습니다. 자체 솔루션을 구축할 수도 있는데, 이 경우 내부적으로는 Effect를 사용하되 요청 중복 제거, 응답 캐시, 네트워크 워터폴 방지(데이터를 미리 로드하거나 라우트에 데이터 요구 사항을 올려서) 논리를 추가할 수 있습니다.</Trans>
+<Trans>**그게 아니라면 client-side 캐시를 사용하거나 구축하는 것을 고려하세요.** 인기있는 오픈 소스 솔루션으로는 [React Query](https://react-query.tanstack.com/), [useSWR](https://swr.vercel.app/), [React Router 6.4+](https://beta.reactrouter.com/en/main/start/overview) 등이 있습니다. 자체 솔루션을 구축할 수도 있는데, 이 경우 내부적으로는 Effect를 사용하되 요청 중복 제거, 응답 캐시, 네트워크 워터폴 방지(데이터를 미리 로드하거나 라우트에 데이터 요구 사항을 올려서) 논리를 추가할 수 있습니다.</Trans>
 
 You can continue fetching data directly in Effects if neither of these approaches suit you.
 <Trans>위의 접근방법들이 만족스럽지 않다면 원래대로 Effect에서 직접 데이터를 페칭해도 괜찮습니다.</Trans>
