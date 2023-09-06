@@ -77,7 +77,7 @@ On the next renders, `useRef` will return the same object.
 ### Referencing a value with a ref <Trans>ref로 값 참조하기</Trans> {/*referencing-a-value-with-a-ref*/}
 
 Call `useRef` at the top level of your component to declare one or more [refs.](/learn/referencing-values-with-refs)
-<Trans>컴포넌트의 최상위 레벨에서 `useRef`를 호출하여 하나 이상의 [ref](https://react.dev/learn/referencing-values-with-refs)를 선언합니다.</Trans>
+<Trans>컴포넌트의 최상위 레벨에서 `useRef`를 호출하여 하나 이상의 [ref](/learn/referencing-values-with-refs)를 선언합니다.</Trans>
 
 ```js [[1, 4, "intervalRef"], [3, 4, "0"]]
 import { useRef } from 'react';

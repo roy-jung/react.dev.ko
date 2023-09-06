@@ -213,7 +213,7 @@ Reactive values like these can change due to a re-render. For example, the user 
 
 <TransBlock>
 - **이벤트 핸들러 내부의 로직은 *반응형이 아닙니다*.** 사용자가 동일한 상호작용(예: 클릭)을 다시 수행하지 않는 한 다시 실행되지 않습니다. 이벤트 핸들러는 변경에 "반응"하지 않고 반응형 값을 읽을 수 있습니다.
-- **Effects 내부의 로직은 *반응형입니다*.** Effect에서 반응형 값을 읽는 경우 [의존성으로 지정해야 합니다.](https://react.dev/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values) 그런 다음 리렌더링으로 인해 해당 값이 변경되면 React는 새 값으로 Effect의 로직을 다시 실행합니다.
+- **Effects 내부의 로직은 *반응형입니다*.** Effect에서 반응형 값을 읽는 경우 [의존성으로 지정해야 합니다.](/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values) 그런 다음 리렌더링으로 인해 해당 값이 변경되면 React는 새 값으로 Effect의 로직을 다시 실행합니다.
 </TransBlock>
 
 Let's revisit the previous example to illustrate this difference.
@@ -956,7 +956,7 @@ This doesn't mean that `useEffectEvent` is *always* the correct solution. You sh
 <Trans>그렇다고 해서 `useEffectEvent`가 항상 올바른 해결책이라는 의미는 아닙니다. 반응하지 않으려는 코드 줄에만 적용해야 합니다. 위의 샌드박스에서는 `canMove`와 관련하여 Effect의 코드가 반응하는 것을 원하지 않았습니다. 그렇기 때문에 Effect Event를 추출하는 것이 합리적입니다.</Trans>
 
 Read [Removing Effect Dependencies](/learn/removing-effect-dependencies) for other correct alternatives to suppressing the linter.
-<Trans>Linter를 억제하는 다른 올바른 대안에 대해서는 [Effect 의존성 제거하기](https://react.dev/learn/removing-effect-dependencies)를 읽어보세요.</Trans>
+<Trans>Linter를 억제하는 다른 올바른 대안에 대해서는 [Effect 의존성 제거하기](/learn/removing-effect-dependencies)를 읽어보세요.</Trans>
 
 </DeepDive>
 

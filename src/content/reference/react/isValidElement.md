@@ -60,7 +60,7 @@ console.log(isValidElement({ age: 42 })); // false
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
 * **Only [JSX tags](/learn/writing-markup-with-jsx) and objects returned by [`createElement`](/reference/react/createElement) are considered to be React elements.** For example, even though a number like `42` is a valid React *node* (and can be returned from a component), it is not a valid React element. Arrays and portals created with [`createPortal`](/reference/react-dom/createPortal) are also *not* considered to be React elements.
-<Trans outdent>**[JSX 태그](https://react.dev/learn/writing-markup-with-jsx) 및 [`createElement`](https://react.dev/reference/react/createElement)로부터 반환된 객체만이 React 엘리먼트로 간주됩니다.** 예를 들어, `42`와 같은 숫자는 유효한 React 노드이지만(또한 컴포넌트로부터 반환될 수도 있지만) 유효한 React 엘리먼트는 아닙니다. [`createPortal`](https://react.dev/reference/react-dom/createPortal)로 생성된 배열과 포털 역시 React 엘리먼트로 간주되지 않습니다.</Trans>
+<Trans outdent>**[JSX 태그](/learn/writing-markup-with-jsx) 및 [`createElement`](/reference/react/createElement)로부터 반환된 객체만이 React 엘리먼트로 간주됩니다.** 예를 들어, `42`와 같은 숫자는 유효한 React 노드이지만(또한 컴포넌트로부터 반환될 수도 있지만) 유효한 React 엘리먼트는 아닙니다. [`createPortal`](/reference/react-dom/createPortal)로 생성된 배열과 포털 역시 React 엘리먼트로 간주되지 않습니다.</Trans>
 
 ---
 
@@ -75,10 +75,10 @@ React elements are:
 <Trans>React 엘리먼트는 다음과 같습니다:</Trans>
 
 - Values produced by writing a [JSX tag](/learn/writing-markup-with-jsx)
-<Trans>[JSX 태그](https://react.dev/learn/writing-markup-with-jsx)로 생성한 값</Trans>
+<Trans>[JSX 태그](/learn/writing-markup-with-jsx)로 생성한 값</Trans>
 
 - Values produced by calling [`createElement`](/reference/react/createElement)
-<Trans>[`createElement`](https://react.dev/reference/react/createElement)를 호출하여 생성한 값</Trans>
+<Trans>[`createElement`](/reference/react/createElement)를 호출하여 생성한 값</Trans>
 
 
 For React elements, `isValidElement` returns `true`:
@@ -115,7 +115,7 @@ console.log(isValidElement(MyComponent)); // false
 ```
 
 It is very uncommon to need `isValidElement`. It's mostly useful if you're calling another API that *only* accepts elements (like [`cloneElement`](/reference/react/cloneElement) does) and you want to avoid an error when your argument is not a React element.
-<Trans>`isValidElement`가 필요한 경우는 매우 드뭅니다. 주로 *오직* ([`cloneElement`](https://react.dev/reference/react/cloneElement)가 그런 것처럼) 엘리먼트만 허용하는 별도의 API에, React 엘리먼트가 아닌 다른 인수로 호출하면 발생하는 오류를 피하고자 할 때 유용합니다.</Trans>
+<Trans>`isValidElement`가 필요한 경우는 매우 드뭅니다. 주로 *오직* ([`cloneElement`](/reference/react/cloneElement)가 그런 것처럼) 엘리먼트만 허용하는 별도의 API에, React 엘리먼트가 아닌 다른 인수로 호출하면 발생하는 오류를 피하고자 할 때 유용합니다.</Trans>
 
 Unless you have some very specific reason to add an `isValidElement` check, you probably don't need it.
 <Trans>`isValidElement` 확인을 추가해야 할 특별한 이유가 없는 한, 이는 필요하지 않을 것입니다.</Trans>
@@ -140,7 +140,7 @@ A React node can be:
 <Trans>`<div />` 또는 `createElement('div')`로 생성된 React 엘리먼트</Trans>
 
 - A portal created with [`createPortal`](/reference/react-dom/createPortal)
-<Trans>[`createPortal`](https://react.dev/reference/react-dom/createPortal)로 생성한 포털</Trans>
+<Trans>[`createPortal`](/reference/react-dom/createPortal)로 생성한 포털</Trans>
 
 - A string
 <Trans>문자열</Trans>
