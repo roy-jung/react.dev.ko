@@ -23,9 +23,8 @@ const shouldPreventIndexing = !deployedTranslations.includes(
   siteConfig.languageCode
 );
 
-function getDomain(languageCode: string): string {
-  const subdomain = languageCode === 'en' ? '' : languageCode + '.';
-  return subdomain + 'react.dev';
+function getDomain(): string {
+  return 'react-ko.dev';
 }
 
 export const Seo = withRouter(
