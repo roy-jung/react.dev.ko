@@ -99,6 +99,11 @@
           "title": "Keeping Components Pure",
           "translatedTitle": "컴포넌트 순수성 유지",
           "path": "/learn/keeping-components-pure"
+        },
+        {
+          "title": "Your UI as a Tree",
+          "translatedTitle": "트리로서의 UI",
+          "path": "/learn/understanding-your-ui-as-a-tree"
         }
       ]
     },

@@ -19,43 +19,26 @@ State is isolated between components. React keeps track of which state belongs t
 
 </Intro>
 
+
 <YouWillLearn>
 
-* How React "sees" component structures
 * When React chooses to preserve or reset the state
 * How to force React to reset component's state
 * How keys and types affect whether the state is preserved
 
-<TransBlock>
-- React가 컴포넌트 구조를 "보는" 방법
+<TransBlock> 
 - React가 state를 유지하거나 재설정하도록 선택할 때
 - React가 컴포넌트의 state를 재설정하도록 강제하는 방법
 - key와 type이 state 보존 여부에 영향을 미치는 방법
 </TransBlock>
-
 </YouWillLearn>
-
-## The UI tree<Trans>UI 트리</Trans> {/*the-ui-tree*/}
-
-Browsers use many tree structures to model UI. The [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction) represents HTML elements, the [CSSOM](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model) does the same for CSS. There's even an [Accessibility tree](https://developer.mozilla.org/docs/Glossary/Accessibility_tree)!
-<Trans>브라우저는 UI를 모델링하기 위해 많은 트리 구조를 사용합니다. [DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction)은 HTML 요소를 나타내고, [CSSOM](https://developer.mozilla.org/ko/docs/Web/API/CSS_Object_Model)은 CSS에 대해 동일한 역할을 합니다. 심지어 [접근성 트리](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree)도 있습니다!</Trans>
-
-React also uses tree structures to manage and model the UI you make. React makes **UI trees** from your JSX. Then React DOM updates the browser DOM elements to match that UI tree. (React Native translates these trees into elements specific to mobile platforms.)
-<Trans>React 또한 트리 구조를 사용하여 사용자가 만든 UI를 관리하고 모델링합니다. React는 JSX로부터 UI 트리를 만듭니다. 그런 다음 React DOM은 해당 UI 트리와 일치하도록 브라우저 DOM 엘리먼트를 업데이트합니다. (React Native는 이러한 트리를 모바일 플랫폼에 맞는 엘리먼트로 변환합니다.)</Trans>
-
-<DiagramGroup>
-
-<Diagram name="preserving_state_dom_tree" height={193} width={864} alt="Diagram with three sections arranged horizontally. In the first section, there are three rectangles stacked vertically, with labels 'Component A', 'Component B', and 'Component C'. Transitioning to the next pane is an arrow with the React logo on top labeled 'React'. The middle section contains a tree of components, with the root labeled 'A' and two children labeled 'B' and 'C'. The next section is again transitioned using an arrow with the React logo on top labeled 'React'. The third and final section is a wireframe of a browser, containing a tree of 8 nodes, which has only a subset highlighted (indicating the subtree from the middle section).">
-
-From components, React creates a UI tree which React DOM uses to render the DOM
-<Trans>컴포넌트에서 React는 UI 트리를 생성하고, 이 트리는 React DOM이 DOM을 렌더링하는 데 사용됩니다.</Trans>
-</Diagram>
-
-</DiagramGroup>
 
 ## State is tied to a position in the tree<Trans>state는 트리의 한 위치에 묶입니다</Trans> {/*state-is-tied-to-a-position-in-the-tree*/}
 
-When you give a component state, you might think the state "lives" inside the component. But the state is actually held inside React. React associates each piece of state it's holding with the correct component by where that component sits in the UI tree.
+React builds [render trees](learn/understanding-your-ui-as-a-tree#the-render-tree) for the component structure in your UI.
+<Trans>React는 UI의 컴포넌트 구조에 대한 [렌더 트리](learn/understanding-your-ui-as-a-tree#the-render-tree)를 만듭니다.</Trans>
+
+When you give a component state, you might think the state "lives" inside the component. But the state is actually held inside React. React associates each piece of state it's holding with the correct component by where that component sits in the render tree.
 <Trans>컴포넌트에 state를 부여할 때, state가 컴포넌트 내부에 "존재"한다고 생각할 수 있습니다. 하지만 state는 실제로 React 내부에서 유지됩니다. React는 UI 트리에서 해당 컴포넌트가 어디에 위치하는지에 따라 보유하고 있는 각 state를 올바른 컴포넌트와 연결합니다.</Trans>
 
 
