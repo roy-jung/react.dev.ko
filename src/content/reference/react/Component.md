@@ -867,7 +867,7 @@ class Rectangle extends Component {
 ```
 
 React calls `shouldComponentUpdate` before rendering when new props or state are being received. Defaults to `true`. This method is not called for the initial render or when [`forceUpdate`](#forceupdate) is used.
-<Trans>새로운 prosp나 state가 수신되면 렌더링하기 전에 `shouldComponentUpdate`를 호출합니다. 기본값은 `true`입니다. 이 메서드는 초기 렌더링이나 [`forceUpdate`](#forceupdate)가 사용될 때는 호출되지 않습니다.</Trans>
+<Trans>새로운 props나 state가 수신되면 렌더링하기 전에 `shouldComponentUpdate`를 호출합니다. 기본값은 `true`입니다. 이 메서드는 초기 렌더링이나 [`forceUpdate`](#forceupdate)가 사용될 때는 호출되지 않습니다.</Trans>
 
 #### Parameters<Trans>매개변수</Trans> {/*shouldcomponentupdate-parameters*/}
 
