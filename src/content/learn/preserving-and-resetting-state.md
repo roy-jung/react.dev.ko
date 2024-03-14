@@ -26,7 +26,6 @@ State is isolated between components. React keeps track of which state belongs t
 * How keys and types affect whether the state is preserved
 
 <TransBlock>
-- React가 컴포넌트 구조를 "보는" 방법
 - React가 state를 유지하거나 재설정하도록 선택할 때
 - React가 컴포넌트의 state를 재설정하도록 강제하는 방법
 - key와 type이 state 보존 여부에 영향을 미치는 방법
