@@ -486,7 +486,7 @@ function LoginForm() {
   const {setCurrentUser} = useContext(CurrentUserContext);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const canLogin = firstName !== '' && lastName !== '';
+  const canLogin = firstName.trim() !== '' && lastName.trim() !== '';
   return (
     <>
       <label>
@@ -777,7 +777,7 @@ Read a [full walkthrough](/learn/scaling-up-with-reducer-and-context) of this ex
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import AddTask from './AddTask.js';
 import TaskList from './TaskList.js';
 import { TasksProvider } from './TasksContext.js';
@@ -793,7 +793,7 @@ export default function TaskApp() {
 }
 ```
 
-```js TasksContext.js
+```js src/TasksContext.js
 import { createContext, useContext, useReducer } from 'react';
 
 const TasksContext = createContext(null);
@@ -857,7 +857,7 @@ const initialTasks = [
 ];
 ```
 
-```js AddTask.js
+```js src/AddTask.js
 import { useState, useContext } from 'react';
 import { useTasksDispatch } from './TasksContext.js';
 
@@ -886,7 +886,7 @@ export default function AddTask() {
 let nextId = 3;
 ```
 
-```js TaskList.js
+```js src/TaskList.js
 import { useState, useContext } from 'react';
 import { useTasks, useTasksDispatch } from './TasksContext.js';
 
@@ -1264,7 +1264,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -1280,7 +1280,7 @@ export default function Section({ children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -1307,7 +1307,7 @@ export default function Heading({ children }) {
 }
 ```
 
-```js LevelContext.js
+```js src/LevelContext.js
 import { createContext } from 'react';
 
 export const LevelContext = createContext(0);

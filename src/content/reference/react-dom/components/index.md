@@ -39,6 +39,21 @@ They are special in React because passing the `value` prop to them makes them [*
 
 ---
 
+## Resource and Metadata Components<Trans>리소스 및 메타데이터 컴포넌트</Trans> {/*resource-and-metadata-components*/}
+
+These bulit-in browser components let you load external resources or annotate the document with metadata:
+<Trans>다음 빌트인 브라우저 컴포넌트를 사용하면 외부 리소스를 로드하거나 메타데이터로 문서에 주석을 달 수 있습니다:</Trans>
+
+* [`<link>`](/reference/react-dom/components/link)
+* [`<meta>`](/reference/react-dom/components/meta)
+* [`<script>`](/reference/react-dom/components/script)
+* [`<style>`](/reference/react-dom/components/style)
+* [`<title>`](/reference/react-dom/components/title)
+
+They are special in React because React can render them into the document head, suspend while resources are loading, and enact other behaviors that are described on the reference page for each specific component.
+<Trans>이들은 리액트가 문서 헤드로 렌더링하고, 리소스가 로드되는 동안 일시 중단하고, 각 특정 컴포넌트에 대한 참조 페이지에 설명된 다른 동작을 구현할 수 있는 특수한 컴포넌트들입니다.</Trans>
+---
+
 ## All HTML components<Trans>다른 모든 HTML 컴포넌트들</Trans> {/*all-html-components*/}
 
 React supports all built-in browser HTML components. This includes:

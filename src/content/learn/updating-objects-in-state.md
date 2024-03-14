@@ -1087,7 +1087,7 @@ If something unexpected changes, there is a mutation. Find the mutation in `App.
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Background from './Background.js';
 import Box from './Box.js';
@@ -1140,7 +1140,7 @@ export default function Canvas() {
 }
 ```
 
-```js Box.js
+```js src/Box.js
 import { useState } from 'react';
 
 export default function Box({
@@ -1203,7 +1203,7 @@ export default function Box({
 }
 ```
 
-```js Background.js
+```js src/Background.js
 export default function Background({
   position
 }) {
@@ -1239,7 +1239,7 @@ The fix is to remove the mutation from `handleMove`, and use the spread syntax t
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Background from './Background.js';
 import Box from './Box.js';
@@ -1297,7 +1297,7 @@ export default function Canvas() {
 }
 ```
 
-```js Box.js
+```js src/Box.js
 import { useState } from 'react';
 
 export default function Box({
@@ -1360,7 +1360,7 @@ export default function Box({
 }
 ```
 
-```js Background.js
+```js src/Background.js
 export default function Background({
   position
 }) {
@@ -1395,7 +1395,7 @@ This is the same buggy example as in the previous challenge. This time, fix the 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { useImmer } from 'use-immer';
 import Background from './Background.js';
@@ -1449,7 +1449,7 @@ export default function Canvas() {
 }
 ```
 
-```js Box.js
+```js src/Box.js
 import { useState } from 'react';
 
 export default function Box({
@@ -1512,7 +1512,7 @@ export default function Box({
 }
 ```
 
-```js Background.js
+```js src/Background.js
 export default function Background({
   position
 }) {
@@ -1563,7 +1563,7 @@ This is the solution rewritten with Immer. Notice how the event handlers are wri
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useImmer } from 'use-immer';
 import Background from './Background.js';
 import Box from './Box.js';
@@ -1617,7 +1617,7 @@ export default function Canvas() {
 }
 ```
 
-```js Box.js
+```js src/Box.js
 import { useState } from 'react';
 
 export default function Box({
@@ -1680,7 +1680,7 @@ export default function Box({
 }
 ```
 
-```js Background.js
+```js src/Background.js
 export default function Background({
   position
 }) {

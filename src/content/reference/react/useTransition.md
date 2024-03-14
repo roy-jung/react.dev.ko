@@ -186,7 +186,7 @@ export default function TabContainer() {
 
   function selectTab(nextTab) {
     startTransition(() => {
-      setTab(nextTab);      
+      setTab(nextTab);
     });
   }
 
@@ -219,7 +219,7 @@ export default function TabContainer() {
 }
 ```
 
-```js TabButton.js
+```js src/TabButton.js
 import { useTransition } from 'react';
 
 export default function TabButton({ children, isActive, onClick }) {
@@ -237,7 +237,7 @@ export default function TabButton({ children, isActive, onClick }) {
 
 ```
 
-```js AboutTab.js
+```js src/AboutTab.js
 export default function AboutTab() {
   return (
     <p>Welcome to my profile!</p>
@@ -245,7 +245,7 @@ export default function AboutTab() {
 }
 ```
 
-```js PostsTab.js
+```js src/PostsTab.js
 import { memo } from 'react';
 
 const PostsTab = memo(function PostsTab() {
@@ -281,7 +281,7 @@ function SlowPost({ index }) {
 export default PostsTab;
 ```
 
-```js ContactTab.js
+```js src/ContactTab.js
 export default function ContactTab() {
   return (
     <>
@@ -359,7 +359,7 @@ export default function TabContainer() {
 }
 ```
 
-```js TabButton.js
+```js src/TabButton.js
 import { useTransition } from 'react';
 
 export default function TabButton({ children, isActive, onClick }) {
@@ -377,7 +377,7 @@ export default function TabButton({ children, isActive, onClick }) {
 
 ```
 
-```js AboutTab.js
+```js src/AboutTab.js
 export default function AboutTab() {
   return (
     <p>Welcome to my profile!</p>
@@ -385,7 +385,7 @@ export default function AboutTab() {
 }
 ```
 
-```js PostsTab.js
+```js src/PostsTab.js
 import { memo } from 'react';
 
 const PostsTab = memo(function PostsTab() {
@@ -421,7 +421,7 @@ function SlowPost({ index }) {
 export default PostsTab;
 ```
 
-```js ContactTab.js
+```js src/ContactTab.js
 export default function ContactTab() {
   return (
     <>
@@ -516,7 +516,7 @@ export default function TabContainer() {
 }
 ```
 
-```js TabButton.js active
+```js src/TabButton.js active
 import { useTransition } from 'react';
 
 export default function TabButton({ children, isActive, onClick }) {
@@ -536,7 +536,7 @@ export default function TabButton({ children, isActive, onClick }) {
 }
 ```
 
-```js AboutTab.js
+```js src/AboutTab.js
 export default function AboutTab() {
   return (
     <p>Welcome to my profile!</p>
@@ -544,7 +544,7 @@ export default function AboutTab() {
 }
 ```
 
-```js PostsTab.js
+```js src/PostsTab.js
 import { memo } from 'react';
 
 const PostsTab = memo(function PostsTab() {
@@ -580,7 +580,7 @@ function SlowPost({ index }) {
 export default PostsTab;
 ```
 
-```js ContactTab.js
+```js src/ContactTab.js
 export default function ContactTab() {
   return (
     <>
@@ -663,7 +663,7 @@ export default function TabContainer() {
 }
 ```
 
-```js TabButton.js active
+```js src/TabButton.js active
 import { useTransition } from 'react';
 
 export default function TabButton({ children, isActive, onClick }) {
@@ -686,7 +686,7 @@ export default function TabButton({ children, isActive, onClick }) {
 }
 ```
 
-```js AboutTab.js
+```js src/AboutTab.js
 export default function AboutTab() {
   return (
     <p>Welcome to my profile!</p>
@@ -694,7 +694,7 @@ export default function AboutTab() {
 }
 ```
 
-```js PostsTab.js
+```js src/PostsTab.js
 import { memo } from 'react';
 
 const PostsTab = memo(function PostsTab() {
@@ -730,7 +730,7 @@ function SlowPost({ index }) {
 export default PostsTab;
 ```
 
-```js ContactTab.js
+```js src/ContactTab.js
 export default function ContactTab() {
   return (
     <>
@@ -801,7 +801,7 @@ export default function TabContainer() {
 }
 ```
 
-```js TabButton.js
+```js src/TabButton.js
 export default function TabButton({ children, isActive, onClick }) {
   if (isActive) {
     return <b>{children}</b>
@@ -816,7 +816,7 @@ export default function TabButton({ children, isActive, onClick }) {
 }
 ```
 
-```js AboutTab.js hidden
+```js src/AboutTab.js hidden
 export default function AboutTab() {
   return (
     <p>Welcome to my profile!</p>
@@ -824,7 +824,7 @@ export default function AboutTab() {
 }
 ```
 
-```js PostsTab.js hidden
+```js src/PostsTab.js hidden
 import { fetchData } from './data.js';
 
 // Note: this component is written using an experimental API
@@ -873,14 +873,14 @@ function use(promise) {
       reason => {
         promise.status = 'rejected';
         promise.reason = reason;
-      },      
+      },
     );
     throw promise;
   }
 }
 ```
 
-```js ContactTab.js hidden
+```js src/ContactTab.js hidden
 export default function ContactTab() {
   return (
     <>
@@ -897,7 +897,7 @@ export default function ContactTab() {
 ```
 
 
-```js data.js hidden
+```js src/data.js hidden
 // Note: the way you would do data fetching depends on
 // the framework that you use together with Suspense.
 // Normally, the caching logic would be inside a framework.
@@ -989,7 +989,7 @@ export default function TabContainer() {
 }
 ```
 
-```js TabButton.js active
+```js src/TabButton.js active
 import { useTransition } from 'react';
 
 export default function TabButton({ children, isActive, onClick }) {
@@ -1012,7 +1012,7 @@ export default function TabButton({ children, isActive, onClick }) {
 }
 ```
 
-```js AboutTab.js hidden
+```js src/AboutTab.js hidden
 export default function AboutTab() {
   return (
     <p>Welcome to my profile!</p>
@@ -1020,7 +1020,7 @@ export default function AboutTab() {
 }
 ```
 
-```js PostsTab.js hidden
+```js src/PostsTab.js hidden
 import { fetchData } from './data.js';
 
 // Note: this component is written using an experimental API
@@ -1069,14 +1069,14 @@ function use(promise) {
       reason => {
         promise.status = 'rejected';
         promise.reason = reason;
-      },      
+      },
     );
     throw promise;
   }
 }
 ```
 
-```js ContactTab.js hidden
+```js src/ContactTab.js hidden
 export default function ContactTab() {
   return (
     <>
@@ -1093,7 +1093,7 @@ export default function ContactTab() {
 ```
 
 
-```js data.js hidden
+```js src/data.js hidden
 // Note: the way you would do data fetching depends on
 // the framework that you use together with Suspense.
 // Normally, the caching logic would be inside a framework.
@@ -1198,7 +1198,7 @@ Here is a tiny simplified router example using transitions for navigations.
 }
 ```
 
-```js App.js
+```js src/App.js
 import { Suspense, useState, useTransition } from 'react';
 import IndexPage from './IndexPage.js';
 import ArtistPage from './ArtistPage.js';
@@ -1249,7 +1249,7 @@ function BigSpinner() {
 }
 ```
 
-```js Layout.js
+```js src/Layout.js
 export default function Layout({ children, isPending }) {
   return (
     <div className="layout">
@@ -1266,7 +1266,7 @@ export default function Layout({ children, isPending }) {
 }
 ```
 
-```js IndexPage.js
+```js src/IndexPage.js
 export default function IndexPage({ navigate }) {
   return (
     <button onClick={() => navigate('/the-beatles')}>
@@ -1276,7 +1276,7 @@ export default function IndexPage({ navigate }) {
 }
 ```
 
-```js ArtistPage.js
+```js src/ArtistPage.js
 import { Suspense } from 'react';
 import Albums from './Albums.js';
 import Biography from './Biography.js';
@@ -1307,7 +1307,7 @@ function AlbumsGlimmer() {
 }
 ```
 
-```js Albums.js hidden
+```js src/Albums.js hidden
 import { fetchData } from './data.js';
 
 // Note: this component is written using an experimental API
@@ -1348,14 +1348,14 @@ function use(promise) {
       reason => {
         promise.status = 'rejected';
         promise.reason = reason;
-      },      
+      },
     );
     throw promise;
   }
 }
 ```
 
-```js Biography.js hidden
+```js src/Biography.js hidden
 import { fetchData } from './data.js';
 
 // Note: this component is written using an experimental API
@@ -1392,14 +1392,14 @@ function use(promise) {
       reason => {
         promise.status = 'rejected';
         promise.reason = reason;
-      },      
+      },
     );
     throw promise;
   }
 }
 ```
 
-```js Panel.js hidden
+```js src/Panel.js hidden
 export default function Panel({ children }) {
   return (
     <section className="panel">
@@ -1409,7 +1409,7 @@ export default function Panel({ children }) {
 }
 ```
 
-```js data.js hidden
+```js src/data.js hidden
 // Note: the way you would do data fetching depends on
 // the framework that you use together with Suspense.
 // Normally, the caching logic would be inside a framework.
@@ -1439,9 +1439,9 @@ async function getBio() {
     setTimeout(resolve, 500);
   });
 
-  return `The Beatles were an English rock band, 
-    formed in Liverpool in 1960, that comprised 
-    John Lennon, Paul McCartney, George Harrison 
+  return `The Beatles were an English rock band,
+    formed in Liverpool in 1960, that comprised
+    John Lennon, Paul McCartney, George Harrison
     and Ringo Starr.`;
 }
 
@@ -1559,6 +1559,102 @@ main {
 <Trans>[Suspense가 도입된](/reference/react/Suspense) 라우터는 기본적으로 네비게이션 업데이트를 트랜지션으로 감싸고 있을 것이라고 간주합니다.</Trans>
 
 </Note>
+
+---
+
+### Displaying an error to users with an error boundary <Trans>에러 바운더리로 사용자에게 오류 표시하기</Trans> {/*displaying-an-error-to-users-with-error-boundary*/}
+
+<Canary>
+
+Error Boundary for useTransition is currently only available in React's canary and experimental channels. Learn more about [React's release channels here](/community/versioning-policy#all-release-channels).
+<Trans>useTransition에 대한 에러 바운더리는 현재 React의 카나리아 및 실험 채널에서만 사용할 수 있습니다. React의 릴리즈 채널에 대한 자세한 내용은 [리액트 릴리즈 채널](/community/versioning-policy#all-release-channels)에서 확인하세요.</Trans>
+</Canary>
+
+If a function passed to `startTransition` throws an error, you can display an error to your user with an [error boundary](/reference/react/Component#catching-rendering-errors-with-an-error-boundary). To use an error boundary, wrap the component where you are calling the `useTransition` in an error boundary. Once the function passed to `startTransition` errors, the fallback for the error boundary will be displayed.
+<Trans>`startTransition`에 전달된 함수가 에러를 발생시키면, [에러 바운더리](/reference/react/Component#catching-rendering-errors-with-error-boundary)를 사용하여 사용자에게 에러를 표시할 수 있습니다. 에러 바운더리를 사용하려면 `useTransition`을 호출하는 컴포넌트를 에러 바운더리로 감싸면 됩니다. `startTransition`에 전달된 함수가 에러를 발생시키면 에러 바운더리에 대한 폴백이 표시됩니다.</Trans>
+
+<Sandpack>
+
+```js src/AddCommentContainer.js active
+import { useTransition } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+
+export function AddCommentContainer() {
+  return (
+    <ErrorBoundary fallback={<p>⚠️Something went wrong</p>}>
+      <AddCommentButton />
+    </ErrorBoundary>
+  );
+}
+
+function addComment(comment) {
+  // For demonstration purposes to show Error Boundary
+  if (comment == null) {
+    throw new Error("Example Error: An error thrown to trigger error boundary");
+  }
+}
+
+function AddCommentButton() {
+  const [pending, startTransition] = useTransition();
+
+  return (
+    <button
+      disabled={pending}
+      onClick={() => {
+        startTransition(() => {
+          // Intentionally not passing a comment
+          // so error gets thrown
+          addComment();
+        });
+      }}
+    >
+      Add comment
+    </button>
+  );
+}
+```
+
+```js src/App.js hidden
+import { AddCommentContainer } from "./AddCommentContainer.js";
+
+export default function App() {
+  return <AddCommentContainer />;
+}
+```
+
+```js src/index.js hidden
+// TODO: update to import from stable
+// react instead of canary once the `use`
+// Hook is in a stable release of React
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './styles.css';
+
+// TODO: update this example to use
+// the Codesandbox Server Component
+// demo environment once it is created
+import App from './App';
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
+
+```json package.json hidden
+{
+  "dependencies": {
+    "react": "canary",
+    "react-dom": "canary",
+    "react-scripts": "^5.0.0",
+    "react-error-boundary": "4.0.3"
+  },
+  "main": "/index.js"
+}
+```
+</Sandpack>
 
 ---
 

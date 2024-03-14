@@ -333,7 +333,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -562,7 +562,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -645,7 +645,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -775,7 +775,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -993,7 +993,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1069,7 +1069,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1505,7 +1505,7 @@ Suppressing the linter is always suspicious. Could this be a bug?
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 import {
@@ -1550,7 +1550,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 
 export default function ChatRoom({ roomId, createConnection }) {
@@ -1565,7 +1565,7 @@ export default function ChatRoom({ roomId, createConnection }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection(roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1604,7 +1604,7 @@ If you remove the linter suppression, you will see a lint error. The problem is 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 import {
@@ -1649,7 +1649,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 
 export default function ChatRoom({ roomId, createConnection }) {
@@ -1663,7 +1663,7 @@ export default function ChatRoom({ roomId, createConnection }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection(roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1700,7 +1700,7 @@ It is correct that `createConnection` is a dependency. However, this code is a b
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1738,7 +1738,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import {
   createEncryptedConnection,
@@ -1759,7 +1759,7 @@ export default function ChatRoom({ roomId, isEncrypted }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection(roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1816,7 +1816,7 @@ If you have two independent synchronization processes, you need to write two sep
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchData } from './api.js';
 
@@ -1870,7 +1870,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export function fetchData(url) {
   if (url === '/planets') {
     return fetchPlanets();
@@ -1972,7 +1972,7 @@ This is why it makes sense to describe them as two separate Effects. Here's an e
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchData } from './api.js';
 
@@ -2045,7 +2045,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export function fetchData(url) {
   if (url === '/planets') {
     return fetchPlanets();
@@ -2136,7 +2136,7 @@ Instead, to reduce repetition, you can extract some logic into a custom Hook lik
 <Trans>대신, 반복을 줄이기 위해 아래의 `useSelectOptions`와 같은 커스텀 훅에 일부 로직을 추출할 수 있습니다:</Trans>
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { useSelectOptions } from './useSelectOptions.js';
 
@@ -2182,7 +2182,7 @@ export default function Page() {
 }
 ```
 
-```js useSelectOptions.js
+```js src/useSelectOptions.js
 import { useState, useEffect } from 'react';
 import { fetchData } from './api.js';
 
@@ -2209,7 +2209,7 @@ export function useSelectOptions(url) {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export function fetchData(url) {
   if (url === '/planets') {
     return fetchPlanets();

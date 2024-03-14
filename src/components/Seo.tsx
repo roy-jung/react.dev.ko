@@ -8,6 +8,7 @@ import {withRouter, Router} from 'next/router';
 
 export interface SeoProps {
   title: string;
+  titleForTitleTag: undefined | string;
   description?: string;
   image?: string;
   // jsonld?: JsonLDType | Array<JsonLDType>;
@@ -18,10 +19,6 @@ export interface SeoProps {
 
 const deployedTranslations = ['en', 'ko'];
 
-/* const shouldPreventIndexing = !deployedTranslations.includes(
-  siteConfig.languageCode
-); */
-
 function getDomain(): string {
   return 'react-ko.dev';
 }
@@ -29,7 +26,7 @@ function getDomain(): string {
 export const Seo = withRouter(
   ({
     title,
-    description = 'The library for web and native user interfaces',
+    titleForTitleTag,
     image = '/images/og-default.png',
     router,
     children,
@@ -40,14 +37,20 @@ export const Seo = withRouter(
     const canonicalUrl = `https://${siteDomain}${
       router.asPath.split(/[\?\#]/)[0]
     }`;
-    const pageTitle = isHomePage ? 'React' : title + ' – React';
+    // Allow setting a different title for Google results
+    const pageTitle =
+      (titleForTitleTag ?? title) + (isHomePage ? '' : ' – React');
     // Twitter's meta parser is not very good.
     const twitterTitle = pageTitle.replace(/[<>]/g, '');
+    let description = isHomePage
+      ? 'React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript. React is designed to let you seamlessly combine components written by independent people, teams, and organizations.'
+      : 'The library for web and native user interfaces';
     return (
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {title != null && <title key="title">{pageTitle}</title>}
-        {description != null && (
+        {isHomePage && (
+          // Let Google figure out a good description for each page.
           <meta name="description" key="description" content={description} />
         )}
         <link rel="canonical" href={canonicalUrl} />
@@ -56,7 +59,6 @@ export const Seo = withRouter(
           href={canonicalUrl.replace(siteDomain, getDomain())}
           hrefLang="x-default"
         />
-        {/* {shouldPreventIndexing && <meta name="robots" content="noindex" />} */}
         {deployedTranslations.map((languageCode) => (
           <link
             key={'alt-' + languageCode}

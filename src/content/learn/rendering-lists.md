@@ -188,7 +188,7 @@ return <ul>{listItems}</ul>;
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -213,7 +213,7 @@ export default function List() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -247,7 +247,7 @@ export const people = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(person) {
   return (
     'https://i.imgur.com/' +
@@ -330,7 +330,7 @@ Rather than generating keys on the fly, you should include them in your data:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -352,7 +352,7 @@ export default function List() {
 }
 ```
 
-```js data.js active
+```js src/data.js active
 export const people = [{
   id: 0, // Used in JSX as a key
   name: 'Creola Katherine Johnson',
@@ -386,7 +386,7 @@ export const people = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(person) {
   return (
     'https://i.imgur.com/' +
@@ -515,7 +515,7 @@ Change it to show two separate lists one after another: **Chemists** and **Every
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -542,7 +542,7 @@ export default function List() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -576,7 +576,7 @@ export const people = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(person) {
   return (
     'https://i.imgur.com/' +
@@ -607,7 +607,7 @@ You could use `filter()` twice, creating two separate arrays, and then `map` ove
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -658,7 +658,7 @@ export default function List() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -692,7 +692,7 @@ export const people = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(person) {
   return (
     'https://i.imgur.com/' +
@@ -724,7 +724,7 @@ There is still a bit duplication between the rendered lists. You can go further 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -774,7 +774,7 @@ export default function List() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -808,7 +808,7 @@ export const people = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(person) {
   return (
     'https://i.imgur.com/' +
@@ -840,7 +840,7 @@ In fact, if `people` never change, you could move this code out of your componen
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { people } from './data.js';
 import { getImageUrl } from './utils.js';
 
@@ -894,7 +894,7 @@ export default function List() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const people = [{
   id: 0,
   name: 'Creola Katherine Johnson',
@@ -928,7 +928,7 @@ export const people = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(person) {
   return (
     'https://i.imgur.com/' +
@@ -966,7 +966,7 @@ This will require nesting two different `map` calls.
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { recipes } from './data.js';
 
 export default function RecipeList() {
@@ -978,7 +978,7 @@ export default function RecipeList() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const recipes = [{
   id: 'greek-salad',
   name: 'Greek Salad',
@@ -1003,7 +1003,7 @@ Here is one way you could go about it:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { recipes } from './data.js';
 
 export default function RecipeList() {
@@ -1027,7 +1027,7 @@ export default function RecipeList() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const recipes = [{
   id: 'greek-salad',
   name: 'Greek Salad',
@@ -1057,7 +1057,7 @@ This `RecipeList` component contains two nested `map` calls. To simplify it, ext
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { recipes } from './data.js';
 
 export default function RecipeList() {
@@ -1081,7 +1081,7 @@ export default function RecipeList() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const recipes = [{
   id: 'greek-salad',
   name: 'Greek Salad',
@@ -1136,7 +1136,7 @@ export default function RecipeList() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const recipes = [{
   id: 'greek-salad',
   name: 'Greek Salad',
@@ -1164,8 +1164,8 @@ Here, `<Recipe {...recipe} key={recipe.id} />` is a syntax shortcut saying "pass
 
 #### List with a separator <Trans>구분자가 있는 목록</Trans> {/*list-with-a-separator*/}
 
-This example renders a famous haiku by Katsushika Hokusai, with each line wrapped in a `<p>` tag. Your job is to insert an `<hr />` separator between each paragraph. Your resulting structure should look like this:
-<Trans>이 예제는 Katsushika Hokusai의 유명한 하이쿠를 렌더링하며, 각 줄은 `<p>`태그로 감싸져 있습니다. 각 단락 사이에 `<hr />` 구분자를 삽입하세요. 결과 구조는 다음과 같아야 합니다:</Trans>
+This example renders a famous haiku by Tachibana Hokushi, with each line wrapped in a `<p>` tag. Your job is to insert an `<hr />` separator between each paragraph. Your resulting structure should look like this:
+<Trans>이 예제는 Tachibana Hokushi의 유명한 하이쿠를 렌더링하며, 각 줄은 `<p>`태그로 감싸져 있습니다. 각 단락 사이에 `<hr />` 구분자를 삽입하세요. 결과 구조는 다음과 같아야 합니다:</Trans>
 
 ```js
 <article>
@@ -1225,8 +1225,8 @@ hr {
 <Trans> (이 예제는 드문 케이스로, 시의 행은 절대 순서가 바뀌지 않을 것이기 때문에 인덱스를 key로 사용해도 괜찮습니다.)</Trans>
 
 <Hint>
-You'll either need to convert `map` to a manual loop, or use a fragment.
-<Trans>`map`을 수동 반복문으로 변환하거나 fragment를 사용해야 합니다.</Trans>
+You'll either need to convert `map` to a manual loop, or use a Fragment.
+<Trans>`map`을 수동 반복문으로 변환하거나 Fragment를 사용해야 합니다.</Trans>
 </Hint>
 
 <Solution>
@@ -1290,8 +1290,8 @@ hr {
 Using the original line index as a `key` doesn't work anymore because each separator and paragraph are now in the same array. However, you can give each of them a distinct key using a suffix, e.g. `key={i + '-text'}`.
 <Trans>각 구분 기호와 단락이 이제 동일한 배열에 있기 때문에 원래 줄 인덱스를 `key`로 사용하는 것은 더 이상 작동하지 않습니다. 그러나 접미사를 사용(예를 들어, `key={i + '-text'}`) 하여 각각 고유한 key를 부여할 수 있습니다. .</Trans>
 
-Alternatively, you could render a collection of fragments which contain `<hr />` and `<p>...</p>`. However, the `<>...</>` shorthand syntax doesn't support passing keys, so you'd have to write `<Fragment>` explicitly:
-<Trans>또는 `<hr />` 및 `<p>...</p>`를 포함하는 fragments 컬렉션을 렌더링할 수 있습니다. 그러나 `<>...</>` 단축 구문은 key 전달을 지원하지 않으므로 `<Fragment>`를 명시적으로 작성해야 합니다.</Trans>
+Alternatively, you could render a collection of Fragments which contain `<hr />` and `<p>...</p>`. However, the `<>...</>` shorthand syntax doesn't support passing keys, so you'd have to write `<Fragment>` explicitly:
+<Trans>또는 `<hr />` 및 `<p>...</p>`를 포함하는 Fragments 컬렉션을 렌더링할 수 있습니다. 그러나 `<>...</>` 단축 구문은 key 전달을 지원하지 않으므로 `<Fragment>`를 명시적으로 작성해야 합니다.</Trans>
 
 <Sandpack>
 
@@ -1337,8 +1337,8 @@ hr {
 
 </Sandpack>
 
-Remember, fragments (often written as `<> </>`) let you group JSX nodes without adding extra `<div>`s!
-<Trans>기억하세요, fragments (종종 `<> </>`로 작성됨)를 사용하면 추가 `<div>`를 추가하지 않고도 JSX 노드를 그룹화할 수 있습니다!</Trans>
+Remember, Fragments (often written as `<> </>`) let you group JSX nodes without adding extra `<div>`s!
+<Trans>기억하세요, Fragments (종종 `<> </>`로 작성됨)를 사용하면 추가 `<div>`를 추가하지 않고도 JSX 노드를 그룹화할 수 있습니다!</Trans>
 
 </Solution>
 

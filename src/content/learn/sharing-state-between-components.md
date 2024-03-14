@@ -554,7 +554,7 @@ function List({ items }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export function filterItems(items, query) {
   query = query.toLowerCase();
   return items.filter(item =>
@@ -648,7 +648,7 @@ function List({ items }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export function filterItems(items, query) {
   query = query.toLowerCase();
   return items.filter(item =>

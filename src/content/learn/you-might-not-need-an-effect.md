@@ -1027,7 +1027,7 @@ function NewTodo({ onAdd }) {
 }
 ```
 
-```js todos.js
+```js src/todos.js
 let nextId = 0;
 
 export function createTodo(text, completed = false) {
@@ -1123,7 +1123,7 @@ function NewTodo({ onAdd }) {
 }
 ```
 
-```js todos.js
+```js src/todos.js
 let nextId = 0;
 
 export function createTodo(text, completed = false) {
@@ -1212,7 +1212,7 @@ export default function TodoList() {
 }
 ```
 
-```js todos.js
+```js src/todos.js
 let nextId = 0;
 let calls = 0;
 
@@ -1325,7 +1325,7 @@ export default function TodoList() {
 }
 ```
 
-```js todos.js
+```js src/todos.js
 let nextId = 0;
 let calls = 0;
 
@@ -1416,7 +1416,7 @@ function NewTodo({ onAdd }) {
 }
 ```
 
-```js todos.js
+```js src/todos.js
 let nextId = 0;
 let calls = 0;
 
@@ -1463,7 +1463,7 @@ When you select a contact with the buttons at the top, the form resets to reflec
 <Trans>상단의 버튼으로 연락처를 선택하면 해당 연락처의 세부 정보를 반영하도록 양식이 재설정됩니다. 이 작업은 `EditContact.js` 내의 Effect로 수행됩니다. 이 Effect를 제거하세요. `savedContact.id`가 변경될 때 양식을 재설정하는 다른 방법을 찾아보세요.</Trans>
 <Sandpack>
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import ContactList from './ContactList.js';
 import EditContact from './EditContact.js';
@@ -1515,7 +1515,7 @@ const initialContacts = [
 ];
 ```
 
-```js ContactList.js hidden
+```js src/ContactList.js hidden
 export default function ContactList({
   contacts,
   selectedId,
@@ -1542,7 +1542,7 @@ export default function ContactList({
 }
 ```
 
-```js EditContact.js active
+```js src/EditContact.js active
 import { useState, useEffect } from 'react';
 
 export default function EditContact({ savedContact, onSave }) {
@@ -1623,12 +1623,12 @@ It would be nice if there was a way to tell React that when `savedContact.id` is
 
 <Solution>
 
-Split the `EditContact` component in two. Move all the form state into the inner `EditForm` component. Export the outer `EditContact` component, and make it pass `savedContact.id` as the `key` to the inner `EditContact` component. As a result, the inner `EditForm` component resets all of the form state and recreates the DOM whenever you select a different contact.
-<Trans>`EditContact` 컴포넌트를 둘로 분할합니다. 모든 양식 state를 내부의 `EditForm` 컴포넌트로 이동합니다. 외부 `EditContact` 컴포넌트를 내보내고 `savedContact.id`를 `key`로 내부 `EditContact` 컴포넌트에 전달하도록 합니다. 그 결과, 내부 `EditForm` 컴포넌트는 다른 연락처를 선택할 때마다 모든 양식 state를 재설정하고 DOM을 다시 생성합니다.</Trans>
+Split the `EditContact` component in two. Move all the form state into the inner `EditForm` component. Export the outer `EditContact` component, and make it pass `savedContact.id` as the `key` to the inner `EditForm` component. As a result, the inner `EditForm` component resets all of the form state and recreates the DOM whenever you select a different contact.
+<Trans>`EditContact` 컴포넌트를 둘로 분할합니다. 모든 양식 state를 내부의 `EditForm` 컴포넌트로 이동합니다. 외부 `EditContact` 컴포넌트를 내보내고 `savedContact.id`를 `key`로 내부 `EditForm` 컴포넌트에 전달하도록 합니다. 그 결과, 내부 `EditForm` 컴포넌트는 다른 연락처를 선택할 때마다 모든 양식 state를 재설정하고 DOM을 다시 생성합니다.</Trans>
 
 <Sandpack>
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import ContactList from './ContactList.js';
 import EditContact from './EditContact.js';
@@ -1680,7 +1680,7 @@ const initialContacts = [
 ];
 ```
 
-```js ContactList.js hidden
+```js src/ContactList.js hidden
 export default function ContactList({
   contacts,
   selectedId,
@@ -1707,7 +1707,7 @@ export default function ContactList({
 }
 ```
 
-```js EditContact.js active
+```js src/EditContact.js active
 import { useState } from 'react';
 
 export default function EditContact(props) {

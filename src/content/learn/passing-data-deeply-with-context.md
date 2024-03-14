@@ -87,7 +87,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 export default function Section({ children }) {
   return (
     <section className="section">
@@ -97,7 +97,7 @@ export default function Section({ children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 export default function Heading({ level, children }) {
   switch (level) {
     case 1:
@@ -162,7 +162,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 export default function Section({ children }) {
   return (
     <section className="section">
@@ -172,7 +172,7 @@ export default function Section({ children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 export default function Heading({ level, children }) {
   switch (level) {
     case 1:
@@ -297,7 +297,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 export default function Section({ children }) {
   return (
     <section className="section">
@@ -307,7 +307,7 @@ export default function Section({ children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 export default function Heading({ level, children }) {
   switch (level) {
     case 1:
@@ -328,7 +328,7 @@ export default function Heading({ level, children }) {
 }
 ```
 
-```js LevelContext.js active
+```js src/LevelContext.js active
 import { createContext } from 'react';
 
 export const LevelContext = createContext(1);
@@ -435,7 +435,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 export default function Section({ children }) {
   return (
     <section className="section">
@@ -445,7 +445,7 @@ export default function Section({ children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -470,7 +470,7 @@ export default function Heading({ children }) {
 }
 ```
 
-```js LevelContext.js
+```js src/LevelContext.js
 import { createContext } from 'react';
 
 export const LevelContext = createContext(1);
@@ -558,7 +558,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 import { LevelContext } from './LevelContext.js';
 
 export default function Section({ level, children }) {
@@ -572,7 +572,7 @@ export default function Section({ level, children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -597,7 +597,7 @@ export default function Heading({ children }) {
 }
 ```
 
-```js LevelContext.js
+```js src/LevelContext.js
 import { createContext } from 'react';
 
 export const LevelContext = createContext(1);
@@ -646,7 +646,7 @@ export default function Page() {
 Since context lets you read information from a component above, each `Section` could read the `level` from the `Section` above, and pass `level + 1` down automatically. Here is how you could do it:
 <Trans>context를 사용하면 위의 컴포넌트에서 정보를 읽을 수 있으므로 각 `Section`은 위의 `Section`에서 `level`을 읽고 `level + 1`을 자동으로 아래로 전달할 수 있습니다. 방법은 다음과 같습니다:</Trans>
 
-```js Section.js {5,8}
+```js src/Section.js {5,8}
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -695,7 +695,7 @@ export default function Page() {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -711,7 +711,7 @@ export default function Section({ children }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -738,7 +738,7 @@ export default function Heading({ children }) {
 }
 ```
 
-```js LevelContext.js
+```js src/LevelContext.js
 import { createContext } from 'react';
 
 export const LevelContext = createContext(0);
@@ -829,7 +829,7 @@ function Post({ title, body }) {
 }
 ```
 
-```js Section.js
+```js src/Section.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -848,7 +848,7 @@ export default function Section({ children, isFancy }) {
 }
 ```
 
-```js Heading.js
+```js src/Heading.js
 import { useContext } from 'react';
 import { LevelContext } from './LevelContext.js';
 
@@ -875,7 +875,7 @@ export default function Heading({ children }) {
 }
 ```
 
-```js LevelContext.js
+```js src/LevelContext.js
 import { createContext } from 'react';
 
 export const LevelContext = createContext(0);
@@ -978,7 +978,7 @@ You can declare context in `Context.js`.
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { places } from './data.js';
 import { getImageUrl } from './utils.js';
@@ -1043,11 +1043,11 @@ function PlaceImage({ place, imageSize }) {
 }
 ```
 
-```js Context.js
+```js src/Context.js
 
 ```
 
-```js data.js
+```js src/data.js
 export const places = [{
   id: 0,
   name: 'Bo-Kaap in Cape Town, South Africa',
@@ -1076,7 +1076,7 @@ export const places = [{
 }, {
   id: 5, 
   name: 'Chefchaouen, Marocco',
-  description: 'There are a few theories on why the houses are painted blue, including that the color repells mosquitos or that it symbolizes sky and heaven.',
+  description: 'There are a few theories on why the houses are painted blue, including that the color repels mosquitos or that it symbolizes sky and heaven.',
   imageId: 'rTqKo46'
 }, {
   id: 6,
@@ -1086,7 +1086,7 @@ export const places = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(place) {
   return (
     'https://i.imgur.com/' +
@@ -1119,7 +1119,7 @@ Create and export `ImageSizeContext` from `Context.js`. Then wrap the List into 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useContext } from 'react';
 import { places } from './data.js';
 import { getImageUrl } from './utils.js';
@@ -1182,13 +1182,13 @@ function PlaceImage({ place }) {
 }
 ```
 
-```js Context.js
+```js src/Context.js
 import { createContext } from 'react';
 
 export const ImageSizeContext = createContext(500);
 ```
 
-```js data.js
+```js src/data.js
 export const places = [{
   id: 0,
   name: 'Bo-Kaap in Cape Town, South Africa',
@@ -1217,7 +1217,7 @@ export const places = [{
 }, {
   id: 5, 
   name: 'Chefchaouen, Marocco',
-  description: 'There are a few theories on why the houses are painted blue, including that the color repells mosquitos or that it symbolizes sky and heaven.',
+  description: 'There are a few theories on why the houses are painted blue, including that the color repels mosquitos or that it symbolizes sky and heaven.',
   imageId: 'rTqKo46'
 }, {
   id: 6,
@@ -1227,7 +1227,7 @@ export const places = [{
 }];
 ```
 
-```js utils.js
+```js src/utils.js
 export function getImageUrl(place) {
   return (
     'https://i.imgur.com/' +

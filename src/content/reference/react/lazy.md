@@ -44,7 +44,7 @@ const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
 * `load`: A function that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or another *thenable* (a Promise-like object with a `then` method). React will not call `load` until the first time you attempt to render the returned component. After React first calls `load`, it will wait for it to resolve, and then render the resolved value as a React component. Both the returned Promise and the Promise's resolved value will be cached, so React will not call `load` more than once. If the Promise rejects, React will `throw` the rejection reason for the nearest Error Boundary to handle.
-<Trans>`load`: [Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise) 또는 다른 *thenable(*`then` 메서드를 가진 Promise와 유사한 객체)을 반환하는 함수. React는 반환된 컴포넌트를 처음 렌더링하려고 시도할 때까지 `load`를 호출하지 않습니다. React가 `load`를 처음 호출한 후에는 resolve될 때까지 기다린 다음 resolve된 값을 React 컴포넌트로 렌더링합니다. 반환된 Promise 및 Promise의 resolve된 값은 모두 캐시되므로, React는 `load`를 두 번 이상 호출하지 않습니다. Promise가 reject되면 React는 가장 가까운 Error Boundary에 reject된 이유를 `throw` 합니다.</Trans>
+<Trans>`load`: [Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise) 또는 다른 *thenable(*`then` 메서드를 가진 Promise와 유사한 객체)을 반환하는 함수. React는 반환된 컴포넌트를 처음 렌더링하려고 시도할 때까지 `load`를 호출하지 않습니다. React는 먼저 `load`를 호출한 후 resolve될 때까지 기다린 다음, resolve된 값의 `.default`를 React 컴포넌트로 렌더링합니다. 반환된 Promise 및 Promise의 resolve된 값은 모두 캐시되므로, React는 `load`를 두 번 이상 호출하지 않습니다. Promise가 reject되면 React는 가장 가까운 Error Boundary에 reject된 이유를 `throw` 합니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 
@@ -62,8 +62,8 @@ const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
 
 #### Returns<Trans>반환값</Trans> {/*load-returns*/}
 
-You need to return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or some other *thenable* (a Promise-like object with a `then` method). It needs to eventually resolve to a valid React component type, such as a function, [`memo`](/reference/react/memo), or a [`forwardRef`](/reference/react/forwardRef) component.
-<Trans>[Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise) 또는 다른 *thenable*(`then` 메서드를 가진 Promise와 유사한 객체)을 반환해야 합니다. 그 결과 최종적으로 함수, [`memo`](/reference/react/memo) 또는 [`forwardRef`](/reference/react/forwardRef) 컴포넌트와 같은 유효한 React 컴포넌트 유형으로 해석되어야 합니다.</Trans>
+You need to return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or some other *thenable* (a Promise-like object with a `then` method). It needs to eventually resolve to an object whose `.default` property is a valid React component type, such as a function, [`memo`](/reference/react/memo), or a [`forwardRef`](/reference/react/forwardRef) component.
+<Trans>[Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise) 또는 다른 *thenable*(`then` 메서드를 가진 Promise와 유사한 객체)을 반환해야 합니다. 그 결과 최종적으로 `.default` 프로퍼티가 함수, [`memo`](/reference/react/memo) 또는 [`forwardRef`](/reference/react/forwardRef) 컴포넌트와 같은 유효한 React 컴포넌트 유형으로 해석되어야 합니다.</Trans>
 
 ---
 
@@ -87,8 +87,8 @@ import { lazy } from 'react';
 const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
 ```
 
-This code relies on [dynamic `import()`,](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) which might require support from your bundler or framework.
-<Trans>이 코드는 번들러나 프레임워크의 지원이 필요할 수 있는 [dynamic `import()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) 에 의존합니다.</Trans>
+This code relies on [dynamic `import()`,](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) which might require support from your bundler or framework. Using this pattern requires that the lazy component you're importing was exported as the `default` export.
+<Trans>이 코드는 번들러나 프레임워크의 지원이 필요할 수 있는 [dynamic `import()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) 에 의존합니다. 이 패턴을 사용하려면 임포트하려는 지연 컴포넌트를 `default` 내보내기로 내보내야 합니다.</Trans>
 
 Now that your component's code loads on demand, you also need to specify what should be displayed while it is loading. You can do this by wrapping the lazy component or any of its parents into a [`<Suspense>`](/reference/react/Suspense) boundary:
 <Trans>이제 컴포넌트의 코드가 필요에 의해서만 로드되므로, 로드되는 동안 표시할 내용도 지정해야 합니다. 지연 컴포넌트나 그 부모 컴포넌트를 [`<Suspense>`](/reference/react/Suspense) 로 감싸면 됩니다.</Trans>
@@ -105,7 +105,7 @@ In this example, the code for `MarkdownPreview` won't be loaded until you attemp
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, Suspense, lazy } from 'react';
 import Loading from './Loading.js';
 
@@ -140,13 +140,13 @@ function delayForDemo(promise) {
 }
 ```
 
-```js Loading.js
+```js src/Loading.js
 export default function Loading() {
   return <p><i>Loading...</i></p>;
 }
 ```
 
-```js MarkdownPreview.js
+```js src/MarkdownPreview.js
 import { Remarkable } from 'remarkable';
 
 const md = new Remarkable();

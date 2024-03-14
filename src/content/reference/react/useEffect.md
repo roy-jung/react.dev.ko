@@ -80,7 +80,7 @@ function ChatRoom({ roomId }) {
 * If some of your dependencies are objects or functions defined inside the component, there is a risk that they will **cause the Effect to re-run more often than needed.** To fix this, remove unnecessary [object](#removing-unnecessary-object-dependencies) and [function](#removing-unnecessary-function-dependencies) dependencies. You can also [extract state updates](#updating-state-based-on-previous-state-from-an-effect) and [non-reactive logic](#reading-the-latest-props-and-state-from-an-effect) outside of your Effect.
 <Trans>의존성 중 일부가 컴포넌트 내부에 정의된 객체 또는 함수인 경우 **Effect가 필요 이상으로 자주 다시 실행될 위험이 있습니다.** 이 문제를 해결하려면 불필요한 [객체](#removing-unnecessary-object-dependencies) 및 [함수](#removing-unnecessary-function-dependencies) 의존성을 제거하세요. 혹은 Effect 외부에서 [state 업데이트 추출](#updating-state-based-on-previous-state-from-an-effect) 및 [비반응형 로직](#reading-the-latest-props-and-state-from-an-effect)을 제거할 수도 있습니다.</Trans>
 
-* If your Effect wasn't caused by an interaction (like a click), React will let the browser **paint the updated screen first before running your Effect.** If your Effect is doing something visual (for example, positioning a tooltip), and the delay is noticeable (for example, it flickers), replace `useEffect` with [`useLayoutEffect`.](/reference/react/useLayoutEffect)
+* If your Effect wasn't caused by an interaction (like a click), React will generally let the browser **paint the updated screen first before running your Effect.** If your Effect is doing something visual (for example, positioning a tooltip), and the delay is noticeable (for example, it flickers), replace `useEffect` with [`useLayoutEffect`.](/reference/react/useLayoutEffect)
 <Trans>Effect가 상호작용(예: 클릭)으로 인한 것이 아니라면, **React는 브라우저가 Effect를 실행하기 전에 업데이트된 화면을 먼저 그리도록 합니다.** Effect가 시각적인 작업(예: 툴팁 위치 지정)을 하고 있고, 지연이 눈에 띄는 경우(예: 깜박임), `useEffect`를 [`useLayoutEffect`](/reference/react/useLayoutEffect)로 대체해야 합니다.</Trans>
 
 * Even if your Effect was caused by an interaction (like a click), **the browser may repaint the screen before processing the state updates inside your Effect.** Usually, that's what you want. However, if you must block the browser from repainting the screen, you need to replace `useEffect` with [`useLayoutEffect`.](/reference/react/useLayoutEffect)
@@ -242,7 +242,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -368,7 +368,7 @@ export default function App() {
 }
 ```
 
-```js animation.js
+```js src/animation.js
 export class FadeInAnimation {
   constructor(node) {
     this.node = node;
@@ -444,7 +444,7 @@ export default function App() {
 }
 ```
 
-```js ModalDialog.js active
+```js src/ModalDialog.js active
 import { useEffect, useRef } from 'react';
 
 export default function ModalDialog({ isOpen, children }) {
@@ -477,8 +477,8 @@ body {
 
 #### Tracking element visibility<Trans>엘리먼트의 가시성 추적하기</Trans> {/*tracking-element-visibility*/}
 
-In this example, the external system is again the browser DOM. The `App` component displays a long list, then a `Box` component, and then another long list. Scroll the list down. Notice that when the `Box` component appears in the viewport, the background color changes to black. To implement this, the `Box` component uses an Effect to manage an [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). This browser API notifies you when the DOM element is visible in the viewport.
-<Trans>이 예시에서 외부 시스템은 다시 브라우저 DOM입니다. `App` 컴포넌트는 긴 목록을 표시한 다음 `Box` 컴포넌트를 표시하고, 그 다음에는 또 다른 긴 목록을 표시합니다. 목록을 아래로 스크롤 해보세요. `Box` 컴포넌트가 뷰포트에 나타나면 배경색이 검은색으로 변경되는 것을 알 수 있습니다. 이를 구현하기 위해 `Box` 컴포넌트는 Effect를 사용해 [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)를 관리합니다. 이 브라우저 API는 DOM 요소가 뷰포트에 표시되면 사용자에게 알려줍니다.</Trans>
+In this example, the external system is again the browser DOM. The `App` component displays a long list, then a `Box` component, and then another long list. Scroll the list down. Notice that when all of the `Box` component is fully visible in the viewport, the background color changes to black. To implement this, the `Box` component uses an Effect to manage an [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). This browser API notifies you when the DOM element is visible in the viewport.
+<Trans>이 예시에서 외부 시스템은 다시 브라우저 DOM입니다. `App` 컴포넌트는 긴 목록을 표시한 다음 `Box` 컴포넌트를 표시하고, 그 다음에는 또 다른 긴 목록을 표시합니다. 목록을 아래로 스크롤 해보세요. 모든 `Box` 컴포넌트가 뷰포트에 전부 나타나면 배경색이 검은색으로 변경되는 것을 알 수 있습니다. 이를 구현하기 위해 `Box` 컴포넌트는 Effect를 사용해 [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)를 관리합니다. 이 브라우저 API는 DOM 요소가 뷰포트에 표시되면 사용자에게 알려줍니다.</Trans>
 
 <Sandpack>
 
@@ -506,7 +506,7 @@ function LongSection() {
 }
 ```
 
-```js Box.js active
+```js src/Box.js active
 import { useRef, useEffect } from 'react';
 
 export default function Box() {
@@ -523,10 +523,10 @@ export default function Box() {
         document.body.style.backgroundColor = 'white';
         document.body.style.color = 'black';
       }
+    }, {
+       threshold: 1.0
     });
-    observer.observe(div, {
-      threshold: 1.0
-    });
+    observer.observe(div);
     return () => {
       observer.disconnect();
     }
@@ -655,7 +655,7 @@ export default function App() {
 }
 ```
 
-```js useChatRoom.js
+```js src/useChatRoom.js
 import { useEffect } from 'react';
 import { createConnection } from './chat.js';
 
@@ -670,7 +670,7 @@ export function useChatRoom({ serverUrl, roomId }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -728,7 +728,7 @@ export default function App() {
 }
 ```
 
-```js useWindowListener.js
+```js src/useWindowListener.js
 import { useState, useEffect } from 'react';
 
 export function useWindowListener(eventType, listener) {
@@ -782,7 +782,7 @@ function LongSection() {
 }
 ```
 
-```js Box.js active
+```js src/Box.js active
 import { useRef, useEffect } from 'react';
 import { useIntersectionObserver } from './useIntersectionObserver.js';
 
@@ -812,7 +812,7 @@ export default function Box() {
 }
 ```
 
-```js useIntersectionObserver.js
+```js src/useIntersectionObserver.js
 import { useState, useEffect } from 'react';
 
 export function useIntersectionObserver(ref) {
@@ -823,10 +823,10 @@ export function useIntersectionObserver(ref) {
     const observer = new IntersectionObserver(entries => {
       const entry = entries[0];
       setIsIntersecting(entry.isIntersecting);
+    }, {
+       threshold: 1.0
     });
-    observer.observe(div, {
-      threshold: 1.0
-    });
+    observer.observe(div);
     return () => {
       observer.disconnect();
     }
@@ -872,7 +872,7 @@ For example, if you have a third-party map widget or a video player component wr
 }
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Map from './Map.js';
 
@@ -890,7 +890,7 @@ export default function App() {
 }
 ```
 
-```js Map.js active
+```js src/Map.js active
 import { useRef, useEffect } from 'react';
 import { MapWidget } from './map-widget.js';
 
@@ -916,7 +916,7 @@ export default function Map({ zoomLevel }) {
 }
 ```
 
-```js map-widget.js
+```js src/map-widget.js
 import 'leaflet/dist/leaflet.css';
 import * as L from 'leaflet';
 
@@ -992,7 +992,7 @@ Note the `ignore` variable which is initialized to `false`, and is set to `true`
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchBio } from './api.js';
 
@@ -1028,7 +1028,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export async function fetchBio(person) {
   const delay = person === 'Bob' ? 2000 : 200;
   return new Promise(resolve => {
@@ -1046,7 +1046,7 @@ You can also rewrite using the [`async` / `await`](https://developer.mozilla.org
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchBio } from './api.js';
 
@@ -1085,7 +1085,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export async function fetchBio(person) {
   const delay = person === 'Bob' ? 2000 : 200;
   return new Promise(resolve => {
@@ -1126,8 +1126,8 @@ This list of downsides is not specific to React. It applies to fetching data on 
 - **If you use a [framework](/learn/start-a-new-react-project#production-grade-react-frameworks), use its built-in data fetching mechanism.** Modern React frameworks have integrated data fetching mechanisms that are efficient and don't suffer from the above pitfalls.
 <Trans>**[framework](/learn/start-a-new-react-project#production-grade-react-frameworks)를 사용하는 경우, 프레임워크 빌트인 데이터 페칭 메커니즘을 사용하세요.** 최신 React 프레임워크는 효율적이고 위의 함정이 발생하지 않는 통합 데이터 페칭 메커니즘을 갖추고 있습니다.</Trans>
 
-- **Otherwise, consider using or building a client-side cache.** Popular open source solutions include [React Query](https://react-query.tanstack.com/), [useSWR](https://swr.vercel.app/), and [React Router 6.4+.](https://beta.reactrouter.com/en/main/start/overview) You can build your own solution too, in which case you would use Effects under the hood but also add logic for deduplicating requests, caching responses, and avoiding network waterfalls (by preloading data or hoisting data requirements to routes).
-<Trans>**그게 아니라면 client-side 캐시를 사용하거나 구축하는 것을 고려하세요.** 인기있는 오픈 소스 솔루션으로는 [React Query](https://react-query.tanstack.com/), [useSWR](https://swr.vercel.app/), [React Router 6.4+](https://beta.reactrouter.com/en/main/start/overview) 등이 있습니다. 자체 솔루션을 구축할 수도 있는데, 이 경우 내부적으로는 Effect를 사용하되 요청 중복 제거, 응답 캐시, 네트워크 워터폴 방지(데이터를 미리 로드하거나 라우트에 데이터 요구 사항을 올려서) 논리를 추가할 수 있습니다.</Trans>
+- **Otherwise, consider using or building a client-side cache.** Popular open source solutions include [React Query](https://tanstack.com/query/latest/), [useSWR](https://swr.vercel.app/), and [React Router 6.4+.](https://beta.reactrouter.com/en/main/start/overview) You can build your own solution too, in which case you would use Effects under the hood but also add logic for deduplicating requests, caching responses, and avoiding network waterfalls (by preloading data or hoisting data requirements to routes).
+<Trans>**그게 아니라면 clinet-side 캐시를 사용하거나 구축하는 것을 고려하세요.** 인기있는 오픈 소스 솔루션으로는 [React Query](https://tanstack.com/query/latest/), [useSWR](https://swr.vercel.app/), [React Router 6.4+](https://beta.reactrouter.com/en/main/start/overview) 등이 있습니다. 자체 솔루션을 구축할 수도 있는데, 이 경우 내부적으로는 Effect를 사용하되 요청 중복 제거, 응답 캐시, 네트워크 워터폴 방지(데이터를 미리 로드하거나 라우트에 데이터 요구 사항을 올려서) 논리를 추가할 수 있습니다.</Trans>
 
 You can continue fetching data directly in Effects if neither of these approaches suit you.
 <Trans>위의 접근방법들이 만족스럽지 않다면 원래대로 Effect에서 직접 데이터를 페칭해도 괜찮습니다.</Trans>
@@ -1305,7 +1305,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1389,7 +1389,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1484,7 +1484,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1653,7 +1653,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   return {
@@ -1768,7 +1768,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   return {

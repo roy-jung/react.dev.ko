@@ -99,7 +99,7 @@ export default function App() {
 }
 ```
 
-```js useOnlineStatus.js active
+```js src/useOnlineStatus.js active
 import { useSyncExternalStore, useDebugValue } from 'react';
 
 export function useOnlineStatus() {

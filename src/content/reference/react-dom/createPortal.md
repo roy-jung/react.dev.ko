@@ -162,7 +162,7 @@ In this example, the two containers have styles that disrupt the modal dialog, b
 
 <Sandpack>
 
-```js App.js active
+```js src/App.js active
 import NoPortalExample from './NoPortalExample';
 import PortalExample from './PortalExample';
 
@@ -180,7 +180,7 @@ export default function App() {
 }
 ```
 
-```js NoPortalExample.js
+```js src/NoPortalExample.js
 import { useState } from 'react';
 import ModalContent from './ModalContent.js';
 
@@ -199,7 +199,7 @@ export default function NoPortalExample() {
 }
 ```
 
-```js PortalExample.js active
+```js src/PortalExample.js active
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContent from './ModalContent.js';
@@ -220,7 +220,7 @@ export default function PortalExample() {
 }
 ```
 
-```js ModalContent.js
+```js src/ModalContent.js
 export default function ModalContent({ onClose }) {
   return (
     <div className="modal">
@@ -232,7 +232,7 @@ export default function ModalContent({ onClose }) {
 ```
 
 
-```css styles.css
+```css src/styles.css
 .clipping-container {
   position: relative;
   border: 1px solid #aaa;
@@ -297,7 +297,7 @@ Portals can be useful if your React root is only part of a static or server-rend
 </html>
 ```
 
-```js index.js
+```js src/index.js
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.js';
@@ -311,7 +311,7 @@ root.render(
 );
 ```
 
-```js App.js active
+```js src/App.js active
 import { createPortal } from 'react-dom';
 
 const sidebarContentEl = document.getElementById('sidebar-content');
@@ -430,7 +430,7 @@ Here is a complete example you can play with:
 }
 ```
 
-```js App.js
+```js src/App.js
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { createMapWidget, addPopupToMapWidget } from './map-widget.js';
@@ -460,7 +460,7 @@ export default function Map() {
 }
 ```
 
-```js map-widget.js
+```js src/map-widget.js
 import 'leaflet/dist/leaflet.css';
 import * as L from 'leaflet';
 

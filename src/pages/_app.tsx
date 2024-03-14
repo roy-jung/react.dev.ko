@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
-
+import {useEffect} from 'react';
 import {AppProps} from 'next/app';
+import {useRouter} from 'next/router';
 import Script from 'next/script';
 
 import '@docsearch/css';
@@ -10,26 +11,22 @@ import '../styles/algolia.css';
 import '../styles/index.css';
 import '../styles/sandpack.css';
 import '../styles/translate.css';
-import {useSetTheme} from 'jotai/theme';
 
-let initiated = false;
+if (typeof window !== 'undefined') {
+  const terminationEvent = 'onpagehide' in window ? 'pagehide' : 'unload';
+  window.addEventListener(terminationEvent, function () {
+    // @ts-ignore
+    gtag('event', 'timing', {
+      event_label: 'JS Dependencies',
+      event: 'unload',
+    });
+  });
+}
 
 export default function MyApp({Component, pageProps}: AppProps) {
-  const setTheme = useSetTheme();
+  const router = useRouter();
 
-  if (typeof window !== 'undefined' && !initiated) {
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setTheme('');
-    darkQuery.addEventListener('change', function (e) {
-      setTheme(e.matches ? 'dark' : 'light');
-    });
-
-    document.documentElement.classList.add(
-      window.navigator.platform.includes('Mac')
-        ? 'platform-mac'
-        : 'platform-win'
-    );
-
+  useEffect(() => {
     // Taken from StackOverflow. Trying to detect both Safari desktop and mobile.
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     if (isSafari) {
@@ -42,9 +39,21 @@ export default function MyApp({Component, pageProps}: AppProps) {
       // For other browsers, let Next.js set scrollRestoration to 'manual'.
       // It seems to work better for Chrome and Firefox which don't animate the back swipe.
     }
+  }, []);
 
-    initiated = true;
-  }
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      const cleanedUrl = url.split(/[\?\#]/)[0];
+      // @ts-ignore
+      gtag('event', 'pageview', {
+        event_label: cleanedUrl,
+      });
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>

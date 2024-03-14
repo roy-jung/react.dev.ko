@@ -160,7 +160,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function sendMessage(message) {
   console.log('🔵 You sent: ' + message);
 }
@@ -383,7 +383,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   let connectedCallback;
@@ -412,7 +412,7 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 
-```js notifications.js
+```js src/notifications.js
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -580,7 +580,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   let connectedCallback;
@@ -609,7 +609,7 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 
-```js notifications.js hidden
+```js src/notifications.js hidden
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -1616,7 +1616,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   let connectedCallback;
@@ -1645,7 +1645,7 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 
-```js notifications.js hidden
+```js src/notifications.js hidden
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -1759,7 +1759,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   let connectedCallback;
@@ -1788,7 +1788,7 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 
-```js notifications.js hidden
+```js src/notifications.js hidden
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -1903,7 +1903,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   let connectedCallback;
@@ -1932,7 +1932,7 @@ export function createConnection(serverUrl, roomId) {
 }
 ```
 
-```js notifications.js hidden
+```js src/notifications.js hidden
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 

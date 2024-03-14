@@ -147,7 +147,7 @@ export default function Form() {
 
   return (
     <form>
-      <MyInput label="Enter your name:" ref={ref} />
+      <MyInput placeholder="Enter your name" ref={ref} />
       <button type="button" onClick={handleClick}>
         Edit
       </button>
@@ -156,7 +156,7 @@ export default function Form() {
 }
 ```
 
-```js MyInput.js
+```js src/MyInput.js
 import { forwardRef, useRef, useImperativeHandle } from 'react';
 
 const MyInput = forwardRef(function MyInput(props, ref) {
@@ -218,7 +218,7 @@ export default function Page() {
 }
 ```
 
-```js Post.js
+```js src/Post.js
 import { forwardRef, useRef, useImperativeHandle } from 'react';
 import CommentList from './CommentList.js';
 import AddComment from './AddComment.js';
@@ -251,7 +251,7 @@ export default Post;
 ```
 
 
-```js CommentList.js
+```js src/CommentList.js
 import { forwardRef, useRef, useImperativeHandle } from 'react';
 
 const CommentList = forwardRef(function CommentList(props, ref) {
@@ -281,7 +281,7 @@ const CommentList = forwardRef(function CommentList(props, ref) {
 export default CommentList;
 ```
 
-```js AddComment.js
+```js src/AddComment.js
 import { forwardRef, useRef, useImperativeHandle } from 'react';
 
 const AddComment = forwardRef(function AddComment(props, ref) {

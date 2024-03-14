@@ -50,7 +50,7 @@ You can see what it will look like when you're finished here:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -168,7 +168,7 @@ function calculateWinner(squares) {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -231,13 +231,13 @@ In the live code editor below, click **Fork** in the top-right corner to open th
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 export default function Square() {
   return <button className="square">X</button>;
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -290,14 +290,14 @@ You can also follow this tutorial using your local development environment. To d
 <Trans>로컬 개발 환경을 사용하여 이 자습서를 진행할 수도 있습니다. 이를 위해서는 다음을 수행하세요:</Trans>
 
 1. Install [Node.js](https://nodejs.org/en/)
-2. In the CodeSandbox tab you opened earlier, press the top-left corner button to open the menu, and then choose **File > Export to ZIP** in that menu to download an archive of the files locally
+2. In the CodeSandbox tab you opened earlier, press the top-left corner button to open the menu, and then choose **Download Sandbox** in that menu to download an archive of the files locally
 3. Unzip the archive, then open a terminal and `cd` to the directory you unzipped
 4. Install the dependencies with `npm install`
 5. Run `npm start` to start a local server and follow the prompts to view the code running in a browser
 
 <TransBlock>
 1. [Node.js](https://nodejs.org/en/)를 설치하세요.
-2. 앞서 연 CodeSandBox 탭에서 왼쪽 상단 모서리 버튼을 누르고 메뉴를 열어 해당 메뉴에서 **File > Export To ZIP**을 선택하여 파일 아카이브를 로컬로 다운로드합니다.
+2. 앞서 연 CodeSandBox 탭에서 왼쪽 상단 모서리 버튼을 누르고 메뉴를 열어 해당 메뉴에서 **Download Sandbox**을 선택하여 파일 아카이브를 로컬로 다운로드합니다.
 3. 아카이브의 압축을 푼 다음, 터미널을 열고 `cd`명령어를 사용해 압축을 푼 디렉터리로 이동합니다.
 4. `npm install`명령어를 이용해 의존성을 설치하세요.
 5. `npm start`명령어를 실행하여 로컬 서버를 시작하고 프롬프트에 따라 브라우저에서 실행 중인 코드를 확인하세요.
@@ -388,7 +388,7 @@ import './styles.css';
 import App from './App';
 ```
 
-Lines 1-5 brings all the necessary pieces together: 
+Lines 1-5 bring all the necessary pieces together: 
 <Trans>1-5줄은 필요한 모든 조각들을 한 곳으로 모았습니다:</Trans>
 * React
 * React's library to talk to web browsers (React DOM)
@@ -526,7 +526,7 @@ export default function Board() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -714,7 +714,7 @@ Your updated code should look like this:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 function Square({ value }) {
   return <button className="square">{value}</button>;
 }
@@ -742,7 +742,7 @@ export default function Board() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -906,7 +906,7 @@ After you've made the above changes, your code will look like this:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square() {
@@ -949,7 +949,7 @@ export default function Board() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -1108,7 +1108,7 @@ And your code should look like this:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value }) {
@@ -1139,7 +1139,7 @@ export default function Board() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -1308,7 +1308,7 @@ Why didn't this problem happen earlier?
 When you were passing `onSquareClick={handleClick}`, you were passing the `handleClick` function down as a prop. You were not calling it! But now you are *calling* that function right away--notice the parentheses in `handleClick(0)`--and that's why it runs too early. You don't *want* to call `handleClick` until the user clicks!
 <Trans>우리는 `onSquareClick={handleClick}`을 전달할 때, `handleClick` 함수를 prop로 전달했습니다. 함수를 **호출**한 것이 아니었어요! 하지만 지금은 `handleClick(0)`의 괄호를 보면 알 수 있듯이 해당 함수를 호출하고 있기 때문에 해당 함수가 너무 일찍 실행됩니다. 우리는 사용자가 클릭하기 전까지 **handleClick** 함수를 호출하고 싶지 않아요!</Trans>
 
-You could fix by creating a function like `handleFirstSquareClick` that calls `handleClick(0)`, a function like `handleSecondSquareClick` that calls `handleClick(1)`, and so on. You would pass (rather than call) these functions down as props like `onSquareClick={handleFirstSquareClick}`. This would solve the infinite loop.
+You could fix this by creating a function like `handleFirstSquareClick` that calls `handleClick(0)`, a function like `handleSecondSquareClick` that calls `handleClick(1)`, and so on. You would pass (rather than call) these functions down as props like `onSquareClick={handleFirstSquareClick}`. This would solve the infinite loop.
 <Trans>이 문제를 해결하려면, `handleClick(0)`을 호출하는 `handleFirstSquareClick` 함수를 만들고, `handleClick(1)` 을 호출하는 `handleSecondSquareClick` 을 만들고… 계속해서 만들면 됩니다. 그리고 아까와 같이 호출하는 대신 `onSquareClick={handleFirstSquareClick}` 와 같은 함수를 prop로 전달 해 주면 됩니다. 이렇게 하면 무한 루프를 해결 할 수 있습니다.</Trans>
 
 However, defining nine different functions and giving each of them a name is too verbose. Instead, let's do this:
@@ -1370,7 +1370,7 @@ This is what your code should look like:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -1412,7 +1412,7 @@ export default function Board() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -1588,7 +1588,7 @@ Now you can only add `X`'s or `O`'s to empty squares! Here is what your code sho
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({value, onSquareClick}) {
@@ -1639,7 +1639,7 @@ export default function Board() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -1691,7 +1691,7 @@ body {
 Now that the players can take turns, you'll want to show when the game is won and there are no more turns to make. To do this you'll add a helper function called `calculateWinner` that takes an array of 9 squares, checks for a winner and returns `'X'`, `'O'`, or `null` as appropriate. Don't worry too much about the `calculateWinner` function; it's not specific to React:
 <Trans>이제 어느 플레이어의 다음 차례인지 표시했으니, 게임의 승자가 결정되어 더이상 차례를 만들 필요가 없을 때도 표시해야 합니다. 이를 위해 9개의 사각형 배열을 가져와서 승자를 확인하고 적절하게 `'X'`, `'O'`, 또는 `null`을 반환하는 헬퍼 함수 `calculateWinner`를 추가 할 것입니다. `calculateWinner` 함수에 대해 너무 걱정하지 마세요. 이 함수는 React에만 국한되지 않으니까요:</Trans>
 
-```js App.js
+```js src/App.js
 export default function Board() {
   //...
 }
@@ -1765,7 +1765,7 @@ Congratulations! You now have a working tic-tac-toe game. And you've just learne
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({value, onSquareClick}) {
@@ -1845,7 +1845,7 @@ function calculateWinner(squares) {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -2070,7 +2070,7 @@ At this point, you've moved the state to live in the `Game` component, and the U
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -2168,7 +2168,7 @@ function calculateWinner(squares) {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -2275,12 +2275,20 @@ export default function Game() {
 }
 ```
 
-You can see what your code should look like below. Note that you should see an error in the developer tools console that says: ``Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `Game`.`` You'll fix this error in the next section.
-<Trans>아래에서 코드가 어떻게 표시되는지 확인할 수 있습니다. 개발자 도구 콘솔에 `Warning: 배열 또는 이터레이터의 각 자식에는 고유한 "key" prop이 있어야 합니다. `Game`의 렌더링 메서드를 확인하세요.` 라는 오류가 표시되어야 합니다. 다음 섹션에서 이 오류를 수정하겠습니다.</Trans>
+You can see what your code should look like below. Note that you should see an error in the developer tools console that says: 
+<Trans>아래에서 코드가 어떻게 표시되는지 확인할 수 있습니다. 개발자 도구 콘솔에서 다음과 같은 오류가 표시되어야 합니다:</Trans>
+
+<ConsoleBlock level="warning">
+Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
+<Trans>Warning: 배열 또는 이터레이터의 각 자식에는 고유한 "key" prop이 있어야 합니다. `Game`의 렌더링 메서드를 확인하세요.`</Trans>
+</ConsoleBlock>
+  
+You'll fix this error in the next section.
+<Trans>다음 섹션에서 이 오류를 수정하겠습니다.</Trans>
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -2396,7 +2404,7 @@ function calculateWinner(squares) {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -2475,7 +2483,7 @@ to
 <li>Alexa: 5 tasks left</li>
 ```
 
-In addition to the updated counts, a human reading this would probably say that you swapped Alexa and Ben's ordering and inserted Claudia between Alexa and Ben. However, React is a computer program and can't know what you intended, so you need to specify a _key_ property for each list item to differentiate each list item from its siblings. If your data was from a database, Alexa, Ben, and Claudia's database IDs could be used as keys.
+In addition to the updated counts, a human reading this would probably say that you swapped Alexa and Ben's ordering and inserted Claudia between Alexa and Ben. However, React is a computer program and does not know what you intended, so you need to specify a _key_ property for each list item to differentiate each list item from its siblings. If your data was from a database, Alexa, Ben, and Claudia's database IDs could be used as keys.
 <Trans>우리는 아마 task의 개수가 업데이트되었을 뿐만 아니라 Alexa와 Ben의 순서가 바뀌고 Claudia가 두 사람 사이에 추가되었다고 생각할 것입니다. 그러나 React는 컴퓨터 프로그램이므로 우리가 의도한 바가 무엇인지 알지 못합니다. 그렇기 때문에 우리는 리스트의 항목에 *key* 프로퍼티를 지정하여 각 리스트의 항목이 다른 항목들과 다르다는 것을 구별해 주어야 합니다. 만약 데이터베이스에서 데이터를 불러와서 사용한다면 Alexa, Ben, Claudia의 데이터베이스 ID를 key로 사용할 수 있습니다.</Trans>
 
 ```js {1}
@@ -2523,7 +2531,7 @@ const moves = history.map((squares, move) => {
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -2640,7 +2648,7 @@ function calculateWinner(squares) {
 
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -2754,7 +2762,7 @@ If you click on any step in the game's history, the tic-tac-toe board should imm
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({value, onSquareClick}) {
@@ -2874,7 +2882,7 @@ function calculateWinner(squares) {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }
@@ -2977,7 +2985,7 @@ Check out the final result here:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -3095,7 +3103,7 @@ function calculateWinner(squares) {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 * {
   box-sizing: border-box;
 }

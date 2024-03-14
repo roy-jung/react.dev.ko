@@ -350,6 +350,8 @@ Streaming does not need to wait for React itself to load in the browser, or for 
 - Lazy-loading component code with [`lazy`](/reference/react/lazy)
 <Trans>[`lazy`](/reference/react/lazy)를 사용한 지연 로딩 컴포넌트 코드</Trans>
 
+- Reading the value of a Promise with [`use`](/reference/react/use)
+
 Suspense **does not** detect when data is fetched inside an Effect or event handler.
 <Trans>Suspense는 Effect나 이벤트 핸들러 내부에서 페칭하는 경우를 감지하지 **않습니다.**</Trans>
 
@@ -511,8 +513,8 @@ function ProfilePage() {
 }
 ```
 
-If an error happens in the `Posts` component or somewhere inside it, React will [try to recover from it:](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content)
-<Trans>`Posts` 컴포넌트 또는 그 내부 어딘가에서 오류가 발생하면 React는 [이를 복구하려고 시도합니다:](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content)</Trans>
+If an error happens in the `Posts` component or somewhere inside it, React will [try to recover from it:](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-client-only-content)
+<Trans>`Posts` 컴포넌트 또는 그 내부 어딘가에서 오류가 발생하면 React는 [이를 복구하려고 시도합니다:](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-client-only-content)</Trans>
 
 1. It will emit the loading fallback for the closest `<Suspense>` boundary (`PostsGlimmer`) into the HTML.
 <Trans outdent>가장 가까운 `<Suspense>` 경계(`PostsGlimmer`)에 대한 로딩 폴백을 HTML에 방출합니다.</Trans>
