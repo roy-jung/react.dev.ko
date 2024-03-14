@@ -228,7 +228,7 @@ The markup syntax you've seen above is called *JSX*. It is optional, but most Re
 <Trans>위에서 본 마크업 구문을 *JSX*라고 합니다. 선택 사항이지만 대부분의 React 프로젝트는 편의성을 위해 JSX를 사용합니다. [로컬 개발을 위해 권장하는 모든 도구](/learn/installation)는 JSX를 기본적으로 지원합니다.</Trans>
 
 JSX is stricter than HTML. You have to close tags like `<br />`. Your component also can't return multiple JSX tags. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper:
-<Trans>JSX는 HTML보다 더 엄격합니다. `<br />`과 같은 태그를 닫아야 합니다. 또한 컴포넌트는 여러 개의 JSX 태그를 반환할 수 없습니다. `<div>...</div>` 또는 빈 `<>...</>` 래퍼와 같이 하나의 공유 부모로 감싸야 합니다:</Trans>
+<Trans>JSX는 HTML보다 더 엄격합니다. `<br />`과 같은 모습으로 태그를 닫아야 합니다. 또한 컴포넌트는 여러 개의 JSX 태그를 반환할 수 없습니다. `<div>...</div>` 또는 빈 `<>...</>` 래퍼와 같이 하나의 공유 부모로 감싸야 합니다:</Trans>
 
 ```js {3,6}
 function AboutPage() {
