@@ -3,6 +3,13 @@ title: "<progress>"
 translators: [이나령, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=64"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 The [built-in browser `<progress>` component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) lets you render a progress indicator.

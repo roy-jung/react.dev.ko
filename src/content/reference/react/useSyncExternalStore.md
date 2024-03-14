@@ -3,6 +3,13 @@ title: useSyncExternalStore
 translators: [정현수, 강민혜]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=51"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `useSyncExternalStore` is a React Hook that lets you subscribe to an external store.

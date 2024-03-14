@@ -3,6 +3,13 @@ title: renderToStaticNodeStream
 translators: [이승효, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=71&start=1167"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `renderToStaticNodeStream` renders a non-interactive React tree to a [Node.js Readable Stream.](https://nodejs.org/api/stream.html#readable-streams)

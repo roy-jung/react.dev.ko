@@ -3,6 +3,13 @@ title: useDeferredValue
 translators: [안예지, 정재남]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=48"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `useDeferredValue` is a React Hook that lets you defer updating a part of the UI.

@@ -4,6 +4,13 @@ translatedTitle: "기본 컴포넌트 (예: <div>)"
 translators: [고석영, 정재남]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=61"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 All built-in browser components, such as [`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div), support some common props and events.

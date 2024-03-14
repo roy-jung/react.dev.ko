@@ -3,6 +3,13 @@ title: createFactory
 translators: [정재남]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=928"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Deprecated>
 
 This API will be removed in a future major version of React. [See the alternatives.](#alternatives)

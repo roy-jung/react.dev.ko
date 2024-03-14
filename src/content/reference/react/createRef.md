@@ -3,6 +3,13 @@ title: createRef
 translators: [이지수, 안예지]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=1098"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Pitfall>
 
 `createRef` is mostly used for [class components.](/reference/react/Component) Function components typically rely on [`useRef`](/reference/react/useRef) instead.

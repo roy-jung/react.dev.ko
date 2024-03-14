@@ -213,7 +213,7 @@ Reactive values like these can change due to a re-render. For example, the user 
 
 <TransBlock>
 - **이벤트 핸들러 내부의 로직은 *반응형이 아닙니다*.** 사용자가 동일한 상호작용(예: 클릭)을 다시 수행하지 않는 한 다시 실행되지 않습니다. 이벤트 핸들러는 변경에 "반응"하지 않고 반응형 값을 읽을 수 있습니다.
-- **Effects 내부의 로직은 *반응형입니다*.** Effect에서 반응형 값을 읽는 경우 [의존성으로 지정해야 합니다.](https://react.dev/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values) 그런 다음 리렌더링으로 인해 해당 값이 변경되면 React는 새 값으로 Effect의 로직을 다시 실행합니다.
+- **Effects 내부의 로직은 *반응형입니다*.** Effect에서 반응형 값을 읽는 경우 [의존성으로 지정해야 합니다.](/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values) 그런 다음 리렌더링으로 인해 해당 값이 변경되면 React는 새 값으로 Effect의 로직을 다시 실행합니다.
 </TransBlock>
 
 Let's revisit the previous example to illustrate this difference.
@@ -804,7 +804,7 @@ After `useEffectEvent` becomes a stable part of React, we recommend **never supp
 <Trans>`useEffectEvent`가 React의 안정적인 API가 된 후에는 **Linter를 억제하지 않는 것이 좋습니다**.</Trans>
 
 The first downside of suppressing the rule is that React will no longer warn you when your Effect needs to "react" to a new reactive dependency you've introduced to your code. In the earlier example, you added `url` to the dependencies *because* React reminded you to do it. You will no longer get such reminders for any future edits to that Effect if you disable the linter. This leads to bugs.
-<Trans>이 규칙을 억제하는 첫 번째 단점은 코드에 도입한 새로운 반응형 의존성에 Efect가 "반응"해야 할 때 React가 더 이상 경고하지 않는다는 것입니다. 의 예제에서 `url`을 의존성에 추가한 이유는 React가 이를 상기시켜줬기 문입니다. Linter를 비활성화하면 해당 Effect를 이후에 수정할 때, 더 이상 이러한 경고를 받지 않게 됩니다. 이것은 버그로 이어집니다.</Trans>
+<Trans>이 규칙을 억제하는 첫 번째 단점은 코드에 도입한 새로운 반응형 의존성에 Efect가 "반응"해야 할 때 React가 더 이상 경고하지 않는다는 것입니다. 앞선 예제에서는 React가 알려줬기 *때문에* `url`을 의존성에 추가했습니다. Linter를 비활성화하면 해당 Effect를 이후에 수정할 때 더이상 이러한 경고를 받지 않게 됩니다. 이것은 버그로 이어질 수 있습니다.</Trans>
 
 Here is an example of a confusing bug caused by suppressing the linter. In this example, the `handleMove` function is supposed to read the current `canMove` state variable value in order to decide whether the dot should follow the cursor. However, `canMove` is always `true` inside `handleMove`.
 <Trans> 다음은 Linter를 억제하여 발생하는 혼란스러운 버그의 예입니다. 이 예제에서 `handleMove` 함수는 커서를 따라갈지 여부를 결정하기 위해 현재 `canMove` state 변수 값을 읽어야 합니다. 그러나 `canMove`는 `handleMove` 내부에서 항상 `true`입니다.</Trans>
@@ -956,7 +956,7 @@ This doesn't mean that `useEffectEvent` is *always* the correct solution. You sh
 <Trans>그렇다고 해서 `useEffectEvent`가 항상 올바른 해결책이라는 의미는 아닙니다. 반응하지 않으려는 코드 줄에만 적용해야 합니다. 위의 샌드박스에서는 `canMove`와 관련하여 Effect의 코드가 반응하는 것을 원하지 않았습니다. 그렇기 때문에 Effect Event를 추출하는 것이 합리적입니다.</Trans>
 
 Read [Removing Effect Dependencies](/learn/removing-effect-dependencies) for other correct alternatives to suppressing the linter.
-<Trans>Linter를 억제하는 다른 올바른 대안에 대해서는 [Effect 의존성 제거하기](https://react.dev/learn/removing-effect-dependencies)를 읽어보세요.</Trans>
+<Trans>Linter를 억제하는 다른 올바른 대안에 대해서는 [Effect 의존성 제거하기](/learn/removing-effect-dependencies)를 읽어보세요.</Trans>
 
 </DeepDive>
 

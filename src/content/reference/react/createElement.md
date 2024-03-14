@@ -3,6 +3,13 @@ title: createElement
 translators: [조성민, 이승효]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=1113"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `createElement` lets you create a React element. It serves as an alternative to writing [JSX.](/learn/writing-markup-with-jsx)

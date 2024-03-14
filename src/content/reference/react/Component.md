@@ -3,6 +3,13 @@ title: Component
 translators: [이지수, 안예지, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=27"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Pitfall>
 
 We recommend defining components as functions instead of classes. [See how to migrate.](#alternatives)

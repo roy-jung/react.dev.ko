@@ -3,6 +3,13 @@ title: PureComponent
 translators: [서민택]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=453"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Pitfall>
 
 We recommend defining components as functions instead of classes. [See how to migrate.](#alternatives)

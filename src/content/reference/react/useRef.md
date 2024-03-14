@@ -3,6 +3,13 @@ title: useRef
 translators: [전시윤, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=40"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `useRef` is a React Hook that lets you reference a value that's not needed for rendering.
@@ -73,7 +80,7 @@ On the next renders, `useRef` will return the same object.
 ### Referencing a value with a ref <Trans>ref로 값 참조하기</Trans> {/*referencing-a-value-with-a-ref*/}
 
 Call `useRef` at the top level of your component to declare one or more [refs.](/learn/referencing-values-with-refs)
-<Trans>컴포넌트의 최상위 레벨에서 `useRef`를 호출하여 하나 이상의 [ref](https://react.dev/learn/referencing-values-with-refs)를 선언합니다.</Trans>
+<Trans>컴포넌트의 최상위 레벨에서 `useRef`를 호출하여 하나 이상의 [ref](/learn/referencing-values-with-refs)를 선언합니다.</Trans>
 
 ```js [[1, 4, "intervalRef"], [3, 4, "0"]]
 import { useRef } from 'react';

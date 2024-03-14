@@ -5,7 +5,6 @@
 import * as React from 'react';
 import Head from 'next/head';
 import {withRouter, Router} from 'next/router';
-import {siteConfig} from '../siteConfig';
 
 export interface SeoProps {
   title: string;
@@ -20,9 +19,8 @@ export interface SeoProps {
 
 const deployedTranslations = ['en', 'ko'];
 
-function getDomain(languageCode: string): string {
-  const subdomain = languageCode === 'en' ? '' : languageCode + '.';
-  return subdomain + 'react.dev';
+function getDomain(): string {
+  return 'react-ko.dev';
 }
 
 export const Seo = withRouter(
@@ -35,7 +33,7 @@ export const Seo = withRouter(
     isHomePage,
     searchOrder,
   }: SeoProps & {router: Router}) => {
-    const siteDomain = getDomain(siteConfig.languageCode);
+    const siteDomain = getDomain();
     const canonicalUrl = `https://${siteDomain}${
       router.asPath.split(/[\?\#]/)[0]
     }`;
@@ -58,7 +56,7 @@ export const Seo = withRouter(
         <link rel="canonical" href={canonicalUrl} />
         <link
           rel="alternate"
-          href={canonicalUrl.replace(siteDomain, getDomain('en'))}
+          href={canonicalUrl.replace(siteDomain, getDomain())}
           hrefLang="x-default"
         />
         {deployedTranslations.map((languageCode) => (
@@ -66,7 +64,7 @@ export const Seo = withRouter(
             key={'alt-' + languageCode}
             rel="alternate"
             hrefLang={languageCode}
-            href={canonicalUrl.replace(siteDomain, getDomain(languageCode))}
+            href={canonicalUrl.replace(siteDomain, getDomain())}
           />
         ))}
         <meta property="fb:app_id" content="623268441017527" />

@@ -3,6 +3,13 @@ title: cloneElement
 translators: [이승효]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=72&start=775"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Pitfall>
 
 Using `cloneElement` is uncommon and can lead to fragile code. [See common alternatives.](#alternatives)

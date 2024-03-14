@@ -3,6 +3,13 @@ title: useReducer
 translators: [손한종, 정재남]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=38"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Intro>
 
 `useReducer` is a React Hook that lets you add a [reducer](/learn/extracting-state-logic-into-a-reducer) to your component.

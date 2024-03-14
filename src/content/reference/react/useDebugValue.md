@@ -3,6 +3,14 @@ title: useDebugValue
 translators: [고석영, 이지수]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=49"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
+
 <Intro>
 
 `useDebugValue` is a React Hook that lets you add a label to a custom Hook in [React DevTools.](/learn/react-developer-tools)

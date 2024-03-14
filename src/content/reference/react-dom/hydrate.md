@@ -3,6 +3,13 @@ title: hydrate
 translators: [박문하, 고석영]
 ---
 
+<iframe 
+  style={{aspectRatio: 1.7778, width: '100%'}} 
+  src="https://www.youtube.com/embed/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v&index=69&start=794"
+  title="YouTube video player" 
+  frameBorder="0" 
+/>
+
 <Deprecated>
 
 This API will be removed in a future major version of React.
@@ -91,7 +98,7 @@ hydrate(<App />, document.getElementById('root'));
 ```
 
 Using `hydrate()` to render a client-only app (an app without server-rendered HTML) is not supported. Use [`render()`](/reference/react-dom/render) (in React 17 and below) or [`createRoot()`](/reference/react-dom/client/createRoot) (in React 18+) instead.
-<Trans>클라이언트 전용 앱(서버 렌더링 HTML이 없는 앱)을 렌더링하는 데 `hydrate()`를 사용하는 것은 지원되지 않습니다. 대신 [`render()`](https://react.dev/reference/react-dom/render) (React 17 이하 버전) 또는 [`createRoot()`](https://react.dev/reference/react-dom/client/createRoot) (React 18 이상 버전)를 사용하세요.</Trans>
+<Trans>클라이언트 전용 앱(서버 렌더링 HTML이 없는 앱)을 렌더링하는 데 `hydrate()`를 사용하는 것은 지원되지 않습니다. 대신 [`render()`](/reference/react-dom/render) (React 17 이하 버전) 또는 [`createRoot()`](/reference/react-dom/client/createRoot) (React 18 이상 버전)를 사용하세요.</Trans>
 
 ### Hydrating server-rendered HTML <Trans>서버에서 렌더링된 HTML hydrate하기</Trans> {/*hydrating-server-rendered-html*/}
 

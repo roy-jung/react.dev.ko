@@ -477,7 +477,7 @@ However, props are [immutable](https://en.wikipedia.org/wiki/Immutable_object)�
   - Props를 읽으려면 `function Avatar({ person, size })` 구조 분해 구문을 사용합니다.
   - `size = 100` 과 같은 기본값을 지정할 수 있으며, 이는 누락되거나 `undefined` 인 props에 사용됩니다.
   - 모든 props를 `<Avatar {...props} />` JSX 전개 구문을 사용할 수 있지만, 과도하게 사용하지 마세요.
-  - `<Card><Avatar /></Card>`와 같이 중첩된 JSX는 `Card`컴포넌트의 자식 컴포넌트로 표시됩니다.
+  - `<Card><Avatar /></Card>`와 같이 중첩된 JSX는 `Card`컴포넌트의 `children` prop로 표시됩니다.
   - Props는 읽기 전용 스냅샷으로, 렌더링할 때마다 새로운 버전의 props를 받습니다.
   - Props는 변경할 수 없습니다. 상호작용이 필요한 경우 state를 설정해야 합니다.
 </TransBlock>
