@@ -29,7 +29,6 @@ interface TeamMemberProps {
 // TODO: good alt text for images/links
 export function TeamMember({
   name,
-  id,
   title,
   children,
   photo,
