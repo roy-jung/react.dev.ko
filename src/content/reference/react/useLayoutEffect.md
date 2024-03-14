@@ -78,7 +78,7 @@ function Tooltip() {
 <Trans>의존성 중 일부가 컴포넌트 내부에 정의된 객체 또는 함수인 경우, **Effect가 필요 이상으로 자주 다시 실행될 위험이 있습니다.** 이 문제를 해결하려면 불필요한 [객체](/reference/react/useEffect#removing-unnecessary-object-dependencies) 및 [함수](/reference/react/useEffect#removing-unnecessary-function-dependencies) 의존성을 제거하세요. 또한 Effect 외부에서 [state 업데이트](/reference/react/useEffect#updating-state-based-on-previous-state-from-an-effect)와 [비반응형 로직](/reference/react/useEffect#reading-the-latest-props-and-state-from-an-effect)을 추출할 수도 있습니다.</Trans>
 
 * Effects **only run on the client.** They don't run during server rendering.
-<Trans>LayoutEffect는 **클라이언트에서만 실행됩니다.** 서버 렌더링 중에는 실행되지 않습니다.</Trans>
+<Trans>Effects는 **클라이언트에서만 실행됩니다.** 서버 렌더링 중에는 실행되지 않습니다.</Trans>
 
 * The code inside `useLayoutEffect` and all state updates scheduled from it **block the browser from repainting the screen.** When used excessively, this makes your app slow. When possible, prefer [`useEffect`.](/reference/react/useEffect)
 <Trans>`useLayoutEffect` 내부의 코드와 여기에서 예약된 모든 state 업데이트는 **브라우저가 화면을 다시 그리는 것을 차단합니다.** 과도하게 사용하면 앱이 느려집니다. 가급적이면 [`useEffect`](/reference/react/useEffect)를 사용하세요.</Trans>

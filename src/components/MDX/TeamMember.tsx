@@ -29,7 +29,6 @@ interface TeamMemberProps {
 // TODO: good alt text for images/links
 export function TeamMember({
   name,
-  id,
   title,
   children,
   photo,
@@ -58,7 +57,7 @@ export function TeamMember({
           <Image src={photo} layout="fill" objectFit="cover" alt={name} />
         </div>
         <div className="ps-0 sm:ps-6 basis-3/5 items-start">
-          <H3 className="mb-1 sm:my-0" id={id}>
+          <H3 className="mb-1 sm:my-0" id={name}>
             {name}
           </H3>
           {title && <div>{title}</div>}
