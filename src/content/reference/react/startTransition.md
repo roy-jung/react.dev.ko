@@ -45,9 +45,9 @@ function TabContainer() {
 
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
-* `scope`: A function that updates some state by calling one or more [`set` functions.](/reference/react/useState#setstate) React immediately calls `scope` with no parameters and marks all state updates scheduled synchronously during the `scope` function call as transitions. They will be [non-blocking](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](/reference/react/useTransition#preventing-unwanted-loading-indicators)
+* `scope`: A function that updates some state by calling one or more [`set` functions.](/reference/react/useState#setstate) React immediately calls `scope` with no arguments and marks all state updates scheduled synchronously during the `scope` function call as transitions. They will be [non-blocking](/reference/react/useTransition#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](/reference/react/useTransition#preventing-unwanted-loading-indicators)
 (#marking-a-state-update-as-a-non-blocking-transition) and [will not display unwanted loading indicators.](#preventing-unwanted-loading-indicators)
-<Trans outdent>`scope`: 하나 이상의 [`set` 함수를 호출하여 일부 state를 업데이트하는 함수.](/reference/react/useState#setstate) React는 매개변수 없이 `scope`를 즉시 호출하고 `scope` 함수 호출 중에 동기적으로 예약된 모든 state 업데이트를 트랜지션으로 표시합니다. 이는 [논블로킹](#marking-a-state-update-as-non-blocking-transition)이고, [원치 않는 로딩을 표시하지 않을 것입니다.](#preventing-unwanted-loading-indicators)</Trans>
+<Trans outdent>`scope`: 하나 이상의 [`set` 함수를 호출하여 일부 state를 업데이트하는 함수.](/reference/react/useState#setstate) React는 인자 없이 `scope`를 즉시 호출하고 `scope` 함수 호출 중에 동기적으로 예약된 모든 state 업데이트를 트랜지션으로 표시합니다. 이는 [논블로킹](#marking-a-state-update-as-non-blocking-transition)이고, [원치 않는 로딩을 표시하지 않을 것입니다.](#preventing-unwanted-loading-indicators)</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*returns*/}
 

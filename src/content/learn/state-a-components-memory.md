@@ -76,7 +76,7 @@ export default function Gallery() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const sculptureList = [{
   name: 'Homenaje a la Neurocirugía',
   artist: 'Marta Colvin Andrade',
@@ -281,7 +281,7 @@ export default function Gallery() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const sculptureList = [{
   name: 'Homenaje a la Neurocirugía',
   artist: 'Marta Colvin Andrade',
@@ -493,7 +493,7 @@ export default function Gallery() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const sculptureList = [{
   name: 'Homenaje a la Neurocirugía',
   artist: 'Marta Colvin Andrade',
@@ -607,7 +607,7 @@ This example **doesn't use React** but it gives you an idea of how `useState` wo
 
 <Sandpack>
 
-```js index.js active
+```js src/index.js active
 let componentHooks = [];
 let currentHookIndex = 0;
 
@@ -824,7 +824,7 @@ export default function Page() {
 
 ```
 
-```js Gallery.js
+```js src/Gallery.js
 import { useState } from 'react';
 import { sculptureList } from './data.js';
 
@@ -866,7 +866,7 @@ export default function Gallery() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const sculptureList = [{
   name: 'Homenaje a la Neurocirugía',
   artist: 'Marta Colvin Andrade',
@@ -1050,7 +1050,7 @@ export default function Gallery() {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const sculptureList = [{
   name: 'Homenaje a la Neurocirugía',
   artist: 'Marta Colvin Andrade',
@@ -1213,7 +1213,7 @@ export default function Gallery() {
 }
 ```
 
-```js data.js hidden
+```js src/data.js hidden
 export const sculptureList = [{
   name: 'Homenaje a la Neurocirugía',
   artist: 'Marta Colvin Andrade',
@@ -1590,8 +1590,6 @@ Here is a fixed version that uses a regular `name` variable declared in the func
 <Sandpack>
 
 ```js
-import { useState } from 'react';
-
 export default function FeedbackForm() {
   function handleClick() {
     const name = prompt('What is your name?');

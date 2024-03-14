@@ -608,9 +608,6 @@ button { margin-top: 10px; }
 
 </Sandpack>
 
-(Alternatively, you may hold the selected index in state.)
-<Trans>또는 선택한 인덱스를 state로 유지할 수도 있습니다.</Trans>
-
 The state used to be duplicated like this:
 <Trans>이전에는 state가 이렇게 복제되었습니다:</Trans>
 
@@ -672,7 +669,7 @@ export default function TravelPlan() {
 }
 ```
 
-```js places.js active
+```js src/places.js active
 export const initialTravelPlan = {
   id: 0,
   title: '(Root)',
@@ -756,119 +753,115 @@ export const initialTravelPlan = {
         childPlaces: []
       }, {
         id: 21,
-        title: 'Hong Kong',
-        childPlaces: []
-      }, {
-        id: 22,
         title: 'India',
         childPlaces: []
       }, {
-        id: 23,
+        id: 22,
         title: 'Singapore',
         childPlaces: []
       }, {
-        id: 24,
+        id: 23,
         title: 'South Korea',
         childPlaces: []
       }, {
-        id: 25,
+        id: 24,
         title: 'Thailand',
         childPlaces: []
       }, {
-        id: 26,
+        id: 25,
         title: 'Vietnam',
         childPlaces: []
       }]
     }, {
-      id: 27,
+      id: 26,
       title: 'Europe',
       childPlaces: [{
-        id: 28,
+        id: 27,
         title: 'Croatia',
         childPlaces: [],
       }, {
-        id: 29,
+        id: 28,
         title: 'France',
         childPlaces: [],
       }, {
-        id: 30,
+        id: 29,
         title: 'Germany',
         childPlaces: [],
       }, {
-        id: 31,
+        id: 30,
         title: 'Italy',
         childPlaces: [],
       }, {
-        id: 32,
+        id: 31,
         title: 'Portugal',
         childPlaces: [],
       }, {
-        id: 33,
+        id: 32,
         title: 'Spain',
         childPlaces: [],
       }, {
-        id: 34,
+        id: 33,
         title: 'Turkey',
         childPlaces: [],
       }]
     }, {
-      id: 35,
+      id: 34,
       title: 'Oceania',
       childPlaces: [{
-        id: 36,
+        id: 35,
         title: 'Australia',
         childPlaces: [],
       }, {
-        id: 37,
+        id: 36,
         title: 'Bora Bora (French Polynesia)',
         childPlaces: [],
       }, {
-        id: 38,
+        id: 37,
         title: 'Easter Island (Chile)',
         childPlaces: [],
       }, {
-        id: 39,
+        id: 38,
         title: 'Fiji',
         childPlaces: [],
       }, {
-        id: 40,
+        id: 39,
         title: 'Hawaii (the USA)',
         childPlaces: [],
       }, {
-        id: 41,
+        id: 40,
         title: 'New Zealand',
         childPlaces: [],
       }, {
-        id: 42,
+        id: 41,
         title: 'Vanuatu',
         childPlaces: [],
       }]
     }]
   }, {
-    id: 43,
+    id: 42,
     title: 'Moon',
     childPlaces: [{
-      id: 44,
+      id: 43,
       title: 'Rheita',
       childPlaces: []
     }, {
-      id: 45,
+      id: 44,
       title: 'Piccolomini',
       childPlaces: []
     }, {
-      id: 46,
+      id: 45,
       title: 'Tycho',
       childPlaces: []
     }]
   }, {
-    id: 47,
+    id: 46,
     title: 'Mars',
     childPlaces: [{
-      id: 48,
+      id: 47,
       title: 'Corn Town',
       childPlaces: []
     }, {
-      id: 49,
+      id: 48,
       title: 'Green Hill',
       childPlaces: []      
     }]
@@ -935,17 +928,17 @@ export default function TravelPlan() {
 }
 ```
 
-```js places.js active
+```js src/places.js active
 export const initialTravelPlan = {
   0: {
     id: 0,
     title: '(Root)',
-    childIds: [1, 43, 47],
+    childIds: [1, 42, 46],
   },
   1: {
     id: 1,
     title: 'Earth',
-    childIds: [2, 10, 19, 27, 35]
+    childIds: [2, 10, 19, 26, 34]
   },
   2: {
     id: 2,
@@ -1035,7 +1028,7 @@ export const initialTravelPlan = {
   19: {
     id: 19,
     title: 'Asia',
-    childIds: [20, 21, 22, 23, 24, 25, 26],   
+    childIds: [20, 21, 22, 23, 24, 25],   
   },
   20: {
     id: 20,
@@ -1044,146 +1037,141 @@ export const initialTravelPlan = {
   },
   21: {
     id: 21,
-    title: 'Hong Kong',
+    title: 'India',
     childIds: []
   },
   22: {
     id: 22,
-    title: 'India',
+    title: 'Singapore',
     childIds: []
   },
   23: {
     id: 23,
-    title: 'Singapore',
+    title: 'South Korea',
     childIds: []
   },
   24: {
     id: 24,
-    title: 'South Korea',
+    title: 'Thailand',
     childIds: []
   },
   25: {
     id: 25,
-    title: 'Thailand',
+    title: 'Vietnam',
     childIds: []
   },
   26: {
     id: 26,
-    title: 'Vietnam',
-    childIds: []
+    title: 'Europe',
+    childIds: [27, 28, 29, 30, 31, 32, 33],   
   },
   27: {
     id: 27,
-    title: 'Europe',
-    childIds: [28, 29, 30, 31, 32, 33, 34],   
+    title: 'Croatia',
+    childIds: []
   },
   28: {
     id: 28,
-    title: 'Croatia',
+    title: 'France',
     childIds: []
   },
   29: {
     id: 29,
-    title: 'France',
+    title: 'Germany',
     childIds: []
   },
   30: {
     id: 30,
-    title: 'Germany',
+    title: 'Italy',
     childIds: []
   },
   31: {
     id: 31,
-    title: 'Italy',
+    title: 'Portugal',
     childIds: []
   },
   32: {
     id: 32,
-    title: 'Portugal',
+    title: 'Spain',
     childIds: []
   },
   33: {
     id: 33,
-    title: 'Spain',
+    title: 'Turkey',
     childIds: []
   },
   34: {
     id: 34,
-    title: 'Turkey',
-    childIds: []
+    title: 'Oceania',
+    childIds: [35, 36, 37, 38, 39, 40, 41],   
   },
   35: {
     id: 35,
-    title: 'Oceania',
-    childIds: [36, 37, 38, 39, 40, 41, 42],   
+    title: 'Australia',
+    childIds: []
   },
   36: {
     id: 36,
-    title: 'Australia',
+    title: 'Bora Bora (French Polynesia)',
     childIds: []
   },
   37: {
     id: 37,
-    title: 'Bora Bora (French Polynesia)',
+    title: 'Easter Island (Chile)',
     childIds: []
   },
   38: {
     id: 38,
-    title: 'Easter Island (Chile)',
-    childIds: []
-  },
-  39: {
-    id: 39,
     title: 'Fiji',
     childIds: []
   },
-  40: {
+  39: {
     id: 40,
     title: 'Hawaii (the USA)',
     childIds: []
   },
+  40: {
+    id: 40,
+    title: 'New Zealand',
+    childIds: []
+  },
   41: {
     id: 41,
-    title: 'New Zealand',
+    title: 'Vanuatu',
     childIds: []
   },
   42: {
     id: 42,
-    title: 'Vanuatu',
-    childIds: []
+    title: 'Moon',
+    childIds: [43, 44, 45]
   },
   43: {
     id: 43,
-    title: 'Moon',
-    childIds: [44, 45, 46]
+    title: 'Rheita',
+    childIds: []
   },
   44: {
     id: 44,
-    title: 'Rheita',
+    title: 'Piccolomini',
     childIds: []
   },
   45: {
     id: 45,
-    title: 'Piccolomini',
+    title: 'Tycho',
     childIds: []
   },
   46: {
     id: 46,
-    title: 'Tycho',
-    childIds: []
+    title: 'Mars',
+    childIds: [47, 48]
   },
   47: {
     id: 47,
-    title: 'Mars',
-    childIds: [48, 49]
-  },
-  48: {
-    id: 48,
     title: 'Corn Town',
     childIds: []
   },
-  49: {
-    id: 49,
+  48: {
+    id: 48,
     title: 'Green Hill',
     childIds: []
   }
@@ -1283,17 +1271,17 @@ function PlaceTree({ id, parentId, placesById, onComplete }) {
 }
 ```
 
-```js places.js
+```js src/places.js
 export const initialTravelPlan = {
   0: {
     id: 0,
     title: '(Root)',
-    childIds: [1, 43, 47],
+    childIds: [1, 42, 46],
   },
   1: {
     id: 1,
     title: 'Earth',
-    childIds: [2, 10, 19, 27, 35]
+    childIds: [2, 10, 19, 26, 34]
   },
   2: {
     id: 2,
@@ -1383,7 +1371,7 @@ export const initialTravelPlan = {
   19: {
     id: 19,
     title: 'Asia',
-    childIds: [20, 21, 22, 23, 24, 25, 26],   
+    childIds: [20, 21, 22, 23, 24, 25],   
   },
   20: {
     id: 20,
@@ -1392,146 +1380,141 @@ export const initialTravelPlan = {
   },
   21: {
     id: 21,
-    title: 'Hong Kong',
+    title: 'India',
     childIds: []
   },
   22: {
     id: 22,
-    title: 'India',
+    title: 'Singapore',
     childIds: []
   },
   23: {
     id: 23,
-    title: 'Singapore',
+    title: 'South Korea',
     childIds: []
   },
   24: {
     id: 24,
-    title: 'South Korea',
+    title: 'Thailand',
     childIds: []
   },
   25: {
     id: 25,
-    title: 'Thailand',
+    title: 'Vietnam',
     childIds: []
   },
   26: {
     id: 26,
-    title: 'Vietnam',
-    childIds: []
+    title: 'Europe',
+    childIds: [27, 28, 29, 30, 31, 32, 33],   
   },
   27: {
     id: 27,
-    title: 'Europe',
-    childIds: [28, 29, 30, 31, 32, 33, 34],   
+    title: 'Croatia',
+    childIds: []
   },
   28: {
     id: 28,
-    title: 'Croatia',
+    title: 'France',
     childIds: []
   },
   29: {
     id: 29,
-    title: 'France',
+    title: 'Germany',
     childIds: []
   },
   30: {
     id: 30,
-    title: 'Germany',
+    title: 'Italy',
     childIds: []
   },
   31: {
     id: 31,
-    title: 'Italy',
+    title: 'Portugal',
     childIds: []
   },
   32: {
     id: 32,
-    title: 'Portugal',
+    title: 'Spain',
     childIds: []
   },
   33: {
     id: 33,
-    title: 'Spain',
+    title: 'Turkey',
     childIds: []
   },
   34: {
     id: 34,
-    title: 'Turkey',
-    childIds: []
+    title: 'Oceania',
+    childIds: [35, 36, 37, 38, 39, 40, 41],   
   },
   35: {
     id: 35,
-    title: 'Oceania',
-    childIds: [36, 37, 38, 39, 40, 41,, 42],   
+    title: 'Australia',
+    childIds: []
   },
   36: {
     id: 36,
-    title: 'Australia',
+    title: 'Bora Bora (French Polynesia)',
     childIds: []
   },
   37: {
     id: 37,
-    title: 'Bora Bora (French Polynesia)',
+    title: 'Easter Island (Chile)',
     childIds: []
   },
   38: {
     id: 38,
-    title: 'Easter Island (Chile)',
+    title: 'Fiji',
     childIds: []
   },
   39: {
     id: 39,
-    title: 'Fiji',
+    title: 'Hawaii (the USA)',
     childIds: []
   },
   40: {
     id: 40,
-    title: 'Hawaii (the USA)',
+    title: 'New Zealand',
     childIds: []
   },
   41: {
     id: 41,
-    title: 'New Zealand',
+    title: 'Vanuatu',
     childIds: []
   },
   42: {
     id: 42,
-    title: 'Vanuatu',
-    childIds: []
+    title: 'Moon',
+    childIds: [43, 44, 45]
   },
   43: {
     id: 43,
-    title: 'Moon',
-    childIds: [44, 45, 46]
+    title: 'Rheita',
+    childIds: []
   },
   44: {
     id: 44,
-    title: 'Rheita',
+    title: 'Piccolomini',
     childIds: []
   },
   45: {
     id: 45,
-    title: 'Piccolomini',
+    title: 'Tycho',
     childIds: []
   },
   46: {
     id: 46,
-    title: 'Tycho',
-    childIds: []
+    title: 'Mars',
+    childIds: [47, 48]
   },
   47: {
     id: 47,
-    title: 'Mars',
-    childIds: [48, 49]
-  },
-  48: {
-    id: 48,
     title: 'Corn Town',
     childIds: []
   },
-  49: {
-    id: 49,
+  48: {
+    id: 48,
     title: 'Green Hill',
     childIds: []
   }
@@ -1629,17 +1612,17 @@ function PlaceTree({ id, parentId, placesById, onComplete }) {
 }
 ```
 
-```js places.js
+```js src/places.js
 export const initialTravelPlan = {
   0: {
     id: 0,
     title: '(Root)',
-    childIds: [1, 43, 47],
+    childIds: [1, 42, 46],
   },
   1: {
     id: 1,
     title: 'Earth',
-    childIds: [2, 10, 19, 27, 35]
+    childIds: [2, 10, 19, 26, 34]
   },
   2: {
     id: 2,
@@ -1729,7 +1712,7 @@ export const initialTravelPlan = {
   19: {
     id: 19,
     title: 'Asia',
-    childIds: [20, 21, 22, 23, 24, 25, 26],   
+    childIds: [20, 21, 22, 23, 24, 25,],   
   },
   20: {
     id: 20,
@@ -1738,146 +1721,141 @@ export const initialTravelPlan = {
   },
   21: {
     id: 21,
-    title: 'Hong Kong',
+    title: 'India',
     childIds: []
   },
   22: {
     id: 22,
-    title: 'India',
+    title: 'Singapore',
     childIds: []
   },
   23: {
     id: 23,
-    title: 'Singapore',
+    title: 'South Korea',
     childIds: []
   },
   24: {
     id: 24,
-    title: 'South Korea',
+    title: 'Thailand',
     childIds: []
   },
   25: {
     id: 25,
-    title: 'Thailand',
+    title: 'Vietnam',
     childIds: []
   },
   26: {
     id: 26,
-    title: 'Vietnam',
-    childIds: []
+    title: 'Europe',
+    childIds: [27, 28, 29, 30, 31, 32, 33],   
   },
   27: {
     id: 27,
-    title: 'Europe',
-    childIds: [28, 29, 30, 31, 32, 33, 34],   
+    title: 'Croatia',
+    childIds: []
   },
   28: {
     id: 28,
-    title: 'Croatia',
+    title: 'France',
     childIds: []
   },
   29: {
     id: 29,
-    title: 'France',
+    title: 'Germany',
     childIds: []
   },
   30: {
     id: 30,
-    title: 'Germany',
+    title: 'Italy',
     childIds: []
   },
   31: {
     id: 31,
-    title: 'Italy',
+    title: 'Portugal',
     childIds: []
   },
   32: {
     id: 32,
-    title: 'Portugal',
+    title: 'Spain',
     childIds: []
   },
   33: {
     id: 33,
-    title: 'Spain',
+    title: 'Turkey',
     childIds: []
   },
   34: {
     id: 34,
-    title: 'Turkey',
-    childIds: []
+    title: 'Oceania',
+    childIds: [35, 36, 37, 38, 39, 40,, 41],   
   },
   35: {
     id: 35,
-    title: 'Oceania',
-    childIds: [36, 37, 38, 39, 40, 41,, 42],   
+    title: 'Australia',
+    childIds: []
   },
   36: {
     id: 36,
-    title: 'Australia',
+    title: 'Bora Bora (French Polynesia)',
     childIds: []
   },
   37: {
     id: 37,
-    title: 'Bora Bora (French Polynesia)',
+    title: 'Easter Island (Chile)',
     childIds: []
   },
   38: {
     id: 38,
-    title: 'Easter Island (Chile)',
+    title: 'Fiji',
     childIds: []
   },
   39: {
     id: 39,
-    title: 'Fiji',
+    title: 'Hawaii (the USA)',
     childIds: []
   },
   40: {
     id: 40,
-    title: 'Hawaii (the USA)',
+    title: 'New Zealand',
     childIds: []
   },
   41: {
     id: 41,
-    title: 'New Zealand',
+    title: 'Vanuatu',
     childIds: []
   },
   42: {
     id: 42,
-    title: 'Vanuatu',
-    childIds: []
+    title: 'Moon',
+    childIds: [43, 44, 45]
   },
   43: {
     id: 43,
-    title: 'Moon',
-    childIds: [44, 45, 46]
+    title: 'Rheita',
+    childIds: []
   },
   44: {
     id: 44,
-    title: 'Rheita',
+    title: 'Piccolomini',
     childIds: []
   },
   45: {
     id: 45,
-    title: 'Piccolomini',
+    title: 'Tycho',
     childIds: []
   },
   46: {
     id: 46,
-    title: 'Tycho',
-    childIds: []
+    title: 'Mars',
+    childIds: [47, 48]
   },
   47: {
     id: 47,
-    title: 'Mars',
-    childIds: [48, 49]
-  },
-  48: {
-    id: 48,
     title: 'Corn Town',
     childIds: []
   },
-  49: {
-    id: 49,
+  48: {
+    id: 48,
     title: 'Green Hill',
     childIds: []
   }
@@ -1944,7 +1922,7 @@ This `Clock` component receives two props: `color` and `time`. When you select a
 
 <Sandpack>
 
-```js Clock.js active
+```js src/Clock.js active
 import { useState } from 'react';
 
 export default function Clock(props) {
@@ -1957,7 +1935,7 @@ export default function Clock(props) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState, useEffect } from 'react';
 import Clock from './Clock.js';
 
@@ -2000,7 +1978,7 @@ The issue is that this component has `color` state initialized with the initial 
 
 <Sandpack>
 
-```js Clock.js active
+```js src/Clock.js active
 import { useState } from 'react';
 
 export default function Clock(props) {
@@ -2012,7 +1990,7 @@ export default function Clock(props) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState, useEffect } from 'react';
 import Clock from './Clock.js';
 
@@ -2053,7 +2031,7 @@ Or, using the destructuring syntax:
 
 <Sandpack>
 
-```js Clock.js active
+```js src/Clock.js active
 import { useState } from 'react';
 
 export default function Clock({ color, time }) {
@@ -2065,7 +2043,7 @@ export default function Clock({ color, time }) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState, useEffect } from 'react';
 import Clock from './Clock.js';
 
@@ -2117,7 +2095,7 @@ Is any state in this example redundant?
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import AddItem from './AddItem.js';
 import PackingList from './PackingList.js';
@@ -2185,7 +2163,7 @@ export default function TravelPlan() {
 }
 ```
 
-```js AddItem.js hidden
+```js src/AddItem.js hidden
 import { useState } from 'react';
 
 export default function AddItem({ onAddItem }) {
@@ -2206,7 +2184,7 @@ export default function AddItem({ onAddItem }) {
 }
 ```
 
-```js PackingList.js hidden
+```js src/PackingList.js hidden
 import { useState } from 'react';
 
 export default function PackingList({
@@ -2257,7 +2235,7 @@ Although you could carefully change each event handler to update the `total` and
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import AddItem from './AddItem.js';
 import PackingList from './PackingList.js';
@@ -2321,7 +2299,7 @@ export default function TravelPlan() {
 }
 ```
 
-```js AddItem.js hidden
+```js src/AddItem.js hidden
 import { useState } from 'react';
 
 export default function AddItem({ onAddItem }) {
@@ -2342,7 +2320,7 @@ export default function AddItem({ onAddItem }) {
 }
 ```
 
-```js PackingList.js hidden
+```js src/PackingList.js hidden
 import { useState } from 'react';
 
 export default function PackingList({
@@ -2401,7 +2379,7 @@ This code works, but there is a minor UI glitch. When you press "Star" or "Unsta
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { initialLetters } from './data.js';
 import Letter from './Letter.js';
@@ -2448,7 +2426,7 @@ export default function MailClient() {
 }
 ```
 
-```js Letter.js
+```js src/Letter.js
 export default function Letter({
   letter,
   isHighlighted,
@@ -2478,7 +2456,7 @@ export default function Letter({
 }
 ```
 
-```js data.js
+```js src/data.js
 export const initialLetters = [{
   id: 0,
   subject: 'Ready for adventure?',
@@ -2512,7 +2490,7 @@ To fix the issue, remove the duplication from state. Instead of storing *the let
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { initialLetters } from './data.js';
 import Letter from './Letter.js';
@@ -2559,7 +2537,7 @@ export default function MailClient() {
 }
 ```
 
-```js Letter.js
+```js src/Letter.js
 export default function Letter({
   letter,
   isHighlighted,
@@ -2589,7 +2567,7 @@ export default function Letter({
 }
 ```
 
-```js data.js
+```js src/data.js
 export const initialLetters = [{
   id: 0,
   subject: 'Ready for adventure?',
@@ -2632,7 +2610,7 @@ Instead of a single selected ID, you might want to hold an array or a [Set](http
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { letters } from './data.js';
 import Letter from './Letter.js';
@@ -2675,7 +2653,7 @@ export default function MailClient() {
 }
 ```
 
-```js Letter.js
+```js src/Letter.js
 export default function Letter({
   letter,
   onToggle,
@@ -2700,7 +2678,7 @@ export default function Letter({
 }
 ```
 
-```js data.js
+```js src/data.js
 export const letters = [{
   id: 0,
   subject: 'Ready for adventure?',
@@ -2732,7 +2710,7 @@ Instead of a single `selectedId`, keep a `selectedIds` *array* in state. For exa
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { letters } from './data.js';
 import Letter from './Letter.js';
@@ -2784,7 +2762,7 @@ export default function MailClient() {
 }
 ```
 
-```js Letter.js
+```js src/Letter.js
 export default function Letter({
   letter,
   onToggle,
@@ -2809,7 +2787,7 @@ export default function Letter({
 }
 ```
 
-```js data.js
+```js src/data.js
 export const letters = [{
   id: 0,
   subject: 'Ready for adventure?',
@@ -2842,7 +2820,7 @@ To fix this, you can hold a [Set](https://developer.mozilla.org/en-US/docs/Web/J
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { letters } from './data.js';
 import Letter from './Letter.js';
@@ -2891,7 +2869,7 @@ export default function MailClient() {
 }
 ```
 
-```js Letter.js
+```js src/Letter.js
 export default function Letter({
   letter,
   onToggle,
@@ -2916,7 +2894,7 @@ export default function Letter({
 }
 ```
 
-```js data.js
+```js src/data.js
 export const letters = [{
   id: 0,
   subject: 'Ready for adventure?',

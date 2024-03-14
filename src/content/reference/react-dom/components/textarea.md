@@ -56,29 +56,29 @@ If your `<textarea>` is uncontrolled, you may pass the `defaultValue` prop inste
 These `<textarea>` props are relevant both for uncontrolled and controlled text areas:
 <Trans>다음 `<textarea>` prop들은 비제어 및 제어 컴포넌트 모두에 영향을 미칩니다:</Trans>
 
-* [`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-autocomplete): Either `'on'` or `'off'`. Specifies the autocomplete behavior.
-<Trans>[`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-autocomplete): `'on'` 혹은 `'off'`. 자동 완성 동작을 지정합니다.</Trans>
+* [`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#autocomplete): Either `'on'` or `'off'`. Specifies the autocomplete behavior.
+<Trans>[`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#autocomplete): `'on'` 혹은 `'off'`. 자동 완성 동작을 지정합니다.</Trans>
 
-* [`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-autofocus): A boolean. If `true`, React will focus the element on mount.
-<Trans>[`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-autofocus): 불리언. `true`일 경우 마운트시 엘리먼트에 초점이 맞춰집니다.</Trans>
+* [`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#autofocus): A boolean. If `true`, React will focus the element on mount.
+<Trans>[`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#autofocus): 불리언. `true`일 경우 마운트시 엘리먼트에 초점이 맞춰집니다.</Trans>
 
 * `children`: `<textarea>` does not accept children. To set the initial value, use `defaultValue`.
 <Trans>`children`: `<textarea>`는 자식 요소를 받지 않습니다. 초기값을 지정하기 위해서는 `defaultValue`를 사용하세요.</Trans>
 
-* [`cols`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-cols): A number. Specifies the default width in average character widths. Defaults to `20`.
-<Trans>[`cols`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-cols): 숫자. 표준 문자 너비를 기준으로 기본 칸 수를 지정합니다. 기본 값은 `20`입니다.</Trans>
+* [`cols`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#cols): A number. Specifies the default width in average character widths. Defaults to `20`.
+<Trans>[`cols`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#cols): 숫자. 표준 문자 너비를 기준으로 기본 칸 수를 지정합니다. 기본 값은 `20`입니다.</Trans>
 
-* [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-disabled): A boolean. If `true`, the input will not be interactive and will appear dimmed.
-<Trans>[`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-disabled): 불리언. `true`일 경우, 입력이 비활성화되고 흐릿하게 표시됩니다.</Trans>
+* [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#disabled): A boolean. If `true`, the input will not be interactive and will appear dimmed.
+<Trans>[`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#disabled): 불리언. `true`일 경우, 입력이 비활성화되고 흐릿하게 표시됩니다.</Trans>
 
-* [`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-form): A string. Specifies the `id` of the `<form>` this input belongs to. If omitted, it's the closest parent form.
-<Trans>[`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-form): 문자열. 이 textarea가 속한 `<form>`의 `id`를 지정합니다. 생략하면 가장 가까운 상위 form이 됩니다.</Trans>
+* [`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#form): A string. Specifies the `id` of the `<form>` this input belongs to. If omitted, it's the closest parent form.
+<Trans>[`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#form): 문자열. 이 textarea가 속한 `<form>`의 `id`를 지정합니다. 생략하면 가장 가까운 상위 form이 됩니다.</Trans>
 
-* [`maxLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-maxlength): A number. Specifies the maximum length of text.
-<Trans>[`maxLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-maxlength): 숫자. 텍스트의 최대 길이를 지정합니다.</Trans>
+* [`maxLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#maxlength): A number. Specifies the maximum length of text.
+<Trans>[`maxLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#maxlength): 숫자. 텍스트의 최대 길이를 지정합니다.</Trans>
 
-* [`minLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-minlength): A number. Specifies the minimum length of text.
-<Trans>[`minLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-minlength): 숫자. 텍스트의 최소 길이를 지정합니다.</Trans>
+* [`minLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#minlength): A number. Specifies the minimum length of text.
+<Trans>[`minLength`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#minlength): 숫자. 텍스트의 최소 길이를 지정합니다.</Trans>
 
 * [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name): A string. Specifies the name for this input that's [submitted with the form.](#reading-the-textarea-value-when-submitting-a-form)
 <Trans>[`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name): 문자열. [폼 제출시](#reading-the-textarea-value-when-submitting-a-form) 해당 textarea의 이름을 지정합니다.</Trans>
@@ -89,7 +89,7 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 * `onChangeCapture`: A version of `onChange` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
 <Trans>`onChangeCapture`: [캡쳐 단계](learn/responding-to-events#capture-phase-events)에 실행되는 버전의 `onChange`입니다.</Trans>
 
-* [`onInput`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event): An [`Event` handler](/reference/react-dom/components/common#event-handler) function. function. Fires immediately when the value is changed by the user. For historical reasons, in React it is idiomatic to use `onChange` instead which works similarly.
+* [`onInput`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event): An [`Event` handler](/reference/react-dom/components/common#event-handler) function. Fires immediately when the value is changed by the user. For historical reasons, in React it is idiomatic to use `onChange` instead which works similarly.
 <Trans>[`onInput`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event): [이벤트 핸들러](reference/react-dom/components/common#event-handler). 사용자에 의해 값이 변결될 때마다 실행됩니다. 역사적인 이유로 React에서는 일반적으로 비슷하게 작동하는 `onChange`를 대신 사용합니다.</Trans>
 
 * `onInputCapture`: A version of `onInput` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
@@ -107,20 +107,20 @@ These `<textarea>` props are relevant both for uncontrolled and controlled text 
 * `onSelectCapture`: A version of `onSelect` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
 <Trans>`onSelectCapture`: [캡쳐 단계](learn/responding-to-events#capture-phase-events)에 실행되는 버전의 `onSelect`입니다.</Trans>
 
-* [`placeholder`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-placeholder): A string. Displayed in a dimmed color when the text area value is empty.
-<Trans>[`placeholder`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-placeholder): 문자열. 입력 값이 비어 있을 때 희미한 색상으로 표시됩니다.</Trans>
+* [`placeholder`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#placeholder): A string. Displayed in a dimmed color when the text area value is empty.
+<Trans>[`placeholder`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#placeholder): 문자열. 입력 값이 비어 있을 때 희미한 색상으로 표시됩니다.</Trans>
 
-* [`readOnly`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-readonly): A boolean. If `true`, the text area is not editable by the user.
-<Trans>[`readOnly`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-readonly): 불리언.  `true` 일 경우 유저는 textarea을 수정할 수 없습니다.</Trans>
+* [`readOnly`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#readonly): A boolean. If `true`, the text area is not editable by the user.
+<Trans>[`readOnly`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#readonly): 불리언.  `true` 일 경우 유저는 textarea을 수정할 수 없습니다.</Trans>
 
-* [`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-required): A boolean. If `true`, the value must be provided for the form to submit.
-<Trans>[`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-required): 불리언. `true`일 경우 form 제출시 값이 있어야 합니다.</Trans>
+* [`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#required): A boolean. If `true`, the value must be provided for the form to submit.
+<Trans>[`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#required): 불리언. `true`일 경우 form 제출시 값이 있어야 합니다.</Trans>
 
-* [`rows`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-rows): A number. Specifies the default height in average character heights. Defaults to `2`.
-<Trans>[`rows`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-rows): 숫자. 표준 문자 높이를 기준으로 기본 줄 수를 지정합니다. 기본 값은 `2`입니다.</Trans>
+* [`rows`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#rows): A number. Specifies the default height in average character heights. Defaults to `2`.
+<Trans>[`rows`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#rows): 숫자. 표준 문자 높이를 기준으로 기본 줄 수를 지정합니다. 기본 값은 `2`입니다.</Trans>
 
-* [`wrap`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-wrap): Either `'hard'`, `'soft'`, or `'off'`. Specifies how the text should be wrapped when submitting a form.
-<Trans>[`wrap`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-wrap): `'hard'`, `'soft'`, 혹은`'off'`. form 제출시 텍스트를 어떻게 줄바꿈할지를 지정합니다.</Trans>
+* [`wrap`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#wrap): Either `'hard'`, `'soft'`, or `'off'`. Specifies how the text should be wrapped when submitting a form.
+<Trans>[`wrap`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#wrap): `'hard'`, `'soft'`, 혹은`'off'`. form 제출시 텍스트를 어떻게 줄바꿈할지를 지정합니다.</Trans>
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
@@ -375,7 +375,7 @@ export default function MarkdownEditor() {
 }
 ```
 
-```js MarkdownPreview.js
+```js src/MarkdownPreview.js
 import { Remarkable } from 'remarkable';
 
 const md = new Remarkable();

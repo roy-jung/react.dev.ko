@@ -48,8 +48,8 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 
-* In Strict Mode, React will **call your render function twice** in order to [help you find accidental impurities.](#my-initializer-or-updater-function-runs-twice) This is development-only behavior and does not affect production. If your render function is pure (as it should be), this should not affect the logic of your component. The result from one of the calls will be ignored.
-<Trans>Strict Mode에서 React는 [실수로 발생한 불순물을 찾기 위해](#my-initializer-or-updater-function-runs-twice) 렌더 함수를 **두 번** 호출합니다. 이는 개발 환경 전용 동작이며 상용 환경에는 영향을 주지 않습니다. 렌더링 함수가 순수하다면(그래야 합니다) 컴포넌트의 로직에 영향을 미치지 않을 것입니다. 호출 중 하나의 결과는 무시됩니다.</Trans>
+* In Strict Mode, React will **call your render function twice** in order to [help you find accidental impurities.](/reference/react/useState#my-initializer-or-updater-function-runs-twice) This is development-only behavior and does not affect production. If your render function is pure (as it should be), this should not affect the logic of your component. The result from one of the calls will be ignored.
+<Trans>Strict Mode에서 React는 [실수로 발생한 불순물을 찾기 위해](/reference/react/useState#my-initializer-or-updater-function-runs-twice) 렌더 함수를 **두 번** 호출합니다. 이는 개발 환경 전용 동작이며 상용 환경에는 영향을 주지 않습니다. 렌더링 함수가 순수하다면(그래야 합니다) 컴포넌트의 로직에 영향을 미치지 않을 것입니다. 호출 중 하나의 결과는 무시됩니다.</Trans>
 
 ---
 
@@ -181,7 +181,7 @@ export default function Form() {
 }
 ```
 
-```js MyInput.js
+```js src/MyInput.js
 import { forwardRef } from 'react';
 
 const MyInput = forwardRef(function MyInput(props, ref) {
@@ -240,7 +240,7 @@ export default function App() {
 }
 ```
 
-```js MyVideoPlayer.js
+```js src/MyVideoPlayer.js
 import { forwardRef } from 'react';
 
 const VideoPlayer = forwardRef(function VideoPlayer({ src, type, width }, ref) {
@@ -336,7 +336,7 @@ export default function Form() {
 }
 ```
 
-```js FormField.js
+```js src/FormField.js
 import { forwardRef, useState } from 'react';
 import MyInput from './MyInput.js';
 
@@ -361,7 +361,7 @@ export default FormField;
 ```
 
 
-```js MyInput.js
+```js src/MyInput.js
 import { forwardRef } from 'react';
 
 const MyInput = forwardRef((props, ref) => {
@@ -447,7 +447,7 @@ export default function Form() {
 
   return (
     <form>
-      <MyInput label="Enter your name:" ref={ref} />
+      <MyInput placeholder="Enter your name" ref={ref} />
       <button type="button" onClick={handleClick}>
         Edit
       </button>
@@ -456,7 +456,7 @@ export default function Form() {
 }
 ```
 
-```js MyInput.js
+```js src/MyInput.js
 import { forwardRef, useRef, useImperativeHandle } from 'react';
 
 const MyInput = forwardRef(function MyInput(props, ref) {

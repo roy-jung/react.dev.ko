@@ -346,8 +346,8 @@ You also don't need to worry about [avoiding mutation](/learn/updating-objects-i
 
 ## Refs and the DOM<Trans>Ref와 DOM</Trans> {/*refs-and-the-dom*/}
 
-You can point a ref to any value. However, the most common use case for a ref is to access a DOM element. For example, this is handy if you want to focus an input programmatically. When you pass a ref to a `ref` attribute in JSX, like `<div ref={myRef}>`, React will put the corresponding DOM element into `myRef.current`. You can read more about this in [Manipulating the DOM with Refs.](/learn/manipulating-the-dom-with-refs)
-<Trans>ref는 모든 값을 가리킬 수 있습니다. 그러나 ref의 가장 일반적인 사용 사례는 DOM 요소에 액세스하는 것입니다. 예를 들어, 프로그래밍 방식으로 input에 focus를 맞추고자 할 때 유용합니다. `<div ref={myRef}>`와 같이 JSX의 `ref` 어트리뷰트에 ref를 전달하면 React는 해당 DOM 엘리먼트를 `myRef.current`에 넣습니다. 이에 대한 자세한 내용은 [ref로 DOM 조작하기](/learn/manipulating-the-dom-with-refs)에서 확인할 수 있습니다.</Trans>
+You can point a ref to any value. However, the most common use case for a ref is to access a DOM element. For example, this is handy if you want to focus an input programmatically. When you pass a ref to a `ref` attribute in JSX, like `<div ref={myRef}>`, React will put the corresponding DOM element into `myRef.current`. Once the element is removed from the DOM, React will update `myRef.current` to be `null`. You can read more about this in [Manipulating the DOM with Refs.](/learn/manipulating-the-dom-with-refs)
+<Trans>ref는 모든 값을 가리킬 수 있습니다. 그러나 ref의 가장 일반적인 사용 사례는 DOM 요소에 액세스하는 것입니다. 예를 들어, 프로그래밍 방식으로 input에 focus를 맞추고자 할 때 유용합니다. `<div ref={myRef}>`와 같이 JSX의 `ref` 어트리뷰트에 ref를 전달하면 React는 해당 DOM 엘리먼트를 `myRef.current`에 넣습니다. 엘리먼트가 DOM에서 제거되면 React는 `myRef.current`를 `null`로 업데이트합니다. 이에 대한 자세한 내용은 [ref로 DOM 조작하기](/learn/manipulating-the-dom-with-refs)에서 확인할 수 있습니다.</Trans>
 
 <Recap>
 

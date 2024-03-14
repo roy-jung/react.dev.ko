@@ -7,9 +7,9 @@ import {useRef, useLayoutEffect, Fragment} from 'react';
 import cn from 'classnames';
 import {useRouter} from 'next/router';
 import {SidebarLink} from './SidebarLink';
-import useCollapse from 'react-collapsed';
 import usePendingRoute from 'hooks/usePendingRoute';
 import type {RouteItem} from 'components/Layout/getRouteMeta';
+import {useCollapse} from 'react-collapsed';
 
 interface SidebarRouteTreeProps {
   isForceExpanded: boolean;
@@ -82,7 +82,15 @@ export function SidebarRouteTree({
     <ul>
       {currentRoutes.map(
         (
-          {path, title, translatedTitle, routes, wip, heading, sectionHeader},
+          {
+            path,
+            title,
+            translatedTitle,
+            routes,
+            canary,
+            heading,
+            sectionHeader,
+          },
           index
         ) => {
           const selected = slug === path;
@@ -113,7 +121,7 @@ export function SidebarRouteTree({
                   level={level}
                   title={title}
                   translatedTitle={translatedTitle}
-                  wip={wip}
+                  canary={canary}
                   isExpanded={isExpanded}
                   hideArrow={isForceExpanded}
                 />
@@ -138,7 +146,7 @@ export function SidebarRouteTree({
                   level={level}
                   title={title}
                   translatedTitle={translatedTitle}
-                  wip={wip}
+                  canary={canary}
                 />
               </li>
             );
@@ -149,18 +157,16 @@ export function SidebarRouteTree({
                 {index !== 0 && (
                   <li
                     role="separator"
-                    className="mt-4 mb-2 ml-5 border-b border-border dark:border-border-dark"
+                    className="mt-4 mb-2 ms-5 border-b border-border dark:border-border-dark"
                   />
                 )}
-                <li>
-                  <h3
-                    className={cn(
-                      'mb-1 text-sm font-bold ml-5 text-tertiary dark:text-tertiary-dark',
-                      index !== 0 && 'mt-2'
-                    )}>
-                    {sectionHeader}
-                  </h3>
-                </li>
+                <h3
+                  className={cn(
+                    'mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark',
+                    index !== 0 && 'mt-2'
+                  )}>
+                  {sectionHeader}
+                </h3>
               </Fragment>
             );
           } else {

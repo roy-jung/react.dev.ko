@@ -181,7 +181,7 @@ export default function App() {
 }
 ```
 
-```js ButtonWithTooltip.js
+```js src/ButtonWithTooltip.js
 import { useState, useRef } from 'react';
 import Tooltip from './Tooltip.js';
 
@@ -217,7 +217,7 @@ export default function ButtonWithTooltip({ tooltipContent, ...rest }) {
 }
 ```
 
-```js Tooltip.js active
+```js src/Tooltip.js active
 import { useRef, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import TooltipContainer from './TooltipContainer.js';
@@ -252,7 +252,7 @@ export default function Tooltip({ children, targetRect }) {
 }
 ```
 
-```js TooltipContainer.js
+```js src/TooltipContainer.js
 export default function TooltipContainer({ children, x, y, contentRef }) {
   return (
     <div
@@ -333,7 +333,7 @@ export default function App() {
 }
 ```
 
-```js ButtonWithTooltip.js
+```js src/ButtonWithTooltip.js
 import { useState, useRef } from 'react';
 import Tooltip from './Tooltip.js';
 
@@ -369,7 +369,7 @@ export default function ButtonWithTooltip({ tooltipContent, ...rest }) {
 }
 ```
 
-```js Tooltip.js active
+```js src/Tooltip.js active
 import { useRef, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import TooltipContainer from './TooltipContainer.js';
@@ -403,7 +403,7 @@ export default function Tooltip({ children, targetRect }) {
 }
 ```
 
-```js TooltipContainer.js
+```js src/TooltipContainer.js
 export default function TooltipContainer({ children, x, y, contentRef }) {
   return (
     <div
@@ -481,7 +481,7 @@ export default function App() {
 }
 ```
 
-```js ButtonWithTooltip.js
+```js src/ButtonWithTooltip.js
 import { useState, useRef } from 'react';
 import Tooltip from './Tooltip.js';
 
@@ -517,7 +517,7 @@ export default function ButtonWithTooltip({ tooltipContent, ...rest }) {
 }
 ```
 
-```js Tooltip.js active
+```js src/Tooltip.js active
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import TooltipContainer from './TooltipContainer.js';
@@ -551,7 +551,7 @@ export default function Tooltip({ children, targetRect }) {
 }
 ```
 
-```js TooltipContainer.js
+```js src/TooltipContainer.js
 export default function TooltipContainer({ children, x, y, contentRef }) {
   return (
     <div
@@ -625,7 +625,7 @@ export default function App() {
 }
 ```
 
-```js ButtonWithTooltip.js
+```js src/ButtonWithTooltip.js
 import { useState, useRef } from 'react';
 import Tooltip from './Tooltip.js';
 
@@ -661,7 +661,7 @@ export default function ButtonWithTooltip({ tooltipContent, ...rest }) {
 }
 ```
 
-```js Tooltip.js active
+```js src/Tooltip.js active
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import TooltipContainer from './TooltipContainer.js';
@@ -701,7 +701,7 @@ export default function Tooltip({ children, targetRect }) {
 }
 ```
 
-```js TooltipContainer.js
+```js src/TooltipContainer.js
 export default function TooltipContainer({ children, x, y, contentRef }) {
   return (
     <div
@@ -782,8 +782,8 @@ However, if you're running into this problem, you have a few different options:
 - Replace `useLayoutEffect` with [`useEffect`.](/reference/react/useEffect) This tells React that it's okay to display the initial render result without blocking the paint (because the original HTML will become visible before your Effect runs).
 <Trans>`useLayoutEffect`를 [`useEffect`로 바꾸세요.](/reference/react/useEffect) 이렇게 하면 React가 페인트를 막지 않고 초기 렌더링 결과를 표시해도 괜찮다고 알려줍니다(Effect가 실행되기 전에 원래 HTML이 보이게 되므로).</Trans>
 
-- Alternatively, [mark your component as client-only.](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content) This tells React to replace its content up to the closest [`<Suspense>`](/reference/react/Suspense) boundary with a loading fallback (for example, a spinner or a glimmer) during server rendering.
-<Trans>또는 [컴포넌트를 클라이언트 전용으로 표시하세요.](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-server-only-content) 이렇게 하면 서버 렌더링 중에 가장 가까운 [`<Suspense>`](/reference/react/Suspense) 경계까지의 콘텐츠를 로딩 폴백(예: spinner 나 glimmer)으로 대체하도록 React에 지시합니다.</Trans>
+- Alternatively, [mark your component as client-only.](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-client-only-content) This tells React to replace its content up to the closest [`<Suspense>`](/reference/react/Suspense) boundary with a loading fallback (for example, a spinner or a glimmer) during server rendering.
+<Trans>또는 [컴포넌트를 클라이언트 전용으로 표시하세요.](/reference/react/Suspense#providing-a-fallback-for-server-errors-and-client-only-content) 이렇게 하면 서버 렌더링 중에 가장 가까운 [`<Suspense>`](/reference/react/Suspense) 경계까지의 콘텐츠를 로딩 폴백(예: spinner 나 glimmer)으로 대체하도록 React에 지시합니다.</Trans>
 
 - Alternatively, you can render a component with `useLayoutEffect` only after hydration. Keep a boolean `isMounted` state that's initialized to `false`, and set it to `true` inside a `useEffect` call. Your rendering logic can then be like `return isMounted ? <RealContent /> : <FallbackContent />`. On the server and during the hydration, the user will see `FallbackContent` which should not call `useLayoutEffect`. Then React will replace it with `RealContent` which runs on the client only and can include `useLayoutEffect` calls.
 <Trans>또는 hydration 후에만 `useLayoutEffect`를 사용하여 컴포넌트를 렌더링할 수 있습니다. `false`로 초기화된 불리언 `isMounted` state를 유지하고, `useEffect` 호출 내에서 이를 `true`로 설정합니다. 그러면 렌더링 로직은 다음과 같을 수 있습니다: `return isMounted ? <RealContent /> : <FallbackContent />` 서버에서 hydration이 진행되는 동안 사용자는 `useLayoutEffect`를 호출하지 않는 `FallbackContent`를 보게 됩니다. 그러면 React는 클라이언트에서만 실행되고 `useLayoutEffect` 호출하는 `RealContent`로 대체합니다.</Trans>

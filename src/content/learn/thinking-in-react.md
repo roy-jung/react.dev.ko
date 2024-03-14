@@ -110,7 +110,7 @@ You can either build "top down" by starting with building the components higher 
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -390,7 +390,7 @@ You can start seeing how your application will behave. Edit the `filterText` ini
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -581,12 +581,26 @@ function FilterableProductTable({ products }) {
 Inside the `SearchBar`, you will add the `onChange` event handlers and set the parent state from them:
 <Trans>`SearchBar` 안에 `onChange` 이벤트 핸들러를 추가하고 이 핸들러에서 부모 state를 변경하도록 합시다:</Trans>
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Now the application fully works!
@@ -594,7 +608,7 @@ Now the application fully works!
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {

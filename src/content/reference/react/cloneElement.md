@@ -44,7 +44,7 @@ const clonedElement = cloneElement(
   'Goodbye'
 );
 
-console.log(clonedElement); // <Row title="Cabbage">Goodbye</Row>
+console.log(clonedElement); // <Row title="Cabbage" isHighlighted={true}>Goodbye</Row>
 ```
 
 [See more examples below.](#usage)
@@ -187,7 +187,7 @@ export default function App() {
 }
 ```
 
-```js List.js active
+```js src/List.js active
 import { Children, cloneElement, useState } from 'react';
 
 export default function List({ children }) {
@@ -212,7 +212,7 @@ export default function List({ children }) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 export default function Row({ title, isHighlighted }) {
   return (
     <div className={[
@@ -225,7 +225,7 @@ export default function Row({ title, isHighlighted }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -351,7 +351,7 @@ export default function App() {
 }
 ```
 
-```js List.js active
+```js src/List.js active
 import { useState } from 'react';
 
 export default function List({ items, renderItem }) {
@@ -375,7 +375,7 @@ export default function List({ items, renderItem }) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 export default function Row({ title, isHighlighted }) {
   return (
     <div className={[
@@ -388,7 +388,7 @@ export default function Row({ title, isHighlighted }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -460,7 +460,7 @@ export default function List({ items, renderItem }) {
 With this approach, `Row` does not need to receive an `isHighlighted` prop at all. Instead, it reads the context:
 <Trans>이 방법을 사용하면 `Row`는 `isHighlighted` prop를 전혀 전달받을 필요가 없습니다. 대신 context를 읽습니다:</Trans>
 
-```js Row.js {2}
+```js src/Row.js {2}
 export default function Row({ title }) {
   const isHighlighted = useContext(HighlightContext);
   // ...
@@ -500,7 +500,7 @@ export default function App() {
 }
 ```
 
-```js List.js active
+```js src/List.js active
 import { useState } from 'react';
 import { HighlightContext } from './HighlightContext.js';
 
@@ -532,7 +532,7 @@ export default function List({ items, renderItem }) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 import { useContext } from 'react';
 import { HighlightContext } from './HighlightContext.js';
 
@@ -549,13 +549,13 @@ export default function Row({ title }) {
 }
 ```
 
-```js HighlightContext.js
+```js src/HighlightContext.js
 import { createContext } from 'react';
 
 export const HighlightContext = createContext(false);
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -670,7 +670,7 @@ export default function App() {
 }
 ```
 
-```js useList.js
+```js src/useList.js
 import { useState } from 'react';
 
 export default function useList(items) {
@@ -687,7 +687,7 @@ export default function useList(items) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 export default function Row({ title, isHighlighted }) {
   return (
     <div className={[
@@ -700,7 +700,7 @@ export default function Row({ title, isHighlighted }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },

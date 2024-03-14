@@ -692,11 +692,8 @@ You should write the `render` method as a pure function, meaning that it should 
 
 #### Parameters<Trans>매개변수</Trans> {/*render-parameters*/}
 
-* `prevProps`: Props before the update. Compare `prevProps` to [`this.props`](#props) to determine what changed.
-<Trans>`prevProps`: 업데이트 전 props. `prevProps`와 [`this.props`](#props)를 비교하여 변경된 내용을 확인합니다.</Trans>
-
-* `prevState`: State before the update. Compare `prevState` to [`this.state`](#state) to determine what changed.
-<Trans>`prevState`: 업데이트 전 state. `prevState`를 [`this.state`](#state)와 비교하여 변경된 내용을 확인합니다.</Trans>
+`render` does not take any parameters.
+<Trans>`render`는 어떠한 파라미터도 받지 않습니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*render-returns*/}
 
@@ -741,7 +738,7 @@ class Form extends Component {
     return (
       <>
         <input value={this.state.name} onChange={this.handleNameChange} />
-        <p>Hello, {this.state.name}.
+        <p>Hello, {this.state.name}.</p>
       </>
     );
   }
@@ -968,8 +965,9 @@ If you define `UNSAFE_componentWillReceiveProps`, React will call it when the co
 
 - `nextProps`: The next props that the component is about to receive from its parent component. Compare `nextProps` to [`this.props`](#props) to determine what changed.
 <Trans outdent>`nextProps`: 컴포넌트가 부모 컴포넌트로부터 받으려는 `nextProps`입니다. `nextProps` [`this.props`](#props)를 비교하여 변경된 내용을 확인합니다.</Trans>
-- `nextContext`: The next props that the component is about to receive from the closest provider. Compare `nextContext` to [`this.context`](#context) to determine what changed. Only available if you specify [`static contextType`](#static-contexttype) (modern) or [`static contextTypes`](#static-contexttypes) (legacy).
-<Trans outdent>`nextContext`: 컴포넌트가 가장 가까운 provider로부터 받으려는 next props입니다. `nextContext`를 `this.context`와 비교하여 변경된 내용을 확인합니다. [`static contextType`](#static-contexttype) (최신) 또는 [`static contextTypes`](#static-contexttypes) (legacy)를 지정한 경우에만 사용할 수 있습니다.</Trans>
+
+- `nextContext`: The next context that the component is about to receive from the closest provider. Compare `nextContext` to [`this.context`](#context) to determine what changed. Only available if you specify [`static contextType`](#static-contexttype) (modern) or [`static contextTypes`](#static-contexttypes) (legacy).
+<Trans outdent>`nextContext`: 컴포넌트가 가장 가까운 provider로부터 받으려는 next context입니다. `nextContext`를 `this.context`와 비교하여 변경된 내용을 확인합니다. [`static contextType`](#static-contexttype) (최신) 또는 [`static contextTypes`](#static-contexttypes) (legacy)를 지정한 경우에만 사용할 수 있습니다.</Trans>
 
 #### Returns<Trans>반환값</Trans> {/*unsafe_componentwillreceiveprops-returns*/}
 
@@ -1448,7 +1446,7 @@ For example, this `ChatRoom` component keeps a chat connection synchronized with
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1478,7 +1476,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { Component } from 'react';
 import { createConnection } from './chat.js';
 
@@ -1539,7 +1537,7 @@ export default class ChatRoom extends Component {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1624,8 +1622,8 @@ Then you can wrap a part of your component tree with it:
 If `Profile` or its child component throws an error, `ErrorBoundary` will "catch" that error, display a fallback UI with the error message you've provided, and send a production error report to your error reporting service.
 <Trans>`Profile` 또는 자식 컴포넌트가 에러를 발생시키면 `ErrorBoundary`가 해당 에러를 "포착"하고 사용자가 제공한 에러 메시지와 함께 폴백 UI를 표시한 다음 상용 환경용 에러 리포트를 에러 리포트 서비스로 전송합니다.</Trans>
 
-You don't need to wrap every component into a separate error boundary. When you think about the [granularity of error boundaries,](https://aweary.dev/fault-tolerance-react/) consider where it makes sense to display an error message. For example, in a messaging app, it makes sense to place an error boundary around the list of conversations. It also makes sense to place one around every individual message. However, it wouldn't make sense to place a boundary around every avatar.
-<Trans>모든 컴포넌트를 별도의 에러 경계로 감쌀 필요는 없습니다. [에러 경계의 세분성](https://aweary.dev/fault-tolerance-react/)에 대해 생각할 때 에러 메시지를 표시하는 것이 합당한 위치를 고려하세요. 예를 들어 메시징 앱의 경우 대화 목록 주위에 에러 경계를 배치하는 것이 좋습니다. 모든 개별 메시지 주위에 에러 경계를 배치하는 것도 좋습니다. 하지만 모든 아바타 주위에 경계를 설정하는 것은 적절하지 않습니다.</Trans>
+You don't need to wrap every component into a separate error boundary. When you think about the [granularity of error boundaries,](https://www.brandondail.com/posts/fault-tolerance-react) consider where it makes sense to display an error message. For example, in a messaging app, it makes sense to place an error boundary around the list of conversations. It also makes sense to place one around every individual message. However, it wouldn't make sense to place a boundary around every avatar.
+<Trans>모든 컴포넌트를 별도의 에러 경계로 감쌀 필요는 없습니다. [에러 경계의 세분성](https://www.brandondail.com/posts/fault-tolerance-react)에 대해 생각할 때 에러 메시지를 표시하는 것이 합당한 위치를 고려하세요. 예를 들어 메시징 앱의 경우 대화 목록 주위에 에러 경계를 배치하는 것이 좋습니다. 모든 개별 메시지 주위에 에러 경계를 배치하는 것도 좋습니다. 하지만 모든 아바타 주위에 경계를 설정하는 것은 적절하지 않습니다.</Trans>
 
 <Note>
 
@@ -1847,7 +1845,7 @@ Suppose you're converting this `ChatRoom` class component with lifecycle methods
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1877,7 +1875,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { Component } from 'react';
 import { createConnection } from './chat.js';
 
@@ -1938,7 +1936,7 @@ export default class ChatRoom extends Component {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1991,7 +1989,7 @@ This [`useEffect`](/reference/react/useEffect) call is equivalent to the logic i
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -2021,7 +2019,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import { createConnection } from './chat.js';
 
@@ -2051,7 +2049,7 @@ export default function ChatRoom({ roomId }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {

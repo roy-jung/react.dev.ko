@@ -364,7 +364,7 @@ In this example, the reducer manages an array of tasks. The array needs to be up
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useReducer } from 'react';
 import AddTask from './AddTask.js';
 import TaskList from './TaskList.js';
@@ -447,7 +447,7 @@ const initialTasks = [
 ];
 ```
 
-```js AddTask.js hidden
+```js src/AddTask.js hidden
 import { useState } from 'react';
 
 export default function AddTask({ onAddTask }) {
@@ -468,7 +468,7 @@ export default function AddTask({ onAddTask }) {
 }
 ```
 
-```js TaskList.js hidden
+```js src/TaskList.js hidden
 import { useState } from 'react';
 
 export default function TaskList({
@@ -558,7 +558,7 @@ If updating arrays and objects without mutation feels tedious, you can use a lib
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useImmerReducer } from 'use-immer';
 import AddTask from './AddTask.js';
 import TaskList from './TaskList.js';
@@ -640,7 +640,7 @@ const initialTasks = [
 ];
 ```
 
-```js AddTask.js hidden
+```js src/AddTask.js hidden
 import { useState } from 'react';
 
 export default function AddTask({ onAddTask }) {
@@ -661,7 +661,7 @@ export default function AddTask({ onAddTask }) {
 }
 ```
 
-```js TaskList.js hidden
+```js src/TaskList.js hidden
 import { useState } from 'react';
 
 export default function TaskList({
@@ -812,7 +812,7 @@ This example passes the initializer function, so the `createInitialState` functi
 
 <Sandpack>
 
-```js App.js hidden
+```js src/App.js hidden
 import TodoList from './TodoList.js';
 
 export default function App() {
@@ -820,7 +820,7 @@ export default function App() {
 }
 ```
 
-```js TodoList.js active
+```js src/TodoList.js active
 import { useReducer } from 'react';
 
 function createInitialState(username) {
@@ -901,7 +901,7 @@ This example **does not** pass the initializer function, so the `createInitialSt
 
 <Sandpack>
 
-```js App.js hidden
+```js src/App.js hidden
 import TodoList from './TodoList.js';
 
 export default function App() {
@@ -909,7 +909,7 @@ export default function App() {
 }
 ```
 
-```js TodoList.js active
+```js src/TodoList.js active
 import { useReducer } from 'react';
 
 function createInitialState(username) {

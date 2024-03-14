@@ -85,7 +85,7 @@ Calling that factory function will produce React elements with the props and chi
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { createFactory } from 'react';
 
 const button = createFactory('button');
@@ -115,7 +115,7 @@ If your project has many `createFactory` calls, copy this `createFactory.js` imp
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { createFactory } from './createFactory.js';
 
 const button = createFactory('button');
@@ -129,7 +129,7 @@ export default function App() {
 }
 ```
 
-```js createFactory.js
+```js src/createFactory.js
 import { createElement } from 'react';
 
 export function createFactory(type) {
@@ -184,7 +184,7 @@ Here is a complete example of using React without JSX:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { createElement } from 'react';
 
 export default function App() {
@@ -207,7 +207,7 @@ Finally, you can use JSX instead of `createFactory`. This is the most common way
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 export default function App() {
   return (
     <button onClick={() => {

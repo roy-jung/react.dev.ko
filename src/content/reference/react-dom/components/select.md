@@ -61,26 +61,25 @@ If your `<select>` is uncontrolled, you may pass the `defaultValue` prop instead
 These `<select>` props are relevant both for uncontrolled and controlled select boxes:
 <Trans>다음 `<select>` prop들은 비제어 및 제어 컴포넌트 모두에 영향을 미칩니다:</Trans>
 
-* [`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-autocomplete): A string. Specifies one of the possible [autocomplete behaviors.](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values)
-<Trans>[`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-autocomplete): 문자열. 가능한 [자동 완성 동작](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values)을 지정합니다.</Trans>
+* [`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#autocomplete): A string. Specifies one of the possible [autocomplete behaviors.](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values)
+<Trans>[`autoComplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#autocomplete): 문자열. 가능한 [자동 완성 동작](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values)을 지정합니다.</Trans>
 
-* [`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-autofocus): A boolean. If `true`, React will focus the element on mount.
-<Trans>[`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-autofocus): 불리언. `true`일 경우 마운트시 엘리먼트에 초점이 맞춰집니다.</Trans>
+* [`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#autofocus): A boolean. If `true`, React will focus the element on mount.
 
-* `children`: `<select>` accepts [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option), [`<optgroup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup), and [`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup) components as children. You can also pass your own components as long as they eventually render one of the allowed components. If you pass your own components that eventually render `<option>` tags, each `<option>` you render must have a `value`.
+* `children`: `<select>` accepts [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option), [`<optgroup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup), and [`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) components as children. You can also pass your own components as long as they eventually render one of the allowed components. If you pass your own components that eventually render `<option>` tags, each `<option>` you render must have a `value`.
 <Trans>`children`: `<select>` 는 [`<option>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option), [`<optgroup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup), [`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup) 컴포넌트를 자식으로 받습니다. 최종적으로 위 허용된 컴포넌트들 중 하나(`<option>`, `<optgroup`, `<datalist>`)를 렌더링하는 컴포넌트도 괜찮습니다. `option` 태그들을 렌더링하는 컴포넌트의 경우, 각 `<option>`에는 반드시 `value`가 있어야 합니다.</Trans>
 
-* [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-disabled): A boolean. If `true`, the select box will not be interactive and will appear dimmed.
-<Trans>[`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-disabled): 불리언. `true`일 경우, 입력이 비활성화되고 흐릿하게 표시됩니다.</Trans>
+* [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#disabled): A boolean. If `true`, the select box will not be interactive and will appear dimmed.
+<Trans>[`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#disabled): 불리언. `true`일 경우, 입력이 비활성화되고 흐릿하게 표시됩니다.</Trans>
 
-* [`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-form): A string. Specifies the `id` of the `<form>` this select box belongs to. If omitted, it's the closest parent form.
-<Trans>[`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-form): 문자열. 이 셀렉트 박스가 속한 `<form>`의 `id`를 지정합니다. 생략하면 가장 가까운 상위 form이 됩니다.</Trans>
+* [`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#form): A string. Specifies the `id` of the `<form>` this select box belongs to. If omitted, it's the closest parent form.
+<Trans>[`form`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#form): 문자열. 이 셀렉트 박스가 속한 `<form>`의 `id`를 지정합니다. 생략하면 가장 가까운 상위 form이 됩니다.</Trans>
 
-* [`multiple`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-multiple): A boolean. If `true`, the browser allows [multiple selection.](#enabling-multiple-selection)
-<Trans>[`multiple`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-multiple): 불리언. `true`일 경우, [여러 옵션을 선택](#enabling-multiple-selection)할 수 있습니다.</Trans>
+* [`multiple`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#multiple): A boolean. If `true`, the browser allows [multiple selection.](#enabling-multiple-selection)
+<Trans>[`multiple`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#multiple): 불리언. `true`일 경우, [여러 옵션을 선택](#enabling-multiple-selection)할 수 있습니다.</Trans>
 
-* [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-name): A string. Specifies the name for this select box that's [submitted with the form.](#reading-the-select-box-value-when-submitting-a-form)
-<Trans>[`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name): 문자열. [폼 제출시](#reading-the-select-box-value-when-submitting-a-form) 해당 셀렉트 박스의 이름을 지정합니다.</Trans>
+* [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#name): A string. Specifies the name for this select box that's [submitted with the form.](#reading-the-select-box-value-when-submitting-a-form)
+<Trans>[`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#name): 문자열. [폼 제출시](#reading-the-select-box-value-when-submitting-a-form) 해당 셀렉트 박스의 이름을 지정합니다.</Trans>
 
 * `onChange`: An [`Event` handler](/reference/react-dom/components/common#event-handler) function. Required for [controlled select boxes.](#controlling-a-select-box-with-a-state-variable) Fires immediately when the user picks a different option. Behaves like the browser [`input` event.](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
 <Trans>`onChange`: [이벤트 핸들러](reference/react-dom/components/common#event-handler). [제어 컴포넌트](#controlling-a-text-area-with-a-state-variable)로 사용할 때 필요합니다. 사용자가 다른 옵션을 선택하는 즉시 실행됩니다. 브라우저의 [`input` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)처럼 동작합니다.</Trans>
@@ -100,11 +99,15 @@ These `<select>` props are relevant both for uncontrolled and controlled select 
 * `onInvalidCapture`: A version of `onInvalid` that fires in the [capture phase.](/learn/responding-to-events#capture-phase-events)
 <Trans>`onInvalidCapture`: [캡쳐 단계](learn/responding-to-events#capture-phase-events)에 실행되는 버전의 `onInvalid`입니다.</Trans>
 
-* [`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-required): A boolean. If `true`, the value must be provided for the form to submit.
-<Trans>[`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-required): 불리언. `true`일 경우 form 제출시 값이 있어야 합니다.</Trans>
+* [`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#required): A boolean. If `true`, the value must be provided for the form to submit.
+<Trans>[`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#required): 불리언. `true`일 경우 form 제출시 값이 있어야 합니다.</Trans>
 
-* [`size`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-size): A number. For `multiple={true}` selects, specifies the preferred number of initially visible items.
-<Trans>[`size`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-size): 숫자. `multiple={true}`인 경우 초기에 보여줄 항목 수를 지정합니다.</Trans>
+* [`size`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#size): A number. For `multiple={true}` selects, specifies the preferred number of initially visible items.
+<Trans>[`size`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#size): 숫자. `multiple={true}`인 경우 초기에 보여줄 항목 수를 지정합니다.</Trans>
+
+* [`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#autofocus): A boolean. If `true`, React will focus the element on mount.
+<Trans>[`autoFocus`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#autofocus): 불리언. `true`일 경우 마운트시 엘리먼트에 초점이 맞춰집니다.</Trans>
+
 
 #### Caveats<Trans>주의사항</Trans> {/*caveats*/}
 

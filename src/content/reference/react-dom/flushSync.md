@@ -103,20 +103,20 @@ For example, the browser `onbeforeprint` API allows you to change the page immed
 
 <Sandpack>
 
-```js App.js active
+```js src/App.js active
 import { useState, useEffect } from 'react';
 import { flushSync } from 'react-dom';
 
 export default function PrintApp() {
   const [isPrinting, setIsPrinting] = useState(false);
-  
+
   useEffect(() => {
     function handleBeforePrint() {
       flushSync(() => {
         setIsPrinting(true);
       })
     }
-    
+
     function handleAfterPrint() {
       setIsPrinting(false);
     }
@@ -128,7 +128,7 @@ export default function PrintApp() {
       window.removeEventListener('afterprint', handleAfterPrint);
     }
   }, []);
-  
+
   return (
     <>
       <h1>isPrinting: {isPrinting ? 'yes' : 'no'}</h1>
@@ -142,7 +142,7 @@ export default function PrintApp() {
 
 </Sandpack>
 
-Without `flushSync`, when the print dialog will display `isPrinting` as "no". This is because React batches the updates asynchronously and the print dialog is displayed before the state is updated.
+Without `flushSync`, the print dialog will display `isPrinting` as "no". This is because React batches the updates asynchronously and the print dialog is displayed before the state is updated.
 <Trans>`flushSync`를 사용하지 않으면 인쇄 대화 상자에 `isPrinting`이 "아니요"로 표시됩니다. 이는 React가 업데이트를 비동기적으로 일괄 처리하고 state가 업데이트되기 전에 인쇄 대화 상자가 표시되기 때문입니다.</Trans>
 
 <Pitfall>

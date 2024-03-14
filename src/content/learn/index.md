@@ -113,7 +113,7 @@ React 컴포넌트는 항상 대문자로 시작해야 하지만, 함수명이 �
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import DefaultProfile from "./ExportedDefaultProfile";
 import {
   NamedExportedProfileOne,
@@ -142,7 +142,7 @@ export default function App() {
 }
 ```
 
-```js ExportedDefaultProfile.js
+```js src/ExportedDefaultProfile.js
 export default function exportedDefault({ user }) {
   return (
     <>
@@ -161,7 +161,7 @@ export default function exportedDefault({ user }) {
 }
 ```
 
-```js Profiles.js
+```js src/Profiles.js
 export function NamedExportedProfileOne({ user }) {
   return (
     <>
@@ -388,7 +388,7 @@ All of these approaches also work for conditionally specifying attributes. If yo
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import Profile from './Profile.js';
 const user = [
   {
@@ -417,7 +417,7 @@ export default function App() {
 }
 ```
 
-```js Profile.js hidden
+```js src/Profile.js hidden
 export default function Profile({ user }) {
   return (
     <>

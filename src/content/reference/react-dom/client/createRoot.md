@@ -190,7 +190,7 @@ Usually, you only need to run this code once at startup. It will:
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 import App from './App.js';
 import './styles.css';
@@ -199,7 +199,7 @@ const root = createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 export default function App() {
@@ -276,7 +276,7 @@ Here, two different React components are rendered into two DOM nodes defined in 
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import './styles.css';
 import { createRoot } from 'react-dom/client';
 import { Comments, Navigation } from './Components.js';
@@ -290,7 +290,7 @@ const commentRoot = createRoot(commentDomNode);
 commentRoot.render(<Comments />);
 ```
 
-```js Components.js
+```js src/Components.js
 export function Navigation() {
   return (
     <ul>
@@ -361,7 +361,7 @@ You can call `render` more than once on the same root. As long as the component 
 
 <Sandpack>
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 import App from './App.js';
@@ -375,7 +375,7 @@ setInterval(() => {
 }, 1000);
 ```
 
-```js App.js
+```js src/App.js
 export default function App({counter}) {
   return (
     <>

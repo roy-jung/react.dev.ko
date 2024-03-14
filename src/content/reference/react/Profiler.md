@@ -77,8 +77,8 @@ function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime
 * `startTime`: A numeric timestamp for when React began rendering the current update.
 <Trans>`startTime`: React가 현재 업데이트 렌더링을 시작한 시점에 대한 숫자 타임스탬프입니다. </Trans>
 
-* `endTime`: A numeric timestamp for when React committed the current update. This value is shared between all profilers in a commit, enabling them to be grouped if desirable.
-<Trans>`endTime`: React가 현재 업데이트를 커밋한 시점의 타임스탬프입니다. 이 값은 커밋의 모든 프로파일러 간에 공유되므로 원하는 경우 그룹화할 수 있습니다.</Trans>
+* `commitTime`: A numeric timestamp for when React committed the current update. This value is shared between all profilers in a commit, enabling them to be grouped if desirable.
+<Trans>`commitTime`: React가 현재 업데이트를 커밋한 시점의 타임스탬프입니다. 이 값은 커밋의 모든 프로파일러 간에 공유되므로 원하는 경우 그룹화할 수 있습니다.</Trans>
 
 ---
 

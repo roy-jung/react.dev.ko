@@ -577,7 +577,7 @@ export default function ChatRoom() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection() {
   // A real implementation would actually connect to the server
   return {
@@ -641,7 +641,7 @@ export default function ChatRoom() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection() {
   // A real implementation would actually connect to the server
   return {
@@ -891,7 +891,7 @@ Buying is not caused by rendering; it's caused by a specific interaction. It sho
   }
 ```
 
-**This illustrates that if remounting breaks the logic of your application, this usually uncovers existing bugs.** From the user's perspective, visiting a page shouldn't be different from visiting it, clicking a link, and pressing Back. React verifies that your components abide by this principle by remounting them once in development.
+**This illustrates that if remounting breaks the logic of your application, this usually uncovers existing bugs.** From a user's perspective, visiting a page shouldn't be different from visiting it, clicking a link, then pressing Back to view the page again. React verifies that your components abide by this principle by remounting them once in development.
 <Trans>**다시 마운트하면 애플리케이션의 로직이 깨지는 경우, 일반적으로 기존 버그를 발견할 수 있습니다.** 사용자 관점에서 페이지를 방문하는 것은 페이지를 방문하여 링크를 클릭하고 뒤로가기 버튼을 누르는 것과 다르지 않아야 합니다. React는 개발 단계에서 컴포넌트를 다시 한 번 마운트하여 이 원칙을 준수하는지 확인합니다.</Trans>
 
 ## Putting it all together<Trans>한데 모으기</Trans> {/*putting-it-all-together*/}
@@ -1145,7 +1145,7 @@ Use the input's [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTM
 
 <Sandpack>
 
-```js MyInput.js active
+```js src/MyInput.js active
 import { useEffect, useRef } from 'react';
 
 export default function MyInput({ value, onChange }) {
@@ -1164,7 +1164,7 @@ export default function MyInput({ value, onChange }) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import MyInput from './MyInput.js';
 
@@ -1233,7 +1233,7 @@ To fix the mistake, wrap the `ref.current.focus()` call into an Effect declarati
 
 <Sandpack>
 
-```js MyInput.js active
+```js src/MyInput.js active
 import { useEffect, useRef } from 'react';
 
 export default function MyInput({ value, onChange }) {
@@ -1253,7 +1253,7 @@ export default function MyInput({ value, onChange }) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import MyInput from './MyInput.js';
 
@@ -1320,7 +1320,7 @@ Let's say you want to focus the first field. The first `MyInput` component now r
 
 <Sandpack>
 
-```js MyInput.js active
+```js src/MyInput.js active
 import { useEffect, useRef } from 'react';
 
 export default function MyInput({ shouldFocus, value, onChange }) {
@@ -1341,7 +1341,7 @@ export default function MyInput({ shouldFocus, value, onChange }) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import MyInput from './MyInput.js';
 
@@ -1413,7 +1413,7 @@ Put the conditional logic inside the Effect. You will need to specify `shouldFoc
 
 <Sandpack>
 
-```js MyInput.js active
+```js src/MyInput.js active
 import { useEffect, useRef } from 'react';
 
 export default function MyInput({ shouldFocus, value, onChange }) {
@@ -1435,7 +1435,7 @@ export default function MyInput({ shouldFocus, value, onChange }) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import MyInput from './MyInput.js';
 
@@ -1510,7 +1510,7 @@ Keep in mind that `setInterval` returns an interval ID, which you can pass to [`
 
 <Sandpack>
 
-```js Counter.js active
+```js src/Counter.js active
 import { useState, useEffect } from 'react';
 
 export default function Counter() {
@@ -1528,7 +1528,7 @@ export default function Counter() {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import Counter from './Counter.js';
 
@@ -1572,7 +1572,7 @@ To fix this code, save the interval ID returned by `setInterval`, and implement 
 
 <Sandpack>
 
-```js Counter.js active
+```js src/Counter.js active
 import { useState, useEffect } from 'react';
 
 export default function Counter() {
@@ -1591,7 +1591,7 @@ export default function Counter() {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState } from 'react';
 import Counter from './Counter.js';
 
@@ -1634,7 +1634,7 @@ This component shows the biography for the selected person. It loads the biograp
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchBio } from './api.js';
 
@@ -1665,7 +1665,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export async function fetchBio(person) {
   const delay = person === 'Bob' ? 2000 : 200;
   return new Promise(resolve => {
@@ -1722,7 +1722,7 @@ To fix this race condition, add a cleanup function:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchBio } from './api.js';
 
@@ -1758,7 +1758,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export async function fetchBio(person) {
   const delay = person === 'Bob' ? 2000 : 200;
   return new Promise(resolve => {

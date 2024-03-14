@@ -44,6 +44,10 @@
           "path": "/learn/editor-setup"
         },
         {
+          "title": "Using TypeScript",
+          "path": "/learn/typescript"
+        },
+        {
           "title": "React Developer Tools",
           "translatedTitle": "React 개발자 도구",
           "path": "/learn/react-developer-tools"
@@ -99,6 +103,10 @@
           "title": "Keeping Components Pure",
           "translatedTitle": "컴포넌트 순수성 유지",
           "path": "/learn/keeping-components-pure"
+        },
+        {
+          "title": "Your UI as a Tree",
+          "path": "/learn/understanding-your-ui-as-a-tree"
         }
       ]
     },

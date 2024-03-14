@@ -95,7 +95,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -172,7 +172,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -273,7 +273,7 @@ export default function ChatRoom() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -945,7 +945,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   return {
@@ -1033,7 +1033,7 @@ function ChatRoom() {
 
   useEffect(() => {
     const options = createOptions();
-    const connection = createConnection();
+    const connection = createConnection(options);
     connection.connect();
     return () => connection.disconnect();
   }, []); // ✅ All dependencies declared
@@ -1134,7 +1134,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   return {
@@ -1476,7 +1476,7 @@ export default function App() {
 }
 ```
 
-```js animation.js
+```js src/animation.js
 export class FadeInAnimation {
   constructor(node) {
     this.node = node;
@@ -1608,7 +1608,7 @@ export default function App() {
 }
 ```
 
-```js animation.js
+```js src/animation.js
 export class FadeInAnimation {
   constructor(node) {
     this.node = node;
@@ -1669,7 +1669,7 @@ There's more than one way to fix this, but ultimately you want to avoid having a
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1713,7 +1713,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useEffect } from 'react';
 import { createConnection } from './chat.js';
 
@@ -1728,7 +1728,7 @@ export default function ChatRoom({ options }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -1760,12 +1760,12 @@ label, button { display: block; margin-bottom: 5px; }
 Your Effect is re-running because it depends on the `options` object. Objects can be re-created unintentionally, you should try to avoid them as dependencies of your Effects whenever possible.
 <Trans>Effect가 `options` 객체에 의존하기 때문에 다시 실행되고 있습니다. 객체는 의도치 않게 다시 생성될 수 있으므로 가능하면 Effect의 의존성 요소로 지정하지 않도록 해야 합니다.</Trans>
 
-The least invasive fix is to read `roomId` and `serverUrl` right outside the Effect, and then make the Effect depend on those primitive values (which can't change unintentionally). Inside the Effect, create an object and it pass to `createConnection`:
+The least invasive fix is to read `roomId` and `serverUrl` right outside the Effect, and then make the Effect depend on those primitive values (which can't change unintentionally). Inside the Effect, create an object and pass it to `createConnection`:
 <Trans>가장 덜 공격적인 수정 방법은 Effect 외부에서 `roomId`와 `serverUrl`을 읽은 다음 Effect가 이러한 기본 값에 의존하도록 만드는 것입니다(의도치 않게 변경할 수 없음). Effect 내부에서 객체를 생성하면 `createConnection`으로 전달됩니다:</Trans>
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1809,7 +1809,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useEffect } from 'react';
 import { createConnection } from './chat.js';
 
@@ -1828,7 +1828,7 @@ export default function ChatRoom({ options }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -1860,7 +1860,7 @@ It would be even better to replace the object `options` prop with the more speci
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1902,7 +1902,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import { createConnection } from './chat.js';
 
@@ -1920,7 +1920,7 @@ export default function ChatRoom({ roomId, serverUrl }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -1995,7 +1995,7 @@ Another of these functions only exists to pass some state to an imported API met
 }
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 import {
@@ -2061,7 +2061,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import { experimental_useEffectEvent as useEffectEvent } from 'react';
 
@@ -2077,7 +2077,7 @@ export default function ChatRoom({ roomId, createConnection, onMessage }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -2161,7 +2161,7 @@ export function createUnencryptedConnection({ serverUrl, roomId }) {
 }
 ```
 
-```js notifications.js
+```js src/notifications.js
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -2298,7 +2298,7 @@ As a result, the chat re-connects only when something meaningful (`roomId` or `i
 }
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -2351,7 +2351,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import { experimental_useEffectEvent as useEffectEvent } from 'react';
 import {
@@ -2385,7 +2385,7 @@ export default function ChatRoom({ roomId, isEncrypted, onMessage }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -2469,7 +2469,7 @@ export function createUnencryptedConnection({ serverUrl, roomId }) {
 }
 ```
 
-```js notifications.js
+```js src/notifications.js
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 

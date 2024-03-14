@@ -100,7 +100,7 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
               isExample || isExtra,
           })}
           onClick={() => setIsExpanded((current) => !current)}>
-          <span className="mr-1">
+          <span className="me-1">
             <IconChevron displayDirection={isExpanded ? 'up' : 'down'} />
           </span>
           {isExpanded ? 'Hide Details' : 'Show Details'}
