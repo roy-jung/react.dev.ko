@@ -1115,7 +1115,7 @@ Writing `fetch` calls inside Effects is a [popular way to fetch data](https://ww
 <Trans>**Effect에서 직접 페칭하면 "네트워크 워터폴"을 만들기 쉽습니다.** 부모 컴포넌트를 렌더링하면 일부 데이터를 페치하고, 자식 컴포넌트를 렌더링하면 자식 컴포넌트가 데이터를 페칭하기 시작합니다. 네트워크가 매우 빠르지 않는 한 모든 데이터를 병렬로 페칭하는 것보다 훨씬 느립니다.</Trans>
 
 - **Fetching directly in Effects usually means you don't preload or cache data.** For example, if the component unmounts and then mounts again, it would have to fetch the data again.
-<Trans>**Effects에서 직접 페칭한다는 것은 일반적으로 데이터를 데이터를 미리 로드하거나 캐시하지 않는다는 의미입니다.** 예를 들어, 컴포넌트가 마운트를 해제했다가 다시 마운트하면 데이터를 다시 가져와야 합니다.</Trans>
+<Trans>**Effects에서 직접 페칭한다는 것은 일반적으로 데이터를 미리 로드하거나 캐시하지 않는다는 의미입니다.** 예를 들어, 컴포넌트가 마운트를 해제했다가 다시 마운트하면 데이터를 다시 가져와야 합니다.</Trans>
 
 - **It's not very ergonomic.** There's quite a bit of boilerplate code involved when writing `fetch` calls in a way that doesn't suffer from bugs like [race conditions.](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)
 <Trans>**인체 공학적으로 좋지 않습니다.** [조건 경합](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)과 같은 버그가 발생하지 않는 방식으로 `fetch` 호출을 작성하려면 상용구 코드가 상당히 많이 필요합니다.</Trans>
