@@ -1386,7 +1386,7 @@ As a result of this change, even if `MyApp` needs to re-render, the components c
 <Trans>이 변경으로 인해 `MyApp`이 리렌더링해야 하는 경우에도 `currentUser`가 변경되지 않는 한 `useContext(AuthProvider)`를 호출하는 컴포넌트는 리렌더링할 필요가 없습니다. </Trans>
 
 Read more about [`useMemo`](/reference/react/useMemo#skipping-re-rendering-of-components) and [`useCallback`.](/reference/react/useCallback#skipping-re-rendering-of-components)
-<Trans>[`useMemo`](/reference/react/useMemo#skipping-re-rendering-of-components) 및 [`useCallbak`](/reference/react/useCallback#skipping-re-rendering-of-components)에 대해 더 읽어보세요.</Trans>
+<Trans>[`useMemo`](/reference/react/useMemo#skipping-re-rendering-of-components) 및 [`useCallback`](/reference/react/useCallback#skipping-re-rendering-of-components)에 대해 더 읽어보세요.</Trans>
 
 ---
 
