@@ -234,7 +234,7 @@ React expects that the body of your component [behaves like a pure function](/le
 <Trans>입력값들([props](/learn/passing-props-to-a-component), [state](/learn/state-a-components-memory), [context](/learn/passing-data-deeply-with-context))이 동일하면 완전히 동일한 JSX를 반환해야 합니다.</Trans>
 
 - Calling it in a different order or with different arguments should not affect the results of other calls.
-<Trans>다른 순서나 다른 인수를 사용하여 호출해도 다른 호출의 결과에 영향을 미치지 않아야 합니다. <CodeStep step={2}>(?)</CodeStep></Trans>
+<Trans>다른 순서나 다른 인수를 사용하여 호출해도 다른 호출의 결과에 영향을 미치지 않아야 합니다.</Trans>
 
 Reading or writing a ref **during rendering** breaks these expectations.
 <Trans>**렌더링 중에** ref를 읽거나 쓰면 이러한 기대가 깨집니다.</Trans>
