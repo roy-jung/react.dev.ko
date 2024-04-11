@@ -75,11 +75,6 @@ export default function MyApp({Component, pageProps}: AppProps) {
             `,
         }}
       />
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718512820984355"
-        crossOrigin="anonymous"
-      />
     </>
   );
 }
