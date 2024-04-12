@@ -11,6 +11,11 @@ const MyDocument = () => {
       <Head>
         <meta charSet="utf-8" />
         <meta name="google-adsense-account" content="ca-pub-7718512820984355" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7718512820984355"
+          crossOrigin="anonymous"
+        />
       </Head>
       <body className="font-text font-medium antialiased text-lg bg-wash dark:bg-wash-dark text-secondary dark:text-secondary-dark leading-base">
         <script

@@ -157,7 +157,7 @@ You'll notice in the above render tree, there is no mention of the HTML tags tha
 <Trans>위 렌더 트리에서는 각 컴포넌트가 렌더링하는 HTML 태그에 대한 언급이 없습니다. 렌더 트리는 React [컴포넌트](learn/your-first-component#components-ui-building-blocks)로만 구성되어 있기 때문입니다.</Trans>
 
 React, as a UI framework, is platform agnostic. On react.dev, we showcase examples that render to the web, which uses HTML markup as its UI primitives. But a React app could just as likely render to a mobile or desktop platform, which may use different UI primitives like [UIView](https://developer.apple.com/documentation/uikit/uiview) or [FrameworkElement](https://learn.microsoft.com/en-us/dotnet/api/system.windows.frameworkelement?view=windowsdesktop-7.0).
-<Trans>UI 프레임워크인 React는 플랫폼에 구애받지 않습니다. React.dev에서는 HTML 마크업을 UI 기본 요소로 사용하는 웹으로 렌더링하는 예제를 보여줍니다. 그러나 React 앱은 [UIView](https://developer.apple.com/documentation/uikit/uiview) 또는 [FrameworkElement](https://learn.microsoft.com/en-us/dotnet/api/system.windows.frameworkelement?view=windowsdesktop-7.0)와 같은 다양한 UI 기본 요소를 사용할 수 있는 모바일, 데스크톱 플랫폼로도 렌더링할 수 있습니다.</Trans>
+<Trans>UI 프레임워크인 React는 플랫폼에 구애받지 않습니다. react.dev에서는 HTML 마크업을 UI 기본 요소로 사용하는 웹으로 렌더링하는 예제를 보여줍니다. 그러나 React 앱은 [UIView](https://developer.apple.com/documentation/uikit/uiview) 또는 [FrameworkElement](https://learn.microsoft.com/en-us/dotnet/api/system.windows.frameworkelement?view=windowsdesktop-7.0)와 같은 다양한 UI 기본 요소를 사용할 수 있는 모바일, 데스크톱 플랫폼로도 렌더링할 수 있습니다.</Trans>
 
 These platform UI primitives are not a part of React. React render trees can provide insight to our React app regardless of what platform your app renders to.
 <Trans>이러한 플랫폼 UI 기본 요소는 React의 일부가 아닙니다. React 렌더 트리는 앱이 렌더링되는 플랫폼에 관계없이 React 앱을 제공할 수 있습니다.</Trans>
