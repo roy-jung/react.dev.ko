@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 import {AppProps} from 'next/app';
 import {useRouter} from 'next/router';
 import Script from 'next/script';
@@ -11,7 +11,7 @@ import '../styles/algolia.css';
 import '../styles/index.css';
 import '../styles/sandpack.css';
 import '../styles/translate.css';
-import {useSetTheme} from '../jotai/theme';
+import {useSetTheme, useTheme} from '../jotai/theme';
 
 if (typeof window !== 'undefined') {
   const terminationEvent = 'onpagehide' in window ? 'pagehide' : 'unload';
@@ -26,7 +26,9 @@ if (typeof window !== 'undefined') {
 
 export default function MyApp({Component, pageProps}: AppProps) {
   const router = useRouter();
+  const theme = useTheme();
   const setTheme = useSetTheme();
+  const initiated = useRef(false);
 
   useEffect(() => {
     // Taken from StackOverflow. Trying to detect both Safari desktop and mobile.
@@ -42,16 +44,19 @@ export default function MyApp({Component, pageProps}: AppProps) {
       // It seems to work better for Chrome and Firefox which don't animate the back swipe.
     }
     const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setTheme(darkQuery.matches ? 'dark' : 'light');
-
     const handleChangeTheme = (e: MediaQueryListEvent) => {
       setTheme(e.matches ? 'dark' : 'light');
     };
     darkQuery.addEventListener('change', handleChangeTheme);
+    if (!initiated.current) {
+      setTheme(theme || (darkQuery.matches ? 'dark' : 'light'));
+      initiated.current = true;
+    }
+
     return () => {
       darkQuery.removeEventListener('change', handleChangeTheme);
     };
-  }, [setTheme]);
+  }, [theme, setTheme]);
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
