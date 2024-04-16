@@ -23,13 +23,7 @@ import {Logo} from '../../Logo';
 import {Feedback} from '../Feedback';
 import {SidebarRouteTree} from '../Sidebar';
 import type {RouteItem} from '../getRouteMeta';
-
-declare global {
-  interface Window {
-    __theme: string;
-    __setPreferredTheme: (theme: string) => void;
-  }
-}
+import {useSetTheme} from 'jotai/theme';
 
 const darkIcon = (
   <svg
@@ -150,6 +144,7 @@ export default function TopNav({
   const scrollParentRef = useRef<HTMLDivElement>(null);
   const {asPath} = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
+  const setTheme = useSetTheme();
 
   // HACK. Fix up the data structures instead.
   if ((routeTree as any).routes.length === 1) {
@@ -317,7 +312,7 @@ export default function TopNav({
                     type="button"
                     aria-label="Use Dark Mode"
                     onClick={() => {
-                      window.__setPreferredTheme('dark');
+                      setTheme('dark');
                     }}
                     className="flex items-center justify-center w-12 h-12 transition-transform rounded-full active:scale-95 hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
                     {darkIcon}
@@ -328,7 +323,7 @@ export default function TopNav({
                     type="button"
                     aria-label="Use Light Mode"
                     onClick={() => {
-                      window.__setPreferredTheme('light');
+                      setTheme('light');
                     }}
                     className="flex items-center justify-center w-12 h-12 transition-transform rounded-full active:scale-95 hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
                     {lightIcon}

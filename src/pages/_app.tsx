@@ -11,6 +11,7 @@ import '../styles/algolia.css';
 import '../styles/index.css';
 import '../styles/sandpack.css';
 import '../styles/translate.css';
+import {useSetTheme} from '../jotai/theme';
 
 if (typeof window !== 'undefined') {
   const terminationEvent = 'onpagehide' in window ? 'pagehide' : 'unload';
@@ -25,6 +26,7 @@ if (typeof window !== 'undefined') {
 
 export default function MyApp({Component, pageProps}: AppProps) {
   const router = useRouter();
+  const setTheme = useSetTheme();
 
   useEffect(() => {
     // Taken from StackOverflow. Trying to detect both Safari desktop and mobile.
@@ -39,7 +41,17 @@ export default function MyApp({Component, pageProps}: AppProps) {
       // For other browsers, let Next.js set scrollRestoration to 'manual'.
       // It seems to work better for Chrome and Firefox which don't animate the back swipe.
     }
-  }, []);
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setTheme(darkQuery.matches ? 'dark' : 'light');
+
+    const handleChangeTheme = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? 'dark' : 'light');
+    };
+    darkQuery.addEventListener('change', handleChangeTheme);
+    return () => {
+      darkQuery.removeEventListener('change', handleChangeTheme);
+    };
+  }, [setTheme]);
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {

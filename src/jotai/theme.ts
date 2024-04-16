@@ -13,9 +13,7 @@ const themeAtom = atom(
 
     const theme =
       res || get(themeState) || stored || (media ? 'dark' : 'light');
-    document.documentElement.classList[theme === 'dark' ? 'add' : 'remove'](
-      'dark'
-    );
+    document.documentElement.classList.toggle('dark', theme === 'dark');
     set(themeState, theme);
     localStorage.setItem('theme', theme);
   }

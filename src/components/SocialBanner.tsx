@@ -7,9 +7,9 @@ import {useRef, useEffect} from 'react';
 import cn from 'classnames';
 import {ExternalLink} from './ExternalLink';
 
-const bannerText = '비공식 한글 번역 사이트입니다.';
+const bannerText = 'react-ko.dev 비공식 한글 번역 사이트입니다.';
 const bannerLink = 'https://ko.react.dev/';
-const bannerLinkText = '공식페이지';
+const bannerLinkText = '공식: ko.react.dev';
 
 export default function SocialBanner() {
   const ref = useRef<HTMLDivElement | null>(null);
