@@ -19,7 +19,7 @@ translators: [고석영]
 
 <Intro>
 
-`useInsertionEffect` allows inserting elements into the DOM before any layout effects fire.
+`useInsertionEffect` allows inserting elements into the DOM before any layout Effects fire.
 <Trans>`useInsertionEffect`를 사용하면 레이아웃 effect가 실행되기 전에 요소를 DOM에 삽입할 수 있습니다.</Trans>
 
 ```js
@@ -36,7 +36,7 @@ useInsertionEffect(setup, dependencies?)
 
 ### `useInsertionEffect(setup, dependencies?)` {/*useinsertioneffect*/}
 
-Call `useInsertionEffect` to insert styles before any effects fire that may need to read layout:
+Call `useInsertionEffect` to insert styles before any Effects fire that may need to read layout:
 <Trans>레이아웃을 읽어야 하는 effect가 실행되기 전에 스타일을 주입하려면 `useInsertionEffect`를 호출하세요:</Trans>
 
 ```js
@@ -58,7 +58,7 @@ function useCSS(rule) {
 
 #### Parameters<Trans>매개변수</Trans> {/*parameters*/}
 
-* `setup`: The function with your Effect's logic. Your setup function may also optionally return a *cleanup* function. When your component is added to the DOM, but before any layout effects fire, React will run your setup function. After every re-render with changed dependencies, React will first run the cleanup function (if you provided it) with the old values, and then run your setup function with the new values. When your component is removed from the DOM, React will run your cleanup function.
+* `setup`: The function with your Effect's logic. Your setup function may also optionally return a *cleanup* function. When your component is added to the DOM, but before any layout Effects fire, React will run your setup function. After every re-render with changed dependencies, React will first run the cleanup function (if you provided it) with the old values, and then run your setup function with the new values. When your component is removed from the DOM, React will run your cleanup function.
 <Trans>`setup`: Effect의 로직이 포함된 함수입니다. 셋업 함수는 *클린업* 함수를 선택적으로 반환할 수도 있습니다. 컴포넌트가 DOM에 추가되었지만 레이아웃 effect가 실행되기 전에 React는 셋업 함수를 실행합니다. 변경된 의존성으로 다시 렌더링할 때마다 React는 먼저 이전 값으로 클린업 함수를(제공한 경우) 실행한 다음, 새 값으로 셋업 함수를 실행합니다. 컴포넌트가 DOM에서 제거되면 React는 클린업 함수를 실행합니다.</Trans>
  
 * **optional** `dependencies`: The list of all reactive values referenced inside of the `setup` code. Reactive values include props, state, and all the variables and functions declared directly inside your component body. If your linter is [configured for React](/learn/editor-setup#linting), it will verify that every reactive value is correctly specified as a dependency. The list of dependencies must have a constant number of items and be written inline like `[dep1, dep2, dep3]`. React will compare each dependency with its previous value using the [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison algorithm. If you don't specify the dependencies at all, your Effect will re-run after every re-render of the component.
@@ -129,7 +129,7 @@ If you use CSS-in-JS, we recommend a combination of the first two approaches (CS
 The first problem is not solvable, but `useInsertionEffect` helps you solve the second problem.
 <Trans>첫 번째 문제는 해결할 수 없지만 `useInsertionEffect`를 사용하면 두 번째 문제를 해결할 수 있습니다.</Trans>
 
-Call `useInsertionEffect` to insert the styles before any layout effects fire:
+Call `useInsertionEffect` to insert the styles before any layout Effects fire:
 <Trans>레이아웃 effect가 실행되기 전에 스타일을 주입하려면 `useInsertionEffect`를 호출하세요:</Trans>
 
 ```js {4-11}
