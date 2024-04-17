@@ -138,7 +138,7 @@ export function HomeContent() {
             비공식 한글 번역 사이트
             <br />
             <sub className="text-md">
-              2024. 3. 14. 공홈 업데이트 반영
+              2024. 4. 17. 공홈 최신 업데이트 반영
               <br />
               2023. 5. 19. 100% 번역 완료
             </sub>
