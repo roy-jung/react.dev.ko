@@ -121,27 +121,37 @@ export function HomeContent() {
               'mt-4 mb-3 text-link dark:text-link-dark w-24 lg:w-28 self-center text-sm me-0 flex origin-center transition-all ease-in-out'
             )}
           />
-          <h1 className="text-center text-5xl font-display lg:text-6xl font-semibold leading-snug text-primary dark:text-primary-dark">
-            React + ⍺
+          <h1 className="text-center text-4xl font-display lg:text-6xl font-semibold leading-snug text-primary dark:text-primary-dark">
+            React <span className="text-rose-700">비공식</span> 한글번역
           </h1>
           <div className="mt-5 mb-10 text-3xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
-            <Link href="https://www.youtube.com/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v">
+            <Link
+              href="https://www.youtube.com/playlist?list=PLjQV3hketAJkh6BEl0n4PDS_2fBd0cS9v"
+              className="text-nowrap">
               FE재남
             </Link>
-            과
-            <br />
-            <Link href="https://github.com/roy-jung/react.dev.ko">
+            {' & '}
+            <Link
+              href="https://github.com/roy-jung/react.dev.ko"
+              className="text-nowrap">
               [React 공식문서 스터디 그룹]
             </Link>
-            의
+          </div>
+          <div className="mb-10 w-auto text-center">
+            본 사이트는 영문 공식문서 Beta 버전 시기부터 한글 번역을 시작하여
+            2023년 5월에 런칭하였습니다.
             <br />
-            비공식 한글 번역 사이트
+            이후로도 나름의 존재 가치가 있다고 판단하여 유지하고 있었으나,
             <br />
-            <sub className="text-md">
-              2024. 4. 17. 공홈 최신 업데이트 반영
-              <br />
-              2023. 5. 19. 100% 번역 완료
-            </sub>
+            한국 리액트 커뮤니티에 불필요한 혼란을 가중시킨다는 지적을 받아들여
+            폐쇄를 결정하였습니다.
+            <br />
+            다만 혹시라도 본 사이트를 애용하시던 분들을 고려하여 2024년
+            연말까지는 남겨두겠습니다.
+            <br />
+            앞으로는 공식 사이트인{' '}
+            <Link href="https://ko.react.dev">https://ko.react.dev</Link>를
+            이용해 주시기 바랍니다.
           </div>
           <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
             The library for web and native user interfaces

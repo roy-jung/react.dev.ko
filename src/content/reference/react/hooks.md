@@ -18,7 +18,7 @@ translators: [정재남, 유은미, 고석영]
 <Trans>*State*를 사용하면 컴포넌트가 사용자 입력과 같은 정보를 ["기억"할 수 있습니다.](/learn/state-a-components-memory) 예를 들어, form 컴포넌트는 state를 사용하여 입력 값을 저장하고, 이미지 갤러리 컴포넌트는 state를 사용하여 선택한 이미지의 인덱스를 저장할 수 있습니다.</Trans>
 
 To add state to a component, use one of these Hooks:
-<Trans>컴포넌트에 state를 추가하려면 다음 훅 중 하나를 사용합니다:</Trans>
+<Trans>컴포넌트에 state를 추가하려면 다음 훅 중 하나를 사용하세요:</Trans>
 
 * [`useState`](/reference/react/useState) declares a state variable that you can update directly.
 <Trans>[`useState`](/reference/react/useState)는 직접 업데이트할 수 있는 state 변수를 선언합니다.</Trans>
@@ -125,7 +125,7 @@ Sometimes, you can't skip re-rendering because the screen actually needs to upda
 <Trans>화면이 실제로 업데이트되어야 하기 때문에 렌더링을 건너뛸 수 없는 경우도 있습니다. 이 경우 입력 입력과 같이 동기화되어야 하는 차단 업데이트와 차트 업데이트와 같이 사용자 인터페이스를 차단할 필요가 없는 비차단 업데이트를 분리하여 성능을 향상시킬 수 있습니다.</Trans>
 
 To prioritize rendering, use one of these Hooks:
-<Trans>렌더링 우선순위를 지정하려면 다음 훅 중 하나를 사용합니다:</Trans>
+<Trans>렌더링 우선순위를 지정하려면 다음 훅 중 하나를 사용하세요:</Trans>
 
 - [`useTransition`](/reference/react/useTransition) lets you mark a state transition as non-blocking and allow other updates to interrupt it.
 <Trans>[`useTransition`](/reference/react/useTransition)을 사용하면 state 전환을 비차단 state로 표시하고 다른 업데이트가 이를 중단하도록 허용할 수 있습니다.</Trans>
@@ -138,10 +138,13 @@ To prioritize rendering, use one of these Hooks:
 ## Resource Hooks {/*resource-hooks*/}
 
 *Resources* can be accessed by a component without having them as part of their state. For example, a component can read a message from a Promise or read styling information from a context.
+<Trans>컴포넌트는 *리소스*를 상태의 일부로 보유하지 않고도 액세스할 수 있습니다. 예를 들어, 컴포넌트는 Promise에서 메시지를 읽거나 컨텍스트에서 스타일링 정보를 읽을 수 있습니다.</Trans>
 
 To read a value from a resource, use this Hook:
+<Trans>리소스에서 값을 읽으려면 이 Hook을 사용하세요:</Trans>
 
 - [`use`](/reference/react/use) lets you read the value of a resource like a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or [context](/learn/passing-data-deeply-with-context).
+<Trans outdent>[`use`](/reference/react/use)를 사용하면 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 또는 [context](/learn/passing-data-deeply-with-context)와 같은 리소스의 값을 읽을 수 있습니다.</Trans>
 
 ```js
 function MessageComponent({ messagePromise }) {

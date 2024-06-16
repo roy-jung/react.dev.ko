@@ -3,16 +3,15 @@
  *
  */
 
-import {useRef, useEffect} from 'react';
 import cn from 'classnames';
 import {ExternalLink} from './ExternalLink';
 
-const bannerText = 'react-ko.dev 비공식 한글 번역 사이트입니다.';
+const bannerText = '비공식 사이트. 24.12.31. 폐쇄예정';
 const bannerLink = 'https://ko.react.dev/';
-const bannerLinkText = '공식: ko.react.dev';
+const bannerLinkText = '공식사이트 바로가기';
 
 export default function SocialBanner() {
-  const ref = useRef<HTMLDivElement | null>(null);
+  /* const ref = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     function patchedScrollTo(x: number, y: number) {
       if (y === 0) {
@@ -28,14 +27,15 @@ export default function SocialBanner() {
     return () => {
       (window as any).scrollTo = realScrollTo;
     };
-  }, []);
+  }, []); */
+
   return (
     <div
-      ref={ref}
+      // ref={ref}
       className={cn(
-        `h-[40px] hidden lg:flex w-full bg-gray-100 dark:bg-gray-700 text-base md:text-lg py-2 sm:py-0 items-center justify-center flex-col sm:flex-row z-[100]`
+        `h-[40px] flex w-full bg-gray-100 dark:bg-gray-700 text-rose-700 text-lg py-2 sm:py-0 items-center justify-center flex-row`
       )}>
-      <div className="hidden sm:block">{bannerText}</div>
+      <div className="block mr-1.5">{bannerText}</div>
       <ExternalLink
         className="ms-0 sm:ms-1 text-link dark:text-link-dark hover:underline"
         href={bannerLink}>

@@ -137,12 +137,14 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
         image={`/images/og-` + section + '.png'}
         searchOrder={searchOrder}
       />
-      <SocialBanner />
-      <TopNav
-        section={section}
-        routeTree={routeTree}
-        breadcrumbs={breadcrumbs}
-      />
+      <div className="sticky top-0 z-[100]">
+        <SocialBanner />
+        <TopNav
+          section={section}
+          routeTree={routeTree}
+          breadcrumbs={breadcrumbs}
+        />
+      </div>
       <div
         className={cn(
           hasColumns &&

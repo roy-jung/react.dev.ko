@@ -1,34 +1,49 @@
 ---
 title: Components and Hooks must be pure
+translatedTitle: 컴포넌트와 Hook은 순수해야 합니다
+translators: [(진행중), 정재남]
 ---
 
 <Intro>
 Pure functions only perform a calculation and nothing more. It makes your code easier to understand, debug, and allows React to automatically optimize your components and Hooks correctly.
+<Trans>순수 함수는 계산만 수행하고 그 이상은 하지 않습니다. 순수 함수는 코드를 더 쉽게 이해할 수 있고, 디버깅하기 쉬우며, React가 컴포넌트와 Hook을 자동으로 올바르게 최적화할 수 있게 해줍니다.</Trans>
 </Intro>
 
 <Note>
 This reference page covers advanced topics and requires familiarity with the concepts covered in the [Keeping Components Pure](/learn/keeping-components-pure) page.
+<Trans>본 페이지는 고급 주제를 다루며 [컴포넌트 순수성 유지](/learn/keeping-components-pure) 페이지에서 다룬 개념에 익숙한 독자를 대상으로 합니다.</Trans>
+
 </Note>
 
 <InlineToc />
 
-### Why does purity matter? {/*why-does-purity-matter*/}
+### Why does purity matter? <Trans>왜 순수성이 중요한가요?</Trans> {/*why-does-purity-matter*/}
 
 One of the key concepts that makes React, _React_ is _purity_. A pure component or hook is one that is:
+<Trans>React를 만드는 핵심 개념 중 하나는 _순수성_ 입니다. 순수한 컴포넌트 또는 Hook은 다음을 의미합니다:</Trans>
 
 * **Idempotent** – You [always get the same result every time](/learn/keeping-components-pure#purity-components-as-formulas) you run it with the same inputs – props, state, context for component inputs; and arguments for hook inputs.
+<Trans>**멱등성** - props, state, context, hook의 인수 등의 동일한 입력에 대해 [항상 동일한 결과를 도출합니다.](/learn/keeping-components-pure#purity-components-as-formulas)</Trans>
+
 * **Has no side effects in render** – Code with side effects should run [**separately from rendering**](#how-does-react-run-your-code). For example as an [event handler](/learn/responding-to-events) – where the user interacts with the UI and causes it to update; or as an [Effect](/reference/react/useEffect) – which runs after render.
+<Trans>**렌더링에 부작용이 없음** - 부작용이 있는 코드는 [**렌더링과 별도로**](#how-does-react-run-your-code) 실행해야 합니다. 예를 들어, 사용자가 UI와 상호작용하여 UI가 업데이트되도록 하는 [이벤트 핸들러](/learn/responding-to-events) 또는 렌더링 후에 실행되는 [Effect](/reference/react/useEffect)와 같이 말이죠.</Trans>
+
 * **Does not mutate non-local values**: Components and Hooks should [never modify values that aren't created locally](#mutation) in render.
+<Trans>**비로컬 값을 변경하지 않습니다**: 컴포넌트와 Hook은 렌더링에서 [절대로 로컬로 생성되지 않은 값을 수정하지 않아야 합니다](#mutation).</Trans>
 
 When render is kept pure, React can understand how to prioritize which updates are most important for the user to see first. This is made possible because of render purity: since components don't have side effects [in render](#how-does-react-run-your-code), React can pause rendering components that aren't as important to update, and only come back to them later when it's needed.
+<Trans>렌더링이 순수하게 유지되면 React는 사용자에게 가장 중요한 업데이트의 우선순위를 정하는 방법을 이해할 수 있습니다. 이는 렌더링 순수성 덕분에 가능합니다. 컴포넌트에는 [렌더링](#how-does-react-run-your-code)에 부작용이 없으므로, React는 업데이트가 중요하지 않은 컴포넌트의 렌더링을 일시 중지하고, 이후 필요할 때에 다시 돌아올 수 있습니다.</Trans>
 
 Concretely, this means that rendering logic can be run multiple times in a way that allows React to give your user a pleasant user experience. However, if your component has an untracked side effect – like modifying the value of a global variable [during render](#how-does-react-run-your-code) – when React runs your rendering code again, your side effects will be triggered in a way that won't match what you want. This often leads to unexpected bugs that can degrade how your users experience your app. You can see an [example of this in the Keeping Components Pure page](/learn/keeping-components-pure#side-effects-unintended-consequences).
+<Trans>구체적으로, 이는 React가 사용자에게 쾌적한 사용자 경험을 제공할 수 있는 방식으로 렌더링 로직을 여러 번 실행할 수 있다는 것을 의미합니다. 그러나 컴포넌트에 추적되지 않은 부작용(예: [렌더링 중](#how-does-react-run-your-code)에 전역 변수 값 수정)이 있는 경우 React가 렌더링 코드를 다시 실행할 때 사용자가 원하는 것과 일치하지 않는 부작용이 발생될 수 있습니다. 이로 인해 사용자가 앱을 경험하는 방식이 저하될 수 있는 예기치 않은 버그가 발생하는 경우가 많습니다. 이에 대한 예시는 [컴포넌트 순수성 유지](/learn/keeping-components-pure#side-effects-unintended-consequences) 페이지에서 확인할 수 있습니다.</Trans>
 
-#### How does React run your code? {/*how-does-react-run-your-code*/}
+#### How does React run your code? <Trans>React는 코드를 어떻게 실행하나요?</Trans> {/*how-does-react-run-your-code*/}
 
 React is declarative: you tell React _what_ to render, and React will figure out _how_ best to display it to your user. To do this, React has a few phases where it runs your code. You don't need to know about all of these phases to use React well. But at a high level, you should know about what code runs in _render_, and what runs outside of it.
+<Trans>React는 선언적입니다. 사용자가 React에 *무엇*을 렌더링할지 알려주면 React가 사용자에게 가장 잘 표시할 수 있는 방법을 알아냅니다. 이를 위해 React에는 코드를 실행하는 몇 가지 단계가 있습니다. React를 잘 사용하기 위해 이 모든 단계를 알 필요는 없습니다. 하지만 높은 수준, 즉 *render*에서 실행되는 코드와 그 밖에서 실행되는 코드에 대해서는 알아야 합니다.</Trans>
 
 _Rendering_ refers to calculating what the next version of your UI should look like. After rendering, [Effects](/reference/react/useEffect) are _flushed_ (meaning they are run until there are no more left) and may update the calculation if the Effects have impacts on layout. React takes this new calculation and compares it to the calculation used to create the previous version of your UI, then _commits_ just the minimum changes needed to the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) (what your user actually sees) to catch it up to the latest version.
+<Trans>*렌더링*은 UI의 다음 버전이 어떻게 보일지 계산하는 것을 말합니다. 렌더링 후, [Effect](/reference/react/useEffect)는 _flush_(더 이상 남지 않을 때까지 실행됨을 의미)되며, 효과가 레이아웃에 영향을 미치는 경우 계산을 업데이트할 수 있습니다. React는 이 새로운 계산을 가져와서 이전 버전의 UI를 만드는 데 사용된 계산과 비교한 다음, [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)에 필요한 최소한의 변경 사항(사용자가 실제로 보는 것)만 *커밋*하여 최신 버전으로 따라잡습니다.</Trans>
 
 <DeepDive>
 

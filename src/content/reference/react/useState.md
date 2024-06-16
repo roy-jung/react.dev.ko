@@ -77,7 +77,7 @@ The convention is to name state variables like `[something, setSomething]` using
 
 ---
 
-### `set` functions, like `setSomething(nextState)`<Trans>`setSomething(nextState)`과 같은 `set` 함수</Trans> {/*setstate*/}
+### `set` functions, like `setSomething(nextState)`<Trans>`set` 함수 (`setSomething(nextState)`)</Trans> {/*setstate*/}
 
 The `set` function returned by `useState` lets you update the state to a different value and trigger a re-render. You can pass the next state directly, or a function that calculates it from the previous state:
 <Trans>`useState`가 반환하는 `set` 함수를 사용하면 state를 다른 값으로 업데이트하고 리렌더링을 촉발할 수 있습니다. 여기에는 다음 state를 직접 전달하거나, 이전 state로부터 계산하여 다음 state를 도출하는 함수를 전달할 수도 있습니다:</Trans>
